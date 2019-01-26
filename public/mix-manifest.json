@@ -1,0 +1,12 @@
+{
+    "/css/app.css": "/css/app.css",
+    "/css/backend.css": "/css/backend.css",
+    "/js/backend.js": "/js/backend.js",
+    "/js/tinymce.min.js": "/js/tinymce.min.js",
+    "/js/backend-custom.js": "/js/backend-custom.js",
+    "/css/frontend.css": "/css/frontend.css",
+    "/css/frontend-rtl.css": "/css/frontend-rtl.css",
+    "/js/frontend.js": "/js/frontend.js",
+    "/js/frontend-rtl.js": "/js/frontend-rtl.js",
+    "/js/jquery.prettyPhoto.min.js": "/js/jquery.prettyPhoto.min.js"
+}
