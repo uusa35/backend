@@ -37,7 +37,7 @@
                                          alt="{{ $product->name }}">
                                 @else
                                     <img class="secondary-img"
-                                         src="{{ asset(env('THUMBNAIL').$product->gallery->images->sortBy('order')->first()->path) }} "
+                                         src="{{ asset(env('THUMBNAIL').$product->images->sortBy('order')->first()->path) }} "
                                          alt="{{ $product->name }}">
                                 @endif
                             @endif

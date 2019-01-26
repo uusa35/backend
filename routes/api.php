@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\ProductAttribute;
 use Illuminate\Http\Request;
 
 /*
@@ -16,3 +17,21 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::get('size', function () {
+    $productAttribute = ProductAttribute::where(['product_id' => request()->product_id, 'color_id' => request()->color_id])->with('size')->get();
+    return response()->json($productAttribute, 200);
+});
+
+Route::get('qty', function () {
+    $productAttribute = ProductAttribute::where([
+        'product_id' => request()->product_id,
+        'color_id' => request()->color_id,
+        'size_id' => request()->size_id,
+    ])->with('size')->first();
+    return response()->json($productAttribute->qty, 200);
+});
+
+
+Route::resource('branch', 'Api\BranchController')->only(['index']);

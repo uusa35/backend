@@ -3,7 +3,7 @@
 @else
     <script src="{{ mix('js/frontend.js') }}"></script>
 @endif
-{{--<script src="{{ mix('js/app.js') }}"></script>--}}
+<script src="{{ mix('js/app.js') }}"></script>
 <script src="{{ mix('js/jquery.prettyPhoto.min.js') }}"></script>
 @if(app()->environment('production'))
     <!-- Global site tag (gtag.js) - Google Analytics -->

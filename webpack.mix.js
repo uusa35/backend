@@ -10,8 +10,8 @@ const mix = require('laravel-mix');
  | file for the application as well as bundling up all the JS files.
  |
  */
-// mix.js('resources/js/app.js', 'public/js')
-    mix.sass('resources/sass/app.scss', 'public/css');
+mix.js('resources/js/app.js', 'public/js')
+    .sass('resources/sass/app.scss', 'public/css');
 // backend
 mix.styles([
     './node_modules/font-awesome/css/font-awesome.min.css',

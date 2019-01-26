@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
 <head>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     @section('head')
         @include('frontend.partials.head')
     @show

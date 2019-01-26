@@ -39,9 +39,9 @@
                                          src="{{ asset(env('MEDIUM').$product->image) }}"
                                          alt="{{ $product->description }}">
 
-                                    @if(!$product->gallery->images->isEmpty())
+                                    @if(!$product->images->isEmpty())
                                         <img class="secondary-img"
-                                             src="{{ asset(env('MEDIUM').$product->gallery->images->sortBy('order')->first()->path) }}"
+                                             src="{{ asset(env('MEDIUM').$product->images->sortBy('order')->first()->path) }}"
                                              alt="{{ $product->caption }}">
                                     @endif
                                 </a>
@@ -120,10 +120,10 @@
                                          {{--src="{{ asset(env('MEDIUM').$product->image) }} "--}}
                                          {{--alt="{{ $product->description }}">--}}
 
-                                    {{--@if(isset($product->gallery->images->first()->path))--}}
-                                        {{--@if(file_exists(env('MEDIUM').$product->gallery->images->first()->path)))--}}
+                                    {{--@if(isset($product->images->first()->path))--}}
+                                        {{--@if(file_exists(env('MEDIUM').$product->images->first()->path)))--}}
                                         {{--<img class="secondary-img"--}}
-                                             {{--src="{{ asset(env('MEDIUM').$product->gallery->images->first()->path) }} "--}}
+                                             {{--src="{{ asset(env('MEDIUM').$product->images->first()->path) }} "--}}
                                              {{--alt="{{ $product->caption }}">--}}
                                         {{--@else--}}
                                             {{--<img class="secondary-img"--}}

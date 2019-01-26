@@ -49,8 +49,8 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                                          alt="{{ $product->name_ar . $product->name_en . $product->description_ar . $product->description_en }}"/>
                                 </a>
                             </div>
-                            @if(!$product->gallery->images->isEmpty())
-                                @foreach($product->gallery->images as $img)
+                            @if(!$product->images->isEmpty())
+                                @foreach($product->images as $img)
                                     <div class="item">
                                         <a class="btn btn-theme btn-theme-transparent btn-zoom"
                                            @desktop
@@ -74,7 +74,7 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                             @endif
                         </div>
 
-                        @if(!$product->gallery->images->isEmpty())
+                        @if(!$product->images->isEmpty())
                             <div class="row product-thumbnails">
                                 <div class="col-xs-2 col-sm-2 col-md-3">
                                     <a
@@ -87,7 +87,7 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                                              alt=""{{ $product->name }}/>
                                     </a>
                                 </div>
-                                @foreach($product->gallery->images as $img)
+                                @foreach($product->images as $img)
                                     <div class="col-xs-2 col-sm-2 col-md-3">
                                         <a
                                                 @desktop

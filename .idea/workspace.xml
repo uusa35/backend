@@ -1,7 +1,210 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e163867a-e084-464b-b025-90563ffad1db" name="Default Changelist" comment="" />
+    <list default="true" id="e163867a-e084-464b-b025-90563ffad1db" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/backend-custom.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/backend.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/frontend-rtl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/frontend.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/jquery.prettyPhoto.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/advlist/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/advlist/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/advlist/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/anchor/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/anchor/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/anchor/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/autolink/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/autolink/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/autolink/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/autoresize/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/autoresize/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/autoresize/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/autosave/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/autosave/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/autosave/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/bbcode/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/bbcode/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/bbcode/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/charmap/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/charmap/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/charmap/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/code/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/code/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/code/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/codesample/css/prism.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/codesample/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/codesample/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/codesample/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/colorpicker/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/colorpicker/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/colorpicker/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/contextmenu/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/contextmenu/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/contextmenu/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/directionality/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/directionality/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/directionality/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/emoticons/img/smiley-cool.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/emoticons/img/smiley-cry.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/emoticons/img/smiley-embarassed.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/emoticons/img/smiley-foot-in-mouth.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/emoticons/img/smiley-frown.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/emoticons/img/smiley-innocent.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/emoticons/img/smiley-kiss.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/emoticons/img/smiley-laughing.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/emoticons/img/smiley-money-mouth.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/emoticons/img/smiley-sealed.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/emoticons/img/smiley-smile.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/emoticons/img/smiley-surprised.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/emoticons/img/smiley-tongue-out.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/emoticons/img/smiley-undecided.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/emoticons/img/smiley-wink.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/emoticons/img/smiley-yell.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/emoticons/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/emoticons/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/emoticons/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/fullpage/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/fullpage/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/fullpage/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/fullscreen/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/fullscreen/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/fullscreen/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/help/img/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/help/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/help/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/help/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/hr/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/hr/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/hr/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/image/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/image/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/image/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/imagetools/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/imagetools/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/imagetools/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/importcss/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/importcss/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/importcss/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/insertdatetime/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/insertdatetime/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/insertdatetime/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/legacyoutput/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/legacyoutput/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/legacyoutput/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/link/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/link/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/link/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/lists/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/lists/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/lists/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/media/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/media/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/media/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/nonbreaking/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/nonbreaking/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/nonbreaking/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/noneditable/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/noneditable/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/noneditable/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/pagebreak/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/pagebreak/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/pagebreak/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/paste/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/paste/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/paste/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/preview/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/preview/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/preview/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/print/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/print/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/print/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/save/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/save/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/save/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/searchreplace/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/searchreplace/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/searchreplace/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/spellchecker/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/spellchecker/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/spellchecker/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/tabfocus/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/tabfocus/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/tabfocus/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/table/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/table/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/table/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/template/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/template/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/template/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/textcolor/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/textcolor/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/textcolor/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/textpattern/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/textpattern/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/textpattern/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/toc/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/toc/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/toc/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/visualblocks/css/visualblocks.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/visualblocks/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/visualblocks/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/visualblocks/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/visualchars/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/visualchars/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/visualchars/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/wordcount/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/wordcount/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins/wordcount/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/skins/lightgray/content.inline.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/skins/lightgray/content.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/skins/lightgray/content.mobile.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/skins/lightgray/fonts/tinymce-mobile.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/skins/lightgray/fonts/tinymce-small.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/skins/lightgray/fonts/tinymce-small.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/skins/lightgray/fonts/tinymce-small.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/skins/lightgray/fonts/tinymce-small.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/skins/lightgray/fonts/tinymce.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/skins/lightgray/fonts/tinymce.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/skins/lightgray/fonts/tinymce.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/skins/lightgray/fonts/tinymce.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/skins/lightgray/img/anchor.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/skins/lightgray/img/loader.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/skins/lightgray/img/object.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/skins/lightgray/img/trans.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/skins/lightgray/skin.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/skins/lightgray/skin.mobile.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/themes/inlite/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/themes/inlite/theme.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/themes/inlite/theme.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/themes/mobile/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/themes/mobile/theme.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/themes/mobile/theme.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/themes/modern/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/themes/modern/theme.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/themes/modern/theme.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/tinymce.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/product/partials/product_category.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/modules/product/partials/product_category.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/product/partials/product_thumbnail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/modules/product/partials/product_thumbnail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/product/partials/product_thumbnail_rectangle.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/modules/product/partials/product_thumbnail_rectangle.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/product/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/modules/product/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/_product-show-gallery.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/partials/_product-show-gallery.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/head.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/partials/head.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/scripts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/partials/scripts.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,31 +218,31 @@
     <session id="-2122380425">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
-          <entry key="project.open.time.0" value="1" />
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Blade" value="8" />
+          <entry key="Blade" value="16" />
           <entry key="CSS" value="1" />
           <entry key="Image" value="7" />
-          <entry key="JSON" value="3" />
-          <entry key="JavaScript" value="12" />
-          <entry key="PHP" value="132" />
-          <entry key="PLAIN_TEXT" value="3" />
+          <entry key="JSON" value="6" />
+          <entry key="JavaScript" value="27" />
+          <entry key="PHP" value="135" />
+          <entry key="PLAIN_TEXT" value="4" />
           <entry key="SCSS" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Blade" value="76" />
+          <entry key="Blade" value="78" />
           <entry key="JSON" value="4" />
-          <entry key="JavaScript" value="29" />
-          <entry key="PHP" value="2900" />
+          <entry key="JavaScript" value="32" />
+          <entry key="PHP" value="2924" />
           <entry key="PLAIN_TEXT" value="41" />
         </counts>
       </usages-collector>
@@ -50,31 +253,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="145" selection-start-line="9" selection-start-column="145" selection-end-line="9" selection-end-column="145" />
+            <state relative-caret-position="414">
+              <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webpack.mix.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="24" column="78" selection-start-line="24" selection-start-column="78" selection-end-line="24" selection-end-column="78" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/backend-custom.js">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="33" selection-start-line="33" selection-end-line="33" />
+            <state relative-caret-position="126">
+              <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -82,8 +271,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/js/bootstrap.js">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="576">
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/laravel-mix/setup/webpack.config.js">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="234">
-              <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+              <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -98,10 +296,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Frontend/ProductController.php">
+        <entry file="file://$PROJECT_DIR$/routes/api.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="42" column="82" lean-forward="true" selection-start-line="42" selection-start-column="82" selection-end-line="42" selection-end-column="82" />
+            <state relative-caret-position="396">
+              <caret line="22" column="145" lean-forward="true" selection-start-line="22" selection-start-column="145" selection-end-line="22" selection-end-column="145" />
+              <folding>
+                <element signature="e#7#39#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -124,26 +325,34 @@
       <find>'.jpg'</find>
       <find>master</find>
       <find>vu</find>
-      <find>vue</find>
       <find>galler</find>
       <find>has</find>
       <find>hasGallery</find>
       <find>'gallery.images'</find>
+      <find>gallery</find>
+      <find>-&gt;gallery-&gt;images-&gt;</find>
+      <find>gallery-&gt;</find>
+      <find>-&gt;gallery-&gt;images</find>
+      <find>Syntax error, unrecognized expression</find>
+      <find>vue-loader</find>
+      <find>app.js</find>
+      <find>vue</find>
     </findStrings>
     <replaceStrings>
       <replace>resources/css/</replace>
       <replace>مول أر</replace>
       <replace>hasImages</replace>
       <replace>'images'</replace>
+      <replace>-&gt;images-&gt;</replace>
+      <replace>-&gt;images</replace>
     </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/config/app.php" />
-        <option value="$PROJECT_DIR$/app/Console/Kernel.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Controller.php" />
-        <option value="$PROJECT_DIR$/config/translation-manager.php" />
         <option value="$PROJECT_DIR$/config/auth.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/.env" />
@@ -186,11 +395,15 @@
         <option value="$PROJECT_DIR$/database/factories/PageFactory.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/partials/footer.blade.php" />
         <option value="$PROJECT_DIR$/database/factories/CountryFactory.php" />
-        <option value="$PROJECT_DIR$/resources/js/bootstrap.js" />
-        <option value="$PROJECT_DIR$/resources/js/app.js" />
-        <option value="$PROJECT_DIR$/webpack.mix.js" />
-        <option value="$PROJECT_DIR$/resources/views/frontend/partials/scripts.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Frontend/ProductController.php" />
+        <option value="$PROJECT_DIR$/resources/views/frontend/modules/product/show.blade.php" />
+        <option value="$PROJECT_DIR$/webpack.mix.js" />
+        <option value="$PROJECT_DIR$/resources/js/app.js" />
+        <option value="$PROJECT_DIR$/resources/js/bootstrap.js" />
+        <option value="$PROJECT_DIR$/resources/views/frontend/partials/head.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/frontend/layouts/app.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/frontend/partials/scripts.blade.php" />
+        <option value="$PROJECT_DIR$/routes/api.php" />
       </list>
     </option>
   </component>
@@ -367,6 +580,7 @@
       </profile-state>
     </entry>
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -416,13 +630,54 @@
             <path>
               <item name="mallr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="mallr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Http" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="mallr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Http" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Controllers" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="mallr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Http" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Controllers" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Api" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="mallr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="public" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="mallr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="public" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="assets" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="css" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="mallr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="public" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="css" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="fonts" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="mallr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="public" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="css" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="fonts" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Neuton" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="mallr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
@@ -467,7 +722,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="Productcon&#9;null&#9;null&#10;scripts&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/partials/scripts.blade.php&#10;webmix&#9;FILE&#9;file:///Users/mac/Sites/mallr/webpack.mix.js&#10;webpack.con&#9;FILE&#9;file:///Users/mac/Sites/mallr/node_modules/laravel-mix/setup/webpack.config.js&#10;packag&#9;FILE&#9;file:///Users/mac/Sites/mallr/package.json&#10;web&#9;FILE&#9;file:///Users/mac/Sites/mallr/webpack.mix.js&#10;package.json&#9;FILE&#9;file:///Users/mac/Sites/mallr/package.json&#10;footer.blade&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/partials/footer.blade.php&#10;footer.bl&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/backend/partials/footer.blade.php&#10;scripts.&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/partials/scripts.blade.php&#10;Categor&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/CategoryFactory.php&#10;SliderFa&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/SliderFactory.php&#10;CategoryF&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/CategoryFactory.php&#10;scripts.bla&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/partials/scripts.blade.php&#10;app.js&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/js/app.js&#10;app.&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/sass/app.scss&#10;home.blade&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/home.blade.php&#10;HomeCon&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Http/Controllers/Frontend/HomeController.php&#10;NotificationF&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/NotificationFactory.php&#10;Product&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/seeds/ProductsTableSeeder.php&#10;OrderFa&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/OrderFactory.php&#10;OrderMetaF&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/OrderMetaFactory.php&#10;OrdersTA&#9;null&#9;null&#10;images_t&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/migrations/2017_04_24_132934_create_images_table.php&#10;ImageFa&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/ImageFactory.php&#10;categories_&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/migrations/2016_04_11_121251_create_categories_table.php&#10;CategoryFa&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/CategoryFactory.php&#10;ProductF&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/ProductFactory.php&#10;RoleFa&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/RoleFactory.php&#10;roles_ta&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/migrations/2014_02_01_041517_create_roles_table.php&#10;RolesT&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/seeds/RolesTableSeeder.php&#10;RolesTabe&#9;null&#9;null&#10;UserHe&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Models/UserHelpers.php&#10;products_&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/migrations/2016_04_12_114116_create_products_table.php&#10;DataSe&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/seeds/DatabaseSeeder.php&#10;users_&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/migrations/2014_10_12_000000_create_users_table.php&#10;UserFa&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/UserFactory.php&#10;UsersTab&#9;null&#9;null&#10;orders_&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/migrations/2016_04_12_132811_create_orders_table.php&#10;User&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Models/User.php&#10;Branch&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Models/Branch.php&#10;branches_&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/migrations/2016_03_31_042323_create_branches_table.php&#10;BranchFa&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/BranchFactory.php&#10;BranchTab&#9;null&#9;null&#10;Country&#9;null&#9;null&#10;Branc&#9;null&#9;null&#10;ProductFa&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/ProductFactory.php&#10;Products&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/seeds/ProductsTableSeeder.php&#10;ProductHe&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Models/ProductHelpers.php&#10;ProductHel&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="api.php&#9;FILE&#9;file:///Users/mac/Sites/mallr/routes/api.php&#10;scripts.blad&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/partials/scripts.blade.php&#10;config.js&#9;FILE&#9;file:///Users/mac/Sites/mallr/node_modules/laravel-mix/setup/webpack.config.js&#10;webmix&#9;FILE&#9;file:///Users/mac/Sites/mallr/webpack.mix.js&#10;styles.bl&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/backend/partials/styles.blade.php&#10;package&#9;FILE&#9;file:///Users/mac/Sites/mallr/package.json&#10;config&#9;FILE&#9;file:///Users/mac/Sites/mallr/node_modules/laravel-mix/setup/webpack.config.js&#10;app.blad&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/layouts/app.blade.php&#10;app.blade&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/layouts/app.blade.php&#10;app&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/js/app.js&#10;pack&#9;FILE&#9;file:///Users/mac/Sites/mallr/package.json&#10;webmi&#9;FILE&#9;file:///Users/mac/Sites/mallr/webpack.mix.js&#10;scripts&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/partials/scripts.blade.php&#10;app.j&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/js/app.js&#10;Productcon&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Http/Controllers/Frontend/ProductController.php&#10;HomeCon&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Http/Controllers/Frontend/HomeController.php&#10;show.blade&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/modules/product/show.blade.php&#10;webpack.con&#9;FILE&#9;file:///Users/mac/Sites/mallr/node_modules/laravel-mix/setup/webpack.config.js&#10;packag&#9;FILE&#9;file:///Users/mac/Sites/mallr/package.json&#10;web&#9;FILE&#9;file:///Users/mac/Sites/mallr/webpack.mix.js&#10;package.json&#9;FILE&#9;file:///Users/mac/Sites/mallr/package.json&#10;footer.blade&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/partials/footer.blade.php&#10;footer.bl&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/backend/partials/footer.blade.php&#10;scripts.&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/partials/scripts.blade.php&#10;Categor&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/CategoryFactory.php&#10;SliderFa&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/SliderFactory.php&#10;CategoryF&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/CategoryFactory.php&#10;scripts.bla&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/partials/scripts.blade.php&#10;app.js&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/js/app.js&#10;app.&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/sass/app.scss&#10;home.blade&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/home.blade.php&#10;NotificationF&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/NotificationFactory.php&#10;Product&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/seeds/ProductsTableSeeder.php&#10;OrderFa&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/OrderFactory.php&#10;OrderMetaF&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/OrderMetaFactory.php&#10;OrdersTA&#9;null&#9;null&#10;images_t&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/migrations/2017_04_24_132934_create_images_table.php&#10;ImageFa&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/ImageFactory.php&#10;categories_&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/migrations/2016_04_11_121251_create_categories_table.php&#10;CategoryFa&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/CategoryFactory.php&#10;ProductF&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/ProductFactory.php&#10;RoleFa&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/RoleFactory.php&#10;roles_ta&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/migrations/2014_02_01_041517_create_roles_table.php&#10;RolesT&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/seeds/RolesTableSeeder.php&#10;RolesTabe&#9;null&#9;null&#10;UserHe&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Models/UserHelpers.php&#10;products_&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/migrations/2016_04_12_114116_create_products_table.php&#10;DataSe&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/seeds/DatabaseSeeder.php&#10;users_&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/migrations/2014_10_12_000000_create_users_table.php&#10;UserFa&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/UserFactory.php" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="js.eslint.eslintPackage" value="" />
@@ -482,16 +737,16 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/Models" />
-      <recent name="$PROJECT_DIR$/database/factories" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/css" />
+      <recent name="$PROJECT_DIR$/resources/js" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/public/css/fonts" />
       <recent name="$PROJECT_DIR$/public/img/preview" />
-      <recent name="$PROJECT_DIR$/public/img" />
-      <recent name="$PROJECT_DIR$/storage/app/public/uploads/images/thumbnail" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Models" />
+      <recent name="$PROJECT_DIR$/database/factories" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -518,18 +773,19 @@
       <updated>1548324710409</updated>
       <workItem from="1548324714993" duration="4789000" />
       <workItem from="1548330306834" duration="8512000" />
-      <workItem from="1548508816552" duration="5080000" />
+      <workItem from="1548508816552" duration="5819000" />
+      <workItem from="1548515814941" duration="1813000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18381000" />
+    <option name="totallyTimeSpent" value="20933000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2550586" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25772098" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -559,55 +815,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/database/seeds/BranchesTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Branch.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_03_31_042323_create_branches_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="43" column="5" lean-forward="true" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/UsersTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="44" column="11" lean-forward="true" selection-start-line="44" selection-start-column="11" selection-end-line="44" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_12_114116_create_products_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="45" column="34" lean-forward="true" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2014_02_01_041517_create_roles_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="28" column="50" lean-forward="true" selection-start-line="28" selection-start-column="50" selection-end-line="28" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/factories/RoleFactory.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -705,16 +912,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="36400" column="55" lean-forward="true" selection-start-line="36400" selection-start-column="55" selection-end-line="36400" selection-end-column="55" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/sass/app.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -733,13 +930,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="30" column="48" selection-start-line="30" selection-start-column="48" selection-end-line="30" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="43" column="23" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -810,13 +1000,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/fonts/Neuton/OFL.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="70" lean-forward="true" selection-start-line="21" selection-start-column="70" selection-end-line="21" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/factories/CountryFactory.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -854,38 +1037,104 @@
     <entry file="file://$PROJECT_DIR$/resources/js/backend-custom.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/resources/js/myapp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="145" selection-start-line="9" selection-start-column="145" selection-end-line="9" selection-end-column="145" />
+        <state relative-caret-position="414">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/laravel-mix/setup/webpack.config.js">
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/partials/head.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        <state relative-caret-position="450">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/bootstrap.js">
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/layouts/app.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+        <state relative-caret-position="630">
+          <caret line="35" column="17" lean-forward="true" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/app.js">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Frontend/ProductController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        <state relative-caret-position="460">
+          <caret line="64" column="35" selection-start-line="64" selection-start-column="35" selection-end-line="64" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="34" column="72" selection-start-line="34" selection-start-column="72" selection-end-line="34" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/modules/product/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="86" column="37" selection-start-line="86" selection-start-column="37" selection-end-line="86" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/backend/partials/styles.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/fonts/Neuton/OFL.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="35" lean-forward="true" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="15987" column="23" selection-start-line="15987" selection-start-column="23" selection-end-line="15987" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webpack.mix.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="24" column="78" selection-start-line="24" selection-start-column="78" selection-end-line="24" selection-end-column="78" />
+        <state relative-caret-position="252">
+          <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/laravel-mix/src/builder/WebpackConfig.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="538">
+          <caret line="102" column="7" lean-forward="true" selection-start-line="102" selection-start-column="7" selection-end-line="102" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/laravel-mix/setup/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/bootstrap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
         </state>
       </provider>
     </entry>
@@ -896,10 +1145,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Frontend/ProductController.php">
+    <entry file="file://$PROJECT_DIR$/routes/api.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="42" column="82" lean-forward="true" selection-start-line="42" selection-start-column="82" selection-end-line="42" selection-end-column="82" />
+        <state relative-caret-position="396">
+          <caret line="22" column="145" lean-forward="true" selection-start-line="22" selection-start-column="145" selection-end-line="22" selection-end-column="145" />
+          <folding>
+            <element signature="e#7#39#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

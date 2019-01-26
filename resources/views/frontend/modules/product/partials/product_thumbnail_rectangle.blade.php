@@ -20,10 +20,10 @@
                                  alt="" style="width: 261px;height: 300px;">
                         @endif
 
-                        @if(isset($product->gallery->images->first()->thumb_url))
-                            @if(file_exists(url('img/uploads/thumbnail/'.$product->gallery->images->first()->thumb_url)))
+                        @if(isset($product->images->first()->thumb_url))
+                            @if(file_exists(url('img/uploads/thumbnail/'.$product->images->first()->thumb_url)))
                                 <img class="secondary-img"
-                                     src="{{ url('img/uploads/thumbnail/'.$product->gallery->images->first()->thumb_url) }} "
+                                     src="{{ url('img/uploads/thumbnail/'.$product->images->first()->thumb_url) }} "
                                      alt="" style="width: 261px;height: 300px;">
                             @else
                                 <img class="secondary-img"

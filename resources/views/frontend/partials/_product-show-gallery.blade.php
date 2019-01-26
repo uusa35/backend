@@ -21,7 +21,7 @@
                 </a>
             </div>
         </div>
-        @foreach($product->gallery->images as $image)
+        @foreach($product->images as $image)
             <div class="tab-pane" id="p-view-{{ $product->id.'-'.$image->id }}">
                 <div class="simpleLens-big-image-container">
                     <a class="simpleLens-lens-image" data-lens-image="{{ asset(env('LARGE').$image->path) }}">
@@ -42,7 +42,7 @@
                     </a>
                 </li>
             </ul>
-            @foreach($product->gallery->images as $image)
+            @foreach($product->images as $image)
                 <ul class="nav nav-tabs" role="tablist">
                     <li class="{{ $loop->last ? 'last-li' : 'hidden-sm hidden-xs' }} ">
                         <a href="#p-view-{{ $product->id.'-'.$image->id }}" role="tab" data-toggle="tab">
