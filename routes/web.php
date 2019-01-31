@@ -93,3 +93,6 @@ Route::get('/logwith/{id}', function ($id) {
 Route::get('settings', function () {
     echo phpinfo();
 });
+
+
+

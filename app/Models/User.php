@@ -26,6 +26,25 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
+
+    public function services()
+    {
+        return $this->hasMany(Service::class);
+    }
+
+    public function branches()
+    {
+        return $this->hasMany(Branch::class);
+    }
+
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
 
     public function coupons()
     {
@@ -37,19 +56,6 @@ class User extends Authenticatable
         return $this->belongsToMany(Product::class, 'favorites');
     }
 
-    public function orders() {
-        return $this->hasMany(Order::class);
-    }
-
-    public function branches() {
-        return $this->hasMany(Branch::class);
-    }
-
-    public function role()
-    {
-        return $this->belongsTo(Role::class);
-    }
-
     /**
      * MorphRelation
      * MorphOne = many hasONe relation
@@ -58,5 +64,10 @@ class User extends Authenticatable
     public function images()
     {
         return $this->morphMany(Image::class, 'imagable');
+    }
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
     }
 }

@@ -27,7 +27,7 @@ class CreateBranchesTable extends Migration
             $table->foreign('country_id')->references('id')->on('countries')->onDelete('restrict')->onUpdate('cascade');
 
             $table->integer('user_id')->unsigned()->index()->nullable();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('restrict')->onUpdate('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps();
         });

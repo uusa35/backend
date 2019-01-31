@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProductsTable extends Migration
+class CreateServicesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,20 +12,17 @@ class CreateProductsTable extends Migration
      */
     public function up()
     {
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create('services', function (Blueprint $table) {
             $table->increments('id');
             $table->string('sku')->nullable();
             $table->string('name_ar');
             $table->string('name_en');
-            $table->boolean('home_delivery_availability')->default(0);
-            $table->boolean('shipment_availability')->default(0);
             $table->boolean('on_sale')->default(0);
             $table->boolean('on_sale_on_homepage')->default(0);
             $table->boolean('on_homepage')->default(0);
+            $table->integer('duration')->default(1);
             $table->decimal('price',6,2)->unsigned();
-            $table->decimal('weight',4,2)->unsigned();
             $table->decimal('sale_price',6,2)->unsigned()->nullable();
-            $table->string('size_chart_image')->nullable();
             $table->text('description_en')->nullable();
             $table->text('description_ar')->nullable();
             $table->text('notes_ar')->nullable();
@@ -36,18 +33,15 @@ class CreateProductsTable extends Migration
             $table->dateTime('start_sale')->nullable();
             $table->dateTime('end_sale')->nullable();
             $table->boolean('active')->default(1);
-            $table->boolean('check_stock')->default(1);
             $table->boolean('is_hot_deal')->default(0);
             $table->boolean('has_attribute')->default(0);
 
             $table->integer('user_id')->unsigned()->index();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
 
-            $table->integer('brand_id')->unsigned()->index()->nullable();
-            $table->foreign('brand_id')->references('id')->on('brands');
-
             $table->timestamps();
             $table->softDeletes();
+            $table->timestamps();
         });
     }
 
@@ -58,6 +52,6 @@ class CreateProductsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('products');
+        Schema::drop('services');
     }
 }
