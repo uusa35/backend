@@ -5,7 +5,7 @@
 @section('body')
 
     <!-- Slider -->
-    @include('frontend.partials.slider')
+    @include('frontend.partials.slide')
     <!-- /PAGE -->
 
     @if($hotDeals->isNotEmpty())

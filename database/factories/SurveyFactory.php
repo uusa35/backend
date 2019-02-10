@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Slider;
+use App\Models\Slide;
 use App\Models\Survey;
 use Faker\Generator as Faker;
 

@@ -70,7 +70,7 @@
                     {{--<i class="fa fa-fw fa-sticky-note-o"></i> Create New Policy</a>--}}
                     {{--</li>--}}
                     <li>
-                        <a href="{{ route('backend.slider.create') }}">
+                        <a href="{{ route('backend.slide.create') }}">
                             <i class="fa fa-fw fa-plus"></i> Create New Slider</a>
                     </li>
                     <li>

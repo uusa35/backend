@@ -73,16 +73,16 @@
                                         </button>
                                         <ul class="dropdown-menu pull-right" role="menu">
                                             <li>
-                                                <a href="{{ route('backend.slider.edit',$element->id) }}">
+                                                <a href="{{ route('backend.slide.edit',$element->id) }}">
                                                     <i class="fa fa-fw fa-user"></i>edit</a>
                                             </li>
                                             <li>
-                                                <a href="{{ route('backend.activate',['model' => 'slider','id' => $element->id]) }}">
+                                                <a href="{{ route('backend.activate',['model' => 'slide','id' => $element->id]) }}">
                                                     <i class="fa fa-fw fa-check-circle"></i> toggle active</a>
                                             </li>
                                             <li>
                                                 <form method="post"
-                                                      action="{{ route('backend.slider.destroy',$element->id) }}">
+                                                      action="{{ route('backend.slide.destroy',$element->id) }}">
                                                     {{ csrf_field() }}
                                                     <input type="hidden" name="_method" value="delete"/>
                                                     <button type="submit" class="btn btn-outline btn-sm red">

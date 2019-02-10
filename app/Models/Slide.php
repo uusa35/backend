@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-class Slider extends PrimaryModel
+class Slide extends PrimaryModel
 {
     use ModelHelpers;
     protected $guarded = [''];

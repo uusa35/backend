@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSlidersTable extends Migration
+class CreateSlidesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,15 +12,16 @@ class CreateSlidersTable extends Migration
      */
     public function up()
     {
-        Schema::create('sliders', function (Blueprint $table) {
+        Schema::create('slides', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('image')->nullable();
-            $table->string('url')->nullable();
             $table->string('caption_en')->nullable();
             $table->string('caption_ar')->nullable();
             $table->boolean('active')->default(1);
             $table->integer('order')->nullable();
+            $table->string('image')->nullable();
             $table->string('path')->nullable();
+            $table->string('url')->nullable();
+            $table->morphs('slidable');
 
             $table->timestamps();
             $table->softDeletes();
@@ -34,6 +35,6 @@ class CreateSlidersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('sliders');
+        Schema::drop('slides');
     }
 }

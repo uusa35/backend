@@ -2,7 +2,7 @@
 @section('content')
     <div class="clearfix"></div>
     <div class="portlet-body form">
-        <form role="form" method="post" action="{{ route('backend.slider.store') }}" enctype="multipart/form-data">
+        <form role="form" method="post" action="{{ route('backend.slide.store') }}" enctype="multipart/form-data">
             @csrf
             <div class="col-md-4">
                 <div class="form-group form-md-line-input">
@@ -29,14 +29,14 @@
                 <div class="form-group form-md-line-input">
                     <input type="text" class="form-control" name="order" placeholder="...">
                     <label for="form_control_1">Slide Order*</label>
-                    <span class="help-block">slider Order is a number</span>
+                    <span class="help-block">slide Order is a number</span>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group form-md-line-input">
                     <input type="file" class="form-control" name="image" placeholder="...">
                     <label for="form_control_1">Slide Image*</label>
-                    <span class="label-warning">slider Image only JPG / PNG is accepted -best fit ['1905', '750']</span>
+                    <span class="label-warning">slide Image only JPG / PNG is accepted -best fit ['1905', '750']</span>
                 </div>
             </div>
             <div class="col-md-4">

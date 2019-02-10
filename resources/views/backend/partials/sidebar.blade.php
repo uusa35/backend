@@ -193,7 +193,7 @@
                         </a>
                     </li>
                     <li class="nav-item ">
-                        <a href="{{ route('backend.slider.index') }}" class="nav-link ">
+                        <a href="{{ route('backend.slide.index') }}" class="nav-link ">
                             <i class="fa fa-fw fa-file-image-o"></i>
                             <span class="title">Sliders</span>
                             <span class="arrow"></span>

@@ -17,7 +17,7 @@ use App\Models\Post;
 use App\Models\Role;
 use App\Models\ShipmentPackage;
 use App\Models\Size;
-use App\Models\Slider;
+use App\Models\Slide;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Cache as Cache;
 use Illuminate\View\View;
@@ -52,7 +52,7 @@ class ViewComposers
 
     public function getSliders(View $view)
     {
-        $sliders = Slider::active()->get();
+        $sliders = Slide::active()->get();
         return $view->with(compact('sliders'));
     }
 

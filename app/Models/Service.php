@@ -23,4 +23,14 @@ class Service extends PrimaryModel
     {
         return $this->belongsToMany(Tag::class);
     }
+
+    /**
+     * MorphRelation
+     * MorphOne = many hasONe relation
+     * @return \Illuminate\Database\Eloquent\Relations\MorphOne
+     */
+    public function images()
+    {
+        return $this->morphMany(Image::class, 'imagable');
+    }
 }

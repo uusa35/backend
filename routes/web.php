@@ -30,7 +30,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
     Route::resource('setting', 'SettingController');
     Route::resource('country', 'CountryController');
     Route::resource('tag', 'TagController');
-    Route::resource('slider', 'SliderController');
+    Route::resource('slide', 'SlideController');
     Route::resource('color', 'ColorController');
     Route::resource('size', 'SizeController');
     Route::resource('term', 'TermController');

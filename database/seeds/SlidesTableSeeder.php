@@ -1,9 +1,9 @@
 <?php
 
-use App\Models\Slider;
+use App\Models\Slide;
 use Illuminate\Database\Seeder;
 
-class SlidersTableSeeder extends Seeder
+class SlidesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,6 +12,6 @@ class SlidersTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Slider::class,app()->environment('production') ? 2 : 15)->create();
+        factory(Slide::class,app()->environment('production') ? 2 : 15)->create();
     }
 }

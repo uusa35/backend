@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Models\Slider;
+use App\Models\Slide;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class SliderController extends Controller
+class SlideController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class SliderController extends Controller
      */
     public function index()
     {
-        $elements = Slider::all();
+        $elements = Slide::all();
         return view('backend.modules.slider.index', compact('elements'));
     }
 
@@ -37,7 +37,7 @@ class SliderController extends Controller
      */
     public function store(Request $request)
     {
-        $element = Slider::create($request->request->all());
+        $element = Slide::create($request->request->all());
         if ($element) {
             if ($request->hasFile('image')) {
                 $this->saveMimes($element, $request, ['image'], ['1905', '750'], true);
@@ -71,7 +71,7 @@ class SliderController extends Controller
      */
     public function edit($id)
     {
-        $element = Slider::whereId($id)->first();
+        $element = Slide::whereId($id)->first();
         return view('backend.modules.slider.edit', compact('element'));
     }
 
@@ -84,7 +84,7 @@ class SliderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $element = Slider::whereId($id)->first();
+        $element = Slide::whereId($id)->first();
         $updated = $element->update($request->request->all());
         if ($updated) {
             if ($request->hasFile('image')) {
@@ -108,7 +108,7 @@ class SliderController extends Controller
      */
     public function destroy($id)
     {
-        $element = Slider::whereId($id)->first()->delete();
+        $element = Slide::whereId($id)->first()->delete();
         if ($element) {
             return redirect()->back()->with('success', trans('message.delete_success'));
         }

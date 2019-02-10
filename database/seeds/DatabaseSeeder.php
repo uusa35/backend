@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ColorsTableSeeder::class);
         $this->call(SizesTableSeeder::class);
         $this->call(FaqsTableSeeder::class);
-        $this->call(SlidersTableSeeder::class);
+        $this->call(SlidesTableSeeder::class);
         $this->call(TermsTableSeeder::class);
         $this->call(PagesTableSeeder::class);
         $this->call(NewslettersTableSeeder::class);
