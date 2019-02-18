@@ -22,6 +22,8 @@ class CountriesTableSeeder extends Seeder
                     'name_ar' => $country['name_ar'],
                     'name_en' => $country['name_en'],
                     'country_code' => $country['country_code'],
+                    'currency_symbol_ar' => $country['currency_symbol_ar'],
+                    'currency_symbol_en' => $country['currency_symbol_en'],
                 ]
             );
         }

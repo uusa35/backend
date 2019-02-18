@@ -31,7 +31,8 @@ class CreateProductsTable extends Migration
             $table->text('notes_ar')->nullable();
             $table->text('notes_en')->nullable();
             $table->string('image')->nullable();
-            $table->string('video_url')->nullable();
+            $table->string('video_url_one')->nullable();
+            $table->string('video_url_two')->nullable();
 
             $table->dateTime('start_sale')->nullable();
             $table->dateTime('end_sale')->nullable();

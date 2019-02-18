@@ -43,13 +43,13 @@
                                     <td class="quantity">{{ $item->options->colorName }}</td>
                                     <td class="quantity">{{ $item->options->sizeName }}</td>
                                     <td class="quantity"><a
-                                                href="{{ route('frontend.product.show',$item->options->product->id) }}">{{ $item->name }}</a>
+                                            href="{{ route('frontend.product.show',$item->options->product->id) }}">{{ $item->name }}</a>
                                     </td>
                                     <td class="quantity">{{ $item->price }}</td>
                                     <td class="quantity">{{ $item->qty }}</td>
                                     <td class="total">{{ number_format($item->price * $item->qty,'2','.',',') }} {{ trans('general.kwd') }}
                                         <a href="{{ route('frontend.cart.remove',$item->id) }}"><i
-                                                    class="fa fa-close"></i></a>
+                                                class="fa fa-close"></i></a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -66,7 +66,8 @@
                                            placeholder="{{ trans('general.coupon_code') }}"/>
                                 </div>
                                 <div class="form-group">
-                                    <button class="btn btn-theme btn-theme-dark btn-view-more-block">{{ trans('general.apply_coupon') }}</button>
+                                    <button
+                                        class="btn btn-theme btn-theme-dark btn-view-more-block">{{ trans('general.apply_coupon') }}</button>
                                 </div>
                             </form>
                         </div>
@@ -88,11 +89,11 @@
                                             <label class="cart-padding"
                                                    for="package_id">{{ trans('general.select_shipment_package') }}</label>
                                             <select
-                                                    name="package_id" id="shipment_package"
-                                                    class="col-sm-6 size-menu input-price" data-live-search="true"
-                                                    data-width="100%"
-                                                    data-toggle="tooltip"
-                                                    title="{{ trans('general.shippment_package') }}">
+                                                name="package_id" id="shipment_package"
+                                                class="col-sm-6 size-menu input-price" data-live-search="true"
+                                                data-width="100%"
+                                                data-toggle="tooltip"
+                                                title="{{ trans('general.shippment_package') }}">
                                                 <option value="">{{ trans('general.shipment_package') }}</option>
                                                 @foreach($packages as $package)
                                                     <option value="{{ $package->id }}"
@@ -110,22 +111,25 @@
                                                    value="1">
                                         </div>
                                     </tr>
-                                    <tr>
-                                        <div class="form-group selectpicker-wrapper">
-                                            <div class="category hidden branches">
-                                                <select class="orderby shipment-dropdown col-sm-6 size-menu input-price"
+                                    @if($branches->isNotEmpty())
+                                        <tr>
+                                            <div class="form-group selectpicker-wrapper">
+                                                <div class="category hidden branches">
+                                                    <select
+                                                        class="orderby shipment-dropdown col-sm-6 size-menu input-price"
                                                         name="branch" id="branch"
                                                         data-live-search="true"
                                                         data-width="100%"
                                                         data-toggle="tooltip" title="{{ trans('general.branch') }}">
-                                                    @foreach($branches as $branch)
-                                                        <option value="{{ $branch->id }}"
-                                                                data-address="{{ $branch->address }}">{{ $branch->name }}</option>
-                                                    @endforeach
-                                                </select>
+                                                        @foreach($branches as $branch)
+                                                            <option value="{{ $branch->id }}"
+                                                                    data-address="{{ $branch->address }}">{{ $branch->name }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </tr>
+                                        </tr>
+                                    @endif
                                     <tr>
                                         <div id="branch_address" class="hidden">
                                             <h4>{{ trans('general.branch_address') }}</h4>
@@ -153,17 +157,18 @@
                                 </table>
                                 {{--cart--}}
                                 {{--@auth--}}
-                                    <div>
-                                        <input type="hidden" class="cart_count" name="cart_count" value="{{ $cart->sum('qty') }}">
-                                        <input type="hidden" name="charge" class="charge" value="">
-                                        <input type="hidden" name="grandTotal" class="grandTotal"
-                                               value="{{ getCartNetTotal() }}">
-                                        <input type="hidden" name="grossTotal" class="grossTotal"
-                                               value="">
-                                    </div>
-                                    <button type="submit" id="forward" disabled="disabled"
-                                            class="btn btn-theme btn-theme-dark btn-view-more-block"
-                                            href="#">{{ trans('cart.proceed_to_checkout') }}</button>
+                                <div>
+                                    <input type="hidden" class="cart_count" name="cart_count"
+                                           value="{{ $cart->sum('qty') }}">
+                                    <input type="hidden" name="charge" class="charge" value="">
+                                    <input type="hidden" name="grandTotal" class="grandTotal"
+                                           value="{{ getCartNetTotal() }}">
+                                    <input type="hidden" name="grossTotal" class="grossTotal"
+                                           value="">
+                                </div>
+                                <button type="submit" id="forward" disabled="disabled"
+                                        class="btn btn-theme btn-theme-dark btn-view-more-block"
+                                        href="#">{{ trans('cart.proceed_to_checkout') }}</button>
                                 {{--@endauth--}}
                             </form>
                         </div>

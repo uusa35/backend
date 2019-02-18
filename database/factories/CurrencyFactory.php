@@ -8,11 +8,16 @@ $factory->define(Currency::class, function (Faker $faker) {
     return [
         'name_ar' => $faker->name,
         'name_en' => $faker->name,
-        'currency_symbol_ar' => $faker->countryISOAlpha3,
-        'currency_symbol_en' => $faker->countryISOAlpha3,
+        'country_id' => Country::doesntHave('currency')->first()->id,
+        'currency_symbol_ar' => function ($array) {
+            return Country::whereId($array['country_id'])->first()->currency_symbol_ar;
+        },
+        'currency_symbol_en' => function ($array) {
+            return Country::whereId($array['country_id'])->first()->currency_symbol_en;
+        },
         'active' => $faker->boolean(true),
         'exchange_rate' => $faker->name,
+        'has_currency' => $faker->boolean(),
         'active' => $faker->boolean(true),
-        'country_id' => Country::doesntHave('currency')->first()->id,
     ];
 });

@@ -18,13 +18,16 @@ class CreateBranchesTable extends Migration
             $table->string('name_en')->nullable();
             $table->string('address_ar')->nullable();
             $table->string('address_en')->nullable();
+            $table->string('description_ar')->nullable();
+            $table->string('description_ar')->nullable();
+            $table->string('mobile')->nullable();
             $table->string('phone')->nullable();
             $table->boolean('active')->default(1);
             $table->string('longitude')->nullable();
             $table->string('latitude')->nullable();
 
             $table->integer('country_id')->unsigned()->index()->nullable();
-            $table->foreign('country_id')->references('id')->on('countries')->onDelete('restrict')->onUpdate('cascade');
+            $table->foreign('country_id')->references('id')->on('countries');
 
             $table->integer('user_id')->unsigned()->index()->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');

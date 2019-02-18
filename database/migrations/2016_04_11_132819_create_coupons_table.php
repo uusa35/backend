@@ -21,8 +21,8 @@ class CreateCouponsTable extends Migration
             $table->string('code');
             // price after sale
             $table->integer('minimum_charge')->nullable();
-
-            $table->integer('user_id')->unsigned()->index();
+            $table->boolean('is_permanent')->default(0);
+            $table->integer('user_id')->unsigned()->index()->nullable();
             $table->foreign('user_id')->references('id')->on('users');
 
             $table->timestamp('due_date')->nullable();

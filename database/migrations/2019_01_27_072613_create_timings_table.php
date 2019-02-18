@@ -15,6 +15,7 @@ class CreateTimingsTable extends Migration
         Schema::create('timings', function (Blueprint $table) {
             $table->increments('id');
             $table->string('day');
+            //https://jonthornton.github.io/jquery-timepicker/
             $table->time('start');
             $table->time('end');
             $table->boolean('is_off')->default(0);

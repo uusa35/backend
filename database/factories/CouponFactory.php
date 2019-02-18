@@ -6,13 +6,14 @@ use Faker\Generator as Faker;
 
 $factory->define(Coupon::class, function (Faker $faker) {
     return [
-        'value' => $faker->numberBetween(1,10),
+        'value' => $faker->numberBetween(1, 10),
         'is_percentage' => $faker->boolean,
-        'user_id' => User::all()->random()->id,
-        'active' => $faker->boolean,
+        'is_permanent' => $faker->boolean,
         'consumed' => $faker->boolean,
         'code' => $faker->numberBetween(999999, 99999999999),
         'minimum_charge' => $faker->randomDigit,
-        'due_date' => $faker->dateTimeBetween('now', '1 year')
+        'due_date' => $faker->dateTimeBetween('now', '1 year'),
+        'active' => $faker->boolean(true),
+        'user_id' => User::all()->random()->id
     ];
 });

@@ -139,7 +139,9 @@ class TapPaymentController extends Controller
         $done = $order->update(['status' => 'success']);
         $coupon = session('coupon');
         if ($coupon && $done) {
-            $coupon->update(['consumed' => true]);
+            if (!$coupon->is_permanent) {
+                $coupon->update(['consumed' => true]);
+            }
         }
         $contactus = Setting::first();
         Mail::to($order->email)->cc($contactus->email)->send(new OrderComplete($order, $order->user));

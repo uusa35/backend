@@ -70,4 +70,10 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Tag::class);
     }
+
+    public function ratings()
+    {
+        return $this->belongsTo(Rating::class);
+    }
+
 }
