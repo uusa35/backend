@@ -14,9 +14,9 @@ class CreateServiceTagPivotTable extends Migration
     {
         Schema::create('service_tag', function (Blueprint $table) {
             $table->integer('service_id')->unsigned()->index();
-            $table->foreign('service_id')->references('id')->on('service')->onDelete('cascade');
+            $table->foreign('service_id')->references('id')->on('services')->onDelete('cascade');
             $table->integer('tag_id')->unsigned()->index();
-            $table->foreign('tag_id')->references('id')->on('tag')->onDelete('cascade');
+            $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
             $table->primary(['service_id', 'tag_id']);
         });
     }

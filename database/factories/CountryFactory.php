@@ -10,6 +10,7 @@ $factory->define(Country::class, function (Faker $faker) {
         'country_code' => $faker->countryISOAlpha3,
         'flag' => $faker->numberBetween(1, 10) . '.jpeg',
         'order' => $faker->randomDigit,
-        'calling_code' => '00965'
+        'calling_code' => '00965',
+        'has_currency' => $faker->boolean
     ];
 });

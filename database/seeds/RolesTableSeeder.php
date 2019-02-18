@@ -15,7 +15,7 @@ class RolesTableSeeder extends Seeder
     {
         $roles = ['super', 'admin', 'designer', 'company'];
         $designerPrivileges = ['collection', 'slider', 'gallery', 'order', 'coupon', 'size', 'color'];
-        $companyPrivileges = ['product', 'slider', 'gallery', 'order', 'coupon', 'size', 'color'];
+        $companyPrivileges = ['product', 'slider', 'gallery', 'order', 'coupon', 'size', 'color','service','timing'];
         $privileges = Privilege::all();
         foreach ($roles as $k => $v) {
             $role = factory(Role::class)->create(['name' => $v]);

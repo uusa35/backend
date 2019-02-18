@@ -36,14 +36,20 @@ class Order extends PrimaryModel
         return $this->belongsToMany(Product::class, 'order_metas', 'order_id', 'product_id');
     }
 
+    public function services()
+    {
+        return $this->belongsToMany(Product::class, 'order_metas', 'order_id', 'service_id');
+    }
+
     public function scopeOfStatus($query, $type)
     {
         return $query->where('status', $type);
 
     }
 
-    public function getTotalPriceAttribute()
+    public function getTotalElementsPriceAttribute()
     {
+        // this price is the actual price of the product when order is created. (product/service price or sale accordingly)
         return $this->order_metas->sum('price');
     }
 

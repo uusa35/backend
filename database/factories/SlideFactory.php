@@ -13,7 +13,7 @@ $factory->define(Slide::class, function (Faker $faker) use ($fakerAr) {
         'caption_ar' => $fakerAr->realText(100),
         'active' => $faker->boolean,
         'order' => $faker->numberBetween(1, 10),
-        'slidable_id' => User::all()->random()->id,
-        'slidable_type' => 'App\Models\User'
+        'slidable_type' => $faker->randomElement(['App\Models\User', 'App\Models\Category', 'App\Models\Product', 'App\Models\Service']),
+        'slidable_id' => $faker->numberBetween(1,99)
     ];
 });

@@ -66,6 +66,12 @@ class User extends Authenticatable
         return $this->morphMany(Image::class, 'imagable');
     }
 
+    public function sliders()
+    {
+        return $this->morphMany(Slider::class, 'slidable');
+    }
+
+
     public function tags()
     {
         return $this->belongsToMany(Tag::class);

@@ -12,6 +12,6 @@ class NewslettersTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Newsletter::class, app()->environment('production') ? 2 : 20)->create();
+        factory(Newsletter::class, app()->environment('production') ? 2 : 10)->create();
     }
 }

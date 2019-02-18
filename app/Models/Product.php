@@ -29,6 +29,11 @@ class Product extends PrimaryModel
         return $this->morphMany(Image::class, 'imagable');
     }
 
+    public function sliders()
+    {
+        return $this->morphMany(Slider::class, 'slidable');
+    }
+
 
     /**
      * MorphRelation

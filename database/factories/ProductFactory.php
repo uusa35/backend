@@ -10,7 +10,7 @@ $factory->define(Product::class, function (Faker $faker) use ($fakerAr) {
         'sku' => $faker->postcode,
         'active' => $faker->boolean,
         'name_ar' => $fakerAr->realText(20),
-        'name_en' => $faker->name,
+        'name_en' => $faker->sentence,
         'weight' => $faker->randomDigit,
         'home_delivery_availability' => $faker->boolean,
         'shipment_availability' => $faker->boolean,

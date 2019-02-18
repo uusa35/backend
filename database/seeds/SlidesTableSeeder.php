@@ -12,6 +12,6 @@ class SlidesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Slide::class,app()->environment('production') ? 2 : 15)->create();
+        factory(Slide::class,app()->environment('production') ? 2 : 90)->create();
     }
 }

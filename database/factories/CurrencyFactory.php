@@ -17,7 +17,6 @@ $factory->define(Currency::class, function (Faker $faker) {
         },
         'active' => $faker->boolean(true),
         'exchange_rate' => $faker->name,
-        'has_currency' => $faker->boolean(),
         'active' => $faker->boolean(true),
     ];
 });

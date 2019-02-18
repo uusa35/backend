@@ -15,11 +15,11 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
-            $table->enum('status', ['pending', 'success', 'shipped', 'completed', 'failed','delivered']);
+            $table->string('status')->nullable();
             $table->decimal('shipping_cost',6,2)->unsigned();
             $table->decimal('price',6,2)->unsigned();
             $table->decimal('discount',6,2)->unsigned()->nullable(); //
-            $table->decimal('net_price',6,2)->unsigned(); // used if coupon code exists
+            $table->decimal('total_price',6,2)->unsigned(); // used if coupon code exists
             $table->string('email')->nullable();
             $table->string('address')->nullable();
             $table->string('area')->nullable();
@@ -29,7 +29,9 @@ class CreateOrdersTable extends Migration
             $table->string('reference_id')->nullable()->deafult(0);
             $table->string('payment_method')->nullable();
 
-            $table->dateTime('timing_booked')->nullable();
+            $table->string('day')->nullable();
+            $table->time('time')->nullable();
+            $table->dateTime('booked_at')->nullable();
 
             $table->integer('user_id')->unsigned()->index();
             $table->foreign('user_id')->references('id')->on('users');

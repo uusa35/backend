@@ -18,7 +18,7 @@ class OrdersTableSeeder extends Seeder
         - order_meta
         - coupon
         */
-        factory(Order::class, app()->environment('production') ? 2 : 100)->create()->each(function ($o) {
+        factory(Order::class, app()->environment('production') ? 2 : 80)->create()->each(function ($o) {
             $o->order_metas()->saveMany(factory(OrderMeta::class, 3)->create());
         });
     }

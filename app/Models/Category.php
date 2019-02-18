@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Category extends PrimaryModel
 {
-    public $localeStrings = ['name', 'caption','description'];
     protected $guarded = [''];
-    use SoftDeletes;
+    public $localeStrings = ['name', 'caption','description'];
+    use SoftDeletes, ModelHelpers;
 
     /**
      * * ParentCategory
@@ -41,6 +41,22 @@ class Category extends PrimaryModel
     public function products()
     {
         return $this->belongsToMany(Product::class, 'category_product');
+    }
+
+    /**
+     * MorphRelation
+     * MorphOne = many hasONe relation
+     * @return \Illuminate\Database\Eloquent\Relations\MorphOne
+     */
+    public function images()
+    {
+        return $this->morphMany(Image::class, 'imagable');
+    }
+
+
+    public function sliders()
+    {
+        return $this->morphMany(Slider::class, 'slidable');
     }
 
 

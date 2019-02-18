@@ -12,7 +12,13 @@ class PrivilegesTableSeeder extends Seeder
      */
     public function run()
     {
-        $privileges = ['category', 'product', 'slider', 'role', 'user', 'setting', 'currency', 'country', 'gallery', 'page', 'tag', 'brand', 'privilege', 'order', 'coupon', 'size', 'color','collection'];
+        $privileges = [
+            'category', 'product', 'slider', 'service', 'timings',
+            'role', 'user', 'setting', 'currency',
+            'country', 'gallery', 'page', 'tag', 'brand',
+            'privilege', 'order', 'coupon', 'size', 'color',
+            'collection'
+        ];
         foreach ($privileges as $k => $v) {
             factory(Privilege::class)->create(['name' => $v]);
         }

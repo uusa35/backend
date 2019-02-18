@@ -1,25 +1,20 @@
 <?php
 
-use App\Models\Category;
 use App\Models\Image;
-use App\Models\User;
 use Faker\Generator as Faker;
 
-$factory->define(Image::class, function (Faker $faker) {
+$fakerAr = \Faker\Factory::create('ar_JO');
+$factory->define(Image::class, function (Faker $faker) use($fakerAr) {
     return [
-        'imagable_id' => Category::all()->random()->id,
-        'imagable_type' => 'App\Backend\Category',
+        'imagable_id' => $faker->numberBetween(1,60),
+        'imagable_type' => $faker->randomElement(['App\Models\User', 'App\Models\Category', 'App\Models\Product', 'App\Models\Service']),
         'image' => $faker->numberBetween(1, 10) . '.jpeg',
         'caption_en' => $faker->sentence,
-        'caption_ar' => $faker->sentence,
-        'tag' => function($array) {
-        return Category::whereId($array['imagable_id'])->first()->name;
-        },
-        'name_ar' => $faker->name,
-        'name_en' => $faker->name,
+        'caption_ar' => $fakerAr->realText(),
+        'keywords' => $faker->sentence,
+        'name_ar' => $faker->sentence,
+        'name_en' => $faker->realText(20),
         'notes' => $faker->sentence,
         'order' => $faker->numberBetween(1, 10),
-        'user_id' => User::all()->random()->id,
-        'category_id' => Category::all()->random()->id,
     ];
 });

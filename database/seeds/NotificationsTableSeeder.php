@@ -12,6 +12,6 @@ class NotificationsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Notification::class,app()->environment('production') ? 10 : 200 )->create();
+        factory(Notification::class,app()->environment('production') ? 10 : 50 )->create();
     }
 }

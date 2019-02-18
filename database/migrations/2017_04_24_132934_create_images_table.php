@@ -15,7 +15,7 @@ class CreateImagesTable extends Migration
         Schema::create('images', function (Blueprint $table) {
             $table->increments('id');
             $table->string('image')->nullable();
-            $table->string('tag')->nullable();
+            $table->string('keywords')->nullable();
             $table->string('name_ar')->nullable();
             $table->string('name_en')->nullable();
             $table->string('caption_ar')->nullable();
@@ -25,11 +25,6 @@ class CreateImagesTable extends Migration
             $table->morphs('imagable');
             $table->boolean('active')->default(1);
 
-            $table->integer('user_id')->unsigned()->index();
-            $table->foreign('user_id')->references('id')->on('users');
-
-            $table->integer('category_id')->unsigned()->index()->nullable();
-            $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
             $table->softDeletes();
         });
