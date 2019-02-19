@@ -1,13 +1,13 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css",
-    "/css/backend.css": "/css/backend.css",
-    "/js/backend.js": "/js/backend.js",
-    "/js/tinymce.min.js": "/js/tinymce.min.js",
-    "/js/backend-custom.js": "/js/backend-custom.js",
-    "/css/frontend.css": "/css/frontend.css",
-    "/css/frontend-rtl.css": "/css/frontend-rtl.css",
-    "/js/frontend.js": "/js/frontend.js",
-    "/js/frontend-rtl.js": "/js/frontend-rtl.js",
-    "/js/jquery.prettyPhoto.min.js": "/js/jquery.prettyPhoto.min.js"
+    "/js/app.js": "/js/app.js?id=27f1a1c858e5dd3e14df",
+    "/css/app.css": "/css/app.css?id=38f8827bac29200bae67",
+    "/css/frontend-custom-ar.css": "/css/frontend-custom-ar.css?id=61baee06671d02a32490",
+    "/css/frontend-custom.css": "/css/frontend-custom.css?id=32f1eb0377c9a9cabc13",
+    "/css/porto/demo2.css": "/css/porto/demo2.css?id=5d8d9db654c67bd5f77f",
+    "/js/porto/demo2.js": "/js/porto/demo2.js?id=03105b08b395169f0f0b",
+    "/css/backend.css": "/css/backend.css?id=80dc056a7b9648a322b3",
+    "/css/backend-rtl.css": "/css/backend-rtl.css?id=9443f88e20308d70c408",
+    "/js/backend.js": "/js/backend.js?id=5c67471eda6b88c3f987",
+    "/js/tinymce.min.js": "/js/tinymce.min.js?id=a2fba61cec3ab36670f8",
+    "/js/backend-custom.js": "/js/backend-custom.js?id=e7164cb5d05c0e0f2042"
 }

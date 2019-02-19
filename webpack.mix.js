@@ -1,4 +1,4 @@
-const mix = require('laravel-mix').mix;
+const mix = require('laravel-mix');
 
 /*
  |--------------------------------------------------------------------------
@@ -14,6 +14,18 @@ mix.js('resources/assets/js/app.js', 'public/js').version()
     .sass('resources/assets/sass/app.scss', 'public/css').version();
 mix.styles(['resources/assets/css/frontend-custom-ar.css'], 'public/css/frontend-custom-ar.css').version();
 mix.styles(['resources/assets/css/frontend-custom.css'], 'public/css/frontend-custom.css').version();
+
+// frontend
+mix.styles([
+    '../porto_ecommerce_html/demo-2/assets/css/style.min.css'
+],'public/css/porto/demo2.css')
+// mix.sass('../porto_ecommerce_html/demo-2/assets/sass/style.scss','public/css/porto/demo2-sass.css')
+mix.scripts([
+    '../porto_ecommerce_html/demo-2/assets/js/jquery.min.js',
+    '../porto_ecommerce_html/demo-2/assets/js/bootstrap.bundle.min.js',
+    '../porto_ecommerce_html/demo-2/assets/js/plugins.min.js',
+    '../porto_ecommerce_html/demo-2/assets/js/main.min.js',
+],'public/js/porto/demo2.js');
 // backend
 mix.styles([
     './node_modules/font-awesome/css/font-awesome.min.css',
@@ -138,9 +150,12 @@ mix.scripts([
     ],
     'public/js/backend.js').version();
 
-// mix.scripts('./node_modules/tinymce/tinymce.min.js', 'public/js/tinymce.min.js').version();
+mix.scripts('./node_modules/tinymce/tinymce.min.js', 'public/js/tinymce.min.js').version();
 mix.scripts('resources/assets/js/backend-custom.js', 'public/js/backend-custom.js');
-mix.copyDirectory('../metronic_v4.5.6/theme/assets/global/plugins/simple-line-icons/fonts', 'public/css/fonts');
+mix.copyDirectory('./../porto_ecommerce_html/demo-2/assets/images', 'public/images');
+mix.copyDirectory('./../porto_ecommerce_html/demo-2/assets/fonts', 'public/fonts');
+mix.copyDirectory('./../porto_ecommerce_html/demo-2/assets/js/plugins', 'public/js/plugins');
+mix.copyDirectory('./../metronic_v4.5.6/theme/assets/global/plugins/simple-line-icons/fonts', 'public/css/fonts');
 mix.copyDirectory('./../metronic_v4.5.6/theme/assets/global/plugins/datatables/images', 'public/plugins/datatables/images');
 mix.copyDirectory('./../metronic_v4.5.6/theme/assets/global/plugins/cubeportfolio/img', 'public/img');
 mix.copyDirectory('./../metronic_v4.5.6/theme/assets/layouts/layout2/img', 'public/img');

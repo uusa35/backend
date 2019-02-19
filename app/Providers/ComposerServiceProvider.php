@@ -77,10 +77,9 @@ class ComposerServiceProvider extends ServiceProvider
         ], 'App\Services\ViewComposers@getCategories');
 
         view()->composer([
-            'frontend.layouts.app',
+            'frontend.porto.tow.partials.head',
+            'frontend.porto.tow.home',
             'backend.layouts.app',
-            'frontend.modules.product.show',
-            'frontend.modules.page.show',
             'backend.modules.order.show',
         ], 'App\Services\ViewComposers@getSettings');
 

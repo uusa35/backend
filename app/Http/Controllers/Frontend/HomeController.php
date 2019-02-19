@@ -8,18 +8,19 @@ use App\Models\Category;
 use App\Models\Currency;
 use App\Models\Image;
 use App\Models\Product;
+use App\Models\Service;
 
 class HomeController extends Controller
 {
     public $product;
-    const take = 8;
+    public $service;
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct(Product $product)
+    public function __construct(Product $product, Service $service)
     {
         $this->product = $product;
     }
@@ -31,20 +32,21 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $newArrivals = $this->product->active()->onHomePage()->hasProductAttribute()->hasImages()->orderBy('created_at', 'desc')->take(self::take)->get();
-        $onSaleProducts = $this->product->active()->onSaleOnHomePage()->hasProductAttribute()->hasImages()->orderby('end_sale','desc')->take(self::take)->get();
+        $newArrivals = $this->product->active()->onHomePage()->hasProductAttribute()->hasImages()->orderBy('created_at', 'desc')->take(self::TAKE)->get();
+        $onSaleProducts = $this->product->active()->onSaleOnHomePage()->hasProductAttribute()->hasImages()->orderby('end_sale','desc')->take(self::TAKE)->get();
         $bestSalesProducts = $this->product->whereIn('id', $this->product->active()->hasProductAttribute()->hasImages()->bestSalesProducts())->get();
-        $hotDeals = $this->product->active()->onSale()->hotDeals()->hasProductAttribute()->hasImages()->orderby('end_sale','desc')->take(10)->get();
-        $categoriesHome = Category::where(['is_home' => true])->take(4)->orderBy('order')->get();
-        $categoriesFeatured = Category::where(['is_featured' => true])->take(4)->orderBy('order')->get();
-        return view('frontend.home', compact(
-            'newArrivals',
-            'onSaleProducts',
-            'bestSalesProducts',
-            'hotDeals',
-            'categoriesHome',
-            'categoriesFeatured'
-        ));
+        $hotDeals = $this->product->active()->onSale()->hotDeals()->hasProductAttribute()->hasImages()->orderby('end_sale','desc')->take(self::TAKE)->get();
+        $categoriesHome = Category::where(['is_home' => true])->take(self::TAKE)->orderBy('order')->get();
+        $categoriesFeatured = Category::where(['is_featured' => true])->take(self::TAKE)->orderBy('order')->get();
+//        return view('frontend.home', compact(
+//            'newArrivals',
+//            'onSaleProducts',
+//            'bestSalesProducts',
+//            'hotDeals',
+//            'categoriesHome',
+//            'categoriesFeatured'
+//        ));
+        return view('frontend.porto.tow.home');
     }
 
     public function changeCurrency()

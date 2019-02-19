@@ -6,20 +6,37 @@ $(document).ready(function() {
     $('#dataTable').DataTable({
         "order": [[0, "desc"]],
         "bPaginate": true,
+        "scrollY":        "500px",
+        "scrollCollapse": false,
+        "paging":         true,
         "bLengthChange": true,
         "bFilter": true,
         "bInfo": true,
         "bAutoWidth": true,
-        "pageLength": 20
+        "pageLength": 50
     });
-    $('#secondDataTable').DataTable({
+    $('table[id^="differentDataTable-"]').DataTable({
         "order": [[0, "desc"]],
+        "bPaginate": true,
+        "scrollY":        "250px",
+        "scrollCollapse": false,
+        "paging":         true,
+        "bLengthChange": true,
+        "bFilter": true,
+        "bInfo": true,
+        "bAutoWidth": true,
+        "pageLength": 10
+    });
+    $('table[id^="moreDataTable-"]').DataTable({
+        "order": [[0, "desc"]],
+        "scrollY":        "350px",
+        "scrollCollapse": true,
         "bPaginate": true,
         "bLengthChange": true,
         "bFilter": true,
         "bInfo": true,
         "bAutoWidth": true,
-        "pageLength": 20
+        "pageLength": 5
     });
     $(document).on('show.bs.modal', function(event) {
         var element = $(event.relatedTarget) // Button that triggered the modal
@@ -27,12 +44,14 @@ $(document).ready(function() {
         $('.modal-body').html(element.data('content'));
         $('.modal-title').html(element.data('title'));
         formId = element.data('form_id');
-        $('.modal-save').on('click', function() {
+        $('.modal-save').on('click', function () {
             $('#' + formId).submit();
         });
     });
-    $('#my_multi_select3').multiSelect();
+    $("#my_multi_select3").multiSelect();
+    $("#my_multi_select4").multiSelect();
 });
+
 tinymce.init({
     selector: '.tinymce',
     height: 300,
@@ -43,35 +62,29 @@ tinymce.init({
         '//www.tinymce.com/css/codepen.min.css'
     ],
     style_formats: [
-        {
-            title: 'Headers', items: [
-                {title: 'h1', block: 'h1'},
-                {title: 'h2', block: 'h2'},
-                {title: 'h3', block: 'h3'},
-                {title: 'h4', block: 'h4'},
-                {title: 'h5', block: 'h5'},
-                {title: 'h6', block: 'h6'}
-            ]
-        },
+        { title: 'Headers', items: [
+                { title: 'h1', block: 'h1' },
+                { title: 'h2', block: 'h2' },
+                { title: 'h3', block: 'h3' },
+                { title: 'h4', block: 'h4' },
+                { title: 'h5', block: 'h5' },
+                { title: 'h6', block: 'h6' }
+            ] },
 
-        {
-            title: 'Blocks', items: [
-                {title: 'p', block: 'p'},
-                {title: 'div', block: 'div'},
-                {title: 'pre', block: 'pre'}
-            ]
-        },
+        { title: 'Blocks', items: [
+                { title: 'p', block: 'p' },
+                { title: 'div', block: 'div' },
+                { title: 'pre', block: 'pre' }
+            ] },
 
-        {
-            title: 'Containers', items: [
-                {title: 'section', block: 'section', wrapper: true, merge_siblings: false},
-                {title: 'article', block: 'article', wrapper: true, merge_siblings: false},
-                {title: 'blockquote', block: 'blockquote', wrapper: true},
-                {title: 'hgroup', block: 'hgroup', wrapper: true},
-                {title: 'aside', block: 'aside', wrapper: true},
-                {title: 'figure', block: 'figure', wrapper: true}
-            ]
-        }
+        { title: 'Containers', items: [
+                { title: 'section', block: 'section', wrapper: true, merge_siblings: false },
+                { title: 'article', block: 'article', wrapper: true, merge_siblings: false },
+                { title: 'blockquote', block: 'blockquote', wrapper: true },
+                { title: 'hgroup', block: 'hgroup', wrapper: true },
+                { title: 'aside', block: 'aside', wrapper: true },
+                { title: 'figure', block: 'figure', wrapper: true }
+            ] }
     ],
     visualblocks_default_state: true,
     end_container_on_empty_block: true
