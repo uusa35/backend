@@ -12,7 +12,7 @@ class CreateSettingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('settings', function(Blueprint $table) {
+        Schema::create('settings', function (Blueprint $table) {
             $table->increments('id');
             $table->string('company_ar')->nullable();
             $table->string('company_en')->nullable();
@@ -34,6 +34,16 @@ class CreateSettingsTable extends Migration
             $table->string('size_chart')->nullable();
             $table->string('longitude')->nullable();
             $table->string('latitude')->nullable();
+            $table->string('main_theme_color')->nullable();
+            $table->string('title_theme_color')->nullable();
+            $table->string('text_theme_color')->nullable();
+            $table->string('header_bg')->nullable();
+            $table->string('header_color_font')->nullable();
+            $table->string('header_color_bg')->nullable();
+            $table->string('footer_bg')->nullable();
+            $table->string('footer_color_font')->nullable();
+            $table->string('footer_color_bg')->nullable();
+
 //            $table->boolean('shipment_service')->default(0);
 //            $table->boolean('delivery_service')->default(0);
 //            $table->boolean('delivery_service_cost')->default(0);
