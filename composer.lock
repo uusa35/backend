@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "53d5ba7d3215d7ba38ac923dcdbcc907",
+    "content-hash": "58b3cab6a6dc95019914834e6487d64e",
     "packages": [
         {
             "name": "barryvdh/laravel-translation-manager",
@@ -59,6 +59,57 @@
                 "translator"
             ],
             "time": "2018-11-15T08:56:31+00:00"
+        },
+        {
+            "name": "brotzka/laravel-dotenv-editor",
+            "version": "v2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Brotzka/laravel-dotenv-editor.git",
+                "reference": "516679ec50e8c3e395ad521f36b1770ab210ee96"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Brotzka/laravel-dotenv-editor/zipball/516679ec50e8c3e395ad521f36b1770ab210ee96",
+                "reference": "516679ec50e8c3e395ad521f36b1770ab210ee96",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Brotzka\\DotenvEditor\\DotenvEditorServiceProvider"
+                    ],
+                    "aliases": {
+                        "DotenvEditor": "Brotzka\\DotenvEditor\\DotenvEditorFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Brotzka\\DotenvEditor\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabian Hagen",
+                    "email": "fabianhagen87@gmail.com"
+                }
+            ],
+            "description": "A package for editing the .env file in your Laravel root.",
+            "keywords": [
+                "dotenv",
+                "dotenv-editor",
+                "laravel"
+            ],
+            "time": "2018-12-10T20:58:11+00:00"
         },
         {
             "name": "davejamesmiller/laravel-breadcrumbs",

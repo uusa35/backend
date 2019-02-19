@@ -11,9 +11,12 @@
     },
     "devDependencies": {
         "axios": "^0.18.0",
+        "bootstrap": "^4.0.0",
         "cross-env": "^5.1",
+        "jquery": "^3.2",
         "laravel-mix": "^4.0.7",
-        "lodash": "^4.17.5",
+        "lodash": "^4.17.11",
+        "popper.js": "^1.12",
         "resolve-url-loader": "^2.3.1",
         "sass": "^1.15.2",
         "sass-loader": "^7.1.0"
@@ -23,6 +26,6 @@
         "datatables": "^1.10.13",
         "font-awesome": "^4.7.0",
         "jquery-minicolors": "^2.1.10",
-        "tinymce": "^4.7.12"
+        "tinymce": "^5.0.0"
     }
 }
