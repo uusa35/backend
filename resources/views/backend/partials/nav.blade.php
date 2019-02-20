@@ -2,9 +2,9 @@
     <!-- BEGIN HEADER INNER -->
     <div class="page-header-inner ">
         <!-- BEGIN LOGO -->
-        <div class="page-logo">
-            <a href="{{ route('backend.index') }}">
-                <img src="{{ asset('storage/uploads/images/medium/'.$settings->logo) }}" alt="logo"
+        <div class="page-logo" style="display: flex; justify-content: center; align-items: center;">
+            <a href="{{ route('backend.home') }}">
+                <img src="{{ asset(env('THUMBNAIL').$settings->logo) }}" alt="logo"
                      class="img-logo logo-default"/> </a>
             <div class="menu-toggler sidebar-toggler">
                 <!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
@@ -20,78 +20,47 @@
         <!-- DOC: Remove "hide" class to enable the page header actions -->
         <div class="page-actions">
             <div class="btn-group">
-                <button type="button" class="btn btn-circle btn-outline red dropdown-toggle" data-toggle="dropdown">
+                <button type="button" class="btn btn-circle btn-info dropdown-toggle" data-toggle="dropdown">
                     <i class="fa fa-plus"></i>&nbsp;
-                    <span class="hidden-sm hidden-xs">New&nbsp;</span>&nbsp;
+                    <span class="hidden-sm hidden-xs"> {{ trans("general.new") }}&nbsp;</span>&nbsp;
                     <i class="fa fa-angle-down"></i>
                 </button>
                 <ul class="dropdown-menu" role="menu">
-                    <li>
-                        <a href="{{ route('backend.product.create') }}">
-                            <i class="icon-docs"></i> Create New Product</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('backend.category.create',['parent_id' => 0]) }}">
-                            <i class="fa fa-fw fa-list-ul"></i> Create New Parent Category</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('backend.tag.create') }}">
-                            <i class="icon-tag"></i> Create New Tag</a>
-                    </li>
-                    {{--<li>--}}
-                    {{--<a href="{{ route('backend.brand.create') }}">--}}
-                    {{--<i class="icon-tag"></i> Create New Brand</a>--}}
-                    {{--</li>--}}
-                    <li class="divider"></li>
-                    <li>
-                        <a href="{{ route('backend.size.create') }}">
-                            <i class="icon-grid"></i> Create New Size</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('backend.color.create') }}">
-                            <i class="icon-camera"></i> Create New Color</a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="{{ route('backend.country.create') }}">
-                            <i class="icon-globe"></i> Create New Country</a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="{{ route('backend.page.create') }}">
-                            <i class="icon-paper-clip"></i> Create New page</a>
-                    </li>
-                    {{--<li>--}}
-                    {{--<a href="{{ route('backend.term.create') }}">--}}
-                    {{--<i class="icon-book-open"></i> Create New term</a>--}}
-                    {{--</li>--}}
-                    {{--<li>--}}
-                    {{--<a href="{{ route('backend.policy.create') }}">--}}
-                    {{--<i class="fa fa-fw fa-sticky-note-o"></i> Create New Policy</a>--}}
-                    {{--</li>--}}
-                    <li>
-                        <a href="{{ route('backend.slide.create') }}">
-                            <i class="fa fa-fw fa-plus"></i> Create New Slider</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('backend.branch.create') }}">
-                            <i class="fa fa-fw fa-plus"></i> Create New Branch</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('backend.package.create') }}">
-                            <i class="fa fa-fw fa-plus-circle"></i> Create New ShipmentPackage</a>
-                    </li>
-                    @if(app()->environment('local'))
+                    @can('onlySuper')
                         <li>
-                            <a href="{{ route('backend.notification.create') }}">
-                                <i class="fa fa-fw fa-plus-circle"></i> Create New Notification</a>
+                            <a href="{{ route('backend.admin.user.create') }}">
+                                <i class="icon-plus"></i> {{ trans('general.new_user') }}</a>
                         </li>
-                    @endif
-                    <li>
-                        <a href="{{ route('backend.setting.index') }}">
-                            <i class="icon-settings"></i> Settings
-                        </a>
-                    </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="{{ route('backend.admin.slider.create') }}">
+                                <i class="icon-plus"></i> {{ trans('general.new_slider') }}</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="{{ route('backend.admin.plan.create') }}">
+                                <i class="icon-calculator"></i> {{ trans('general.create_new_payment_plan') }}</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="{{ route('backend.admin.service.create') }}">
+                                <i class="icon-handbag"></i> {{ trans('general.create_service') }}</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="{{ route('backend.admin.category.create') }}">
+                                <i class="icon-layers"></i> {{ trans('general.create_category') }}</a>
+                        </li>
+                        <li class="divider"></li>
+                    @endcan
+                    @can('onlyClient')
+                        {{--change this later to onlyClient--}}
+                        <li>
+                            <a href="{{ route('backend.order.choose.category') }}">
+                                <i class="icon-action-redo"></i> {{ trans('general.client_new_order') }}</a>
+                        </li>
+                        <li class="divider"></li>
+                    @endcan
                 </ul>
             </div>
         </div>
@@ -120,98 +89,27 @@
                 {{--<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"--}}
                 {{--data-close-others="true">--}}
                 {{--<i class="icon-bell"></i>--}}
-                {{--<span class="badge badge-default"> 7 </span>--}}
+                {{--<span class="badge badge-default"> {{ $totalActiveClientOnProgressOrders->count() }} </span>--}}
                 {{--</a>--}}
                 {{--<ul class="dropdown-menu">--}}
                 {{--<li class="external">--}}
                 {{--<h3>--}}
-                {{--<span class="bold">12 pending</span> notifications</h3>--}}
-                {{--<a href="page_user_profile_1.html">view all</a>--}}
+                {{--<a href="{{ route('backend.admin.order.index',['is_complete' => false]) }}">{{ trans('general.active_paid_on_progress_orders') }}</a>--}}
+                {{--</h3>--}}
                 {{--</li>--}}
                 {{--<li>--}}
                 {{--<ul class="dropdown-menu-list scroller" style="height: 250px;"--}}
                 {{--data-handle-color="#637283">--}}
+                {{--@foreach($totalActiveClientOnProgressOrders as $element)--}}
                 {{--<li>--}}
-                {{--<a href="javascript:;">--}}
-                {{--<span class="time">just now</span>--}}
+                {{--<a href="{{ route('backend.order.show', $element->id) }}">--}}
+                {{--<span class="time">{{ $element->created_at->diffForHumans() }}</span>--}}
                 {{--<span class="details">--}}
                 {{--<span class="label label-sm label-icon label-success">--}}
-                {{--<i class="fa fa-plus"></i>--}}
-                {{--</span> New user registered. </span>--}}
+                {{--</span> {{ $element->title }} </span>--}}
                 {{--</a>--}}
                 {{--</li>--}}
-                {{--<li>--}}
-                {{--<a href="javascript:;">--}}
-                {{--<span class="time">3 mins</span>--}}
-                {{--<span class="details">--}}
-                {{--<span class="label label-sm label-icon label-danger">--}}
-                {{--<i class="fa fa-bolt"></i>--}}
-                {{--</span> Server #12 overloaded. </span>--}}
-                {{--</a>--}}
-                {{--</li>--}}
-                {{--<li>--}}
-                {{--<a href="javascript:;">--}}
-                {{--<span class="time">10 mins</span>--}}
-                {{--<span class="details">--}}
-                {{--<span class="label label-sm label-icon label-warning">--}}
-                {{--<i class="fa fa-bell-o"></i>--}}
-                {{--</span> Server #2 not responding. </span>--}}
-                {{--</a>--}}
-                {{--</li>--}}
-                {{--<li>--}}
-                {{--<a href="javascript:;">--}}
-                {{--<span class="time">14 hrs</span>--}}
-                {{--<span class="details">--}}
-                {{--<span class="label label-sm label-icon label-info">--}}
-                {{--<i class="fa fa-bullhorn"></i>--}}
-                {{--</span> Application error. </span>--}}
-                {{--</a>--}}
-                {{--</li>--}}
-                {{--<li>--}}
-                {{--<a href="javascript:;">--}}
-                {{--<span class="time">2 days</span>--}}
-                {{--<span class="details">--}}
-                {{--<span class="label label-sm label-icon label-danger">--}}
-                {{--<i class="fa fa-bolt"></i>--}}
-                {{--</span> Database overloaded 68%. </span>--}}
-                {{--</a>--}}
-                {{--</li>--}}
-                {{--<li>--}}
-                {{--<a href="javascript:;">--}}
-                {{--<span class="time">3 days</span>--}}
-                {{--<span class="details">--}}
-                {{--<span class="label label-sm label-icon label-danger">--}}
-                {{--<i class="fa fa-bolt"></i>--}}
-                {{--</span> A user IP blocked. </span>--}}
-                {{--</a>--}}
-                {{--</li>--}}
-                {{--<li>--}}
-                {{--<a href="javascript:;">--}}
-                {{--<span class="time">4 days</span>--}}
-                {{--<span class="details">--}}
-                {{--<span class="label label-sm label-icon label-warning">--}}
-                {{--<i class="fa fa-bell-o"></i>--}}
-                {{--</span> Storage Server #4 not responding dfdfdfd. </span>--}}
-                {{--</a>--}}
-                {{--</li>--}}
-                {{--<li>--}}
-                {{--<a href="javascript:;">--}}
-                {{--<span class="time">5 days</span>--}}
-                {{--<span class="details">--}}
-                {{--<span class="label label-sm label-icon label-info">--}}
-                {{--<i class="fa fa-bullhorn"></i>--}}
-                {{--</span> System Error. </span>--}}
-                {{--</a>--}}
-                {{--</li>--}}
-                {{--<li>--}}
-                {{--<a href="javascript:;">--}}
-                {{--<span class="time">9 days</span>--}}
-                {{--<span class="details">--}}
-                {{--<span class="label label-sm label-icon label-danger">--}}
-                {{--<i class="fa fa-bolt"></i>--}}
-                {{--</span> Storage server failed. </span>--}}
-                {{--</a>--}}
-                {{--</li>--}}
+                {{--@endforeach--}}
                 {{--</ul>--}}
                 {{--</li>--}}
                 {{--</ul>--}}
@@ -219,254 +117,315 @@
                 {{--<!-- END NOTIFICATION DROPDOWN -->--}}
                 {{--<!-- BEGIN INBOX DROPDOWN -->--}}
                 {{--<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->--}}
-                {{--<li class="dropdown dropdown-extended dropdown-inbox" id="header_inbox_bar">--}}
-                {{--<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"--}}
-                {{--data-close-others="true">--}}
-                {{--<i class="icon-envelope-open"></i>--}}
-                {{--<span class="badge badge-default"> 4 </span>--}}
-                {{--</a>--}}
-                {{--<ul class="dropdown-menu">--}}
-                {{--<li class="external">--}}
-                {{--<h3>You have--}}
-                {{--<span class="bold">7 New</span> Messages</h3>--}}
-                {{--<a href="app_inbox.html">view all</a>--}}
-                {{--</li>--}}
-                {{--<li>--}}
-                {{--<ul class="dropdown-menu-list scroller" style="height: 275px;"--}}
-                {{--data-handle-color="#637283">--}}
-                {{--<li>--}}
-                {{--<a href="#">--}}
-                {{--<span class="photo">--}}
-                {{--<img src="../assets/layouts/layout3/img/avatar2.jpg"--}}
-                {{--class="img-circle" alt=""> </span>--}}
-                {{--<span class="subject">--}}
-                {{--<span class="from"> Lisa Wong </span>--}}
-                {{--<span class="time">Just Now </span>--}}
-                {{--</span>--}}
-                {{--<span class="message"> Vivamus sed auctor nibh congue nibh. auctor nibh auctor nibh... </span>--}}
-                {{--</a>--}}
-                {{--</li>--}}
-                {{--<li>--}}
-                {{--<a href="#">--}}
-                {{--<span class="photo">--}}
-                {{--<img src="../assets/layouts/layout3/img/avatar3.jpg"--}}
-                {{--class="img-circle" alt=""> </span>--}}
-                {{--<span class="subject">--}}
-                {{--<span class="from"> Richard Doe </span>--}}
-                {{--<span class="time">16 mins </span>--}}
-                {{--</span>--}}
-                {{--<span class="message"> Vivamus sed congue nibh auctor nibh congue nibh. auctor nibh auctor nibh... </span>--}}
-                {{--</a>--}}
-                {{--</li>--}}
-                {{--<li>--}}
-                {{--<a href="#">--}}
-                {{--<span class="photo">--}}
-                {{--<img src="../assets/layouts/layout3/img/avatar1.jpg"--}}
-                {{--class="img-circle" alt=""> </span>--}}
-                {{--<span class="subject">--}}
-                {{--<span class="from"> Bob Nilson </span>--}}
-                {{--<span class="time">2 hrs </span>--}}
-                {{--</span>--}}
-                {{--<span class="message"> Vivamus sed nibh auctor nibh congue nibh. auctor nibh auctor nibh... </span>--}}
-                {{--</a>--}}
-                {{--</li>--}}
-                {{--<li>--}}
-                {{--<a href="#">--}}
-                {{--<span class="photo">--}}
-                {{--<img src="../assets/layouts/layout3/img/avatar2.jpg"--}}
-                {{--class="img-circle" alt=""> </span>--}}
-                {{--<span class="subject">--}}
-                {{--<span class="from"> Lisa Wong </span>--}}
-                {{--<span class="time">40 mins </span>--}}
-                {{--</span>--}}
-                {{--<span class="message"> Vivamus sed auctor 40% nibh congue nibh... </span>--}}
-                {{--</a>--}}
-                {{--</li>--}}
-                {{--<li>--}}
-                {{--<a href="#">--}}
-                {{--<span class="photo">--}}
-                {{--<img src="../assets/layouts/layout3/img/avatar3.jpg"--}}
-                {{--class="img-circle" alt=""> </span>--}}
-                {{--<span class="subject">--}}
-                {{--<span class="from"> Richard Doe </span>--}}
-                {{--<span class="time">46 mins </span>--}}
-                {{--</span>--}}
-                {{--<span class="message"> Vivamus sed congue nibh auctor nibh congue nibh. auctor nibh auctor nibh... </span>--}}
-                {{--</a>--}}
-                {{--</li>--}}
-                {{--</ul>--}}
-                {{--</li>--}}
-                {{--</ul>--}}
-                {{--</li>--}}
-                {{--<!-- END INBOX DROPDOWN -->--}}
-                {{--<!-- BEGIN TODO DROPDOWN -->--}}
-                {{--<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->--}}
-                {{--<li class="dropdown dropdown-extended dropdown-tasks" id="header_task_bar">--}}
-                {{--<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"--}}
-                {{--data-close-others="true">--}}
-                {{--<i class="icon-calendar"></i>--}}
-                {{--<span class="badge badge-default"> 3 </span>--}}
-                {{--</a>--}}
-                {{--<ul class="dropdown-menu extended tasks">--}}
-                {{--<li class="external">--}}
-                {{--<h3>You have--}}
-                {{--<span class="bold">12 pending</span> tasks</h3>--}}
-                {{--<a href="app_todo.html">view all</a>--}}
-                {{--</li>--}}
-                {{--<li>--}}
-                {{--<ul class="dropdown-menu-list scroller" style="height: 275px;"--}}
-                {{--data-handle-color="#637283">--}}
-                {{--<li>--}}
-                {{--<a href="javascript:;">--}}
-                {{--<span class="task">--}}
-                {{--<span class="desc">New release v1.2 </span>--}}
-                {{--<span class="percent">30%</span>--}}
-                {{--</span>--}}
-                {{--<span class="progress">--}}
-                {{--<span style="width: 40%;"--}}
-                {{--class="progress-bar progress-bar-success"--}}
-                {{--aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">--}}
-                {{--<span class="sr-only">40% Complete</span>--}}
-                {{--</span>--}}
-                {{--</span>--}}
-                {{--</a>--}}
-                {{--</li>--}}
-                {{--<li>--}}
-                {{--<a href="javascript:;">--}}
-                {{--<span class="task">--}}
-                {{--<span class="desc">Application deployment</span>--}}
-                {{--<span class="percent">65%</span>--}}
-                {{--</span>--}}
-                {{--<span class="progress">--}}
-                {{--<span style="width: 65%;"--}}
-                {{--class="progress-bar progress-bar-danger"--}}
-                {{--aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">--}}
-                {{--<span class="sr-only">65% Complete</span>--}}
-                {{--</span>--}}
-                {{--</span>--}}
-                {{--</a>--}}
-                {{--</li>--}}
-                {{--<li>--}}
-                {{--<a href="javascript:;">--}}
-                {{--<span class="task">--}}
-                {{--<span class="desc">Mobile app release</span>--}}
-                {{--<span class="percent">98%</span>--}}
-                {{--</span>--}}
-                {{--<span class="progress">--}}
-                {{--<span style="width: 98%;"--}}
-                {{--class="progress-bar progress-bar-success"--}}
-                {{--aria-valuenow="98" aria-valuemin="0" aria-valuemax="100">--}}
-                {{--<span class="sr-only">98% Complete</span>--}}
-                {{--</span>--}}
-                {{--</span>--}}
-                {{--</a>--}}
-                {{--</li>--}}
-                {{--<li>--}}
-                {{--<a href="javascript:;">--}}
-                {{--<span class="task">--}}
-                {{--<span class="desc">Database migration</span>--}}
-                {{--<span class="percent">10%</span>--}}
-                {{--</span>--}}
-                {{--<span class="progress">--}}
-                {{--<span style="width: 10%;"--}}
-                {{--class="progress-bar progress-bar-warning"--}}
-                {{--aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">--}}
-                {{--<span class="sr-only">10% Complete</span>--}}
-                {{--</span>--}}
-                {{--</span>--}}
-                {{--</a>--}}
-                {{--</li>--}}
-                {{--<li>--}}
-                {{--<a href="javascript:;">--}}
-                {{--<span class="task">--}}
-                {{--<span class="desc">Web server upgrade</span>--}}
-                {{--<span class="percent">58%</span>--}}
-                {{--</span>--}}
-                {{--<span class="progress">--}}
-                {{--<span style="width: 58%;" class="progress-bar progress-bar-info"--}}
-                {{--aria-valuenow="58" aria-valuemin="0" aria-valuemax="100">--}}
-                {{--<span class="sr-only">58% Complete</span>--}}
-                {{--</span>--}}
-                {{--</span>--}}
-                {{--</a>--}}
-                {{--</li>--}}
-                {{--<li>--}}
-                {{--<a href="javascript:;">--}}
-                {{--<span class="task">--}}
-                {{--<span class="desc">Mobile development</span>--}}
-                {{--<span class="percent">85%</span>--}}
-                {{--</span>--}}
-                {{--<span class="progress">--}}
-                {{--<span style="width: 85%;"--}}
-                {{--class="progress-bar progress-bar-success"--}}
-                {{--aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">--}}
-                {{--<span class="sr-only">85% Complete</span>--}}
-                {{--</span>--}}
-                {{--</span>--}}
-                {{--</a>--}}
-                {{--</li>--}}
-                {{--<li>--}}
-                {{--<a href="javascript:;">--}}
-                {{--<span class="task">--}}
-                {{--<span class="desc">New UI release</span>--}}
-                {{--<span class="percent">38%</span>--}}
-                {{--</span>--}}
-                {{--<span class="progress progress-striped">--}}
-                {{--<span style="width: 38%;"--}}
-                {{--class="progress-bar progress-bar-important"--}}
-                {{--aria-valuenow="18" aria-valuemin="0" aria-valuemax="100">--}}
-                {{--<span class="sr-only">38% Complete</span>--}}
-                {{--</span>--}}
-                {{--</span>--}}
-                {{--</a>--}}
-                {{--</li>--}}
-                {{--</ul>--}}
-                {{--</li>--}}
-                {{--</ul>--}}
-                {{--</li>--}}
+                <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                    {{--<li class="dropdown dropdown-language">--}}
+                    {{--<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"--}}
+                    {{--data-close-others="true">--}}
+                    {{--<img alt="" src="{{ asset('img/flags/'.app()->getLocale().'.png') }}">--}}
+                    {{--<span--}}
+                    {{--class="langname">&nbsp; {{ trans('general.language') .' : '.app()->getLocale() }} </span>--}}
+                    {{--<i class="fa fa-angle-down"></i>--}}
+                    {{--</a>--}}
+                    {{--<ul class="dropdown-menu">--}}
+                    {{--<li>--}}
+                    {{--<a href="{{ route('backend.language.change','en') }}">--}}
+                    {{--<img alt="" src="{{ asset('img/flags/us.png') }}"> {{ trans('general.english') }}--}}
+                    {{--</a>--}}
+                    {{--</li>--}}
+                    {{--<li>--}}
+                    {{--<a href="{{ route('backend.language.change','ar') }}">--}}
+                    {{--<img alt="" src="{{ asset('img/flags/kw.png') }}"> {{ trans('general.arabic') }}--}}
+                    {{--</a>--}}
+                    {{--</li>--}}
+                    {{--</ul>--}}
+                    {{--</li>--}}
+                    <li class="dropdown dropdown-language" style="background-color: {{ app()->isLocale('ar') ? 'white' : 'transparent' }}; padding-right: 20px; padding-left: 20px; ">
+                        <a href="{{ route('backend.language.change','ar') }}" class="dropdown-toggle"
+                           data-close-others="true">
+                            {{--<img alt="" src="{{ asset('img/flags/ar.png') }}">--}}
+                            <span
+                                    class="langname">&nbsp; {{ trans('general.arabic') }} </span>
+                        </a>
+                    </li>
+                    <li class="dropdown dropdown-language" style="background-color: {{ app()->isLocale('en') ? 'white' : 'transparent' }}; padding-right: 20px; padding-left: 20px; ">
+                        <a href="{{ route('backend.language.change','en') }}" class="dropdown-toggle"
+                           data-close-others="true">
+                            {{--<img alt="" src="{{ asset('img/flags/en.png') }}">--}}
+                            <span
+                                    class="langname">&nbsp; {{ trans('general.english') }} </span>
+                        </a>
+                    </li>
+
+                    <!-- END LANGUAGE BAR -->
+                    @can('onlyAdmin')
+                        <li class="dropdown dropdown-extended dropdown-inbox" id="header_inbox_bar">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
+                               data-close-others="true">
+                                <i class="icon-bell"></i>
+                                <span
+                                        class="badge badge-default"> {{ $totalActiveClientOnProgressOrders->count() }} </span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="external">
+                                    <a href="{{ route('backend.admin.order.index',['is_complete' => false]) }}">{{ trans('general.active_paid_on_progress_orders') }}</a>
+                                </li>
+                                <li>
+                                    <ul class="dropdown-menu-list scroller" style="height: 275px;"
+                                        data-handle-color="#637283">
+                                        @foreach($totalActiveClientOnProgressOrders as $element)
+                                            <li>
+                                                <a href="{{ route('backend.order.show',$element->id) }}">
+                                                    <span class="photo">
+                                                        @if($element->images->isNotEmpty())
+                                                            <img
+                                                                    src="{{ asset(env('THUMBNAIL').$element->images->first()->image) }}"
+                                                                    class="img-circle" alt="">
+                                                        @else
+                                                            <img
+                                                                    src="{{ asset(env('THUMBNAIL').$settings->logo) }}"
+                                                                    class="img-circle" alt="">
+                                                        @endif
+                                                    </span>
+                                                    <span class="subject">
+                                                        <span class="from"> {{ str_limit($element->title,30) }} </span>
+                                                        <span
+                                                                class="time">{{ $element->created_at->diffForHumans() }} </span>
+                                                    </span>
+                                                    <span class="message"> {{ str_limit($element->name,20) }} </span>
+                                                </a>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    @endcan
+                    {{--<!-- END INBOX DROPDOWN -->--}}
+                    {{--<!-- BEGIN TODO DROPDOWN -->--}}
+                    {{--<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->--}}
+                    {{--<li class="dropdown dropdown-extended dropdown-tasks" id="header_task_bar">--}}
+                    {{--<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"--}}
+                    {{--data-close-others="true">--}}
+                    {{--<i class="icon-calendar"></i>--}}
+                    {{--<span class="badge badge-default"> 3 </span>--}}
+                    {{--</a>--}}
+                    {{--<ul class="dropdown-menu extended tasks">--}}
+                    {{--<li class="external">--}}
+                    {{--<h3>You have--}}
+                    {{--<span class="bold">12 pending</span> tasks</h3>--}}
+                    {{--<a href="app_todo.html">view all</a>--}}
+                    {{--</li>--}}
+                    {{--<li>--}}
+                    {{--<ul class="dropdown-menu-list scroller" style="height: 275px;"--}}
+                    {{--data-handle-color="#637283">--}}
+                    {{--<li>--}}
+                    {{--<a href="javascript:;">--}}
+                    {{--<span class="task">--}}
+                    {{--<span class="desc">New release v1.2 </span>--}}
+                    {{--<span class="percent">30%</span>--}}
+                    {{--</span>--}}
+                    {{--<span class="progress">--}}
+                    {{--<span style="width: 40%;"--}}
+                    {{--class="progress-bar progress-bar-success"--}}
+                    {{--aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">--}}
+                    {{--<span class="sr-only">40% Complete</span>--}}
+                    {{--</span>--}}
+                    {{--</span>--}}
+                    {{--</a>--}}
+                    {{--</li>--}}
+                    {{--<li>--}}
+                    {{--<a href="javascript:;">--}}
+                    {{--<span class="task">--}}
+                    {{--<span class="desc">Application deployment</span>--}}
+                    {{--<span class="percent">65%</span>--}}
+                    {{--</span>--}}
+                    {{--<span class="progress">--}}
+                    {{--<span style="width: 65%;"--}}
+                    {{--class="progress-bar progress-bar-danger"--}}
+                    {{--aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">--}}
+                    {{--<span class="sr-only">65% Complete</span>--}}
+                    {{--</span>--}}
+                    {{--</span>--}}
+                    {{--</a>--}}
+                    {{--</li>--}}
+                    {{--<li>--}}
+                    {{--<a href="javascript:;">--}}
+                    {{--<span class="task">--}}
+                    {{--<span class="desc">Mobile app release</span>--}}
+                    {{--<span class="percent">98%</span>--}}
+                    {{--</span>--}}
+                    {{--<span class="progress">--}}
+                    {{--<span style="width: 98%;"--}}
+                    {{--class="progress-bar progress-bar-success"--}}
+                    {{--aria-valuenow="98" aria-valuemin="0" aria-valuemax="100">--}}
+                    {{--<span class="sr-only">98% Complete</span>--}}
+                    {{--</span>--}}
+                    {{--</span>--}}
+                    {{--</a>--}}
+                    {{--</li>--}}
+                    {{--<li>--}}
+                    {{--<a href="javascript:;">--}}
+                    {{--<span class="task">--}}
+                    {{--<span class="desc">Database migration</span>--}}
+                    {{--<span class="percent">10%</span>--}}
+                    {{--</span>--}}
+                    {{--<span class="progress">--}}
+                    {{--<span style="width: 10%;"--}}
+                    {{--class="progress-bar progress-bar-warning"--}}
+                    {{--aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">--}}
+                    {{--<span class="sr-only">10% Complete</span>--}}
+                    {{--</span>--}}
+                    {{--</span>--}}
+                    {{--</a>--}}
+                    {{--</li>--}}
+                    {{--<li>--}}
+                    {{--<a href="javascript:;">--}}
+                    {{--<span class="task">--}}
+                    {{--<span class="desc">Web server upgrade</span>--}}
+                    {{--<span class="percent">58%</span>--}}
+                    {{--</span>--}}
+                    {{--<span class="progress">--}}
+                    {{--<span style="width: 58%;" class="progress-bar progress-bar-info"--}}
+                    {{--aria-valuenow="58" aria-valuemin="0" aria-valuemax="100">--}}
+                    {{--<span class="sr-only">58% Complete</span>--}}
+                    {{--</span>--}}
+                    {{--</span>--}}
+                    {{--</a>--}}
+                    {{--</li>--}}
+                    {{--<li>--}}
+                    {{--<a href="javascript:;">--}}
+                    {{--<span class="task">--}}
+                    {{--<span class="desc">Mobile development</span>--}}
+                    {{--<span class="percent">85%</span>--}}
+                    {{--</span>--}}
+                    {{--<span class="progress">--}}
+                    {{--<span style="width: 85%;"--}}
+                    {{--class="progress-bar progress-bar-success"--}}
+                    {{--aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">--}}
+                    {{--<span class="sr-only">85% Complete</span>--}}
+                    {{--</span>--}}
+                    {{--</span>--}}
+                    {{--</a>--}}
+                    {{--</li>--}}
+                    {{--<li>--}}
+                    {{--<a href="javascript:;">--}}
+                    {{--<span class="task">--}}
+                    {{--<span class="desc">New UI release</span>--}}
+                    {{--<span class="percent">38%</span>--}}
+                    {{--</span>--}}
+                    {{--<span class="progress progress-striped">--}}
+                    {{--<span style="width: 38%;"--}}
+                    {{--class="progress-bar progress-bar-important"--}}
+                    {{--aria-valuenow="18" aria-valuemin="0" aria-valuemax="100">--}}
+                    {{--<span class="sr-only">38% Complete</span>--}}
+                    {{--</span>--}}
+                    {{--</span>--}}
+                    {{--</a>--}}
+                    {{--</li>--}}
+                    {{--</ul>--}}
+                    {{--</li>--}}
+                    {{--</ul>--}}
+                    {{--</li>--}}
                 <!-- END TODO DROPDOWN -->
                     <!-- BEGIN USER LOGIN DROPDOWN -->
                     <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                    @if(auth()->user()->isClientOrAbove)
+                        <li class="dropdown dropdown-user"
+                            style="background-color: white; padding-left: 10px; padding-right: 10px;">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
+                               data-close-others="true">
+                            <span class="username username-hide-on-mobile"> {{ trans('general.balance') }}
+                                : {{ auth()->user()->balance->points}} {{ trans('general.points') }}</span>
+                            </a>
+                        </li>
+                    @endif
                     <li class="dropdown dropdown-user">
                         <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
                            data-close-others="true">
-                            <img alt="" class="img-circle img-xs"
+                            <img alt="" class="img-xs"
                                  src="{{ asset('storage/uploads/images/thumbnail/'. auth()->user()->logo) }}"/>
-                            <span class="username username-hide-on-mobile"> {{ auth()->user()->name }}</span>
                             <i class="fa fa-angle-down"></i>
+                            <span
+                                    class="username username-hide-on-mobile"> {{ str_limit(auth()->user()->name,30) }}</span><br>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-default">
                             <li>
-                                <a href="{{ route('frontend.home') }}">
-                                    <i class="icon-home"></i>Home</a>
+                                <a href="#">
+                                    <span class="username username-hide-on-mobile"><i
+                                                class="fa fa-fw fa-university"></i>{{ trans('general.role') }}
+                                        : {{ auth()->user()->role->name }} : </span>
+                                    <span
+                                            class="username username-hide-on-mobile"> {{ str_limit(auth()->user()->name,5) }}</span><br>
+                                </a>
+                            </li>
+                            @if(auth()->user()->balance && auth()->user()->isClientOrAbove)
+                                <li>
+                                    <a href="#">
+                                        <span class="username username-hide-on-mobile"> <i
+                                                    class="fa fa-fw fa-list-ol"></i>{{ trans('general.balance') }}
+                                            : {{ auth()->user()->balance->points}} {{ trans('general.points') }}</span>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                            @endif
+                            <li>
+                                <a href="{{ route('home') }}">
+                                    <i class="icon-home"></i>{{ trans('general.home') }}</a>
                             </li>
                             <li>
-                                <a href="{{ route('backend.home') }}">
-                                    <i class="icon-home"></i>Dashboard</a>
+                                <a href="{{ route('backend.index') }}">
+                                    <i class="icon-pencil"></i>{{ trans('general.dashboard') }}</a>
                             </li>
+                            <li class="divider"></li>
                             <li>
-                                <a href="{{ url('backend/translations') }}">
-                                    <i class="icon-pencil"></i>Translation Manger</a>
+                                <a href="{{ route('backend.language.change',app()->isLocale('ar') ? 'en' : 'ar') }}">
+                                    <i class="fa fa-fw fa-language"></i>{{ trans('general.switch_lang')  }}
+                                </a>
                             </li>
-                            <li>
-                                <a href="{{ route('backend.export.translation') }}">
-                                    <i class="icon-envelope-letter"></i>export_translations</a>
-                            </li>
-                            <li>
-                                <a href="{{ route('backend.setting.index') }}">
-                                    <i class="icon-settings"></i> App Settings </a>
-                            </li>
+                            <li class="divider"></li>
+                            @can('onlySuper')
+                                <li>
+                                    <a href="{{ route('backend.admin.setting.index') }}">
+                                        <i class="icon-settings"></i> {{ trans('general.app_settings') }} </a>
+                                </li>
+                                <li>
+                                    <a href="{{ url('backend/admin/translations') }}">
+                                        <i class="fa fa-fw fa-language"></i> {{ trans('general.translation_manager') }}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('backend.admin.export.translation') }}">
+                                        <i class="icon-envelope-letter"></i> {{ trans('general.export_translations') }}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ url('backend/admin/telescope') }}">
+                                        <i class="fa fa-fw fa-bug"></i> Telescope Debug Mode
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                            @endcan
+                            @if(auth()->user())
+                                <li>
+                                    <a href="{{ route('backend.reset.password',['email' => auth()->user()->email]) }}">
+                                        <i class="fa fa-fw fa-edit"></i> {{ trans('general.reset_password') }}</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('backend.user.show',auth()->id()) }}">
+                                        <i class="fa fa-fw fa-user-circle"></i> {{ trans('general.my_profile') }}</a>
+                                </li>
+                            @endif
                             <li class="divider"></li>
                             <li>
                                 <a href="{{ url('/logout') }}"
                                    onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                                    <i class="icon-key"></i> Log Out </a>
+                                    <i class="icon-key"></i> {{ trans('general.logout') }} </a>
                             </li>
                         </ul>
                     </li>
                     <form id="logout-form" action="{{ url('/logout') }}" method="POST"
                           style="display: none;">
-                        @csrf
+                        {{ csrf_field() }}
                     </form>
                     <!-- END USER LOGIN DROPDOWN -->
                     <!-- BEGIN QUICK SIDEBAR TOGGLER -->

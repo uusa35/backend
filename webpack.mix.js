@@ -132,6 +132,7 @@ mix.styles([
     'resources/assets/css/backend-custom-ar.css',
 ], 'public/css/backend-rtl.css').version();
 
+
 mix.scripts([
         '../metronic_v4.5.6/theme_rtl/assets/global/plugins/respond.min.js',
         '../metronic_v4.5.6/theme/assets/global/plugins/excanvas.min.js',

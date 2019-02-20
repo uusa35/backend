@@ -36,7 +36,7 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \App\Http\Middleware\Localization::class,
-            \App\Http\Middleware\Currency::class,
+//            \App\Http\Middleware\Currency::class,
         ],
 
         'api' => [
@@ -63,7 +63,12 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'admin' => \App\Http\Middleware\AdminAccessOnly::class,
+        'super' => \App\Http\Middleware\SuperAccessOnly::class,
+        'client' => \App\Http\Middleware\ClientAccessOnly::class,
+        'designer' => \App\Http\Middleware\DesignerAccessOnly::class,
         'adminAccessOnly' => \App\Http\Middleware\AdminAccessOnly::class,
+        'onlyActiveUsers' => \App\Http\Middleware\OnlyActiveUsers::class,
     ];
 
     /**

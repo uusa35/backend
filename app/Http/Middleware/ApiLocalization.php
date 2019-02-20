@@ -29,7 +29,7 @@ class ApiLocalization
     public function handle($request, Closure $next)
     {
         $this->app->setLocale($request->header('lang'));
-
+        
         $response = $next($request);
 
         $response->headers->set('lang', $request->header('lang'));

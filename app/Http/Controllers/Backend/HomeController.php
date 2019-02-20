@@ -11,16 +11,17 @@ use App\Src\Currency\Currency;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 
-class DashBoardController extends Controller
+class HomeController extends Controller
 {
     use NotificationHelper;
     public function index()
     {
-        return redirect()->route('backend.order.index');
+        return view('backend.home');
     }
 
     public function home()
     {
+        dd('here home');
         return view('backend.home');
     }
 

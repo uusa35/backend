@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class AdminAccessOnly
+class SuperAccessOnly
 {
     /**
      * Handle an incoming request.
@@ -15,8 +15,7 @@ class AdminAccessOnly
      */
     public function handle($request, Closure $next)
     {
-        // will check is_super first then is_admin.
-        abort_if(!auth()->user()->isAdminOrAbove, '400',  'Admin zone only !!!');
+        abort_if(!auth()->user()->isSuper, '404', 'Super Admin zone only !!!');
         return $next($request);
     }
 }

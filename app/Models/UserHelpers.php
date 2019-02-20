@@ -19,7 +19,7 @@ trait UserHelpers
     }
 
     public function getIsDesignerAttribute() {
-        return $this->role->is_company;
+        return $this->role->is_designer;
     }
 
     public function scopeCompanies($q)
