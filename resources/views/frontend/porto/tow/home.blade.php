@@ -3,7 +3,6 @@
 
 
 @section('body')
-
     <main class="main">
         <div class="home-slider-container">
             <div class="home-slider owl-carousel owl-theme owl-theme-light">

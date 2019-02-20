@@ -46,7 +46,7 @@ class HomeController extends Controller
 //            'categoriesHome',
 //            'categoriesFeatured'
 //        ));
-        return view('frontend.porto.tow.home');
+        return view('frontend.porto.three.home');
     }
 
     public function changeCurrency()

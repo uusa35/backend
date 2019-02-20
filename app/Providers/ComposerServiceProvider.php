@@ -77,8 +77,15 @@ class ComposerServiceProvider extends ServiceProvider
         ], 'App\Services\ViewComposers@getCategories');
 
         view()->composer([
-            'frontend.porto.tow.partials.head',
             'frontend.porto.tow.home',
+            'frontend.porto.three.home',
+            'frontend.porto.four.home',
+            'frontend.porto.five.home',
+            'frontend.porto.six.home',
+            'frontend.porto.seven.home',
+            'frontend.porto.eight.home',
+            'frontend.porto.nine.home',
+            'frontend.porto.then.home',
             'backend.layouts.app',
             'backend.modules.order.show',
         ], 'App\Services\ViewComposers@getSettings');

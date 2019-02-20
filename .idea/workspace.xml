@@ -2,211 +2,103 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e163867a-e084-464b-b025-90563ffad1db" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/images/owl.video.play.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/partials/footer.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/partials/head.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/partials/header.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/partials/scripts.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/partials/styles.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/assets/js/frontend-custom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/home.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/layouts/app.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/ad/show.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/cart/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/category/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/category/partials/_banner.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/category/partials/_bottom_toolbar.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/category/partials/_breadcrumbs.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/category/partials/_filter_color.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/category/partials/_filter_range.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/category/partials/_filter_size.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/category/partials/_filter_subcategories.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/category/partials/_filters.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/category/partials/_sort_price.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/category/partials/_tags.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/category/partials/_top_toolbar.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/checkout/_billing_info.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/checkout/_guest_register.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/checkout/_order_review.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/checkout/_payment_info.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/checkout/_shipment_method.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/checkout/final_order_invoice.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/checkout/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/checkout/invoice_review.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/favorite/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/newsletter/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/order/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/order/show.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/page/show.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/product/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/product/partials/featured.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/product/partials/productDescription.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/product/partials/product_carousel.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/product/partials/product_category.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/product/partials/product_thumbnail.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/product/partials/product_thumbnail_rectangle.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/product/partials/quick-view.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/product/partials/recommended.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/product/show.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/profile/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/profile/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/profile/info.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/profile/orders.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/profile/sidebar.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/recommendations/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/registration/main.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/survey/show.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/tag/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/user/show.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/modules/wishlist/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/pages/under_construction.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/partials/footer.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/partials/head.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/partials/header.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/partials/models.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/partials/scripts.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/three/partials/styles.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/partials/models.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Providers/ComposerServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/ComposerServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/backend.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/backend.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/backend-custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/backend-custom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/backend.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/backend.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/advlist/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/advlist/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/advlist/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/advlist/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/anchor/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/anchor/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/anchor/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/anchor/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/autolink/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/autolink/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/autolink/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/autolink/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/autoresize/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/autoresize/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/autoresize/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/autoresize/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/autosave/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/autosave/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/autosave/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/autosave/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/bbcode/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/bbcode/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/bbcode/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/bbcode/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/charmap/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/charmap/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/charmap/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/charmap/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/code/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/code/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/code/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/code/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/codesample/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/codesample/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/codesample/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/codesample/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/colorpicker/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/colorpicker/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/colorpicker/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/colorpicker/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/contextmenu/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/contextmenu/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/contextmenu/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/contextmenu/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/directionality/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/directionality/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/directionality/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/directionality/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/emoticons/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/emoticons/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/emoticons/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/emoticons/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/fullpage/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/fullpage/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/fullpage/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/fullpage/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/fullscreen/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/fullscreen/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/fullscreen/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/fullscreen/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/help/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/help/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/help/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/help/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/hr/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/hr/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/hr/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/hr/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/image/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/image/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/image/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/image/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/imagetools/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/imagetools/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/imagetools/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/imagetools/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/importcss/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/importcss/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/importcss/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/importcss/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/insertdatetime/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/insertdatetime/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/insertdatetime/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/insertdatetime/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/legacyoutput/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/legacyoutput/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/legacyoutput/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/legacyoutput/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/link/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/link/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/link/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/link/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/lists/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/lists/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/lists/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/lists/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/media/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/media/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/media/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/media/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/nonbreaking/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/nonbreaking/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/nonbreaking/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/nonbreaking/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/noneditable/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/noneditable/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/noneditable/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/noneditable/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/pagebreak/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/pagebreak/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/pagebreak/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/pagebreak/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/paste/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/paste/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/paste/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/paste/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/preview/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/preview/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/preview/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/preview/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/print/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/print/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/print/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/print/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/save/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/save/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/save/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/save/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/searchreplace/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/searchreplace/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/searchreplace/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/searchreplace/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/spellchecker/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/spellchecker/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/spellchecker/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/spellchecker/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/tabfocus/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/tabfocus/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/tabfocus/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/tabfocus/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/table/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/table/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/table/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/table/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/template/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/template/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/template/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/template/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/textcolor/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/textcolor/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/textcolor/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/textcolor/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/textpattern/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/textpattern/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/textpattern/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/textpattern/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/toc/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/toc/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/toc/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/toc/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/visualblocks/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/visualblocks/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/visualblocks/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/visualblocks/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/visualchars/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/visualchars/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/visualchars/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/visualchars/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/wordcount/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/wordcount/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/plugins/wordcount/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins/wordcount/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/themes/mobile/theme.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/themes/mobile/theme.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/themes/mobile/theme.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/themes/mobile/theme.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/tinymce.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/tinymce.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/frontend-custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/frontend-custom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/porto/demo2.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/banners/banner-1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/banners/banner-1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/banners/banner-2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/banners/banner-2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/banners/banner-3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/banners/banner-3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/products/cart/product-1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/cart/product-1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/products/cart/product-2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/cart/product-2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/products/product-1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/product-1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/products/product-10.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/product-10.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/products/product-11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/product-11.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/products/product-12.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/product-12.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/products/product-13.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/product-13.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/products/product-14.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/product-14.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/products/product-2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/product-2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/products/product-3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/product-3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/products/product-4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/product-4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/products/product-5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/product-5.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/products/product-6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/product-6.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/products/product-7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/product-7.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/products/product-8.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/product-8.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/products/product-9.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/product-9.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/promo-bg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/promo-bg.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/slider/slide-1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/slider/slide-1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/slider/slide-2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/slider/slide-2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/porto/demo2.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/porto/demo2.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/js/components/ExampleComponent.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/ad/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/ad/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/cart/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/cart/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/category/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/category/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/category/partials/_banner.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/category/partials/_banner.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/category/partials/_bottom_toolbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/category/partials/_bottom_toolbar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/category/partials/_breadcrumbs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/category/partials/_breadcrumbs.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/category/partials/_filter_color.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/category/partials/_filter_color.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/category/partials/_filter_range.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/category/partials/_filter_range.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/category/partials/_filter_size.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/category/partials/_filter_size.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/category/partials/_filter_subcategories.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/category/partials/_filter_subcategories.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/category/partials/_filters.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/category/partials/_filters.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/category/partials/_sort_price.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/category/partials/_sort_price.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/category/partials/_tags.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/category/partials/_tags.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/category/partials/_top_toolbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/category/partials/_top_toolbar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/checkout/_billing_info.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/checkout/_billing_info.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/checkout/_guest_register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/checkout/_guest_register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/checkout/_order_review.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/checkout/_order_review.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/checkout/_payment_info.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/checkout/_payment_info.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/checkout/_shipment_method.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/checkout/_shipment_method.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/checkout/final_order_invoice.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/checkout/final_order_invoice.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/checkout/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/checkout/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/checkout/invoice_review.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/checkout/invoice_review.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/favorite/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/favorite/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/newsletter/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/newsletter/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/order/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/order/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/order/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/order/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/page/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/page/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/product/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/product/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/product/partials/featured.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/product/partials/featured.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/product/partials/productDescription.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/product/partials/productDescription.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/product/partials/product_carousel.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/product/partials/product_carousel.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/product/partials/product_category.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/product/partials/product_category.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/product/partials/product_thumbnail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/product/partials/product_thumbnail.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/product/partials/product_thumbnail_rectangle.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/product/partials/product_thumbnail_rectangle.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/product/partials/quick-view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/product/partials/quick-view.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/product/partials/recommended.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/product/partials/recommended.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/product/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/product/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/profile/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/profile/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/profile/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/profile/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/profile/info.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/profile/info.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/profile/orders.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/profile/orders.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/profile/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/profile/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/recommendations/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/recommendations/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/registration/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/registration/main.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/survey/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/survey/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/tag/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/tag/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/user/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/user/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/modules/wishlist/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/modules/wishlist/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/pages/under_construction.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/pages/under_construction.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/_aboutus_page_case.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/partials/_aboutus_page_case.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/_branches_footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/partials/_branches_footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/_brands_carousel.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/partials/_brands_carousel.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/_breadcrumbs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/partials/_breadcrumbs.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/_btn_messages.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/partials/_btn_messages.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/_categories_featured.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/partials/_categories_featured.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/_categories_on_home_page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/partials/_categories_on_home_page.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/_desktop_nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/partials/_desktop_nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/_form_newsletter.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/partials/_form_newsletter.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/_mobile_nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/partials/_mobile_nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/_nav_left.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/partials/_nav_left.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/_nav_right.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/partials/_nav_right.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/_notification.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/partials/_notification.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/_pop_up_cart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/partials/_pop_up_cart.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/_preloader.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/partials/_preloader.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/_product-show-gallery.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/partials/_product-show-gallery.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/_product_carousel_lg.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/partials/_product_carousel_lg.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/_product_carousel_sm.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/partials/_product_carousel_sm.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/_product_hot_deal_carousel_lg.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/partials/_product_hot_deal_carousel_lg.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/_product_index_brands.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/partials/_product_index_brands.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/_product_index_categories.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/partials/_product_index_categories.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/_product_index_sizes.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/partials/_product_index_sizes.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/_product_show_categories.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/partials/_product_show_categories.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/_product_show_gallery.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/partials/_product_show_gallery.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/_product_show_price.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/partials/_product_show_price.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/_product_show_product_data.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/partials/_product_show_product_data.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/_product_show_sizes_colors.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/partials/_product_show_sizes_colors.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/_product_steps.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/partials/_product_steps.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/_shipping_message.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/partials/_shipping_message.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/_social_btns.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/partials/_social_btns.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/_top_bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/partials/_top_bar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/_top_bar_currencies.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/partials/_top_bar_currencies.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/_top_bar_language.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/partials/_top_bar_language.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/partials/footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/head.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/partials/head.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/header_four.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/partials/header_four.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/header_one.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/partials/header_one.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/newsletter.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/partials/newsletter.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/pagination.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/partials/pagination.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/scripts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/partials/scripts.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/slider.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/partials/slider.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/styles.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/partials/styles.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/css/frontend-custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/css/frontend-custom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/porto/tow/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/porto/tow/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/porto/tow/partials/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/partials/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/porto/tow/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/partials/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/porto/tow/partials/scripts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/partials/scripts.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/porto/tow/partials/styles.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/porto/tow/partials/styles.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -221,23 +113,24 @@
     <session id="-2122380425">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="15" />
+          <entry key="project.closed" value="16" />
           <entry key="project.open.time.0" value="12" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.4" value="2" />
+          <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="16" />
+          <entry key="project.opened" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Blade" value="43" />
-          <entry key="CSS" value="2" />
-          <entry key="HTML" value="4" />
+          <entry key="Blade" value="70" />
+          <entry key="CSS" value="5" />
+          <entry key="HTML" value="6" />
           <entry key="Image" value="8" />
           <entry key="JSON" value="12" />
-          <entry key="JavaScript" value="40" />
-          <entry key="PHP" value="350" />
+          <entry key="JavaScript" value="43" />
+          <entry key="PHP" value="354" />
           <entry key="PLAIN_TEXT" value="4" />
           <entry key="SCSS" value="4" />
           <entry key="XML" value="4" />
@@ -245,33 +138,29 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Blade" value="238" />
+          <entry key="Blade" value="581" />
+          <entry key="CSS" value="19" />
+          <entry key="HTML" value="1" />
           <entry key="JSON" value="6" />
-          <entry key="JavaScript" value="265" />
-          <entry key="PHP" value="6834" />
+          <entry key="JavaScript" value="289" />
+          <entry key="PHP" value="6911" />
           <entry key="PLAIN_TEXT" value="50" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.64204973">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/webpack.mix.js">
+            <entry file="file://$PROJECT_DIR$/resources/views/frontend/porto/tow/home.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="702">
-                  <caret line="39" selection-start-line="39" selection-end-line="39" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/package.json">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="576">
-                  <caret line="32" selection-start-line="32" selection-end-line="32" />
+                <state relative-caret-position="572">
+                  <caret line="573" column="82" lean-forward="true" selection-start-line="573" selection-start-column="82" selection-end-line="573" selection-end-column="82" />
+                  <folding>
+                    <element signature="e#17987#30046#0#HTML" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -279,65 +168,29 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="756">
-                  <caret line="48" column="47" selection-start-line="48" selection-start-column="47" selection-end-line="48" selection-end-column="47" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/resources/views/frontend/porto/tow/home.blade.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="700">
-                  <caret line="572" column="49" selection-start-line="572" selection-start-column="49" selection-end-line="572" selection-end-column="49" />
-                  <folding>
-                    <element signature="e#17931#17988#0#HTML" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/resources/views/frontend/porto/tow/layouts/app.blade.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="522">
-                  <caret line="29" column="49" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
+                <state relative-caret-position="601">
+                  <caret line="43" column="34" lean-forward="true" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="34" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/Providers/ComposerServiceProvider.php">
+            <entry file="file://$PROJECT_DIR$/resources/views/frontend/porto/three/home.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="394">
-                  <caret line="80" column="36" selection-start-line="80" selection-start-column="36" selection-end-line="80" selection-end-column="36" />
+                <state relative-caret-position="203">
+                  <caret line="13" column="47" lean-forward="true" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/resources/views/frontend/porto/tow/partials/head.blade.php">
+            <entry file="file://$PROJECT_DIR$/resources/views/frontend/porto/three/partials/models.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="270">
-                  <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/resources/views/frontend/porto/tow/partials/styles.blade.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
-                  <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/resources/views/frontend/porto/tow/partials/scripts.blade.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="234">
-                  <caret line="13" selection-start-line="13" selection-end-line="13" />
+                <state relative-caret-position="457">
+                  <caret line="92" column="93" lean-forward="true" selection-start-line="92" selection-start-column="93" selection-end-line="92" selection-end-column="93" />
+                  <folding>
+                    <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -345,12 +198,12 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+        <leaf>
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/../porto_ecommerce_html/demo-2/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="594">
-                  <caret line="307" column="57" selection-start-line="307" selection-start-column="57" selection-end-line="307" selection-end-column="57" />
+                <state relative-caret-position="421">
+                  <caret line="1099" column="42" selection-start-line="1099" selection-start-column="42" selection-end-line="1099" selection-end-column="42" />
                   <folding>
                     <element signature="n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" />
                     <element signature="n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" />
@@ -363,11 +216,15 @@
       </split-second>
     </splitter>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>notes_e</find>
-      <find>has_at</find>
-      <find>dateT</find>
       <find>slider</find>
       <find>due</find>
       <find>branch</find>
@@ -395,6 +252,9 @@
       <find>$PROJECT_DIR$/../../..</find>
       <find>settings</find>
       <find>asset</find>
+      <find>insta</find>
+      <find>NEW ARRIVALS</find>
+      <find>newsletter-popup</find>
     </findStrings>
     <replaceStrings>
       <replace>resources/css/</replace>
@@ -413,16 +273,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/database/migrations/2019_01_31_132751_create_product_tag_pivot_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_01_31_132813_create_service_tag_pivot_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_01_31_133621_create_category_service_pivot_table.php" />
-        <option value="$PROJECT_DIR$/database/factories/CountryFactory.php" />
-        <option value="$PROJECT_DIR$/database/factories/CurrencyFactory.php" />
-        <option value="$PROJECT_DIR$/database/seeds/CurrenciesTableSeeder.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2016_04_23_201244_create_sliders_table.php" />
-        <option value="$PROJECT_DIR$/app/Models/User.php" />
-        <option value="$PROJECT_DIR$/app/Models/Product.php" />
-        <option value="$PROJECT_DIR$/app/Models/Service.php" />
         <option value="$PROJECT_DIR$/app/Models/Slider.php" />
         <option value="$PROJECT_DIR$/database/seeds/SlidersTableSeeder.php" />
         <option value="$PROJECT_DIR$/database/factories/SliderFactory.php" />
@@ -454,16 +304,26 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Controller.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/home.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php" />
-        <option value="$PROJECT_DIR$/resources/views/frontend/porto/tow/partials/header.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/frontend/porto/tow/partials/footer.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/frontend/porto/tow/partials/styles.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/frontend/porto/tow/layouts/app.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/frontend/porto/tow/partials/scripts.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/frontend/porto/tow/home.blade.php" />
-        <option value="$PROJECT_DIR$/../porto_ecommerce_html/demo-2/index.html" />
-        <option value="$PROJECT_DIR$/webpack.mix.js" />
         <option value="$PROJECT_DIR$/app/Providers/ComposerServiceProvider.php" />
+        <option value="$PROJECT_DIR$/webpack.mix.js" />
+        <option value="$PROJECT_DIR$/resources/views/frontend/porto/three/partials/styles.blade.php" />
+        <option value="$PROJECT_DIR$/../porto_ecommerce_html/demo-2/index.html" />
+        <option value="$PROJECT_DIR$/resources/views/frontend/porto/tow/layouts/app.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/frontend/porto/three/layouts/app.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/frontend/porto/three/partials/scripts.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/frontend/porto/tow/partials/scripts.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/frontend/porto/three/partials/header.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/frontend/porto/tow/partials/header.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/frontend/porto/three/partials/footer.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/frontend/porto/tow/partials/footer.blade.php" />
+        <option value="$PROJECT_DIR$/resources/assets/css/frontend-custom.js" />
+        <option value="$PROJECT_DIR$/resources/assets/css/frontend-custom.css" />
+        <option value="$PROJECT_DIR$/resources/views/frontend/porto/tow/partials/styles.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php" />
+        <option value="$PROJECT_DIR$/resources/views/frontend/porto/tow/home.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/frontend/porto/tow/partials/models.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/frontend/porto/three/partials/models.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/frontend/porto/three/home.blade.php" />
       </list>
     </option>
   </component>
@@ -602,7 +462,7 @@
       <path value="$PROJECT_DIR$/vendor/brotzka/laravel-dotenv-editor" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="381" />
     <option name="y" value="98" />
     <option name="width" value="1343" />
@@ -648,6 +508,139 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="mallr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="mallr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="mallr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Providers" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="mallr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="public" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="mallr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="public" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="css" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="mallr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="mallr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="assets" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="mallr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="assets" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="css" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="mallr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="assets" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="js" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="mallr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="sass" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="mallr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="views" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="mallr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="views" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="frontend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="mallr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="views" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="frontend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="porto" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="mallr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="views" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="frontend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="porto" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="three" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="mallr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="views" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="frontend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="porto" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="three" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="partials" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="mallr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="views" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="frontend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="porto" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="tow" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="mallr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="views" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="frontend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="porto" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="tow" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="layouts" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="mallr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="views" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="frontend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="porto" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="tow" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="partials" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -682,108 +675,11 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="mallr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-            </path>
-            <path>
-              <item name="mallr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="mallr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Providers" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="mallr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="public" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="mallr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="public" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="fonts" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="mallr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="public" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="images" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="mallr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="public" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="js" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="mallr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="public" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="js" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="porto" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="mallr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="mallr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="views" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="mallr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="views" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="frontend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="mallr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="views" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="frontend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="porto" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="mallr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="views" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="frontend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="porto" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="tow" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="mallr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="views" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="frontend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="porto" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="tow" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="partials" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="ComposerSer&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Providers/ComposerServiceProvider.php&#10;web&#9;FILE&#9;file:///Users/mac/Sites/mallr/webpack.mix.js&#10;home.b&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/tow/home.blade.php&#10;app.bl&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/tow/layouts/app.blade.php&#10;styles.blade&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/tow/partials/styles.blade.php&#10;head.blade&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/tow/partials/head.blade.php&#10;Composer&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Providers/ComposerServiceProvider.php&#10;home.blad&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/tow/home.blade.php&#10;styles.bl&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/tow/partials/styles.blade.php&#10;head.bl&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/tow/partials/head.blade.php&#10;HomeCon&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Http/Controllers/Frontend/HomeController.php&#10;Home&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/home.blade.php&#10;home&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/home.blade.php&#10;settings_&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/migrations/2015_06_01_175252_create_settings_table.php&#10;Dat&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/seeds/DatabaseSeeder.php&#10;Data&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/seeds/DatabaseSeeder.php&#10;BrancF&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/BranchFactory.php&#10;Branch&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/seeds/BranchesTableSeeder.php&#10;UsersT&#9;null&#9;null&#10;DataSe&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/seeds/DatabaseSeeder.php&#10;ProductsTa&#9;null&#9;null&#10;OrdersT&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/seeds/OrdersTableSeeder.php&#10;order_met&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/migrations/2016_07_03_152828_create_order_metas_table.php&#10;OrderMe&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/OrderMetaFactory.php&#10;Orderst&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/seeds/OrdersTableSeeder.php&#10;Order&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/OrderMetaFactory.php&#10;Order.php&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Models/Order.php&#10;order_meta&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/migrations/2016_07_03_152828_create_order_metas_table.php&#10;OrderMetaF&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/OrderMetaFactory.php&#10;OrderFa&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/OrderFactory.php&#10;BranchF&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/BranchFactory.php&#10;branches_t&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/migrations/2016_03_31_042323_create_branches_table.php&#10;ImageFa&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/ImageFactory.php&#10;images_t&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/migrations/2017_04_24_132934_create_images_table.php&#10;Product&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/ProductFactory.php&#10;Category&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Models/Category.php&#10;categories_t&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/migrations/2016_04_11_121251_create_categories_table.php&#10;catego&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/migrations/2019_01_31_133621_create_category_service_pivot_table.php&#10;ImageF&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/ImageFactory.php&#10;Prod&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/ProductFactory.php&#10;SlideF&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/SlideFactory.php&#10;Image&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/ImageFactory.php&#10;Bran&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/BranchFactory.php&#10;Slide.&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Models/Slide.php&#10;slides_t&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/migrations/2016_04_23_201244_create_slides_table.php&#10;Da&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/seeds/DatabaseSeeder.php&#10;Slider&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/SliderFactory.php&#10;product&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/ProductFactory.php&#10;SliderFa&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/SliderFactory.php&#10;sliders_t&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/migrations/2016_04_23_201244_create_sliders_table.php" />
+    <property name="SearchEverywhereHistoryKey" value="home.blad&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/three/home.blade.php&#10;models&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/tow/partials/models.blade.php&#10;models.blad&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/three/partials/models.blade.php&#10;home.blade&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/three/home.blade.php&#10;Homecon&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Http/Controllers/Frontend/HomeController.php&#10;styles.blade&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/tow/partials/styles.blade.php&#10;footer.blade&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/tow/partials/footer.blade.php&#10;footer.blad&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/three/partials/footer.blade.php&#10;app.blade&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/three/layouts/app.blade.php&#10;scripts.blade&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/tow/partials/scripts.blade.php&#10;homeCon&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Http/Controllers/Frontend/HomeController.php&#10;HomeCon&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Http/Controllers/Frontend/HomeController.php&#10;web&#9;FILE&#9;file:///Users/mac/Sites/mallr/webpack.mix.js&#10;Composer&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Providers/ComposerServiceProvider.php&#10;he&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/tow/partials/head.blade.php&#10;home.bla&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/three/home.blade.php&#10;ComposerSer&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Providers/ComposerServiceProvider.php&#10;home.b&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/tow/home.blade.php&#10;app.bl&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/tow/layouts/app.blade.php&#10;head.blade&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/tow/partials/head.blade.php&#10;styles.bl&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/tow/partials/styles.blade.php&#10;head.bl&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/tow/partials/head.blade.php&#10;Home&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/home.blade.php&#10;home&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/home.blade.php&#10;settings_&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/migrations/2015_06_01_175252_create_settings_table.php&#10;Dat&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/seeds/DatabaseSeeder.php&#10;Data&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/seeds/DatabaseSeeder.php&#10;BrancF&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/BranchFactory.php&#10;Branch&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/seeds/BranchesTableSeeder.php&#10;UsersT&#9;null&#9;null&#10;DataSe&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/seeds/DatabaseSeeder.php&#10;ProductsTa&#9;null&#9;null&#10;OrdersT&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/seeds/OrdersTableSeeder.php&#10;order_met&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/migrations/2016_07_03_152828_create_order_metas_table.php&#10;OrderMe&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/OrderMetaFactory.php&#10;Orderst&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/seeds/OrdersTableSeeder.php&#10;Order&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/OrderMetaFactory.php&#10;Order.php&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Models/Order.php&#10;order_meta&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/migrations/2016_07_03_152828_create_order_metas_table.php&#10;OrderMetaF&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/OrderMetaFactory.php&#10;OrderFa&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/OrderFactory.php&#10;BranchF&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/BranchFactory.php&#10;branches_t&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/migrations/2016_03_31_042323_create_branches_table.php&#10;ImageFa&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/ImageFactory.php&#10;images_t&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/migrations/2017_04_24_132934_create_images_table.php&#10;Product&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/ProductFactory.php&#10;Category&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Models/Category.php&#10;categories_t&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/migrations/2016_04_11_121251_create_categories_table.php&#10;catego&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/migrations/2019_01_31_133621_create_category_service_pivot_table.php&#10;ImageF&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/ImageFactory.php" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="js.eslint.eslintPackage" value="" />
@@ -798,18 +694,19 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/frontend/porto/three/partials" />
+      <recent name="$PROJECT_DIR$/public/images" />
+      <recent name="$PROJECT_DIR$/resources/views/frontend/porto" />
+      <recent name="$PROJECT_DIR$/resources/views/frontend/porto/tow/partials" />
+      <recent name="$PROJECT_DIR$/resources" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/assets/js" />
       <recent name="$PROJECT_DIR$/resources/views/frontend/porto/tow" />
       <recent name="$PROJECT_DIR$/resources/views/frontend/porto" />
       <recent name="$PROJECT_DIR$/app/Models" />
       <recent name="$PROJECT_DIR$/database/factories" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/images" />
-      <recent name="$PROJECT_DIR$/resources/views/frontend/porto/tow/partials" />
-      <recent name="$PROJECT_DIR$/resources" />
-      <recent name="$PROJECT_DIR$/app/Models" />
-      <recent name="$PROJECT_DIR$/database/seeds" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -849,18 +746,19 @@
       <workItem from="1549787195816" duration="2456000" />
       <workItem from="1550409275357" duration="14114000" />
       <workItem from="1550582740185" duration="3762000" />
-      <workItem from="1550587650013" duration="1385000" />
+      <workItem from="1550587650013" duration="2325000" />
+      <workItem from="1550635315192" duration="3322000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53690000" />
+    <option name="totallyTimeSpent" value="57952000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
+    <frame x="0" y="23" width="1920" height="1177" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29020235" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.29339722" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -890,104 +788,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_12_132811_create_orders_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="39" column="65" selection-start-line="39" selection-start-column="65" selection-end-line="39" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_07_03_152828_create_order_metas_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="19" column="55" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/NotificationsTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/AboutusTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/SurveysTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/QuestionnairesTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/SettingsTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/factories/BranchFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="19" column="6" lean-forward="true" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/BranchesTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/RolesTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="954">
-          <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/PrivilegesTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="16" column="50" lean-forward="true" selection-start-line="16" selection-start-column="50" selection-end-line="16" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/RatingsTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/OrdersTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/factories/OrderMetaFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="18" column="53" selection-start-line="18" selection-start-column="53" selection-end-line="18" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/seeds/FaqsTableSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1034,9 +834,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="22" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="e#7#31#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1115,72 +912,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="48" column="47" selection-start-line="48" selection-start-column="47" selection-end-line="48" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/porto/tow/partials/header.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="29" lean-forward="true" selection-start-column="29" selection-end-column="29" />
-          <folding>
-            <element signature="n#header#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/porto/tow/partials/footer.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#4529#4535#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/porto/tow/partials/head.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/porto/tow/partials/styles.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/porto/tow/layouts/app.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="29" column="49" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/porto/demo2.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/demo2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/porto/tow/partials/scripts.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/demo2.js" />
     <entry file="file://$PROJECT_DIR$/public/images/slider/slide-1.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -1191,10 +926,97 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/porto/tow/partials/head.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/ComposerServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="628">
+          <caret line="93" column="35" lean-forward="true" selection-start-line="93" selection-start-column="35" selection-end-line="93" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/porto/three/pages/under_construction.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../porto_ecommerce_html/demo-3/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+          <folding>
+            <element signature="n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/porto/three/partials/styles.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="6" lean-forward="true" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/porto/tow/layouts/app.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="666">
+          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/porto/three/layouts/app.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="32" column="50" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/porto/three/partials/scripts.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/porto/tow/partials/scripts.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/css/frontend-custom-ar.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/porto/tow/partials/styles.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="61" lean-forward="true" selection-start-line="6" selection-start-column="61" selection-end-line="6" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.mix.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="18" column="12" lean-forward="true" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../porto_ecommerce_html/demo-2/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="307" column="57" selection-start-line="307" selection-start-column="57" selection-end-line="307" selection-end-column="57" />
+        <state relative-caret-position="421">
+          <caret line="1099" column="42" selection-start-line="1099" selection-start-column="42" selection-end-line="1099" selection-end-column="42" />
           <folding>
             <element signature="n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" />
@@ -1202,27 +1024,96 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/css/frontend-custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/css/backend-custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/frontend-custom.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/porto/tow/partials/footer.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="745">
+          <caret line="74" column="42" selection-start-line="74" selection-start-column="42" selection-end-line="74" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/porto/three/partials/footer.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="583">
+          <caret line="92" column="38" selection-start-line="92" selection-start-column="38" selection-end-line="92" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/porto/tow/partials/header.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="565">
+          <caret line="258" column="35" selection-start-line="258" selection-start-column="35" selection-end-line="258" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/porto/three/partials/header.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1051">
+          <caret line="95" column="30" selection-start-line="95" selection-start-column="30" selection-end-line="95" selection-end-column="30" />
+          <caret line="162" column="54" selection-start-line="162" selection-start-column="54" selection-end-line="162" selection-end-column="54" />
+          <caret line="215" column="54" selection-start-line="215" selection-start-column="54" selection-end-line="215" selection-end-column="54" />
+          <caret line="285" column="50" selection-start-line="285" selection-start-column="50" selection-end-line="285" selection-end-column="50" />
+          <caret line="305" column="50" selection-start-line="305" selection-start-column="50" selection-end-line="305" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="601">
+          <caret line="43" column="34" lean-forward="true" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/frontend/porto/tow/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="572" column="49" selection-start-line="572" selection-start-column="49" selection-end-line="572" selection-end-column="49" />
+        <state relative-caret-position="572">
+          <caret line="573" column="82" lean-forward="true" selection-start-line="573" selection-start-column="82" selection-end-line="573" selection-end-column="82" />
           <folding>
-            <element signature="e#17931#17988#0#HTML" expanded="true" />
+            <element signature="e#17987#30046#0#HTML" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.mix.js">
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/porto/tow/partials/models.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        <state relative-caret-position="511">
+          <caret line="91" column="34" lean-forward="true" selection-start-line="91" selection-start-column="34" selection-end-line="91" selection-end-column="34" />
+          <folding>
+            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Providers/ComposerServiceProvider.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/porto/three/partials/models.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="80" column="36" selection-start-line="80" selection-start-column="36" selection-end-line="80" selection-end-column="36" />
+        <state relative-caret-position="457">
+          <caret line="92" column="93" lean-forward="true" selection-start-line="92" selection-start-column="93" selection-end-line="92" selection-end-column="93" />
+          <folding>
+            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/porto/three/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="13" column="47" lean-forward="true" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
         </state>
       </provider>
     </entry>

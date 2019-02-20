@@ -72,7 +72,7 @@ Mon - Sun / 9:00AM - 8:00PM
                             </div><!-- End .row -->
 
                             <div class="footer-bottom">
-                                <img src="assets/images/payments.png" alt="payment methods" class="footer-payments">
+                                <img src="images/payments.png" alt="payment methods" class="footer-payments">
                                 <p class="footer-copyright">2018 &copy; Copyright<br> All Rights Reserved.</p>
 
                                 <div class="social-icons">

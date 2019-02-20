@@ -18,14 +18,32 @@ mix.styles(['resources/assets/css/frontend-custom.css'], 'public/css/frontend-cu
 // frontend
 mix.styles([
     '../porto_ecommerce_html/demo-2/assets/css/style.min.css'
-],'public/css/porto/demo2.css')
+],'public/css/porto.demo2.css')
+mix.styles([
+    '../porto_ecommerce_html/demo-3/assets/css/style.min.css'
+],'public/css/porto.demo3.css')
+mix.styles([
+    '../porto_ecommerce_html/demo-4/assets/css/style.min.css'
+],'public/css/porto.demo4.css')
 // mix.sass('../porto_ecommerce_html/demo-2/assets/sass/style.scss','public/css/porto/demo2-sass.css')
 mix.scripts([
     '../porto_ecommerce_html/demo-2/assets/js/jquery.min.js',
     '../porto_ecommerce_html/demo-2/assets/js/bootstrap.bundle.min.js',
     '../porto_ecommerce_html/demo-2/assets/js/plugins.min.js',
     '../porto_ecommerce_html/demo-2/assets/js/main.min.js',
-],'public/js/porto/demo2.js');
+],'public/js/porto.demo2.js');
+mix.scripts([
+    '../porto_ecommerce_html/demo-3/assets/js/jquery.min.js',
+    '../porto_ecommerce_html/demo-3/assets/js/bootstrap.bundle.min.js',
+    '../porto_ecommerce_html/demo-3/assets/js/plugins.min.js',
+    '../porto_ecommerce_html/demo-3/assets/js/main.min.js',
+],'public/js/porto.demo3.js');
+mix.scripts([
+    '../porto_ecommerce_html/demo-4/assets/js/jquery.min.js',
+    '../porto_ecommerce_html/demo-4/assets/js/bootstrap.bundle.min.js',
+    '../porto_ecommerce_html/demo-4/assets/js/plugins.min.js',
+    '../porto_ecommerce_html/demo-4/assets/js/main.min.js',
+],'public/js/porto.demo4.js');
 // backend
 mix.styles([
     './node_modules/font-awesome/css/font-awesome.min.css',
@@ -155,6 +173,9 @@ mix.scripts('resources/assets/js/backend-custom.js', 'public/js/backend-custom.j
 mix.copyDirectory('./../porto_ecommerce_html/demo-2/assets/images', 'public/images');
 mix.copyDirectory('./../porto_ecommerce_html/demo-2/assets/fonts', 'public/fonts');
 mix.copyDirectory('./../porto_ecommerce_html/demo-2/assets/js/plugins', 'public/js/plugins');
+mix.copyDirectory('./../porto_ecommerce_html/demo-3/assets/images', 'public/images');
+mix.copyDirectory('./../porto_ecommerce_html/demo-3/assets/fonts', 'public/fonts');
+mix.copyDirectory('./../porto_ecommerce_html/demo-3/assets/js/plugins', 'public/js/plugins');
 mix.copyDirectory('./../metronic_v4.5.6/theme/assets/global/plugins/simple-line-icons/fonts', 'public/css/fonts');
 mix.copyDirectory('./../metronic_v4.5.6/theme/assets/global/plugins/datatables/images', 'public/plugins/datatables/images');
 mix.copyDirectory('./../metronic_v4.5.6/theme/assets/global/plugins/cubeportfolio/img', 'public/img');

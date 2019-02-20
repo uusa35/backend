@@ -25,6 +25,9 @@
 @show
 <!--footer end-->
 
+    @section('models')
+        @include('frontend.porto.tow.partials.models')
+        @show
     <!--script for this page-->
     @section('scripts')
         @include('frontend.porto.tow.partials.scripts')
