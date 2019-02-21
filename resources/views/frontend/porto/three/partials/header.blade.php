@@ -21,7 +21,7 @@
             <div class="header-left">
                 <div class="dropdown compare-dropdown">
                     <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
-                        Compare (2)
+                        Register
                     </a>
 
                     <div class="dropdown-menu" >
