@@ -2,44 +2,7 @@
 
 return array (
   'kwd' => 'KWD',
-  'message' => 
-  array (
-    'warning' => 
-    array (
-      'product_meta' => 'warning.product meta',
-      'no_sizes' => 'warning.no sizes',
-      'no_tags' => 'warning.no tags',
-      'no_categories' => 'warning.no categories',
-      'no_colors' => 'warning.no colors',
-    ),
-    'success' => 
-    array (
-      'product_update' => 'success.product update',
-    ),
-    'order_created' => 'order created',
-    'error' => 
-    array (
-      'no_categories' => 'No categories',
-    ),
-  ),
-  'messsage' => 
-  array (
-    'warning' => 
-    array (
-      'create_new' => 'messsage.warning.create_new	',
-    ),
-  ),
   'mail_sent' => 'Mail Sent',
-  'messages' => 
-  array (
-    'error' => 
-    array (
-      'cart' => 
-      array (
-        'perfumes' => 'error.cart perfumes',
-      ),
-    ),
-  ),
   'title_en' => 'English Title',
   'title_ar' => 'Arabic Title',
   'body_en' => 'Body English',
@@ -168,7 +131,7 @@ return array (
   'submit' => 'submit',
   'best_sale_products' => 'Best Sale Products',
   'meta_description' => ' الكويت مول أر  عباية  روعة التصميم
-dailydress dailydress abaia abaya abayat',
+company company abaia abaya abayat',
   'back_to' => 'Back to',
   'approx' => 'approx',
   'in_stock' => 'In Stock',
@@ -267,7 +230,7 @@ dailydress dailydress abaia abaya abayat',
   'welcome_message' => 'welcome message',
   'shop' => 'shop',
   'information_review' => 'Information Review',
-  'app_keywords' => 'Abayat Abaya Kuwait Hijab Lamaset Harayer',
-  'app_author' => 'Harayer',
+  'app_keywords' => 'Abayat Abaya Kuwait Hijab Lamaset company',
+  'app_author' => 'company',
   'branches' => 'Our Branches',
 );

@@ -88,7 +88,7 @@ trait ProductHelpers
     }
 
     public function scopeHasImages($q) {
-        return $q->has('images','>', 1);
+        return $q->has('images','>', 0);
     }
 
     public function getTotalQtyAttribute()

@@ -24,8 +24,7 @@
     @include('frontend.porto.three.partials.footer')
 @show
 <!--footer end-->
-
-<!--script for this page-->
+    <!--script for this page-->
     @section('scripts')
         @include('frontend.porto.three.partials.scripts')
     @show

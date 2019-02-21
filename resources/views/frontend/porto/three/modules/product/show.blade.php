@@ -17,286 +17,629 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
 @endsection
 
 @section('body')
-    <!-- CONTENT AREA -->
-    <div class="content-area">
-        <section class="page-section">
+    <main class="main">
+        <nav aria-label="breadcrumb" class="breadcrumb-nav">
             <div class="container">
-                <div class="row product-single">
-                    <div class="col-md-6">
-                        <div class="badges">
-                            @if($product->isOnSale)
-                                <div class="hot">{{ trans('general.on_sale') }}</div>
-                            @endif
-                            @if($product->on_sale_on_home)
-                                <div class="new">{{ trans('general.deal') }}</div>
-                            @endif
-                        </div>
-                        <div class="owl-carousel img-carousel">
-                            <div class="item">
-                                <a class="btn btn-theme btn-theme-transparent btn-zoom"
-                                   @desktop
-                                   data-gal="prettyPhoto"
-                                   href="{{ asset(env('LARGE').$product->image) }}"
-                                   @enddesktop
-                                ><i class="fa fa-plus"></i></a>
-                                <a
-                                        @desktop
-                                        data-gal="prettyPhoto"
-                                        href="{{ asset(env('LARGE').$product->image) }}"
-                                        @enddesktop
-                                >
-                                    <img class="img-responsive" src="{{ asset(env('LARGE').$product->image) }}"
-                                         alt="{{ $product->name_ar . $product->name_en . $product->description_ar . $product->description_en }}"/>
-                                </a>
-                            </div>
-                            @if(!$product->images->isEmpty())
-                                @foreach($product->images as $img)
-                                    <div class="item">
-                                        <a class="btn btn-theme btn-theme-transparent btn-zoom"
-                                           @desktop
-                                           data-gal="prettyPhoto"
-                                           href="{{ asset(env('LARGE').$img->path) }}"
-                                           @enddesktop
-                                        >
-                                            <i class="fa fa-plus"></i>
-                                        </a>
-                                        <a
-                                                @desktop
-                                                data-gal="prettyPhoto"
-                                                href="{{ asset(env('LARGE').$img->path) }}"
-                                                @enddesktop
-                                        >
-                                            <img class="img-responsive" src="{{ asset(env('LARGE').$img->path) }}"
-                                                 alt="{{ $product->name_ar . $product->name_en . $product->description_ar . $product->description_en . $img->caption_ar . $img->caption_en}}"/>
-                                        </a>
-                                    </div>
-                                @endforeach
-                            @endif
-                        </div>
-
-                        @if(!$product->images->isEmpty())
-                            <div class="row product-thumbnails">
-                                <div class="col-xs-2 col-sm-2 col-md-3">
-                                    <a
-                                            @desktop
-                                            data-gal="prettyPhoto"
-                                            href="{{ asset(env('LARGE').$product->image) }}"
-                                            @enddesktop
-                                    >
-                                        <img class="img-responsive" src="{{ asset(env('LARGE').$product->image) }}"
-                                             alt=""{{ $product->name }}/>
-                                    </a>
-                                </div>
-                                @foreach($product->images as $img)
-                                    <div class="col-xs-2 col-sm-2 col-md-3">
-                                        <a
-                                                @desktop
-                                                data-gal="prettyPhoto"
-                                                href="{{ asset(env('LARGE').$img->path) }}"
-                                                @enddesktop
-                                        >
-                                            <img class="img-responsive" src="{{ asset(env('LARGE').$img->path) }}"
-                                                 alt=""{{ $img->path}}/>
-                                        </a>
-                                    </div>
-                                @endforeach
-                            </div>
-                        @endif
-                    </div>
-                    <div class="col-md-6">
-                        <div class="back-to-category">
-                            <span class="link">
-                                <i class="fa fa-angle-{{ app()->isLocale('ar') ? 'left' : 'right' }}"></i> {{ trans('general.back_to') }}
-                                <a href="{{ route('home') }}">{{ trans('general.home') }}</a>
-                            </span>
-                            @if(!$products->isEmpty())
-                                <div class="{{ app()->isLocale('ar') ? 'pull-left' : 'pull-right' }}">
-                                    <a class="btn btn-theme btn-theme-transparent btn-previous"
-                                       href="{{ route('frontend.product.show',$products->first()->id) }}"><i
-                                                class="fa fa-angle-{{ app()->isLocale('ar') ? 'right' : 'left' }}"></i></a>
-                                    <a class="btn btn-theme btn-theme-transparent btn-next"
-                                       href="{{ route('frontend.product.show', $products->last()->id) }}"><i
-                                                class="fa fa-angle-{{ app()->isLocale('ar') ? 'left' : 'right' }}"></i></a>
-                                </div>
-                            @endif
-                        </div>
-                        <h2 class="product-title">{{ $product->name }}</h2>
-                        <hr class="page-divider"/>
-                        <div class="product-text">
-                            <div class="product-availability pull-left hidden-xs">{{ trans('general.status') }}:
-                                <strong>{{ $product->totalQty > 0 ? trans('general.in_stock')  : trans('general.out_of_stock') }}</strong> {{ $product->totalQty }} {{ trans('general.items') }}
-                            </div>
-                            <h4>{{ trans('general.price') }}</h4>
-                        </div>
-                        <hr class="dropdown-divider"/>
-                        @if($currency->symbol_en != 'kwd')
-                            <div class="pull-{{ app()->isLocale('ar') ? 'left' : 'right' }} hidden-xs">
-                                @include('frontend.partials._top_bar_currencies')
-                            </div>
-                        @endif
-                        <table>
-                            <tr>
-                                <td>
-                                    <div class="product-price">{{ $product->isOnSale ? $product->convertedSalePrice : $product->convertedPrice }} {{ $currency->symbol }}</div>
-                                </td>
-                                <td>
-                                    @if($product->isOnSale)
-                                        <del>{{ $product->convertedPrice }}
-                                            <span><strong>{{ $currency->symbol }}</strong></span>
-                                        </del>
-                                    @endif
-                                </td>
-                            </tr>
-                            @if($currency->symbol_en != 'kwd')
-                                <tr>
-                                    <td>
-                                        <div class="product-price"><span
-                                                    style="font-size: 14px;">{{ $product->isOnSale ? $product->sale_price : $product->price }} {{ trans('general.kwd') }}</span>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html"><i class="icon-home"></i></a></li>
+                    <li class="breadcrumb-item"><a href="#">Electronics</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Headsets</li>
+                </ol>
+            </div><!-- End .container -->
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="product-single-container product-single-default">
+                        <div class="row">
+                            <div class="col-lg-7 col-md-6 product-single-gallery">
+                                <div class="product-slider-container product-item">
+                                    <div class="product-single-carousel owl-carousel owl-theme">
+                                        <div class="product-item">
+                                            <img class="product-single-image" src="assets/images/products/zoom/product-1.jpg" data-zoom-image="assets/images/products/zoom/product-1-big.jpg"/>
                                         </div>
-                                    </td>
-                                    <td>
-                                        @if($product->isOnSale)
-                                            <del>{{ $product->price }}
-                                                <span><strong>{{ trans('general.kwd') }}</strong></span>
-                                            </del>
-                                        @endif
-                                    </td>
-                                </tr>
-                            @endif
-                        </table>
-                        @if($product->is_hot_deal && $product->isOnSale)
-                            <div class="countdown-wrapper">
-                                <input type="hidden" name="counter" value="{{ $product->end_sale }}"
-                                       id="dealCountValue0">
-                                <div id="dealCountdown0"
-                                     class="defaultCountdown clearfix"></div>
-                            </div>
-                        @endif
-                        <hr class="page-divider small"/>
-                        <hr class="page-divider"/>
-                        <div class="product-text">
-                            @if($product->description)
-                                <h4>{{ trans('general.description') }}</h4>
-                                <p>{{ $product->description }}</p>
-                            @endif
-                            @if($product->notes)
-                                <h4>{{ trans('general.notes') }}</h4>
-                                <p>{{ $product->notes }}</p>
-                            @endif
-                        </div>
-                        <hr class="page-divider"/>
-                        <form class="row variable" method="post" class="cart"
-                              action="{{ route('frontend.cart.add') }}">
-                            @csrf
-                            <input type="hidden" name="product_id" value="{{ $product->id }}" id="product_id">
-
-                            {{-- size and color has been disabled according to clients' request--}}
-                            {{--<input type="hidden" name="color_id" value="{{ $product->product_attributes->first()->color_id }}">--}}
-                            {{--                            <input type="hidden" name="size_id" value="{{  $product->product_attributes->first()->size_id }}">--}}
-                            <div class="col-sm-6">
-                                <div class="form-group selectpicker-wrapper">
-                                    <label for="exampleSelect2">{{ trans('general.color') }}</label>
-                                    <select
-                                            id="color"
-                                            name="color_id"
-                                            class="selectpicker input-price" data-live-search="true"
-                                            data-width="100%"
-                                            data-toggle="tooltip" title="{{ trans('select_color') }}">
-                                        <option value="">{{ trans('general.select_color') }}</option>
-                                        @foreach($product->product_attributes->unique('color')->pluck('color') as $color)
-                                            <option value="{{ $color->id }}">{{ $color->name }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group selectpicker-wrapper">
-                                    <label for="exampleSelect1">{{ trans('general.size') }}</label>
-                                    <select
-                                            name="size_id"
-                                            id="size"
-                                            class="col-sm-6 size-menu input-price" data-live-search="true"
-                                            data-width="100%"
-                                            data-toggle="tooltip" title="{{ trans('select_size') }}">
-                                        <option value="">{{ trans('general.select_size') }}</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="buttons">
-                                    <div class="quantity">
-                                        <a class="btn qty-decrease btn-qty"><i class="fa fa-minus"></i></a>
-                                        <input class="form-control qty" type="text" name="qty"
-                                               value="1"
-                                               title="{{ trans('general.quantity') }}"
-                                               id="qty">
-                                        <a class="btn qty-increase btn-qty"><i class="fa fa-plus"></i></a>
+                                        <div class="product-item">
+                                            <img class="product-single-image" src="assets/images/products/zoom/product-2.jpg" data-zoom-image="assets/images/products/zoom/product-2-big.jpg"/>
+                                        </div>
+                                        <div class="product-item">
+                                            <img class="product-single-image" src="assets/images/products/zoom/product-3.jpg" data-zoom-image="assets/images/products/zoom/product-3-big.jpg"/>
+                                        </div>
+                                        <div class="product-item">
+                                            <img class="product-single-image" src="assets/images/products/zoom/product-4.jpg" data-zoom-image="assets/images/products/zoom/product-4-big.jpg"/>
+                                        </div>
                                     </div>
-                                    <button class="btn btn-theme btn-cart btn-icon-left" type="submit">
-                                        <i class="fa fa-shopping-cart"></i>
-                                        {{ trans('general.add_to_cart') }}
-                                    </button>
-                                    @if($product->isFavorited)
-                                        <a class="btn btn-theme btn-wish-list btn-outline-danger"
-                                           href="{{ route("frontend.favorite.remove", $product->id) }}"><span
-                                                    class="fa fa-fw fa-heart"></span></a>
-                                    @else
-                                        <a class="btn btn-theme btn-wish-list"
-                                           href="{{ route("frontend.favorite.add", $product->id) }}"><span
-                                                    class="fa fa-fw fa-heart"></span></a>
-                                    @endif
-                                    <a class="btn btn-theme btn-compare" href="#" data-toggle="modal"
-                                       data-target="#imagemodal"
-                                       title="{{ trans('general.sizes') }}"
-                                    ><i class="fa fa-fw fa-tags"></i></a>
+                                    <!-- End .product-single-carousel -->
+                                    <span class="prod-full-screen">
+                                            <i class="icon-plus"></i>
+                                        </span>
                                 </div>
-                            </div>
-                        </form>
-                        @include('frontend.partials._product_show_categories')
-                        <hr class="page-divider small"/>
-                        @include('frontend.partials._social_btns')
+                                <div class="prod-thumbnail row owl-dots" id='carousel-custom-dots'>
+                                    <div class="col-3 owl-dot">
+                                        <img src="assets/images/products/zoom/product-1.jpg"/>
+                                    </div>
+                                    <div class="col-3 owl-dot">
+                                        <img src="assets/images/products/zoom/product-2.jpg"/>
+                                    </div>
+                                    <div class="col-3 owl-dot">
+                                        <img src="assets/images/products/zoom/product-3.jpg"/>
+                                    </div>
+                                    <div class="col-3 owl-dot">
+                                        <img src="assets/images/products/zoom/product-4.jpg"/>
+                                    </div>
+                                </div>
+                            </div><!-- End .col-lg-7 -->
 
-                    </div>
-                </div>
+                            <div class="col-lg-5 col-md-6">
+                                <div class="product-single-details">
+                                    <h1 class="product-title">Silver Porto Headset</h1>
 
-            </div>
-        </section>
+                                    <div class="ratings-container">
+                                        <div class="product-ratings">
+                                            <span class="ratings" style="width:60%"></span><!-- End .ratings -->
+                                        </div><!-- End .product-ratings -->
 
-        <!-- /PAGE -->
-        @include('frontend.partials._product_carousel_lg',['elements' => $products, 'title' => trans('general.related_products')])
-        @if($brands->isNotEmpty())
-            @include('frontend.partials._brands_carousel',['bands' => $brands])
-        @endif
-    </div>
-    <!-- Single Product Area end -->
-    <!-- Creates the bootstrap modal where the image will appear -->
-    {{-- moved to modal blade quick view--}}
-    @if(!is_null($product->size_chart_image) || $settings->size_chart)
-        <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-             aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal"
-                                style="padding-left: 15px; padding-right: 15px;"><span
-                                    aria-hidden="true">&times;</span><span
-                                    class="sr-only"> {{ trans('general.close') }}</span></button>
-                        <h4 class="modal-title" id="myModalLabel">{{ trans('general.size_charts') }}</h4>
+                                        <a href="#" class="rating-link">( 6 Reviews )</a>
+                                    </div><!-- End .product-container -->
+
+                                    <div class="price-box">
+                                        <span class="old-price">$81.00</span>
+                                        <span class="product-price">$101.00</span>
+                                    </div><!-- End .price-box -->
+
+                                    <div class="product-desc">
+                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non.</p>
+                                    </div><!-- End .product-desc -->
+
+                                    <div class="product-filters-container">
+                                        <div class="product-single-filter">
+                                            <label>Colors:</label>
+                                            <ul class="config-swatch-list">
+                                                <li class="active">
+                                                    <a href="#" style="background-color: #6085a5;"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" style="background-color: #ab6e6e;"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" style="background-color: #b19970;"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" style="background-color: #11426b;"></a>
+                                                </li>
+                                            </ul>
+                                        </div><!-- End .product-single-filter -->
+                                    </div><!-- End .product-filters-container -->
+
+                                    <div class="product-action">
+                                        <div class="product-single-qty">
+                                            <input class="horizontal-quantity form-control" type="text">
+                                        </div><!-- End .product-single-qty -->
+
+                                        <a href="cart.html" class="paction add-cart" title="Add to Cart">
+                                            <span>Add to Cart</span>
+                                        </a>
+                                        <a href="#" class="paction add-wishlist" title="Add to Wishlist">
+                                            <span>Add to Wishlist</span>
+                                        </a>
+                                    </div><!-- End .product-action -->
+
+                                    <div class="product-single-share">
+                                        <label>Share:</label>
+                                        <!-- www.addthis.com share plugin-->
+                                        <div class="addthis_inline_share_toolbox"></div>
+                                    </div><!-- End .product single-share -->
+                                </div><!-- End .product-single-details -->
+                            </div><!-- End .col-lg-5 -->
+                        </div><!-- End .row -->
+                    </div><!-- End .product-single-container -->
+
+                    <div class="product-single-tabs scrolling-box">
+                        <div class="sticky-header" role="tablist">
+                            <ul class="nav nav-tabs container">
+                                <li class="nav-item">
+                                    <a class="nav-link" id="product-tab-desc" href="#product-desc-content" data-toggle="tab">Description</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="product-tab-size" href="#product-size-content" data-toggle="tab">Size Guide</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="product-tab-tags" href="#product-tags-content" data-toggle="tab">Tags</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="product-tab-reviews" href="#product-reviews-content" data-toggle="tab">Reviews</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="tab-pane" id="product-desc-content" role="tabpanel" aria-labelledby="product-tab-desc">
+                            <div class="product-desc-content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat.</p>
+                                <ul>
+                                    <li><i class="icon-ok"></i>Any Product types that You want - Simple, Configurable</li>
+                                    <li><i class="icon-ok"></i>Downloadable/Digital Products, Virtual Products</li>
+                                    <li><i class="icon-ok"></i>Inventory Management with Backordered items</li>
+                                </ul>
+                                <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <br>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                            </div><!-- End .product-desc-content -->
+                        </div><!-- End .tab-pane -->
+
+                        <div class="tab-pane" id="product-size-content" role="tabpanel" aria-labelledby="product-tab-size">
+                            <div class="product-size-content">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <img src="assets/images/products/single/body-shape.png" alt="body shape">
+                                    </div><!-- End .col-md-4 -->
+
+                                    <div class="col-md-8">
+                                        <table class="table table-size">
+                                            <thead>
+                                            <tr>
+                                                <th>SIZE</th>
+                                                <th>CHEST (in.)</th>
+                                                <th>WAIST (in.)</th>
+                                                <th>HIPS (in.)</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>XS</td>
+                                                <td>34-36</td>
+                                                <td>27-29</td>
+                                                <td>34.5-36.5</td>
+                                            </tr>
+                                            <tr>
+                                                <td>S</td>
+                                                <td>36-38</td>
+                                                <td>29-31</td>
+                                                <td>36.5-38.5</td>
+                                            </tr>
+                                            <tr>
+                                                <td>M</td>
+                                                <td>38-40</td>
+                                                <td>31-33</td>
+                                                <td>38.5-40.5</td>
+                                            </tr>
+                                            <tr>
+                                                <td>L</td>
+                                                <td>40-42</td>
+                                                <td>33-36</td>
+                                                <td>40.5-43.5</td>
+                                            </tr>
+                                            <tr>
+                                                <td>XL</td>
+                                                <td>42-45</td>
+                                                <td>36-40</td>
+                                                <td>43.5-47.5</td>
+                                            </tr>
+                                            <tr>
+                                                <td>XLL</td>
+                                                <td>45-48</td>
+                                                <td>40-44</td>
+                                                <td>47.5-51.5</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div><!-- End .row -->
+                            </div><!-- End .product-size-content -->
+                        </div><!-- End .tab-pane -->
+
+                        <div class="tab-pane" id="product-tags-content" role="tabpanel" aria-labelledby="product-tab-tags">
+                            <div class="product-tags-content">
+                                <form action="#">
+                                    <h4>Add Your Tags:</h4>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control form-control-sm" required>
+                                        <input type="submit" class="btn btn-primary" value="Add Tags">
+                                    </div><!-- End .form-group -->
+                                </form>
+                                <p class="note">Use spaces to separate tags. Use single quotes (') for phrases.</p>
+                            </div><!-- End .product-tags-content -->
+                        </div><!-- End .tab-pane -->
+
+                        <div class="tab-pane" id="product-reviews-content" role="tabpanel" aria-labelledby="product-tab-reviews">
+                            <div class="product-reviews-content">
+                                <div class="collateral-box">
+                                    <ul>
+                                        <li>Be the first to review this product</li>
+                                    </ul>
+                                </div><!-- End .collateral-box -->
+
+                                <div class="add-product-review">
+                                    <h3 class="text-uppercase heading-text-color font-weight-semibold">WRITE YOUR OWN REVIEW</h3>
+                                    <p>How do you rate this product? *</p>
+
+                                    <form action="#">
+                                        <table class="ratings-table">
+                                            <thead>
+                                            <tr>
+                                                <th>&nbsp;</th>
+                                                <th>1 star</th>
+                                                <th>2 stars</th>
+                                                <th>3 stars</th>
+                                                <th>4 stars</th>
+                                                <th>5 stars</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>Quality</td>
+                                                <td>
+                                                    <input type="radio" name="ratings[1]" id="Quality_1" value="1" class="radio">
+                                                </td>
+                                                <td>
+                                                    <input type="radio" name="ratings[1]" id="Quality_2" value="2" class="radio">
+                                                </td>
+                                                <td>
+                                                    <input type="radio" name="ratings[1]" id="Quality_3" value="3" class="radio">
+                                                </td>
+                                                <td>
+                                                    <input type="radio" name="ratings[1]" id="Quality_4" value="4" class="radio">
+                                                </td>
+                                                <td>
+                                                    <input type="radio" name="ratings[1]" id="Quality_5" value="5" class="radio">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Value</td>
+                                                <td>
+                                                    <input type="radio" name="value[1]" id="Value_1" value="1" class="radio">
+                                                </td>
+                                                <td>
+                                                    <input type="radio" name="value[1]" id="Value_2" value="2" class="radio">
+                                                </td>
+                                                <td>
+                                                    <input type="radio" name="value[1]" id="Value_3" value="3" class="radio">
+                                                </td>
+                                                <td>
+                                                    <input type="radio" name="value[1]" id="Value_4" value="4" class="radio">
+                                                </td>
+                                                <td>
+                                                    <input type="radio" name="value[1]" id="Value_5" value="5" class="radio">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Price</td>
+                                                <td>
+                                                    <input type="radio" name="price[1]" id="Price_1" value="1" class="radio">
+                                                </td>
+                                                <td>
+                                                    <input type="radio" name="price[1]" id="Price_2" value="2" class="radio">
+                                                </td>
+                                                <td>
+                                                    <input type="radio" name="price[1]" id="Price_3" value="3" class="radio">
+                                                </td>
+                                                <td>
+                                                    <input type="radio" name="price[1]" id="Price_4" value="4" class="radio">
+                                                </td>
+                                                <td>
+                                                    <input type="radio" name="price[1]" id="Price_5" value="5" class="radio">
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <div class="form-group">
+                                            <label>Nickname <span class="required">*</span></label>
+                                            <input type="text" class="form-control form-control-sm" required>
+                                        </div><!-- End .form-group -->
+                                        <div class="form-group">
+                                            <label>Summary of Your Review <span class="required">*</span></label>
+                                            <input type="text" class="form-control form-control-sm" required>
+                                        </div><!-- End .form-group -->
+                                        <div class="form-group mb-2">
+                                            <label>Review <span class="required">*</span></label>
+                                            <textarea cols="5" rows="6" class="form-control form-control-sm"></textarea>
+                                        </div><!-- End .form-group -->
+
+                                        <input type="submit" class="btn btn-primary" value="Submit Review">
+                                    </form>
+                                </div><!-- End .add-product-review -->
+                            </div><!-- End .product-reviews-content -->
+                        </div><!-- End .tab-pane -->
+                    </div><!-- End .product-single-tabs -->
+                </div><!-- End .col-lg-9 -->
+
+                <div class="sidebar-overlay"></div>
+                <div class="sidebar-toggle"><i class="icon-sliders"></i></div>
+                <aside class="sidebar-product col-lg-3 padding-left-lg mobile-sidebar">
+                    <div class="sidebar-wrapper">
+                        <div class="widget widget-brand">
+                            <a href="#">
+                                <img src="assets/images/product-brand.png" alt="brand name">
+                            </a>
+                        </div><!-- End .widget -->
+
+                        <div class="widget widget-info">
+                            <ul>
+                                <li>
+                                    <i class="icon-shipping"></i>
+                                    <h4>FREE<br>SHIPPING</h4>
+                                </li>
+                                <li>
+                                    <i class="icon-us-dollar"></i>
+                                    <h4>100% MONEY<br>BACK GUARANTEE</h4>
+                                </li>
+                                <li>
+                                    <i class="icon-online-support"></i>
+                                    <h4>ONLINE<br>SUPPORT 24/7</h4>
+                                </li>
+                            </ul>
+                        </div><!-- End .widget -->
+
+                        <div class="widget widget-banner">
+                            <div class="banner banner-image">
+                                <a href="#">
+                                    <img src="assets/images/banners/banner-sidebar.jpg" alt="Banner Desc">
+                                </a>
+                            </div><!-- End .banner -->
+                        </div><!-- End .widget -->
+
+                        <div class="widget widget-featured">
+                            <h3 class="widget-title">Featured Products</h3>
+
+                            <div class="widget-body">
+                                <div class="owl-carousel widget-featured-products">
+                                    <div class="featured-col">
+                                        <div class="product product-sm">
+                                            <figure class="product-image-container">
+                                                <a href="product.html" class="product-image">
+                                                    <img src="assets/images/products/product-1.jpg" alt="product">
+                                                </a>
+                                            </figure>
+                                            <div class="product-details">
+                                                <h2 class="product-title">
+                                                    <a href="product.html">Reason Logo Snapback</a>
+                                                </h2>
+                                                <div class="ratings-container">
+                                                    <div class="product-ratings">
+                                                        <span class="ratings" style="width:80%"></span><!-- End .ratings -->
+                                                    </div><!-- End .product-ratings -->
+                                                </div><!-- End .product-container -->
+                                                <div class="price-box">
+                                                    <span class="product-price">$28.00</span>
+                                                </div><!-- End .price-box -->
+                                            </div><!-- End .product-details -->
+                                        </div><!-- End .product -->
+
+                                        <div class="product product-sm">
+                                            <figure class="product-image-container">
+                                                <a href="product.html" class="product-image">
+                                                    <img src="assets/images/products/product-2.jpg" alt="product">
+                                                </a>
+                                            </figure>
+                                            <div class="product-details">
+                                                <h2 class="product-title">
+                                                    <a href="product.html">Crisscross Slides</a>
+                                                </h2>
+                                                <div class="ratings-container">
+                                                    <div class="product-ratings">
+                                                        <span class="ratings" style="width:20%"></span><!-- End .ratings -->
+                                                    </div><!-- End .product-ratings -->
+                                                </div><!-- End .product-container -->
+                                                <div class="price-box">
+                                                    <span class="old-price">$12.00</span>
+                                                    <span class="product-price">$8.00</span>
+                                                </div><!-- End .price-box -->
+                                            </div><!-- End .product-details -->
+                                        </div><!-- End .product -->
+
+                                        <div class="product product-sm">
+                                            <figure class="product-image-container">
+                                                <a href="product.html" class="product-image">
+                                                    <img src="assets/images/products/product-3.jpg" alt="product">
+                                                </a>
+                                            </figure>
+                                            <div class="product-details">
+                                                <h2 class="product-title">
+                                                    <a href="product.html">Athletic Mesh Tee</a>
+                                                </h2>
+                                                <div class="ratings-container">
+                                                    <div class="product-ratings">
+                                                        <span class="ratings" style="width:100%"></span><!-- End .ratings -->
+                                                    </div><!-- End .product-ratings -->
+                                                </div><!-- End .product-container -->
+                                                <div class="price-box">
+                                                    <span class="product-price">$15.00</span>
+                                                </div><!-- End .price-box -->
+                                            </div><!-- End .product-details -->
+                                        </div><!-- End .product -->
+                                    </div><!-- End .featured-col -->
+
+                                    <div class="featured-col">
+                                        <div class="product product-sm">
+                                            <figure class="product-image-container">
+                                                <a href="product.html" class="product-image">
+                                                    <img src="assets/images/products/product-4.jpg" alt="product">
+                                                </a>
+                                            </figure>
+                                            <div class="product-details">
+                                                <h2 class="product-title">
+                                                    <a href="product.html">SweatShirt</a>
+                                                </h2>
+                                                <div class="ratings-container">
+                                                    <div class="product-ratings">
+                                                        <span class="ratings" style="width:100%"></span><!-- End .ratings -->
+                                                    </div><!-- End .product-ratings -->
+                                                </div><!-- End .product-container -->
+                                                <div class="price-box">
+                                                    <span class="old-price">$50.00</span>
+                                                    <span class="product-price">$35.00</span>
+                                                </div><!-- End .price-box -->
+                                            </div><!-- End .product-details -->
+                                        </div><!-- End .product -->
+
+                                        <div class="product product-sm">
+                                            <figure class="product-image-container">
+                                                <a href="product.html" class="product-image">
+                                                    <img src="assets/images/products/product-5.jpg" alt="product">
+                                                </a>
+                                            </figure>
+                                            <div class="product-details">
+                                                <h2 class="product-title">
+                                                    <a href="product.html">Zippered Sneakers</a>
+                                                </h2>
+                                                <div class="ratings-container">
+                                                    <div class="product-ratings">
+                                                        <span class="ratings" style="width:60%"></span><!-- End .ratings -->
+                                                    </div><!-- End .product-ratings -->
+                                                </div><!-- End .product-container -->
+                                                <div class="price-box">
+                                                    <span class="product-price">$29.00</span>
+                                                </div><!-- End .price-box -->
+                                            </div><!-- End .product-details -->
+                                        </div><!-- End .product -->
+
+                                        <div class="product product-sm">
+                                            <figure class="product-image-container">
+                                                <a href="product.html" class="product-image">
+                                                    <img src="assets/images/products/product-6.jpg" alt="product">
+                                                </a>
+                                            </figure>
+                                            <div class="product-details">
+                                                <h2 class="product-title">
+                                                    <a href="product.html">Matte Browline Sunglasses</a>
+                                                </h2>
+                                                <div class="ratings-container">
+                                                    <div class="product-ratings">
+                                                        <span class="ratings" style="width:20%"></span><!-- End .ratings -->
+                                                    </div><!-- End .product-ratings -->
+                                                </div><!-- End .product-container -->
+                                                <div class="price-box">
+                                                    <span class="product-price">$40.00</span>
+                                                </div><!-- End .price-box -->
+                                            </div><!-- End .product-details -->
+                                        </div><!-- End .product -->
+                                    </div><!-- End .featured-col -->
+                                </div><!-- End .widget-featured-slider -->
+                            </div><!-- End .widget-body -->
+                        </div><!-- End .widget -->
                     </div>
-                    <div class="modal-body" style="text-align: center;">
-                        <img src="{{ !is_null($product->size_chart_image) ? asset(env('LARGE').$product->size_chart_image) : asset(env('LARGE').$settings->size_chart) }}"
-                             id="imagepreview"
-                             style="width: 400px; height: 264px;">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default"
-                                data-dismiss="modal">{{ trans('general.close') }}</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    @endif
-    <!-- END quickview product -->
+                </aside><!-- End .col-md-3 -->
+            </div><!-- End .row -->
+        </div><!-- End .container -->
+
+        <div class="featured-section">
+            <div class="container">
+                <h2 class="carousel-title">Featured Products</h2>
+
+                <div class="featured-products owl-carousel owl-theme owl-dots-top">
+                    <div class="product">
+                        <figure class="product-image-container">
+                            <a href="product.html" class="product-image">
+                                <img src="assets/images/products/product-1.jpg" alt="product">
+                            </a>
+                            <a href="ajax/product-quick-view.html" class="btn-quickview">Quick View</a>
+                        </figure>
+                        <div class="product-details action-inner">
+                            <h2 class="product-title">
+                                <a href="product.html">Reason Logo Snapback</a>
+                            </h2>
+                            <div class="product-action">
+                                <a href="#" class="paction add-wishlist" title="Add to Wishlist">
+                                    <span>Add to Wishlist</span>
+                                </a>
+                            </div><!-- End .product-action -->
+                            <div class="price-box">
+                                <span class="product-price">$28.00</span>
+                            </div><!-- End .price-box -->
+                        </div><!-- End .product-details -->
+                    </div><!-- End .product -->
+
+                    <div class="product">
+                        <figure class="product-image-container">
+                            <a href="product.html" class="product-image">
+                                <img src="assets/images/products/product-2.jpg" alt="product">
+                            </a>
+                            <a href="ajax/product-quick-view.html" class="btn-quickview">Quick View</a>
+                            <span class="product-label label-sale">-20%</span>
+                            <span class="product-label label-hot">New</span>
+                        </figure>
+                        <div class="product-details action-inner">
+                            <h2 class="product-title">
+                                <a href="product.html">Leather Crisscross Slides</a>
+                            </h2>
+                            <div class="product-action">
+                                <a href="#" class="paction add-wishlist" title="Add to Wishlist">
+                                    <span>Add to Wishlist</span>
+                                </a>
+                            </div><!-- End .product-action -->
+                            <div class="price-box">
+                                <span class="old-price">$12.90</span>
+                                <span class="product-price">$8.90</span>
+                            </div><!-- End .price-box -->
+                        </div><!-- End .product-details -->
+                    </div><!-- End .product -->
+
+                    <div class="product">
+                        <figure class="product-image-container">
+                            <a href="product.html" class="product-image">
+                                <img src="assets/images/products/product-3.jpg" alt="product">
+                            </a>
+                            <a href="ajax/product-quick-view.html" class="btn-quickview">Quick View</a>
+                        </figure>
+                        <div class="product-details action-inner">
+                            <h2 class="product-title">
+                                <a href="product.html">Stripe-Trim Athletic Mesh Tee</a>
+                            </h2>
+                            <div class="product-action">
+                                <a href="#" class="paction add-wishlist" title="Add to Wishlist">
+                                    <span>Add to Wishlist</span>
+                                </a>
+                            </div><!-- End .product-action -->
+                            <div class="price-box">
+                                <span class="product-price">$15.00</span>
+                            </div><!-- End .price-box -->
+                        </div><!-- End .product-details -->
+                    </div><!-- End .product -->
+
+                    <div class="product">
+                        <figure class="product-image-container">
+                            <a href="product.html" class="product-image">
+                                <img src="assets/images/products/product-4.jpg" alt="product">
+                            </a>
+                            <a href="ajax/product-quick-view.html" class="btn-quickview">Quick View</a>
+                        </figure>
+                        <div class="product-details action-inner">
+                            <h2 class="product-title">
+                                <a href="product.html">Classic Crew Neck Sweatshirt</a>
+                            </h2>
+                            <div class="product-action">
+                                <a href="#" class="paction add-wishlist" title="Add to Wishlist">
+                                    <span>Add to Wishlist</span>
+                                </a>
+                            </div><!-- End .product-action -->
+                            <div class="price-box">
+                                <span class="product-price">$12.80</span>
+                            </div><!-- End .price-box -->
+                        </div><!-- End .product-details -->
+                    </div><!-- End .product -->
+
+                    <div class="product">
+                        <figure class="product-image-container">
+                            <a href="product.html" class="product-image">
+                                <img src="assets/images/products/product-5.jpg" alt="product">
+                            </a>
+                            <a href="ajax/product-quick-view.html" class="btn-quickview">Quick View</a>
+                        </figure>
+                        <div class="product-details action-inner">
+                            <h2 class="product-title">
+                                <a href="product.html">Zippered Sneakers</a>
+                            </h2>
+                            <div class="product-action">
+                                <a href="#" class="paction add-wishlist" title="Add to Wishlist">
+                                    <span>Add to Wishlist</span>
+                                </a>
+                            </div><!-- End .product-action -->
+                            <div class="price-box">
+                                <span class="product-price">$32.80</span>
+                            </div><!-- End .price-box -->
+                        </div><!-- End .product-details -->
+                    </div><!-- End .product -->
+                </div><!-- End .featured-proucts -->
+            </div><!-- End .container -->
+        </div><!-- End .featured-section -->
+    </main><!-- End .main -->
 @endsection
 
 @section('scripts')

@@ -9,7 +9,9 @@
             <div class="home-slider-container">
                 <div class="home-slider owl-carousel">
                     <div class="home-slide">
-                        <div class="slide-bg owl-lazy"  data-src="https://source.unsplash.com/collection/1703764/1170x570"></div><!-- End .slide-bg -->
+                        <div class="slide-bg owl-lazy"
+                             data-src="https://source.unsplash.com/collection/1703764/1170x570"></div>
+                        <!-- End .slide-bg -->
                         <div class="home-slide-content slide-content-right">
                             <h3>New Summer</h3>
                             <h1>Collection</h1>
@@ -18,7 +20,9 @@
                     </div><!-- End .home-slide -->
 
                     <div class="home-slide">
-                        <div class="slide-bg owl-lazy"  data-src="https://source.unsplash.com/collection/1650910/1170x570"></div><!-- End .slide-bg -->
+                        <div class="slide-bg owl-lazy"
+                             data-src="https://source.unsplash.com/collection/1650910/1170x570"></div>
+                        <!-- End .slide-bg -->
                         <div class="home-slide-content">
                             <h3>Elegent Collections</h3>
                             <h1>For Him & Her</h1>
@@ -42,7 +46,8 @@
 
                             <div class="cat-box-content">
                                 <h3 class="cat-box-title"><a href="#">Sunglasses</a></h3>
-                                <p>Lorem Ipsum is simply dummy<br> text of the printing and typesetting industry.<br> Lorem Ipsum has</p>
+                                <p>Lorem Ipsum is simply dummy<br> text of the printing and typesetting industry.<br>
+                                    Lorem Ipsum has</p>
                             </div><!-- End .cat-box-content -->
                         </div><!-- End .cat-box -->
                     </div><!-- End .col-md-4 -->
@@ -57,7 +62,8 @@
 
                             <div class="cat-box-content">
                                 <h3 class="cat-box-title"><a href="#">Shoes</a></h3>
-                                <p>Lorem Ipsum is simply dummy<br> text of the printing and typesetting industry.<br> Lorem Ipsum has</p>
+                                <p>Lorem Ipsum is simply dummy<br> text of the printing and typesetting industry.<br>
+                                    Lorem Ipsum has</p>
                             </div><!-- End .cat-box-content -->
                         </div><!-- End .cat-box -->
                     </div><!-- End .col-lg-4 -->
@@ -72,7 +78,8 @@
 
                             <div class="cat-box-content">
                                 <h3 class="cat-box-title"><a href="#">Watches</a></h3>
-                                <p>Lorem Ipsum is simply dummy<br> text of the printing and typesetting industry.<br> Lorem Ipsum has</p>
+                                <p>Lorem Ipsum is simply dummy<br> text of the printing and typesetting industry.<br>
+                                    Lorem Ipsum has</p>
                             </div><!-- End .cat-box-content -->
                         </div><!-- End .cat-box -->
                     </div><!-- End .col-lg-4 -->
@@ -84,123 +91,43 @@
             <div class="container">
                 <h2 class="title mb-3">Featured Products</h2>
                 <div class="owl-carousel owl-theme featured-products">
-                    <div class="product">
-                        <figure class="product-image-container">
-                            <a href="product.html" class="product-image">
-                                <img src="https://source.unsplash.com/collection/3486736/600x600" alt="product">
-                            </a>
-                            <a href="ajax/product-quick-view.html" class="btn-quickview">Quick View</a>
-                        </figure>
-                        <div class="product-details action-inner">
-                            <h2 class="product-title">
-                                <a href="product.html">Reason Logo Snapback</a>
-                            </h2>
-                            <div class="product-action">
-                                <a href="#" class="paction add-wishlist" title="Add to Wishlist">
-                                    <span>Add to Wishlist</span>
+                    @foreach($newArrivals as $element)
+                        <div class="product">
+                            <figure class="product-image-container">
+                                <a href="product.html" class="product-image">
+                                    <img src="https://source.unsplash.com/collection/3756765/600x600" alt="product">
                                 </a>
-                            </div><!-- End .product-action -->
-                            <div class="price-box">
-                                <span class="product-price">$28.00</span>
-                            </div><!-- End .price-box -->
-                        </div><!-- End .product-details -->
-                    </div><!-- End .product -->
-
-                    <div class="product">
-                        <figure class="product-image-container">
-                            <a href="product.html" class="product-image">
-                                <img src="https://source.unsplash.com/collection/3756765/600x600" alt="product">
-                            </a>
-                            <a href="ajax/product-quick-view.html" class="btn-quickview">Quick View</a>
-                            <span class="product-label label-sale">-20%</span>
-                            <span class="product-label label-hot">New</span>
-                        </figure>
-                        <div class="product-details action-inner">
-                            <h2 class="product-title">
-                                <a href="product.html">Leather Crisscross Slides</a>
-                            </h2>
-                            <div class="product-action">
-                                <a href="#" class="paction add-wishlist" title="Add to Wishlist">
-                                    <span>Add to Wishlist</span>
-                                </a>
-                            </div><!-- End .product-action -->
-                            <div class="price-box">
-                                <span class="old-price">$12.90</span>
-                                <span class="product-price">$8.90</span>
-                            </div><!-- End .price-box -->
-                        </div><!-- End .product-details -->
-                    </div><!-- End .product -->
-
-                    <div class="product">
-                        <figure class="product-image-container">
-                            <a href="product.html" class="product-image">
-                                <img src="https://source.unsplash.com/collection/331043/600x600" alt="product">
-                            </a>
-                            <a href="ajax/product-quick-view.html" class="btn-quickview">Quick View</a>
-                        </figure>
-                        <div class="product-details action-inner">
-                            <h2 class="product-title">
-                                <a href="product.html">Stripe-Trim Athletic Mesh Tee</a>
-                            </h2>
-                            <div class="product-action">
-                                <a href="#" class="paction add-wishlist" title="Add to Wishlist">
-                                    <span>Add to Wishlist</span>
-                                </a>
-                            </div><!-- End .product-action -->
-                            <div class="price-box">
-                                <span class="product-price">$15.00</span>
-                            </div><!-- End .price-box -->
-                        </div><!-- End .product-details -->
-                    </div><!-- End .product -->
-
-                    <div class="product">
-                        <figure class="product-image-container">
-                            <a href="product.html" class="product-image">
-                                <img src="https://source.unsplash.com/collection/3550597/600x600" alt="product">
-                            </a>
-                            <a href="ajax/product-quick-view.html" class="btn-quickview">Quick View</a>
-                        </figure>
-                        <div class="product-details action-inner">
-                            <h2 class="product-title">
-                                <a href="product.html">Classic Crew Neck Sweatshirt</a>
-                            </h2>
-                            <div class="product-action">
-                                <a href="#" class="paction add-wishlist" title="Add to Wishlist">
-                                    <span>Add to Wishlist</span>
-                                </a>
-                            </div><!-- End .product-action -->
-                            <div class="price-box">
-                                <span class="product-price">$12.80</span>
-                            </div><!-- End .price-box -->
-                        </div><!-- End .product-details -->
-                    </div><!-- End .product -->
-
-                    <div class="product">
-                        <figure class="product-image-container">
-                            <a href="product.html" class="product-image">
-                                <img src="https://source.unsplash.com/collection/2072664/600x600" alt="product">
-                            </a>
-                            <a href="ajax/product-quick-view.html" class="btn-quickview">Quick View</a>
-                        </figure>
-                        <div class="product-details action-inner">
-                            <h2 class="product-title">
-                                <a href="product.html">Zippered Sneakers</a>
-                            </h2>
-                            <div class="product-action">
-                                <a href="#" class="paction add-wishlist" title="Add to Wishlist">
-                                    <span>Add to Wishlist</span>
-                                </a>
-                            </div><!-- End .product-action -->
-                            <div class="price-box">
-                                <span class="product-price">$32.80</span>
-                            </div><!-- End .price-box -->
-                        </div><!-- End .product-details -->
-                    </div><!-- End .product -->
+                                <a href="ajax/product-quick-view.html"
+                                   class="btn-quickview">{{ trans('general.quick_view') }}</a>
+                                @if($element->on_sale)
+                                    <span class="product-label label-sale">{{ $element->on_sale_price }}</span>
+                                @endif
+                                @if($element->is_new)
+                                    <span class="product-label label-hot">{{ trans('general.new') }}</span>
+                                @endif
+                            </figure>
+                            <div class="product-details action-inner">
+                                <h2 class="product-title">
+                                    <a href="product.html">Leather Crisscross Slides</a>
+                                </h2>
+                                <div class="product-action">
+                                    <a href="#" class="paction add-wishlist" title="Add to Wishlist">
+                                        <span>Add to Wishlist</span>
+                                    </a>
+                                </div><!-- End .product-action -->
+                                <div class="price-box">
+                                    <span class="old-price">$12.90</span>
+                                    <span class="product-price">$8.90</span>
+                                </div><!-- End .price-box -->
+                            </div><!-- End .product-details -->
+                        </div><!-- End .product -->
+                    @endforeach
                 </div><!-- End .featured-products -->
             </div><!-- End .container -->
         </div><!-- End .home-top-section -->
 
-        <div class="promo-section" style="background-image: url(https://source.unsplash.com/collection/3486736/1200x300)">
+        <div class="promo-section"
+             style="background-image: url(https://source.unsplash.com/collection/3486736/1200x300)">
             <div class="container">
                 <div class="container">
                     <div class="promo-content">
@@ -251,9 +178,11 @@
                                             <div class="product">
                                                 <figure class="product-image-container">
                                                     <a href="product.html" class="product-image">
-                                                        <img src="https://source.unsplash.com/collection/3168510/600x600" alt="product">
+                                                        <img src="https://source.unsplash.com/collection/3168510/600x600"
+                                                             alt="product">
                                                     </a>
-                                                    <a href="ajax/product-quick-view.html" class="btn-quickview">Quick View</a>
+                                                    <a href="ajax/product-quick-view.html" class="btn-quickview">Quick
+                                                        View</a>
                                                 </figure>
                                             </div><!-- End .product -->
                                         </div><!-- End .col-6 -->
@@ -262,35 +191,11 @@
                                             <div class="product">
                                                 <figure class="product-image-container">
                                                     <a href="product.html" class="product-image">
-                                                        <img src="https://source.unsplash.com/collection/1703764/600x600" alt="product">
+                                                        <img src="https://source.unsplash.com/collection/1703764/600x600"
+                                                             alt="product">
                                                     </a>
-                                                    <a href="ajax/product-quick-view.html" class="btn-quickview">Quick View</a>
-                                                </figure>
-                                            </div><!-- End .product -->
-                                        </div><!-- End .col-6 -->
-                                    </div><!-- End .row -->
-                                </div><!-- End .col-lg-4 -->
-
-                                <div class="col-lg-4">
-                                    <div class="row">
-                                        <div class="col-6 col-lg-12">
-                                            <div class="product">
-                                                <figure class="product-image-container">
-                                                    <a href="product.html" class="product-image">
-                                                        <img src="https://source.unsplash.com/collection/3426199/600x600" alt="product">
-                                                    </a>
-                                                    <a href="ajax/product-quick-view.html" class="btn-quickview">Quick View</a>
-                                                </figure>
-                                            </div><!-- End .product -->
-                                        </div><!-- End .col-6 -->
-
-                                        <div class="col-6 col-lg-12">
-                                            <div class="product">
-                                                <figure class="product-image-container">
-                                                    <a href="product.html" class="product-image">
-                                                        <img src="https://source.unsplash.com/collection/2280551/600x600" alt="product">
-                                                    </a>
-                                                    <a href="ajax/product-quick-view.html" class="btn-quickview">Quick View</a>
+                                                    <a href="ajax/product-quick-view.html" class="btn-quickview">Quick
+                                                        View</a>
                                                 </figure>
                                             </div><!-- End .product -->
                                         </div><!-- End .col-6 -->
@@ -303,9 +208,11 @@
                                             <div class="product">
                                                 <figure class="product-image-container">
                                                     <a href="product.html" class="product-image">
-                                                        <img src="https://source.unsplash.com/collection/2280551/600x600" alt="product">
+                                                        <img src="https://source.unsplash.com/collection/3426199/600x600"
+                                                             alt="product">
                                                     </a>
-                                                    <a href="ajax/product-quick-view.html" class="btn-quickview">Quick View</a>
+                                                    <a href="ajax/product-quick-view.html" class="btn-quickview">Quick
+                                                        View</a>
                                                 </figure>
                                             </div><!-- End .product -->
                                         </div><!-- End .col-6 -->
@@ -314,9 +221,41 @@
                                             <div class="product">
                                                 <figure class="product-image-container">
                                                     <a href="product.html" class="product-image">
-                                                        <img src="https://source.unsplash.com/collection/2357987/600x600" alt="product">
+                                                        <img src="https://source.unsplash.com/collection/2280551/600x600"
+                                                             alt="product">
                                                     </a>
-                                                    <a href="ajax/product-quick-view.html" class="btn-quickview">Quick View</a>
+                                                    <a href="ajax/product-quick-view.html" class="btn-quickview">Quick
+                                                        View</a>
+                                                </figure>
+                                            </div><!-- End .product -->
+                                        </div><!-- End .col-6 -->
+                                    </div><!-- End .row -->
+                                </div><!-- End .col-lg-4 -->
+
+                                <div class="col-lg-4">
+                                    <div class="row">
+                                        <div class="col-6 col-lg-12">
+                                            <div class="product">
+                                                <figure class="product-image-container">
+                                                    <a href="product.html" class="product-image">
+                                                        <img src="https://source.unsplash.com/collection/2280551/600x600"
+                                                             alt="product">
+                                                    </a>
+                                                    <a href="ajax/product-quick-view.html" class="btn-quickview">Quick
+                                                        View</a>
+                                                </figure>
+                                            </div><!-- End .product -->
+                                        </div><!-- End .col-6 -->
+
+                                        <div class="col-6 col-lg-12">
+                                            <div class="product">
+                                                <figure class="product-image-container">
+                                                    <a href="product.html" class="product-image">
+                                                        <img src="https://source.unsplash.com/collection/2357987/600x600"
+                                                             alt="product">
+                                                    </a>
+                                                    <a href="ajax/product-quick-view.html" class="btn-quickview">Quick
+                                                        View</a>
                                                 </figure>
                                             </div><!-- End .product -->
                                         </div><!-- End .col-6 -->
@@ -330,28 +269,28 @@
         </div><!-- End .home-bottom-section -->
 
         {{--<div class="container">--}}
-            {{--<div class="instagram-feed">--}}
-                {{--<ul class="instagram-feed-list">--}}
-                    {{--<li><a href="#"><img src="images/instagram/1.jpg" alt="Feed"></a></li>--}}
-                    {{--<li><a href="#"><img src="images/instagram/2.jpg" alt="Feed"></a></li>--}}
-                    {{--<li><a href="#"><img src="images/instagram/3.jpg" alt="Feed"></a></li>--}}
-                    {{--<li><a href="#"><img src="images/instagram/4.jpg" alt="Feed"></a></li>--}}
-                    {{--<li><a href="#"><img src="images/instagram/5.jpg" alt="Feed"></a></li>--}}
-                    {{--<li><a href="#"><img src="images/instagram/6.jpg" alt="Feed"></a></li>--}}
-                    {{--<li><a href="#"><img src="images/instagram/7.jpg" alt="Feed"></a></li>--}}
-                    {{--<li><a href="#"><img src="images/instagram/8.jpg" alt="Feed"></a></li>--}}
-                    {{--<li><a href="#"><img src="images/instagram/9.jpg" alt="Feed"></a></li>--}}
-                    {{--<li><a href="#"><img src="images/instagram/10.jpg" alt="Feed"></a></li>--}}
-                    {{--<li><a href="#"><img src="images/instagram/11.jpg" alt="Feed"></a></li>--}}
-                    {{--<li><a href="#"><img src="images/instagram/12.jpg" alt="Feed"></a></li>--}}
-                {{--</ul>--}}
-                {{--<div class="instagram-feed-content">--}}
-                    {{--<i class="icon-instagram"></i>--}}
-                    {{--<h3>Instagram</h3>--}}
-                    {{--<div>@portoecommerce</div>--}}
-                    {{--<a href="#" class="btn btn-secondary">Follow</a>--}}
-                {{--</div><!-- End .instagram-feed-content -->--}}
-            {{--</div><!-- End .instagram-feed -->--}}
+        {{--<div class="instagram-feed">--}}
+        {{--<ul class="instagram-feed-list">--}}
+        {{--<li><a href="#"><img src="images/instagram/1.jpg" alt="Feed"></a></li>--}}
+        {{--<li><a href="#"><img src="images/instagram/2.jpg" alt="Feed"></a></li>--}}
+        {{--<li><a href="#"><img src="images/instagram/3.jpg" alt="Feed"></a></li>--}}
+        {{--<li><a href="#"><img src="images/instagram/4.jpg" alt="Feed"></a></li>--}}
+        {{--<li><a href="#"><img src="images/instagram/5.jpg" alt="Feed"></a></li>--}}
+        {{--<li><a href="#"><img src="images/instagram/6.jpg" alt="Feed"></a></li>--}}
+        {{--<li><a href="#"><img src="images/instagram/7.jpg" alt="Feed"></a></li>--}}
+        {{--<li><a href="#"><img src="images/instagram/8.jpg" alt="Feed"></a></li>--}}
+        {{--<li><a href="#"><img src="images/instagram/9.jpg" alt="Feed"></a></li>--}}
+        {{--<li><a href="#"><img src="images/instagram/10.jpg" alt="Feed"></a></li>--}}
+        {{--<li><a href="#"><img src="images/instagram/11.jpg" alt="Feed"></a></li>--}}
+        {{--<li><a href="#"><img src="images/instagram/12.jpg" alt="Feed"></a></li>--}}
+        {{--</ul>--}}
+        {{--<div class="instagram-feed-content">--}}
+        {{--<i class="icon-instagram"></i>--}}
+        {{--<h3>Instagram</h3>--}}
+        {{--<div>@portoecommerce</div>--}}
+        {{--<a href="#" class="btn btn-secondary">Follow</a>--}}
+        {{--</div><!-- End .instagram-feed-content -->--}}
+        {{--</div><!-- End .instagram-feed -->--}}
         {{--</div><!-- End .container -->--}}
     </main><!-- End .main -->
 

@@ -14,6 +14,7 @@ $factory->define(Product::class, function (Faker $faker) use ($fakerAr) {
         'weight' => $faker->randomDigit,
         'home_delivery_availability' => $faker->boolean,
         'shipment_availability' => $faker->boolean,
+        'is_new' => $faker->boolean,
         'on_sale' => $faker->boolean,
         'on_sale_on_homepage' => $faker->boolean,
         'on_homepage' => $faker->boolean,

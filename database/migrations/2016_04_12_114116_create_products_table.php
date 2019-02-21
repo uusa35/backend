@@ -17,6 +17,7 @@ class CreateProductsTable extends Migration
             $table->string('sku')->nullable();
             $table->string('name_ar');
             $table->string('name_en');
+            $table->boolean('is_new')->default(0);
             $table->boolean('home_delivery_availability')->default(0);
             $table->boolean('shipment_availability')->default(0);
             $table->boolean('on_sale')->default(0);
