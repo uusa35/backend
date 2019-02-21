@@ -25,13 +25,13 @@
 @show
 <!--footer end-->
 
-@section('models')
-    @include('frontend.porto.tow.partials.models')
-@show
 <!--script for this page-->
     @section('scripts')
         @include('frontend.porto.three.partials.scripts')
     @show
 </div>
+@section('models')
+    @include('frontend.porto.tow.partials.models')
+@show
 </body>
 </html>
