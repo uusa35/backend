@@ -1,25 +1,20 @@
 <?php
 
-namespace App\Http\Controllers\Backend;
+namespace App\Http\Controllers\Backend\Admin;
 
-use App\Core\PrimaryController;
 use App\Http\Controllers\Controller;
-use App\Http\Requests;
-use App\Models\Product;
-use App\Services\Traits\NotificationHelper;
-use App\Src\Currency\Currency;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 
 class HomeController extends Controller
 {
-    use NotificationHelper;
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
-    {
-        return view('backend.home');
-    }
-
-    public function home()
     {
         return view('backend.home');
     }
@@ -30,6 +25,7 @@ class HomeController extends Controller
         session()->put('locale', request('locale'));
         return redirect()->back();
     }
+
     public function toggleActivate(Request $request)
     {
         $className = '\App\Models\\' . title_case($request->model);
@@ -60,9 +56,9 @@ class HomeController extends Controller
         $className = '\App\Models\\' . title_case($request->model);
         $element = new $className();
         $element = $element->withoutGlobalScopes()->whereId($request->id)->first();
-        if (isset($element->on_home)) {
+        if (isset($element->is_home)) {
             $element->update([
-                'on_home' => !$element->on_home
+                'is_home' => !$element->is_home
             ]);
             return redirect()->back()->with('success', 'Process Success');
         }
@@ -95,23 +91,5 @@ class HomeController extends Controller
         Artisan::call('publish-trans');
 
         return redirect()->back()->with('success', 'translations exported');
-    }
-
-    public function createNotification($element) {
-        $element = Product::active()->hasAttributes()->first();
-        $this->notify(
-            trans('message.notification_message',
-                [
-                    'type' => 'testing',
-                    'name' => $element->name,
-                    'project_name' => $element->name
-                ]),
-            '',
-            [
-                'path' => asset('storage/uploads/files/' . $element->path),
-                'title' => $element->name,
-                'type' => 'pdf'
-            ]
-        );
     }
 }

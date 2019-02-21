@@ -9,7 +9,7 @@
             <div class="home-slider-container">
                 <div class="home-slider owl-carousel">
                     <div class="home-slide">
-                        <div class="slide-bg owl-lazy"  data-src="https://loremflickr.com/1170/570/toy"></div><!-- End .slide-bg -->
+                        <div class="slide-bg owl-lazy"  data-src="https://source.unsplash.com/collection/1703764/1170x570"></div><!-- End .slide-bg -->
                         <div class="home-slide-content slide-content-right">
                             <h3>New Summer</h3>
                             <h1>Collection</h1>
@@ -18,7 +18,7 @@
                     </div><!-- End .home-slide -->
 
                     <div class="home-slide">
-                        <div class="slide-bg owl-lazy"  data-src="https://loremflickr.com/398/210/chartoon"></div><!-- End .slide-bg -->
+                        <div class="slide-bg owl-lazy"  data-src="https://source.unsplash.com/collection/1650910/1170x570"></div><!-- End .slide-bg -->
                         <div class="home-slide-content">
                             <h3>Elegent Collections</h3>
                             <h1>For Him & Her</h1>
@@ -36,7 +36,7 @@
                         <div class="cat-box">
                             <figure>
                                 <a href="#">
-                                    <img src="https://loremflickr.com/398/210/chartoon" alt="banner">
+                                    <img src="https://source.unsplash.com/collection/2072664/398x210" alt="banner">
                                 </a>
                             </figure>
 
@@ -51,7 +51,7 @@
                         <div class="cat-box">
                             <figure>
                                 <a href="#">
-                                    <img src="https://loremflickr.com/398/210/chartoon" alt="banner">
+                                    <img src="https://source.unsplash.com/collection/3426199/398x210" alt="banner">
                                 </a>
                             </figure>
 
@@ -66,7 +66,7 @@
                         <div class="cat-box">
                             <figure>
                                 <a href="#">
-                                    <img src="https://loremflickr.com/398/210/mickey" alt="banner">
+                                    <img src="https://source.unsplash.com/collection/1703764/398x210" alt="banner">
                                 </a>
                             </figure>
 
@@ -87,7 +87,7 @@
                     <div class="product">
                         <figure class="product-image-container">
                             <a href="product.html" class="product-image">
-                                <img src="https://loremflickr.com/600/600/tweety" alt="product">
+                                <img src="https://source.unsplash.com/collection/3486736/600x600" alt="product">
                             </a>
                             <a href="ajax/product-quick-view.html" class="btn-quickview">Quick View</a>
                         </figure>
@@ -109,7 +109,7 @@
                     <div class="product">
                         <figure class="product-image-container">
                             <a href="product.html" class="product-image">
-                                <img src="https://loremflickr.com/600/600/chartoon" alt="product">
+                                <img src="https://source.unsplash.com/collection/3756765/600x600" alt="product">
                             </a>
                             <a href="ajax/product-quick-view.html" class="btn-quickview">Quick View</a>
                             <span class="product-label label-sale">-20%</span>
@@ -134,7 +134,7 @@
                     <div class="product">
                         <figure class="product-image-container">
                             <a href="product.html" class="product-image">
-                                <img src="https://loremflickr.com/600/600/chartoon" alt="product">
+                                <img src="https://source.unsplash.com/collection/331043/600x600" alt="product">
                             </a>
                             <a href="ajax/product-quick-view.html" class="btn-quickview">Quick View</a>
                         </figure>
@@ -156,7 +156,7 @@
                     <div class="product">
                         <figure class="product-image-container">
                             <a href="product.html" class="product-image">
-                                <img src="images/products/product-4.jpg" alt="product">
+                                <img src="https://source.unsplash.com/collection/3550597/600x600" alt="product">
                             </a>
                             <a href="ajax/product-quick-view.html" class="btn-quickview">Quick View</a>
                         </figure>
@@ -178,7 +178,7 @@
                     <div class="product">
                         <figure class="product-image-container">
                             <a href="product.html" class="product-image">
-                                <img src="images/products/product-5.jpg" alt="product">
+                                <img src="https://source.unsplash.com/collection/2072664/600x600" alt="product">
                             </a>
                             <a href="ajax/product-quick-view.html" class="btn-quickview">Quick View</a>
                         </figure>
@@ -200,7 +200,7 @@
             </div><!-- End .container -->
         </div><!-- End .home-top-section -->
 
-        <div class="promo-section" style="background-image: url(images/promo-bg.jpg)">
+        <div class="promo-section" style="background-image: url(https://source.unsplash.com/collection/3486736/1200x300)">
             <div class="container">
                 <div class="container">
                     <div class="promo-content">
@@ -223,7 +223,7 @@
                             <div class="product">
                                 <figure class="product-image-container">
                                     <a href="product.html" class="product-image">
-                                        <img src="images/products/home/product-1.jpg" alt="product">
+                                        <img src="https://source.unsplash.com/collection/1703764/600x600" alt="product">
                                     </a>
                                     <a href="ajax/product-quick-view.html" class="btn-quickview">Quick View</a>
                                 </figure>
@@ -251,7 +251,7 @@
                                             <div class="product">
                                                 <figure class="product-image-container">
                                                     <a href="product.html" class="product-image">
-                                                        <img src="images/products/home/product-2.jpg" alt="product">
+                                                        <img src="https://source.unsplash.com/collection/3168510/600x600" alt="product">
                                                     </a>
                                                     <a href="ajax/product-quick-view.html" class="btn-quickview">Quick View</a>
                                                 </figure>
@@ -262,33 +262,7 @@
                                             <div class="product">
                                                 <figure class="product-image-container">
                                                     <a href="product.html" class="product-image">
-                                                        <img src="images/products/home/product-3.jpg" alt="product">
-                                                    </a>
-                                                    <a href="ajax/product-quick-view.html" class="btn-quickview">Quick View</a>
-                                                </figure>
-                                            </div><!-- End .product -->
-                                        </div><!-- End .col-6 -->
-                                    </div><!-- End .row -->
-                                </div><!-- End .col-lg-4 -->
-
-                                <div class="col-lg-4">
-                                    <div class="row">
-                                        <div class="col-6 col-lg-12">
-                                            <div class="product">
-                                                <figure class="product-image-container">
-                                                    <a href="product.html" class="product-image">
-                                                        <img src="images/products/home/product-4.jpg" alt="product">
-                                                    </a>
-                                                    <a href="ajax/product-quick-view.html" class="btn-quickview">Quick View</a>
-                                                </figure>
-                                            </div><!-- End .product -->
-                                        </div><!-- End .col-6 -->
-
-                                        <div class="col-6 col-lg-12">
-                                            <div class="product">
-                                                <figure class="product-image-container">
-                                                    <a href="product.html" class="product-image">
-                                                        <img src="images/products/home/product-5.jpg" alt="product">
+                                                        <img src="https://source.unsplash.com/collection/1703764/600x600" alt="product">
                                                     </a>
                                                     <a href="ajax/product-quick-view.html" class="btn-quickview">Quick View</a>
                                                 </figure>
@@ -303,7 +277,7 @@
                                             <div class="product">
                                                 <figure class="product-image-container">
                                                     <a href="product.html" class="product-image">
-                                                        <img src="images/products/home/product-6.jpg" alt="product">
+                                                        <img src="https://source.unsplash.com/collection/3426199/600x600" alt="product">
                                                     </a>
                                                     <a href="ajax/product-quick-view.html" class="btn-quickview">Quick View</a>
                                                 </figure>
@@ -314,7 +288,33 @@
                                             <div class="product">
                                                 <figure class="product-image-container">
                                                     <a href="product.html" class="product-image">
-                                                        <img src="images/products/home/product-7.jpg" alt="product">
+                                                        <img src="https://source.unsplash.com/collection/2280551/600x600" alt="product">
+                                                    </a>
+                                                    <a href="ajax/product-quick-view.html" class="btn-quickview">Quick View</a>
+                                                </figure>
+                                            </div><!-- End .product -->
+                                        </div><!-- End .col-6 -->
+                                    </div><!-- End .row -->
+                                </div><!-- End .col-lg-4 -->
+
+                                <div class="col-lg-4">
+                                    <div class="row">
+                                        <div class="col-6 col-lg-12">
+                                            <div class="product">
+                                                <figure class="product-image-container">
+                                                    <a href="product.html" class="product-image">
+                                                        <img src="https://source.unsplash.com/collection/2280551/600x600" alt="product">
+                                                    </a>
+                                                    <a href="ajax/product-quick-view.html" class="btn-quickview">Quick View</a>
+                                                </figure>
+                                            </div><!-- End .product -->
+                                        </div><!-- End .col-6 -->
+
+                                        <div class="col-6 col-lg-12">
+                                            <div class="product">
+                                                <figure class="product-image-container">
+                                                    <a href="product.html" class="product-image">
+                                                        <img src="https://source.unsplash.com/collection/2357987/600x600" alt="product">
                                                     </a>
                                                     <a href="ajax/product-quick-view.html" class="btn-quickview">Quick View</a>
                                                 </figure>
@@ -329,30 +329,30 @@
             </div><!-- End .container -->
         </div><!-- End .home-bottom-section -->
 
-        <div class="container">
-            <div class="instagram-feed">
-                <ul class="instagram-feed-list">
-                    <li><a href="#"><img src="images/instagram/1.jpg" alt="Feed"></a></li>
-                    <li><a href="#"><img src="images/instagram/2.jpg" alt="Feed"></a></li>
-                    <li><a href="#"><img src="images/instagram/3.jpg" alt="Feed"></a></li>
-                    <li><a href="#"><img src="images/instagram/4.jpg" alt="Feed"></a></li>
-                    <li><a href="#"><img src="images/instagram/5.jpg" alt="Feed"></a></li>
-                    <li><a href="#"><img src="images/instagram/6.jpg" alt="Feed"></a></li>
-                    <li><a href="#"><img src="images/instagram/7.jpg" alt="Feed"></a></li>
-                    <li><a href="#"><img src="images/instagram/8.jpg" alt="Feed"></a></li>
-                    <li><a href="#"><img src="images/instagram/9.jpg" alt="Feed"></a></li>
-                    <li><a href="#"><img src="images/instagram/10.jpg" alt="Feed"></a></li>
-                    <li><a href="#"><img src="images/instagram/11.jpg" alt="Feed"></a></li>
-                    <li><a href="#"><img src="images/instagram/12.jpg" alt="Feed"></a></li>
-                </ul>
-                <div class="instagram-feed-content">
-                    <i class="icon-instagram"></i>
-                    <h3>Instagram</h3>
-                    <div>@portoecommerce</div>
-                    <a href="#" class="btn btn-secondary">Follow</a>
-                </div><!-- End .instagram-feed-content -->
-            </div><!-- End .instagram-feed -->
-        </div><!-- End .container -->
+        {{--<div class="container">--}}
+            {{--<div class="instagram-feed">--}}
+                {{--<ul class="instagram-feed-list">--}}
+                    {{--<li><a href="#"><img src="images/instagram/1.jpg" alt="Feed"></a></li>--}}
+                    {{--<li><a href="#"><img src="images/instagram/2.jpg" alt="Feed"></a></li>--}}
+                    {{--<li><a href="#"><img src="images/instagram/3.jpg" alt="Feed"></a></li>--}}
+                    {{--<li><a href="#"><img src="images/instagram/4.jpg" alt="Feed"></a></li>--}}
+                    {{--<li><a href="#"><img src="images/instagram/5.jpg" alt="Feed"></a></li>--}}
+                    {{--<li><a href="#"><img src="images/instagram/6.jpg" alt="Feed"></a></li>--}}
+                    {{--<li><a href="#"><img src="images/instagram/7.jpg" alt="Feed"></a></li>--}}
+                    {{--<li><a href="#"><img src="images/instagram/8.jpg" alt="Feed"></a></li>--}}
+                    {{--<li><a href="#"><img src="images/instagram/9.jpg" alt="Feed"></a></li>--}}
+                    {{--<li><a href="#"><img src="images/instagram/10.jpg" alt="Feed"></a></li>--}}
+                    {{--<li><a href="#"><img src="images/instagram/11.jpg" alt="Feed"></a></li>--}}
+                    {{--<li><a href="#"><img src="images/instagram/12.jpg" alt="Feed"></a></li>--}}
+                {{--</ul>--}}
+                {{--<div class="instagram-feed-content">--}}
+                    {{--<i class="icon-instagram"></i>--}}
+                    {{--<h3>Instagram</h3>--}}
+                    {{--<div>@portoecommerce</div>--}}
+                    {{--<a href="#" class="btn btn-secondary">Follow</a>--}}
+                {{--</div><!-- End .instagram-feed-content -->--}}
+            {{--</div><!-- End .instagram-feed -->--}}
+        {{--</div><!-- End .container -->--}}
     </main><!-- End .main -->
 
 @endsection

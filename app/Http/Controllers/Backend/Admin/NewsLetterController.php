@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend;
+namespace App\Http\Controllers\Backend\Admin;
 
 use App\Core\PrimaryController;
 use App\Core\Services\Email\PrimaryEmailService;

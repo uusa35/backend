@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Backend;
+namespace App\Http\Controllers\Backend\Admin;
 
-use App\Models\Policy;
+use App\Models\Faq;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class PolicyController extends Controller
+class FaqController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class PolicyController extends Controller
      */
     public function index()
     {
-        $elements = Policy::all();
-        return view('backend.modules.policy.index', compact('elements'));
+        $elements = Faq::all();
+        return view('backend.modules.faq.index', compact('elements'));
     }
 
     /**
@@ -26,7 +26,7 @@ class PolicyController extends Controller
      */
     public function create()
     {
-        return view('backend.modules.policy.create');
+        return view('backend.modules.faq.create');
     }
 
     /**
@@ -37,11 +37,11 @@ class PolicyController extends Controller
      */
     public function store(Request $request)
     {
-        $element = Policy::create($request->all());
+        $element = Faq::create($request->all());
         if ($element) {
-            return redirect()->route('backend.policy.index')->with('success', 'Policy added');
+            return redirect()->route('backend.faq.index')->with('success', 'Faq added');
         }
-        return redirect()->back()->with('error', 'Policy is not saved.');
+        return redirect()->back()->with('error', 'Faq is not saved.');
     }
 
     /**
@@ -63,8 +63,8 @@ class PolicyController extends Controller
      */
     public function edit($id)
     {
-        $element = Policy::whereId($id)->first();
-        return view('backend.modules.policy.edit', compact('element'));
+        $element = Faq::whereId($id)->first();
+        return view('backend.modules.faq.edit', compact('element'));
     }
 
     /**
@@ -76,12 +76,12 @@ class PolicyController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $element = Policy::whereId($id)->first();
+        $element = Faq::whereId($id)->first();
         if ($element) {
             $element->update($request->all());
-            return redirect()->route('backend.policy.index')->with('success', 'Policy added');
+            return redirect()->route('backend.faq.index')->with('success', 'Faq added');
         }
-        return redirect()->back()->with('error', 'Policy is not saved.');
+        return redirect()->back()->with('error', 'Faq is not saved.');
     }
 
     /**
@@ -92,10 +92,10 @@ class PolicyController extends Controller
      */
     public function destroy($id)
     {
-        $element = Policy::whereId($id)->first();
+        $element = Faq::whereId($id)->first();
         if ($element->delete()) {
-            return redirect()->route('backend.policy.index')->with('success', 'Policy deleted');
+            return redirect()->route('backend.faq.index')->with('success', 'Faq deleted');
         }
-        return redirect()->back()->with('error', 'Policy is not deleted.');
+        return redirect()->back()->with('error', 'Faq is not deleted.');
     }
 }

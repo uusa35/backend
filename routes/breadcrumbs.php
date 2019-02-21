@@ -98,9 +98,9 @@ Breadcrumbs::for('backend.role.index', function ($trail) {
     $trail->push('role', route('backend.role.index'));
 });
 
-Breadcrumbs::for('backend.setting.index', function ($trail) {
+Breadcrumbs::for('backend.super.setting.index', function ($trail) {
     $trail->parent('backend.home');
-    $trail->push('setting', route('backend.setting.index'));
+    $trail->push(trans('general.setting'), route('backend.super.setting.index'));
 });
 
 Breadcrumbs::for('backend.order.index', function ($trail) {
@@ -170,9 +170,10 @@ Breadcrumbs::for('backend.survey.create', function ($trail) {
     $trail->push('create survey', route('backend.survey.create'));
 });
 
-Breadcrumbs::for('backend.survey.edit', function ($trail, $element) {
-    $trail->parent('backend.survey.index');
-    $trail->push('edit survey', route('backend.survey.edit', $element->id));
+
+Breadcrumbs::for('backend.super.survey.edit', function ($trail, $element) {
+    $trail->parent('backend.super.survey.index');
+    $trail->push(trans('general.edit'), route('backend.super.survey.edit', $element->id));
 });
 
 Breadcrumbs::for('backend.question.create', function ($trail) {
@@ -226,9 +227,9 @@ Breadcrumbs::for('backend.product.edit', function ($trail, $element) {
     $trail->push('edit product', route('backend.product.edit', $element->id));
 });
 
-Breadcrumbs::for('backend.setting.edit', function ($trail, $element) {
-    $trail->parent('backend.setting.index');
-    $trail->push('edit settings', route('backend.setting.edit', $element->id));
+Breadcrumbs::for('backend.super.setting.edit', function ($trail, $element) {
+    $trail->parent('backend.super.setting.index');
+    $trail->push(trans('general.edit'), route('backend.super.setting.edit', $element->id));
 });
 
 Breadcrumbs::for('backend.color.create', function ($trail) {

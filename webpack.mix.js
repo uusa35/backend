@@ -79,9 +79,9 @@ mix.styles([
     '../metronic_v4.5.6/theme/assets/pages/css/blog.min.css',
 
     '../metronic_v4.5.6/theme/assets/layouts/layout2/css/layout.min.css',
-    // '../metronic_v4.5.6/theme/assets/layouts/layout/css/themes/darkblue.min.css',
+    '../metronic_v4.5.6/theme/assets/layouts/layout/css/themes/darkblue.min.css',
     '../metronic_v4.5.6/theme/assets/layouts/layout2/css/themes/blue.min.css',
-    // '../metronic_v4.5.6/theme/assets/layouts/layout2/css/themes/light.min.css',
+    '../metronic_v4.5.6/theme/assets/layouts/layout2/css/themes/light.min.css',
     // '../metronic_v4.5.6/theme/assets/layouts/layout2/css/themes/grey.min.css',
     '../metronic_v4.5.6/theme/assets/layouts/layout2/css/custom.min.css',
     './resources/assets/css/backend-custom.css'

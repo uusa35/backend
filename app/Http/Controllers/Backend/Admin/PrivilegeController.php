@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Backend;
+namespace App\Http\Controllers\Backend\Admin;
 
+use App\Models\Privilege;
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class ReportsController extends Controller
+class PrivilegeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +15,8 @@ class ReportsController extends Controller
      */
     public function index()
     {
-        //
+        $elements = Privilege::with('roles')->get();
+        return view('backend.modules.privilege.index', compact('elements'));
     }
 
     /**

@@ -67,7 +67,6 @@ class Kernel extends HttpKernel
         'super' => \App\Http\Middleware\SuperAccessOnly::class,
         'client' => \App\Http\Middleware\ClientAccessOnly::class,
         'designer' => \App\Http\Middleware\DesignerAccessOnly::class,
-        'adminAccessOnly' => \App\Http\Middleware\AdminAccessOnly::class,
         'onlyActiveUsers' => \App\Http\Middleware\OnlyActiveUsers::class,
     ];
 

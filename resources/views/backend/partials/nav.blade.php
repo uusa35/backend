@@ -26,7 +26,7 @@
                     <i class="fa fa-angle-down"></i>
                 </button>
                 <ul class="dropdown-menu" role="menu">
-                    @can('onlySuper')
+                    @can('isSuper')
                         <li>
                             <a href="{{ route('backend.admin.user.create') }}">
                                 <i class="icon-plus"></i> {{ trans('general.new_user') }}</a>
@@ -50,14 +50,6 @@
                         <li>
                             <a href="{{ route('backend.admin.category.create') }}">
                                 <i class="icon-layers"></i> {{ trans('general.create_category') }}</a>
-                        </li>
-                        <li class="divider"></li>
-                    @endcan
-                    @can('onlyClient')
-                        {{--change this later to onlyClient--}}
-                        <li>
-                            <a href="{{ route('backend.order.choose.category') }}">
-                                <i class="icon-action-redo"></i> {{ trans('general.client_new_order') }}</a>
                         </li>
                         <li class="divider"></li>
                     @endcan
@@ -425,7 +417,7 @@
                     </li>
                     <form id="logout-form" action="{{ url('/logout') }}" method="POST"
                           style="display: none;">
-                        {{ csrf_field() }}
+                        @csrf
                     </form>
                     <!-- END USER LOGIN DROPDOWN -->
                     <!-- BEGIN QUICK SIDEBAR TOGGLER -->

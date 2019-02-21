@@ -1,24 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Backend;
+namespace App\Http\Controllers\Backend\Admin;
 
-use App\Core\PrimaryController;
-use App\Http\Controllers\Controller;
-use App\Src\User\UserRepository;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Http\Controllers\Controller;
 
-class ProfileController extends Controller
+class ReportsController extends Controller
 {
-
-    public $userRepository;
-
-    public function __construct(UserRepository $userRepository)
-    {
-        $this->userRepository = $userRepository;
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -58,7 +48,7 @@ class ProfileController extends Controller
      */
     public function show($id)
     {
-
+        //
     }
 
     /**

@@ -12,31 +12,37 @@
 */
 
 Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.', 'middleware' => ['auth', 'onlyActiveUsers']], function () {
-    // only admins + super
+    // Backend :: super only
+    Route::group(['namespace' => 'Admin', 'as' => 'super.', 'prefix' => 'super', 'middleware' => ['super']], function () {
+        Route::resource('role', 'RoleController');
+        Route::resource('privilege', 'PrivilegeController');
+        Route::resource('setting', 'SettingController');
+        Route::resource('country','CountryController');
+        Route::resource('currency','CurrencyController');
+        Route::resource('category', 'CategoryController');
+    });
+    // Backend :: super + admin
     Route::group(['namespace' => 'Admin', 'as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['admin']], function () {
         Route::get('backup/db', ['as' => 'backup.db', 'uses' => 'HomeController@BackupDB']);
         Route::get('export/translations', ['as' => 'export.translation', 'uses' => 'HomeController@exportTranslations']);
         Route::get('activate', 'HomeController@toggleActivate')->name('activate');
-        Route::resource('product', 'ProductController');
         Route::resource('user', 'UserController');
-        Route::resource('plan', 'PaymentPlanController');
-        Route::resource('role', 'RoleController');
-        Route::resource('privilege', 'PrivilegeController');
-        Route::resource('category', 'CategoryController');
+        Route::resource('product', 'ProductController');
         Route::resource('service', 'ServiceController');
-        Route::resource('slider', 'SliderController');
+        Route::resource('color', 'ColorController');
+        Route::resource('size', 'SizeController');
+        Route::resource('slide', 'SlidController');
+        Route::resource('coupon', 'CouponController');
+        Route::resource('survey', 'SurveyController');
+        Route::resource('questionnaire', 'QuestionnaireController');
+        Route::resource('question', 'QuestionController');
+        Route::resource('report', 'ReportController');
+        Route::resource('brand', 'BrandController');
+        Route::resource('page', 'PageController');
+        Route::resource('term', 'TermController');
         Route::resource('order', 'OrderController');
-        Route::get('assign/order/{id}', 'OrderController@getAssign')->name('order.assign');
-        Route::post('assign/order', 'OrderController@postAssign')->name('order.make.assign');
-        Route::resource('job', 'JobController');
-        Route::resource('version', 'VersionController');
-        Route::resource('image', 'ImageController');
-        Route::resource('setting', 'SettingController');
-        Route::resource('slider', 'SliderController');
-        Route::resource('country','CountryController');
-        Route::resource('currency','CurrencyController');
     });
-    // clients + designers
+    // Backend :: companies + designers
     Route::get('/', 'HomeController@index')->name('index');
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('language/{locale}', 'HomeController@changeLanguage')->name('language.change');
@@ -46,20 +52,15 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
     Route::resource('product','ProductController');
     Route::get('trashed', 'ProductController@trashed')->name('product.trashed');
     Route::get('restore/{id}', 'ProductController@restore')->name('product.restore');
-    Route::resource('order', 'OrderController')->except(['destroy']);
-    Route::resource('user','UserController');
-    Route::resource('category','CategoryController');
-    Route::resource('country','CountryController');
-    Route::get('/make/order/category', 'OrderController@chooseOrderCategory')->name('order.choose.category');
-    Route::get('/make/order/service', 'OrderController@chooseOrderService')->name('order.choose.service');
-    Route::get('/make/order/lang', 'OrderController@chooseOrderLang')->name('order.choose.lang');
+    Route::resource('order', 'OrderController')->except(['destroy','show']);
+    Route::resource('user','UserController')->only(['edit']);
     Route::resource('file', 'FileController');
     Route::get('show/list', 'FileController@getShowList')->name('file.show.list');
     Route::resource('job', 'JobController');
     Route::get('enroll/job{id}', 'JobController@toggleEnroll')->name('job.enroll');
     Route::resource('version', 'VersionController');
     Route::resource('image', 'ImageController');
-    Route::resource('point', 'PointController');
+    Route::resource('tag', 'TagController')->only(['create','store']);
 });
 
 Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => []], function () {

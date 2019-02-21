@@ -2,8 +2,21 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 class Service extends PrimaryModel
 {
+    use ProductHelpers, SoftDeletes, ModelHelpers;
+    protected $localeStrings = ['name', 'description', 'notes'];
+    protected $guarded = [''];
+    protected $appends = ['isOnSale'];
+    protected $dates = ['created_at', 'deleted_at', 'start_sale', 'end_sale'];
+    protected $casts = [
+        'on_sale' => 'boolean',
+        'on_sale_on_homepage' => 'boolean',
+        'active' => 'boolean',
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);

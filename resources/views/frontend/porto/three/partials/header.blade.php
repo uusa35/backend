@@ -93,7 +93,7 @@
 
             <div class="header-center">
                 <a href="index.html" class="logo">
-                    <img src="images/logo.png" alt="Porto Logo">
+                    <img src="https://source.unsplash.com/collection/3774496/150x80" alt="Porto Logo">
                 </a>
             </div><!-- End .headeer-center -->
 
