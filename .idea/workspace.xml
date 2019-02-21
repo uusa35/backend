@@ -160,8 +160,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/frontend/porto/three/partials/header.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
+            <state relative-caret-position="1096">
+              <caret line="162" column="108" selection-start-line="162" selection-start-column="108" selection-end-line="162" selection-end-column="108" />
+              <caret line="215" column="108" selection-start-line="215" selection-start-column="108" selection-end-line="215" selection-end-column="108" />
+              <caret line="285" column="104" selection-start-line="285" selection-start-column="104" selection-end-line="285" selection-end-column="104" />
+              <caret line="305" column="104" selection-start-line="305" selection-start-column="104" selection-end-line="305" selection-end-column="104" />
             </state>
           </provider>
         </entry>
@@ -200,13 +203,13 @@
       <find>chang</find>
       <find>change</find>
       <find>prof</find>
-      <find>images</find>
       <find>images/</find>
       <find>featured</find>
       <find>insta</find>
       <find>head</find>
       <find>logo</find>
       <find>compare</find>
+      <find>images</find>
     </findStrings>
     <replaceStrings>
       <replace>resources/css/</replace>
@@ -584,7 +587,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="header.bl&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/three/partials/header.blade.php&#10;home&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/three/home.blade.php&#10;models&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/three/partials/models.blade.php&#10;home.blade&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/three/home.blade.php&#10;Homecon&#9;null&#9;null&#10;web&#9;FILE&#9;file:///Users/mac/Sites/mallr/routes/web.php&#10;Servi&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Models/Service.php&#10;HomeCon&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Http/Controllers/Backend/HomeController.php&#10;breadcr&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/backend/partials/breadcrumbs.blade.php&#10;sideb&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/backend/partials/_sidebar_super.blade.php&#10;bread&#9;FILE&#9;file:///Users/mac/Sites/mallr/routes/breadcrumbs.php&#10;sidebar&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/backend/partials/sidebar.blade.php&#10;sideba&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/backend/partials/sidebar.blade.php&#10;Ser&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Models/Service.php&#10;services_t&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/migrations/2016_06_31_115134_create_services_table.php&#10;Product.ph&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Models/Product.php&#10;Service.php&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Models/Service.php&#10;AdminA&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Http/Middleware/AdminAccessOnly.php&#10;UserHel&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Models/UserHelpers.php&#10;ker&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Http/Kernel.php&#10;sid&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/backend/partials/sidebar.blade.php&#10;nav.blad&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/backend/partials/nav.blade.php&#10;User.php&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Models/User.php&#10;AuthSer&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Providers/AuthServiceProvider.php&#10;roles_&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/migrations/2014_02_01_041517_create_roles_table.php&#10;sidebar.blade&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/backend/partials/sidebar.blade.php&#10;AppSer&#9;null&#9;null&#10;scripts.blad&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/backend/partials/scripts.blade.php&#10;Only&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Http/Middleware/OnlyActiveUsers.php&#10;k&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Http/Kernel.php&#10;on&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Http/Middleware/OnlyActiveUsers.php&#10;kern&#9;null&#9;null&#10;web.&#9;FILE&#9;file:///Users/mac/Sites/mallr/routes/web.php&#10;nav.blade&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/backend/partials/nav.blade.php&#10;styles.blade&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/backend/partials/styles.blade.php&#10;DashB&#9;null&#9;null&#10;web.php&#9;FILE&#9;file:///Users/mac/Sites/mallr/routes/web.php&#10;home.blad&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/three/home.blade.php&#10;models.blad&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/three/partials/models.blade.php&#10;footer.blade&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/tow/partials/footer.blade.php&#10;footer.blad&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/three/partials/footer.blade.php&#10;app.blade&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/three/layouts/app.blade.php&#10;scripts.blade&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/tow/partials/scripts.blade.php&#10;homeCon&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Http/Controllers/Frontend/HomeController.php&#10;Composer&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Providers/ComposerServiceProvider.php&#10;he&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/tow/partials/head.blade.php&#10;home.bla&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/three/home.blade.php&#10;ComposerSer&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Providers/ComposerServiceProvider.php&#10;home.b&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/tow/home.blade.php&#10;app.bl&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/tow/layouts/app.blade.php" />
+    <property name="SearchEverywhereHistoryKey" value="header.blade&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/three/partials/header.blade.php&#10;header.bl&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/three/partials/header.blade.php&#10;home&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/three/home.blade.php&#10;models&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/three/partials/models.blade.php&#10;home.blade&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/three/home.blade.php&#10;Homecon&#9;null&#9;null&#10;web&#9;FILE&#9;file:///Users/mac/Sites/mallr/routes/web.php&#10;Servi&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Models/Service.php&#10;HomeCon&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Http/Controllers/Backend/HomeController.php&#10;breadcr&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/backend/partials/breadcrumbs.blade.php&#10;sideb&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/backend/partials/_sidebar_super.blade.php&#10;bread&#9;FILE&#9;file:///Users/mac/Sites/mallr/routes/breadcrumbs.php&#10;sidebar&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/backend/partials/sidebar.blade.php&#10;sideba&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/backend/partials/sidebar.blade.php&#10;Ser&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Models/Service.php&#10;services_t&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/migrations/2016_06_31_115134_create_services_table.php&#10;Product.ph&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Models/Product.php&#10;Service.php&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Models/Service.php&#10;AdminA&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Http/Middleware/AdminAccessOnly.php&#10;UserHel&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Models/UserHelpers.php&#10;ker&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Http/Kernel.php&#10;sid&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/backend/partials/sidebar.blade.php&#10;nav.blad&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/backend/partials/nav.blade.php&#10;User.php&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Models/User.php&#10;AuthSer&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Providers/AuthServiceProvider.php&#10;roles_&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/migrations/2014_02_01_041517_create_roles_table.php&#10;sidebar.blade&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/backend/partials/sidebar.blade.php&#10;AppSer&#9;null&#9;null&#10;scripts.blad&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/backend/partials/scripts.blade.php&#10;Only&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Http/Middleware/OnlyActiveUsers.php&#10;k&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Http/Kernel.php&#10;on&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Http/Middleware/OnlyActiveUsers.php&#10;kern&#9;null&#9;null&#10;web.&#9;FILE&#9;file:///Users/mac/Sites/mallr/routes/web.php&#10;nav.blade&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/backend/partials/nav.blade.php&#10;styles.blade&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/backend/partials/styles.blade.php&#10;DashB&#9;null&#9;null&#10;web.php&#9;FILE&#9;file:///Users/mac/Sites/mallr/routes/web.php&#10;home.blad&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/three/home.blade.php&#10;models.blad&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/three/partials/models.blade.php&#10;footer.blade&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/tow/partials/footer.blade.php&#10;footer.blad&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/three/partials/footer.blade.php&#10;app.blade&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/three/layouts/app.blade.php&#10;scripts.blade&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/tow/partials/scripts.blade.php&#10;homeCon&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Http/Controllers/Frontend/HomeController.php&#10;Composer&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Providers/ComposerServiceProvider.php&#10;he&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/tow/partials/head.blade.php&#10;home.bla&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/three/home.blade.php&#10;ComposerSer&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Providers/ComposerServiceProvider.php&#10;home.b&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/porto/tow/home.blade.php" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="js.eslint.eslintPackage" value="" />
@@ -653,12 +656,12 @@
       <workItem from="1550582740185" duration="3762000" />
       <workItem from="1550587650013" duration="2325000" />
       <workItem from="1550635315192" duration="11606000" />
-      <workItem from="1550724083545" duration="2875000" />
+      <workItem from="1550724083545" duration="3100000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69111000" />
+    <option name="totallyTimeSpent" value="69336000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
@@ -1042,8 +1045,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/frontend/porto/three/partials/header.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
+        <state relative-caret-position="1096">
+          <caret line="162" column="108" selection-start-line="162" selection-start-column="108" selection-end-line="162" selection-end-column="108" />
+          <caret line="215" column="108" selection-start-line="215" selection-start-column="108" selection-end-line="215" selection-end-column="108" />
+          <caret line="285" column="104" selection-start-line="285" selection-start-column="104" selection-end-line="285" selection-end-column="104" />
+          <caret line="305" column="104" selection-start-line="305" selection-start-column="104" selection-end-line="305" selection-end-column="104" />
         </state>
       </provider>
     </entry>

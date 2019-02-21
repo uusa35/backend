@@ -160,7 +160,7 @@
                                 <div class="col-lg-4">
                                     <div class="banner">
                                         <a href="#">
-                                            <img src="images/menu-banner-2.jpg" alt="Menu banner">
+                                            <img src="https://source.unsplash.com/collection/3756765/600x600="Menu banner">
                                         </a>
                                     </div><!-- End .banner -->
                                 </div><!-- End .col-lg-4 -->
@@ -213,7 +213,7 @@
                                 <div class="col-lg-4">
                                     <div class="banner">
                                         <a href="#">
-                                            <img src="images/menu-banner.jpg" alt="Menu banner" class="product-promo">
+                                            <img src="https://source.unsplash.com/collection/3756765/600x600Menu banner" class="product-promo">
                                         </a>
                                     </div><!-- End .banner -->
                                 </div><!-- End .col-lg-4 -->
@@ -283,7 +283,7 @@
 
                                 <figure class="product-image-container">
                                     <a href="product.html" class="product-image">
-                                        <img src="images/products/cart/product-1.jpg" alt="product">
+                                        <img src="https://source.unsplash.com/collection/3756765/600x600" alt="product">
                                     </a>
                                     <a href="#" class="btn-remove" title="Remove Product"><i class="icon-cancel"></i></a>
                                 </figure>
@@ -303,7 +303,7 @@
 
                                 <figure class="product-image-container">
                                     <a href="product.html" class="product-image">
-                                        <img src="images/products/cart/product-2.jpg" alt="product">
+                                        <img src="https://source.unsplash.com/collection/3756765/600x600" alt="product">
                                     </a>
                                     <a href="#" class="btn-remove" title="Remove Product"><i class="icon-cancel"></i></a>
                                 </figure>
