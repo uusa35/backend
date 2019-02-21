@@ -81,8 +81,8 @@
                         <a href="#">ENG</a>
                         <div class="header-menu">
                             <ul>
-                                <li><a href="#">ENG</a></li>
-                                <li><a href="#">FRE</a></li>
+                                <li><a href="{{ route('frontend.language.change','en') }}">ENG</a></li>
+                                <li><a href="{{ route('frontend.language.change','ar') }}">Ar</a></li>
                             </ul>
                         </div><!-- End .header-menu -->
                     </div><!-- End .header-dropown -->

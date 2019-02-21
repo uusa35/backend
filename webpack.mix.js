@@ -12,38 +12,55 @@ const mix = require('laravel-mix');
  */
 mix.js('resources/assets/js/app.js', 'public/js').version()
     .sass('resources/assets/sass/app.scss', 'public/css').version();
+mix.styles([
+    'resources/assets/css/bootstrap-rtl.min.css',
+    // 'resources/assets/css/rtl-theme.css',
+    // 'resources/assets/css/rtl-theme-elements.css',
+    // 'resources/assets/css/rtl-theme-blog.css',
+    // 'resources/assets/css/rtl-theme-shop.css',
+], 'public/css/frontend-rtl.css').version();
 mix.styles(['resources/assets/css/frontend-custom-ar.css'], 'public/css/frontend-custom-ar.css').version();
-mix.styles(['resources/assets/css/frontend-custom.css'], 'public/css/frontend-custom.css').version();
-
+mix.styles(['resources/assets/css/frontend-custom-en.css'], 'public/css/frontend-custom-en.css').version();
 // frontend
 mix.styles([
+    'resources/assets/css/frontend-custom.css',
     '../porto_ecommerce_html/demo-2/assets/css/style.min.css'
-],'public/css/porto.demo2.css')
+], 'public/css/porto.demo2.css').version();
 mix.styles([
+    'resources/assets/css/frontend-custom.css',
     '../porto_ecommerce_html/demo-3/assets/css/style.min.css'
-],'public/css/porto.demo3.css')
+], 'public/css/porto.demo3.css').version();
 mix.styles([
+    'resources/assets/css/frontend-custom.css',
     '../porto_ecommerce_html/demo-4/assets/css/style.min.css'
-],'public/css/porto.demo4.css')
-// mix.sass('../porto_ecommerce_html/demo-2/assets/sass/style.scss','public/css/porto/demo2-sass.css')
+], 'public/css/porto.demo4.css').version();
+// frontend js
 mix.scripts([
     '../porto_ecommerce_html/demo-2/assets/js/jquery.min.js',
     '../porto_ecommerce_html/demo-2/assets/js/bootstrap.bundle.min.js',
     '../porto_ecommerce_html/demo-2/assets/js/plugins.min.js',
     '../porto_ecommerce_html/demo-2/assets/js/main.min.js',
-],'public/js/porto.demo2.js');
+], 'public/js/porto.demo2.js').version();
 mix.scripts([
     '../porto_ecommerce_html/demo-3/assets/js/jquery.min.js',
     '../porto_ecommerce_html/demo-3/assets/js/bootstrap.bundle.min.js',
     '../porto_ecommerce_html/demo-3/assets/js/plugins.min.js',
     '../porto_ecommerce_html/demo-3/assets/js/main.min.js',
-],'public/js/porto.demo3.js');
+], 'public/js/porto.demo3.js').version();
 mix.scripts([
     '../porto_ecommerce_html/demo-4/assets/js/jquery.min.js',
     '../porto_ecommerce_html/demo-4/assets/js/bootstrap.bundle.min.js',
     '../porto_ecommerce_html/demo-4/assets/js/plugins.min.js',
     '../porto_ecommerce_html/demo-4/assets/js/main.min.js',
-],'public/js/porto.demo4.js');
+], 'public/js/porto.demo4.js').version();
+mix.scripts([
+    'resources/assets/js/rtl-jquery-3.3.1.min.js',
+    'resources/assets/js/popper.min.js',
+    'resources/assets/js/bootstrap-rtl.js'
+],'public/js/frontend-rtl.js').version();
+mix.js('resources/assets/js/frontend-custom.js','public/js/frontend-custom.js').version();
+mix.js('resources/assets/js/frontend-ar.js','public/js/frontend-ar.js').version();
+mix.js('resources/assets/js/frontend-en.js','public/js/frontend-en.js').version();
 // backend
 mix.styles([
     './node_modules/font-awesome/css/font-awesome.min.css',
