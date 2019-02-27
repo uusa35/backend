@@ -18,19 +18,19 @@
 									<span class="tt-label-sale">Sale 15%</span>
 								</span>
                         </a>
-                        <div class="tt-countdown_box">
-                            <div class="tt-countdown_inner">
-                                <div class="tt-countdown"
-                                     data-date="2018-11-01"
-                                     data-year="Yrs"
-                                     data-month="Mths"
-                                     data-week="Wk"
-                                     data-day="Day"
-                                     data-hour="Hrs"
-                                     data-minute="Min"
-                                     data-second="Sec"></div>
-                            </div>
-                        </div>
+                        {{--<div class="tt-countdown_box">--}}
+                            {{--<div class="tt-countdown_inner">--}}
+                                {{--<div class="tt-countdown"--}}
+                                     {{--data-date="2018-11-01"--}}
+                                     {{--data-year="Yrs"--}}
+                                     {{--data-month="Mths"--}}
+                                     {{--data-week="Wk"--}}
+                                     {{--data-day="Day"--}}
+                                     {{--data-hour="Hrs"--}}
+                                     {{--data-minute="Min"--}}
+                                     {{--data-second="Sec"></div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                     </div>
                     <div class="tt-description">
                         <div class="tt-row">
@@ -76,19 +76,19 @@
 									<span class="tt-label-sale">Sale 15%</span>
 								</span>
                         </a>
-                        <div class="tt-countdown_box">
-                            <div class="tt-countdown_inner">
-                                <div class="tt-countdown"
-                                     data-date="2018-12-08"
-                                     data-year="Yrs"
-                                     data-month="Mths"
-                                     data-week="Wk"
-                                     data-day="Day"
-                                     data-hour="Hrs"
-                                     data-minute="Min"
-                                     data-second="Sec"></div>
-                            </div>
-                        </div>
+                        {{--<div class="tt-countdown_box">--}}
+                            {{--<div class="tt-countdown_inner">--}}
+                                {{--<div class="tt-countdown"--}}
+                                     {{--data-date="2018-12-08"--}}
+                                     {{--data-year="Yrs"--}}
+                                     {{--data-month="Mths"--}}
+                                     {{--data-week="Wk"--}}
+                                     {{--data-day="Day"--}}
+                                     {{--data-hour="Hrs"--}}
+                                     {{--data-minute="Min"--}}
+                                     {{--data-second="Sec"></div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                     </div>
                     <div class="tt-description">
                         <div class="tt-row">
@@ -134,19 +134,19 @@
 									<span class="tt-label-sale">Sale 15%</span>
 								</span>
                         </a>
-                        <div class="tt-countdown_box">
-                            <div class="tt-countdown_inner">
-                                <div class="tt-countdown"
-                                     data-date="2018-11-08"
-                                     data-year="Yrs"
-                                     data-month="Mths"
-                                     data-week="Wk"
-                                     data-day="Day"
-                                     data-hour="Hrs"
-                                     data-minute="Min"
-                                     data-second="Sec"></div>
-                            </div>
-                        </div>
+                        {{--<div class="tt-countdown_box">--}}
+                            {{--<div class="tt-countdown_inner">--}}
+                                {{--<div class="tt-countdown"--}}
+                                     {{--data-date="2018-11-08"--}}
+                                     {{--data-year="Yrs"--}}
+                                     {{--data-month="Mths"--}}
+                                     {{--data-week="Wk"--}}
+                                     {{--data-day="Day"--}}
+                                     {{--data-hour="Hrs"--}}
+                                     {{--data-minute="Min"--}}
+                                     {{--data-second="Sec"></div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                     </div>
                     <div class="tt-description">
                         <div class="tt-row">
@@ -192,19 +192,19 @@
 									<span class="tt-label-sale">Sale 15%</span>
 								</span>
                         </a>
-                        <div class="tt-countdown_box">
-                            <div class="tt-countdown_inner">
-                                <div class="tt-countdown"
-                                     data-date="2018-10-08"
-                                     data-year="Yrs"
-                                     data-month="Mths"
-                                     data-week="Wk"
-                                     data-day="Day"
-                                     data-hour="Hrs"
-                                     data-minute="Min"
-                                     data-second="Sec"></div>
-                            </div>
-                        </div>
+                        {{--<div class="tt-countdown_box">--}}
+                            {{--<div class="tt-countdown_inner">--}}
+                                {{--<div class="tt-countdown"--}}
+                                     {{--data-date="2018-10-08"--}}
+                                     {{--data-year="Yrs"--}}
+                                     {{--data-month="Mths"--}}
+                                     {{--data-week="Wk"--}}
+                                     {{--data-day="Day"--}}
+                                     {{--data-hour="Hrs"--}}
+                                     {{--data-minute="Min"--}}
+                                     {{--data-second="Sec"></div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                     </div>
                     <div class="tt-description">
                         <div class="tt-row">
