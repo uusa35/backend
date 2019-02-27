@@ -13,7 +13,8 @@ const mix = require('laravel-mix');
 mix.js('resources/assets/js/app.js', 'public/js').version()
     .sass('resources/assets/sass/app.scss', 'public/css').version();
 mix.styles([
-    'resources/assets/css/bootstrap-rtl.min.css',
+    '../wokiee-ecommerce-html/html/css/rtl.css'
+    // 'resources/assets/css/bootstrap-rtl.min.css',
     // 'resources/assets/css/rtl-theme.css',
     // 'resources/assets/css/rtl-theme-elements.css',
     // 'resources/assets/css/rtl-theme-blog.css',
@@ -22,19 +23,48 @@ mix.styles([
 mix.styles(['resources/assets/css/frontend-custom-ar.css'], 'public/css/frontend-custom-ar.css').version();
 mix.styles(['resources/assets/css/frontend-custom-en.css'], 'public/css/frontend-custom-en.css').version();
 // frontend
+// wokiee
 mix.styles([
-    'resources/assets/css/frontend-custom.css',
-    '../porto_ecommerce_html/demo-2/assets/css/style.min.css'
+    '../wokiee-ecommerce-html/html/css/theme-custom.css',
+    'resources/assets/css/frontend-custom.css'
+], 'public/css/wokiee.demo4.css').version();
+mix.styles([
+    '../wokiee-ecommerce-html/html/css/theme.css',
+    'resources/assets/css/frontend-custom.css'
+], 'public/css/wokiee.demo5.css').version();
+// porto
+mix.styles([
+    '../porto_ecommerce_html/demo-2/assets/css/style.min.css',
+    'resources/assets/css/frontend-custom.css'
 ], 'public/css/porto.demo2.css').version();
 mix.styles([
-    'resources/assets/css/frontend-custom.css',
-    '../porto_ecommerce_html/demo-3/assets/css/style.min.css'
+    '../porto_ecommerce_html/demo-3/assets/css/style.min.css',
+    'resources/assets/css/frontend-custom.css'
 ], 'public/css/porto.demo3.css').version();
 mix.styles([
-    'resources/assets/css/frontend-custom.css',
-    '../porto_ecommerce_html/demo-4/assets/css/style.min.css'
+    '../porto_ecommerce_html/demo-4/assets/css/style.min.css',
+    'resources/assets/css/frontend-custom.css'
 ], 'public/css/porto.demo4.css').version();
 // frontend js
+// wokiee
+mix.scripts([
+    '../wokiee-ecommerce-html/html/external/jquery/jquery.min.js',
+    '../wokiee-ecommerce-html/html/external/bootstrap/js/bootstrap.min.js',
+    '../wokiee-ecommerce-html/html/external/slick/slick.min.js',
+    '../wokiee-ecommerce-html/html/external/perfect-scrollbar/perfect-scrollbar.min.js',
+    '../wokiee-ecommerce-html/html/external/panelmenu/panelmenu.js',
+    '../wokiee-ecommerce-html/html/external/instafeed/instafeed.min.js',
+    '../wokiee-ecommerce-html/html/external/rs-plugin/js/jquery.themepunch.tools.min.js',
+    '../wokiee-ecommerce-html/html/external/rs-plugin/js/jquery.themepunch.revolution.min.js',
+    '../wokiee-ecommerce-html/html/external/countdown/jquery.plugin.min.js',
+    '../wokiee-ecommerce-html/html/external/countdown/jquery.countdown.min.js',
+    '../wokiee-ecommerce-html/html/external/lazyLoad/lazyload.min.js',
+    '../wokiee-ecommerce-html/html/js/main.js',
+    '../wokiee-ecommerce-html/html/external/form/jquery.form.js',
+    '../wokiee-ecommerce-html/html/external/form/jquery.validate.min.js',
+    '../wokiee-ecommerce-html/html/external/form/jquery.form-init.js',
+], 'public/js/wokiee.demo5.js').version();
+// proto
 mix.scripts([
     '../porto_ecommerce_html/demo-2/assets/js/jquery.min.js',
     '../porto_ecommerce_html/demo-2/assets/js/bootstrap.bundle.min.js',
@@ -188,6 +218,15 @@ mix.scripts([
 
 mix.scripts('./node_modules/tinymce/tinymce.min.js', 'public/js/tinymce.min.js').version();
 mix.scripts('resources/assets/js/backend-custom.js', 'public/js/backend-custom.js');
+mix.copyDirectory('./../porto_ecommerce_html/demo-2/assets/images', 'public/images');
+// wokiee
+mix.copyDirectory('../wokiee-ecommerce-html/html/font/fonts', 'public/font/fonts');
+mix.copyDirectory('../wokiee-ecommerce-html/html/font/fonts', 'public/css/fonts');
+mix.copyDirectory('../wokiee-ecommerce-html/html/images', 'public/images');
+mix.copyDirectory('../wokiee-ecommerce-html/html/external/rs-plugin/font', 'public/font');
+mix.copyDirectory('../wokiee-ecommerce-html/html/external/rs-plugin/images', 'public/images');
+mix.copyDirectory('../wokiee-ecommerce-html/html/external/rs-plugin/assets', 'public/assets');
+// porto
 mix.copyDirectory('./../porto_ecommerce_html/demo-2/assets/images', 'public/images');
 mix.copyDirectory('./../porto_ecommerce_html/demo-2/assets/fonts', 'public/fonts');
 mix.copyDirectory('./../porto_ecommerce_html/demo-2/assets/js/plugins', 'public/js/plugins');

@@ -30,7 +30,7 @@
     @show
 </div>
 @section('models')
-    @include('frontend.porto.tow.partials.models')
+    {{--@include('frontend.porto.tow.partials.models')--}}
 @show
 </body>
 </html>

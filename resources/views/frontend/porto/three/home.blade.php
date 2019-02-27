@@ -3,7 +3,6 @@
 
 
 @section('body')
-
     <main class="main">
         <div class="container">
             <div class="home-slider-container">
@@ -86,43 +85,8 @@
                 </div><!-- End .row -->
             </div><!-- End .container -->
 
-            <div class="mb-3 mb-lg-5"></div><!-- margin -->
-
             <div class="container">
-                <h2 class="title mb-3">Featured Products</h2>
-                <div class="owl-carousel owl-theme featured-products">
-                    @foreach($newArrivals as $element)
-                        <div class="product">
-                            <figure class="product-image-container">
-                                <a href="product.html" class="product-image">
-                                    <img src="https://source.unsplash.com/collection/3756765/600x600" alt="product">
-                                </a>
-                                <a href="ajax/product-quick-view.html"
-                                   class="btn-quickview">{{ trans('general.quick_view') }}</a>
-                                @if($element->on_sale)
-                                    <span class="product-label label-sale">{{ $element->on_sale_price }}</span>
-                                @endif
-                                @if($element->is_new)
-                                    <span class="product-label label-hot">{{ trans('general.new') }}</span>
-                                @endif
-                            </figure>
-                            <div class="product-details action-inner">
-                                <h2 class="product-title">
-                                    <a href="product.html">Leather Crisscross Slides</a>
-                                </h2>
-                                <div class="product-action">
-                                    <a href="#" class="paction add-wishlist" title="Add to Wishlist">
-                                        <span>Add to Wishlist</span>
-                                    </a>
-                                </div><!-- End .product-action -->
-                                <div class="price-box">
-                                    <span class="old-price">$12.90</span>
-                                    <span class="product-price">$8.90</span>
-                                </div><!-- End .price-box -->
-                            </div><!-- End .product-details -->
-                        </div><!-- End .product -->
-                    @endforeach
-                </div><!-- End .featured-products -->
+                @include('frontend.porto.three.partials._products_slider',['elements' => $newArrivals, 'title' => trans('general.new_arrivals')])
             </div><!-- End .container -->
         </div><!-- End .home-top-section -->
 

@@ -16,7 +16,7 @@ $factory->define(Category::class, function (Faker $faker) use($fakerAr) {
         'image' => $faker->numberBetween(1, 42) . '.jpeg',
         'limited' => $faker->numberBetween(0, 1),
         'parent_id' => Category::where('parent_id', 0)->pluck('id')->shuffle()->first(),
-        'is_home' => $faker->boolean,
+        'on_home' => $faker->boolean,
         'is_featured' => $faker->boolean
     ];
 });

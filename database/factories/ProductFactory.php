@@ -14,10 +14,9 @@ $factory->define(Product::class, function (Faker $faker) use ($fakerAr) {
         'weight' => $faker->randomDigit,
         'home_delivery_availability' => $faker->boolean,
         'shipment_availability' => $faker->boolean,
-        'is_new' => $faker->boolean,
+        'on_new' => $faker->boolean,
         'on_sale' => $faker->boolean,
-        'on_sale_on_homepage' => $faker->boolean,
-        'on_homepage' => $faker->boolean,
+        'on_home' => $faker->boolean,
         'price' => $faker->randomFloat(3, 10, 200),
         'sale_price' => function ($array) {
             return $array['price'] - rand(1, 5);
@@ -36,5 +35,6 @@ $factory->define(Product::class, function (Faker $faker) use ($fakerAr) {
         'has_attribute' => $faker->boolean,
         'video_url_one' => $faker->url,
         'video_url_two' => $faker->url,
+        'qty' => $faker->numberBetween(1,99)
     ];
 });

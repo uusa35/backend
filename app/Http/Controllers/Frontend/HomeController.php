@@ -32,19 +32,21 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $newArrivals = $this->product->active()->onHomePage()->hasImages()->orderBy('created_at', 'desc')->take(self::TAKE)->get();
-        $onSaleProducts = $this->product->active()->onSaleOnHomePage()->hasImages()->orderby('end_sale','desc')->take(self::TAKE)->get();
+        $newArrivals = $this->product->active()->onHome()->onNew()->hasImages()->orderBy('created_at', 'desc')->take(self::TAKE)->get();
+        $onSaleProducts = $this->product->active()->onSaleOnHome()->hasImages()->orderby('end_sale','desc')->take(self::TAKE)->get();
         $bestSalesProducts = $this->product->whereIn('id', $this->product->active()->hasImages()->bestSalesProducts())->get();
         $hotDeals = $this->product->active()->onSale()->hotDeals()->hasImages()->orderby('end_sale','desc')->take(self::TAKE)->get();
-        $categoriesHome = Category::where(['is_home' => true])->take(self::TAKE)->orderBy('order')->get();
+        $categoriesHome = Category::onHome()->take(self::TAKE)->orderBy('order')->with('children.children')->get();
         $categoriesFeatured = Category::where(['is_featured' => true])->take(self::TAKE)->orderBy('order')->get();
-        return view('frontend.porto.three.home', compact(
+        $brands = Brand::active()->onHome()->take(12)->get();
+        return view('frontend.wokiee.four.home', compact(
             'newArrivals',
             'onSaleProducts',
             'bestSalesProducts',
             'hotDeals',
             'categoriesHome',
-            'categoriesFeatured'
+            'categoriesFeatured',
+            'brands'
         ));
     }
 

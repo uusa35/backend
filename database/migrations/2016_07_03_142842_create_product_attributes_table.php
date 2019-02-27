@@ -15,8 +15,8 @@ class CreateProductAttributesTable extends Migration
         Schema::create('product_attributes', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('product_id')->unsigned()->index();
-            $table->integer('size_id')->unsigned()->index();
-            $table->integer('color_id')->unsigned()->index();
+            $table->integer('size_id')->unsigned()->index()->nullable();
+            $table->integer('color_id')->unsigned()->index()->nullable();
             $table->integer('qty')->unsigned()->default(0);
             $table->text('notes_ar')->nullable();
             $table->text('notes_en')->nullable();

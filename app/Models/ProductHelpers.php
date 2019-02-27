@@ -15,22 +15,22 @@ trait ProductHelpers
 {
     public function scopeOnSale($q)
     {
-        return $q->where('on_sale',true)->where('end_sale', '>', now('+4')->toDateTimeString());
+        return $q->where('on_sale',true)->whereDate('end_sale', '>', Carbon::now());
     }
 
     public function getIsOnSaleAttribute()
     {
-        return $this->on_sale && $this->end_sale > now('+4')->toDateTimeString() ? true : false;
+        return $this->on_sale && $this->end_sale > Carbon::now() ? true : false;
     }
 
     public function scopeOnHomePage($q)
     {
-        return $q->where('on_homepage', true);
+        return $q->where('on_home', true);
     }
 
-    public function scopeOnSaleOnHomePage($q)
+    public function scopeOnSaleOnHome($q)
     {
-        return $q->onSale()->where('on_sale_on_homepage', true);
+        return $q->onSale()->onHome();
     }
 
     public function getFinalPriceAttribute()

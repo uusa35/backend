@@ -15,7 +15,7 @@ class ComposerServiceProvider extends ServiceProvider
     {
         // frontend
         view()->composer([
-            'frontend.partials.slider',
+            'frontend.*.partials.slider',
         ],
             'App\Services\ViewComposers@getSliders');
         view()->composer([
@@ -29,7 +29,6 @@ class ComposerServiceProvider extends ServiceProvider
             'frontend.modules.cart.index',
         ], 'App\Services\ViewComposers@getCartCount');
         view()->composer([
-            'frontend.modules.checkout.index',
             'backend.modules.currency.create',
             'backend.modules.currency.edit',
             'backend.partials.sidebar',
@@ -52,7 +51,8 @@ class ComposerServiceProvider extends ServiceProvider
             'frontend.partials._branches_footer'], 'App\Services\ViewComposers@getBranches');
 
         view()->composer([
-            'frontend.home',
+            'frontend.porto.three.home',
+            'frontend.porto.three.modules.product.show',
             'frontend.partials.footer',
             'frontend.modules.order.index',
             'frontend.modules.product.index',
@@ -77,15 +77,7 @@ class ComposerServiceProvider extends ServiceProvider
         ], 'App\Services\ViewComposers@getCategories');
 
         view()->composer([
-            'frontend.porto.tow.home',
-            'frontend.porto.three.home',
-            'frontend.porto.four.home',
-            'frontend.porto.five.home',
-            'frontend.porto.six.home',
-            'frontend.porto.seven.home',
-            'frontend.porto.eight.home',
-            'frontend.porto.nine.home',
-            'frontend.porto.then.home',
+            'frontend.*.*.home',
             'backend.layouts.app',
             'backend.modules.order.show',
         ], 'App\Services\ViewComposers@getSettings');

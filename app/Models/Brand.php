@@ -4,6 +4,7 @@ namespace App\Models;
 
 class Brand extends PrimaryModel
 {
+    use ModelHelpers;
     protected $localeStrings = ['slug'];
     protected $guarded = [''];
 

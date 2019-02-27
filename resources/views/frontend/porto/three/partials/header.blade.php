@@ -118,7 +118,7 @@
         <div class="container">
             <nav class="main-nav">
                 <ul class="menu sf-arrows">
-                    <li class="active"><a href="index.html">Home</a></li>
+                    <li class="active"><a href="{{ route('frontend.home') }}">Home</a></li>
                     <li>
                         <a href="category.html" class="sf-with-ul">Categories</a>
                         <div class="megamenu megamenu-fixed-width">

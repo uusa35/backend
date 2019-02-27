@@ -83,7 +83,7 @@ Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => []
     Route::resource('user', 'UserController');
     Route::resource('newsletter', 'NewsletterController');
     Route::resource('survey', 'SurveyController')->only(['show','store']);
-    Route::get('search', 'ProductController@search')->name('product.search');
+    Route::get('search', 'ProductController@search')->name('search');
     Route::get('currency/{currency}', 'HomeController@changeCurrency')->name('currency.change');
     Route::get('language/{locale}', 'HomeController@changeLanguage')->name('language.change');
 });

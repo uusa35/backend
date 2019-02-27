@@ -14,4 +14,14 @@ trait ModelHelpers
     {
         return $q->where('active', true);
     }
+
+    public function scopeOnHome($q)
+    {
+        return $q->where('on_home', true);
+    }
+
+    public function scopeOnNew($q)
+    {
+        return $q->where('on_new', true);
+    }
 }

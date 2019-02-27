@@ -1,4 +1,4 @@
-@extends('frontend.layouts.app')
+@extends('frontend.porto.three.layouts.app')
 
 @section('head')
     @parent
@@ -36,16 +36,16 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                                 <div class="product-slider-container product-item">
                                     <div class="product-single-carousel owl-carousel owl-theme">
                                         <div class="product-item">
-                                            <img class="product-single-image" src="assets/images/products/zoom/product-1.jpg" data-zoom-image="assets/images/products/zoom/product-1-big.jpg"/>
+                                            <img class="product-single-image" src="https://source.unsplash.com/collection/3756765/600x600" data-zoom-image="https://source.unsplash.com/collection/3756765/600x600"/>
                                         </div>
                                         <div class="product-item">
-                                            <img class="product-single-image" src="assets/images/products/zoom/product-2.jpg" data-zoom-image="assets/images/products/zoom/product-2-big.jpg"/>
+                                            <img class="product-single-image" src="https://source.unsplash.com/collection/3756765/600x600" data-zoom-image="https://source.unsplash.com/collection/3756765/600x600"/>
                                         </div>
                                         <div class="product-item">
-                                            <img class="product-single-image" src="assets/images/products/zoom/product-3.jpg" data-zoom-image="assets/images/products/zoom/product-3-big.jpg"/>
+                                            <img class="product-single-image" src="https://source.unsplash.com/collection/3756765/600x600" data-zoom-image="https://source.unsplash.com/collection/3756765/600x600"/>
                                         </div>
                                         <div class="product-item">
-                                            <img class="product-single-image" src="assets/images/products/zoom/product-4.jpg" data-zoom-image="assets/images/products/zoom/product-4-big.jpg"/>
+                                            <img class="product-single-image" src="https://source.unsplash.com/collection/3756765/600x600" data-zoom-image="https://source.unsplash.com/collection/3756765/600x600"/>
                                         </div>
                                     </div>
                                     <!-- End .product-single-carousel -->
@@ -55,23 +55,23 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                                 </div>
                                 <div class="prod-thumbnail row owl-dots" id='carousel-custom-dots'>
                                     <div class="col-3 owl-dot">
-                                        <img src="assets/images/products/zoom/product-1.jpg"/>
+                                        <img src="https://source.unsplash.com/collection/3756765/600x600"/>
                                     </div>
                                     <div class="col-3 owl-dot">
-                                        <img src="assets/images/products/zoom/product-2.jpg"/>
+                                        <img src="https://source.unsplash.com/collection/3756765/600x600"/>
                                     </div>
                                     <div class="col-3 owl-dot">
-                                        <img src="assets/images/products/zoom/product-3.jpg"/>
+                                        <img src="https://source.unsplash.com/collection/3756765/600x600"/>
                                     </div>
                                     <div class="col-3 owl-dot">
-                                        <img src="assets/images/products/zoom/product-4.jpg"/>
+                                        <img src="https://source.unsplash.com/collection/3756765/600x600"/>
                                     </div>
                                 </div>
                             </div><!-- End .col-lg-7 -->
 
                             <div class="col-lg-5 col-md-6">
                                 <div class="product-single-details">
-                                    <h1 class="product-title">Silver Porto Headset</h1>
+                                    <h1 class="product-title">{{ $product->name }}</h1>
 
                                     <div class="ratings-container">
                                         <div class="product-ratings">
@@ -82,33 +82,37 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                                     </div><!-- End .product-container -->
 
                                     <div class="price-box">
-                                        <span class="old-price">$81.00</span>
-                                        <span class="product-price">$101.00</span>
+                                        @if($product->on_sale)
+                                            <span class="old-price">{{ $product->convertedPrice }} - {{ $currency->symbol }}</span>
+                                            <span class="product-price">{{ $product->convertedSalePrice }} - {{ $currency->symbol }}</span>
+                                        @else
+                                            <span class="product-price">{{ $product->convertedPrice }} - {{ $currency->symbol }}</span>
+                                        @endif
                                     </div><!-- End .price-box -->
 
                                     <div class="product-desc">
-                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non.</p>
+                                        <p>{{ $product->description }}</p>
                                     </div><!-- End .product-desc -->
 
-                                    <div class="product-filters-container">
-                                        <div class="product-single-filter">
-                                            <label>Colors:</label>
-                                            <ul class="config-swatch-list">
-                                                <li class="active">
-                                                    <a href="#" style="background-color: #6085a5;"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" style="background-color: #ab6e6e;"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" style="background-color: #b19970;"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" style="background-color: #11426b;"></a>
-                                                </li>
-                                            </ul>
-                                        </div><!-- End .product-single-filter -->
-                                    </div><!-- End .product-filters-container -->
+                                    {{--<div class="product-filters-container">--}}
+                                        {{--<div class="product-single-filter">--}}
+                                            {{--<label>Colors:</label>--}}
+                                            {{--<ul class="config-swatch-list">--}}
+                                                {{--<li class="active">--}}
+                                                    {{--<a href="#" style="background-color: #6085a5;"></a>--}}
+                                                {{--</li>--}}
+                                                {{--<li>--}}
+                                                    {{--<a href="#" style="background-color: #ab6e6e;"></a>--}}
+                                                {{--</li>--}}
+                                                {{--<li>--}}
+                                                    {{--<a href="#" style="background-color: #b19970;"></a>--}}
+                                                {{--</li>--}}
+                                                {{--<li>--}}
+                                                    {{--<a href="#" style="background-color: #11426b;"></a>--}}
+                                                {{--</li>--}}
+                                            {{--</ul>--}}
+                                        {{--</div><!-- End .product-single-filter -->--}}
+                                    {{--</div><!-- End .product-filters-container -->--}}
 
                                     <div class="product-action">
                                         <div class="product-single-qty">
@@ -123,10 +127,12 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                                         </a>
                                     </div><!-- End .product-action -->
 
-                                    <div class="product-single-share">
-                                        <label>Share:</label>
+                                    <div class="product-desc">
+                                        <label>{{ trans('general.share') }}:</label>
                                         <!-- www.addthis.com share plugin-->
-                                        <div class="addthis_inline_share_toolbox"></div>
+                                        <div class="addthis_inline_share_toolbox">
+                                            @include('frontend.porto.three.partials._social_btns')
+                                        </div>
                                     </div><!-- End .product single-share -->
                                 </div><!-- End .product-single-details -->
                             </div><!-- End .col-lg-5 -->
@@ -346,7 +352,7 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                     <div class="sidebar-wrapper">
                         <div class="widget widget-brand">
                             <a href="#">
-                                <img src="assets/images/product-brand.png" alt="brand name">
+                                <img src="https://source.unsplash.com/collection/3756765/600x600" alt="brand name">
                             </a>
                         </div><!-- End .widget -->
 
@@ -370,13 +376,13 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                         <div class="widget widget-banner">
                             <div class="banner banner-image">
                                 <a href="#">
-                                    <img src="assets/images/banners/banner-sidebar.jpg" alt="Banner Desc">
+                                    <img src="https://source.unsplash.com/collection/3756765/600x600" alt="Banner Desc">
                                 </a>
                             </div><!-- End .banner -->
                         </div><!-- End .widget -->
 
                         <div class="widget widget-featured">
-                            <h3 class="widget-title">Featured Products</h3>
+                            <h3 class="widget-title">{{ trans('general.featured_products') }}</h3>
 
                             <div class="widget-body">
                                 <div class="owl-carousel widget-featured-products">
@@ -384,7 +390,7 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                                         <div class="product product-sm">
                                             <figure class="product-image-container">
                                                 <a href="product.html" class="product-image">
-                                                    <img src="assets/images/products/product-1.jpg" alt="product">
+                                                    <img src="https://source.unsplash.com/collection/3756765/600x600" alt="product">
                                                 </a>
                                             </figure>
                                             <div class="product-details">
@@ -405,7 +411,7 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                                         <div class="product product-sm">
                                             <figure class="product-image-container">
                                                 <a href="product.html" class="product-image">
-                                                    <img src="assets/images/products/product-2.jpg" alt="product">
+                                                    <img src="https://source.unsplash.com/collection/3756765/600x600" alt="product">
                                                 </a>
                                             </figure>
                                             <div class="product-details">
@@ -427,7 +433,7 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                                         <div class="product product-sm">
                                             <figure class="product-image-container">
                                                 <a href="product.html" class="product-image">
-                                                    <img src="assets/images/products/product-3.jpg" alt="product">
+                                                    <img src="https://source.unsplash.com/collection/3756765/600x600" alt="product">
                                                 </a>
                                             </figure>
                                             <div class="product-details">
@@ -450,7 +456,7 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                                         <div class="product product-sm">
                                             <figure class="product-image-container">
                                                 <a href="product.html" class="product-image">
-                                                    <img src="assets/images/products/product-4.jpg" alt="product">
+                                                    <img src="https://source.unsplash.com/collection/3756765/600x600" alt="product">
                                                 </a>
                                             </figure>
                                             <div class="product-details">
@@ -472,7 +478,7 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                                         <div class="product product-sm">
                                             <figure class="product-image-container">
                                                 <a href="product.html" class="product-image">
-                                                    <img src="assets/images/products/product-5.jpg" alt="product">
+                                                    <img src="https://source.unsplash.com/collection/3756765/600x600" alt="product">
                                                 </a>
                                             </figure>
                                             <div class="product-details">
@@ -493,7 +499,7 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                                         <div class="product product-sm">
                                             <figure class="product-image-container">
                                                 <a href="product.html" class="product-image">
-                                                    <img src="assets/images/products/product-6.jpg" alt="product">
+                                                    <img src="https://source.unsplash.com/collection/3756765/600x600" alt="product">
                                                 </a>
                                             </figure>
                                             <div class="product-details">
@@ -521,15 +527,15 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
 
         <div class="featured-section">
             <div class="container">
-                <h2 class="carousel-title">Featured Products</h2>
+                <h2 class="carousel-title">{{ trans('general.featured_products') }}</h2>
 
                 <div class="featured-products owl-carousel owl-theme owl-dots-top">
                     <div class="product">
                         <figure class="product-image-container">
                             <a href="product.html" class="product-image">
-                                <img src="assets/images/products/product-1.jpg" alt="product">
+                                <img src="https://source.unsplash.com/collection/3756765/600x600" alt="product">
                             </a>
-                            <a href="ajax/product-quick-view.html" class="btn-quickview">Quick View</a>
+                            <a href="ajax/product-quick-view.html" class="btn-quickview">{{ trans('general.quick_view') }}</a>
                         </figure>
                         <div class="product-details action-inner">
                             <h2 class="product-title">
@@ -549,7 +555,7 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                     <div class="product">
                         <figure class="product-image-container">
                             <a href="product.html" class="product-image">
-                                <img src="assets/images/products/product-2.jpg" alt="product">
+                                <img src="https://source.unsplash.com/collection/3756765/600x600" alt="product">
                             </a>
                             <a href="ajax/product-quick-view.html" class="btn-quickview">Quick View</a>
                             <span class="product-label label-sale">-20%</span>
@@ -574,7 +580,7 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                     <div class="product">
                         <figure class="product-image-container">
                             <a href="product.html" class="product-image">
-                                <img src="assets/images/products/product-3.jpg" alt="product">
+                                <img src="https://source.unsplash.com/collection/3756765/600x600" alt="product">
                             </a>
                             <a href="ajax/product-quick-view.html" class="btn-quickview">Quick View</a>
                         </figure>
@@ -596,7 +602,7 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                     <div class="product">
                         <figure class="product-image-container">
                             <a href="product.html" class="product-image">
-                                <img src="assets/images/products/product-4.jpg" alt="product">
+                                <img src="https://source.unsplash.com/collection/3756765/600x600" alt="product">
                             </a>
                             <a href="ajax/product-quick-view.html" class="btn-quickview">Quick View</a>
                         </figure>
@@ -618,7 +624,7 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                     <div class="product">
                         <figure class="product-image-container">
                             <a href="product.html" class="product-image">
-                                <img src="assets/images/products/product-5.jpg" alt="product">
+                                <img src="https://source.unsplash.com/collection/3756765/600x600" alt="product">
                             </a>
                             <a href="ajax/product-quick-view.html" class="btn-quickview">Quick View</a>
                         </figure>
@@ -644,5 +650,5 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
 
 @section('scripts')
     @parent
-    <script async src="https://static.addtoany.com/menu/page.js"></script>
+    {{--<script async src="https://static.addtoany.com/menu/page.js"></script>--}}
 @endsection

@@ -18,7 +18,7 @@ class CreateBrandsTable extends Migration
             $table->string('slug_ar')->nullable();
             $table->string('slug_en')->nullable();
             $table->string('image')->nullable();
-            $table->string('is_home')->default(1);
+            $table->string('on_home')->default(0);
             $table->integer('order')->nullable();
             $table->boolean('active')->default(1);
             $table->timestamps();

@@ -24,7 +24,7 @@ class CreateCategoriesTable extends Migration
             $table->string('image')->nullable();
             $table->boolean('limited')->default(0);
             $table->integer('order')->nullable();
-            $table->boolean('is_home')->default(0);
+            $table->boolean('on_home')->default(0);
             $table->boolean('is_featured')->default(0);
             $table->boolean('active')->default(1);
             $table->softDeletes();

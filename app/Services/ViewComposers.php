@@ -52,7 +52,7 @@ class ViewComposers
 
     public function getSliders(View $view)
     {
-        $sliders = Slide::active()->get();
+        $sliders = Slide::active()->onHome()->get();
         return $view->with(compact('sliders'));
     }
 

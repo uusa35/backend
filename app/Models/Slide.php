@@ -6,7 +6,7 @@ class Slide extends PrimaryModel
 {
     use ModelHelpers;
     protected $guarded = [''];
-    protected $localeStrings = ['caption'];
+    protected $localeStrings = ['caption','title'];
 
     public function slidable()
     {

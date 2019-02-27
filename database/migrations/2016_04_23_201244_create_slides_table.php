@@ -14,6 +14,8 @@ class CreateSlidesTable extends Migration
     {
         Schema::create('slides', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('title_en')->nullable();
+            $table->string('title_ar')->nullable();
             $table->string('caption_en')->nullable();
             $table->string('caption_ar')->nullable();
             $table->boolean('active')->default(1);
@@ -21,6 +23,7 @@ class CreateSlidesTable extends Migration
             $table->string('image')->nullable();
             $table->string('path')->nullable();
             $table->string('url')->nullable();
+            $table->boolean('on_home')->default(0);
             $table->morphs('slidable');
 
             $table->timestamps();
