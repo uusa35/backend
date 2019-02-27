@@ -47,6 +47,7 @@ mix.styles([
 ], 'public/css/porto.demo4.css').version();
 // frontend js
 // wokiee
+// ltr
 mix.scripts([
     '../wokiee-ecommerce-html/html/external/jquery/jquery.min.js',
     '../wokiee-ecommerce-html/html/external/bootstrap/js/bootstrap.min.js',
@@ -64,6 +65,24 @@ mix.scripts([
     '../wokiee-ecommerce-html/html/external/form/jquery.validate.min.js',
     '../wokiee-ecommerce-html/html/external/form/jquery.form-init.js',
 ], 'public/js/wokiee.demo5.js').version();
+// rtl
+mix.scripts([
+    '../wokiee-ecommerce-html/html/external/jquery/jquery.min.js',
+    '../wokiee-ecommerce-html/html/external/bootstrap/js/bootstrap.min.js',
+    '../wokiee-ecommerce-html/html/external/slick/slick.min.js',
+    '../wokiee-ecommerce-html/html/external/perfect-scrollbar/perfect-scrollbar.min.js',
+    '../wokiee-ecommerce-html/html/external/panelmenu/panelmenu.js',
+    '../wokiee-ecommerce-html/html/external/instafeed/instafeed.min.js',
+    '../wokiee-ecommerce-html/html/external/rs-plugin/js/jquery.themepunch.tools.min.js',
+    '../wokiee-ecommerce-html/html/external/rs-plugin/js/jquery.themepunch.revolution.min.js',
+    '../wokiee-ecommerce-html/html/external/countdown/jquery.plugin.min.js',
+    '../wokiee-ecommerce-html/html/external/countdown/jquery.countdown.min.js',
+    '../wokiee-ecommerce-html/html/external/lazyLoad/lazyload.min.js',
+    '../wokiee-ecommerce-html/html/js/main-rtl.js',
+    '../wokiee-ecommerce-html/html/external/form/jquery.form.js',
+    '../wokiee-ecommerce-html/html/external/form/jquery.validate.min.js',
+    '../wokiee-ecommerce-html/html/external/form/jquery.form-init.js',
+], 'public/js/wokiee.demo5-rtl.js').version();
 // proto
 mix.scripts([
     '../porto_ecommerce_html/demo-2/assets/js/jquery.min.js',

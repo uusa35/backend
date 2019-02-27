@@ -24,7 +24,7 @@
     <!-- tt-mobile menu -->
     <nav class="panel-menu mobile-main-menu {{ app()->isLocale('ar') ? 'mm-right' : null }}">
         <ul>
-            <li>
+            <li >
                 <a href="index.html">HOME</a>
                 <ul>
                     <li>

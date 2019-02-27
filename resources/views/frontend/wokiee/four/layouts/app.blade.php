@@ -1,5 +1,6 @@
 <!doctype html>
-<html lang="{{ app()->getLocale() }}" class="tt-boxed">
+{{--<html lang="{{ app()->getLocale() }}" class="tt-boxed">--}}
+<html lang="{{ app()->getLocale() }}">
 <head>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @section('head')
@@ -11,7 +12,7 @@
 </head>
 
 <body>
-{{--@include('frontend.wokiee.four.partials.loader')--}}
+@include('frontend.wokiee.four.partials.loader')
 @section('header')
     @include('frontend.wokiee.four.partials.header')
 @show
