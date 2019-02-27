@@ -1,8 +1,8 @@
 <div class="container-indent">
     <div class="container container-fluid-custom-mobile-padding">
         <div class="tt-block-title">
-            <h2 class="tt-title">SPECIALS</h2>
-            <div class="tt-description">IN THIS WEEK</div>
+            <h2 class="tt-title">أحدث العروض</h2>
+            <div class="tt-description">أفضل وأحدث العروض بالموقع</div>
         </div>
         <div class="tt-carousel-products row arrow-location-tab arrow-location-tab01 tt-alignment-img tt-layout-product-item slick-animated-show-js" data-item='3'>
             <div class="col-2 col-md-4 col-lg-4">

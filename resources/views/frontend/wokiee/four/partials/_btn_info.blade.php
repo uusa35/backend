@@ -1,4 +1,4 @@
-<div class="tt-offset-35 container-indent">
+<div class="tt-offset-35 container-indent element-padding-bottom">
     <div class="container">
         <div class="row tt-services-listing">
             <div class="col-xs-12 col-md-6 col-lg-4">

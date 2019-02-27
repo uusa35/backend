@@ -28,3 +28,28 @@ body, html, div, a, p, h1, h2, h3, h4, h5, h6, table, row, td, th, tr, thead, tf
 .tt-menu-categories .tt-dropdown-menu nav > ul .dropdown-menu, .tt-menu-categories .tt-dropdown-menu nav > ul .tt-megamenu-submenu > li ul {
     right: 100%;
 }
+
+
+
+.tt-search-type2-rtl, .tt-btn-search-rtl {
+    position: relative;
+    padding: 5px 20px 3px;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    background: #0f92c1;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    left: 6px;
+    cursor: pointer;
+    border-bottom-right-radius : 0px;
+    border-top-right-radius : 0px;
+    border-bottom-left-radius : 6px;
+    border-top-left-radius : 6px;
+}
+
+
+.tt-header-holder .obj-move-right {
+    min-width: 220px;
+}

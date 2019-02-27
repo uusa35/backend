@@ -29398,3 +29398,6 @@ html:not(.mac):not(.touch-device) .tt-carousel-brands .slick-track {
 
 /* wokiee theme*/
 
+.element-padding-bottom {
+    padding-bottom: 20px;
+}

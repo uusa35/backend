@@ -55,7 +55,7 @@ class ProductController extends Controller
         // return array of ['size_id', 'color', 'att_id','qty' ] for one product
         $data = $product->product_attributes->toArray();
         $products = $this->product->getRelatedProducts($product);
-        return view('frontend.porto.three.modules.product.show', compact('products', 'product', 'data'));
+        return view('frontend.wokiee.four.modules.product.show', compact('products', 'product', 'data'));
     }
 
     /**

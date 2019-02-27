@@ -78,6 +78,8 @@ class ComposerServiceProvider extends ServiceProvider
         ], 'App\Services\ViewComposers@getCategories');
 
         view()->composer([
+            'frontend.wokiee.four.partials.head',
+            'frontend.wokiee.four.partials.scripts',
             'frontend.*.*.home',
             'backend.layouts.app',
             'backend.modules.order.show',

@@ -3,23 +3,23 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-9">
-                    <div class="tt-newsletter-layout-01">
-                        <div class="tt-newsletter">
-                            <div class="tt-mobile-collapse">
-                                <h4 class="tt-collapse-title">
-                                    BE IN TOUCH WITH US:
-                                </h4>
-                                <div class="tt-collapse-content">
-                                    <form id="newsletterform" class="form-inline form-default" method="post" novalidate="novalidate" action="#">
-                                        <div class="form-group">
-                                            <input type="text" name="email" class="form-control" placeholder="Enter your e-mail">
-                                            <button type="submit" class="btn">JOIN US</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {{--<div class="tt-newsletter-layout-01">--}}
+                        {{--<div class="tt-newsletter">--}}
+                            {{--<div class="tt-mobile-collapse">--}}
+                                {{--<h4 class="tt-collapse-title">--}}
+                                    {{--BE IN TOUCH WITH US:--}}
+                                {{--</h4>--}}
+                                {{--<div class="tt-collapse-content">--}}
+                                    {{--<form id="newsletterform" class="form-inline form-default" method="post" novalidate="novalidate" action="#">--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<input type="text" name="email" class="form-control" placeholder="Enter your e-mail">--}}
+                                            {{--<button type="submit" class="btn">JOIN US</button>--}}
+                                        {{--</div>--}}
+                                    {{--</form>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
                 </div>
                 <div class="col-md-auto">
                     <ul class="tt-social-icon">

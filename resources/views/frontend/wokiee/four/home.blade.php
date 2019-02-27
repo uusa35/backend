@@ -2,12 +2,18 @@
 
 @section('body')
     @include('frontend.wokiee.four.partials.slider')
+    <div class="row">
+        <div class="col-lg-12 text-center" style="padding: 50px;">
+            <a href="#" class="btn btn-primary btn-xl" style="width: 30%; font-size: large">إنشاء مناسبة</a>
+        </div>
+    </div>
+    @include('frontend.wokiee.four.partials._ads_top')
 {{--    @include('frontend.wokiee.four.partials._five_categories')--}}
 {{--    @include('frontend.wokiee.four.partials._all_children_for_category')--}}
 {{--    @include('frontend.wokiee.four.partials._all_slider_products_for_one_parent_category')--}}
     @include('frontend.wokiee.four.partials._all_brands')
     @include('frontend.wokiee.four.partials._products_slider',['title' => trans('general.new_arrivals'), 'elements' => $newArrivals])
-    @include('frontend.wokiee.four.partials._tow_main_categories')
+    @include('frontend.wokiee.four.partials._ads_top')
     @include('frontend.wokiee.four.partials._products_slider_hot_deal')
     @include('frontend.wokiee.four.partials._horizontal_three_categories')
     @include('frontend.wokiee.four.partials._btn_info')
