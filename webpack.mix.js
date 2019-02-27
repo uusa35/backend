@@ -25,7 +25,7 @@ mix.styles(['resources/assets/css/frontend-custom-en.css'], 'public/css/frontend
 // frontend
 // wokiee
 mix.styles([
-    '../wokiee-ecommerce-html/html/css/theme-custom.css',
+    'resources/assets/css/wokiee-theme-custom.css',
     'resources/assets/css/frontend-custom.css'
 ], 'public/css/wokiee.demo4.css').version();
 mix.styles([
