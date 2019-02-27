@@ -21,8 +21,8 @@ body, html, div, a, p, h1, h2, h3, h4, h5, h6, table, row, td, th, tr, thead, tf
     /*direction: rtl;*/
 /*}*/
 
-.tt-header-holder .tt-desctop-menu:not(.tt-hover-02) nav > ul li.dropdown:first-child > a {
-    padding: 10px;
+.tt-header-holder .tt-desctop-menu:not(.tt-hover-02) nav > ul li.dropdown:first-child > a, .tt-stuck-nav .tt-desctop-menu:not(.tt-hover-02) nav > ul li.dropdown:first-child > a {
+    padding: 10px !important;
 }
 
 .tt-menu-categories .tt-dropdown-menu nav > ul .dropdown-menu, .tt-menu-categories .tt-dropdown-menu nav > ul .tt-megamenu-submenu > li ul {

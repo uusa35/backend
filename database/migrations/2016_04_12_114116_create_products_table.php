@@ -21,7 +21,6 @@ class CreateProductsTable extends Migration
             $table->boolean('home_delivery_availability')->default(0);
             $table->boolean('shipment_availability')->default(0);
             $table->boolean('on_sale')->default(0);
-            $table->boolean('on_sale_on_homepage')->default(0);
             $table->boolean('on_home')->default(0);
             $table->decimal('price',6,2)->unsigned();
             $table->decimal('weight',4,2)->unsigned();
