@@ -37,13 +37,13 @@
                             <ul class="tt-add-info">
                                 <li><a href="#">T-SHIRTS</a></li>
                             </ul>
-                            <div class="tt-rating">
-                                <i class="icon-star"></i>
-                                <i class="icon-star"></i>
-                                <i class="icon-star"></i>
-                                <i class="icon-star"></i>
-                                <i class="icon-star"></i>
-                            </div>
+                            {{--<div class="tt-rating">--}}
+                                {{--<i class="icon-star"></i>--}}
+                                {{--<i class="icon-star"></i>--}}
+                                {{--<i class="icon-star"></i>--}}
+                                {{--<i class="icon-star"></i>--}}
+                                {{--<i class="icon-star"></i>--}}
+                            {{--</div>--}}
                         </div>
                         <h2 class="tt-title"><a href="product.html">Flared Shift Dress</a></h2>
                         <div class="tt-price">
@@ -95,13 +95,13 @@
                             <ul class="tt-add-info">
                                 <li><a href="#">T-SHIRTS</a></li>
                             </ul>
-                            <div class="tt-rating">
-                                <i class="icon-star"></i>
-                                <i class="icon-star"></i>
-                                <i class="icon-star"></i>
-                                <i class="icon-star"></i>
-                                <i class="icon-star"></i>
-                            </div>
+                            {{--<div class="tt-rating">--}}
+                                {{--<i class="icon-star"></i>--}}
+                                {{--<i class="icon-star"></i>--}}
+                                {{--<i class="icon-star"></i>--}}
+                                {{--<i class="icon-star"></i>--}}
+                                {{--<i class="icon-star"></i>--}}
+                            {{--</div>--}}
                         </div>
                         <h2 class="tt-title"><a href="product.html">Flared Shift Dress</a></h2>
                         <div class="tt-price">
@@ -153,13 +153,13 @@
                             <ul class="tt-add-info">
                                 <li><a href="#">T-SHIRTS</a></li>
                             </ul>
-                            <div class="tt-rating">
-                                <i class="icon-star"></i>
-                                <i class="icon-star"></i>
-                                <i class="icon-star"></i>
-                                <i class="icon-star"></i>
-                                <i class="icon-star"></i>
-                            </div>
+                            {{--<div class="tt-rating">--}}
+                                {{--<i class="icon-star"></i>--}}
+                                {{--<i class="icon-star"></i>--}}
+                                {{--<i class="icon-star"></i>--}}
+                                {{--<i class="icon-star"></i>--}}
+                                {{--<i class="icon-star"></i>--}}
+                            {{--</div>--}}
                         </div>
                         <h2 class="tt-title"><a href="product.html">Flared Shift Dress</a></h2>
                         <div class="tt-price">
@@ -211,13 +211,13 @@
                             <ul class="tt-add-info">
                                 <li><a href="#">T-SHIRTS</a></li>
                             </ul>
-                            <div class="tt-rating">
-                                <i class="icon-star"></i>
-                                <i class="icon-star"></i>
-                                <i class="icon-star"></i>
-                                <i class="icon-star"></i>
-                                <i class="icon-star"></i>
-                            </div>
+                            {{--<div class="tt-rating">--}}
+                                {{--<i class="icon-star"></i>--}}
+                                {{--<i class="icon-star"></i>--}}
+                                {{--<i class="icon-star"></i>--}}
+                                {{--<i class="icon-star"></i>--}}
+                                {{--<i class="icon-star"></i>--}}
+                            {{--</div>--}}
                         </div>
                         <h2 class="tt-title"><a href="product.html">Flared Shift Dress</a></h2>
                         <div class="tt-price">
