@@ -32,7 +32,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $newArrivals = $this->product->active()->onHome()->onNew()->hasImages()->with('colors','sizes','images')->orderBy('created_at', 'desc')->take(self::TAKE)->get();
+        $newArrivals = $this->product->active()->onHome()->onNew()->hasImages()->with('colors','sizes','images','user')->orderBy('created_at', 'desc')->take(self::TAKE)->get();
         $onSaleProducts = $this->product->active()->onSaleOnHome()->hasImages()->orderby('end_sale','desc')->take(self::TAKE)->get();
         $bestSalesProducts = $this->product->whereIn('id', $this->product->active()->hasImages()->bestSalesProducts())->get();
         $hotDeals = $this->product->active()->onSale()->hotDeals()->hasImages()->orderby('end_sale','desc')->take(self::TAKE)->get();

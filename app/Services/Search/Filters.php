@@ -49,6 +49,11 @@ class Filters extends QueryFilters
         });
     }
 
+    public function user_id()
+    {
+        return $this->builder->where(['user_id' => request()->user_id]);
+    }
+
     public function tag_id()
     {
         return $this->builder->whereHas('tags', function ($q) {

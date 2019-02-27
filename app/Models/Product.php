@@ -19,6 +19,10 @@ class Product extends PrimaryModel
         'home_delivery_availability' => 'boolean'
     ];
 
+
+    public function user() {
+        return $this->belongsTo(User::class,'user_id');
+    }
     /**
      * MorphRelation
      * MorphOne = many hasONe relation
@@ -104,6 +108,11 @@ class Product extends PrimaryModel
     public function brands()
     {
         return $this->belongsToMany(Brand::class, 'brand_product');
+    }
+
+    public function collections()
+    {
+        return $this->belongsToMany(Collection::class);
     }
 
     /**

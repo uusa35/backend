@@ -33,7 +33,7 @@
                         <div class="tt-description">
                             <div class="tt-row">
                                 <ul class="tt-add-info">
-                                    <li><a href="#">T-SHIRTS</a></li>
+                                    <li><a href="{{ route('frontend.search',['user_id' => $element->user_id ]) }}">{{ $element->user->name }}</a></li>
                                 </ul>
                                 {{--<div class="tt-rating">--}}
                                     {{--<i class="icon-star"></i>--}}
