@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="{{ app()->getLocale() }}" class="tt-boxed">
 <head>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @section('head')
