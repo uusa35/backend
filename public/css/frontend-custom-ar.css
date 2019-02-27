@@ -4,10 +4,22 @@
     url('../fonts/Cairo-Bold.ttf') format('truetype')
 }
 
+@font-face {
+    font-family: 'Tajawal';
+    src: url('fonts/Tajawal-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 body, html, div, a, p, h1, h2, h3, h4, h5, h6, table, row, td, th, tr, thead, tfoot, button, span, .btn, .btn-del, ul, li, .page-content, .portlet, .light, .profile-sidebar-portlet {
-    font-family: 'Cairo', sans-serif !important;
+    font-family: 'Tajawal', 'sans-serif' !important;
     direction: rtl;
 }
+/*body, html, div, a, p, h1, h2, h3, h4, h5, h6, table, row, td, th, tr, thead, tfoot, button, span, .btn, .btn-del, ul, li, .page-content, .portlet, .light, .profile-sidebar-portlet {*/
+    /*font-family: 'Cairo', sans-serif !important;*/
+    /*direction: rtl;*/
+/*}*/
 
 .tt-header-holder .tt-desctop-menu:not(.tt-hover-02) nav > ul li.dropdown:first-child > a {
     padding: 10px;
