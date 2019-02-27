@@ -8,7 +8,7 @@ $fakerAr = \Faker\Factory::create('ar_JO');
 $factory->define(Service::class, function (Faker $faker) use ($fakerAr) {
     return [
         'sku' => $faker->postcode,
-        'name_ar' => $fakerAr->realText(20),
+        'name_ar' => $faker->name,
         'name_en' => $faker->name,
         'on_sale' => $faker->boolean,
         'on_sale_on_homepage' => $faker->boolean,
@@ -20,7 +20,7 @@ $factory->define(Service::class, function (Faker $faker) use ($fakerAr) {
         },
         'description_en' => $faker->paragraph,
         'description_ar' => $fakerAr->realText(),
-        'notes_ar' => $fakerAr->realText(),
+        'notes_ar' => $faker->paragraph,
         'notes_en' => $faker->paragraph,
         'image' => $faker->numberBetween(1, 42) . '.jpeg',
         'video_url_one' => $faker->url,

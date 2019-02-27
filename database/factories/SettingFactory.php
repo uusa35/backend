@@ -5,14 +5,14 @@ use Faker\Generator as Faker;
 $fakerAr = \Faker\Factory::create('ar_JO');
 $factory->define(Setting::class, function (Faker $faker) use($fakerAr) {
     return [
-        'company_ar' => $fakerAr->realText(200),
+        'company_ar' => $faker->name,
         'company_en' => $faker->name,
-        'address_ar' => $fakerAr->realText(100),
+        'address_ar' => $faker->name,
         'address_en' => $faker->name,
         'mobile' => $faker->bankAccountNumber,
         'whatsapp' => $faker->bankAccountNumber,
         'phone' => $faker->bankAccountNumber,
-        'country_ar' => $fakerAr->realText(20),
+        'country_ar' => $faker->country,
         'country_en' => $faker->country,
         'zipcode' => $faker->randomDigit,
         'email' => $faker->email,
