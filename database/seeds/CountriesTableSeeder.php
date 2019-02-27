@@ -17,7 +17,7 @@ class CountriesTableSeeder extends Seeder
     {
         $countries = config('countries');
         foreach ($countries as $country) {
-            factory(Country::class)->create(
+            $country = factory(Country::class)->create(
                 [
                     'name_ar' => $country['name_ar'],
                     'name_en' => $country['name_en'],
@@ -26,6 +26,7 @@ class CountriesTableSeeder extends Seeder
                     'currency_symbol_en' => $country['currency_symbol_en'],
                 ]
             );
+            $country->areas()->saveMany(factory(Area::class, 5)->create());
         }
     }
 }

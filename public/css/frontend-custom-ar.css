@@ -53,3 +53,8 @@ body, html, div, a, p, h1, h2, h3, h4, h5, h6, table, row, td, th, tr, thead, tf
 .tt-header-holder .obj-move-right {
     min-width: 220px;
 }
+
+#loader {
+    right : 55% !important;
+    left: 0;
+}

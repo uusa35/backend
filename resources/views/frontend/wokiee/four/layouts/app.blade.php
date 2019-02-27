@@ -12,6 +12,7 @@
 </head>
 
 <body>
+
 @include('frontend.wokiee.four.partials.loader')
 @section('header')
     @include('frontend.wokiee.four.partials.header')
