@@ -12,11 +12,13 @@
         <div class="col">
         </div>
     </div>
-    @include('frontend.wokiee.four.partials._ads_top')
-    {{--    @include('frontend.wokiee.four.partials._five_categories')--}}
-    {{--    @include('frontend.wokiee.four.partials._all_children_for_category')--}}
-    {{--    @include('frontend.wokiee.four.partials._all_slider_products_for_one_parent_category')--}}
-    {{--    @include('frontend.wokiee.four.partials._all_brands')--}}
+    @if(app()->environment('local'))
+        @include('frontend.wokiee.four.partials._ads_top')
+        @include('frontend.wokiee.four.partials._five_categories')
+        @include('frontend.wokiee.four.partials._all_children_for_category')
+        @include('frontend.wokiee.four.partials._all_slider_products_for_one_parent_category')
+        @include('frontend.wokiee.four.partials._all_brands')
+    @endif
     @include('frontend.wokiee.four.partials._products_slider',['title' => trans('general.new_arrivals'), 'elements' => $newArrivals])
     @include('frontend.wokiee.four.partials._ads_top')
     @include('frontend.wokiee.four.partials._products_slider_hot_deal')

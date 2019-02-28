@@ -12,10 +12,6 @@ class Branch extends PrimaryModel
         return $this->hasMany(Order::class);
     }
 
-    public function country() {
-        return $this->belongsTo(Country::class);
-    }
-
     public function area() {
         return $this->belongsTo(Area::class);
     }

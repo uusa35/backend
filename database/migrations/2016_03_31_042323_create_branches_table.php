@@ -26,9 +26,6 @@ class CreateBranchesTable extends Migration
             $table->string('longitude')->nullable();
             $table->string('latitude')->nullable();
 
-            $table->integer('country_id')->unsigned()->index()->nullable();
-            $table->foreign('country_id')->references('id')->on('countries');
-
             $table->integer('area_id')->unsigned()->index()->nullable();
             $table->foreign('area_id')->references('id')->on('areas');
 
