@@ -51,7 +51,7 @@ class ComposerServiceProvider extends ServiceProvider
             'frontend.partials._branches_footer'], 'App\Services\ViewComposers@getBranches');
 
         view()->composer([
-            'frontend.wokiee.four.partials._products_slider',
+            'frontend.wokiee.four.home',
             'frontend.porto.three.home',
             'frontend.porto.three.modules.product.show',
             'frontend.partials.footer',
