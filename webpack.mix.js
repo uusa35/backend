@@ -245,6 +245,7 @@ mix.copyDirectory('../wokiee-ecommerce-html/html/images', 'public/images');
 mix.copyDirectory('../wokiee-ecommerce-html/html/external/rs-plugin/font', 'public/font');
 mix.copyDirectory('../wokiee-ecommerce-html/html/external/rs-plugin/images', 'public/images');
 mix.copyDirectory('../wokiee-ecommerce-html/html/external/rs-plugin/assets', 'public/assets');
+mix.copyDirectory('../wokiee-ecommerce-html/html/external', 'public/external');
 // porto
 mix.copyDirectory('./../porto_ecommerce_html/demo-2/assets/images', 'public/images');
 mix.copyDirectory('./../porto_ecommerce_html/demo-2/assets/fonts', 'public/fonts');
