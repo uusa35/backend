@@ -27,11 +27,7 @@ mix.styles(['resources/assets/css/frontend-custom-en.css'], 'public/css/frontend
 mix.styles([
     'resources/assets/css/wokiee-theme-custom.css',
     'resources/assets/css/frontend-custom.css'
-], 'public/css/wokiee.demo4.css').version();
-mix.styles([
-    '../wokiee-ecommerce-html/html/css/theme.css',
-    'resources/assets/css/frontend-custom.css'
-], 'public/css/wokiee.demo5.css').version();
+], 'public/css/wokiee.demo.css').version();
 // porto
 mix.styles([
     '../porto_ecommerce_html/demo-2/assets/css/style.min.css',
@@ -47,8 +43,8 @@ mix.styles([
 ], 'public/css/porto.demo4.css').version();
 // frontend js
 // wokiee
-// ltr
 mix.scripts([
+    // loading jquery from the app.js
     '../wokiee-ecommerce-html/html/external/jquery/jquery.min.js',
     '../wokiee-ecommerce-html/html/external/bootstrap/js/bootstrap.min.js',
     '../wokiee-ecommerce-html/html/external/slick/slick.min.js',
@@ -64,25 +60,7 @@ mix.scripts([
     '../wokiee-ecommerce-html/html/external/form/jquery.form.js',
     '../wokiee-ecommerce-html/html/external/form/jquery.validate.min.js',
     '../wokiee-ecommerce-html/html/external/form/jquery.form-init.js',
-], 'public/js/wokiee.demo5.js').version();
-// rtl
-mix.scripts([
-    '../wokiee-ecommerce-html/html/external/jquery/jquery.min.js',
-    '../wokiee-ecommerce-html/html/external/bootstrap/js/bootstrap.min.js',
-    '../wokiee-ecommerce-html/html/external/slick/slick.min.js',
-    '../wokiee-ecommerce-html/html/external/perfect-scrollbar/perfect-scrollbar.min.js',
-    '../wokiee-ecommerce-html/html/external/panelmenu/panelmenu.js',
-    '../wokiee-ecommerce-html/html/external/instafeed/instafeed.min.js',
-    '../wokiee-ecommerce-html/html/external/rs-plugin/js/jquery.themepunch.tools.min.js',
-    '../wokiee-ecommerce-html/html/external/rs-plugin/js/jquery.themepunch.revolution.min.js',
-    '../wokiee-ecommerce-html/html/external/countdown/jquery.plugin.min.js',
-    '../wokiee-ecommerce-html/html/external/countdown/jquery.countdown.min.js',
-    '../wokiee-ecommerce-html/html/external/lazyLoad/lazyload.min.js',
-    '../wokiee-ecommerce-html/html/js/main-rtl.js',
-    '../wokiee-ecommerce-html/html/external/form/jquery.form.js',
-    '../wokiee-ecommerce-html/html/external/form/jquery.validate.min.js',
-    '../wokiee-ecommerce-html/html/external/form/jquery.form-init.js',
-], 'public/js/wokiee.demo5-rtl.js').version();
+], 'public/js/wokiee.demo.js').version();
 // proto
 mix.scripts([
     '../porto_ecommerce_html/demo-2/assets/js/jquery.min.js',
@@ -102,11 +80,6 @@ mix.scripts([
     '../porto_ecommerce_html/demo-4/assets/js/plugins.min.js',
     '../porto_ecommerce_html/demo-4/assets/js/main.min.js',
 ], 'public/js/porto.demo4.js').version();
-mix.scripts([
-    'resources/assets/js/rtl-jquery-3.3.1.min.js',
-    'resources/assets/js/popper.min.js',
-    'resources/assets/js/bootstrap-rtl.js'
-],'public/js/frontend-rtl.js').version();
 mix.js('resources/assets/js/frontend-custom.js','public/js/frontend-custom.js').version();
 mix.js('resources/assets/js/frontend-ar.js','public/js/frontend-ar.js').version();
 mix.js('resources/assets/js/frontend-en.js','public/js/frontend-en.js').version();

@@ -37,6 +37,10 @@ class CreateUsersTable extends Migration
             $table->string('floor')->nullable();
             $table->string('apartment')->nullable();
             $table->string('country')->nullable();
+            $table->mediumText('policy_ar')->nullable();
+            $table->mediumText('policy_en')->nullable();
+            $table->mediumText('cancellation_ar')->nullable();
+            $table->mediumText('cancellation_en')->nullable();
 
             $table->string('path')->nullable();
             $table->string('website')->nullable();

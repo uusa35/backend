@@ -43,6 +43,7 @@ class DatabaseSeeder extends Seeder
         $this->call(SurveysTableSeeder::class);
         $this->call(QuestionnairesTableSeeder::class);
         $this->call(RatingsTableSeeder::class);
+        $this->call(QuotesTableSeeder::class);
 
 
     }

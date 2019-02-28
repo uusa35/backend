@@ -53,5 +53,9 @@ $factory->define(App\Models\User::class, function (Faker $faker) use ($fakerAr) 
         'android' => $faker->url,
         'longitude' => $faker->longitude,
         'latitude' => $faker->latitude,
+        'policy_ar' => $faker->name,
+        'policy_en' => $faker->name,
+        'cancellation_ar' => $faker->name,
+        'cancellation_en' => $faker->name,
     ];
 });

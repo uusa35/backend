@@ -19,6 +19,9 @@ class CreateAreasTable extends Migration
             $table->string('slug_en')->nullalbe();
             $table->integer('country_id')->unsigned()->index();
             $table->foreign('country_id')->references('id')->on('countries')->onDelete('cascade');
+            $table->boolean('active')->default(1);
+            $table->string('longitude')->nullable();
+            $table->string('latitude')->nullable();
             $table->timestamps();
         });
     }
