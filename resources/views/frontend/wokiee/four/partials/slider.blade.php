@@ -9,7 +9,7 @@
                                 <li data-thumb="{{ asset(env('LARGE').$s->image) }}" data-transition="fade"
                                     data-slotamount="1" data-masterspeed="1000" data-saveperformance="off"
                                     data-title="Slide">
-                                    <img src="images/slides/08/slide-01.jpg" alt="slide1"
+                                    <img src="{{ asset(env('LARGE').$s->image) }}" alt="slide1"
                                          data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
                                     <div class="tp-caption tp-caption1 lft stb"
                                          data-x="center"

@@ -68,7 +68,7 @@ class ComposerServiceProvider extends ServiceProvider
 
 
         view()->composer([
-            'frontend.partials._top_bar_currencies',
+            'frontend.*.*.partials.header',
         ], 'App\Services\ViewComposers@getCurrencies');
 
 
@@ -86,7 +86,7 @@ class ComposerServiceProvider extends ServiceProvider
         ], 'App\Services\ViewComposers@getSettings');
 
         view()->composer([
-            'frontend.layouts.app',
+            'frontend.*.*.*.header',
         ], 'App\Services\ViewComposers@getPages');
 
         view()->composer([

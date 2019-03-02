@@ -1,7 +1,7 @@
 <?php
 
+use App\Models\Area;
 use App\Models\Branch;
-use App\Models\Country;
 use App\Models\User;
 use Faker\Generator as Faker;
 
@@ -16,10 +16,7 @@ $factory->define(Branch::class, function (Faker $faker) use ($fakerAr) {
         'mobile' => $faker->bankAccountNumber,
         'description_en' => $faker->sentence,
         'description_ar' => $fakerAr->realText(100),
-        'country_id' => Country::all()->random()->id,
-        'area_id' => function ($array) {
-            return Country::whereId($array['country_id'])->first()->areas()->get()->random()->id;
-        },
+        'area_id' => Area::all()->random()->id,
         'user_id' => User::companies()->get()->random()->id,
     ];
 });

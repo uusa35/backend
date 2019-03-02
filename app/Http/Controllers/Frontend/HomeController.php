@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Brand;
 use App\Models\Category;
+use App\Models\Commercial;
 use App\Models\Currency;
 use App\Models\Image;
 use App\Models\Product;
@@ -32,13 +33,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $newArrivals = $this->product->active()->onHome()->onNew()->hasImages()->with('colors','sizes','images','user')->orderBy('created_at', 'desc')->take(self::TAKE)->get();
-        $onSaleProducts = $this->product->active()->onSaleOnHome()->hasImages()->orderby('end_sale','desc')->take(self::TAKE)->get();
+        $newArrivals = $this->product->active()->onHome()->onNew()->hasImages()->with('colors', 'sizes', 'images', 'user')->orderBy('created_at', 'desc')->take(self::TAKE)->get();
+        $onSaleProducts = $this->product->active()->onSaleOnHome()->hasImages()->orderby('end_sale', 'desc')->take(self::TAKE)->get();
         $bestSalesProducts = $this->product->whereIn('id', $this->product->active()->hasImages()->bestSalesProducts())->get();
-        $hotDeals = $this->product->active()->onSale()->hotDeals()->hasImages()->orderby('end_sale','desc')->take(self::TAKE)->get();
+        $hotDeals = $this->product->active()->onSale()->hotDeals()->hasImages()->with('colors', 'sizes', 'images', 'user')->orderby('end_sale', 'desc')->take(self::TAKE)->get();
         $categoriesHome = Category::onHome()->take(self::TAKE)->orderBy('order')->with('children.children')->get();
         $categoriesFeatured = Category::where(['is_featured' => true])->take(self::TAKE)->orderBy('order')->get();
         $brands = Brand::active()->onHome()->take(12)->get();
+        $topDoubleCommercials = Commercial::active()->double()->orderBy('order', 'desc')->take(2)->get();
+        $bottomDoubleCommercials = Commercial::active()->double()->orderBy('order', 'desc')->take(2)->get();
+        $tripleCommercials = Commercial::active()->triple()->orderBy('order', 'desc')->take(3)->get();
         return view('frontend.wokiee.four.home', compact(
             'newArrivals',
             'onSaleProducts',
@@ -46,7 +50,10 @@ class HomeController extends Controller
             'hotDeals',
             'categoriesHome',
             'categoriesFeatured',
-            'brands'
+            'brands',
+            'topDoubleCommercials',
+            'bottomDoubleCommercials',
+            'tripleCommercials'
         ));
     }
 

@@ -27,7 +27,6 @@
         "barryvdh/laravel-ide-helper": "^2.5",
         "beyondcode/laravel-dump-server": "^1.0",
         "filp/whoops": "^2.0",
-        "fitztrev/query-tracer": "^1.0",
         "fzaninotto/faker": "^1.4",
         "laracasts/generators": "^1.1",
         "mockery/mockery": "^1.0",

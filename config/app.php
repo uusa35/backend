@@ -179,7 +179,8 @@ return [
         App\Providers\ComposerServiceProvider::class,
         TapServiceProvider::class,
         Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
-        Riverskies\Laravel\MobileDetect\MobileDetectServiceProvider::class
+        Riverskies\Laravel\MobileDetect\MobileDetectServiceProvider::class,
+
 
     ],
 

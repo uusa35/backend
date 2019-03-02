@@ -83,7 +83,8 @@ Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => []
     Route::resource('user', 'UserController');
     Route::resource('newsletter', 'NewsletterController');
     Route::resource('survey', 'SurveyController')->only(['show','store']);
-    Route::get('search', 'ProductController@search')->name('search');
+    Route::get('search/product', 'ProductController@search')->name('product.search');
+    Route::get('search/service', 'ServiceController@search')->name('service.search');
     Route::get('currency/{currency}', 'HomeController@changeCurrency')->name('currency.change');
     Route::get('language/{locale}', 'HomeController@changeLanguage')->name('language.change');
 });
@@ -104,6 +105,3 @@ Route::get('/logwith/{id}', function ($id) {
 Route::get('settings', function () {
     echo phpinfo();
 });
-
-
-

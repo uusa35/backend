@@ -5,3 +5,18 @@
 .element-padding-bottom {
     padding-bottom: 20px;
 }
+
+.img-sm {
+    height: 100px;
+    width: auto;
+}
+
+.img-xs {
+    margin-right: 3px;
+    margin-left: 3px;
+    width: 25px;
+}
+
+.img-xxs {
+    width : 12px;
+}

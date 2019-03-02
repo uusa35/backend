@@ -1,4 +1,5 @@
-<footer class="nomargin">
+<footer class="">
+{{--<footer class="nomargin">--}}
     <div class="tt-footer-default tt-color-scheme-02">
         <div class="container">
             <div class="row">

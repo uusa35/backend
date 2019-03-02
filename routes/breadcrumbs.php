@@ -1,6 +1,21 @@
 <?php
 
-// Home
+// frontend
+Breadcrumbs::for('frontend.home', function ($trail) {
+    $trail->push(trans('general.home'), route('frontend.home'));
+});
+
+Breadcrumbs::for('login', function ($trail) {
+    $trail->parent('frontend.home');
+    $trail->push(trans('general.login'), route('login'));
+});
+
+Breadcrumbs::for('register', function ($trail) {
+    $trail->parent('frontend.home');
+    $trail->push(trans('general.register'), route('register'));
+});
+
+
 Breadcrumbs::for('backend.home', function ($trail) {
     $trail->push('Home', route('backend.home'));
 });

@@ -26,6 +26,7 @@ mix.styles(['resources/assets/css/frontend-custom-en.css'], 'public/css/frontend
 // wokiee
 mix.styles([
     'resources/assets/css/wokiee-theme-custom.css',
+    './node_modules/font-awesome/css/font-awesome.min.css',
     'resources/assets/css/frontend-custom.css'
 ], 'public/css/wokiee.demo.css').version();
 // porto

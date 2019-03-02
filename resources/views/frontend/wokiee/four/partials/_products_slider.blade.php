@@ -34,7 +34,7 @@
                                         <span class="tt-label-new">{{ trans('general.new') }}</span>
                                     @endif
                                     @if($element->isOnSale)
-                                        <span class="tt-label-sale">{{ trans('general.on_sale') }}</span>
+                                        <span class="tt-label-salex">{{ trans('general.on_sale') }}</span>
                                     @endif
 								</span>
                             </a>
@@ -43,7 +43,7 @@
                             <div class="tt-row">
                                 <ul class="tt-add-info">
                                     <li>
-                                        <a href="{{ route('frontend.search',['user_id' => $element->user_id ]) }}">{{ $element->user->name }}</a>
+                                        <a href="{{ route('frontend.product.search',['user_id' => $element->user_id ]) }}">{{ $element->user->name }}</a>
                                     </li>
                                 </ul>
                                 {{--<div class="tt-rating">--}}

@@ -18,7 +18,7 @@
     @include('frontend.wokiee.four.partials.header')
 @show
 @section('breadcrumbs')
-    @show
+@show
 @section('content')
     <div id="tt-pageContent">
         @yield('body')

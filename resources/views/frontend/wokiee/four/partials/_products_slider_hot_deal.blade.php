@@ -4,7 +4,8 @@
             <h2 class="tt-title">أحدث العروض</h2>
             <div class="tt-description">أفضل وأحدث العروض بالموقع</div>
         </div>
-        <div class="tt-carousel-products row arrow-location-tab arrow-location-tab01 tt-alignment-img tt-layout-product-item slick-animated-show-js" data-item='3'>
+        <div class="tt-carousel-products row arrow-location-tab arrow-location-tab01 tt-alignment-img tt-layout-product-item slick-animated-show-js"
+             data-item='3'>
             @foreach($hotDeals as $element)
                 <div class="col-2 col-md-4 col-lg-3">
                     <div class="tt-product thumbprod-center">
@@ -17,10 +18,10 @@
                             <a href="#" class="tt-btn-compare" data-tooltip="Add to Compare"
                                data-tposition="left"></a>
                             <a href="product.html">
-                                        <span class="tt-img"><img src="{{ asset(env('THUMBNAIL').$element->image) }}"
+                                        <span class="tt-img"><img src="{{ $element->imageLargeLink }}"
                                                                   alt="{{ $element->description }}"></span>
                                 <span class="tt-img-roll-over"><img
-                                            src="{{ asset(env('THUMBNAIL').$element->images->first()->image) }}"
+                                            src="{{ $element->images->first()->imageLargeLink }}"
                                             alt=""></span>
                                 <span class="tt-label-location">
                                     @if($element->on_new)
@@ -36,7 +37,7 @@
                             <div class="tt-row">
                                 <ul class="tt-add-info">
                                     <li>
-                                        <a href="{{ route('frontend.search',['user_id' => $element->user_id ]) }}">{{ $element->user->name }}</a>
+                                        <a href="{{ route('frontend.product.search',['user_id' => $element->user_id ]) }}">{{ $element->user->name }}</a>
                                     </li>
                                 </ul>
                                 {{--<div class="tt-rating">--}}
@@ -92,7 +93,7 @@
                         </div>
                     </div>
                 </div>
-                @endforeach
+            @endforeach
         </div>
     </div>
 </div>

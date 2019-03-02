@@ -24,4 +24,24 @@ trait ModelHelpers
     {
         return $q->where('on_new', true);
     }
+
+    public function getImageLargeLinkAttribute()
+    {
+        return asset(env('LARGE') . $this->image);
+    }
+
+    public function getImageMediumLinkAttribute()
+    {
+        return asset(env('MEDIUM') . $this->image);
+    }
+
+    public function getImageThumbLinkAttribute()
+    {
+        return asset(env('THUMB') . $this->image);
+    }
+
+    public function getPathLinkAttribute()
+    {
+        return asset(env('FILES') . $this->path);
+    }
 }
