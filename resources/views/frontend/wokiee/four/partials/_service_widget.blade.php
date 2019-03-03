@@ -36,6 +36,22 @@
                 @endif
             </span>
         </a>
+        @if($element->isReallyHot)
+            <div class="tt-countdown_box">
+                <div class="tt-countdown_inner">
+                    <div class="tt-countdown"
+                         data-date="{{ $element->end_sale->format('Y-m-d') }}"
+                         data-year="{{ trans('general.years') }}"
+                         data-month="{{ trans('general.months') }}"
+                         data-week="{{ trans('general.weeks') }}"
+                         data-day="{{ trans('general.day') }}"
+                         data-hour="{{ trans('general.hours') }}"
+                         data-minute="{{ trans('general.minute') }}"
+                         data-second="{{ trans('general.second') }}"
+                    ></div>
+                </div>
+            </div>
+        @endif
     </div>
     <div class="tt-description">
         <div class="tt-row">

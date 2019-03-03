@@ -65,7 +65,7 @@ class ServiceController extends Controller
      */
     public function show($id)
     {
-        $element = Service::whereId($id)->first();
+        $element = Service::whereId($id)->with('categories', 'timings', 'images', 'tags', 'user')->first();
         return view('frontend.wokiee.four.modules.service.show', compact('element'));
     }
 

@@ -52,6 +52,11 @@ class Service extends PrimaryModel
         return $this->morphMany(Slider::class, 'slidable');
     }
 
+    public function scopeHasTiming()
+    {
+        return $this->has('timings', '>', 0);
+    }
+
     public function getIsOnSaleAttribute()
     {
         return $this->on_sale && $this->end_sale > Carbon::now() ? true : false;

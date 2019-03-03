@@ -21,7 +21,8 @@ class CreateServicesTable extends Migration
             $table->boolean('on_home')->default(0);
             $table->boolean('on_new')->default(0);
             $table->integer('duration')->default(1);
-            $table->integer('setup_time')->default(1);
+            $table->integer('setup_time')->nullable();
+            $table->integer('delivery_time')->nullable();
             $table->integer('individuals')->unsigned()->nullable();
             $table->decimal('delivery_charge',6,2)->unsigned()->default(0);
             $table->decimal('price',6,2)->unsigned();

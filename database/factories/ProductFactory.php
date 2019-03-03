@@ -17,6 +17,7 @@ $factory->define(Product::class, function (Faker $faker) use ($fakerAr) {
         'on_new' => $faker->boolean,
         'on_sale' => $faker->boolean,
         'on_home' => $faker->boolean,
+        'delivery_time' => $faker->numberBetween(1, 9),
         'price' => $faker->randomFloat(3, 10, 200),
         'sale_price' => function ($array) {
             return $array['price'] - rand(1, 5);

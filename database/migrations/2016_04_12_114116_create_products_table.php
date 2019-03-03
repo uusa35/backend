@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
             $table->boolean('on_new')->default(0);
             $table->boolean('home_delivery_availability')->default(0);
             $table->boolean('shipment_availability')->default(0);
+            $table->string('delivery_time')->nullable();
             $table->boolean('on_sale')->default(0);
             $table->boolean('on_home')->default(0);
             $table->decimal('price',6,2)->unsigned();

@@ -5,6 +5,7 @@ use App\Models\Collection;
 use App\Models\Image;
 use App\Models\Product;
 use App\Models\ProductAttribute;
+use App\Models\Tag;
 use Illuminate\Database\Seeder;
 
 class ProductsTableSeeder extends Seeder
@@ -27,6 +28,7 @@ class ProductsTableSeeder extends Seeder
             }
             $p->categories()->saveMany(Category::all()->random(2));
             $p->collections()->saveMany(Collection::all()->random(2));
+            $p->tags()->saveMany(Tag::all()->random(2));
             $p->images()->saveMany(factory(Image::class, 3)->create());
         });
     }

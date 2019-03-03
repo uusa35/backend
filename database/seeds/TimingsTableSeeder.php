@@ -1,6 +1,6 @@
 <?php
 
-use App\Timing;
+use App\Models\Timing;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 
@@ -138,17 +138,15 @@ class TimingsTableSeeder extends Seeder
         foreach($timings_one as $t) {
             factory(Timing::class)->create([
                 'day' => $t[0],
-                'start_duty' => Carbon::parse($t[1])->toTimeString(),
-                'end_duty' => Carbon::parse($t[2])->toTimeString(),
-                'type' => 'one'
+                'start' => Carbon::parse($t[1])->toTimeString(),
+                'end' => Carbon::parse($t[2])->toTimeString(),
             ]);
         }
         foreach($timings_tow as $t) {
             factory(Timing::class)->create([
                 'day' => $t[0],
-                'start_duty' => Carbon::parse($t[1])->toTimeString(),
-                'end_duty' => Carbon::parse($t[2])->toTimeString(),
-                'type' => 'tow'
+                'start' => Carbon::parse($t[1])->toTimeString(),
+                'end' => Carbon::parse($t[2])->toTimeString(),
             ]);
         }
     }

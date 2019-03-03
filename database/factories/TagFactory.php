@@ -8,5 +8,6 @@ $factory->define(Tag::class, function (Faker $faker) {
         'name' => $faker->word,
         'slug_ar' => $faker->word,
         'slug_en' => $faker->word,
+        'order' => $faker->numberBetween(1, 59),
     ];
 });
