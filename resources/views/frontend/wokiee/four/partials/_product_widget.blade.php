@@ -2,7 +2,8 @@
     <div class="tt-image-box">
         <a href="#" class="tt-btn-quickview" data-toggle="modal"
            data-target="#ModalquickView"
-           data-tooltip="Quick View" data-tposition="{{ app()->isLocale('ar') ? 'right' : 'left' }}"
+           data-tooltip="{{ trans('general.quick_view') }}"
+           data-tposition="{{ app()->isLocale('ar') ? 'right' : 'left' }}"
            data-name="{{ $element->name }}"
            data-id="{{ $element->id }}"
            data-image="{{ $element->imageLargeLink }}"
@@ -35,6 +36,22 @@
                 @endif
             </span>
         </a>
+        @if($element->isReallyHot)
+            <div class="tt-countdown_box">
+                <div class="tt-countdown_inner">
+                    <div class="tt-countdown"
+                         data-date="{{ $element->end_sale->format('Y-m-d') }}"
+                         data-year="{{ trans('general.years') }}"
+                         data-month="{{ trans('general.months') }}"
+                         data-week="{{ trans('general.weeks') }}"
+                         data-day="{{ trans('general.day') }}"
+                         data-hour="{{ trans('general.hours') }}"
+                         data-minute="{{ trans('general.minute') }}"
+                         data-second="{{ trans('general.second') }}"
+                    ></div>
+                </div>
+            </div>
+        @endif
     </div>
     <div class="tt-description">
         <div class="tt-row">
@@ -82,6 +99,8 @@
             </div>
             <div class="tt-row-btn">
                 <a href="#" class="tt-btn-quickview" data-toggle="modal"
+                   data-tooltip="{{ trans('general.quick_view') }}"
+                   data-tposition="{{ app()->isLocale('ar') ? 'right' : 'left' }}"
                    data-target="#ModalquickView"
                    data-name="{{ $element->name }}"
                    data-id="{{ $element->id }}"

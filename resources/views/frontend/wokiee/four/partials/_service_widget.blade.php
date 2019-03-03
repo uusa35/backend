@@ -10,8 +10,7 @@
            data-price="{{ $element->convertedFinalPrice }}"
            data-currency-name="{{ $currency->symbol }}"
            data-url="{{ route('frontend.service.show.name', ['id' => $element->id, 'name' => $element->name]) }}"
-           data-tooltip="Quick View"
-           data-tposition="{{ app()->isLocale('ar') ? 'right' : 'left' }}"
+           data-tooltip="{{ trans('general.quick_view') }}"
            data-tposition="{{ app()->isLocale('ar') ? 'right' : 'left' }}"
         ></a>
         @auth
@@ -49,16 +48,18 @@
             </ul>
             {{--@include('frontend.wokiee.four.partials._rating')--}}
         </div>
-        <h2 class="tt-title"><a href="{{ route('frontend.service.show.name',['id' => $element->id , 'name' => $element->name ]) }}">{{ $element->name }}</a></h2>
+        <h2 class="tt-title"><a
+                    href="{{ route('frontend.service.show.name',['id' => $element->id , 'name' => $element->name ]) }}">{{ $element->name }}</a>
+        </h2>
         <div class="tt-price">
             @if($element->isOnSale)
                 <span class="new-price">{{ $element->convertedSalePrice}}
-                    <span>{{ $currency->symbol }}</span>
-                                    <span class="old-price">{{ $element->convertedPrice }}
-                                        <span>{{ $currency->symbol }}</span>
-                                        @else
-                                            <span class="new-price">{{ $element->convertedPrice }}
-                                                <span>{{ $currency->symbol }}</span>
+                    {{ $currency->symbol }}</span>
+                <span class="old-price">{{ $element->convertedPrice }}
+                    {{ $currency->symbol }}</span>
+            @else
+                <span class="new-price">{{ $element->convertedPrice }}
+                    {{ $currency->symbol }}</span>
             @endif
         </div>
         @if($element->has_attributes)
@@ -87,6 +88,8 @@
             <div class="tt-row-btn">
                 <a href="#" class="tt-btn-quickview" data-toggle="modal"
                    data-target="#ModalquickView"
+                   data-tooltip="{{ trans('general.quick_view') }}"
+                   data-tposition="{{ app()->isLocale('ar') ? 'right' : 'left' }}"
                    data-name="{{ $element->name }}"
                    data-id="{{ $element->id }}"
                    data-image="{{ $element->imageLargeLink }}"

@@ -8,18 +8,25 @@
     <div class="container-indent">
         <!-- mobile product slider  -->
         <div class="tt-mobile-product-layout visible-xs">
-            <h1>testing</h1>
             <div class="tt-mobile-product-slider arrow-location-center slick-animated-show-js">
                 <div><img src="{{ $element->imageLinkLarge }}" alt=""></div>
                 @foreach($element->images as $img)
                     <div><img src="{{ $img->imageLargeLink}}" alt=""></div>
                 @endforeach
-                <div>
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="http://www.youtube.com/embed/GhyKqj_P2E4"
-                                allowfullscreen></iframe>
+                @if($element->video_url)
+                    <div>
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="{{ $element->video_url }}"
+                                    allowfullscreen></iframe>
+                        </div>
                     </div>
-                </div>
+                @endif
+                {{--<div>--}}
+                {{--<div class="tt-video-block">--}}
+                {{--<a href="#" class="link-video"></a>--}}
+                {{--<video class="movie" src="video/video.mp4" poster="video/video_img.jpg"></video>--}}
+                {{--</div>--}}
+                {{--</div>--}}
             </div>
         </div>
         <!-- /mobile product slider  -->
@@ -35,32 +42,38 @@
                     </div>
                     <div class="product-images-carousel">
                         <ul id="smallGallery" class="arrow-location-02  slick-animated-show-js">
+                            <li>
+                                <a class="zoomGalleryActive" href="#" data-image="{{ $element->imageThumbLink }}"
+                                   data-zoom-image="{{ $element->imageLargeLink }}"><img
+                                            src="{{ $element->imageLargeLink }}" alt=""/></a></li>
                             @foreach($element->images as $img)
-                            <li>
-                                <a class="{{ $loop->first ? 'zoomGalleryActive' : null }}" href="#" data-image="{{ $img->imageLargeLink }}"
-                                   data-zoom-image="{{ $img->imageLargeLink }}"><img
-                                            src="{{ $img->imageLargeLink }}" alt=""/></a></li>
+                                <li>
+                                    <a href="#" data-image="{{ $img->imageThumbLink }}"
+                                       data-zoom-image="{{ $img->imageLargeLink }}"><img
+                                                src="{{ $img->imageLargeLink }}" alt=""/></a></li>
                             @endforeach
-                            <li>
-                                <div class="video-link-product" data-toggle="modal" data-type="youtube"
-                                     data-target="#modalVideoProduct"
-                                     data-value="http://www.youtube.com/embed/GhyKqj_P2E4">
-                                    <img src="images/product/product-small-empty.png" alt=""/>
-                                    <div>
-                                        <i class="icon-f-32"></i>
+                            @if($element->video_url)
+                                <li>
+                                    <div class="video-link-product" data-toggle="modal" data-type="youtube"
+                                         data-target="#modalVideoProduct"
+                                         data-value="http://www.youtube.com/embed/GhyKqj_P2E4">
+                                        <img src="{{ $element->imageThumbLink }}" alt="{{ $element->name }}"/>
+                                        <div>
+                                            <i class="icon-f-32"></i>
+                                        </div>
                                     </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="video-link-product" data-toggle="modal" data-type="video"
-                                     data-target="#modalVideoProduct" data-value="video/video.mp4"
-                                     data-poster="video/video_img.jpg">
-                                    <img src="images/product/product-small-empty.png" alt=""/>
-                                    <div>
-                                        <i class="icon-f-32"></i>
-                                    </div>
-                                </div>
-                            </li>
+                                </li>
+                            @endif
+                            {{--<li>--}}
+                            {{--<div class="video-link-product" data-toggle="modal" data-type="video"--}}
+                            {{--data-target="#modalVideoProduct" data-value="video/video.mp4"--}}
+                            {{--data-poster="video/video_img.jpg">--}}
+                            {{--<img src="{{ $element->imageThumbLink }}" alt="{{ $element->name }}"/>--}}
+                            {{--<div>--}}
+                            {{--<i class="icon-f-32"></i>--}}
+                            {{--</div>--}}
+                            {{--</div>--}}
+                            {{--</li>--}}
                         </ul>
                     </div>
                 </div>
@@ -68,44 +81,41 @@
                     <div class="tt-product-single-info">
                         <div class="tt-add-info">
                             <ul>
-                                <li><span>SKU:</span> 001</li>
-                                <li><span>Availability:</span> 40 in Stock</li>
+                                <li><span>{{ trans('general.sku') }}:</span> {{ $element->sku }}</li>
                             </ul>
                         </div>
-                        <h1 class="tt-title">Cotton Blend Fleece Hoodie</h1>
+                        <h1 class="tt-title">{{ $element->name }}</h1>
                         <div class="tt-price">
-                            <span class="new-price">$29</span>
-                            <span class="old-price"></span>
-                        </div>
-                        <div class="tt-review">
-                            <div class="tt-rating">
-                                <i class="icon-star"></i>
-                                <i class="icon-star"></i>
-                                <i class="icon-star"></i>
-                                <i class="icon-star-half"></i>
-                                <i class="icon-star-empty"></i>
-                            </div>
-                            <a href="#">(1 Customer Review)</a>
+                            @if($element->isOnSale)
+                                <span class="new-price">{{ $element->convertedSalePrice}}
+                                    {{ $currency->symbol }}</span>
+                                <span class="old-price">{{ $element->convertedPrice }}
+                                    {{ $currency->symbol }}</span>
+                            @else
+                                <span class="new-price">{{ $element->convertedPrice }}
+                                    {{ $currency->symbol }}</span>
+                            @endif
                         </div>
                         <div class="tt-wrapper">
-                            Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt
-                            ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                            {{ $element->description }}
                         </div>
-                        <div class="tt-wrapper">
-                            <div class="tt-countdown_box_02">
-                                <div class="tt-countdown_inner">
-                                    <div class="tt-countdown"
-                                         data-date="2018-11-01"
-                                         data-year="Yrs"
-                                         data-month="Mths"
-                                         data-week="Wk"
-                                         data-day="Day"
-                                         data-hour="Hrs"
-                                         data-minute="Min"
-                                         data-second="Sec"></div>
+                        @if($element->isReallyHot)
+                            <div class="tt-wrapper">
+                                <div class="tt-countdown_box_02">
+                                    <div class="tt-countdown_inner">
+                                        <div class="tt-countdown"
+                                             data-date="{{ $element->end_sale->format('Y-m-d') }}"
+                                             data-year="{{ trans('general.years') }}"
+                                             data-month="{{ trans('general.months') }}"
+                                             data-week="{{ trans('general.weeks') }}"
+                                             data-day="{{ trans('general.day') }}"
+                                             data-hour="{{ trans('general.hours') }}"
+                                             data-minute="{{ trans('general.minute') }}"
+                                             data-second="{{ trans('general.second') }}"></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        @endif
                         <div class="tt-wrapper">
                             <div class="tt-row-custom-01">
                                 <div class="col-item">
@@ -542,39 +552,7 @@
     </div>
 @endsection
 
-@section('models')
-    @parent
-    <div class="modal fade" id="modalVideoProduct" tabindex="-1" role="dialog" aria-label="myModalLabel"
-         aria-hidden="true">
-        <div class="modal-dialog modal-video">
-            <div class="modal-content ">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span
-                                class="icon icon-clear"></span></button>
-                </div>
-                <div class="modal-body">
-                    <div class="modal-video-content">
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- modal (ModalSubsribeGood) -->
-    <div class="modal  fade" id="ModalSubsribeGood" tabindex="-1" role="dialog" aria-label="myModalLabel"
-         aria-hidden="true">
-        <div class="modal-dialog modal-xs">
-            <div class="modal-content ">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span
-                                class="icon icon-clear"></span></button>
-                </div>
-                <div class="modal-body">
-                    <div class="tt-modal-subsribe-good">
-                        <i class="icon-f-68"></i> You have successfully signed!
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-@endsection
+{{--@section('models')--}}
+{{--@parent--}}
+{{----}}
+{{--@endsection--}}

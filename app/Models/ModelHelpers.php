@@ -42,9 +42,18 @@ trait ModelHelpers
         return $q->where('on_sale', true)->whereDate('end_sale', '>', Carbon::now());
     }
 
+    public function getIsOnSaleAttribute()
+    {
+        return $this->on_sale && Carbon::parse($this->end_sale) > Carbon::now() ? true : false;
+    }
+
     public function scopeHotDeals($q)
     {
         return $q->onSale()->where('is_hot_deal', true);
+    }
+
+    public function getIsReallyHotAttribute() {
+        return $this->isOnSale && $this->is_hot_deal;
     }
 
     public function getImageLargeLinkAttribute()
@@ -59,7 +68,7 @@ trait ModelHelpers
 
     public function getImageThumbLinkAttribute()
     {
-        return asset(env('THUMB') . $this->image);
+        return asset(env('THUMBNAIL') . $this->image);
     }
 
     public function getPathLinkAttribute()

@@ -48,6 +48,7 @@ mix.scripts([
     // loading jquery from the app.js
     '../wokiee-ecommerce-html/html/external/jquery/jquery.min.js',
     '../wokiee-ecommerce-html/html/external/bootstrap/js/bootstrap.min.js',
+    '../wokiee-ecommerce-html/html/external/elevatezoom/jquery.elevatezoom.js',
     '../wokiee-ecommerce-html/html/external/slick/slick.min.js',
     '../wokiee-ecommerce-html/html/external/perfect-scrollbar/perfect-scrollbar.min.js',
     '../wokiee-ecommerce-html/html/external/panelmenu/panelmenu.js',
@@ -56,6 +57,7 @@ mix.scripts([
     '../wokiee-ecommerce-html/html/external/rs-plugin/js/jquery.themepunch.revolution.min.js',
     '../wokiee-ecommerce-html/html/external/countdown/jquery.plugin.min.js',
     '../wokiee-ecommerce-html/html/external/countdown/jquery.countdown.min.js',
+    '../wokiee-ecommerce-html/html/external/magnific-popup/jquery.magnific-popup.min.js',
     '../wokiee-ecommerce-html/html/external/lazyLoad/lazyload.min.js',
     '../wokiee-ecommerce-html/html/js/main.js',
     '../wokiee-ecommerce-html/html/external/form/jquery.form.js',

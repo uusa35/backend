@@ -14,10 +14,7 @@ use Illuminate\Support\Facades\DB;
 trait ProductHelpers
 {
 
-    public function getIsOnSaleAttribute()
-    {
-        return $this->on_sale && $this->end_sale > Carbon::now() ? true : false;
-    }
+
 
     public function getFinalPriceAttribute()
     {
@@ -88,8 +85,5 @@ trait ProductHelpers
         return auth()->check() ? in_array(auth()->user()->id, $this->favorites->pluck('id')->toArray()) : null;
     }
 
-    public function getRealHotDealAttribute() {
-        return $this->isOnSale && $this->is_hot_deal;
-    }
 
 }

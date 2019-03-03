@@ -6,7 +6,7 @@
         </div>
         <div class="tt-carousel-products row arrow-location-tab arrow-location-tab01 tt-alignment-img tt-layout-product-item slick-animated-show-js"
              data-item='3'>
-            @foreach($hotDeals as $element)
+            @foreach($productHotDeals as $element)
                 <div class="col-2 col-md-4 col-lg-3">
                     @include('frontend.wokiee.four.partials._product_widget',['element' => $element])
                 </div>

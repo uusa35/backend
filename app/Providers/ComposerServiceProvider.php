@@ -48,18 +48,8 @@ class ComposerServiceProvider extends ServiceProvider
 
         view()->composer([
             'frontend.wokiee.four.home',
-            'frontend.porto.three.home',
-            'frontend.porto.three.modules.product.show',
-            'frontend.partials.footer',
-            'frontend.modules.order.index',
-            'frontend.modules.product.index',
-            'frontend.modules.product.show',
-            'frontend.modules.favorite.index',
-            'frontend.partials._top_bar_currencies',
-            'frontend.partials.header_one',
-            'frontend.partials.header_four',
-            'frontend.partials._pop_up_cart',
-            'frontend.modules.cart.index'
+            'frontend.wokiee.four.*.show',
+            'frontend.wokiee.four.*.index',
         ], 'App\Services\ViewComposers@getCurrency');
 
 

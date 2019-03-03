@@ -2,50 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e163867a-e084-464b-b025-90563ffad1db" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/video/video.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/video/video_img.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/service/show.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_btns_home.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_commercial_widget.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_product_widget.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_rating.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_service_widget.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_services_slider.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_services_slider_hot_deal.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_social_icons_home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/ModelHelpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ModelHelpers.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/ProductHelpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ProductHelpers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Service.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Service.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Providers/ComposerServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/ComposerServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/BrandFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/BrandFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/ServiceFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ServiceFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/SettingFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/SettingFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2016_06_31_115134_create_services_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2016_06_31_115134_create_services_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/ServicesTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/ServicesTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/frontend-custom-ar.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/frontend-custom-ar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/porto.demo2.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/porto.demo2.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/porto.demo3.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/porto.demo3.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/porto.demo4.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/porto.demo4.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/wokiee.demo.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/wokiee.demo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/14295531_295160297512648_1677641305_a.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/frontend-custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/frontend-custom.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/wokiee.demo.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/wokiee.demo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/css/frontend-custom-ar.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/css/frontend-custom-ar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/css/frontend-custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/css/frontend-custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/js/frontend-custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/js/frontend-custom.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_commercials_top.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_commercials_top.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_horizontal_three_categories.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_horizontal_three_categories.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_main_menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_main_menu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_products_slider.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_products_slider.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/product/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/product/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/service/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/service/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_product_widget.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_product_widget.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_products_slider_hot_deal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_products_slider_hot_deal.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_top_bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_top_bar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_service_widget.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_service_widget.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/models.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/models.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/breadcrumbs.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/breadcrumbs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -74,39 +44,39 @@
     <session id="-2122380425">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="26" />
+          <entry key="project.closed" value="27" />
           <entry key="project.open.time.0" value="14" />
-          <entry key="project.open.time.1" value="3" />
+          <entry key="project.open.time.1" value="4" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.4" value="5" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="27" />
+          <entry key="project.opened" value="28" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Blade" value="322" />
+          <entry key="Blade" value="334" />
           <entry key="CSS" value="56" />
-          <entry key="HTML" value="28" />
+          <entry key="HTML" value="30" />
           <entry key="Image" value="22" />
           <entry key="JSON" value="16" />
-          <entry key="JavaScript" value="100" />
-          <entry key="PHP" value="634" />
-          <entry key="PLAIN_TEXT" value="14" />
+          <entry key="JavaScript" value="102" />
+          <entry key="PHP" value="643" />
+          <entry key="PLAIN_TEXT" value="15" />
           <entry key="SCSS" value="11" />
           <entry key="XML" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Blade" value="12764" />
+          <entry key="Blade" value="13576" />
           <entry key="CSS" value="672" />
           <entry key="HTML" value="42" />
           <entry key="JSON" value="6" />
-          <entry key="JavaScript" value="1696" />
-          <entry key="PHP" value="13786" />
+          <entry key="JavaScript" value="1699" />
+          <entry key="PHP" value="14009" />
           <entry key="PLAIN_TEXT" value="65" />
           <entry key="SCSS" value="41" />
         </counts>
@@ -114,50 +84,132 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="vertical" split-proportion="0.5">
       <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/service/show.blade.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="549">
-                  <caret line="39" column="57" selection-start-line="39" selection-start-column="57" selection-end-line="39" selection-end-column="57" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
+        <splitter split-orientation="horizontal" split-proportion="0.5">
+          <split-first>
+            <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/home.blade.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="324">
+                      <caret line="18" column="64" lean-forward="true" selection-start-line="18" selection-start-column="64" selection-end-line="18" selection-end-column="64" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/service/show.blade.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="448">
+                      <caret line="117" column="30" lean-forward="true" selection-start-line="117" selection-start-column="30" selection-end-line="117" selection-end-column="30" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_service_widget.blade.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="245">
+                      <caret line="23" column="73" lean-forward="true" selection-start-line="23" selection-start-column="73" selection-end-line="23" selection-end-column="73" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_services_slider_hot_deal.blade.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="198">
+                      <caret line="11" column="71" lean-forward="true" selection-start-line="11" selection-start-column="71" selection-end-line="11" selection-end-column="71" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_products_slider_hot_deal.blade.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="180">
+                      <caret line="10" column="70" selection-start-line="10" selection-start-column="70" selection-end-line="10" selection-end-column="70" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_product_widget.blade.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="175">
+                      <caret line="43" column="61" selection-start-line="43" selection-start-column="61" selection-end-line="43" selection-end-column="61" />
+                      <folding>
+                        <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#2;n#div#1;n#div#0;n#!!top" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-first>
+          <split-second>
+            <leaf>
+              <file pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/../wokiee-ecommerce-html/html/index-05.html">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="413">
+                      <caret line="1720" column="34" lean-forward="true" selection-start-line="1708" selection-start-column="28" selection-end-line="1720" selection-end-column="34" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-second>
+        </splitter>
       </split-first>
       <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/../wokiee-ecommerce-html/html/product-02.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="216">
-                  <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
-                  <folding>
-                    <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#2;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#3;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#4;n#body#0;n#html#0;n#!!top" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/Models/ModelHelpers.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="691">
-                  <caret line="52" column="5" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
+        <splitter split-orientation="horizontal" split-proportion="0.5">
+          <split-first>
+            <leaf>
+              <file pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_12_114116_create_products_table.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="-113">
+                      <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-first>
+          <split-second>
+            <leaf>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/database/migrations/2016_06_31_115134_create_services_table.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="332">
+                      <caret line="39" column="40" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="40" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/app/Models/ModelHelpers.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="155">
+                      <caret line="54" column="47" selection-start-line="54" selection-start-column="47" selection-end-line="54" selection-end-column="47" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/app/Models/ProductHelpers.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="358">
+                      <caret line="86" selection-start-line="86" selection-end-line="86" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-second>
+        </splitter>
       </split-second>
     </splitter>
   </component>
@@ -170,22 +222,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>slick</find>
-      <find>add</find>
-      <find>Cannot read property 'add' of null</find>
-      <find>tt-carousel-products row arrow-location-tab arrow-location-tab01 tt-alignment-img tt-layout-product-item slick-animated-show-js</find>
-      <find>search</find>
-      <find>search.</find>
-      <find>.search</find>
-      <find>bread</find>
-      <find>'login</find>
-      <find>/</find>
-      <find>frontend.home</find>
-      <find>new</find>
-      <find>product'</find>
-      <find>ModalquickView</find>
-      <find>old-</find>
-      <find>video_img.jpg</find>
       <find>modal</find>
       <find>close</find>
       <find>catego</find>
@@ -200,6 +236,22 @@
       <find>mp4§</find>
       <find>slider</find>
       <find>#4611a7</find>
+      <find>data-zoom-image</find>
+      <find>Close</find>
+      <find>gallery</find>
+      <find>smallGallery</find>
+      <find>magnific</find>
+      <find>related</find>
+      <find>elevatezoom</find>
+      <find>quic</find>
+      <find>old-</find>
+      <find>currency</find>
+      <find>hotDea</find>
+      <find>hotDeal</find>
+      <find>isOnSale</find>
+      <find>year</find>
+      <find>minu</find>
+      <find>Sec</find>
     </findStrings>
     <replaceStrings>
       <replace>resources/css/</replace>
@@ -230,8 +282,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/database/seeds/CommercialsTableSeeder.php" />
-        <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
         <option value="$PROJECT_DIR$/database/factories/BranchFactory.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_02_28_112642_create_commercials_table.php" />
         <option value="$PROJECT_DIR$/database/factories/CommercialFactory.php" />
@@ -241,7 +291,6 @@
         <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_all_slider_products_for_one_parent_category.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Frontend/ServiceController.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_all_brands.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/layouts/app.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
         <option value="$PROJECT_DIR$/config/breadcrumbs.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/register.blade.php" />
@@ -249,38 +298,41 @@
         <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_main_menu_categories.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_06_31_115134_create_services_table.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_products_slider_hot_deal.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_services_slider.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_commercial_widget.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_horizontal_three_categories.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_rating.blade.php" />
         <option value="$PROJECT_DIR$/resources/assets/js/frontend-custom.js" />
-        <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/models.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_top_bar.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_social_icons_home.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/footer.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_main_menu.blade.php" />
         <option value="$PROJECT_DIR$/resources/assets/css/frontend-custom-ar.css" />
-        <option value="$PROJECT_DIR$/app/Models/ProductHelpers.php" />
-        <option value="$PROJECT_DIR$/app/Models/ModelHelpers.php" />
         <option value="$PROJECT_DIR$/app/Models/Service.php" />
-        <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_product_widget.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_service_widget.blade.php" />
         <option value="$PROJECT_DIR$/../wokiee-ecommerce-html/html/index-06.html" />
-        <option value="$PROJECT_DIR$/app/Providers/ComposerServiceProvider.php" />
         <option value="$PROJECT_DIR$/resources/assets/css/frontend-custom.css" />
         <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_btns_home.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_commercials_top.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_services_slider_hot_deal.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_products_slider.blade.php" />
         <option value="$PROJECT_DIR$/database/factories/BrandFactory.php" />
-        <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/home.blade.php" />
         <option value="$PROJECT_DIR$/database/factories/ServiceFactory.php" />
         <option value="$PROJECT_DIR$/database/seeds/ServicesTableSeeder.php" />
         <option value="$PROJECT_DIR$/database/factories/SettingFactory.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php" />
         <option value="$PROJECT_DIR$/routes/breadcrumbs.php" />
+        <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/product/show.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/models.blade.php" />
+        <option value="$PROJECT_DIR$/webpack.mix.js" />
+        <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_service_widget.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/layouts/app.blade.php" />
+        <option value="$PROJECT_DIR$/app/Providers/ComposerServiceProvider.php" />
+        <option value="$PROJECT_DIR$/app/Models/ProductHelpers.php" />
+        <option value="$PROJECT_DIR$/app/Models/ModelHelpers.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/service/show.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/home.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_products_slider_hot_deal.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_product_widget.blade.php" />
       </list>
     </option>
   </component>
@@ -606,6 +658,59 @@
             <path>
               <item name="mallr" type="b2602c69:ProjectViewProjectNode" />
               <item name="mallr" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mallr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mallr" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="wokiee" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mallr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mallr" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="wokiee" type="462c0819:PsiDirectoryNode" />
+              <item name="four" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mallr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mallr" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="wokiee" type="462c0819:PsiDirectoryNode" />
+              <item name="four" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mallr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mallr" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="wokiee" type="462c0819:PsiDirectoryNode" />
+              <item name="four" type="462c0819:PsiDirectoryNode" />
+              <item name="partials" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mallr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mallr" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="wokiee" type="462c0819:PsiDirectoryNode" />
+              <item name="partials" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mallr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mallr" type="462c0819:PsiDirectoryNode" />
               <item name="storage" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -646,7 +751,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="images_t&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/migrations/2017_04_24_132934_create_images_table.php&#10;Image.php&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Models/Image.php&#10;ModelH&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Models/ModelHelpers.php&#10;show.blad&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/wokiee/four/modules/service/show.blade.php&#10;show&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/wokiee/four/modules/service/show.blade.php&#10;bread&#9;FILE&#9;file:///Users/mac/Sites/mallr/routes/breadcrumbs.php&#10;Hom&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Http/Controllers/Frontend/HomeController.php&#10;brands_t&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/migrations/2016_03_30_104319_create_brands_table.php&#10;HomeCon&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Http/Controllers/Frontend/HomeController.php&#10;frontend-c&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/assets/css/frontend-custom.css&#10;Setting&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/SettingFactory.php&#10;settings_t&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/migrations/2015_06_01_175252_create_settings_table.php&#10;home.b&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/wokiee/four/home.blade.php&#10;ServicesT&#9;null&#9;null&#10;ServiceF&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/ServiceFactory.php&#10;SettingF&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/SettingFactory.php&#10;BrandF&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/BrandFactory.php&#10;ProductFa&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/ProductFactory.php&#10;ProductF&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/ProductFactory.php&#10;home&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/wokiee/four/home.blade.php&#10;front&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/assets/css/frontend-custom.css&#10;_btns&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/wokiee/four/partials/_btns_home.blade.php&#10;HOME.B&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/wokiee/four/home.blade.php&#10;ComposerSer&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Providers/ComposerServiceProvider.php&#10;ViewCom&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Services/ViewComposers.php&#10;users_t&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/migrations/2014_10_12_000000_create_users_table.php&#10;header.&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/wokiee/four/partials/header.blade.php&#10;Servicecon&#9;null&#9;null&#10;show.blade&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/wokiee/four/modules/service/show.blade.php&#10;_product&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/wokiee/four/partials/_product_widget.blade.php&#10;_service_wid&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/wokiee/four/partials/_service_widget.blade.php&#10;Service.php&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Models/Service.php&#10;home.bl&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/wokiee/four/home.blade.php&#10;ModeHe&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Models/ModelHelpers.php&#10;products_t&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/migrations/2016_04_12_114116_create_products_table.php&#10;ProductHel&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Models/ProductHelpers.php&#10;ModeHel&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Models/ModelHelpers.php&#10;Homecon&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Http/Controllers/Frontend/HomeController.php&#10;_service_wi&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/wokiee/four/partials/_service_widget.blade.php&#10;_product_w&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/wokiee/four/partials/_product_widget.blade.php&#10;webpac&#9;FILE&#9;file:///Users/mac/Sites/mallr/webpack.mix.js&#10;styles.blade&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/wokiee/partials/styles.blade.php&#10;frontend-custom.css&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/assets/css/frontend-custom.css&#10;header.blade&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/wokiee/four/partials/header.blade.php&#10;_top&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/wokiee/four/partials/_top_bar.blade.php&#10;footer.blade&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/wokiee/four/partials/footer.blade.php&#10;footer.blad&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/backend/partials/footer.blade.php&#10;frontend-custom-ar&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/assets/css/frontend-custom-ar.css&#10;frontend-cust&#9;FILE&#9;file:///Users/mac/Sites/mallr/public/css/frontend-custom-ar.css&#10;fronte&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/assets/js/frontend-custom.js" />
+    <property name="SearchEverywhereHistoryKey" value="Homecon&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Http/Controllers/Frontend/HomeController.php&#10;home.blad&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/wokiee/four/home.blade.php&#10;_products_ho&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/wokiee/four/partials/_products_slider_hot_deal.blade.php&#10;_hot&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/wokiee/four/partials/_services_slider_hot_deal.blade.php&#10;_&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/wokiee/four/partials/_service_widget.blade.php&#10;ProductHelp&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Models/ProductHelpers.php&#10;ModelHel&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Models/ModelHelpers.php&#10;app.b&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/wokiee/four/layouts/app.blade.php&#10;ComposerSer&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Providers/ComposerServiceProvider.php&#10;ViewCom&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Services/ViewComposers.php&#10;_service_wi&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/wokiee/four/partials/_service_widget.blade.php&#10;services_t&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/migrations/2016_06_31_115134_create_services_table.php&#10;products_t&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/migrations/2016_04_12_114116_create_products_table.php&#10;show.blade&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/wokiee/four/modules/service/show.blade.php&#10;product_wi&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/wokiee/four/partials/_product_widget.blade.php&#10;webp&#9;FILE&#9;file:///Users/mac/Sites/mallr/webpack.mix.js&#10;models&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/wokiee/four/partials/models.blade.php&#10;.env&#9;FILE&#9;file:///Users/mac/Sites/mallr/.env&#10;ModelHe&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Models/ModelHelpers.php&#10;webpac&#9;FILE&#9;file:///Users/mac/Sites/mallr/webpack.mix.js&#10;images_t&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/migrations/2017_04_24_132934_create_images_table.php&#10;Image.php&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Models/Image.php&#10;ModelH&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Models/ModelHelpers.php&#10;show.blad&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/wokiee/four/modules/service/show.blade.php&#10;show&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/wokiee/four/modules/service/show.blade.php&#10;bread&#9;FILE&#9;file:///Users/mac/Sites/mallr/routes/breadcrumbs.php&#10;Hom&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Http/Controllers/Frontend/HomeController.php&#10;brands_t&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/migrations/2016_03_30_104319_create_brands_table.php&#10;HomeCon&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Http/Controllers/Frontend/HomeController.php&#10;frontend-c&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/assets/css/frontend-custom.css&#10;Setting&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/SettingFactory.php&#10;settings_t&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/migrations/2015_06_01_175252_create_settings_table.php&#10;home.b&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/wokiee/four/home.blade.php&#10;ServicesT&#9;null&#9;null&#10;ServiceF&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/ServiceFactory.php&#10;SettingF&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/SettingFactory.php&#10;BrandF&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/BrandFactory.php&#10;ProductFa&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/ProductFactory.php&#10;ProductF&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/factories/ProductFactory.php&#10;home&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/wokiee/four/home.blade.php&#10;front&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/assets/css/frontend-custom.css&#10;_btns&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/wokiee/four/partials/_btns_home.blade.php&#10;HOME.B&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/wokiee/four/home.blade.php&#10;users_t&#9;FILE&#9;file:///Users/mac/Sites/mallr/database/migrations/2014_10_12_000000_create_users_table.php&#10;header.&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/wokiee/four/partials/header.blade.php&#10;Servicecon&#9;null&#9;null&#10;_product&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/wokiee/four/partials/_product_widget.blade.php&#10;_service_wid&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/wokiee/four/partials/_service_widget.blade.php&#10;Service.php&#9;FILE&#9;file:///Users/mac/Sites/mallr/app/Models/Service.php&#10;home.bl&#9;FILE&#9;file:///Users/mac/Sites/mallr/resources/views/frontend/wokiee/four/home.blade.php" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="js.eslint.eslintPackage" value="" />
@@ -724,18 +829,19 @@
       <workItem from="1551332351330" duration="17537000" />
       <workItem from="1551520145574" duration="20000" />
       <workItem from="1551524804048" duration="14806000" />
-      <workItem from="1551587675990" duration="4972000" />
+      <workItem from="1551587675990" duration="7041000" />
+      <workItem from="1551604033874" duration="2691000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="146118000" />
+    <option name="totallyTimeSpent" value="150878000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="1177" extended-state="6" />
+    <frame x="0" y="23" width="1920" height="1177" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.102768905" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10383387" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -788,71 +894,10 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/backend/partials/footer.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_social_icons_home.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="8" lean-forward="true" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/footer.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
-          <caret line="76" column="32" selection-start-line="76" selection-start-column="32" selection-end-line="76" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_12_114116_create_products_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="40" column="38" selection-start-line="40" selection-start-column="38" selection-end-line="40" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/app/public/uploads/images/medium/logo.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/app/public/uploads/images/large/30.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/app/public/uploads/images/large/54.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/app/public/uploads/images/large/logo.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_top_bar.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/assets/css/frontend-custom-ar.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.mix.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/ProductHelpers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="853">
-          <caret line="88" column="5" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -874,13 +919,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="648">
           <caret line="36" column="81" selection-start-line="36" selection-start-column="81" selection-end-line="36" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_product_widget.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="592">
-          <caret line="33" column="83" selection-start-line="33" selection-start-column="83" selection-end-line="33" selection-end-column="83" />
         </state>
       </provider>
     </entry>
@@ -906,13 +944,6 @@
             <element signature="n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_service_widget.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="79" column="84" selection-start-line="79" selection-start-column="84" selection-end-line="79" selection-end-column="84" />
         </state>
       </provider>
     </entry>
@@ -944,20 +975,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Providers/ComposerServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Services/ViewComposers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="49" column="50" lean-forward="true" selection-start-line="49" selection-start-column="50" selection-end-line="49" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/Admin/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
@@ -970,13 +987,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/storage/app/public/uploads/images/large/45.jpeg">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_services_slider_hot_deal.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="22" lean-forward="true" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_btns_home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -1030,13 +1040,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="63" column="30" selection-start-line="63" selection-start-column="30" selection-end-line="63" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/assets/css/frontend-custom.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
@@ -1072,29 +1075,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../wokiee-ecommerce-html/html/product-02.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
-          <folding>
-            <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#4;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2017_04_24_132934_create_images_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1116,17 +1096,163 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="650">
+          <caret line="43" column="37" selection-start-line="43" selection-start-column="37" selection-end-line="43" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../wokiee-ecommerce-html/html/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="73" column="53" selection-start-line="73" selection-start-column="53" selection-end-line="73" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../wokiee-ecommerce-html/html/product-02.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="2164" column="14" lean-forward="true" selection-start-line="2164" selection-start-column="14" selection-end-line="2164" selection-end-column="14" />
+          <folding>
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#4;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/product/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="597">
+          <caret line="89" column="66" lean-forward="true" selection-start-line="89" selection-start-column="66" selection-end-line="89" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.mix.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="58" column="79" selection-start-line="58" selection-start-column="79" selection-end-line="58" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/models.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="211" column="6" selection-start-line="211" selection-start-column="6" selection-end-line="211" selection-end-column="6" />
+          <folding>
+            <element signature="n#div#0;n#!!top" />
+            <element signature="n#div#1;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_12_114116_create_products_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-113">
+          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/layouts/app.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/ComposerServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="62" column="44" lean-forward="true" selection-start-line="62" selection-start-column="44" selection-end-line="62" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Services/ViewComposers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="52" column="42" lean-forward="true" selection-start-line="52" selection-start-column="42" selection-end-line="52" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/ProductHelpers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="86" selection-start-line="86" selection-end-line="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_06_31_115134_create_services_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="39" column="40" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/ModelHelpers.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="691">
-          <caret line="52" column="5" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
+        <state relative-caret-position="155">
+          <caret line="54" column="47" selection-start-line="54" selection-start-column="47" selection-end-line="54" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_services_slider_hot_deal.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="71" lean-forward="true" selection-start-line="11" selection-start-column="71" selection-end-line="11" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_service_widget.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="23" column="73" lean-forward="true" selection-start-line="23" selection-start-column="73" selection-end-line="23" selection-end-column="73" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/service/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
-          <caret line="39" column="57" selection-start-line="39" selection-start-column="57" selection-end-line="39" selection-end-column="57" />
+        <state relative-caret-position="448">
+          <caret line="117" column="30" lean-forward="true" selection-start-line="117" selection-start-column="30" selection-end-line="117" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="64" lean-forward="true" selection-start-line="18" selection-start-column="64" selection-end-line="18" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_products_slider_hot_deal.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="70" selection-start-line="10" selection-start-column="70" selection-end-line="10" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../wokiee-ecommerce-html/html/index-05.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="1720" column="34" lean-forward="true" selection-start-line="1708" selection-start-column="28" selection-end-line="1720" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_product_widget.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="43" column="61" selection-start-line="43" selection-start-column="61" selection-end-line="43" selection-end-column="61" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#2;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
