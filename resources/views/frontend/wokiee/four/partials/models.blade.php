@@ -1,4 +1,4 @@
-<a href="#" class="tt-back-to-top">BACK TO TOP</a>
+<a href="#" class="tt-back-to-top">{{ trans('general.back_to_top') }}</a>
 <!-- modal (AddToCartProduct) -->
 <div class="modal  fade"  id="modalAddToCartProduct" tabindex="-1" role="dialog" aria-label="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -65,7 +65,7 @@
                     <div class="row">
                         <div class="col-12 col-md-5 col-lg-6">
                             <div class="tt-mobile-product-slider arrow-location-center">
-                                <div><img src="images/loader.svg" data-src="images/product/product-01.jpg" alt=""></div>
+                                <div><img id="element-image" src="" data-src="" alt=""></div>
                                 <div><img src="images/loader.svg" data-src="images/product/product-01-02.jpg" alt=""></div>
                                 <div><img src="images/loader.svg" data-src="images/product/product-01-03.jpg" alt=""></div>
                                 <div><img src="images/loader.svg" data-src="images/product/product-01-04.jpg" alt=""></div>
@@ -81,100 +81,92 @@
                             <div class="tt-product-single-info">
                                 <div class="tt-add-info">
                                     <ul>
-                                        <li><span>SKU:</span> 001</li>
-                                        <li><span>Availability:</span> 40 in Stock</li>
+                                        <li><span>{{ trans('general.sku') }}: <div id="element-sku"></div></span></li>
+                                        {{--<li><span>Availability:</span> 40 in Stock</li>--}}
                                     </ul>
                                 </div>
-                                <h2 class="tt-title">Cotton Blend Fleece Hoodie</h2>
+                                <h2 class="tt-title"><div id="element-name"></div></h2>
                                 <div class="tt-price">
-                                    <span class="new-price">$29</span>
-                                    <span class="old-price"></span>
-                                </div>
-                                <div class="tt-review">
-                                    <div class="tt-rating">
-                                        <i class="icon-star"></i>
-                                        <i class="icon-star"></i>
-                                        <i class="icon-star"></i>
-                                        <i class="icon-star-half"></i>
-                                        <i class="icon-star-empty"></i>
-                                    </div>
-                                    <a href="#">(1 Customer Review)</a>
+                                    <span class="new-price">
+                                        <span id="element-price"></span>
+                                        <span id="element-currency-name"></span>
+                                    </span>
                                 </div>
                                 <div class="tt-wrapper">
-                                    Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                                    <div id="element-description"></div>
                                 </div>
-                                <div class="tt-swatches-container">
-                                    <div class="tt-wrapper">
-                                        <div class="tt-title-options">SIZE</div>
-                                        <form class="form-default">
-                                            <div class="form-group">
-                                                <select class="form-control">
-                                                    <option>21</option>
-                                                    <option>25</option>
-                                                    <option>36</option>
-                                                </select>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div class="tt-wrapper">
-                                        <div class="tt-title-options">COLOR</div>
-                                        <form class="form-default">
-                                            <div class="form-group">
-                                                <select class="form-control">
-                                                    <option>Red</option>
-                                                    <option>Green</option>
-                                                    <option>Brown</option>
-                                                </select>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div class="tt-wrapper">
-                                        <div class="tt-title-options">TEXTURE:</div>
-                                        <ul class="tt-options-swatch options-large">
-                                            <li><a class="options-color" href="#">
-												<span class="swatch-img">
-													<img src="images/loader.svg" data-src="images/custom/texture-img-01.jpg" alt="">
-												</span>
-                                                    <span class="swatch-label color-black"></span>
-                                                </a></li>
-                                            <li class="active"><a class="options-color" href="#">
-												<span class="swatch-img">
-													<img src="images/loader.svg" data-src="images/custom/texture-img-02.jpg" alt="">
-												</span>
-                                                    <span class="swatch-label color-black"></span>
-                                                </a></li>
-                                            <li><a class="options-color" href="#">
-												<span class="swatch-img">
-													<img src="images/loader.svg" data-src="images/custom/texture-img-03.jpg" alt="">
-												</span>
-                                                    <span class="swatch-label color-black"></span>
-                                                </a></li>
-                                            <li><a class="options-color" href="#">
-												<span class="swatch-img">
-													<img src="images/loader.svg" data-src="images/custom/texture-img-04.jpg" alt="">
-												</span>
-                                                    <span class="swatch-label color-black"></span>
-                                                </a></li>
-                                            <li><a class="options-color" href="#">
-												<span class="swatch-img">
-													<img src="images/loader.svg" data-src="images/custom/texture-img-05.jpg" alt="">
-												</span>
-                                                    <span class="swatch-label color-black"></span>
-                                                </a></li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                {{--<div class="tt-swatches-container">--}}
+                                    {{--<div class="tt-wrapper">--}}
+                                        {{--<div class="tt-title-options">SIZE</div>--}}
+                                        {{--<form class="form-default">--}}
+                                            {{--<div class="form-group">--}}
+                                                {{--<select class="form-control">--}}
+                                                    {{--<option>21</option>--}}
+                                                    {{--<option>25</option>--}}
+                                                    {{--<option>36</option>--}}
+                                                {{--</select>--}}
+                                            {{--</div>--}}
+                                        {{--</form>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="tt-wrapper">--}}
+                                        {{--<div class="tt-title-options">COLOR</div>--}}
+                                        {{--<form class="form-default">--}}
+                                            {{--<div class="form-group">--}}
+                                                {{--<select class="form-control">--}}
+                                                    {{--<option>Red</option>--}}
+                                                    {{--<option>Green</option>--}}
+                                                    {{--<option>Brown</option>--}}
+                                                {{--</select>--}}
+                                            {{--</div>--}}
+                                        {{--</form>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="tt-wrapper">--}}
+                                        {{--<div class="tt-title-options">TEXTURE:</div>--}}
+                                        {{--<ul class="tt-options-swatch options-large">--}}
+                                            {{--<li><a class="options-color" href="#">--}}
+												{{--<span class="swatch-img">--}}
+													{{--<img src="images/loader.svg" data-src="images/custom/texture-img-01.jpg" alt="">--}}
+												{{--</span>--}}
+                                                    {{--<span class="swatch-label color-black"></span>--}}
+                                                {{--</a></li>--}}
+                                            {{--<li class="active"><a class="options-color" href="#">--}}
+												{{--<span class="swatch-img">--}}
+													{{--<img src="images/loader.svg" data-src="images/custom/texture-img-02.jpg" alt="">--}}
+												{{--</span>--}}
+                                                    {{--<span class="swatch-label color-black"></span>--}}
+                                                {{--</a></li>--}}
+                                            {{--<li><a class="options-color" href="#">--}}
+												{{--<span class="swatch-img">--}}
+													{{--<img src="images/loader.svg" data-src="images/custom/texture-img-03.jpg" alt="">--}}
+												{{--</span>--}}
+                                                    {{--<span class="swatch-label color-black"></span>--}}
+                                                {{--</a></li>--}}
+                                            {{--<li><a class="options-color" href="#">--}}
+												{{--<span class="swatch-img">--}}
+													{{--<img src="images/loader.svg" data-src="images/custom/texture-img-04.jpg" alt="">--}}
+												{{--</span>--}}
+                                                    {{--<span class="swatch-label color-black"></span>--}}
+                                                {{--</a></li>--}}
+                                            {{--<li><a class="options-color" href="#">--}}
+												{{--<span class="swatch-img">--}}
+													{{--<img src="images/loader.svg" data-src="images/custom/texture-img-05.jpg" alt="">--}}
+												{{--</span>--}}
+                                                    {{--<span class="swatch-label color-black"></span>--}}
+                                                {{--</a></li>--}}
+                                        {{--</ul>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
                                 <div class="tt-wrapper">
                                     <div class="tt-row-custom-01">
+                                        {{--<div class="col-item">--}}
+                                            {{--<div class="tt-input-counter style-01">--}}
+                                                {{--<span class="minus-btn"></span>--}}
+                                                {{--<input type="text" value="1" size="5">--}}
+                                                {{--<span class="plus-btn"></span>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
                                         <div class="col-item">
-                                            <div class="tt-input-counter style-01">
-                                                <span class="minus-btn"></span>
-                                                <input type="text" value="1" size="5">
-                                                <span class="plus-btn"></span>
-                                            </div>
-                                        </div>
-                                        <div class="col-item">
-                                            <a href="#" class="btn btn-lg"><i class="icon-f-39"></i>ADD TO CART</a>
+                                            <a id="element-url" href="#" class="btn btn-lg"><i class="icon-f-39"></i>{{ trans('general.view') }}</a>
                                         </div>
                                     </div>
                                 </div>

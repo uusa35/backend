@@ -17,8 +17,8 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
         Route::resource('role', 'RoleController');
         Route::resource('privilege', 'PrivilegeController');
         Route::resource('setting', 'SettingController');
-        Route::resource('country','CountryController');
-        Route::resource('currency','CurrencyController');
+        Route::resource('country', 'CountryController');
+        Route::resource('currency', 'CurrencyController');
         Route::resource('category', 'CategoryController');
     });
     // Backend :: super + admin
@@ -49,18 +49,18 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
     Route::get('reset/password', 'UserController@getResetPassword')->name('reset.password');
     Route::post('reset/password', 'UserController@postResetPassword')->name('reset');
     Route::resource('user', 'UserController')->only(['edit', 'update', 'show']);
-    Route::resource('product','ProductController');
+    Route::resource('product', 'ProductController');
     Route::get('trashed', 'ProductController@trashed')->name('product.trashed');
     Route::get('restore/{id}', 'ProductController@restore')->name('product.restore');
-    Route::resource('order', 'OrderController')->except(['destroy','show']);
-    Route::resource('user','UserController')->only(['edit']);
+    Route::resource('order', 'OrderController')->except(['destroy', 'show']);
+    Route::resource('user', 'UserController')->only(['edit']);
     Route::resource('file', 'FileController');
     Route::get('show/list', 'FileController@getShowList')->name('file.show.list');
     Route::resource('job', 'JobController');
     Route::get('enroll/job{id}', 'JobController@toggleEnroll')->name('job.enroll');
     Route::resource('version', 'VersionController');
     Route::resource('image', 'ImageController');
-    Route::resource('tag', 'TagController')->only(['create','store']);
+    Route::resource('tag', 'TagController')->only(['create', 'store']);
 });
 
 Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => []], function () {
@@ -68,6 +68,8 @@ Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => []
     Route::get('/home', 'HomeController@index')->name('home');
     Route::resource('product', 'ProductController');
     Route::get('product/{id}/{name}', 'ProductController@show')->name('product.show.name');
+    Route::resource('service', 'ServiceController');
+    Route::get('service/{id}/{name}', 'ServiceController@show')->name('service.show.name');
     Route::resource('cart', 'CartController')->only(['index']);
     Route::post('cart/add', 'CartController@addItem')->name('cart.add');
     Route::get('cart/remove/{id}', 'CartController@removeItem')->name('cart.remove');
@@ -82,7 +84,7 @@ Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => []
     Route::resource('page', 'PageController')->only(['show']);
     Route::resource('user', 'UserController');
     Route::resource('newsletter', 'NewsletterController');
-    Route::resource('survey', 'SurveyController')->only(['show','store']);
+    Route::resource('survey', 'SurveyController')->only(['show', 'store']);
     Route::get('search/product', 'ProductController@search')->name('product.search');
     Route::get('search/service', 'ServiceController@search')->name('service.search');
     Route::get('currency/{currency}', 'HomeController@changeCurrency')->name('currency.change');

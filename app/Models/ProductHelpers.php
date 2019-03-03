@@ -13,24 +13,10 @@ use Illuminate\Support\Facades\DB;
 
 trait ProductHelpers
 {
-    public function scopeOnSale($q)
-    {
-        return $q->where('on_sale',true)->whereDate('end_sale', '>', Carbon::now());
-    }
 
     public function getIsOnSaleAttribute()
     {
         return $this->on_sale && $this->end_sale > Carbon::now() ? true : false;
-    }
-
-    public function scopeOnHomePage($q)
-    {
-        return $q->where('on_home', true);
-    }
-
-    public function scopeOnSaleOnHome($q)
-    {
-        return $q->onSale()->onHome();
     }
 
     public function getFinalPriceAttribute()
@@ -87,10 +73,6 @@ trait ProductHelpers
         })->with('images', 'favorites')->take(4)->get();
     }
 
-    public function scopeHasImages($q) {
-        return $q->has('images','>', 0);
-    }
-
     public function getTotalQtyAttribute()
     {
         return $this->product_attributes->sum('qty');
@@ -108,11 +90,6 @@ trait ProductHelpers
 
     public function getRealHotDealAttribute() {
         return $this->isOnSale && $this->is_hot_deal;
-    }
-
-    public function scopeHotDeals($q)
-    {
-        return $q->onSale()->where('is_hot_deal', true);
     }
 
 }

@@ -12,7 +12,8 @@ $factory->define(Service::class, function (Faker $faker) use ($fakerAr) {
         'name_en' => $faker->name,
         'on_sale' => $faker->boolean,
         'on_home' => $faker->boolean,
-        'duration' => $faker->numberBetween(1,9),
+        'on_new' => $faker->boolean,
+        'duration' => $faker->numberBetween(1, 9),
         'price' => $faker->randomFloat(3, 10, 200),
         'sale_price' => function ($array) {
             return $array['price'] - rand(1, 5);
@@ -21,7 +22,7 @@ $factory->define(Service::class, function (Faker $faker) use ($fakerAr) {
         'description_ar' => $fakerAr->realText(),
         'notes_ar' => $faker->paragraph,
         'notes_en' => $faker->paragraph,
-        'image' => $faker->numberBetween(1, 42) . '.jpeg',
+        'image' => 'food-0' . $faker->numberBetween(1, 10) . '.jpeg',
         'video_url_one' => $faker->url,
         'video_url_two' => $faker->url,
         'is_hot_deal' => $faker->boolean,

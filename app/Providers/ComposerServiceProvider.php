@@ -15,10 +15,6 @@ class ComposerServiceProvider extends ServiceProvider
     {
         // frontend
         view()->composer([
-            'frontend.*.partials.slider',
-        ],
-            'App\Services\ViewComposers@getSliders');
-        view()->composer([
             'frontend.partials.header_one',
             'frontend.partials.header_four',
             'frontend.partials._pop_up_cart'
@@ -78,10 +74,11 @@ class ComposerServiceProvider extends ServiceProvider
         ], 'App\Services\ViewComposers@getCategories');
 
         view()->composer([
-            'frontend.wokiee.four.partials.head',
-            'frontend.wokiee.four.partials.scripts',
+            'frontend.*.*.*.header',
+            'frontend.*.*.*.head',
+            'frontend.*.*.*._social_icons_home',
+            'frontend.*.*.*.scripts',
             'frontend.*.*.home',
-            'backend.layouts.app',
             'backend.modules.order.show',
         ], 'App\Services\ViewComposers@getSettings');
 

@@ -24,11 +24,7 @@
                 </div>
                 <div class="col-md-auto">
                     <ul class="tt-social-icon">
-                        <li><a class="icon-g-64" target="_blank" href="http://www.facebook.com/"></a></li>
-                        <li><a class="icon-h-58" target="_blank" href="http://www.facebook.com/"></a></li>
-                        <li><a class="icon-g-66" target="_blank" href="http://www.twitter.com/"></a></li>
-                        <li><a class="icon-g-67" target="_blank" href="http://www.google.com/"></a></li>
-                        <li><a class="icon-g-70" target="_blank" href="https://instagram.com/"></a></li>
+                        @include('frontend.wokiee.four.partials._social_icons_home')
                     </ul>
                 </div>
             </div>
@@ -40,7 +36,7 @@
                 <div class="col-md-6 col-lg-2 col-xl-3">
                     <div class="tt-mobile-collapse">
                         <h4 class="tt-collapse-title">
-                            CATEGORIES
+                            {{ trans('general.categories') }}
                         </h4>
                         <div class="tt-collapse-content">
                             <ul class="tt-list">
@@ -57,7 +53,7 @@
                 <div class="col-md-6 col-lg-2 col-xl-3">
                     <div class="tt-mobile-collapse">
                         <h4 class="tt-collapse-title">
-                            MY ACCOUNT
+                            {{ trans('general.my_account') }}
                         </h4>
                         <div class="tt-collapse-content">
                             <ul class="tt-list">
@@ -73,11 +69,11 @@
                 <div class="col-md-6 col-lg-4 col-xl-3">
                     <div class="tt-mobile-collapse">
                         <h4 class="tt-collapse-title">
-                            ABOUT
+                            {{ trans("general.about_us") }}
                         </h4>
                         <div class="tt-collapse-content">
                             <p>
-                                Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet conse ctetur adipisicing elit, seddo eiusmod tempor incididunt ut labore etdolore.
+                                {{ trans('message.footer_about_us') }}
                             </p>
                         </div>
                     </div>
@@ -86,7 +82,7 @@
                     <div class="tt-newsletter">
                         <div class="tt-mobile-collapse">
                             <h4 class="tt-collapse-title">
-                                CONTACTS
+                                {{ trans('general.contact') }}
                             </h4>
                             <div class="tt-collapse-content">
                                 <address>

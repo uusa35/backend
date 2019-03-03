@@ -2,8 +2,9 @@
 
 use App\Models\Setting;
 use Faker\Generator as Faker;
+
 $fakerAr = \Faker\Factory::create('ar_JO');
-$factory->define(Setting::class, function (Faker $faker) use($fakerAr) {
+$factory->define(Setting::class, function (Faker $faker) use ($fakerAr) {
     return [
         'company_ar' => $faker->name,
         'company_en' => $faker->name,
@@ -21,8 +22,9 @@ $factory->define(Setting::class, function (Faker $faker) use($fakerAr) {
         'twitter' => $faker->url,
         'snapchat' => $faker->url,
         'facebook' => $faker->url,
-        'logo' => 'logo.jpg',
-        'size_chart' => 'logo.jpg',
+        'logo' => 'logo-0' . $faker->numberBetween(1, 8) . '.png',
+        'size_chart' => $faker->numberBetween(1, 42) . '.jpeg',
+        'main_theme_color' => '#4611a7'
 //        'shipment_service' => $faker->boolean(true),
 //        'delivery_service' => $faker->boolean(false),
 //        'delivery_service_cost' => 5,

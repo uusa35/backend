@@ -8,7 +8,7 @@ $factory->define(Brand::class, function (Faker $faker)  use($fakerAr) {
         'name' => $faker->word,
         'slug_ar' => $faker->realText(30),
         'slug_en' => $faker->word,
-        'image' => $faker->numberBetween(1, 42) . '.jpeg',
+        'image' => 'logo-0' . $faker->numberBetween(1, 8) . '.png',
         'on_home' => $faker->boolean,
         'order' => $faker->numberBetween(1,10),
     ];

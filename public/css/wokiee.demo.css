@@ -29422,3 +29422,11 @@ html:not(.mac):not(.touch-device) .tt-carousel-brands .slick-track {
 .img-xxs {
     width : 12px;
 }
+
+.tt-logo img {
+    max-height: 50px !important;
+}
+
+.img-event-btn {
+    height : 200px !important;
+}

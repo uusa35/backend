@@ -12,7 +12,7 @@
 }
 
 
-body, html, a, p, h1, h2, h3, h4, h5, h6, table, row, td, th, tr, thead, tfoot, button, span, .btn, ul, li, .container , .tt-title-small, .tt-description, header , footer {
+body, html, a, p, h1, h2, h3, h4, h5, h6, table, row, td, th, tr, thead, tfoot, span, .btn, ul, li, .container , .tt-title-small, .tt-description, header , footer {
     font-family: 'Tajawal', 'sans-serif' !important;
     direction: rtl;
 }
@@ -58,3 +58,4 @@ body, html, a, p, h1, h2, h3, h4, h5, h6, table, row, td, th, tr, thead, tfoot, 
     right : 55% !important;
     left: 0;
 }
+

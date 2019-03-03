@@ -2,18 +2,18 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Service extends PrimaryModel
 {
-    use ProductHelpers, SoftDeletes, ModelHelpers;
+    use SoftDeletes;
     protected $localeStrings = ['name', 'description', 'notes'];
     protected $guarded = [''];
-    protected $appends = ['isOnSale'];
     protected $dates = ['created_at', 'deleted_at', 'start_sale', 'end_sale'];
     protected $casts = [
         'on_sale' => 'boolean',
-        'on_sale_on_homepage' => 'boolean',
+        'on_home' => 'boolean',
         'active' => 'boolean',
     ];
 
@@ -51,4 +51,33 @@ class Service extends PrimaryModel
     {
         return $this->morphMany(Slider::class, 'slidable');
     }
+
+    public function getIsOnSaleAttribute()
+    {
+        return $this->on_sale && $this->end_sale > Carbon::now() ? true : false;
+    }
+
+    public function getFinalPriceAttribute()
+    {
+        return $this->isOnSale ? $this->sale_price : $this->price;
+    }
+
+    public function getConvertedFinalPriceAttribute()
+    {
+        $currentCurrency = session()->get('currency');
+        return $this->finalPrice * $currentCurrency->exchange_rate;
+    }
+
+    public function getConvertedPriceAttribute()
+    {
+        $currentCurrency = session()->get('currency');
+        return $this->price * $currentCurrency->exchange_rate;
+    }
+
+    public function getConvertedSalePriceAttribute()
+    {
+        $currentCurrency = session()->get('currency');
+        return $this->sale_price * $currentCurrency->exchange_rate;
+    }
+
 }

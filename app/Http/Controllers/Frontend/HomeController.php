@@ -10,6 +10,7 @@ use App\Models\Currency;
 use App\Models\Image;
 use App\Models\Product;
 use App\Models\Service;
+use App\Models\Slide;
 
 class HomeController extends Controller
 {
@@ -24,6 +25,7 @@ class HomeController extends Controller
     public function __construct(Product $product, Service $service)
     {
         $this->product = $product;
+        $this->service = $service;
     }
 
     /**
@@ -33,21 +35,34 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $newArrivals = $this->product->active()->onHome()->onNew()->hasImages()->with('colors', 'sizes', 'images', 'user')->orderBy('created_at', 'desc')->take(self::TAKE)->get();
-        $onSaleProducts = $this->product->active()->onSaleOnHome()->hasImages()->orderby('end_sale', 'desc')->take(self::TAKE)->get();
+        $sliders = Slide::active()->onHome()->get();
+
+        $newServices = $this->service->active()->onHome()->onNew()->hasImages()->with('user.role')->orderby('created_at', 'desc')->take(self::TAKE)->get();
+        $onSaleServices = $this->service->active()->onSaleOnHome()->with('user.role')->orderby('created_at', 'desc')->take(self::TAKE)->get();
+        $serviceHotDeals = $this->service->active()->onSale()->hotDeals()->hasImages()->with('user.role')->orderby('end_sale', 'desc')->take(self::TAKE)->get();
+
+        $newProducts = $this->product->active()->onHome()->onNew()->hasImages()->with('images', 'user.role')->orderBy('created_at', 'desc')->take(self::TAKE)->get();
+        $onSaleProducts = $this->product->active()->onSaleOnHome()->hasImages()->with('user.role')->orderby('end_sale', 'desc')->take(self::TAKE)->get();
         $bestSalesProducts = $this->product->whereIn('id', $this->product->active()->hasImages()->bestSalesProducts())->get();
-        $hotDeals = $this->product->active()->onSale()->hotDeals()->hasImages()->with('colors', 'sizes', 'images', 'user')->orderby('end_sale', 'desc')->take(self::TAKE)->get();
-        $categoriesHome = Category::onHome()->take(self::TAKE)->orderBy('order')->with('children.children')->get();
-        $categoriesFeatured = Category::where(['is_featured' => true])->take(self::TAKE)->orderBy('order')->get();
-        $brands = Brand::active()->onHome()->take(12)->get();
+        $productHotDeals = $this->product->active()->onSale()->hotDeals()->hasImages()->with('user.role')->orderby('end_sale', 'desc')->take(self::TAKE)->get();
+
+        $categoriesHome = Category::onHome()->take(self::TAKE)->orderBy('order', 'desc')->with('children.children')->get();
+        $categoriesFeatured = Category::where(['is_featured' => true])->take(self::TAKE)->orderBy('order', 'desc')->get();
+        $brands = Brand::active()->onHome()->orderBy('order', 'desc')->take(12)->get();
+
         $topDoubleCommercials = Commercial::active()->double()->orderBy('order', 'desc')->take(2)->get();
         $bottomDoubleCommercials = Commercial::active()->double()->orderBy('order', 'desc')->take(2)->get();
         $tripleCommercials = Commercial::active()->triple()->orderBy('order', 'desc')->take(3)->get();
+
         return view('frontend.wokiee.four.home', compact(
-            'newArrivals',
+            'sliders',
+            'newServices',
+            'onSaleServices',
+            'newProducts',
             'onSaleProducts',
             'bestSalesProducts',
-            'hotDeals',
+            'productHotDeals',
+            'serviceHotDeals',
             'categoriesHome',
             'categoriesFeatured',
             'brands',
