@@ -8,7 +8,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Timing::class, function (Faker $faker) {
     return [
-        'day' => Day::all()->random()->day_name,
+        'day' => Day::all()->random()->day,
         'start' => $faker->time(),
         'end' => $faker->time(),
         'is_off' => $faker->boolean,
@@ -17,11 +17,17 @@ $factory->define(Timing::class, function (Faker $faker) {
         'notes_ar' => $faker->name,
         'notes_en' => $faker->name,
         'week_start' => $faker->numberBetween(1, 6),
+        'day_name_ar' => function ($arr) {
+            return Day::where(['day' => $arr['day']])->first()->day_name_ar;
+        },
+        'day_name_en' => function ($arr) {
+            return Day::where(['day' => $arr['day']])->first()->day_name_en;
+        },
         'day_no' => function ($arr) {
-            return Day::where(['day_name' => $arr['day']])->first()->day_no;
+            return Day::where(['day' => $arr['day']])->first()->day_no;
         },
         'day_id' => function ($arr) {
-            return Day::where(['day_no' => $arr['day_no']])->first()->id;
+            return Day::where(['day' => $arr['day']])->first()->id;
         },
         'user_id' => User::companiesHasServices()->get()->random()->id,
         'service_id' => function ($arr) {

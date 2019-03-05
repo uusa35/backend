@@ -7,7 +7,7 @@ use Carbon\Carbon;
 class Timing extends PrimaryModel
 {
     protected $dates = ['created_at', 'updated_at'];
-    protected $localeStrings = ['notes'];
+    protected $localeStrings = ['notes','day_name'];
 
     public function days()
     {

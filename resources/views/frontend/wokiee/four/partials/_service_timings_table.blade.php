@@ -11,7 +11,7 @@
             <tbody>
             @foreach($elements as $element)
                 <tr>
-                    <td>{{ $element->day }}</td>
+                    <td>{{ $element->day_name }}</td>
                     <td>{{ $element->startDuty }}</td>
                     <td>{{ $element->endDuty }}</td>
                 </tr>

@@ -49,9 +49,9 @@
                         <tbody>
                         @foreach($element->timings as $timing)
                             <tr class="timing-element-{{ $timing->day_no }}" class="d-none">
-                                <td>{{ $timing->day }}</td>
-                                <td>{{ \Carbon\Carbon::parse($timing->start)->format('H:m A') }}</td>
-                                <td>{{ \Carbon\Carbon::parse($timing->end)->format('H:m A') }}</td>
+                                <td>{{ $timing->day_name }}</td>
+                                <td>{{ \Carbon\Carbon::parse($timing->start)->format('h:m A') }}</td>
+                                <td>{{ \Carbon\Carbon::parse($timing->end)->format('h:m A') }}</td>
                                 <td>{{ $timing->notes }}</td>
                                 <td><a href="#" class="btn timing-start-end" data-dismiss="modal"
                                        data-id="{{ $timing->id }}"

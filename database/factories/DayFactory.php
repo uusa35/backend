@@ -5,7 +5,9 @@ use Faker\Generator as Faker;
 
 $factory->define(Day::class, function (Faker $faker) {
     return [
-        'day_name' => $faker->dayOfMonth,
+        'day' => $faker->dayOfMonth,
+        'day_name_ar' => $faker->dayOfMonth,
+        'day_name_en' => $faker->dayOfMonth,
         'day_no' => $faker->numberBetween(0, 6)
     ];
 });

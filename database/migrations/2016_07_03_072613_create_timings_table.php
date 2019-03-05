@@ -15,6 +15,8 @@ class CreateTimingsTable extends Migration
         Schema::create('timings', function (Blueprint $table) {
             $table->increments('id');
             $table->string('day');
+            $table->string('day_name_ar');
+            $table->string('day_name_en');
             $table->time('start');
             $table->time('end')->nullable();
             $table->boolean('is_off')->default(0);
