@@ -53,8 +53,15 @@
                                 <td>{{ \Carbon\Carbon::parse($timing->start)->format('H:m A') }}</td>
                                 <td>{{ \Carbon\Carbon::parse($timing->end)->format('H:m A') }}</td>
                                 <td>{{ $timing->notes }}</td>
-                                <td><a href="#" class="btn timing-start-end" data-dismiss="modal" data-id="{{ $timing->id }}"><i
-                                                class="fa fa-fw fa-clock-o"></i>{{ trans('general.choose') }}</a></td>
+                                <td><a href="#" class="btn timing-start-end" data-dismiss="modal"
+                                       data-id="{{ $timing->id }}"
+                                       data-service-id="{{ $element->id }}"
+                                       data-service-name="{{ $element->name }}"
+                                       data-timing-start="{{ $timing->start }}"
+                                       data-timing-end="{{ $timing->end }}"
+                                       data-date=""
+                                    >
+                                        <i class="fa fa-fw fa-clock-o"></i>{{ trans('general.choose') }}</a></td>
                             </tr>
                         @endforeach
                         </tbody>

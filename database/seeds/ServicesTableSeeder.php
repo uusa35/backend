@@ -18,7 +18,7 @@ class ServicesTableSeeder extends Seeder
     {
         factory(Service::class, app()->environment('production') ? 8 : 50)->create()->each(function ($p) {
             $p->categories()->saveMany(Category::all()->random(2));
-            $p->timings()->saveMany(Timing::all()->random(5));
+            $p->timings()->saveMany(factory(Timing::class, 12)->create(['user_id' => $p->user_id]));
             $p->tags()->saveMany(Tag::all()->random(2));
             $p->images()->saveMany(factory(Image::class, 3)->create(['image' => 'food-0' . rand(1, 12) . '.jpeg']));
         });

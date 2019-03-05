@@ -32,6 +32,7 @@ mix.scripts([
     '../wokiee-ecommerce-html/html/external/jquery/jquery.min.js',
     '../wokiee-ecommerce-html/html/external/bootstrap/js/bootstrap.min.js',
     './node_modules/@chenfengyuan/datepicker/dist/datepicker.js',
+    './node_modules/moment/min/moment.min.js',
     '../wokiee-ecommerce-html/html/external/elevatezoom/jquery.elevatezoom.js',
     '../wokiee-ecommerce-html/html/external/slick/slick.min.js',
     '../wokiee-ecommerce-html/html/external/perfect-scrollbar/perfect-scrollbar.min.js',

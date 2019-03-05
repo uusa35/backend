@@ -22,14 +22,26 @@ class CreateOrderMetasTable extends Migration
             $table->integer('order_id')->unsigned()->index();
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade')->onUpdate('cascade');
 
+            $table->string('product_name')->nullable();
+            $table->string('product_size')->nullable();
+            $table->string('product_color')->nullable();
             $table->integer('product_id')->unsigned()->index()->nullable();
             $table->foreign('product_id')->references('id')->on('products')->onDelete('restrict')->onUpdate('restrict');
 
             $table->integer('product_attribute_id')->unsigned()->index()->nullable();
             $table->foreign('product_attribute_id')->references('id')->on('product_attributes')->onDelete('restrict')->onUpdate('restrict');
 
+
+            $table->string('service_name')->nullable();
+            $table->date('service_date')->nullable();
+            $table->time('service_time')->nullable();
+
             $table->integer('service_id')->unsigned()->index()->nullable();
             $table->foreign('service_id')->references('id')->on('services')->onDelete('restrict')->onUpdate('restrict');
+
+
+            $table->integer('timing_id')->unsigned()->index()->nullable();
+            $table->foreign('timing_id')->references('id')->on('timings')->onDelete('restrict')->onUpdate('restrict');
 
             $table->timestamps();
             $table->softDeletes();

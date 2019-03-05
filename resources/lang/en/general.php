@@ -130,7 +130,7 @@ return array (
   'my_fatorrah' => 'My Fatorrah',
   'submit' => 'submit',
   'best_sale_products' => 'Best Sale Products',
-  'meta_description' => ' الكويت مول أر  عباية  روعة التصميم
+  'meta_description' => ' الكويت  الشركة  عباية  روعة التصميم
 company company abaia abaya abayat',
   'back_to' => 'Back to',
   'approx' => 'approx',

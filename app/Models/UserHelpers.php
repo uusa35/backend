@@ -6,23 +6,28 @@ use Carbon\Carbon;
 
 trait UserHelpers
 {
-    public function getIsSuperAttribute() {
+    public function getIsSuperAttribute()
+    {
         return $this->role->is_super;
     }
 
-    public function getIsAdminOrAboveAttribute() {
+    public function getIsAdminOrAboveAttribute()
+    {
         return $this->role->is_super ? $this->role->is_super : $this->role->is_dmin;
     }
 
-    public function getIsAdminAttribute() {
+    public function getIsAdminAttribute()
+    {
         return $this->role->is_admin;
     }
 
-    public function getIsCompanyAttribute() {
+    public function getIsCompanyAttribute()
+    {
         return $this->role->is_company;
     }
 
-    public function getIsDesignerAttribute() {
+    public function getIsDesignerAttribute()
+    {
         return $this->role->is_designer;
     }
 
@@ -31,6 +36,13 @@ trait UserHelpers
         return $q->whereHas('role', function ($q) {
             return $q->where('is_company', true);
         });
+    }
+
+    public function scopeCompaniesHasServices($q)
+    {
+        return $q->companies()->whereHas('services', function ($q) {
+            return $q;
+        }, '>', 0);
     }
 
     public function scopeDesigners($q)

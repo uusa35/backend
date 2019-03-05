@@ -1,15 +1,7 @@
 @extends('frontend.wokiee.four.layouts.app')
 
 @section('breadcrumbs')
-    <div class="tt-breadcrumb">
-        <div class="container">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="listing-left-column.html">Shop</a></li>
-                <li>T-Shirt</li>
-            </ul>
-        </div>
-    </div>
+    {{ Breadcrumbs::render('frontend.product.show',$element) }}
 @endsection
 
 @section('body')

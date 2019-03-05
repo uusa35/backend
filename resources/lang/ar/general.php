@@ -144,9 +144,9 @@ return array(
     'add_to_favorite' => 'اضافة الى المفضلة',
     'out_of_stock' => 'غير متوفر',
     'approx' => 'تقريبا',
-    'meta_description' => ' الكويت مول أر  عباية  روعة التصميم',
-    'app_keywords' => ' الكويت تصميم عباية مول أر محجبات حجاب',
-    'app_author' => 'مول أر',
+    'meta_description' => ' الكويت  الشركة  عباية  روعة التصميم',
+    'app_keywords' => ' الكويت تصميم عباية  الشركة محجبات حجاب',
+    'app_author' => ' الشركة',
     'kd' => 'د.ك',
     'delivery_message' => 'رسالة التوصيل',
     'shipment_package' => 'طريقة الشحن',
@@ -243,8 +243,10 @@ return array(
     'start_timing' => 'وقت البدأ',
     'end_timing' => 'وقت الإنتهاء',
     'duty_timings' => 'أوقات الدوام',
-    'setup_time' => 'وقت الإعداد المستغرق',
+    'setup_time' => 'وقت الإعداد',
     'about_us' => 'نبذة عنا',
     'contact_us' => 'إتصل بنا',
-    'add_to_wish_list' => 'أضف لقائمة الأمنيات'
+    'add_to_wish_list' => 'أضف لقائمة الأمنيات',
+    'available_timings' => 'الأوقات المتاحة',
+    'company_name' => 'اسم الشركة'
 );

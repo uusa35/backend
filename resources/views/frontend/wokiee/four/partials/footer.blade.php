@@ -112,7 +112,7 @@
                     <div class="tt-col-item">
                         <!-- copyright -->
                         <div class="tt-box-copyright">
-                            &copy; Wokiee 2018. All Rights Reserved
+                            &copy; {{ trans("message.copy_right") }}
                         </div>
                         <!-- /copyright -->
                     </div>

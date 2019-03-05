@@ -28,6 +28,7 @@
         "datatables": "^1.10.13",
         "font-awesome": "^4.7.0",
         "jquery-minicolors": "^2.1.10",
+        "moment": "^2.24.0",
         "tinymce": "^5.0.0"
     }
 }

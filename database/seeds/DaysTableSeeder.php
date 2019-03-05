@@ -12,7 +12,7 @@ class DaysTableSeeder extends Seeder
      */
     public function run()
     {
-        $days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        $days = ['Sunday','Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday','Saturday'];
         foreach ($days as $n => $v) {
             factory(Day::class)->create([
                 'day_name' => $v,

@@ -37,9 +37,11 @@ class HomeController extends Controller
     {
         $sliders = Slide::active()->onHome()->get();
 
-        $newServices = $this->service->active()->onHome()->onNew()->hasImages()->hasTiming()->with('user.role')->orderby('created_at', 'desc')->take(self::TAKE)->get();
-        $onSaleServices = $this->service->active()->onSaleOnHome()->hasTiming()->with('user.role')->orderby('created_at', 'desc')->take(self::TAKE)->get();
-        $serviceHotDeals = $this->service->active()->onSale()->hotDeals()->hasImages()->hasTiming()->with('user.role')->orderby('end_sale', 'desc')->take(self::TAKE)->get();
+//        $newServices = $this->service->active()->onHome()->onNew()->hasImages()->hasTiming()->with('user.role')->orderby('created_at', 'desc')->take(self::TAKE)->get();
+//        $onSaleServices = $this->service->active()->onSaleOnHome()->hasTiming()->with('user.role')->orderby('created_at', 'desc')->take(self::TAKE)->get();
+        $serviceHotDeals = $this->service->active()->onSale()->hotDeals()->hasImages()->whereHas('timings', function ($q) {
+            return $q->workingDays();
+        }, '>', 0)->with('user.role')->orderby('end_sale', 'desc')->take(self::TAKE)->get();
 
         $newProducts = $this->product->active()->onHome()->onNew()->hasImages()->with('images', 'user.role')->orderBy('created_at', 'desc')->take(self::TAKE)->get();
         $onSaleProducts = $this->product->active()->onSaleOnHome()->hasImages()->with('user.role')->orderby('end_sale', 'desc')->take(self::TAKE)->get();
@@ -56,8 +58,8 @@ class HomeController extends Controller
 
         return view('frontend.wokiee.four.home', compact(
             'sliders',
-            'newServices',
-            'onSaleServices',
+//            'newServices',
+//            'onSaleServices',
             'newProducts',
             'onSaleProducts',
             'bestSalesProducts',

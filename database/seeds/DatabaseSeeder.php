@@ -30,11 +30,11 @@ class DatabaseSeeder extends Seeder
         $this->call(TagsTableSeeder::class);
 
         $this->call(UsersTableSeeder::class);
-        $this->call(TimingsTableSeeder::class);
         $this->call(CollectionsTableSeeder::class);
         $this->call(BranchesTableSeeder::class);
         $this->call(ProductsTableSeeder::class);
         $this->call(ServicesTableSeeder::class);
+        $this->call(TimingsTableSeeder::class);
         $this->call(SlidesTableSeeder::class);
         $this->call(CouponsTableSeeder::class);
         $this->call(OrdersTableSeeder::class);

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -46,10 +47,8 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $element = auth()->user()->with(['orders' => function ($q) {
-            return $q->where('status','success')->with('branch');
-        }])->first();
-        return view('frontend.modules.user.show', compact('element'));
+        $element = User::whereId($id)->with('services.timings','products.product_attributes','')->first();
+        return view('frontend.wokiee.four.modules.user.show', compact('element'));
     }
 
     /**

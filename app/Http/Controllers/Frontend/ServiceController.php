@@ -65,8 +65,10 @@ class ServiceController extends Controller
      */
     public function show($id)
     {
-        $element = Service::whereId($id)->with('categories', 'timings', 'images', 'tags', 'user')->first();
-        return view('frontend.wokiee.four.modules.service.show', compact('element'));
+        $element = Service::whereId($id)->with('categories', 'timings.days', 'images', 'tags', 'user')->first();
+        $workingDays = $element->timings->pluck('day','day_no')->keys()->unique()->toArray();
+        $dayOff = $element->timings->where('is_off', true)->first();
+        return view('frontend.wokiee.four.modules.service.show', compact('element','workingDays', 'dayOff'));
     }
 
     /**

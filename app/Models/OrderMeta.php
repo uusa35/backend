@@ -12,21 +12,21 @@ class OrderMeta extends PrimaryModel
         return $this->belongsTo(Order::class);
     }
 
-    /**
-     * Usage : backend - backend.order.ordermeta.index
-     * Description : returns specific product related to orderMeta
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
     public function product()
     {
-        return $this->belongsTo(Product::class, 'product_id');
+        return $this->belongsTo(Product::class);
     }
 
-    /**
-     * Description : each orderMeta for a product has Only One array of (size , color and quantity)
-     * Usage : backend.order.ordermeta.index
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
+    public function service()
+    {
+        return $this->belongsTo(Service::class);
+    }
+
+    public function timing()
+    {
+        return $this->belongsTo(Timing::class);
+    }
+
     public function product_attribute()
     {
         return $this->belongsTo(ProductAttribute::class);

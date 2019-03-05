@@ -52,7 +52,7 @@ class Service extends PrimaryModel
         return $this->morphMany(Slider::class, 'slidable');
     }
 
-    public function scopeHasTiming()
+    public function scopeHasTimings()
     {
         return $this->has('timings', '>', 0);
     }
