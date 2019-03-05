@@ -65,6 +65,7 @@ class ComposerServiceProvider extends ServiceProvider
 
         view()->composer([
             'frontend.*.*.*.header',
+            'frontend.*.*.*.footer',
             'frontend.*.*.*.head',
             'frontend.*.*.*._social_icons_home',
             'frontend.*.*.*.scripts',

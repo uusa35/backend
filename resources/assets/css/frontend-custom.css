@@ -1,6 +1,8 @@
-
-
 /* wokiee theme*/
+
+.tt-table-shop-01 tbody td a {
+    color: white;
+}
 
 .element-padding-bottom {
     padding-bottom: 20px;
@@ -18,7 +20,7 @@
 }
 
 .img-xxs {
-    width : 12px;
+    width: 12px;
 }
 
 .tt-logo img {
@@ -26,5 +28,25 @@
 }
 
 .img-event-btn {
-    height : 200px !important;
+    height: 200px !important;
+}
+
+.service-show-is-really-hot-align-center {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+span > .countdown-section {
+    min-width: 60px;
+}
+
+.tt-collapse-title {
+    text-align: center;
+    border-bottom: 1px solid #4611a7;
+    margin-bottom: 5px;
+}
+
+.td-fixed-element {
+    width: 120px;
+    min-width: 120px;
 }

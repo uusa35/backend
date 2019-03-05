@@ -15,11 +15,12 @@ class CreateTimingsTable extends Migration
         Schema::create('timings', function (Blueprint $table) {
             $table->increments('id');
             $table->string('day');
-            //https://jonthornton.github.io/jquery-timepicker/
             $table->time('start');
             $table->time('end');
             $table->boolean('is_off')->default(0);
             $table->string('type')->nullable();
+            $table->string('notes_ar')->nullable();
+            $table->string('notes_en')->nullable();
 
             $table->smallInteger('week_start');
             $table->smallInteger('day_no');
@@ -29,6 +30,9 @@ class CreateTimingsTable extends Migration
 
             $table->integer('service_id')->unsigned()->index()->nullable();
             $table->foreign('service_id')->references('id')->on('services')->onUpdate('cascade')->onDelete('cascade');
+
+            $table->integer('day_id')->unsigned()->index()->nullable();
+            $table->foreign('day_id')->references('id')->on('days');
 
             $table->timestamps();
         });

@@ -6,7 +6,13 @@ use Carbon\Carbon;
 
 class Timing extends PrimaryModel
 {
-    protected $dates = ['created_at','updated_at'];
+    protected $dates = ['created_at', 'updated_at'];
+    protected $localeStrings = ['notes'];
+
+    public function days()
+    {
+        return $this->belongsTo(Day::class);
+    }
 
     public function service()
     {
@@ -27,11 +33,14 @@ class Timing extends PrimaryModel
     {
         return $q->where(['is_off' => true]);
     }
-    public function getStartDutyAttribute() {
+
+    public function getStartDutyAttribute()
+    {
         return Carbon::parse($this->start)->format('g:ia');
     }
 
-    public function getEndDutyAttribute() {
+    public function getEndDutyAttribute()
+    {
         return Carbon::parse($this->end)->format('g:ia');
     }
 }

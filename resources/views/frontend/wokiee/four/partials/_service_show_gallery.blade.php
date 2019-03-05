@@ -10,19 +10,35 @@
         <ul id="smallGallery" class="arrow-location-02  slick-animated-show-js">
             <li>
                 <a class="zoomGalleryActive" href="#" data-image="{{ $element->imageThumbLink }}"
-                   data-zoom-image="{{ $element->imageLargeLink }}"><img
-                            src="{{ $element->imageLargeLink }}" alt=""/></a></li>
+                   data-zoom-image="{{ $element->imageLargeLink }}">
+                    <span class="tt-label-location">
+                    <img src="{{ $element->imageLargeLink }}" alt=""/>
+                </a>
+            </li>
             @foreach($element->images as $img)
                 <li>
                     <a href="#" data-image="{{ $img->imageLargeLink }}"
                        data-zoom-image="{{ $img->imageLargeLink }}"><img
-                                src="{{ $img->imageLargeLink }}" alt=""/></a></li>
+                                src="{{ $img->imageThumbLink }}" alt=""/></a>
+                </li>
             @endforeach
-            @if($element->video_url)
+            @if($element->video_url_one)
                 <li>
                     <div class="video-link-product" data-toggle="modal" data-type="youtube"
                          data-target="#modalVideoProduct"
-                         data-value="http://www.youtube.com/embed/GhyKqj_P2E4">
+                         data-value="{{ $element->video_url_one }}">
+                        <img src="{{ $element->imageLargeLink }}" alt="{{ $element->name }}"/>
+                        <div>
+                            <i class="icon-f-32"></i>
+                        </div>
+                    </div>
+                </li>
+            @endif
+            @if($element->video_url_two)
+                <li>
+                    <div class="video-link-product" data-toggle="modal" data-type="youtube"
+                         data-target="#modalVideoProduct"
+                         data-value="{{ $element->video_url_two }}">
                         <img src="{{ $element->imageLargeLink }}" alt="{{ $element->name }}"/>
                         <div>
                             <i class="icon-f-32"></i>

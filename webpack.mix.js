@@ -14,11 +14,6 @@ mix.js('resources/assets/js/app.js', 'public/js').version()
     .sass('resources/assets/sass/app.scss', 'public/css').version();
 mix.styles([
     '../wokiee-ecommerce-html/html/css/rtl.css'
-    // 'resources/assets/css/bootstrap-rtl.min.css',
-    // 'resources/assets/css/rtl-theme.css',
-    // 'resources/assets/css/rtl-theme-elements.css',
-    // 'resources/assets/css/rtl-theme-blog.css',
-    // 'resources/assets/css/rtl-theme-shop.css',
 ], 'public/css/frontend-rtl.css').version();
 mix.styles(['resources/assets/css/frontend-custom-ar.css'], 'public/css/frontend-custom-ar.css').version();
 mix.styles(['resources/assets/css/frontend-custom-en.css'], 'public/css/frontend-custom-en.css').version();
@@ -27,27 +22,16 @@ mix.styles(['resources/assets/css/frontend-custom-en.css'], 'public/css/frontend
 mix.styles([
     'resources/assets/css/wokiee-theme-custom.css',
     './node_modules/font-awesome/css/font-awesome.min.css',
+    './node_modules/@chenfengyuan/datepicker/dist/datepicker.css',
     'resources/assets/css/frontend-custom.css'
 ], 'public/css/wokiee.demo.css').version();
-// porto
-mix.styles([
-    '../porto_ecommerce_html/demo-2/assets/css/style.min.css',
-    'resources/assets/css/frontend-custom.css'
-], 'public/css/porto.demo2.css').version();
-mix.styles([
-    '../porto_ecommerce_html/demo-3/assets/css/style.min.css',
-    'resources/assets/css/frontend-custom.css'
-], 'public/css/porto.demo3.css').version();
-mix.styles([
-    '../porto_ecommerce_html/demo-4/assets/css/style.min.css',
-    'resources/assets/css/frontend-custom.css'
-], 'public/css/porto.demo4.css').version();
 // frontend js
 // wokiee
 mix.scripts([
     // loading jquery from the app.js
     '../wokiee-ecommerce-html/html/external/jquery/jquery.min.js',
     '../wokiee-ecommerce-html/html/external/bootstrap/js/bootstrap.min.js',
+    './node_modules/@chenfengyuan/datepicker/dist/datepicker.js',
     '../wokiee-ecommerce-html/html/external/elevatezoom/jquery.elevatezoom.js',
     '../wokiee-ecommerce-html/html/external/slick/slick.min.js',
     '../wokiee-ecommerce-html/html/external/perfect-scrollbar/perfect-scrollbar.min.js',
@@ -64,28 +48,10 @@ mix.scripts([
     '../wokiee-ecommerce-html/html/external/form/jquery.validate.min.js',
     '../wokiee-ecommerce-html/html/external/form/jquery.form-init.js',
 ], 'public/js/wokiee.demo.js').version();
-// proto
-mix.scripts([
-    '../porto_ecommerce_html/demo-2/assets/js/jquery.min.js',
-    '../porto_ecommerce_html/demo-2/assets/js/bootstrap.bundle.min.js',
-    '../porto_ecommerce_html/demo-2/assets/js/plugins.min.js',
-    '../porto_ecommerce_html/demo-2/assets/js/main.min.js',
-], 'public/js/porto.demo2.js').version();
-mix.scripts([
-    '../porto_ecommerce_html/demo-3/assets/js/jquery.min.js',
-    '../porto_ecommerce_html/demo-3/assets/js/bootstrap.bundle.min.js',
-    '../porto_ecommerce_html/demo-3/assets/js/plugins.min.js',
-    '../porto_ecommerce_html/demo-3/assets/js/main.min.js',
-], 'public/js/porto.demo3.js').version();
-mix.scripts([
-    '../porto_ecommerce_html/demo-4/assets/js/jquery.min.js',
-    '../porto_ecommerce_html/demo-4/assets/js/bootstrap.bundle.min.js',
-    '../porto_ecommerce_html/demo-4/assets/js/plugins.min.js',
-    '../porto_ecommerce_html/demo-4/assets/js/main.min.js',
-], 'public/js/porto.demo4.js').version();
-mix.js('resources/assets/js/frontend-custom.js','public/js/frontend-custom.js').version();
-mix.js('resources/assets/js/frontend-ar.js','public/js/frontend-ar.js').version();
-mix.js('resources/assets/js/frontend-en.js','public/js/frontend-en.js').version();
+
+mix.js('resources/assets/js/frontend-custom.js', 'public/js/frontend-custom.js').version();
+mix.js('resources/assets/js/frontend-ar.js', 'public/js/frontend-ar.js').version();
+mix.js('resources/assets/js/frontend-en.js', 'public/js/frontend-en.js').version();
 // backend
 mix.styles([
     './node_modules/font-awesome/css/font-awesome.min.css',
@@ -222,20 +188,4 @@ mix.copyDirectory('../wokiee-ecommerce-html/html/external/rs-plugin/font', 'publ
 mix.copyDirectory('../wokiee-ecommerce-html/html/external/rs-plugin/images', 'public/images');
 mix.copyDirectory('../wokiee-ecommerce-html/html/external/rs-plugin/assets', 'public/assets');
 mix.copyDirectory('../wokiee-ecommerce-html/html/external', 'public/external');
-// porto
-mix.copyDirectory('./../porto_ecommerce_html/demo-2/assets/images', 'public/images');
-mix.copyDirectory('./../porto_ecommerce_html/demo-2/assets/fonts', 'public/fonts');
-mix.copyDirectory('./../porto_ecommerce_html/demo-2/assets/js/plugins', 'public/js/plugins');
-mix.copyDirectory('./../porto_ecommerce_html/demo-3/assets/images', 'public/images');
-mix.copyDirectory('./../porto_ecommerce_html/demo-3/assets/fonts', 'public/fonts');
-mix.copyDirectory('./../porto_ecommerce_html/demo-3/assets/js/plugins', 'public/js/plugins');
-mix.copyDirectory('./../metronic_v4.5.6/theme/assets/global/plugins/simple-line-icons/fonts', 'public/css/fonts');
-mix.copyDirectory('./../metronic_v4.5.6/theme/assets/global/plugins/datatables/images', 'public/plugins/datatables/images');
-mix.copyDirectory('./../metronic_v4.5.6/theme/assets/global/plugins/cubeportfolio/img', 'public/img');
-mix.copyDirectory('./../metronic_v4.5.6/theme/assets/layouts/layout2/img', 'public/img');
-mix.copyDirectory('./../metronic_v4.5.6/theme//assets/global/img/flags/', 'public/img/flags');
-mix.copyDirectory('./node_modules/font-awesome/fonts', 'public/fonts');
-mix.copyDirectory('./node_modules/tinymce/plugins', 'public/js/plugins');
-mix.copyDirectory('./node_modules/tinymce/skins', 'public/js/skins');
-mix.copyDirectory('./node_modules/tinymce/themes', 'public/js/themes');
 

@@ -28,7 +28,7 @@
                         src="{{ $element->images->first()->imageLargeLink }}"
                         alt=""></span>
             <span class="tt-label-location">
-                                    @if($element->on_new)
+                @if($element->on_new)
                     <span class="tt-label-new">{{ trans('general.new') }}</span>
                 @endif
                 @if($element->isOnSale)
@@ -44,10 +44,10 @@
                          data-year="{{ trans('general.years') }}"
                          data-month="{{ trans('general.months') }}"
                          data-week="{{ trans('general.weeks') }}"
-                         data-day="{{ trans('general.day') }}"
+                         data-day="{{ trans('general.days') }}"
                          data-hour="{{ trans('general.hours') }}"
-                         data-minute="{{ trans('general.minute') }}"
-                         data-second="{{ trans('general.second') }}"
+                         data-minute="{{ trans('general.minutes') }}"
+                         data-second="{{ trans('general.seconds') }}"
                     ></div>
                 </div>
             </div>

@@ -1,6 +1,6 @@
 <?php
 
-return array (
+return array(
     'mail_sent' => 'تحقق من بريدك الالكتروني',
     'size' => 'الحجم',
     'price' => 'السعر',
@@ -230,4 +230,21 @@ return array (
     'favorites' => 'المفضلة',
     'information_review' => 'مراجعة البيانات',
     'branches' => 'فروعنا',
+    'day' => 'اليوم',
+    'days' => 'أيام',
+    'years' => 'سنوات',
+    'minutes' => 'دقائق',
+    'seconds' => 'ثواني',
+    'hours' => 'ساعات',
+    'choose_date' => '',
+    'duration' => 'مدة الخدمة',
+    'individuals_count' => 'عدد الأفراد',
+    'individual' => 'فرد',
+    'start_timing' => 'وقت البدأ',
+    'end_timing' => 'وقت الإنتهاء',
+    'duty_timings' => 'أوقات الدوام',
+    'setup_time' => 'وقت الإعداد المستغرق',
+    'about_us' => 'نبذة عنا',
+    'contact_us' => 'إتصل بنا',
+    'add_to_wish_list' => 'أضف لقائمة الأمنيات'
 );

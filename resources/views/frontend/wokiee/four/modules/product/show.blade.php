@@ -325,7 +325,7 @@
                                 <div class="tt-row">
                                     <ul class="tt-add-info">
                                         <li><a href="#">T-SHIRTS</a></li>
-                                    </ul>
+                                    </ul>`
                                 </div>
                                 <h2 class="tt-title"><a href="product.html">Flared Shift Dress</a></h2>
                                 <div class="tt-price">

@@ -31,7 +31,7 @@
 @show
 <!--footer end-->
 @section('models')
-    @include('frontend.wokiee.four.partials.models')
+    @include('frontend.wokiee.four.partials.modals')
 @show
 
 @section('scripts')

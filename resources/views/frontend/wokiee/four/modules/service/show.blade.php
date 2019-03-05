@@ -4,6 +4,8 @@
     {{ Breadcrumbs::render('frontend.service.show', $element) }}
 @endsection
 
+
+
 @section('body')
     <div class="container-indent">
         <!-- mobile product slider  -->
@@ -14,7 +16,8 @@
                 @include('frontend.wokiee.four.partials._service_show_gallery')
                 <div class="col-6">
                     <div class="tt-product-single-info">
-                        <h1 class="tt-title tt-title-border">{{ $element->name }}</h1>
+                        <h1 class="tt-title tt-title-border">{{ $element->name }}
+                        </h1>
                         <div class="tt-price tt-title-border">
                             @if($element->isOnSale)
                                 <span class="new-price">{{ $element->convertedSalePrice}}
@@ -29,61 +32,22 @@
                         <div class="tt-wrapper">
                             {{ $element->description }}
                         </div>
-                        @if($element->isReallyHot)
-                            <div class="d-flex justify-content-center">
-                                <div class="tt-wrapper" style="margin-right : auto; margin-left: auto;">
-                                    <div class="tt-countdown_box_02">
-                                        <div class="tt-countdown_inner">
-                                            <div class="tt-countdown"
-                                                 data-date="{{ $element->end_sale->format('Y-m-d') }}"
-                                                 data-year="{{ trans('general.years') }}"
-                                                 data-month="{{ trans('general.months') }}"
-                                                 data-week="{{ trans('general.weeks') }}"
-                                                 data-day="{{ trans('general.day') }}"
-                                                 data-hour="{{ trans('general.hours') }}"
-                                                 data-minute="{{ trans('general.minute') }}"
-                                                 data-second="{{ trans('general.second') }}"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        @endif
+                        @include('frontend.wokiee.four.partials._service_show_is_really_hot_element')
+                        @include('frontend.wokiee.four.partials._service_show_service_choose_date')
                         <div class="tt-wrapper">
                             <div class="tt-row-custom-01">
-                                <div class="col-item">
-                                    <div class="tt-input-counter style-01">
-                                        <span class="minus-btn"></span>
-                                        <input type="text" value="1" size="5"/>
-                                        <span class="plus-btn"></span>
-                                    </div>
-                                </div>
-                                <div class="col-item">
-                                    <a href="#" class="btn btn-lg"><i class="icon-f-39"></i>ADD TO CART</a>
-                                </div>
+                                <form action="{{ route('frontend.cart.add') }}" method="post" class="col-12">
+                                    @csrf
+                                    <input type="hidden" name="service_id" id="time-selected" value="{{ $element->id }}">
+                                    <input type="hidden" name="time_id" id="time-selected" value="">
+                                    <input type="hidden" name="type" value="service">
+                                    <button type="submit" class="btn btn-lg" disabled="disabled"><i
+                                                class="icon-f-39"></i>{{ trans('general.add_to_cart') }}</button>
+                                </form>
                             </div>
                         </div>
-                        <div class="tt-wrapper">
-                            <ul class="tt-list-btn">
-                                <li><a class="btn-link" href="#"><i class="icon-n-072"></i>ADD TO WISH LIST</a></li>
-                                <li><a class="btn-link" href="#"><i class="icon-n-08"></i>ADD TO COMPARE</a></li>
-                            </ul>
-                        </div>
-                        <div class="tt-add-info">
-                            <ul>
-                                <li><span>{{ trans('general.sku') }}:</span> {{ $element->sku }}</li>
-                                <li><span>{{ trans('general.notes') }}:</span> {{ $element->notes }}</li>
-                            </ul>
-                        </div>
+                        {{-- After Add To Cart Button--}}
                         @include('frontend.wokiee.four.partials._service_show_information_widget')
-                        <div class="tt-wrapper">
-                            <div class="tt-add-info">
-                                <ul>
-                                    <li><span><i class="fa fa-fw fa-bookmark"></i> Vendor:</span> Polo</li>
-                                    <li><span><i class="fa fa-fw fa-book"></i> Vendor:</span> Polo</li>
-                                    <li><span><i class="fa fa-fw fa-bullseye"></i> Vendor:</span> Polo</li>
-                                </ul>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="col-12">
@@ -97,7 +61,7 @@
                                 </div>
                             </div>
                         @endif
-                        <div class="tt-item">
+                        <div class="tt-item active">
                             <div class="tt-collapse-title">{{ trans('general.more_information') }}</div>
                             <div class="tt-collapse-content">
                                 <div class="col-sm-12 col-md-6">
@@ -123,4 +87,9 @@
     {{--</div>--}}
     {{--</div>--}}
 
+@endsection
+
+@section('scripts')
+    @parent
+    @include('frontend.wokiee.four.partials._service_show_js')
 @endsection

@@ -35,4 +35,6 @@ Route::get('qty', function () {
 
 
 Route::resource('branch', 'Api\BranchController')->only(['index']);
+Route::resource('timing', 'Api\TimingController')->only(['index']);
 Route::get('local/branch', 'Api\BranchController@getLocalBranches');
+Route::get('timing/list', 'Api\TimingController@getTimingList');

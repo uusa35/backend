@@ -34,8 +34,8 @@ $factory->define(Product::class, function (Faker $faker) use ($fakerAr) {
         'is_hot_deal' => $faker->boolean,
         'user_id' => User::companies()->get()->random()->id,
         'has_attribute' => $faker->boolean,
-        'video_url_one' => $faker->url,
-        'video_url_two' => $faker->url,
+        'video_url_one' => 'http://www.youtube.com/embed/GhyKqj_P2E4',
+        'video_url_two' => 'http://www.youtube.com/embed/GhyKqj_P2E4',
         'qty' => $faker->numberBetween(1,99)
     ];
 });

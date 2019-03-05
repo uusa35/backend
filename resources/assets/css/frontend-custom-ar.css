@@ -12,7 +12,9 @@
 }
 
 
-body, html, a, p, h1, h2, h3, h4, h5, h6, table, row, td, th, tr, thead, tfoot, span, .btn, ul, li, .container , .tt-title-small, .tt-description, header , footer {
+body, html, a, p, h1, h2, h3, h4, h5, h6, table, row, td, th, tr, td, thead, tfoot, span, .btn, ul, li,
+.container , .tt-title-small, .tt-description, header , footer, .tt-collapse-title, .tt-collapse-content
+{
     font-family: 'Tajawal', 'sans-serif' !important;
     direction: rtl;
 }
@@ -57,5 +59,10 @@ body, html, a, p, h1, h2, h3, h4, h5, h6, table, row, td, th, tr, thead, tfoot, 
 #loader {
     right : 55% !important;
     left: 0;
+}
+
+.date-picker-element {
+    border-top-right-radius: 15px !important;
+    border-bottom-right-radius: 15px !important;
 }
 

@@ -24,7 +24,7 @@ class Service extends PrimaryModel
 
     public function timings()
     {
-        return $this->hasMany(Timing::class);
+        return $this->hasMany(Timing::class)->orderBy('day_no','desc');
     }
 
     public function categories()
