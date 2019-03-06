@@ -29,8 +29,10 @@
         {{ $element->description }}
     </div>
     @include('frontend.wokiee.four.partials._service_show_is_really_hot_element')
+
     {{-- Choose Date & Time --}}
     @include('frontend.wokiee.four.partials._service_show_service_choose_date')
+
     <div class="tt-wrapper service_alert d-none">
         <div class="tt-row-custom-01">
             <div class="col">

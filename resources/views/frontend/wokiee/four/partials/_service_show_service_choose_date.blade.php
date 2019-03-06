@@ -4,13 +4,14 @@
             <div class="input-group-append" id="button-addon4">
                 <button class="btn-date btn btn-outline-secondary docs-datepicker-trigger date-picker-element"
                         data-method="show"
+                        data-tooltip="{{ trans('general.choose_date') }}"
                         type="button">
                     <i class="fa fa-fw fa-calendar" aria-hidden="true"></i>
                 </button>
             </div>
-            <input data-toggle="datepicker" class="form-control col-lg-12 docs-datepicker-trigger"
-                   placeholder="{{ trans('general.choose_date') }}"
-                   aria-label="Recipient's username with two button addons"
+            <input data-toggle="datepicker" class="form-control col-lg-12 docs-datepicker-trigger tooltip"
+                   aria-label="{{ trans('general.choose_date') }}"
+                   data-tooltip="{{ trans('general.choose_date') }}"
                    name="day_selected_format"
                    aria-describedby="button-addon4">
             <div class="docs-datepicker-container" style="display: block;"></div>
