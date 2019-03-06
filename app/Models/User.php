@@ -62,11 +62,6 @@ class User extends Authenticatable
         return $this->belongsToMany(Product::class, 'favorites');
     }
 
-    /**
-     * MorphRelation
-     * MorphOne = many hasONe relation
-     * @return \Illuminate\Database\Eloquent\Relations\MorphOne
-     */
     public function images()
     {
         return $this->morphMany(Image::class, 'imagable');
@@ -77,10 +72,14 @@ class User extends Authenticatable
         return $this->morphMany(Slider::class, 'slidable');
     }
 
+    public function notificationAlerts()
+    {
+        return $this->morphMany(Notification::class, 'notifiable');
+    }
 
     public function tags()
     {
-        return $this->belongsToMany(Tag::class);
+        return $this->hasMany(Tag::class);
     }
 
     public function ratings()

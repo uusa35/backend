@@ -28,7 +28,7 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         Gate::define('isAdminOrAbove', function () {
-            return auth()->user()->isAdminOrAbove; // means if isSuper then go ahead
+            return auth()->user()->isAdminOrAbove; // means if isSuper or isAdmin then go ahead
         });
 
         Gate::define('isAdmin', function () {

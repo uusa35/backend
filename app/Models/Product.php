@@ -20,71 +20,26 @@ class Product extends PrimaryModel
     ];
 
 
-    public function user() {
-        return $this->belongsTo(User::class,'user_id');
-    }
-    /**
-     * MorphRelation
-     * MorphOne = many hasONe relation
-     * @return \Illuminate\Database\Eloquent\Relations\MorphOne
-     */
-    public function images()
+    public function user()
     {
-        return $this->morphMany(Image::class, 'imagable');
+        return $this->belongsTo(User::class, 'user_id');
     }
 
-    public function sliders()
-    {
-        return $this->morphMany(Slider::class, 'slidable');
-    }
-
-
-    /**
-     * MorphRelation
-     * MorphOne = many hasONe relation
-     * @return \Illuminate\Database\Eloquent\Relations\MorphOne
-     */
-    public function notifications()
-    {
-        return $this->morphMany(Notification::class, 'galleryable');
-    }
-
-
-    /**
-     * Product Attribute
-     * hasMany Relation
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
     public function product_attributes()
     {
         return $this->hasMany(ProductAttribute::class);
     }
 
-    /**
-     * Usage : product belongs to one order_meta
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
     public function order_meta()
     {
         return $this->belongsTo(OrderMeta::class);
     }
 
-    /**
-     * ManyToMany Relation
-     * Product Color
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
-     */
     public function colors()
     {
         return $this->belongsToMany(Color::class, 'product_attributes', 'product_id', 'color_id');
     }
 
-
-    /**
-     * ManytoMany Relation
-     * Product Size
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
-     */
     public function sizes()
     {
         return $this->belongsToMany(Size::class, 'product_attributes', 'product_id', 'size_id');
@@ -100,19 +55,33 @@ class Product extends PrimaryModel
         return $this->belongsToMany(User::class, 'favorites');
     }
 
-    public function tags()
-    {
-        return $this->belongsToMany(Tag::class, 'product_tag');
-    }
-
     public function brands()
     {
         return $this->belongsToMany(Brand::class, 'brand_product');
     }
+    public function images()
+    {
+        return $this->morphMany(Image::class, 'imagable');
+    }
+
+    public function sliders()
+    {
+        return $this->morphMany(Slider::class, 'slidable');
+    }
+
+    public function tags()
+    {
+        return $this->morphToMany(Tag::class, 'taggable');
+    }
+
+    public function notifications()
+    {
+        return $this->morphToMany(Notification::class, 'notifiable');
+    }
 
     public function collections()
     {
-        return $this->belongsToMany(Collection::class);
+        return $this->morphToMany(Collection::class, 'collectable');
     }
 
     /**

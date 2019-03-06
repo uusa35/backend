@@ -32,16 +32,6 @@ class Service extends PrimaryModel
         return $this->belongsToMany(Category::class, 'category_service');
     }
 
-    public function tags()
-    {
-        return $this->belongsToMany(Tag::class);
-    }
-
-    /**
-     * MorphRelation
-     * MorphOne = many hasONe relation
-     * @return \Illuminate\Database\Eloquent\Relations\MorphOne
-     */
     public function images()
     {
         return $this->morphMany(Image::class, 'imagable');
@@ -50,6 +40,21 @@ class Service extends PrimaryModel
     public function sliders()
     {
         return $this->morphMany(Slider::class, 'slidable');
+    }
+
+    public function tags()
+    {
+        return $this->morphToMany(Tag::class, 'taggable');
+    }
+
+    public function notifications()
+    {
+        return $this->morphToMany(Notification::class, 'notifiable');
+    }
+
+    public function collections()
+    {
+        return $this->morphToMany(Collection::class, 'collectable');
     }
 
     public function scopeHasTimings()

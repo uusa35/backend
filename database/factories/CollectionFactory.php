@@ -9,6 +9,7 @@ $factory->define(Collection::class, function (Faker $faker) use($fakerAr) {
         'name' => $faker->name,
         'slug_ar' => $faker->realText(40),
         'slug_en' => $faker->name,
+        'keywords' => $faker->sentence,
         'user_id' => User::active()->designers()->get()->random()->id,
     ];
 });

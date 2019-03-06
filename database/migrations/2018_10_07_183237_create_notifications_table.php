@@ -18,6 +18,7 @@ class CreateNotificationsTable extends Migration
             $table->string('description')->nullable();
             $table->string('type')->nullable();
             $table->string('path')->nullable();
+            $table->string('url')->nullable();
             $table->string('image')->nullable();
             $table->morphs('notifiable');
             $table->timestamps();

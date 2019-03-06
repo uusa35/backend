@@ -31,6 +31,7 @@ class CreateServicesTable extends Migration
             $table->mediumText('description_ar')->nullable();
             $table->mediumText('notes_ar')->nullable();
             $table->mediumText('notes_en')->nullable();
+            $table->string('keywords')->nullable();
             $table->string('image')->nullable();
             $table->string('video_url_one')->nullable();
             $table->string('video_url_two')->nullable();

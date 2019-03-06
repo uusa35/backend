@@ -57,5 +57,6 @@ $factory->define(App\Models\User::class, function (Faker $faker) use ($fakerAr) 
         'policy_en' => $faker->name,
         'cancellation_ar' => $faker->name,
         'cancellation_en' => $faker->name,
+        'keywords' => $faker->sentence,
     ];
 });

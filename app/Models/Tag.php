@@ -7,18 +7,19 @@ class Tag extends PrimaryModel
     protected $localeStrings = ['slug'];
     protected $guarded = [''];
 
-    public function products()
+    // Company that owns such tag;
+    public function user()
     {
-        return $this->belongsToMany(Product::class, 'product_tag');
+        return $this->belongsTo(User::class);
     }
 
-    public function users()
+    public function products()
     {
-        return $this->belongsToMany(User::class, 'user_tag');
+        return $this->morphedByMany(Product::class, 'taggable');
     }
 
     public function services()
     {
-        return $this->belongsToMany(Service::class, 'service_tag');
+        return $this->morphedByMany(Service::class, 'taggable');
     }
 }

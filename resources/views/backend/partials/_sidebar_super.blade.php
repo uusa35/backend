@@ -44,7 +44,7 @@
     </ul>
 </li>
 <li class="nav-item {{ activeItem('user') }}">
-    <a href="{{ route('backend.user.index')}}" class="nav-link nav-toggle">
+    <a href="{{ route('backend.admin.user.index')}}" class="nav-link nav-toggle">
         <i class="fa fa-fw fa-user"></i>
         <span class="title">Users</span>
         <span class="selected"></span>
@@ -54,21 +54,21 @@
 
 
 <li class="nav-item {{ activeItem('category') }}">
-    <a href="{{ route('backend.category.index') }}" class="nav-link nav-toggle">
+    <a href="{{ route('backend.admin.category.index') }}" class="nav-link nav-toggle">
         <i class="fa fa-fw fa-list-ol"></i>
         <span class="title">Categories</span>
         <span class="arrow"></span>
     </a>
     <ul class="sub-menu">
         <li class="nav-item ">
-            <a href="{{ route('backend.category.index') }}" class="nav-link ">
+            <a href="{{ route('backend.admin.category.index') }}" class="nav-link ">
                 <i class="fa fa-fw fa-list-ul"></i>
                 <span class="title">Categories</span>
                 <span class="arrow"></span>
             </a>
         </li>
         <li class="nav-item ">
-            <a href="{{ route('backend.category.create',['parent_id' => 0]) }}" class="nav-link ">
+            <a href="{{ route('backend.admin.category.create',['parent_id' => 0]) }}" class="nav-link ">
                 <i class="fa fa-fw fa-plus-square"></i>
                 <span class="title">Create Category</span>
                 <span class="arrow"></span>
@@ -78,14 +78,14 @@
 </li>
 
 <li class="nav-item {{ activeItem('country') }}">
-    <a href="{{ route('backend.country.index') }}" class="nav-link nav-toggle">
+    <a href="{{ route('backend.admin.country.index') }}" class="nav-link nav-toggle">
         <i class="fa fa-fw fa-globe"></i>
         <span class="title">Countries</span>
         <span class="arrow"></span>
     </a>
     <ul class="sub-menu">
         <li class="nav-item ">
-            <a href="{{ route('backend.country.index') }}" class="nav-link nav-toggle">
+            <a href="{{ route('backend.admin.country.index') }}" class="nav-link nav-toggle">
                 <i class="fa fa-fw fa-globe"></i>
                 <span class="title">Countries Control</span>
                 <span class="arrow"></span>
@@ -100,7 +100,7 @@
             {{--</ul>--}}
         </li>
         <li class="nav-item ">
-            <a href="{{ route('backend.country.create') }}" class="nav-link ">
+            <a href="{{ route('backend.admin.country.create') }}" class="nav-link ">
                 <i class="fa fa-fw fa-plus-circle"></i>
                 <span class="title">Add New Country</span>
             </a>
@@ -109,21 +109,21 @@
 </li>
 
 <li class="nav-item {{ activeItem('currency') }}">
-    <a href="{{ route('backend.super.currency.index') }}" class="nav-link nav-toggle">
+    <a href="{{ route('backend.admin.currency.index') }}" class="nav-link nav-toggle">
         <i class="fa fa-fw fa-dollar"></i>
         <span class="title">Currencies</span>
         <span class="arrow"></span>
     </a>
     <ul class="sub-menu">
         <li class="nav-item ">
-            <a href="{{ route('backend.super.currency.index') }}" class="nav-link nav-toggle">
+            <a href="{{ route('backend.admin.currency.index') }}" class="nav-link nav-toggle">
                 <i class="fa fa-fw fa-euro"></i>
                 <span class="title">All Currencies</span>
                 <span class="arrow"></span>
             </a>
         </li>
         <li class="nav-item ">
-            <a href="{{ route('backend.super.currency.create') }}" class="nav-link nav-toggle">
+            <a href="{{ route('backend.admin.currency.create') }}" class="nav-link nav-toggle">
                 <i class="fa fa-fw fa-plus-circle"></i>
                 <span class="title">Create New Currency</span>
                 <span class="arrow"></span>
@@ -180,7 +180,7 @@
         <li class="nav-item ">
             <a href="{{ route('backend.slide.index') }}" class="nav-link ">
                 <i class="fa fa-fw fa-file-image-o"></i>
-                <span class="title">Sliders</span>
+                <span class="title">Slides</span>
                 <span class="arrow"></span>
             </a>
         </li>
@@ -213,42 +213,21 @@
         {{--</ul>--}}
         {{--</li>--}}
         <li class="nav-item ">
-            <a href="{{ route('backend.page.index') }}" class="nav-link ">
+            <a href="{{ route('backend.admin.page.index') }}" class="nav-link ">
                 <i class="fa fa-fw fa-book"></i>
                 <span class="title">pages</span>
                 <span class="arrow"></span>
             </a>
             <ul class="sub-menu">
                 <li class="nav-item">
-                    <a href="{{ route('backend.page.index') }}" class="nav-link">
+                    <a href="{{ route('backend.admin.page.index') }}" class="nav-link">
                         <i class="fa fa-fw fa-list-alt"></i> All Pages
                         <span class="arrow nav-toggle"></span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('backend.page.create') }}" class="nav-link">
+                    <a href="{{ route('backend.admin.page.create') }}" class="nav-link">
                         <i class="icon-plus"></i> Create New Page
-                        <span class="arrow nav-toggle"></span>
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <li class="nav-item ">
-            <a href="{{ route('backend.gallery.index') }}" class="nav-link ">
-                <i class="fa fa-fw fa-file-image-o"></i>
-                <span class="title">Galleries</span>
-                <span class="arrow"></span>
-            </a>
-            <ul class="sub-menu">
-                <li class="nav-item">
-                    <a href="{{ route('backend.gallery.index') }}" class="nav-link">
-                        <i class="fa fa-fw fa-file-image-o"></i> All Galleries
-                        <span class="arrow nav-toggle"></span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ route('backend.image.index') }}" class="nav-link">
-                        <i class="fa fa-fw fa-image"></i> All Images
                         <span class="arrow nav-toggle"></span>
                     </a>
                 </li>

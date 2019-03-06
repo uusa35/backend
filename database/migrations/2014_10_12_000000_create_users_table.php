@@ -41,6 +41,7 @@ class CreateUsersTable extends Migration
             $table->mediumText('policy_en')->nullable();
             $table->mediumText('cancellation_ar')->nullable();
             $table->mediumText('cancellation_en')->nullable();
+            $table->string('keywords')->nullable();
 
             $table->string('path')->nullable();
             $table->string('website')->nullable();

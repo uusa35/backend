@@ -25,6 +25,7 @@ $factory->define(Service::class, function (Faker $faker) use ($fakerAr) {
         'description_ar' => $fakerAr->realText(),
         'notes_ar' => $faker->paragraph,
         'notes_en' => $faker->paragraph,
+        'keywords' => $faker->sentence,
         'image' => 'food-0' . $faker->numberBetween(1, 12) . '.jpeg',
         'video_url_one' => 'http://www.youtube.com/embed/GhyKqj_P2E4',
         'video_url_two' => 'http://www.youtube.com/embed/GhyKqj_P2E4',

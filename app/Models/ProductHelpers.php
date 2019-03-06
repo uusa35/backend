@@ -14,32 +14,6 @@ use Illuminate\Support\Facades\DB;
 trait ProductHelpers
 {
 
-
-
-    public function getFinalPriceAttribute()
-    {
-        return $this->isOnSale ? $this->sale_price : $this->price;
-    }
-
-    public function getConvertedFinalPriceAttribute()
-    {
-        $currentCurrency = session()->get('currency');
-        return $this->finalPrice * $currentCurrency->exchange_rate;
-    }
-
-    public function getConvertedPriceAttribute()
-    {
-        $currentCurrency = session()->get('currency');
-        return $this->price * $currentCurrency->exchange_rate;
-    }
-
-    public function getConvertedSalePriceAttribute()
-    {
-        $currentCurrency = session()->get('currency');
-        return $this->sale_price * $currentCurrency->exchange_rate;
-    }
-
-
     /**
      * Description : will fetch all products of the current company (and branch) that are bestSales
      * according to the orders that are completed

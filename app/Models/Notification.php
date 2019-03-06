@@ -6,14 +6,19 @@ class Notification extends PrimaryModel
 {
     protected $guarded = [''];
 
-    /**
-     * MorphRelation
-     * many HasOne Relation
-     * reverse
-     * @return \Illuminate\Database\Eloquent\Relations\MorphTo
-     */
-    public function notifiable()
+    public function users()
     {
-        return $this->morphTo();
+        return $this->morphedByMany(User::class, 'notifiable');
     }
+
+    public function products()
+    {
+        return $this->morphedByMany(Product::class, 'notifiable');
+    }
+
+    public function services()
+    {
+        return $this->morphedByMany(Service::class, 'notifiable');
+    }
+
 }

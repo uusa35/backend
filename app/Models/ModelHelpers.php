@@ -39,7 +39,7 @@ trait ModelHelpers
 
     public function scopeOnSale($q)
     {
-        return $q->where('on_sale',true)->whereDate('end_sale', '>', Carbon::now());
+        return $q->where('on_sale', true)->whereDate('end_sale', '>', Carbon::now());
     }
 
     public function getIsOnSaleAttribute()
@@ -52,7 +52,8 @@ trait ModelHelpers
         return $q->onSale()->where('is_hot_deal', true);
     }
 
-    public function getIsReallyHotAttribute() {
+    public function getIsReallyHotAttribute()
+    {
         return $this->isOnSale && $this->is_hot_deal;
     }
 
@@ -75,4 +76,28 @@ trait ModelHelpers
     {
         return asset(env('FILES') . $this->path);
     }
+
+    public function getFinalPriceAttribute()
+    {
+        return $this->isOnSale ? $this->sale_price : $this->price;
+    }
+
+    public function getConvertedFinalPriceAttribute()
+    {
+        $currentCurrency = session()->get('currency');
+        return $this->finalPrice * $currentCurrency->exchange_rate;
+    }
+
+    public function getConvertedPriceAttribute()
+    {
+        $currentCurrency = session()->get('currency');
+        return $this->price * $currentCurrency->exchange_rate;
+    }
+
+    public function getConvertedSalePriceAttribute()
+    {
+        $currentCurrency = session()->get('currency');
+        return $this->sale_price * $currentCurrency->exchange_rate;
+    }
+
 }

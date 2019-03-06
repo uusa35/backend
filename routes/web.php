@@ -12,20 +12,24 @@
 */
 
 Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.', 'middleware' => ['auth', 'onlyActiveUsers']], function () {
+    // Route may be same But
+    // 1- Date will be displayed are different (therefore made many controllers for the same exact Model)
+    // 2- Action Also is different therefore ModelPolicy applied for each Model Action
+
     // Backend :: super only
     Route::group(['namespace' => 'Admin', 'as' => 'super.', 'prefix' => 'super', 'middleware' => ['super']], function () {
         Route::resource('role', 'RoleController');
         Route::resource('privilege', 'PrivilegeController');
         Route::resource('setting', 'SettingController');
-        Route::resource('country', 'CountryController');
-        Route::resource('currency', 'CurrencyController');
-        Route::resource('category', 'CategoryController');
     });
     // Backend :: super + admin
     Route::group(['namespace' => 'Admin', 'as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['admin']], function () {
         Route::get('backup/db', ['as' => 'backup.db', 'uses' => 'HomeController@BackupDB']);
         Route::get('export/translations', ['as' => 'export.translation', 'uses' => 'HomeController@exportTranslations']);
         Route::get('activate', 'HomeController@toggleActivate')->name('activate');
+        Route::resource('country', 'CountryController');
+        Route::resource('currency', 'CurrencyController');
+        Route::resource('category', 'CategoryController');
         Route::resource('user', 'UserController');
         Route::resource('product', 'ProductController');
         Route::resource('service', 'ServiceController');
@@ -41,26 +45,29 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
         Route::resource('page', 'PageController');
         Route::resource('term', 'TermController');
         Route::resource('order', 'OrderController');
+        Route::resource('collection', 'CollectionController');
+        Route::resource('package', 'ShipmentPackageController');
     });
-    // Backend :: companies + designers
+    // Backend :: companies
     Route::get('/', 'HomeController@index')->name('index');
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('language/{locale}', 'HomeController@changeLanguage')->name('language.change');
     Route::get('reset/password', 'UserController@getResetPassword')->name('reset.password');
     Route::post('reset/password', 'UserController@postResetPassword')->name('reset');
     Route::resource('user', 'UserController')->only(['edit', 'update', 'show']);
-    Route::resource('product', 'ProductController');
-    Route::get('trashed', 'ProductController@trashed')->name('product.trashed');
-    Route::get('restore/{id}', 'ProductController@restore')->name('product.restore');
+    Route::resource('slide', 'SlideController');
+    Route::resource('branch', 'BranchController');
     Route::resource('order', 'OrderController')->except(['destroy', 'show']);
     Route::resource('user', 'UserController')->only(['edit']);
-    Route::resource('file', 'FileController');
-    Route::get('show/list', 'FileController@getShowList')->name('file.show.list');
-    Route::resource('job', 'JobController');
-    Route::get('enroll/job{id}', 'JobController@toggleEnroll')->name('job.enroll');
-    Route::resource('version', 'VersionController');
     Route::resource('image', 'ImageController');
     Route::resource('tag', 'TagController')->only(['create', 'store']);
+    Route::resource('product', 'ProductController');
+    Route::resource('coupon', 'CouponController');
+    Route::resource('package', 'ShipmentPackageController');
+    Route::get('trashed', 'ProductController@trashed')->name('product.trashed');
+    Route::get('restore/{id}', 'ProductController@restore')->name('product.restore');
+    // designers
+    Route::resource('collection', 'CollectionController');
 });
 
 Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => []], function () {

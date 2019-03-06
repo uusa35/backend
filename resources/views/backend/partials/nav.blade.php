@@ -33,14 +33,10 @@
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="{{ route('backend.admin.slider.create') }}">
+                            <a href="{{ route('backend.admin.slide.create') }}">
                                 <i class="icon-plus"></i> {{ trans('general.new_slider') }}</a>
                         </li>
                         <li class="divider"></li>
-                        <li>
-                            <a href="{{ route('backend.admin.plan.create') }}">
-                                <i class="icon-calculator"></i> {{ trans('general.create_new_payment_plan') }}</a>
-                        </li>
                         <li class="divider"></li>
                         <li>
                             <a href="{{ route('backend.admin.service.create') }}">

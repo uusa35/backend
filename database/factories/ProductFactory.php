@@ -27,6 +27,7 @@ $factory->define(Product::class, function (Faker $faker) use ($fakerAr) {
         'description_ar' => $faker->paragraph,
         'notes_ar' => $faker->paragraph,
         'notes_en' => $faker->paragraph,
+        'keywords' => $faker->sentence,
         'image' => $faker->numberBetween(1, 42) . '.jpeg',
         'start_sale' => $faker->dateTime('now'),
         'end_sale' => $faker->dateTimeBetween('now', '1 year'),
