@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Coupon;
+use App\Models\OrderMeta;
 use App\Models\Product;
 use App\Models\ProductAttribute;
 use App\Models\Service;
+use App\Models\Timing;
 use App\Services\ShippingManager;
 use Carbon\Carbon;
 use Gloudemans\Shoppingcart\Facades\Cart;
@@ -31,20 +33,32 @@ class CartController extends Controller
     }
 
 
-    public function addService(Request $request) {
+    public function addService(Request $request)
+    {
+        // Note that Month/Day/Year that's the default
         $validator = validator($request->all(),
             [
                 'service_id' => 'required|exists:services,id',
                 'timing_id' => 'required|exists:timings,id',
                 'user_id' => 'required|exists:users,id',
                 'type' => 'required|alpha',
-                'day_selected' => 'required|date_format:d-m-yyyy',
+                'day_selected_format' => 'required|date_format:m/d/Y',
             ]);
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator);
         }
-        $service = Service::whereId($request->service_id)->first();
+        // Check all orders that may have metas with the same service and timing on the same date !!!
+        $orderMetasWithSameService = OrderMeta::where(['service_id' => $request->service_id, 'timing_id' => $request->timing_id])->whereDate('service_date', '=', Carbon::parse($request->day_selected_format))->get();
+        if ($orderMetasWithSameService->isEmpty()) {
+            $service = Service::whereId($request->service_id)->first();
+            $timing = Timing::whereId($request->timing_id)->first();
+            return 'true metas are empty';
+        } else {
+            return redirect()->back()->with('error', trans('message.this_timing_is_not_already_booked_please_try_another_timing'));
+        }
+
     }
+
     public function addItem(Request $request)
     {
         $validator = validator($request->all(),

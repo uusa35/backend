@@ -31,7 +31,7 @@
             },
             pick: function(e) {
                 dayNo = e.date.getDay();
-                day_selected_format = moment(e.date).format('DD/MM/YYYY');
+                day_selected_format = moment(e.date).format('MM/DD/YYYY');
                 dayName = moment(e.date).format('dddd');
                 console.log('date_selecte', day_selected_format);
                 console.log('date', e.date);
