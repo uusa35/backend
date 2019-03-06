@@ -22,7 +22,7 @@ $factory->define(Setting::class, function (Faker $faker) use ($fakerAr) {
         'twitter' => $faker->url,
         'snapchat' => $faker->url,
         'facebook' => $faker->url,
-        'logo' => 'logo-0' . $faker->numberBetween(1, 8) . '.png',
+        'logo' => app()->isLocal() ? 'logo-01.jpg' : 'logo-0' . $faker->numberBetween(1, 8) . '.png',
         'size_chart' => $faker->numberBetween(1, 42) . '.jpeg',
         'main_theme_color' => '#4611a7'
 //        'shipment_service' => $faker->boolean(true),

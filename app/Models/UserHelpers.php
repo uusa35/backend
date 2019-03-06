@@ -65,4 +65,18 @@ trait UserHelpers
             return $q->where('is_admin', true);
         });
     }
+
+    public function scopeHasProducts($q)
+    {
+        return $q->whereHas('products', function ($q) {
+            return $q->active()->hasAttributes();
+        }, '>', 0);
+    }
+
+    public function scopeHasServices($q)
+    {
+        return $q->whereHas('services', function ($q) {
+            return $q->active();
+        }, '>', 0);
+    }
 }

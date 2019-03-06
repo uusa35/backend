@@ -21,6 +21,7 @@ class CreateTimingsTable extends Migration
             $table->time('end')->nullable();
             $table->boolean('is_off')->default(0);
             $table->boolean('allow_multi_select')->default(0);
+            $table->boolean('is_available')->default(1);
             $table->string('type')->nullable();
             $table->string('notes_ar')->nullable();
             $table->string('notes_en')->nullable();

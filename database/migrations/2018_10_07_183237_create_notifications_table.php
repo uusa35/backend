@@ -20,7 +20,7 @@ class CreateNotificationsTable extends Migration
             $table->string('path')->nullable();
             $table->string('url')->nullable();
             $table->string('image')->nullable();
-            $table->morphs('notifiable');
+            $table->morphs('notificationable');
             $table->timestamps();
         });
     }

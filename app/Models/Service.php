@@ -37,24 +37,28 @@ class Service extends PrimaryModel
         return $this->morphMany(Image::class, 'imagable');
     }
 
-    public function sliders()
+    // Many Morph
+    public function slides()
     {
-        return $this->morphMany(Slider::class, 'slidable');
+        return $this->morphMany(Slide::class, 'slidable');
     }
 
+    // Many Morph
+    public function notifications()
+    {
+        return $this->morphMany(Notification::class, 'notificationable');
+    }
+
+    // ManyToMay Morph
     public function tags()
     {
         return $this->morphToMany(Tag::class, 'taggable');
     }
 
-    public function notifications()
-    {
-        return $this->morphToMany(Notification::class, 'notifiable');
-    }
-
+    // ManyToMany Morph
     public function collections()
     {
-        return $this->morphToMany(Collection::class, 'collectable');
+        return $this->morphToMany(Collection::class, 'collectionable');
     }
 
     public function scopeHasTimings()

@@ -6,19 +6,9 @@ class Notification extends PrimaryModel
 {
     protected $guarded = [''];
 
-    public function users()
+    // Product / Service / User
+    public function notificationable()
     {
-        return $this->morphedByMany(User::class, 'notifiable');
+        return $this->morphTo();
     }
-
-    public function products()
-    {
-        return $this->morphedByMany(Product::class, 'notifiable');
-    }
-
-    public function services()
-    {
-        return $this->morphedByMany(Service::class, 'notifiable');
-    }
-
 }

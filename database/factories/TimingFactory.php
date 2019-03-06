@@ -12,6 +12,7 @@ $factory->define(Timing::class, function (Faker $faker) {
         'start' => $faker->time(),
         'end' => $faker->time(),
         'is_off' => $faker->boolean,
+        'is_available' => $faker->boolean,
         'allow_multi_select' => $faker->boolean,
         'type' => $faker->name,
         'notes_ar' => $faker->name,

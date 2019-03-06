@@ -39,6 +39,7 @@ class CreateServicesTable extends Migration
             $table->dateTime('start_sale')->nullable();
             $table->dateTime('end_sale')->nullable();
             $table->boolean('active')->default(1);
+            $table->boolean('is_available')->default(1);
             $table->boolean('is_hot_deal')->default(0);
             $table->boolean('has_attribute')->default(0);
 

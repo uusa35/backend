@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\DB;
 trait ProductHelpers
 {
 
+    public function scopeHasAttributes($q)
+    {
+        return $q->has('product_attributes', '>', 0);
+    }
+
     /**
      * Description : will fetch all products of the current company (and branch) that are bestSales
      * according to the orders that are completed

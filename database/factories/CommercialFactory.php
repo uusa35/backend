@@ -11,10 +11,10 @@ $factory->define(Commercial::class, function (Faker $faker) {
         'is_triple' => $faker->boolean,
         'caption_ar' => $faker->name,
         'caption_en' => $faker->name,
-        'image' => $faker->numberBetween(43, 49) . '.jpeg',
+        'image' => app()->isLocal() ? $faker->numberBetween(43, 49) . '.jpeg' : 'commercial-01.jpeg',
         'url' => $faker->url,
         'path' => '1.pdf',
         'active' => $faker->boolean,
-        'order' => $faker->numberBetween(1,59),
+        'order' => $faker->numberBetween(1, 59),
     ];
 });

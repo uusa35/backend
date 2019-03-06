@@ -35,5 +35,6 @@ $factory->define(Service::class, function (Faker $faker) use ($fakerAr) {
 
         'user_id' => User::companies()->get()->random()->id,
         'active' => $faker->boolean,
+        'is_available' => $faker->boolean,
     ];
 });

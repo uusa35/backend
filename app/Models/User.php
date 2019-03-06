@@ -67,19 +67,28 @@ class User extends Authenticatable
         return $this->morphMany(Image::class, 'imagable');
     }
 
-    public function sliders()
+
+
+
+    public function slides()
     {
-        return $this->morphMany(Slider::class, 'slidable');
+        return $this->morphMany(Slide::class, 'slidable');
     }
 
     public function notificationAlerts()
     {
-        return $this->morphMany(Notification::class, 'notifiable');
+        return $this->morphMany(Notification::class, 'notificationable');
     }
 
+    // only own tags
     public function tags()
     {
         return $this->hasMany(Tag::class);
+    }
+
+    public function collections()
+    {
+        return $this->morphToMany(Collection::class, 'collectionable');
     }
 
     public function ratings()

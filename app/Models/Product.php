@@ -64,24 +64,25 @@ class Product extends PrimaryModel
         return $this->morphMany(Image::class, 'imagable');
     }
 
-    public function sliders()
+    public function slides()
     {
-        return $this->morphMany(Slider::class, 'slidable');
-    }
-
-    public function tags()
-    {
-        return $this->morphToMany(Tag::class, 'taggable');
+        return $this->morphMany(Slide::class, 'slidable');
     }
 
     public function notifications()
     {
-        return $this->morphToMany(Notification::class, 'notifiable');
+        return $this->morphMany(Notification::class, 'notificationable');
     }
 
+    // ManyToMay Morph
+    public function tags()
+    {
+        return $this->morphToMany(Tag::class, 'taggable');
+    }
+    // ManyToMay Morph
     public function collections()
     {
-        return $this->morphToMany(Collection::class, 'collectable');
+        return $this->morphToMany(Collection::class, 'collectionable');
     }
 
     /**
