@@ -4,7 +4,6 @@
     <list default="true" id="e163867a-e084-464b-b025-90563ffad1db" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_service_show_service_choose_date.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_service_show_service_choose_date.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_service_show_service_service_information.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_service_show_service_service_information.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,8 +55,8 @@
               <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_service_show_service_choose_date.blade.php">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="87">
-                      <caret line="6" column="73" lean-forward="true" selection-start-line="6" selection-start-column="73" selection-end-line="6" selection-end-column="73" />
+                    <state relative-caret-position="195">
+                      <caret line="15" column="81" lean-forward="true" selection-start-line="15" selection-start-column="81" selection-end-line="15" selection-end-column="81" />
                     </state>
                   </provider>
                 </entry>
@@ -184,7 +183,7 @@
             <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_service_widget.blade.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="679">
-                  <caret line="106" column="67" lean-forward="true" selection-start-line="106" selection-start-column="19" selection-end-line="106" selection-end-column="67" />
+                  <caret line="106" column="49" selection-start-line="106" selection-start-column="49" selection-end-line="106" selection-end-column="49" />
                 </state>
               </provider>
             </entry>
@@ -780,12 +779,12 @@
       <workItem from="1551693789723" duration="7570000" />
       <workItem from="1551711252725" duration="24226000" />
       <workItem from="1551797809858" duration="6877000" />
-      <workItem from="1551851737049" duration="9346000" />
+      <workItem from="1551851737049" duration="9538000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="227550000" />
+    <option name="totallyTimeSpent" value="227742000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
@@ -1175,14 +1174,14 @@
     <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_service_widget.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="679">
-          <caret line="106" column="67" lean-forward="true" selection-start-line="106" selection-start-column="19" selection-end-line="106" selection-end-column="67" />
+          <caret line="106" column="49" selection-start-line="106" selection-start-column="49" selection-end-line="106" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_service_show_service_choose_date.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="6" column="73" lean-forward="true" selection-start-line="6" selection-start-column="73" selection-end-line="6" selection-end-column="73" />
+        <state relative-caret-position="195">
+          <caret line="15" column="81" lean-forward="true" selection-start-line="15" selection-start-column="81" selection-end-line="15" selection-end-column="81" />
         </state>
       </provider>
     </entry>
