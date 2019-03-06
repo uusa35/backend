@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Models\Day;
 use App\Models\Service;
 use App\Services\Search\Filters;
 use Illuminate\Http\Request;

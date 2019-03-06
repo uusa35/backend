@@ -21,7 +21,7 @@
                     @include('frontend.wokiee.four.partials._service_show_service_service_information')
                 </div>
                 <div class="col-12">
-                    {{-- Tabs & Modal --}}
+                    {{-- Tabs --}}
                     @include('frontend.wokiee.four.partials._service_show_timings_and_additional_information')
                 </div>
             </div>

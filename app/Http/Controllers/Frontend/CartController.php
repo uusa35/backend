@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Coupon;
 use App\Models\Product;
 use App\Models\ProductAttribute;
+use App\Models\Service;
 use App\Services\ShippingManager;
 use Carbon\Carbon;
 use Gloudemans\Shoppingcart\Facades\Cart;
@@ -30,6 +31,20 @@ class CartController extends Controller
     }
 
 
+    public function addService(Request $request) {
+        $validator = validator($request->all(),
+            [
+                'service_id' => 'required|exists:services,id',
+                'timing_id' => 'required|exists:timings,id',
+                'user_id' => 'required|exists:users,id',
+                'type' => 'required|alpha',
+                'day_selected' => 'required|date_format:d-m-yyyy',
+            ]);
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator);
+        }
+        $service = Service::whereId($request->service_id)->first();
+    }
     public function addItem(Request $request)
     {
         $validator = validator($request->all(),

@@ -71,7 +71,8 @@ Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => []
     Route::resource('service', 'ServiceController');
     Route::get('service/{id}/{name}', 'ServiceController@show')->name('service.show.name');
     Route::resource('cart', 'CartController')->only(['index']);
-    Route::post('cart/add', 'CartController@addItem')->name('cart.add');
+    Route::post('cart/add/service', 'CartController@addService')->name('cart.add.service');
+    Route::post('cart/add/product', 'CartController@addProduct')->name('cart.add.product');
     Route::get('cart/remove/{id}', 'CartController@removeItem')->name('cart.remove');
     Route::get('cart/clear', 'CartController@clearCart')->name('cart.clear');
     Route::post('cart/coupon', 'CartController@applyCoupon')->name('cart.coupon');

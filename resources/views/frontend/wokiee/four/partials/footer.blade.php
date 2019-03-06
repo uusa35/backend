@@ -1,25 +1,25 @@
 <footer class="">
-{{--<footer class="nomargin">--}}
+    {{--<footer class="nomargin">--}}
     <div class="tt-footer-default tt-color-scheme-02">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-9">
                     {{--<div class="tt-newsletter-layout-01">--}}
-                        {{--<div class="tt-newsletter">--}}
-                            {{--<div class="tt-mobile-collapse">--}}
-                                {{--<h4 class="tt-collapse-title">--}}
-                                    {{--BE IN TOUCH WITH US:--}}
-                                {{--</h4>--}}
-                                {{--<div class="tt-collapse-content">--}}
-                                    {{--<form id="newsletterform" class="form-inline form-default" method="post" novalidate="novalidate" action="#">--}}
-                                        {{--<div class="form-group">--}}
-                                            {{--<input type="text" name="email" class="form-control" placeholder="Enter your e-mail">--}}
-                                            {{--<button type="submit" class="btn">JOIN US</button>--}}
-                                        {{--</div>--}}
-                                    {{--</form>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
+                    {{--<div class="tt-newsletter">--}}
+                    {{--<div class="tt-mobile-collapse">--}}
+                    {{--<h4 class="tt-collapse-title">--}}
+                    {{--BE IN TOUCH WITH US:--}}
+                    {{--</h4>--}}
+                    {{--<div class="tt-collapse-content">--}}
+                    {{--<form id="newsletterform" class="form-inline form-default" method="post" novalidate="novalidate" action="#">--}}
+                    {{--<div class="form-group">--}}
+                    {{--<input type="text" name="email" class="form-control" placeholder="Enter your e-mail">--}}
+                    {{--<button type="submit" class="btn">JOIN US</button>--}}
+                    {{--</div>--}}
+                    {{--</form>--}}
+                    {{--</div>--}}
+                    {{--</div>--}}
+                    {{--</div>--}}
                     {{--</div>--}}
                 </div>
                 <div class="col-md-auto">
@@ -86,8 +86,9 @@
                             </h4>
                             <div class="tt-collapse-content">
                                 <address>
-                                    <p><span>Address:</span> 2548 Broaddus Maple Court Avenue, Madisonville KY 4783, United States of America</p>
-                                    <p><span>Phone:</span> +777 2345 7885;  +777 2345 7886</p>
+                                    <p><span>Address:</span> 2548 Broaddus Maple Court Avenue, Madisonville KY 4783,
+                                        United States of America</p>
+                                    <p><span>Phone:</span> +777 2345 7885; +777 2345 7886</p>
                                     <p><span>Hours:</span> 7 Days a week from 10 am to 6 pm</p>
                                     <p><span>E-mail:</span> <a href="mailto:info@mydomain.com">info@mydomain.com</a></p>
                                 </address>
@@ -120,4 +121,5 @@
             </div>
         </div>
     </div>
+    <div id="lang" class="d-none">{{ app()->getLocale() }}</div>
 </footer>

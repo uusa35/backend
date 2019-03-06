@@ -39,12 +39,12 @@ trait ModelHelpers
 
     public function scopeOnSale($q)
     {
-        return $q->where('on_sale', true)->whereDate('end_sale', '>', Carbon::now());
+        return $q->where('on_sale',true)->whereDate('end_sale', '>', Carbon::now());
     }
 
     public function getIsOnSaleAttribute()
     {
-        return $this->on_sale && Carbon::parse($this->end_sale) > Carbon::now() ? true : false;
+        return $this->on_sale && Carbon::parse($this->end_sale) > Carbon::now();
     }
 
     public function scopeHotDeals($q)

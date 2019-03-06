@@ -9,12 +9,14 @@
             </tr>
             </thead>
             <tbody>
-            @foreach($elements as $element)
-                <tr>
-                    <td>{{ $element->day_name }}</td>
-                    <td>{{ $element->startDuty }}</td>
-                    <td>{{ $element->endDuty }}</td>
-                </tr>
+            @foreach($element->timings->sortBy('day_no')->groupBy('day') as $key => $set)
+                @foreach($set as $timing)
+                    <tr>
+                        <td style="border-top: {{ !$loop->first ? '1px solid white!important;' : null }};"><strong>{{ $loop->first ? $timing->day_name : null }}</strong></td>
+                        <td>{{ $timing->startDuty }}</td>
+                        <td>{{ $timing->endDuty }}</td>
+                    </tr>
+                @endforeach
             @endforeach
             </tbody>
         </table>

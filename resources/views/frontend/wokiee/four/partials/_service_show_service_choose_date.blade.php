@@ -11,8 +11,8 @@
             <input data-toggle="datepicker" class="form-control col-lg-12 docs-datepicker-trigger"
                    placeholder="{{ trans('general.choose_date') }}"
                    aria-label="Recipient's username with two button addons"
+                   name="day_selected_format"
                    aria-describedby="button-addon4">
-            <input type="hidden" name="day-selected" id="day-selected" value="">
             <div class="docs-datepicker-container" style="display: block;"></div>
         </div>
 
@@ -57,6 +57,7 @@
                                        data-id="{{ $timing->id }}"
                                        data-service-id="{{ $element->id }}"
                                        data-service-name="{{ $element->name }}"
+                                       data-day-name="{{ $timing->day_name }}"
                                        data-timing-start="{{ $timing->start }}"
                                        data-timing-end="{{ $timing->end }}"
                                        data-date=""
