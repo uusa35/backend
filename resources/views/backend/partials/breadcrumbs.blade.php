@@ -1,14 +1,16 @@
 <div class="page-bar">
     <ul class="page-breadcrumb">
         @section('breadcrumbs')
-            @if(!isset($element))
-                {{ Breadcrumbs::render(Route::currentRouteName()) }}
-            @elseif(isset($elements))
-                {{ Breadcrumbs::render(Route::currentRouteName()) }}
-            @elseif(isset($element))
-                {{ Breadcrumbs::render(Route::currentRouteName(), $element) }}
+            @if(Breadcrumbs::exists(request()->route()->getName()))
+                @if(!isset($element))
+                    {{ Breadcrumbs::render(request()->route()->getName()) }}
+                @elseif(isset($elements))
+                    {{ Breadcrumbs::render(request()->route()->getName()) }}
+                @elseif(isset($element))
+                    {{ Breadcrumbs::render(request()->route()->getName(), $element) }}
+                @endif
             @endif
-        @show
+        @endsection
     </ul>
     <div class="page-toolbar">
         <div class="btn-group pull-right">

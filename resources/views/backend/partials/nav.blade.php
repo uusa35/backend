@@ -132,7 +132,7 @@
                            data-close-others="true">
                             {{--<img alt="" src="{{ asset('img/flags/ar.png') }}">--}}
                             <span
-                                    class="langname">&nbsp; {{ trans('general.arabic') }} </span>
+                                    class="langname"><i class="fa fa-fw fa-language"></i>&nbsp; {{ trans('general.arabic') }} </span>
                         </a>
                     </li>
                     <li class="dropdown dropdown-language" style="background-color: {{ app()->isLocale('en') ? 'white' : 'transparent' }}; padding-right: 20px; padding-left: 20px; ">
@@ -140,7 +140,7 @@
                            data-close-others="true">
                             {{--<img alt="" src="{{ asset('img/flags/en.png') }}">--}}
                             <span
-                                    class="langname">&nbsp; {{ trans('general.english') }} </span>
+                                    class="langname"><i class="fa fa-fw fa-language"></i>&nbsp; {{ trans('general.english') }} </span>
                         </a>
                     </li>
 
@@ -331,7 +331,7 @@
                         <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
                            data-close-others="true">
                             <img alt="" class="img-xs"
-                                 src="{{ asset('storage/uploads/images/thumbnail/'. auth()->user()->logo) }}"/>
+                                 src="{{ auth()->user()->imageThumbLink }}"/>
                             <i class="fa fa-angle-down"></i>
                             <span
                                     class="username username-hide-on-mobile"> {{ str_limit(auth()->user()->name,30) }}</span><br>

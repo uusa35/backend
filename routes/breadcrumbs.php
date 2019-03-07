@@ -59,7 +59,7 @@ Breadcrumbs::for('backend.user.index', function ($trail) {
 // Home > Blog
 Breadcrumbs::for('backend.product.index', function ($trail) {
     $trail->parent('backend.home');
-    $trail->push('products', route('backend.product.index'));
+    $trail->push(trans('general.products'), route('backend.product.index'));
 });
 
 Breadcrumbs::for('backend.product.trashed', function ($trail) {

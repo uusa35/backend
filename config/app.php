@@ -1,5 +1,6 @@
 <?php
 
+use DaveJamesMiller\Breadcrumbs\BreadcrumbsServiceProvider;
 use Usama\Tap\TapServiceProvider;
 
 return [

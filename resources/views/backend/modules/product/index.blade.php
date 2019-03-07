@@ -1,8 +1,10 @@
 @extends('backend.layouts.app')
 
+
 @section('content')
     <div class="row">
         <div class="col-md-12">
+        {{ Breadcrumbs::render('backend.product.index') }}
             <!-- BEGIN EXAMPLE TABLE PORTLET-->
             <div class="portlet light ">
                 @include('backend.partials.forms.form_title')
@@ -61,10 +63,10 @@
                                 {{--<span class="label {{ activeLabel($element->shipment_availability) }}">{{ activeText($element->shipment_availability,'Yes') }}</span>--}}
                                 {{--</td>--}}
                                 {{--<td>--}}
-                                    {{--<span class="label {{ activeLabel($element->on_sale) }}">{{ activeText($element->on_sale,'OnSale') }}</span>--}}
+                                {{--<span class="label {{ activeLabel($element->on_sale) }}">{{ activeText($element->on_sale,'OnSale') }}</span>--}}
                                 {{--</td>--}}
                                 {{--<td>--}}
-                                    {{--<span class="label {{ activeLabel($element->on_home) }}">{{ activeText($element->on_home,'onHome') }}</span>--}}
+                                {{--<span class="label {{ activeLabel($element->on_home) }}">{{ activeText($element->on_home,'onHome') }}</span>--}}
                                 {{--</td>--}}
                                 <td>
                                     {{ $element->price }}
@@ -136,19 +138,6 @@
                                                 <a href="{{ route('backend.product.edit',$element->id) }}">
                                                     <i class="fa fa-fw fa-edit"></i> Edit</a>
                                             </li>
-                                            @if($element->gallery)
-                                                <li>
-                                                    <a href="{{ route('backend.gallery.edit',['id' => $element->gallery->id, 'type' => 'product' , 'element_id' => $element->id]) }}"
-                                                       target="_blank">
-                                                        <i class="fa fa-fw fa-image"></i> edit Gallery</a>
-                                                </li>
-                                            @else
-                                                <li>
-                                                    <a href="{{ route('backend.gallery.create',['id' => $element->id, 'type' => 'product' , 'element_id' => $element->id]) }}"
-                                                       target="_blank">
-                                                        <i class="fa fa-fw fa-plus-square-o"></i> create Gallery</a>
-                                                </li>
-                                            @endif
                                             <li>
                                                 <a href="{{ route('backend.activate',['model' => 'product','id' => $element->id]) }}">
                                                     <i class="fa fa-fw fa-check-circle"></i> toggle active</a>

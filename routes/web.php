@@ -11,6 +11,8 @@
 |
 */
 
+use App\Models\User;
+
 Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.', 'middleware' => ['auth', 'onlyActiveUsers']], function () {
     // Route may be same But
     // 1- Date will be displayed are different (therefore made many controllers for the same exact Model)
@@ -26,7 +28,6 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
     Route::group(['namespace' => 'Admin', 'as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['admin']], function () {
         Route::get('backup/db', ['as' => 'backup.db', 'uses' => 'HomeController@BackupDB']);
         Route::get('export/translations', ['as' => 'export.translation', 'uses' => 'HomeController@exportTranslations']);
-        Route::get('activate', 'HomeController@toggleActivate')->name('activate');
         Route::resource('country', 'CountryController');
         Route::resource('currency', 'CurrencyController');
         Route::resource('category', 'CategoryController');
@@ -40,6 +41,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
         Route::resource('survey', 'SurveyController');
         Route::resource('questionnaire', 'QuestionnaireController');
         Route::resource('question', 'QuestionController');
+        Route::resource('answer', 'AnswerController');
         Route::resource('report', 'ReportController');
         Route::resource('brand', 'BrandController');
         Route::resource('page', 'PageController');
@@ -47,20 +49,25 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
         Route::resource('order', 'OrderController');
         Route::resource('collection', 'CollectionController');
         Route::resource('package', 'ShipmentPackageController');
+        Route::resource('tag', 'TagController');
     });
     // Backend :: companies
     Route::get('/', 'HomeController@index')->name('index');
     Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('activate', 'HomeController@toggleActivate')->name('activate');
     Route::get('language/{locale}', 'HomeController@changeLanguage')->name('language.change');
     Route::get('reset/password', 'UserController@getResetPassword')->name('reset.password');
     Route::post('reset/password', 'UserController@postResetPassword')->name('reset');
     Route::resource('user', 'UserController')->only(['edit', 'update', 'show']);
+    Route::resource('product', 'ProductController');
+    Route::resource('attribute', 'ProductAttributeController');
+    Route::resource('service', 'ServiceController');
     Route::resource('slide', 'SlideController');
     Route::resource('branch', 'BranchController');
     Route::resource('order', 'OrderController')->except(['destroy', 'show']);
     Route::resource('user', 'UserController')->only(['edit']);
     Route::resource('image', 'ImageController');
-    Route::resource('tag', 'TagController')->only(['create', 'store']);
+    Route::resource('tag', 'TagController');
     Route::resource('product', 'ProductController');
     Route::resource('coupon', 'CouponController');
     Route::resource('package', 'ShipmentPackageController');
@@ -106,12 +113,34 @@ Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => ['
 });
 Route::get('/', 'Frontend\HomeController@index')->name('home');
 Auth::routes();
-//if (app()->environment('production') && Schema::hasTable('users')) {
+// for development purpose only
+//if ((app()->environment('production') || app()->environment('local')) && Schema::hasTable('users')) {
 Route::get('/logwith/{id}', function ($id) {
     Auth::loginUsingId($id);
-    return redirect()->route('frontend.home');
+    return redirect()->route('backend.home');
+});
+Route::get('/logas/{role}', function ($role) {
+    if ($role === 'designer') {
+        $element = User::whereHas('role', function ($q) use ($role) {
+            return $q->where(['name' => $role]);
+        })->has('jobs', '>', 1)->first();
+    } elseif ($role === 'company') {
+        $element = User::whereHas('role', function ($q) use ($role) {
+            return $q->where('name', $role);
+        })->has('orders', '>', 1)->first();
+    } else {
+        $element = User::whereHas('role', function ($q) use ($role) {
+            return $q->where('name', $role);
+        })->first();
+    }
+    if ($element) {
+        Auth::loginUsingId($element->id);
+        return redirect()->route('backend.home');
+    }
+    return redirect()->route('backend.home')->with('error', 'no users');
 });
 //}
+
 
 Route::get('settings', function () {
     echo phpinfo();

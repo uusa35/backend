@@ -21,7 +21,8 @@
     <link href="{{ asset('images/logo.png') }}" rel="shortcut icon" type="image/png">
 </head>
 
-<body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white page-md">
+{{--<body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white page-md">--}}
+<body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid page-md">
 {{--<body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid page-sidebar-closed">--}}
 {{--<body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">--}}
 @include('backend.partials.nav')
@@ -30,7 +31,6 @@
     @include('backend.partials.sidebar')
     <div class="page-content-wrapper">
         <div class="page-content" style="min-height: 800px;">
-            @include('backend.partials.breadcrumbs')
             @include('backend.partials.notifications')
             @include('backend.partials._confirm_delete_modal')
             @section('content')

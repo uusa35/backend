@@ -28,7 +28,9 @@ class CreateUsersTable extends Migration
             $table->string('mobile')->nullable();
             $table->string('phone')->nullable();
             $table->string('fax')->nullable();
-            $table->string('avatar')->nullable();
+            $table->string('image')->nullable();
+            $table->string('banner')->nullable();
+            $table->string('bg')->nullable();
             $table->string('address')->nullable();
             $table->string('area')->nullable();
             $table->string('block')->nullable();

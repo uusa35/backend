@@ -9,7 +9,7 @@ use App\Core\Services\Image\PrimaryImageService;
 
 use App\Http\Requests;
 
-class AdController extends PrimaryController
+class CommercialController extends PrimaryController
 {
     public $ad;
     public $image;

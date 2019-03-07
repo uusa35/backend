@@ -24,6 +24,8 @@ return [
     */
 
     'view' => 'frontend.wokiee.four.partials.breadcrumbs',
+//    'view' => 'backend.partials.breadcrumbs',
+//    'view' => 'breadcrumbs::bootstrap3',
 
     /*
     |--------------------------------------------------------------------------

@@ -7,40 +7,40 @@
     </a>
     <ul class="sub-menu">
         <li class="nav-item ">
-            <a href="{{ route('backend.product.index') }}" class="nav-link ">
+            <a href="{{ route('backend.admin.product.index') }}" class="nav-link ">
                 <i class="fa fa-fw fa-product-hunt"></i>
                 <span class="title">All Products</span>
                 <span class="arrow"></span>
             </a>
         </li>
         <li class="nav-item ">
-            <a href="{{ route('backend.product.index',['type' => 'active']) }}" class="nav-link ">
+            <a href="{{ route('backend.admin.product.index',['type' => 'active']) }}" class="nav-link ">
                 <i class="fa fa-fw fa-product-hunt"></i>
                 <span class="title">Active Products</span>
                 <span class="arrow"></span>
             </a>
         </li>
         <li class="nav-item ">
-            <a href="{{ route('backend.product.index',['type' => 'on_sale']) }}" class="nav-link ">
+            <a href="{{ route('backend.admin.product.index',['type' => 'on_sale']) }}" class="nav-link ">
                 <i class="fa fa-fw fa-percent"></i>
                 <span class="title">On Sale Products</span>
                 <span class="arrow"></span>
             </a>
         </li>
         <li class="nav-item ">
-            <a href="{{ route('backend.product.create') }}" class="nav-link ">
+            <a href="{{ route('backend.admin.product.create') }}" class="nav-link ">
                 <i class="fa fa-fw fa-plus-square"></i>
                 <span class="title">Create New Product</span>
                 <span class="arrow"></span>
             </a>
         </li>
-        <li class="nav-item ">
-            <a href="{{ route('backend.product.trashed') }}" class="nav-link ">
-                <i class="fa fa-fw fa-recycle"></i>
-                <span class="title">Trashed</span>
-                <span class="arrow"></span>
-            </a>
-        </li>
+        {{--<li class="nav-item ">--}}
+            {{--<a href="{{ route('backend.admin.product.trashed') }}" class="nav-link ">--}}
+                {{--<i class="fa fa-fw fa-recycle"></i>--}}
+                {{--<span class="title">Trashed</span>--}}
+                {{--<span class="arrow"></span>--}}
+            {{--</a>--}}
+        {{--</li>--}}
     </ul>
 </li>
 <li class="nav-item {{ activeItem('user') }}">
@@ -325,21 +325,21 @@
 </li>
 {{--brands--}}
 <li class="nav-item {{ activeItem('brand') }}">
-    <a href="{{ route('backend.brand.index') }}" class="nav-link nav-toggle">
+    <a href="{{ route('backend.admin.brand.index') }}" class="nav-link nav-toggle">
         <i class="fa fa-fw fa-shopping-bag"></i>
         <span class="title">Brands</span>
         <span class="arrow"></span>
     </a>
     <ul class="sub-menu">
         <li class="nav-item ">
-            <a href="{{ route('backend.brand.index') }}" class="nav-link nav-toggle">
+            <a href="{{ route('backend.admin.brand.index') }}" class="nav-link nav-toggle">
                 <i class="fa fa-fw fa-shopping-bag"></i>
                 <span class="title">All Brands</span>
                 <span class="arrow"></span>
             </a>
         </li>
         <li class="nav-item ">
-            <a href="{{ route('backend.brand.create') }}" class="nav-link nav-toggle">
+            <a href="{{ route('backend.admin.brand.create') }}" class="nav-link nav-toggle">
                 <i class="fa fa-fw fa-plus-square-o"></i>
                 <span class="title">New Brand</span>
                 <span class="arrow"></span>
@@ -348,21 +348,21 @@
     </ul>
 </li>
 <li class="nav-item {{ activeItem('color') }}">
-    <a href="{{ route('backend.color.index') }}" class="nav-link nav-toggle">
+    <a href="{{ route('backend.admin.color.index') }}" class="nav-link nav-toggle">
         <i class="fa fa-fw fa-paint-brush"></i>
         <span class="title">Colors</span>
         <span class="arrow"></span>
     </a>
     <ul class="sub-menu">
         <li class="nav-item ">
-            <a href="{{ route('backend.color.index') }}" class="nav-link nav-toggle">
+            <a href="{{ route('backend.admin.color.index') }}" class="nav-link nav-toggle">
                 <i class="fa fa-fw fa-list-alt"></i>
                 <span class="title">Colors List</span>
                 <span class="arrow"></span>
             </a>
         </li>
         <li class="nav-item ">
-            <a href="{{ route('backend.color.create') }}" class="nav-link nav-toggle">
+            <a href="{{ route('backend.admin.color.create') }}" class="nav-link nav-toggle">
                 <i class="fa fa-fw fa-paint-brush"></i>
                 <span class="title">Create New Color</span>
                 <span class="arrow"></span>
@@ -371,21 +371,21 @@
     </ul>
 </li>
 <li class="nav-item {{ activeItem('order') }}">
-    <a href="{{ route('backend.order.index') }}" class="nav-link nav-toggle">
+    <a href="{{ route('backend.admin.order.index') }}" class="nav-link nav-toggle">
         <i class="fa fa-fw fa-money"></i>
         <span class="title">Orders</span>
         <span class="arrow"></span>
     </a>
     <ul class="sub-menu">
         <li class="nav-item ">
-            <a href="{{ route('backend.order.index') }}" class="nav-link nav-toggle">
+            <a href="{{ route('backend.admin.order.index') }}" class="nav-link nav-toggle">
                 <i class="fa fa-fw fa-pie-chart"></i>
                 <span class="title">All Orders</span>
                 <span class="arrow"></span>
             </a>
         </li>
         <li class="nav-item ">
-            <a href="{{ route('backend.order.index',['status' => 'success']) }}"
+            <a href="{{ route('backend.admin.order.index',['status' => 'success']) }}"
                class="nav-link nav-toggle">
                 <i class="fa fa-fw fa-pie-chart"></i>
                 <span class="title">Successful Orders</span>
@@ -393,7 +393,7 @@
             </a>
         </li>
         <li class="nav-item ">
-            <a href="{{ route('backend.order.index',['status' => 'failed']) }}" class="nav-link nav-toggle">
+            <a href="{{ route('backend.admin.order.index',['status' => 'failed']) }}" class="nav-link nav-toggle">
                 <i class="fa fa-fw fa-pie-chart"></i>
                 <span class="title">Failed Orders</span>
                 <span class="arrow"></span>
@@ -402,21 +402,21 @@
     </ul>
 </li>
 <li class="nav-item {{ activeItem('size') }}">
-    <a href="{{ route('backend.size.index') }}" class="nav-link nav-toggle">
+    <a href="{{ route('backend.admin.size.index') }}" class="nav-link nav-toggle">
         <i class="fa fa-fw fa-tags"></i>
         <span class="title">Sizes</span>
         <span class="arrow"></span>
     </a>
     <ul class="sub-menu">
         <li class="nav-item ">
-            <a href="{{ route('backend.size.index') }}" class="nav-link nav-toggle">
+            <a href="{{ route('backend.admin.size.index') }}" class="nav-link nav-toggle">
                 <i class="fa fa-fw fa-list-ul"></i>
                 <span class="title">Size List</span>
                 <span class="arrow"></span>
             </a>
         </li>
         <li class="nav-item ">
-            <a href="{{ route('backend.size.create') }}" class="nav-link nav-toggle">
+            <a href="{{ route('backend.admin.size.create') }}" class="nav-link nav-toggle">
                 <i class="fa fa-fw fa-pie-chart"></i>
                 <span class="title">Create New Size</span>
                 <span class="arrow"></span>
@@ -425,42 +425,42 @@
     </ul>
 </li>
 <li class="nav-item {{ activeItem('question',['survey','answer']) }}">
-    <a href="{{ route('backend.survey.index') }}" class="nav-link nav-toggle">
+    <a href="{{ route('backend.admin.survey.index') }}" class="nav-link nav-toggle">
         <i class="fa fa-fw fa-th-list"></i>
         <span class="title">Surveys</span>
         <span class="arrow"></span>
     </a>
     <ul class="sub-menu">
         <li class="nav-item ">
-            <a href="{{ route('backend.survey.index') }}" class="nav-link nav-toggle">
+            <a href="{{ route('backend.admin.survey.index') }}" class="nav-link nav-toggle">
                 <i class="fa fa-fw fa-list-ul"></i>
                 <span class="title">Surveys List</span>
                 <span class="arrow"></span>
             </a>
         </li>
         <li class="nav-item ">
-            <a href="{{ route('backend.question.index') }}" class="nav-link nav-toggle">
+            <a href="{{ route('backend.admin.question.index') }}" class="nav-link nav-toggle">
                 <i class="fa fa-fw fa-list-ul"></i>
                 <span class="title">Questions List</span>
                 <span class="arrow"></span>
             </a>
         </li>
         <li class="nav-item ">
-            <a href="{{ route('backend.answer.index') }}" class="nav-link nav-toggle">
+            <a href="{{ route('backend.admin.answer.index') }}" class="nav-link nav-toggle">
                 <i class="fa fa-fw fa-magic"></i>
                 <span class="title">Answers List</span>
                 <span class="arrow"></span>
             </a>
         </li>
         <li class="nav-item ">
-            <a href="{{ route('backend.survey.create') }}" class="nav-link nav-toggle">
+            <a href="{{ route('backend.admin.survey.create') }}" class="nav-link nav-toggle">
                 <i class="fa fa-fw fa-plus-circle"></i>
                 <span class="title">Create New Survey</span>
                 <span class="arrow"></span>
             </a>
         </li>
         {{--<li class="nav-item ">--}}
-        {{--<a href="{{ route('backend.survey.create') }}" class="nav-link nav-toggle">--}}
+        {{--<a href="{{ route('backend.admin.survey.create') }}" class="nav-link nav-toggle">--}}
         {{--<i class="fa fa-fw fa-question-circle-o"></i>--}}
         {{--<span class="title">Create New Question</span>--}}
         {{--<span class="arrow"></span>--}}
@@ -476,21 +476,21 @@
     </ul>
 </li>
 <li class="nav-item {{ activeItem('questionnaire') }}">
-    <a href="{{ route('backend.questionnaire.index') }}" class="nav-link nav-toggle">
+    <a href="{{ route('backend.admin.questionnaire.index') }}" class="nav-link nav-toggle">
         <i class="fa fa-fw fa-question-circle"></i>
         <span class="title">Questionnaires</span>
         <span class="arrow"></span>
     </a>
     <ul class="sub-menu">
         <li class="nav-item ">
-            <a href="{{ route('backend.questionnaire.index') }}" class="nav-link nav-toggle">
+            <a href="{{ route('backend.admin.questionnaire.index') }}" class="nav-link nav-toggle">
                 <i class="fa fa-fw fa-list-ul"></i>
                 <span class="title">Questionnaire List</span>
                 <span class="arrow"></span>
             </a>
         </li>
         <li class="nav-item ">
-            <a href="{{ route('backend.questionnaire.create') }}" class="nav-link nav-toggle">
+            <a href="{{ route('backend.admin.questionnaire.create') }}" class="nav-link nav-toggle">
                 <i class="fa fa-fw fa-pie-chart"></i>
                 <span class="title">Create New Questionnaire</span>
                 <span class="arrow"></span>
