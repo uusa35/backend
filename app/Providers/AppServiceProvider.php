@@ -4,6 +4,7 @@ namespace App\Providers;
 
 
 use Carbon\Carbon;
+use Carbon\Translator;
 use Illuminate\Support\ServiceProvider;
 use Laracasts\Generators\GeneratorsServiceProvider;
 
@@ -16,7 +17,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
         Carbon::setLocale(app()->getLocale());
     }
 

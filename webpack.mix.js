@@ -11,20 +11,19 @@ const mix = require('laravel-mix');
  |
  */
 mix.js('resources/assets/js/app.js', 'public/js').version()
-    .sass('resources/assets/sass/app.scss', 'public/css').version();
-mix.styles([
-    '../wokiee-ecommerce-html/html/css/rtl.css'
-], 'public/css/frontend-rtl.css').version();
+    .sass('resources/assets/sass/app.scss', 'public/css').version()
+    .sass('../wokiee-ecommerce-html/html/css/my-theme.scss','public/css/wokiee-theme-sass.css').version()
+    .sass('../wokiee-ecommerce-html/html/css/rtl.scss','public/css/wokiee-theme-sass-rtl.css').version();
 mix.styles(['resources/assets/css/frontend-custom-ar.css'], 'public/css/frontend-custom-ar.css').version();
 mix.styles(['resources/assets/css/frontend-custom-en.css'], 'public/css/frontend-custom-en.css').version();
 // frontend
 // wokiee
 mix.styles([
-    'resources/assets/css/wokiee-theme-custom.css',
+    // 'resources/assets/css/wokiee-theme-custom.css',
     './node_modules/font-awesome/css/font-awesome.min.css',
     './node_modules/@chenfengyuan/datepicker/dist/datepicker.css',
     'resources/assets/css/frontend-custom.css'
-], 'public/css/wokiee.demo.css').version();
+], 'public/css/plugins.css').version();
 // frontend js
 // wokiee
 mix.scripts([

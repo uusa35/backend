@@ -23,9 +23,10 @@ class CreateProductsTable extends Migration
             $table->string('delivery_time')->nullable();
             $table->boolean('on_sale')->default(0);
             $table->boolean('on_home')->default(0);
-            $table->decimal('price',6,2)->unsigned();
-            $table->decimal('weight',4,2)->unsigned();
-            $table->decimal('sale_price',6,2)->unsigned()->nullable();
+            $table->boolean('is_available')->default(0);
+            $table->decimal('price', 6, 2)->unsigned();
+            $table->decimal('weight', 4, 2)->unsigned();
+            $table->decimal('sale_price', 6, 2)->unsigned()->nullable();
             $table->string('size_chart_image')->nullable();
             $table->text('description_en')->nullable();
             $table->text('description_ar')->nullable();

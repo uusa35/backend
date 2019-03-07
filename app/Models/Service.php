@@ -7,14 +7,16 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Service extends PrimaryModel
 {
-    use SoftDeletes;
+    use SoftDeletes, SellingModelHelpers;
     protected $localeStrings = ['name', 'description', 'notes'];
     protected $guarded = [''];
+    protected $appends = ['UId'];
     protected $dates = ['created_at', 'deleted_at', 'start_sale', 'end_sale'];
     protected $casts = [
         'on_sale' => 'boolean',
         'on_home' => 'boolean',
         'active' => 'boolean',
+        'is_available' => 'boolean',
     ];
 
     public function user()
@@ -24,7 +26,7 @@ class Service extends PrimaryModel
 
     public function timings()
     {
-        return $this->hasMany(Timing::class)->orderBy('day_no','desc');
+        return $this->hasMany(Timing::class)->orderBy('day_no', 'desc');
     }
 
     public function categories()

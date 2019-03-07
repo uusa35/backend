@@ -17,6 +17,7 @@ $factory->define(Product::class, function (Faker $faker) use ($fakerAr) {
         'on_new' => $faker->boolean,
         'on_sale' => $faker->boolean,
         'on_home' => $faker->boolean,
+        'is_available' => $faker->boolean,
         'delivery_time' => $faker->numberBetween(1, 9),
         'price' => $faker->randomFloat(3, 10, 200),
         'sale_price' => function ($array) {
@@ -37,6 +38,6 @@ $factory->define(Product::class, function (Faker $faker) use ($fakerAr) {
         'has_attribute' => $faker->boolean,
         'video_url_one' => 'http://www.youtube.com/embed/GhyKqj_P2E4',
         'video_url_two' => 'http://www.youtube.com/embed/GhyKqj_P2E4',
-        'qty' => $faker->numberBetween(1,99)
+        'qty' => $faker->numberBetween(1, 99)
     ];
 });

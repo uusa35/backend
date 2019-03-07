@@ -57,25 +57,31 @@ function getCouponValue()
 {
     $coupon = session()->has('coupon') ? session()->get('coupon') : null;
     if (!is_null($coupon)) {
-        return $coupon->is_percentage ? (Cart::subtotal() * ($coupon->value / 100)) : $coupon->value;
+        return $coupon->is_percentage ? (Cart::total() * ($coupon->value / 100)) : $coupon->value;
     }
     return 0;
 }
 
 function getCartNetTotal()
 {
-    $cartSubTotalVal = str_replace(',', '', Cart::subtotal());
-    return (float)$cartSubTotalVal - (float)getCouponValue();
+    $cartTotalVal = str_replace(',', '', Cart::total());
+    return (float)$cartTotalVal - (float)getCouponValue();
 }
 
 
 function getDeliveryServiceCost()
 {
     $settings = Setting::first();
-    $cartValue = Cart::subtotal();
+    $cartValue = Cart::total();
     if ($cartValue >= $settings->delivery_service_minimum_charge) {
         return 0;
     }
     return $settings->delivery_service_cost;
 }
 
+
+function getConvertedPrice($price)
+{
+    $currentCurrency = session()->get('currency');
+    return $price * $currentCurrency->exchange_rate;
+}

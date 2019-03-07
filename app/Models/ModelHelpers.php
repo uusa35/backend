@@ -5,7 +5,6 @@
  * Date: 5/10/18
  * Time: 2:34 PM
  */
-
 namespace App\Models;
 
 use Carbon\Carbon;
@@ -32,31 +31,6 @@ trait ModelHelpers
         return $q->has('images', '>', 0);
     }
 
-    public function scopeOnSaleOnHome($q)
-    {
-        return $q->onSale()->onHome();
-    }
-
-    public function scopeOnSale($q)
-    {
-        return $q->where('on_sale', true)->whereDate('end_sale', '>', Carbon::now());
-    }
-
-    public function getIsOnSaleAttribute()
-    {
-        return $this->on_sale && Carbon::parse($this->end_sale) > Carbon::now();
-    }
-
-    public function scopeHotDeals($q)
-    {
-        return $q->onSale()->where('is_hot_deal', true);
-    }
-
-    public function getIsReallyHotAttribute()
-    {
-        return $this->isOnSale && $this->is_hot_deal;
-    }
-
     public function getImageLargeLinkAttribute()
     {
         return asset(env('LARGE') . $this->image);
@@ -75,29 +49,6 @@ trait ModelHelpers
     public function getPathLinkAttribute()
     {
         return asset(env('FILES') . $this->path);
-    }
-
-    public function getFinalPriceAttribute()
-    {
-        return $this->isOnSale ? $this->sale_price : $this->price;
-    }
-
-    public function getConvertedFinalPriceAttribute()
-    {
-        $currentCurrency = session()->get('currency');
-        return $this->finalPrice * $currentCurrency->exchange_rate;
-    }
-
-    public function getConvertedPriceAttribute()
-    {
-        $currentCurrency = session()->get('currency');
-        return $this->price * $currentCurrency->exchange_rate;
-    }
-
-    public function getConvertedSalePriceAttribute()
-    {
-        $currentCurrency = session()->get('currency');
-        return $this->sale_price * $currentCurrency->exchange_rate;
     }
 
 }

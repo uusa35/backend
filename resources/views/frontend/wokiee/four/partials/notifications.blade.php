@@ -8,20 +8,27 @@
                             <i class="fa fa-2x fa-check-circle-o fa-fw"></i>
                         </div>
                         <div class="col-lg-11">
-                            <button type="button" class="close" data-dismiss="alert">&times;</button>
-                            @if(is_array($success))
-                                @foreach ($success as $m)
-                                    {{ $m }}
-                                @endforeach
-                            @else
-                                {{ $success }}
-                            @endif
+                            <div class="row">
+                                <div class="col-11">
+                                    @if(is_array($success))
+                                        @foreach ($success as $m)
+                                            {{ $m }}
+                                        @endforeach
+                                    @else
+                                        {{ $success }}
+                                    @endif
+                                </div>
+                                <div class="col-1">
+                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             @endif
 
             @if (isset($error) || $error = session()->get('error'))
+                {{ dd('here') }}
                 <div class="alert alert-danger alert-block">
                     <div class="row">
                         <div class="col-lg-1">

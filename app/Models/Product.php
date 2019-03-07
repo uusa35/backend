@@ -7,16 +7,17 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Product extends PrimaryModel
 {
-    use ProductHelpers, SoftDeletes, ModelHelpers;
+    use ProductHelpers, SellingModelHelpers, ModelHelpers, SoftDeletes;
     protected $localeStrings = ['name', 'description', 'notes'];
     protected $guarded = [''];
-    protected $appends = ['isOnSale'];
+    protected $appends = ['UId'];
     protected $dates = ['created_at', 'deleted_at', 'start_sale', 'end_sale'];
     protected $casts = [
         'on_sale' => 'boolean',
-        'on_sale_on_homepage' => 'boolean',
+        'on_home' => 'boolean',
         'active' => 'boolean',
-        'home_delivery_availability' => 'boolean'
+        'home_delivery_availability' => 'boolean',
+        'is_available' => 'boolean',
     ];
 
 
@@ -59,6 +60,7 @@ class Product extends PrimaryModel
     {
         return $this->belongsToMany(Brand::class, 'brand_product');
     }
+
     public function images()
     {
         return $this->morphMany(Image::class, 'imagable');
@@ -79,6 +81,7 @@ class Product extends PrimaryModel
     {
         return $this->morphToMany(Tag::class, 'taggable');
     }
+
     // ManyToMay Morph
     public function collections()
     {

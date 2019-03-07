@@ -8,6 +8,7 @@ class Timing extends PrimaryModel
 {
     protected $dates = ['created_at', 'updated_at'];
     protected $localeStrings = ['notes','day_name'];
+    protected $appends = ['start_time','end_time'];
 
     public function days()
     {
@@ -42,5 +43,13 @@ class Timing extends PrimaryModel
     public function getEndDutyAttribute()
     {
         return Carbon::parse($this->end)->format('g:ia');
+    }
+
+    public function getStartTimeAttribute() {
+        return Carbon::parse($this->start)->format('h:i a');
+    }
+
+    public function getEndTimeAttribute() {
+        return Carbon::parse($this->end)->format('h:i a');
     }
 }

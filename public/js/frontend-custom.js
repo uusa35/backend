@@ -1,1 +1,134 @@
-!function(e){var t={};function r(n){if(t[n])return t[n].exports;var a=t[n]={i:n,l:!1,exports:{}};return e[n].call(a.exports,a,a.exports,r),a.l=!0,a.exports}r.m=e,r.c=t,r.d=function(e,t,n){r.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:n})},r.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},r.t=function(e,t){if(1&t&&(e=r(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var n=Object.create(null);if(r.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var a in e)r.d(n,a,function(t){return e[t]}.bind(null,a));return n},r.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return r.d(t,"a",t),t},r.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},r.p="/",r(r.s=1)}({1:function(e,t,r){e.exports=r("bRUd")},bRUd:function(e,t){$(document).ready(function(){console.log("frontend-custom.js is ready"),$("#ModalquickView").on("show.bs.modal",function(e){console.log("showing the modal");var t=$(e.relatedTarget).data("id"),r=$(e.relatedTarget).data("name"),n=$(e.relatedTarget).data("image"),a=$(e.relatedTarget).data("description"),o=$(e.relatedTarget).data("price"),u=$(e.relatedTarget).data("currency-name"),d=$(e.relatedTarget).data("url");console.log("the name",r),$(e.currentTarget).find("#element-id").text(t),$(e.currentTarget).find("#element-image").attr("src",n),$(e.currentTarget).find("#element-name").text(r),$(e.currentTarget).find("#element-description").text(a),$(e.currentTarget).find("#element-price").text(o),$(e.currentTarget).find("#element-currency-name").text(u),$(e.currentTarget).find("#element-url").attr("href",d)})})}});
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "/";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./resources/assets/js/frontend-custom.js":
+/*!************************************************!*\
+  !*** ./resources/assets/js/frontend-custom.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(document).ready(function () {
+  console.log('frontend-custom.js is ready');
+  $('#ModalquickView').on('show.bs.modal', function (e) {
+    console.log('showing the modal'); //get data-id attribute of the clicked element
+
+    var id = $(e.relatedTarget).data('id');
+    var name = $(e.relatedTarget).data('name');
+    var image = $(e.relatedTarget).data('image');
+    var description = $(e.relatedTarget).data('description');
+    var price = $(e.relatedTarget).data('price');
+    var currency = $(e.relatedTarget).data('currency-name');
+    var url = $(e.relatedTarget).data('url'); //populate the textbox
+
+    console.log('the name', name);
+    $(e.currentTarget).find('#element-id').text(id);
+    $(e.currentTarget).find('#element-image').attr('src', image);
+    $(e.currentTarget).find('#element-name').text(name);
+    $(e.currentTarget).find('#element-description').text(description);
+    $(e.currentTarget).find('#element-price').text(price);
+    $(e.currentTarget).find('#element-currency-name').text(currency);
+    $(e.currentTarget).find('#element-url').attr('href', url);
+  });
+});
+
+/***/ }),
+
+/***/ 1:
+/*!******************************************************!*\
+  !*** multi ./resources/assets/js/frontend-custom.js ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! /Users/mac/Sites/mallr/resources/assets/js/frontend-custom.js */"./resources/assets/js/frontend-custom.js");
+
+
+/***/ })
+
+/******/ });

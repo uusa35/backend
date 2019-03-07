@@ -13,7 +13,9 @@
 
 <body>
 
-@include('frontend.wokiee.four.partials.loader')
+@if(!app()->isLocal())
+    @include('frontend.wokiee.four.partials.loader')
+@endif
 @section('header')
     @include('frontend.wokiee.four.partials.header')
 @show

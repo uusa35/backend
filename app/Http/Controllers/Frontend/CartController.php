@@ -33,8 +33,35 @@ class CartController extends Controller
     }
 
 
+    public function addServiceToCart(Request $request, Service $service)
+    {
+        // Check all orders that may have metas with the same service and timing on the same date !!!
+        $orderMetasWithSameService = OrderMeta::where(['service_id' => $request->service_id, 'timing_id' => $request->timing_id])->whereDate('service_date', '=', Carbon::parse($request->day_selected_format))->get();
+        if ($orderMetasWithSameService->isEmpty()) {
+            $element = $this->cart->content()->where('id', '=', $service->UId)->first();
+            if ($element) {
+                $this->cart->remove($element->rowId);
+            }
+            $this->cart->add($service->UId, $service->name, 1, $service->finalPrice,
+                [
+                    'type' => 'service',
+                    'service_id' => $service->id,
+                    'day_selected' => Carbon::parse($request->day_selected_format),
+                    'timing_id' => $request->timing_id,
+                    'notes' => $request->notes,
+                    'service' => $service,
+                    'company' => $service->user->name,
+                    'timing' => Timing::whereId($request->timing_id)->first()
+                ]
+            );
+            return true;
+        }
+        return false;
+    }
+
     public function addService(Request $request)
     {
+
         // Note that Month/Day/Year that's the default
         $validator = validator($request->all(),
             [
@@ -42,86 +69,22 @@ class CartController extends Controller
                 'timing_id' => 'required|exists:timings,id',
                 'user_id' => 'required|exists:users,id',
                 'type' => 'required|alpha',
+                'notes' => 'max:500',
                 'day_selected_format' => 'required|date_format:m/d/Y',
             ]);
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator);
         }
-        // Check all orders that may have metas with the same service and timing on the same date !!!
-        $orderMetasWithSameService = OrderMeta::where(['service_id' => $request->service_id, 'timing_id' => $request->timing_id])->whereDate('service_date', '=', Carbon::parse($request->day_selected_format))->get();
-        if ($orderMetasWithSameService->isEmpty()) {
-            $service = Service::whereId($request->service_id)->first();
-            $timing = Timing::whereId($request->timing_id)->first();
-            return 'true metas are empty';
-        } else {
-            return redirect()->back()->with('error', trans('message.this_timing_is_not_already_booked_please_try_another_timing'));
+        $service = Service::whereId($request->service_id)->first();
+        if ($this->addServiceToCart($request, $service)) {
+            return redirect()->back()->with('success', trans('message.service_added_to_cart_successfully'));
         }
-
+        return redirect()->back()->with('error', trans('message.service_is_not_added_to_cart'));
     }
 
     public function addItem(Request $request)
     {
-        $validator = validator($request->all(),
-            [
-                'product_id' => 'required|exists:products,id',
-                'color_id' => 'required|exists:colors,id',
-                'size_id' => 'required|exists:sizes,id',
-                'qty' => 'required|integer|min:1',
-            ]);
-        if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator);
-        }
-        $product = Product::whereId($request->product_id)->first();
-        $productAttribute = ProductAttribute::where([
-            'color_id' => $request->color_id,
-            'size_id' => $request->size_id,
-            'product_id' => $request->product_id
-        ])->with('size', 'color')->first();
 
-        if (!$this->checkStock($product, $productAttribute, request('qty'))) {
-            return redirect()->back()->with('error', trans('general.maximum_qty_order_exceed_the_limit'));
-        }
-
-        if ($this->cart->count() > 0) {
-            $element = $this->cart->content()->where('id', '=', $productAttribute->id)->first();
-            if ($element) {
-                if ($element->qty + $request->qty < $productAttribute->qty) {
-                    $this->cart->add($productAttribute->id, $product->name, $request->qty, $product->finalPrice,
-                        [
-                            'size_id' => $productAttribute->size_id,
-                            'color_id' => $productAttribute->color_id,
-                            'sizeName' => $productAttribute->sizeName,
-                            'colorName' => $productAttribute->colorName,
-                            'product' => $product
-                        ]
-                    );
-                    return redirect()->back()->with('success', trans('message.item_added_to_cart'));
-                } else {
-                    return redirect()->back()->with('error', trans('message.item_limit_exceed'));
-                }
-            } else {
-                $this->cart->add($productAttribute->id, $product->name, $request->qty, $product->finalPrice,
-                    [
-                        'size_id' => $productAttribute->size_id,
-                        'color_id' => $productAttribute->color_id,
-                        'sizeName' => $productAttribute->sizeName,
-                        'colorName' => $productAttribute->colorName,
-                        'product' => $product
-                    ]
-                );
-                return redirect()->back()->with('success', trans('message.item_added_to_cart'));
-            }
-        }
-        $this->cart->add($productAttribute->id, $product->name, $request->qty, $product->finalPrice,
-            [
-                'size_id' => $productAttribute->size_id,
-                'color_id' => $productAttribute->color_id,
-                'sizeName' => $productAttribute->sizeName,
-                'colorName' => $productAttribute->colorName,
-                'product' => $product
-            ]
-        );
-        return redirect()->back()->with('success', trans('message.item_added_to_cart'));
     }
 
     public function checkStock(Product $product, ProductAttribute $productAttribute, $qty)
@@ -134,10 +97,8 @@ class CartController extends Controller
 
     public function removeItem($id)
     {
-        Cart::search(function ($item, $rowId) use ($id) {
-            $item->id == $id ? Cart::remove($rowId) : null;
-        });
-        return redirect()->route('frontend.cart.index')->with('success', trans('message.item_removed'));
+        $this->cart->remove($id);
+        return redirect()->back()->with('success', 'general.cart_item_removed_successfully');
     }
 
     public function clearCart()

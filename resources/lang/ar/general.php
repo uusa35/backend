@@ -248,5 +248,9 @@ return array(
     'contact_us' => 'إتصل بنا',
     'add_to_wish_list' => 'أضف لقائمة الأمنيات',
     'available_timings' => 'الأوقات المتاحة',
-    'company_name' => 'اسم الشركة'
+    'company_name' => 'اسم الشركة',
+    'choosen_service' => 'الخدمة التي تم اختيارها',
+    'day_selected' => 'يوم التنفيذ',
+    'company_name' => 'اسم الشركة',
+    'start_time' => 'وقت البدأ',
 );
