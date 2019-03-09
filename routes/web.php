@@ -123,11 +123,11 @@ Route::get('/logas/{role}', function ($role) {
     if ($role === 'designer') {
         $element = User::whereHas('role', function ($q) use ($role) {
             return $q->where(['name' => $role]);
-        })->has('jobs', '>', 1)->first();
+        })->has('collections', '>', 0)->first();
     } elseif ($role === 'company') {
         $element = User::whereHas('role', function ($q) use ($role) {
             return $q->where('name', $role);
-        })->has('orders', '>', 1)->first();
+        })->has('services', '>', 0)->first();
     } else {
         $element = User::whereHas('role', function ($q) use ($role) {
             return $q->where('name', $role);

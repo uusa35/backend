@@ -15,19 +15,15 @@
                    name="day_selected_format">
             <div class="docs-datepicker-container" style="display: block;"></div>
         </div>
-
         <div class="col-item">
-            <div class="docs-datepicker-container">
-            </div>
+            <div class="docs-datepicker-container"></div>
         </div>
-
-
     </div>
 </div>
 
 <div class="modal  fade" id="chooseTimeModal" tabindex="-1" role="dialog" aria-label="chooseTimeModalLabel"
      aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span
@@ -37,22 +33,13 @@
                 <h4>{{ trans('general.available_timings') }}</h4>
                 <div class="tt-table-responsive">
                     <table class="tt-table-shop-01">
-                        <thead>
-                        <tr>
-                            <th>{{ trans('general.day') }}</th>
-                            <th>{{ trans('general.start_timing') }}</th>
-                            <th>{{ trans('general.end_timing') }}</th>
-                            <th>{{ trans('general.notes') }}</th>
-                            <th>{{ trans('general.choose') }}</th>
-                        </tr>
-                        </thead>
                         <tbody>
                         @foreach($element->timings as $timing)
                             <tr class="timing-element-{{ $timing->day_no }}" class="d-none">
-                                <td>{{ $timing->day_name }}</td>
-                                <td>{{ \Carbon\Carbon::parse($timing->start)->format('h:m A') }}</td>
-                                <td>{{ \Carbon\Carbon::parse($timing->end)->format('h:m A') }}</td>
-                                <td>{{ $timing->notes }}</td>
+                                {{--<td>{{ $timing->day_name }}</td>--}}
+                                {{--<td>{{ \Carbon\Carbon::parse($timing->start)->format('h:m A') }}</td>--}}
+{{--                                <td>{{ \Carbon\Carbon::parse($timing->end)->format('h:m A') }}</td>--}}
+                                {{--<td>{{ $timing->notes }}</td>--}}
                                 <td><a href="#" class="btn timing-start-end" data-dismiss="modal"
                                        data-id="{{ $timing->id }}"
                                        data-service-id="{{ $element->id }}"
@@ -62,7 +49,10 @@
                                        data-timing-end="{{ $timing->end }}"
                                        data-date=""
                                     >
-                                        <i class="fa fa-fw fa-clock-o"></i>{{ trans('general.choose') }}</a></td>
+                                        <i class="fa fa-fw fa-clock-o"></i>
+                                        &nbsp;&nbsp;&nbsp;
+                                        {{ \Carbon\Carbon::parse($timing->start)->format('h:m A') }}
+                                    </a></td>
                             </tr>
                         @endforeach
                         </tbody>

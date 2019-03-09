@@ -9,8 +9,8 @@ use Faker\Generator as Faker;
 $factory->define(Timing::class, function (Faker $faker) {
     return [
         'day' => Day::all()->random()->day,
-        'start' => $faker->time(),
-        'end' => $faker->time(),
+        'start' => $faker->time('H:i','now'),
+        'end' => $faker->time('H:i','after 3 hours'),
         'is_off' => $faker->boolean,
         'is_available' => $faker->boolean,
         'allow_multi_select' => $faker->boolean,

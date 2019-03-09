@@ -18,6 +18,7 @@ use App\Models\Role;
 use App\Models\ShipmentPackage;
 use App\Models\Size;
 use App\Models\Slide;
+use App\Models\Timing;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Cache as Cache;
 use Illuminate\View\View;
@@ -139,6 +140,12 @@ class ViewComposers
     public function getBrands(View $view) {
         $brands = Brand::active()->where('is_home', true)->has('products', '>', 0)->take(12)->get();
         return $view->with(compact('brands'));
+    }
+
+    public function getAllTimingsAvailable(View $view) {
+        $timings = Timing::orderBy('start','asc')->get()->pluck('start','id')->unique();
+        dd($timings);
+        return $view->with(compact('timings'));
     }
 }
 

@@ -15,6 +15,9 @@
             data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
             @can('isSuper')
                 @include('backend.partials._sidebar_super')
+            @elsecan('isAdmin')
+            @elsecan('isCompany')
+            @elseCan('isDesigner)
             @endcan
 
 

@@ -12,5 +12,6 @@ $factory->define(Area::class, function (Faker $faker) {
         'country_id' => Country::all()->random()->id,
         'longitude' => $faker->longitude,
         'latitude' => $faker->latitude,
+        'order' => $faker->numberBetween(1, 40),
     ];
 });

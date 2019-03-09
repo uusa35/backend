@@ -85,3 +85,19 @@ function getConvertedPrice($price)
     $currentCurrency = session()->get('currency');
     return $price * $currentCurrency->exchange_rate;
 }
+
+function getDayNoSelected()
+{
+    return session()->get('day_no');
+}
+
+function getDaySelected()
+{
+    return session()->get('day_selected');
+}
+
+function getTimeSelected()
+{
+    return session()->get('time_selected');
+}
+

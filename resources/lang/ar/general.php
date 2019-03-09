@@ -253,4 +253,5 @@ return array(
     'day_selected' => 'يوم التنفيذ',
     'company_name' => 'اسم الشركة',
     'start_time' => 'وقت البدأ',
+    'create_event' => 'إنشاء مناسبة'
 );
