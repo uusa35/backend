@@ -20,11 +20,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        $this->authorize('user.view', auth()->user());
         if (request()->has('role_id')) {
-            $elements = User::where('role_id', request('role_id'))->with('role', 'balance')->paginate(self::PAGINATE);
+            $elements = User::where('role_id', request('role_id'))->get();
         } else {
-            $elements = User::with('role', 'balance')->paginate(self::PAGINATE);
+            $elements = User::all();
         }
 
         return view('backend.modules.user.index', compact('elements'));

@@ -65,7 +65,6 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
     Route::resource('slide', 'SlideController');
     Route::resource('branch', 'BranchController');
     Route::resource('order', 'OrderController')->except(['destroy', 'show']);
-    Route::resource('user', 'UserController')->only(['edit']);
     Route::resource('image', 'ImageController');
     Route::resource('tag', 'TagController');
     Route::resource('product', 'ProductController');

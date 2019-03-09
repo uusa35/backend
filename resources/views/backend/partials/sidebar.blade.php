@@ -20,8 +20,6 @@
             @elseCan('isDesigner')
             @endcan
 
-
-
             {{--<li class="nav-item">--}}
             {{--<a href="javascript:;" class="nav-link nav-toggle">--}}
             {{--<i class="icon-folder"></i>--}}

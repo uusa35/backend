@@ -1,7 +1,7 @@
 @extends('backend.layouts.app')
 
 @section('breadcrumbs')
-    {{ Breadcrumbs::render('backend.user.index') }}
+    {{--{{ Breadcrumbs::render('backend.admin.user.index') }}--}}
 @endsection
 @section('content')
     <div class="row">
@@ -95,7 +95,7 @@
                                                 >
                                                     <i class="fa fa-fw fa-recycle"></i> delete</a>
                                                 <form method="post" id="delete-{{ $element->id }}"
-                                                      action="{{ route('backend.user.destroy',$element->id) }}">
+                                                      action="{{ route('backend.admin.user.destroy',$element->id) }}">
                                                     @csrf
                                                     <input type="hidden" name="_method" value="delete"/>
                                                     <button type="submit" class="btn btn-del hidden">

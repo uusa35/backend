@@ -7,7 +7,11 @@
                             src="{{ asset(env('LARGE').$settings->logo) }}" alt="{{ $settings->company }}"></a>
                 <!-- /logo -->
             </div>
-            @include('frontend.wokiee.four.partials._search_menu')
+            <div class="tt-col-obj tt-obj-search-type2">
+                <div class="tt-search-type2" style="padding-top: 10px;">
+                    @include('frontend.wokiee.four.partials._search_form')
+                </div>
+            </div>
         </div>
     </div>
     <div class="container small-header">
@@ -1000,9 +1004,9 @@
                             </div>
                             <div class="tt-dropdown-inner">
                                 <div class="tt-cart-layout">
-                                    @if(Cart::count() > 0)
-                                        @include('frontend.wokiee.four.partials._main_menu_cart_items')
-                                    @else
+                                @if(Cart::count() > 0)
+                                    @include('frontend.wokiee.four.partials._main_menu_cart_items')
+                                @else
                                     <!-- layout emty cart -->
                                         <a href="empty-cart.html" class="tt-cart-empty">
                                             <i class="icon-f-39"></i>

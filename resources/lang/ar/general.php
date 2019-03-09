@@ -253,5 +253,9 @@ return array(
     'day_selected' => 'يوم التنفيذ',
     'company_name' => 'اسم الشركة',
     'start_time' => 'وقت البدأ',
-    'create_event' => 'إنشاء مناسبة'
+    'create_event' => 'إنشاء مناسبة',
+    'choose_day' => 'أختر اليوم',
+    'choose_date' => 'أختر التاريخ',
+    'choose_timing' => 'اختر التوقيت',
+    'choose_area' => 'اختر المنطقة'
 );

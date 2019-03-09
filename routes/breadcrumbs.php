@@ -50,9 +50,9 @@ Breadcrumbs::for('backend.index', function ($trail) {
 });
 
 // Home > About
-Breadcrumbs::for('backend.user.index', function ($trail) {
+Breadcrumbs::for('backend.admin.user.index', function ($trail) {
     $trail->parent('backend.home');
-    $trail->push('user', route('backend.user.index'));
+    $trail->push('user', route('backend.admin.user.index'));
 });
 
 
