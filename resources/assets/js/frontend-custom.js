@@ -21,4 +21,5 @@ $(document).ready(function() {
         $(e.currentTarget).find('#element-currency-name').text(currency);
         $(e.currentTarget).find('#element-url').attr('href', url);
     });
+
 });

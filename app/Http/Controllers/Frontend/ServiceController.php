@@ -23,6 +23,7 @@ class ServiceController extends Controller
 
     public function search(Filters $filters)
     {
+        dd(request()->all());
         $validator = validator(request()->all(), ['search' => 'nullable']);
         if ($validator->fails()) {
             return redirect()->route('frontend.home')->withErrors($validator->messages());

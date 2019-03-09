@@ -19,5 +19,5 @@
         @include('frontend.wokiee.four.partials._products_slider_hot_deal', ['elements' => $productHotDeals])
     @endif
     {{--@include('frontend.wokiee.four.partials._services_slider',['title' => trans('general.new_arrivals'), 'elements' => $newProducts])--}}
-
+    @include('frontend.wokiee.four.partials._search_modal_home_page')
 @endsection

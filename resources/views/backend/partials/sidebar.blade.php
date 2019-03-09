@@ -17,7 +17,7 @@
                 @include('backend.partials._sidebar_super')
             @elsecan('isAdmin')
             @elsecan('isCompany')
-            @elseCan('isDesigner)
+            @elseCan('isDesigner')
             @endcan
 
 
