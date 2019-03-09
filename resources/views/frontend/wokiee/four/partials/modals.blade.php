@@ -218,7 +218,6 @@
     </div>
 </div>
 
-
 {{-- HomePage Modal--}}
 <div class="modal  fade" id="Modalnewsletter" tabindex="-1" role="dialog" aria-label="myModalLabel" aria-hidden="true"
      data-pause=2000>
@@ -232,35 +231,31 @@
             <div class="modal-body">
                 <form>
                     <div class="form-row">
-                        <input type="hidden" name="{{ $countries->where("main", true)->first()->id }}" value="1">
-                        <div class="form-group col-4">
+                        <input type="hidden" name="country_id" value="{{ $countries->where('main',true)->first()->id }}">
+                        <div class="form-group col-3">
                             <label for="date_selected" class="sr-only">{{ trans('general.day') }}</label>
                             <input type="text" class="form-control" id="day_selected"
                                    placeholder="{{ trans('general.day') }}">
                         </div>
-                        <div class="form-group col-4">
+                        <div class="form-group col-3">
                             <label for="area_id" class="sr-only">{{ trans('general.area') }}</label>
                             <select name="area_id" class="form-control">
                                 <option selected>{{ trans('general.choose_area') }}</option>
                                 @foreach($countries->where('main', true)->first()->areas as $area)
-                                    <option value="{{ $area->id }}">{{ $area->name }}</option>
+                                    <option value="{{ $area->id }}">{{ $area->slug }}</option>
                                 @endforeach
                             </select>
                         </div>
-                        <div class="form-group col-4">
+                        <div class="form-group col-3">
                             <label for="timings" class="sr-only">{{ trans('general.area') }}</label>
                             <select name="area_id" class="form-control">
                                 <option selected>{{ trans('general.choose_area') }}</option>
-                                @foreach($countries->where('main', true)->first()->areas as $area)
-                                    <option value="{{ $area->id }}">{{ $area->name }}</option>
+                                @foreach($timings as $k => $v)
+                                    <option value="{{ $k }}">{{ $v }}</option>
                                 @endforeach
                             </select>
                         </div>
-                        <div class="form-group col-4">
-                            <label for="inputPassword2" class="sr-only">Password</label>
-                            <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
-                        </div>
-                        <div class="form-group col-4">
+                        <div class="form-group col-3">
                             <button type="submit" class="btn btn-primary mb-2">Confirm identity</button>
                         </div>
                     </div>

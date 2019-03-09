@@ -143,8 +143,7 @@ class ViewComposers
     }
 
     public function getAllTimingsAvailable(View $view) {
-        $timings = Timing::orderBy('start','asc')->get()->pluck('start','id')->unique();
-        dd($timings);
+        $timings = Timing::orderBy('start','asc')->get()->pluck('startTime','id')->unique();
         return $view->with(compact('timings'));
     }
 }
