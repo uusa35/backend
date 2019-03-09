@@ -8,7 +8,7 @@
                 <!-- /logo -->
             </div>
             <div class="tt-col-obj tt-obj-search-type2">
-                <div class="tt-search-type2" style="padding-top: 10px;">
+                <div class="tt-search-type2">
                     @include('frontend.wokiee.four.partials._search_form')
                 </div>
             </div>

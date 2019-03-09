@@ -25,14 +25,14 @@ class ComposerServiceProvider extends ServiceProvider
             'frontend.modules.cart.index',
         ], 'App\Services\ViewComposers@getCartCount');
         view()->composer([
-            'frontend.*.*.home',
+            'frontend.*.*.*._search_form',
             'backend.modules.currency.create',
             'backend.modules.currency.edit',
             'backend.partials.sidebar',
         ], 'App\Services\ViewComposers@getCountries');
 
         view()->composer([
-            'frontend.*.*.home',
+            'frontend.*.*.*._search_form',
         ], 'App\Services\ViewComposers@getAllTimingsAvailable');
 
         view()->composer([

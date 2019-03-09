@@ -2,7 +2,8 @@
 <div class="tt-mobile-header">
     <div class="container-fluid">
         <div class="header-tel-info">
-            <i class="icon-f-93"></i> 777 2345 7885; +777 2345 7886
+            {{--<i class="icon-f-93"></i> 777 2345 7885; +777 2345 7886--}}
+            @include('frontend.wokiee.four.partials._search_form')
         </div>
     </div>
     <div class="container-fluid tt-top-line">
@@ -18,7 +19,7 @@
                 </button>
             </div>
             <!-- search -->
-            <div class="tt-mobile-parent-search tt-parent-box"></div>
+            {{--<div class="tt-mobile-parent-search tt-parent-box"></div>--}}
             <!-- /search -->
             <!-- cart -->
             <div class="tt-mobile-parent-cart tt-parent-box"></div>

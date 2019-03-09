@@ -1,6 +1,6 @@
 <form method="get" action="{{ route("frontend.service.search") }}">
     @csrf
-    <div class="form-row">
+    <div class="form-row justify-content-center align-items-center">
         <input type="hidden" name="country_id"
                value="{{ $countries->where('main',true)->first()->id }}">
         <input type="hidden" name="day_selected" id="day_selected" value="">
@@ -32,7 +32,7 @@
         </div>
         <div class="form-group col-3">
             <button type="submit"
-                    class="btn btn-primary mb-2">{{ trans('general.search') }}</button>
+                    class="btn btn-primary">{{ trans('general.search') }}</button>
         </div>
     </div>
 </form>
