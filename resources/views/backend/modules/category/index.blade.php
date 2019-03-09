@@ -10,7 +10,7 @@
                     <div class="m-heading-1 border-green m-bordered">
                         <h3>Important Information</h3>
                         <p>
-                            {{ trans('backend.category.index') }}
+                            {{ trans('backend.admin.category.index') }}
                         </p>
                     </div>
                     <table id="dataTable" class="table table-striped table-bordered table-hover" cellspacing="0">
@@ -68,11 +68,11 @@
                                                         </button>
                                                         <ul class="dropdown-menu pull-right" role="menu">
                                                             <li>
-                                                                <a href="{{ route('backend.category.create',['parent_id' => $child->id]) }}">
+                                                                <a href="{{ route('backend.admin.category.create',['parent_id' => $child->id]) }}">
                                                                     <i class="fa fa-fw fa-edit"></i> assign child</a>
                                                             </li>
                                                             <li>
-                                                                <a href="{{ route('backend.category.edit',$child->id) }}">
+                                                                <a href="{{ route('backend.admin.category.edit',$child->id) }}">
                                                                     <i class="fa fa-fw fa-edit"></i> Edit</a>
                                                             </li>
                                                             <li>
@@ -88,7 +88,7 @@
                                                                 >
                                                                     <i class="fa fa-fw fa-recycle"></i> delete</a>
                                                                 <form method="post" id="delete-{{ $child->id }}"
-                                                                      action="{{ route('backend.category.destroy',$child->id) }}">
+                                                                      action="{{ route('backend.admin.category.destroy',$child->id) }}">
                                                                     @csrf
                                                                     <input type="hidden" name="_method" value="delete"/>
                                                                     <button type="submit" class="btn btn-del hidden">
@@ -112,7 +112,7 @@
                                                                     </button>
                                                                     <ul class="dropdown-menu pull-right" role="menu">
                                                                         <li>
-                                                                            <a href="{{ route('backend.category.edit',$sub->id) }}">
+                                                                            <a href="{{ route('backend.admin.category.edit',$sub->id) }}">
                                                                                 <i class="fa fa-fw fa-edit"></i>
                                                                                 Edit</a>
                                                                         </li>
@@ -132,7 +132,7 @@
                                                                                 delete</a>
                                                                             <form method="post"
                                                                                   id="delete-{{ $sub->id }}"
-                                                                                  action="{{ route('backend.category.destroy',$sub->id) }}">
+                                                                                  action="{{ route('backend.admin.category.destroy',$sub->id) }}">
                                                                                 @csrf
                                                                                 <input type="hidden" name="_method"
                                                                                        value="delete"/>
@@ -165,11 +165,11 @@
                                         </button>
                                         <ul class="dropdown-menu pull-right" role="menu">
                                             <li>
-                                                <a href="{{ route('backend.category.edit',$element->id) }}">
+                                                <a href="{{ route('backend.admin.category.edit',$element->id) }}">
                                                     <i class="fa fa-fw fa-edit"></i> Edit</a>
                                             </li>
                                             <li>
-                                                <a href="{{ route('backend.category.create',['parent_id' => $element->id]) }}">
+                                                <a href="{{ route('backend.admin.category.create',['parent_id' => $element->id]) }}">
                                                     <i class="fa fa-fw fa-edit"></i> assign child</a>
                                             </li>
                                             <li>
@@ -184,7 +184,7 @@
                                                 >
                                                     <i class="fa fa-fw fa-recycle"></i> delete</a>
                                                 <form method="post" id="delete-{{ $element->id }}"
-                                                      action="{{ route('backend.category.destroy',$element->id) }}">
+                                                      action="{{ route('backend.admin.category.destroy',$element->id) }}">
                                                     @csrf
                                                     <input type="hidden" name="_method" value="delete"/>
                                                     <button type="submit" class="btn btn-del hidden">
