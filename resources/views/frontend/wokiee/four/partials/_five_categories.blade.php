@@ -8,8 +8,7 @@
                            class="tt-promo-box tt-one-child hover-type-2">
                             <img src="{{ $element->imageThumbLink }}"
                                  data-src="{{ $element->imageLargeLink }}"
-                                 class="img-responsive"
-                                 style="max-height: 200px;"
+                                 class="img-responsive img-category"
                                  alt="{{ $element->caption }}">
                             <div class="tt-description">
                                 <div class="tt-description-wrapper">

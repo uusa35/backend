@@ -32,13 +32,13 @@
         <div class="tt-row">
             <ul class="tt-add-info">
                 <li>
-                    <a href="{{ route('frontend.product.search',['user_id' => $element->user_id ]) }}">{{ $element->user->name }}</a>
+                    <a href="{{ route('frontend.user.show.name',['id' => $element->user_id,'name' => $element->user->slug]) }}">{{ $element->user->slug }}</a>
                 </li>
             </ul>
             {{--@include('frontend.wokiee.four.partials._rating')--}}
         </div>
         <h2 class="tt-title"><a
-                    href="{{ route('frontend.service.show.name',['id' => $element->id , 'name' => $element->user->slug ]) }}">{{ $element->user->slug }}</a>
+                    href="{{ route('frontend.product.show.name',['id' => $element->id , 'name' => $element->user->slug ]) }}">{{ $element->user->slug }}</a>
         </h2>
         <div class="tt-price">
             @if($element->isOnSale)
@@ -54,19 +54,6 @@
                     @foreach($element->colors as $color)
                         <li><a class="options-color" style="background-color: {{ $color->code }};" href="#"></a></li>
                     @endforeach
-                </ul>
-            </div>
-        @endif
-        @if($element->has_attributes)
-            <div class="tt-option-block">
-                <ul class="tt-options-swatch">
-                    @if($element->colors->isNotEmpty())
-                        @foreach($element->colors as $color)
-                            <li><a class="options-color"
-                                   style="background-color: {{ $color->code }}"
-                                   href="#"></a></li>
-                        @endforeach
-                    @endif
                 </ul>
             </div>
         @endif

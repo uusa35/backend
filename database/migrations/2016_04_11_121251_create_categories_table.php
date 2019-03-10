@@ -27,6 +27,8 @@ class CreateCategoriesTable extends Migration
             $table->boolean('on_home')->default(0);
             $table->boolean('on_new')->default(0);
             $table->boolean('is_featured')->default(0);
+            $table->boolean('is_service')->default(0);
+            $table->boolean('is_product')->default(0);
             $table->boolean('active')->default(1);
             $table->softDeletes();
             $table->timestamps();
