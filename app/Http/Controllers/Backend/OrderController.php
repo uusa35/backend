@@ -20,7 +20,7 @@ class OrderController extends Controller
         if (request()->has('status')) {
             $elements = Order::with('order_metas.product', 'order_metas.product_attribute.size','order_metas.product_attribute.color')
                 ->where('status', request()->status)
-                ->orderBy('id','desc')->paginate(50);
+                ->orderBy('id','desc')->paginate(parent::TAKE);
         } else {
             $elements = Order::with('order_metas.product', 'order_metas.product_attribute.size','order_metas.product_attribute.color')
                 ->orderBy('id','desc')

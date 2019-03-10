@@ -257,5 +257,12 @@ return array(
     'choose_day' => 'أختر اليوم',
     'choose_date' => 'أختر التاريخ',
     'choose_timing' => 'اختر التوقيت',
-    'choose_area' => 'اختر المنطقة'
+    'choose_area' => 'اختر المنطقة',
+    'hot_deal_services' => 'عروض الخدمات المختارة',
+    'contact_us_info' => 'معلومات الاتصال بنا',
+    'available_for_booking' => 'متاح للحجز',
+    'not_available_for_booking' => 'غير متاح للحجز',
+    'featured' => 'مميز',
+    "recent_products" => 'أحدث المنتجات',
+    "hot_deal_products" => 'أفضل العروض'
 );

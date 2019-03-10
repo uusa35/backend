@@ -7,7 +7,7 @@ use Faker\Generator as Faker;
 $fakerAr = \Faker\Factory::create('ar_JO');
 $factory->define(Slide::class, function (Faker $faker) use ($fakerAr) {
     return [
-        'image' => $faker->numberBetween(43, 49) . '.jpeg',
+        'image' => env('APP_MODE').'-slides-'.$faker->numberBetween(43, 49) . '.jpeg',
         'url' => $faker->url,
         'title_en' => $faker->name,
         'title_ar' => $faker->name,

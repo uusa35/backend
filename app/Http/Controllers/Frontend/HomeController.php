@@ -35,11 +35,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $sliders = Slide::active()->onHome()->get();
+        $sliders = Slide::active()->onHome()->take(6)->get();
 
 //        $newServices = $this->service->active()->onHome()->onNew()->hasImages()->hasTiming()->with('user.role')->orderby('created_at', 'desc')->take(self::TAKE)->get();
 //        $onSaleServices = $this->service->active()->onSaleOnHome()->hasTiming()->with('user.role')->orderby('created_at', 'desc')->take(self::TAKE)->get();
-        $serviceHotDeals = $this->service->active()->availableItems()->onSale()->hotDeals()->hasImages()->with('user.role')->orderby('end_sale', 'desc')->take(self::TAKE)->get();
+        $serviceHotDeals = $this->service->active()->availableItems()->onSale()->onHome()->hotDeals()->hasImages()->with('user.role')->orderby('end_sale', 'desc')->take(self::TAKE)->get();
 
         if (request()->has('mallr')) {
             $newProducts = $this->product->active()->availableItems()->onHome()->onNew()->hasImages()->with('images', 'user.role')->orderBy('created_at', 'desc')->take(self::TAKE)->get();

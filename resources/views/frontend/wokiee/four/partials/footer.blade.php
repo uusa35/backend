@@ -82,7 +82,7 @@
                     <div class="tt-newsletter">
                         <div class="tt-mobile-collapse">
                             <h4 class="tt-collapse-title">
-                                {{ trans('general.contact') }}
+                                {{ trans('general.contact_us_info') }}
                             </h4>
                             <div class="tt-collapse-content">
                                 <address>

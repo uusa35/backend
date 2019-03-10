@@ -16,7 +16,7 @@ $factory->define(Currency::class, function (Faker $faker) {
             return Country::whereId($array['country_id'])->first()->currency_symbol_en;
         },
         'active' => $faker->boolean(true),
-        'exchange_rate' => $faker->name,
+        'exchange_rate' => $faker->numberBetween(1,8),
         'active' => $faker->boolean(true),
     ];
 });

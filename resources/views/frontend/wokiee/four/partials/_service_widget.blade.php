@@ -22,43 +22,18 @@
         {{--data-tposition="{{ app()->isLocale('ar') ? 'right' : 'left' }}"--}}
         {{--></a>--}}
         <a href="{{ route('frontend.service.show.name', ['id' => $element->id, 'name' => $element->name]) }}">
-                                        <span class="tt-img"><img src="{{ $element->imageLargeLink }}"
-                                                                  alt="{{ $element->description }}"></span>
-            <span class="tt-img-roll-over"><img
-                        src="{{ $element->images->first()->imageLargeLink }}"
-                        alt=""></span>
-            <span class="tt-label-location">
-                @if($element->on_new)
-                    <span class="tt-label-new">{{ trans('general.new') }}</span>
-                @endif
-                @if($element->isOnSale)
-                    <span class="tt-label-sale">{{ trans('general.on_sale') }}</span>
-                @endif
-            </span>
+            @include('frontend.wokiee.four.partials._widget_tags')
         </a>
         @if($element->isReallyHot)
-            <div class="tt-countdown_box">
-                <div class="tt-countdown_inner">
-                    <div class="tt-countdown"
-                         data-date="{{ $element->end_sale->format('Y-m-d') }}"
-                         data-year="{{ trans('general.years') }}"
-                         data-month="{{ trans('general.months') }}"
-                         data-week="{{ trans('general.weeks') }}"
-                         data-day="{{ trans('general.days') }}"
-                         data-hour="{{ trans('general.hours') }}"
-                         data-minute="{{ trans('general.minutes') }}"
-                         data-second="{{ trans('general.seconds') }}"
-                    ></div>
-                </div>
-            </div>
+            @include('frontend.wokiee.four.partials._widget_is_really_hot')
         @endif
     </div>
     <div class="tt-description">
         <div class="tt-row">
             <ul class="tt-add-info">
                 <li>
-                    <a href="{{ route('frontend.user.show',$element->user_id) }}">
-                        {{ $element->user->name }}
+                    <a href="{{ route('frontend.user.show.name',['id' => $element->user_id, 'name' => $element->user->slug]) }}">
+                        {{ $element->user->slug }}
                     </a>
                 </li>
             </ul>

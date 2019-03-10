@@ -1,7 +1,7 @@
 @extends('backend.layouts.app')
 
 @section('breadcrumbs')
-    {{ Breadcrumbs::render('backend.country.index') }}
+{{--    {{ Breadcrumbs::render('backend.admin.country.index') }}--}}
 @endsection
 @section('content')
     <div class="row">
@@ -72,11 +72,11 @@
                                         </button>
                                         <ul class="dropdown-menu pull-right" role="menu">
                                             <li>
-                                                <a href="{{ route('backend.country.edit',$element->id) }}">
+                                                <a href="{{ route('backend.admin.country.edit',$element->id) }}">
                                                     <i class="fa fa-fw fa-edit"></i>edit</a>
                                             </li>
                                             <li>
-                                                <a href="{{ route('backend.country.show',$element->id) }}">
+                                                <a href="{{ route('backend.admin.country.show',$element->id) }}">
                                                     <i class="fa fa-fw fa-eye-slash"></i>view details</a>
                                             </li>
                                             @if($elements->where('active', true)->count() > 1)
@@ -94,7 +94,7 @@
                                                     >
                                                         <i class="fa fa-fw fa-recycle"></i> delete</a>
                                                     <form method="post" id="delete-{{ $element->id }}"
-                                                          action="{{ route('backend.country.destroy',$element->id) }}">
+                                                          action="{{ route('backend.admin.country.destroy',$element->id) }}">
                                                         @csrf
                                                         <input type="hidden" name="_method" value="delete"/>
                                                         <button type="submit" class="btn btn-del hidden">

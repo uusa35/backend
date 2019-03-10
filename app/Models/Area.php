@@ -16,4 +16,9 @@ class Area extends PrimaryModel
     {
         return $this->hasMany(Branch::class);
     }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
 }

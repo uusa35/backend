@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
+use App\Services\Traits\LocaleTrait;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use Notifiable, ModelHelpers, UserHelpers, SoftDeletes;
+    use Notifiable, ModelHelpers, UserHelpers, SoftDeletes, LocaleTrait;
 
     /**
      * The attributes that are mass assignable.
@@ -17,6 +18,7 @@ class User extends Authenticatable
      */
     protected $guarded = [''];
     protected $with = ['role'];
+    protected  $localeStrings = ['slug'];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -68,8 +70,6 @@ class User extends Authenticatable
     }
 
 
-
-
     public function slides()
     {
         return $this->morphMany(Slide::class, 'slidable');
@@ -94,6 +94,11 @@ class User extends Authenticatable
     public function ratings()
     {
         return $this->belongsTo(Rating::class);
+    }
+
+    public function areas()
+    {
+        return $this->belongsToMany(Area::class);
     }
 
 }
