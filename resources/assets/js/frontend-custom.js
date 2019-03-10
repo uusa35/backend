@@ -23,4 +23,35 @@ $(document).ready(function() {
         $(e.currentTarget).find('#element-url').attr('href', url);
     });
 
+    $('#size').on('change', function(e) {
+        $('a[id^="color-id-"]').addClass('d-none');
+        $('a[id^="color-id-"]').attr('qty', '');
+        $('#add_to_cart').attr('disabled','disabled');
+        size_id = e.target.value;
+        product_id = $('#product_id').attr('value');
+        $('input[name=size_id]').attr('value', size_id);
+        return axios.get('/api/qty', {params: {size_id, product_id}}).then(r => {
+            if (r.data.length >= 1) {
+                $('#color').removeClass('d-none');
+                _.each(r.data, (e, i) => {
+                    color_element = $(`#color-id-${e.color_id}`);
+                    color_element.removeClass('d-none');
+                    color_element.attr('data-qty', e.qty);
+                    color_element.attr('product-attribute-id', e.id);
+                });
+            }
+        }).catch(e => console.log(e));
+    });
+
+    $('a[id^="color-id-"]').on('click', function(e) {
+        color_id = $(this).data('color-id');
+        qty = $(this).data('qty');
+        product_attribute_id = $(this).data('product-attribute-id');
+        $('input[name=color_id]').attr('value', color_id);
+        $('input[id=max-qty]').attr('size', qty);
+        $('input[name=size_id]').attr('value', size_id);
+        $('input[name=product_attribute_id]').attr('value', size_id);
+        $('#add_to_cart').attr('disabled',false);
+    });
+
 });

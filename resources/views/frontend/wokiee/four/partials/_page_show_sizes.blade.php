@@ -2,7 +2,7 @@
     <div class="tt-title-options">{{ trans('general.sizes') }} :</div>
     <form class="form-default">
         <div class="form-group">
-            <select class="form-control" required>
+            <select class="form-control" id="size" required>
                 <option value="">{{ trans('general.choose_size') }}</option>
                 @foreach($sizes as $size)
                     <option value="{{ $size->id }}">{{ $size->name }}</option>

@@ -38,7 +38,7 @@
                         @auth
                         <div class="tt-wrapper">
                             <ul class="tt-list-btn">
-                                <li><a class="btn-link" href="#"><i class="icon-n-072"></i>ADD TO WISH LIST</a></li>
+                                <li><a class="btn-link" href="#"><i class="icon-n-072"></i>{{ trans('general.add_to_wish_list') }}</a></li>
                                 {{--<li><a class="btn-link" href="#"><i class="icon-n-08"></i>ADD TO COMPARE</a></li>--}}
                             </ul>
                         </div>

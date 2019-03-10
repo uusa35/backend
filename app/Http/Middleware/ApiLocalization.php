@@ -28,7 +28,7 @@ class ApiLocalization
      */
     public function handle($request, Closure $next)
     {
-        $this->app->setLocale($request->header('lang'));
+        $this->app->setLocale($request->header('lang') ? $request->header('lang') : app()->getLocale());
         
         $response = $next($request);
 

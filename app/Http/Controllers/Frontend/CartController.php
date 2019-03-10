@@ -37,7 +37,7 @@ class CartController extends Controller
     {
         // Check all orders that may have metas with the same service and timing on the same date !!!
         dd($service);
-        if ($service->canBook(request('timing_id'),request('day_selected_format'))) {
+        if ($service->canBook(request('timing_id'), request('day_selected_format'))) {
             $element = $this->cart->content()->where('id', '=', $service->UId)->first();
             if ($element) {
                 $this->cart->remove($element->rowId);
@@ -82,9 +82,22 @@ class CartController extends Controller
         return redirect()->back()->with('error', trans('message.service_is_not_added_to_cart'));
     }
 
-    public function addItem(Request $request)
+    public function addProduct(Request $request)
     {
-
+        dd($request->all());
+        // Note that Month/Day/Year that's the default
+        $validator = validator($request->all(),
+            [
+                'product_id' => 'required|exists:services,id',
+                'product_attribute_id' => 'exists:services,id',
+                'size_id' => 'numeric|exists:sizes,id',
+                'color_id' => 'numeric|exists:colors,id',
+                'type' => 'required|alpha',
+            ]);
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator);
+        }
+        $product = Product::whereId($request->product_id)->first();
     }
 
     public function checkStock(Product $product, ProductAttribute $productAttribute, $qty)

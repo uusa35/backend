@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Product;
 use App\Models\ProductAttribute;
 use Illuminate\Http\Request;
 
@@ -24,13 +25,19 @@ Route::get('size', function () {
     return response()->json($productAttribute, 200);
 });
 
-Route::get('qty', function () {
-    $productAttribute = ProductAttribute::where([
+Route::get('colors', function () {
+    return ProductAttribute::where([
         'product_id' => request()->product_id,
-        'color_id' => request()->color_id,
         'size_id' => request()->size_id,
-    ])->with('size')->first();
-    return response()->json($productAttribute->qty, 200);
+    ])->with('color')->get()->pluck('color')->unique()->pluck('id')->toArray();
+});
+
+Route::get('qty', function () {
+    $elements = ProductAttribute::where([
+        'product_id' => request()->product_id,
+        'size_id' => request()->size_id,
+    ])->select('id','color_id','qty')->get();
+    return response()->json($elements,200);
 });
 
 
