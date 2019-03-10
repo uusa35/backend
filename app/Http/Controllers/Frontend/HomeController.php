@@ -40,7 +40,6 @@ class HomeController extends Controller
 //        $newServices = $this->service->active()->onHome()->onNew()->hasImages()->hasTiming()->with('user.role')->orderby('created_at', 'desc')->take(self::TAKE)->get();
 //        $onSaleServices = $this->service->active()->onSaleOnHome()->hasTiming()->with('user.role')->orderby('created_at', 'desc')->take(self::TAKE)->get();
         $serviceHotDeals = $this->service->active()->availableItems()->onSale()->onHome()->hotDeals()->hasImages()->with('user.role')->orderby('end_sale', 'desc')->take(self::TAKE)->get();
-
         if (request()->has('mallr')) {
             $newProducts = $this->product->active()->availableItems()->onHome()->onNew()->hasImages()->with('images', 'user.role')->orderBy('created_at', 'desc')->take(self::TAKE)->get();
             $onSaleProducts = $this->product->active()->availableItems()->onSaleOnHome()->hasImages()->with('user.role')->orderby('end_sale', 'desc')->take(self::TAKE)->get();
@@ -52,7 +51,6 @@ class HomeController extends Controller
         }
         $topDoubleCommercials = Commercial::active()->double()->orderBy('order', 'desc')->take(2)->get();
         $bottomDoubleCommercials = Commercial::active()->double()->orderBy('order', 'desc')->take(2)->get();
-
         return view('frontend.wokiee.four.home', compact(
             'sliders',
 //            'newServices',
@@ -70,6 +68,36 @@ class HomeController extends Controller
             'tripleCommercials'
         ));
     }
+
+
+    public function search(Filters $filters)
+    {
+        $validator = validator(request()->all(), ['search' => 'nullable']);
+        if ($validator->fails()) {
+            return redirect()->route('frontend.home')->withErrors($validator->messages());
+        }
+        $products = $this->product->active()->availableItems()->hasAttributes()->hasImages()->filters($filters)->with(
+            'brands', 'product_attributes.color', 'product_attributes.size', 'tags',
+            'favorites', 'categories.children')
+            ->orderBy('id', 'desc')->paginate(20);
+
+        $services = $this->product->active()->availableItems()->hasImages()->filters($filters)->with(
+            'tags', 'favorites', 'categories.children')
+            ->orderBy('id', 'desc')->paginate(20);
+
+        $tags = $products->pluck('tags')->flatten()->unique('id')->sortKeysDesc();
+        $sizes = $products->pluck('product_attributes')->flatten()->pluck('size')->flatten()->unique('id')->sortKeysDesc();
+        $colors = $products->pluck('product_attributes')->flatten()->pluck('color')->flatten()->unique('id')->sortKeysDesc();
+        $brands = $products->pluck('brands')->flatten()->flatten()->unique('id')->sortKeysDesc();
+        $categoriesList = $products->pluck('categories')->flatten()->unique('id');
+        if (!$products->isEmpty()) {
+            $currentCategory = request()->has('category_id') ? Category::whereId(request('category_id'))->first() : null;
+            return view('frontend.modules.product.index', compact('products', 'services', 'tags', 'colors', 'sizes', 'categoriesList', 'brands', 'currentCategory'));
+        } else {
+            return redirect()->route('frontend.home')->with('error', trans('message.no_items_found'));
+        }
+    }
+
 
     public function changeCurrency()
     {

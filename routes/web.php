@@ -95,11 +95,13 @@ Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => []
     // checkout.review is order.show
     Route::resource('order', 'OrderController');
     Route::resource('category', 'CategoryController');
-    Route::resource('page', 'PageController')->only(['show']);
     Route::resource('user', 'UserController');
     Route::get('user/{id}/{name}', 'UserController@show')->name('user.show.name');
+    Route::resource('page', 'PageController')->only(['show']);
+    Route::get('page/{id}/{name}', 'PageController@show')->name('page.show.name');
     Route::resource('newsletter', 'NewsletterController');
     Route::resource('survey', 'SurveyController')->only(['show', 'store']);
+    Route::get('search/all', 'HomeController@search')->name('search');
     Route::get('search/product', 'ProductController@search')->name('product.search');
     Route::get('search/service', 'ServiceController@search')->name('service.search');
     Route::get('currency/{currency}', 'HomeController@changeCurrency')->name('currency.change');

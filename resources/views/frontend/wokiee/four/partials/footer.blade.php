@@ -33,23 +33,24 @@
     <div class="tt-footer-col tt-color-scheme-01">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-lg-2 col-xl-3">
-                    <div class="tt-mobile-collapse">
-                        <h4 class="tt-collapse-title">
-                            {{ trans('general.categories') }}
-                        </h4>
-                        <div class="tt-collapse-content">
-                            <ul class="tt-list">
-                                <li><a href="listing-collection.html">Women</a></li>
-                                <li><a href="listing-collection.html">Men</a></li>
-                                <li><a href="listing-collection.html">Accessories</a></li>
-                                <li><a href="listing-collection.html">Shoes</a></li>
-                                <li><a href="listing-collection.html">New Arrivals</a></li>
-                                <li><a href="listing-collection.html">Clearence</a></li>
-                            </ul>
+                @if($categories->isNotEmpty())
+                    <div class="col-md-6 col-lg-2 col-xl-3">
+                        <div class="tt-mobile-collapse">
+                            <h4 class="tt-collapse-title">
+                                {{ trans('general.categories') }}
+                            </h4>
+                            <div class="tt-collapse-content">
+                                <ul class="tt-list">
+                                    @foreach($categories->where('is_parent', true) as $cat)
+                                        <li>
+                                            <a href="{{ route('frontend.search',['category_id' => $cat->id]) }}">{{ $cat->name }}</a>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
+                @endif
                 <div class="col-md-6 col-lg-2 col-xl-3">
                     <div class="tt-mobile-collapse">
                         <h4 class="tt-collapse-title">

@@ -18,6 +18,7 @@ $factory->define(Category::class, function (Faker $faker) use ($fakerAr) {
         'limited' => $faker->numberBetween(0, 1),
         'parent_id' => Category::where('parent_id', 0)->pluck('id')->shuffle()->first(),
         'on_home' => $faker->boolean,
+        'on_new' => $faker->boolean,
         'is_featured' => $faker->boolean
     ];
 });

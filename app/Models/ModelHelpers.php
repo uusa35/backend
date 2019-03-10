@@ -7,8 +7,6 @@
  */
 namespace App\Models;
 
-use Carbon\Carbon;
-
 trait ModelHelpers
 {
     public function scopeActive($q)

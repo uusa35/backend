@@ -64,7 +64,7 @@ class ComposerServiceProvider extends ServiceProvider
 
 
         view()->composer([
-            'frontend.partials.header_one',
+            'frontend.*.*.home',
             'frontend.partials.header_four',
         ], 'App\Services\ViewComposers@getCategories');
 

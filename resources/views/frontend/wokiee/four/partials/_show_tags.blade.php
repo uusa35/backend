@@ -11,10 +11,10 @@
         @endif
         @if($element->is_available)
             <span class="tt-label tt-label-new"
-                  style="background-color: #978d2f;">{{ trans('general.available') }}</span>
+                  style="background-color: #978d2f;">{{ trans('general.available_for_booking') }}</span>
         @else
             <span class="tt-label tt-label-new"
-                  style="background-color: #972500;">{{ trans('general.not_available') }}</span>
+                  style="background-color: #972500;">{{ trans('general.not_available_for_booking') }}</span>
         @endif
     </div>
 </div>
