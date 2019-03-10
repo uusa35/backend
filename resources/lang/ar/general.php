@@ -261,6 +261,8 @@ return array(
     'hot_deal_services' => 'عروض الخدمات المختارة',
     'contact_us_info' => 'معلومات الاتصال بنا',
     'available_for_booking' => 'متاح للحجز',
+    'available' => 'متاح',
+    'not_available' => 'غير متاح',
     'not_available_for_booking' => 'غير متاح للحجز',
     'featured' => 'مميز',
     "recent_products" => 'أحدث المنتجات',

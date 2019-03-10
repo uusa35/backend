@@ -36,5 +36,7 @@ $factory->define(Service::class, function (Faker $faker) use ($fakerAr) {
         'user_id' => User::companies()->get()->random()->id,
         'active' => $faker->boolean,
         'is_available' => $faker->boolean,
+        'multi_booking' => $faker->boolean,
+        'booking_limit' => $faker->numberBetween(1, 4)
     ];
 });

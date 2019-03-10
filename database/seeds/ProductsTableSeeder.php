@@ -25,7 +25,7 @@ class ProductsTableSeeder extends Seeder
         // has gallery with images
         // belongs to many orders !!!
         factory(Product::class, app()->environment('production') ? 8 : 100)->create()->each(function ($p) {
-            if ($p->has_attribute) {
+            if ($p->has_attributes) {
                 $p->product_attributes()->saveMany(factory(ProductAttribute::class, 2)->create());
             }
             $p->categories()->saveMany(Category::all()->random(2));

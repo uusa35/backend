@@ -36,8 +36,8 @@ class CartController extends Controller
     public function addServiceToCart(Request $request, Service $service)
     {
         // Check all orders that may have metas with the same service and timing on the same date !!!
-        $orderMetasWithSameService = OrderMeta::where(['service_id' => $request->service_id, 'timing_id' => $request->timing_id])->whereDate('service_date', '=', Carbon::parse($request->day_selected_format))->get();
-        if ($orderMetasWithSameService->isEmpty()) {
+        dd($service);
+        if ($service->canBook(request('timing_id'),request('day_selected_format'))) {
             $element = $this->cart->content()->where('id', '=', $service->UId)->first();
             if ($element) {
                 $this->cart->remove($element->rowId);

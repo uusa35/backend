@@ -41,7 +41,8 @@ class CreateServicesTable extends Migration
             $table->boolean('active')->default(1);
             $table->boolean('is_available')->default(1);
             $table->boolean('is_hot_deal')->default(0);
-            $table->boolean('has_attribute')->default(0);
+            $table->boolean('multi_booking')->default(0);
+            $table->integer('booking_limit')->default(0);
 
             $table->integer('user_id')->unsigned()->index();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');

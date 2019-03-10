@@ -42,7 +42,7 @@ class CreateProductsTable extends Migration
             $table->boolean('active')->default(1);
             $table->boolean('check_stock')->default(1);
             $table->boolean('is_hot_deal')->default(0);
-            $table->boolean('has_attribute')->default(0);
+            $table->boolean('has_attributes')->default(0);
 
             $table->integer('qty')->unsigned()->nullable();
             $table->integer('user_id')->unsigned()->index();

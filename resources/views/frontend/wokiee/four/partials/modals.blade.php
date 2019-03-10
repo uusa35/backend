@@ -82,8 +82,8 @@
                             <div class="tt-product-single-info">
                                 <div class="tt-add-info">
                                     <ul>
-                                        <li><span>{{ trans('general.sku') }}: <div id="element-sku"></div></span></li>
-                                        {{--<li><span>Availability:</span> 40 in Stock</li>--}}
+                                        <li><span>{{ trans('general.sku') }}: <span id="element-sku"></span></span></li>
+                                        <li><span>Availability:</span> 40 in Stock</li>
                                     </ul>
                                 </div>
                                 <h2 class="tt-title">
@@ -170,7 +170,7 @@
                                         {{--</div>--}}
                                         <div class="col-item">
                                             <a id="element-url" href="#" class="btn btn-lg"><i
-                                                        class="icon-f-39"></i>{{ trans('general.view') }}</a>
+                                                        class="fa fa-fw fa-eye fa-lg"></i>{{ trans('general.view_details') }}</a>
                                         </div>
                                     </div>
                                 </div>
@@ -184,22 +184,7 @@
 </div>
 
 
-<!-- modalVideoProduct -->
-<div class="modal fade" id="modalVideoProduct" tabindex="-1" role="dialog" aria-label="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-video">
-        <div class="modal-content ">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span
-                            class="icon icon-clear"></span></button>
-            </div>
-            <div class="modal-body">
-                <div class="modal-video-content">
 
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <!-- modal (ModalSubsribeGood) -->
 <div class="modal  fade" id="ModalSubsribeGood" tabindex="-1" role="dialog" aria-label="myModalLabel"
      aria-hidden="true">

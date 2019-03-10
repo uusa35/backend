@@ -19,6 +19,10 @@ Breadcrumbs::for('frontend.product.index', function ($trail) {
     $trail->parent('frontend.home');
     $trail->push(trans('general.products'), route('frontend.product.index'));
 });
+Breadcrumbs::for('frontend.product.show', function ($trail, $element) {
+    $trail->parent('frontend.product.index');
+    $trail->push($element->name, route('frontend.product.show', $element->id));
+});
 
 Breadcrumbs::for('frontend.service.index', function ($trail) {
     $trail->parent('frontend.home');

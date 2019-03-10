@@ -1,24 +1,10 @@
 <div class="tt-product-single-info">
     @include('frontend.wokiee.four.partials._show_tags')
-    <h1 class="tt-title tt-title-border">{{ $element->name }}
-    </h1>
-    <div class="tt-price tt-title-border">
-        @if($element->isOnSale)
-            <span class="new-price">{{ $element->convertedSalePrice}}
-                {{ $currency->symbol }}</span>
-            <span class="old-price">{{ $element->convertedPrice }}
-                {{ $currency->symbol }}</span>
-        @else
-            <span class="new-price">{{ $element->convertedPrice }}
-                {{ $currency->symbol }}</span>
-        @endif
-    </div>
-    <div class="tt-wrapper">
-        {{ $element->description }}
-    </div>
+    @include('frontend.wokiee.four.partials._show_page_item_title_description_and_prices')
     @include('frontend.wokiee.four.partials._service_show_is_really_hot_element')
 
     @if($element->is_available)
+        {{-- i want to show the service only --}}
         {{-- Choose Date & Time --}}
         @include('frontend.wokiee.four.partials._service_show_service_choose_date')
     @endif

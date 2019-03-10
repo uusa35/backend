@@ -99,6 +99,7 @@ $(document).ready(function () {
     console.log('showing the modal'); //get data-id attribute of the clicked element
 
     var id = $(e.relatedTarget).data('id');
+    var sku = $(e.relatedTarget).data('sku');
     var name = $(e.relatedTarget).data('name');
     var image = $(e.relatedTarget).data('image');
     var description = $(e.relatedTarget).data('description');
@@ -106,8 +107,8 @@ $(document).ready(function () {
     var currency = $(e.relatedTarget).data('currency-name');
     var url = $(e.relatedTarget).data('url'); //populate the textbox
 
-    console.log('the name', name);
     $(e.currentTarget).find('#element-id').text(id);
+    $(e.currentTarget).find('#element-sku').text(sku);
     $(e.currentTarget).find('#element-image').attr('src', image);
     $(e.currentTarget).find('#element-name').text(name);
     $(e.currentTarget).find('#element-description').text(description);
