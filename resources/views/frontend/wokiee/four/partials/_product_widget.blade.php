@@ -22,7 +22,7 @@
         {{--data-tposition="{{ app()->isLocale('ar') ? 'right' : 'left' }}"--}}
         {{--></a>--}}
         <a href="{{ route('frontend.product.show.name', ['id' => $element->id, 'name' => $element->name]) }}">
-            @include('frontend.wokiee.four.partials._widget_tags')
+            @include('frontend.wokiee.four.partials._widget_tags_and_images')
         </a>
         @if($element->isReallyHot)
             @include('frontend.wokiee.four.partials._widget_is_really_hot')
@@ -37,26 +37,10 @@
             </ul>
             {{--@include('frontend.wokiee.four.partials._rating')--}}
         </div>
-        <h2 class="tt-title"><a
-                    href="{{ route('frontend.product.show.name',['id' => $element->id , 'name' => $element->user->slug ]) }}">{{ $element->user->slug }}</a>
+        <h2 class="tt-title">
+            <a href="{{ route('frontend.product.show.name',['id' => $element->id , 'name' => $element->name]) }}">{{ $element->name }}</a>
         </h2>
-        <div class="tt-price">
-            @if($element->isOnSale)
-                <span class="new-price">{{ $element->convertedSalePrice}}<span>{{ $currency->symbol }}</span></span>
-                <span class="old-price">{{ $element->convertedPrice }}<span>{{ $currency->symbol }}</span></span>
-            @else
-                <span class="new-price">{{ $element->convertedPrice }}<span>{{ $currency->symbol }}</span></span>
-            @endif
-        </div>
-        @if($element->has_attributes && $element->colors->isNotEmpty())
-            <div class="tt-option-block">
-                <ul class="tt-options-swatch">
-                    @foreach($element->colors as $color)
-                        <li><a class="options-color" style="background-color: {{ $color->code }};" href="#"></a></li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
+        @include('frontend.wokiee.four.partials._widget_price_and_color')
         <div class="tt-product-inside-hover">
             {{--<div class="tt-row-btn">--}}
             {{--<a href="{{ route('frontend.product.show', $element->id) }}"--}}
@@ -65,7 +49,7 @@
             {{--</div>--}}
             <div class="tt-row-btn">
                 <a href="{{ route('frontend.product.show.name', ['id' => $element->id, 'name' => $element->name]) }}"
-                   class="tt-btn-addtocart thumbprod-button-bg">{{ trans('general.view') }}</a>
+                   class="btn btn-small">{{ trans('general.view_details') }}</a>
             </div>
             <div class="tt-row-btn">
                 <a href="#" class="tt-btn-quickview" data-toggle="modal"

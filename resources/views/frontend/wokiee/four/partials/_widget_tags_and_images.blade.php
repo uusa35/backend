@@ -1,8 +1,13 @@
-<span class="tt-img"><img src="{{ $element->imageLargeLink }}"
-                          alt="{{ $element->description }}"></span>
-<span class="tt-img-roll-over"><img
-            src="{{ $element->images->first()->imageLargeLink }}"
-            alt=""></span>
+<span class="tt-img">
+        <img src="{{ $element->imageLargeLink }}" alt="{{ $element->description }}">
+</span>
+@if($element->images->isNotEmpty())
+    <span class="tt-img-roll-over">
+        <img src="{{ $element->images->first()->imageLargeLink }}" alt="{{ $element->description }}">
+</span>
+@else
+    <h1>No Images</h1>
+@endif
 <span class="tt-label-location">
         @if($element->on_new)
         <span class="tt-label-new">{{ trans('general.new') }}</span>

@@ -264,5 +264,7 @@ return array(
     'not_available_for_booking' => 'غير متاح للحجز',
     'featured' => 'مميز',
     "recent_products" => 'أحدث المنتجات',
-    "hot_deal_products" => 'أفضل العروض'
+    "hot_deal_products" => 'أفضل العروض',
+    'quick_view' => 'مشاهدة مختصرة',
+    'view_details' => 'مشاهدة التفاصيل'
 );
