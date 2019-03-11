@@ -54,9 +54,9 @@
             <a href="#" class="btn">{{ trans('general.proceed_to_checkout') }}</a>
         </div>
         <div class="tt-item">
-            <a href="shopping_cart_02.html"
-               class="btn-link-02 tt-hidden-mobile">{{ trans('general.view-cart') }}</a>
-            <a href="shopping_cart_02.html"
+            <a href="{{ route('frontend.cart.index') }}"
+               class="btn-link-02 tt-hidden-mobile">{{ trans('general.view_cart') }}</a>
+            <a href="{{ route('frontend.cart.index') }}"
                class="btn btn-border tt-hidden-desctope">{{ trans('general.view_cart') }}</a>
         </div>
     </div>

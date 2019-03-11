@@ -18,7 +18,7 @@ class User extends Authenticatable
      */
     protected $guarded = [''];
     protected $with = ['role'];
-    protected  $localeStrings = ['slug'];
+    protected $localeStrings = ['slug'];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -99,6 +99,11 @@ class User extends Authenticatable
     public function areas()
     {
         return $this->belongsToMany(Area::class);
+    }
+
+    public function shipment_packages()
+    {
+        return $this->hasMany(ShipmentPackage::class);
     }
 
 }

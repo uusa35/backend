@@ -30,7 +30,7 @@ class CartController extends Controller
     {
         $cart = $this->cart->content();
         $coupon = session()->has('coupon') ? session('coupon') : null;
-        return view('frontend.modules.cart.index', compact('cart', 'coupon'));
+        return view('frontend.wokiee.four.modules.cart.index', compact('cart', 'coupon'));
     }
 
 

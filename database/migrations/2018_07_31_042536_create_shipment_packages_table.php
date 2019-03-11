@@ -20,6 +20,9 @@ class CreateShipmentPackagesTable extends Migration
             $table->decimal('charge')->unsigned();
             $table->boolean('active')->default(1);
             $table->boolean('is_local')->default(0);
+
+            $table->integer('user_id')->unsigned()->index();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

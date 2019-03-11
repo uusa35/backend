@@ -44,10 +44,7 @@ class CreateSettingsTable extends Migration
             $table->string('footer_color_font')->nullable();
             $table->string('footer_color_bg')->nullable();
 
-//            $table->boolean('shipment_service')->default(0);
-//            $table->boolean('delivery_service')->default(0);
-//            $table->boolean('delivery_service_cost')->default(0);
-//            $table->boolean('delivery_service_minimum_charge')->default(0);
+            $table->boolean('apply_global_shipment')->default(0);
             $table->longText('code')->nullable();
             $table->timestamps();
         });

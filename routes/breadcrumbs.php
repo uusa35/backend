@@ -45,6 +45,16 @@ Breadcrumbs::for('frontend.category.index', function ($trail) {
 });
 
 
+Breadcrumbs::for('frontend.cart.index', function ($trail) {
+    $trail->parent('frontend.home');
+    $trail->push(trans('general.cart'), route('frontend.cart.index'));
+});
+
+
+
+// backend
+
+
 Breadcrumbs::for('backend.home', function ($trail) {
     $trail->push('Home', route('backend.home'));
 });
