@@ -25,10 +25,11 @@ class ComposerServiceProvider extends ServiceProvider
             'frontend.modules.cart.index',
         ], 'App\Services\ViewComposers@getCartCount');
         view()->composer([
-            'frontend.*.*.*._search_form',
-            'frontend.*.*.home',
-            'frontend.*.*.product.show',
-            'frontend.*.*.service.show',
+//            'frontend.*.*.*._search_form',
+            'frontend.*.*.*.header',
+//            'frontend.*.*.home',
+//            'frontend.*.*.product.show',
+//            'frontend.*.*.service.show',
             'backend.modules.currency.create',
             'backend.modules.currency.edit',
             'backend.partials.sidebar',
