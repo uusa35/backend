@@ -16,7 +16,7 @@
             <!-- /tt-search -->
         </div>
     </div>
-@else
+@elseif(request()->has('evento'))
     @if($countries->where('main',true)->first())
         <form method="get" action="{{ route("frontend.service.search") }}">
             @csrf

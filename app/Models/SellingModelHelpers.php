@@ -36,10 +36,7 @@ trait SellingModelHelpers
 
     public function getAvailableQtyAttribute()
     {
-        if ($this->has_attributes) {
-            return $this->product_attributes->sum('qty');
-        }
-        return $this->qty;
+        return $this->has_attributes ? $this->product_attributes->sum('qty') : $this->qty;
     }
 
     public function scopeAvailableItems($q)
@@ -105,6 +102,19 @@ trait SellingModelHelpers
         return $q->whereHas('product_attributes', function ($q) {
             return $q;
         }, '>', 0);
+    }
+
+    public function getRelatedItems($item)
+    {
+        $categoriesId = $item->categories->pluck('id');
+        return $this->where(['user_id' => $item->user_id])->where('id','!=', $item->id)->whereHas('categories', function ($q) use ($categoriesId) {
+            return $q->whereId($categoriesId);
+        })->with('images', 'favorites')->take(10)->get();
+    }
+
+    public function getIsFavoritedAttribute()
+    {
+        return auth()->check() ? in_array(auth()->user()->id, $this->favorites->pluck('id')->toArray()) : null;
     }
 
 }

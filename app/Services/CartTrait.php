@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Models\Color;
 use App\Models\Product;
+use App\Models\Service;
 use App\Models\Size;
 use App\Models\Timing;
 use Carbon\Carbon;
@@ -20,7 +21,7 @@ trait CartTrait
     public function addServiceToCart(Request $request, Service $service, $cart)
     {
         // Check all orders that may have metas with the same service and timing on the same date !!!
-        if ($service->canBook(request('timing_id'), request('day_selected_format'))) {
+        if ($service->getCanBookAttribute(request('timing_id'), request('day_selected_format'))) {
             $element = $cart->content()->where('id', '=', $service->UId)->first();
             if ($element) {
                 $cart->remove($element->rowId);

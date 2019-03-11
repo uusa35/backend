@@ -54,7 +54,7 @@ class ProductController extends Controller
         $element = $this->product->whereId($productId)->with('product_attributes.color', 'product_attributes.size', 'images', 'tags', 'categories', 'favorites','brands')->first();
         // return array of ['size_id', 'color', 'att_id','qty' ] for one product
         $data = $element->product_attributes->toArray();
-        $relatedItems = $this->product->getRelatedProducts($element);
+        $relatedItems = $element->getRelatedItems($element);
         return view('frontend.wokiee.four.modules.product.show', compact('element','relatedItems', 'product', 'data'));
     }
 

@@ -13,12 +13,6 @@ use Illuminate\Support\Facades\DB;
 
 trait ProductHelpers
 {
-
-    public function scopeHasAttributes($q)
-    {
-        return $q->has('product_attributes', '>', 0);
-    }
-
     /**
      * Description : will fetch all products of the current company (and branch) that are bestSales
      * according to the orders that are completed
@@ -40,29 +34,5 @@ trait ProductHelpers
             ->orderBy('count', 'DESC')// DESC
             ->take(7)->pluck('id');
     }
-
-    public function getRelatedProducts($product)
-    {
-        $categoriesId = $product->categories->pluck('id');
-        return $this->whereHas('categories', function ($q) use ($categoriesId) {
-            return $q->whereId($categoriesId);
-        })->with('images', 'favorites')->take(10)->get();
-    }
-
-    public function getTotalQtyAttribute()
-    {
-        return $this->product_attributes->sum('qty');
-    }
-
-    public function scopeHasProductAttribute($q)
-    {
-        return $q->has('product_attributes', '>', 0);
-    }
-
-    public function getIsFavoritedAttribute()
-    {
-        return auth()->check() ? in_array(auth()->user()->id, $this->favorites->pluck('id')->toArray()) : null;
-    }
-
 
 }
