@@ -5,8 +5,6 @@
     <span class="tt-img-roll-over">
         <img src="{{ $element->images->first()->imageLargeLink }}" alt="{{ $element->description }}">
 </span>
-@else
-    <h1>No Images</h1>
 @endif
 <span class="tt-label-location">
         @if($element->on_new)

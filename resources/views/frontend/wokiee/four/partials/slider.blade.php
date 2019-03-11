@@ -6,10 +6,10 @@
                     <div class="tp-banner revolution">
                         <ul>
                             @foreach($sliders as $s)
-                                <li data-thumb="{{ asset(env('LARGE').$s->image) }}" data-transition="fade"
+                                <li data-thumb="{{ asset($s->imgThumbLink) }}" data-transition="fade"
                                     data-slotamount="1" data-masterspeed="1000" data-saveperformance="off"
                                     data-title="Slide">
-                                    <img src="{{ asset(env('LARGE').$s->image) }}" alt="slide1"
+                                    <img src="{{ asset($s->imageLargeLink) }}" alt="slide1"
                                          data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
                                     <div class="tp-caption tp-caption1 lft stb"
                                          data-x="center"
@@ -29,9 +29,10 @@
                                             </div>
                                         @endif
                                         @if($s->path)
-                                            <div class="tp-caption1-wd-4"><a href="{{ storage_path(env('FILES').$s->path) }}"
-                                                                             class="btn btn-xl"
-                                                                             data-text="{{ $s->title }}">{{ $s->title }}</a>
+                                            <div class="tp-caption1-wd-4"><a
+                                                        href="{{ storage_path(env('FILES').$s->path) }}"
+                                                        class="btn btn-xl"
+                                                        data-text="{{ $s->title }}">{{ $s->title }}</a>
                                             </div>
                                         @endif
                                     </div>

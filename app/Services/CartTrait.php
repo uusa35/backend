@@ -33,7 +33,7 @@ trait CartTrait
                     'day_selected' => Carbon::parse($request->day_selected_format),
                     'timing_id' => $request->timing_id,
                     'notes' => $request->notes,
-                    'service' => $service,
+                    'element' => $service,
                     'company' => $service->user->slug,
                     'timing' => Timing::whereId($request->timing_id)->first()
                 ]
@@ -60,7 +60,7 @@ trait CartTrait
                     'color' => Color::whereId($request->color_id)->first(),
                     'size' => Size::whereId($request->size_id)->first(),
                     'company' => $product->user->slug,
-                    'product' => $product
+                    'element' => $product
                 ]
             );
             return true;

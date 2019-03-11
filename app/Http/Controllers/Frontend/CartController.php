@@ -28,9 +28,9 @@ class CartController extends Controller
 
     public function index()
     {
-        $cart = $this->cart->content();
+        $elements = $this->cart->content();
         $coupon = session()->has('coupon') ? session('coupon') : null;
-        return view('frontend.wokiee.four.modules.cart.index', compact('cart', 'coupon'));
+        return view('frontend.wokiee.four.modules.cart.index', compact('elements', 'coupon'));
     }
 
 

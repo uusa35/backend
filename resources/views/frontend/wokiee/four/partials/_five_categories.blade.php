@@ -6,7 +6,7 @@
                     <div class="col-sm-6">
                         <a href="listing-left-column.html"
                            class="tt-promo-box tt-one-child hover-type-2">
-                            <img src="{{ $element->imageThumbLink }}"
+                            <img src="{{ asset(env('IMG_LOADER')) }}"
                                  data-src="{{ $element->imageLargeLink }}"
                                  class="img-responsive img-category"
                                  alt="{{ $element->caption }}">

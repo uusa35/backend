@@ -5,8 +5,8 @@
                 <a href="product.html">
                     @if($item->options->type === 'service')
                         <div class="tt-item-img">
-                            <img src="{{ $item->options->service->imageThumbLink}}"
-                                 data-src="{{ $item->options->service->imageThumbLink}}" alt="">
+                            <img src="{{ asset(env('IMG_LOADER')) }}"
+                                 data-src="{{ $item->options->element->imageThumbLink}}" alt="">
                         </div>
                         <div class="tt-item-descriptions">
                             <h2 class="tt-title">{{ $item->name }}</h2>
@@ -20,8 +20,8 @@
                         </div>
                     @else
                         <div class="tt-item-img">
-                            <img src="{{ $item->options->product->imageThumbLink}}"
-                                 data-src="{{ $item->options->product->imageThumbLink}}" alt="">
+                            <img src="{{ asset(env('IMG_LOADER'))}}"
+                                 data-src="{{ $item->options->element->imageThumbLink}}" alt="">
                         </div>
                         <div class="tt-item-descriptions">
                             <h2 class="tt-title">{{ $item->name }}</h2>

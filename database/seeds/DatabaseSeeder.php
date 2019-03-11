@@ -39,12 +39,12 @@ class DatabaseSeeder extends Seeder
         $this->call(CouponsTableSeeder::class);
         $this->call(OrdersTableSeeder::class);
         $this->call(FavoritesTableSeeder::class);
-        $this->call(BrandsTableSeeder::class);
         $this->call(AboutusTableSeeder::class);
         $this->call(SurveysTableSeeder::class);
         $this->call(QuestionnairesTableSeeder::class);
         $this->call(RatingsTableSeeder::class);
         $this->call(QuotesTableSeeder::class);
+        $this->call(BrandsTableSeeder::class);
 
 
 

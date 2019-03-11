@@ -13,8 +13,8 @@ class QuestionnairesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Questionnaire::class, app()->environment('production') ? 2 : 20)->create()->each(function ($q) {
-            $q->results()->saveMany(factory(Result::class, app()->environment('production') ? 1 : 5)->create());
+        factory(Questionnaire::class, app()->environment('production') ? 2 : 10)->create()->each(function ($q) {
+            $q->results()->saveMany(factory(Result::class, app()->environment('production') ? 1 : 2)->create());
         });
     }
 }
