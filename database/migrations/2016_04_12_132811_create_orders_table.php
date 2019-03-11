@@ -26,6 +26,7 @@ class CreateOrdersTable extends Migration
             $table->string('country')->nullable();
             $table->string('mobile')->nullable();
             $table->string('phone')->nullable();
+            $table->mediumText('notes')->nullable();
             $table->string('reference_id')->nullable()->deafult(0);
             $table->string('payment_method')->nullable();
 

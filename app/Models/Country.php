@@ -36,4 +36,9 @@ class Country extends PrimaryModel
     {
         return $this->hasManyThrough(Branch::class, Area::class);
     }
+
+    public function shipment_packages()
+    {
+        return $this->hasMany(ShipmentPackage::class);
+    }
 }

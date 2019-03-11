@@ -11,4 +11,9 @@ class ShipmentPackage extends PrimaryModel
     {
         return $this->belongsTo(User::class);
     }
+
+    public function country()
+    {
+        return $this->belongsTo(Country::class);
+    }
 }

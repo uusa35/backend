@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Commercial;
+use App\Models\Country;
 use App\Models\Currency;
 use App\Models\Image;
 use App\Models\Product;
@@ -35,6 +36,13 @@ class HomeController extends Controller
      */
     public function index()
     {
+        dd(get_client_ip());
+        $user_ip = $_SERVER['HTTP_CLIENT_IP'];
+        $geo = unserialize(file_get_contents("http://www.geoplugin.net/php.gp?ip=$user_ip"));
+        $country = $geo["geoplugin_countryName"];
+        $city = $geo["geoplugin_city"];
+        $currentCountry = Country::where('name', $country)->first();
+//        session()->put('country', $currentCountry);
         $sliders = Slide::active()->onHome()->take(6)->get();
 
 //        $newServices = $this->service->active()->onHome()->onNew()->hasImages()->hasTiming()->with('user.role')->orderby('created_at', 'desc')->take(self::TAKE)->get();

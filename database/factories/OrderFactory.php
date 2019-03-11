@@ -35,5 +35,6 @@ $factory->define(Order::class, function (Faker $faker) {
         'time' => function ($array) {
             return Carbon::parse(($array['booked_at']))->format('h:i:s');
         },
+        'notes' => $faker->paragraph
     ];
 });
