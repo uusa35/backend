@@ -44,6 +44,15 @@ trait SellingModelHelpers
         return $q->where(['is_available' => true]);
     }
 
+    public function scopeServeCountries($q)
+    {
+        return $q->whereHas('user', function ($q) {
+            $q->whereHas('shipment_packages', function ($q) {
+                return $q->where(['country_id' => getCurrentClientCountryId()]);
+            });
+        });
+    }
+
     public function scopeOnSaleOnHome($q)
     {
         return $q->onSale()->onHome();
@@ -107,7 +116,7 @@ trait SellingModelHelpers
     public function getRelatedItems($item)
     {
         $categoriesId = $item->categories->pluck('id');
-        return $this->where(['user_id' => $item->user_id])->where('id','!=', $item->id)->whereHas('categories', function ($q) use ($categoriesId) {
+        return $this->where(['user_id' => $item->user_id])->where('id', '!=', $item->id)->whereHas('categories', function ($q) use ($categoriesId) {
             return $q->whereId($categoriesId);
         })->with('images', 'favorites')->take(10)->get();
     }

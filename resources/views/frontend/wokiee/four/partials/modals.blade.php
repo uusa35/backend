@@ -99,65 +99,65 @@
                                     <div id="element-description"></div>
                                 </div>
                                 {{--<div class="tt-swatches-container">--}}
-                                    {{--<div class="tt-wrapper">--}}
-                                        {{--<div class="tt-title-options">SIZE</div>--}}
-                                        {{--<form class="form-default">--}}
-                                            {{--<div class="form-group">--}}
-                                                {{--<select class="form-control">--}}
-                                                    {{--<option>21</option>--}}
-                                                    {{--<option>25</option>--}}
-                                                    {{--<option>36</option>--}}
-                                                {{--</select>--}}
-                                            {{--</div>--}}
-                                        {{--</form>--}}
-                                    {{--</div>--}}
-                                    {{--<div class="tt-wrapper">--}}
-                                        {{--<div class="tt-title-options">COLOR</div>--}}
-                                        {{--<form class="form-default">--}}
-                                            {{--<div class="form-group">--}}
-                                                {{--<select class="form-control">--}}
-                                                    {{--<option>Red</option>--}}
-                                                    {{--<option>Green</option>--}}
-                                                    {{--<option>Brown</option>--}}
-                                                {{--</select>--}}
-                                            {{--</div>--}}
-                                        {{--</form>--}}
-                                    {{--</div>--}}
-                                    {{--<div class="tt-wrapper">--}}
-                                        {{--<div class="tt-title-options">TEXTURE:</div>--}}
-                                        {{--<ul class="tt-options-swatch options-large">--}}
-                                            {{--<li><a class="options-color" href="#">--}}
+                                {{--<div class="tt-wrapper">--}}
+                                {{--<div class="tt-title-options">SIZE</div>--}}
+                                {{--<form class="form-default">--}}
+                                {{--<div class="form-group">--}}
+                                {{--<select class="form-control">--}}
+                                {{--<option>21</option>--}}
+                                {{--<option>25</option>--}}
+                                {{--<option>36</option>--}}
+                                {{--</select>--}}
+                                {{--</div>--}}
+                                {{--</form>--}}
+                                {{--</div>--}}
+                                {{--<div class="tt-wrapper">--}}
+                                {{--<div class="tt-title-options">COLOR</div>--}}
+                                {{--<form class="form-default">--}}
+                                {{--<div class="form-group">--}}
+                                {{--<select class="form-control">--}}
+                                {{--<option>Red</option>--}}
+                                {{--<option>Green</option>--}}
+                                {{--<option>Brown</option>--}}
+                                {{--</select>--}}
+                                {{--</div>--}}
+                                {{--</form>--}}
+                                {{--</div>--}}
+                                {{--<div class="tt-wrapper">--}}
+                                {{--<div class="tt-title-options">TEXTURE:</div>--}}
+                                {{--<ul class="tt-options-swatch options-large">--}}
+                                {{--<li><a class="options-color" href="#">--}}
                                 {{--<span class="swatch-img">--}}
                                 {{--<img src="images/loader.svg" data-src="images/custom/texture-img-01.jpg" alt="">--}}
                                 {{--</span>--}}
-                                                    {{--<span class="swatch-label color-black"></span>--}}
-                                                {{--</a></li>--}}
-                                            {{--<li class="active"><a class="options-color" href="#">--}}
+                                {{--<span class="swatch-label color-black"></span>--}}
+                                {{--</a></li>--}}
+                                {{--<li class="active"><a class="options-color" href="#">--}}
                                 {{--<span class="swatch-img">--}}
                                 {{--<img src="images/loader.svg" data-src="images/custom/texture-img-02.jpg" alt="">--}}
                                 {{--</span>--}}
-                                                    {{--<span class="swatch-label color-black"></span>--}}
-                                                {{--</a></li>--}}
-                                            {{--<li><a class="options-color" href="#">--}}
+                                {{--<span class="swatch-label color-black"></span>--}}
+                                {{--</a></li>--}}
+                                {{--<li><a class="options-color" href="#">--}}
                                 {{--<span class="swatch-img">--}}
                                 {{--<img src="images/loader.svg" data-src="images/custom/texture-img-03.jpg" alt="">--}}
                                 {{--</span>--}}
-                                                    {{--<span class="swatch-label color-black"></span>--}}
-                                                {{--</a></li>--}}
-                                            {{--<li><a class="options-color" href="#">--}}
+                                {{--<span class="swatch-label color-black"></span>--}}
+                                {{--</a></li>--}}
+                                {{--<li><a class="options-color" href="#">--}}
                                 {{--<span class="swatch-img">--}}
                                 {{--<img src="images/loader.svg" data-src="images/custom/texture-img-04.jpg" alt="">--}}
                                 {{--</span>--}}
-                                                    {{--<span class="swatch-label color-black"></span>--}}
-                                                {{--</a></li>--}}
-                                            {{--<li><a class="options-color" href="#">--}}
+                                {{--<span class="swatch-label color-black"></span>--}}
+                                {{--</a></li>--}}
+                                {{--<li><a class="options-color" href="#">--}}
                                 {{--<span class="swatch-img">--}}
                                 {{--<img src="images/loader.svg" data-src="images/custom/texture-img-05.jpg" alt="">--}}
                                 {{--</span>--}}
-                                                    {{--<span class="swatch-label color-black"></span>--}}
-                                                {{--</a></li>--}}
-                                        {{--</ul>--}}
-                                    {{--</div>--}}
+                                {{--<span class="swatch-label color-black"></span>--}}
+                                {{--</a></li>--}}
+                                {{--</ul>--}}
+                                {{--</div>--}}
                                 {{--</div>--}}
                                 <div class="tt-wrapper">
                                     <div class="tt-row-custom-01">
@@ -170,7 +170,8 @@
                                         {{--</div>--}}
                                         <div class="col-item">
                                             <a id="element-url" href="#" class="btn btn-lg"><i
-                                                        class="fa fa-fw fa-eye fa-lg"></i>{{ trans('general.view_details') }}</a>
+                                                        class="fa fa-fw fa-eye fa-lg"></i>{{ trans('general.view_details') }}
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -182,7 +183,6 @@
         </div>
     </div>
 </div>
-
 
 
 <!-- modal (ModalSubsribeGood) -->
@@ -203,3 +203,6 @@
     </div>
 </div>
 
+@if(!request()->has('evento'))
+    @include('frontend.wokiee.four.partials._country_modal')
+@endif

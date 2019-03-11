@@ -6,6 +6,7 @@
  * Time: 9:02 AM
  */
 
+use App\Models\Country;
 use App\Models\Setting;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Route;
@@ -86,6 +87,11 @@ function getConvertedPrice($price)
     return $price * $currentCurrency->exchange_rate;
 }
 
+function getCurrencySymbol() {
+    return session('currency')->currency_symbol_en;
+}
+
+
 function getDaySelected()
 {
     return session()->get('day_selected');
@@ -101,21 +107,40 @@ function getTimingId()
     return session()->get('timing_id');
 }
 
-function get_client_ip() {
+function get_client_ip()
+{
     $ipaddress = '';
     if (isset($_SERVER['HTTP_CLIENT_IP']))
         $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
-    else if(isset($_SERVER['HTTP_X_FORWARDED_FOR']))
+    else if (isset($_SERVER['HTTP_X_FORWARDED_FOR']))
         $ipaddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
-    else if(isset($_SERVER['HTTP_X_FORWARDED']))
+    else if (isset($_SERVER['HTTP_X_FORWARDED']))
         $ipaddress = $_SERVER['HTTP_X_FORWARDED'];
-    else if(isset($_SERVER['HTTP_FORWARDED_FOR']))
+    else if (isset($_SERVER['HTTP_FORWARDED_FOR']))
         $ipaddress = $_SERVER['HTTP_FORWARDED_FOR'];
-    else if(isset($_SERVER['HTTP_FORWARDED']))
+    else if (isset($_SERVER['HTTP_FORWARDED']))
         $ipaddress = $_SERVER['HTTP_FORWARDED'];
-    else if(isset($_SERVER['REMOTE_ADDR']))
+    else if (isset($_SERVER['REMOTE_ADDR']))
         $ipaddress = $_SERVER['REMOTE_ADDR'];
     else
         $ipaddress = 'UNKNOWN';
     return $ipaddress;
+}
+
+function getClientCountry()
+{
+    $user_ip = get_client_ip();
+    $geo = unserialize(file_get_contents("http://www.geoplugin.net/php.gp?ip=$user_ip"));
+    $country = $geo["geoplugin_countryName"];
+    $city = $geo["geoplugin_city"];
+    $clientCountry = Country::where('name', $country)->first();
+    return $clientCountry;
+}
+
+function getCurrentClientCountryId()
+{
+    if (!session()->has('country') && !is_null(session()->get('country'))) {
+        return false;
+    }
+    return session()->get('country')['id'];
 }

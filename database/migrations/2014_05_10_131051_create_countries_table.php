@@ -19,7 +19,7 @@ class CreateCountriesTable extends Migration
             $table->string('slug_en')->nullable();
             $table->string('calling_code')->nullable();
             $table->string('country_code')->nullable();
-            $table->string('flag')->nullable();
+            $table->string('image')->nullable();
             $table->integer('order')->nullable();
             $table->boolean('has_currency')->default(0);
             $table->string('currency_symbol_ar', 25)->nullable();

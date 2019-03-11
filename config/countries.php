@@ -8,7 +8,7 @@
 
 return [
     [
-        'name_ar' => 'kuwait',
+        'name_ar' => 'الكويت',
         'name_en' => 'kuwait',
         "calling_code" => "965",
         'currency_ar' => "دينار كويتي",

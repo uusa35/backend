@@ -12,7 +12,6 @@
 </head>
 
 <body>
-@include('frontend.wokiee.four.partials.country_session')
 @if(!app()->isLocal())
     @include('frontend.wokiee.four.partials.loader')
 @endif

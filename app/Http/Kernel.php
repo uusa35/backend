@@ -68,6 +68,7 @@ class Kernel extends HttpKernel
         'client' => \App\Http\Middleware\ClientAccessOnly::class,
         'designer' => \App\Http\Middleware\DesignerAccessOnly::class,
         'onlyActiveUsers' => \App\Http\Middleware\OnlyActiveUsers::class,
+        'country' => \App\Http\Middleware\ClientCountry::class,
     ];
 
     /**

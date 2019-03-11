@@ -19,6 +19,7 @@ class CountriesTableSeeder extends Seeder
         foreach ($countries as $country) {
             $country = factory(Country::class)->create(
                 [
+                    'name' => ucfirst($country['name_en']),
                     'slug_ar' => $country['name_ar'],
                     'slug_en' => $country['name_en'],
                     'country_code' => $country['country_code'],

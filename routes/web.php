@@ -13,7 +13,7 @@
 
 use App\Models\User;
 
-Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.', 'middleware' => ['auth', 'onlyActiveUsers']], function () {
+Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.', 'middleware' => ['auth', 'onlyActiveUsers','country']], function () {
     // Route may be same But
     // 1- Date will be displayed are different (therefore made many controllers for the same exact Model)
     // 2- Action Also is different therefore ModelPolicy applied for each Model Action
@@ -76,7 +76,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
     Route::resource('collection', 'CollectionController');
 });
 
-Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => []], function () {
+Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => ['country']], function () {
     Route::get('/', 'HomeController@index')->name('index');
     Route::get('/home', 'HomeController@index')->name('home');
     Route::resource('product', 'ProductController');
@@ -106,6 +106,7 @@ Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => []
     Route::get('search/service', 'ServiceController@search')->name('service.search');
     Route::get('currency/{currency}', 'HomeController@changeCurrency')->name('currency.change');
     Route::get('language/{locale}', 'HomeController@changeLanguage')->name('language.change');
+    Route::get('country/set', 'HomeController@setCountry')->name('country.set');
 });
 Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => ['auth']], function () {
     Route::get('favorite', 'FavoriteController@index')->name('favorite.index');

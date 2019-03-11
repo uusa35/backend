@@ -12,6 +12,7 @@ use App\Models\Image;
 use App\Models\Product;
 use App\Models\Service;
 use App\Models\Slide;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -36,23 +37,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        dd(get_client_ip());
-        $user_ip = $_SERVER['HTTP_CLIENT_IP'];
-        $geo = unserialize(file_get_contents("http://www.geoplugin.net/php.gp?ip=$user_ip"));
-        $country = $geo["geoplugin_countryName"];
-        $city = $geo["geoplugin_city"];
-        $currentCountry = Country::where('name', $country)->first();
-//        session()->put('country', $currentCountry);
         $sliders = Slide::active()->onHome()->take(6)->get();
-
 //        $newServices = $this->service->active()->onHome()->onNew()->hasImages()->hasTiming()->with('user.role')->orderby('created_at', 'desc')->take(self::TAKE)->get();
 //        $onSaleServices = $this->service->active()->onSaleOnHome()->hasTiming()->with('user.role')->orderby('created_at', 'desc')->take(self::TAKE)->get();
-        $serviceHotDeals = $this->service->active()->availableItems()->onSale()->onHome()->hotDeals()->hasImages()->with('user.role')->orderby('end_sale', 'desc')->take(self::TAKE)->get();
+        $serviceHotDeals = $this->service->active()->availableItems()->onSale()->onHome()->hotDeals()->hasImages()->serveCountries()->with('user.role')->orderby('end_sale', 'desc')->take(self::TAKE)->get();
         if (request()->has('mallr')) {
-            $newProducts = $this->product->active()->availableItems()->onHome()->onNew()->hasImages()->with('images', 'user.role')->orderBy('created_at', 'desc')->take(self::TAKE)->get();
-            $onSaleProducts = $this->product->active()->availableItems()->onSaleOnHome()->hasImages()->with('user.role')->orderby('end_sale', 'desc')->take(self::TAKE)->get();
-            $bestSalesProducts = $this->product->whereIn('id', $this->product->active()->hasImages()->bestSalesProducts())->availableItems()->get();
-            $productHotDeals = $this->product->active()->availableItems()->onSale()->hotDeals()->hasImages()->with('user.role')->orderby('end_sale', 'desc')->take(self::TAKE)->get();
+            $newProducts = $this->product->active()->availableItems()->onHome()->onNew()->hasImages()->serveCountries()->with('images', 'user.role')->orderBy('created_at', 'desc')->take(self::TAKE)->get();
+            $onSaleProducts = $this->product->active()->availableItems()->onSaleOnHome()->hasImages()->serveCountries()->with('user.role')->orderby('end_sale', 'desc')->take(self::TAKE)->get();
+            $bestSalesProducts = $this->product->whereIn('id', $this->product->active()->hasImages()->bestSalesProducts())->availableItems()->serveCountries()->get();
+            $productHotDeals = $this->product->active()->availableItems()->onSale()->hotDeals()->hasImages()->serveCountries()->with('user.role')->orderby('end_sale', 'desc')->take(self::TAKE)->get();
             $categoriesHome = Category::onHome()->take(self::TAKE)->orderBy('order', 'desc')->with('children.children')->get();
             $categoriesFeatured = Category::where(['is_featured' => true])->take(self::TAKE)->orderBy('order', 'desc')->get();
             $brands = Brand::active()->onHome()->orderBy('order', 'desc')->take(12)->get();
@@ -180,6 +173,25 @@ class HomeController extends Controller
         $termsData = $terms->where('id', 1)->first();
 
         return view('frontend.pages.terms', compact('termsData'));
+    }
+
+    public function setCountry(Request $request)
+    {
+        $validator = validator($request->all(),
+            [
+                'country_id' => 'required|exists:countries,id'
+            ]);
+        if ($validator->fails()) {
+            session()->forget('country');
+            return redirect()->back()->withErrors($validator);
+        }
+        $country = Country::whereId($request->country_id)->first();
+        if ($country) {
+            session()->put('country', $country);
+            return redirect()->back()->with('success', trans('general.country_successfully_set'));
+        }
+        return redirect()->back()->with('error', trans('general.country_is_not_set_successfully'));
+
     }
 
 }

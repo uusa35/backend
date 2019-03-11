@@ -9,7 +9,7 @@ $factory->define(Country::class, function (Faker $faker) {
         'slug_ar' => $faker->name,
         'slug_en' => $faker->name,
         'country_code' => $faker->countryISOAlpha3,
-        'flag' => $faker->numberBetween(1, 10) . '.jpeg',
+        'image' => env('APP_MODE').'-'.$faker->numberBetween(1, 42) . '.jpeg',
         'order' => $faker->numberBetween(1,40),
         'main' => $faker->boolean(true),
         'calling_code' => '00965',

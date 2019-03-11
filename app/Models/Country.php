@@ -5,6 +5,7 @@ namespace App\Models;
 
 class Country extends PrimaryModel
 {
+    use ModelHelpers;
     protected $localeStrings = ['slug'];
     protected $guarded = [''];
 

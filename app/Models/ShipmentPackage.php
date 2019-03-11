@@ -5,7 +5,7 @@ namespace App\Models;
 class ShipmentPackage extends PrimaryModel
 {
     protected $guarded = [''];
-    protected $localeStrings = ['slug'];
+    protected $localeStrings = ['slug', 'notes'];
 
     public function user()
     {
@@ -15,5 +15,10 @@ class ShipmentPackage extends PrimaryModel
     public function country()
     {
         return $this->belongsTo(Country::class);
+    }
+
+    public function area()
+    {
+        return $this->belongsTo(Area::class);
     }
 }
