@@ -10,6 +10,7 @@ use App\Models\Product;
 use App\Models\ProductAttribute;
 use App\Models\Service;
 use App\Models\Timing;
+use App\Services\CartTrait;
 use App\Services\ShippingManager;
 use Carbon\Carbon;
 use Gloudemans\Shoppingcart\Facades\Cart;
@@ -18,7 +19,7 @@ use Illuminate\Http\Request;
 class CartController extends Controller
 {
     public $cart;
-    use ShippingManager;
+    use CartTrait;
 
     public function __construct(\Gloudemans\Shoppingcart\Cart $cart)
     {
@@ -32,32 +33,6 @@ class CartController extends Controller
         return view('frontend.modules.cart.index', compact('cart', 'coupon'));
     }
 
-
-    public function addServiceToCart(Request $request, Service $service)
-    {
-        // Check all orders that may have metas with the same service and timing on the same date !!!
-        dd($service);
-        if ($service->canBook(request('timing_id'), request('day_selected_format'))) {
-            $element = $this->cart->content()->where('id', '=', $service->UId)->first();
-            if ($element) {
-                $this->cart->remove($element->rowId);
-            }
-            $this->cart->add($service->UId, $service->name, 1, $service->finalPrice,
-                [
-                    'type' => 'service',
-                    'service_id' => $service->id,
-                    'day_selected' => Carbon::parse($request->day_selected_format),
-                    'timing_id' => $request->timing_id,
-                    'notes' => $request->notes,
-                    'service' => $service,
-                    'company' => $service->user->name,
-                    'timing' => Timing::whereId($request->timing_id)->first()
-                ]
-            );
-            return true;
-        }
-        return false;
-    }
 
     public function addService(Request $request)
     {
@@ -76,28 +51,32 @@ class CartController extends Controller
             return redirect()->back()->withErrors($validator);
         }
         $service = Service::whereId($request->service_id)->first();
-        if ($this->addServiceToCart($request, $service)) {
+        if ($this->addServiceToCart($request, $service, $this->cart)) {
             return redirect()->back()->with('success', trans('message.service_added_to_cart_successfully'));
         }
         return redirect()->back()->with('error', trans('message.service_is_not_added_to_cart'));
     }
 
+
     public function addProduct(Request $request)
     {
-        dd($request->all());
-        // Note that Month/Day/Year that's the default
         $validator = validator($request->all(),
             [
                 'product_id' => 'required|exists:services,id',
                 'product_attribute_id' => 'exists:services,id',
-                'size_id' => 'numeric|exists:sizes,id',
-                'color_id' => 'numeric|exists:colors,id',
+                'size_id' => 'required_with:product_attribute_id|numeric|exists:sizes,id',
+                'color_id' => 'required_with:product_attribute_id|numeric|exists:colors,id',
+                'qty' => 'required|numeric|min:1',
                 'type' => 'required|alpha',
             ]);
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator);
         }
         $product = Product::whereId($request->product_id)->first();
+        if ($this->addProductToCart($request, $product,$this->cart)) {
+            return redirect()->back()->with('success', trans('message.product_added_to_cart_successfully'));
+        }
+        return redirect()->back()->with('error', trans('message.product_is_not_added_to_cart_successfully'));
     }
 
     public function checkStock(Product $product, ProductAttribute $productAttribute, $qty)

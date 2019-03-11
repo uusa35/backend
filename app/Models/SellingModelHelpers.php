@@ -12,21 +12,26 @@ use Carbon\Carbon;
  */
 trait SellingModelHelpers
 {
-    public function getCanOrderAttribute()
+    public function getCanOrderAttribute($qty = 1)
     {
         if ($this->has_attributes) {
-            return $this->is_available && $this->product_attributes->sum('qty') > 0;
+            return $this->active && $this->is_available && $this->product_attributes->sum('qty') >= $qty;
         }
-        return $this->is_available && $this->qty > 0;
+        return $this->active && $this->is_available && $this->qty >= $qty;
     }
 
     public function getCanBookAttribute($timingId, $daySelectedFormat)
     {
-        $orderMetasWithSameService = OrderMeta::where(['service_id' => $this->service_id, 'timing_id' => $timingId])->whereDate('service_date', '=', Carbon::parse($daySelectedFormat))->get();
-        if ($this->multi_booking && $orderMetasWithSameService->count() < $this->booking_limit) {
-            return true;
+        // service is active and no orderMetas in the same date and time then go ahead
+        $orderMetasWithSameService = OrderMeta::where(
+            [
+                'service_id' => $this->service_id,
+                'timing_id' => $timingId
+            ])->whereDate('service_date', '=', Carbon::parse($daySelectedFormat))->get();
+        if ($this->multi_booking && $this->active) {
+            return $orderMetasWithSameService->count() < $this->booking_limit && $this->active;
         }
-        return false;
+        return $orderMetasWithSameService->count() < 1 && $this->is_available && $this->active ? true : false;
     }
 
     public function getAvailableQtyAttribute()
@@ -98,7 +103,7 @@ trait SellingModelHelpers
     public function scopeHasProductAttributes($q)
     {
         return $q->whereHas('product_attributes', function ($q) {
-            return  $q;
+            return $q;
         }, '>', 0);
     }
 

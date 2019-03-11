@@ -17,7 +17,7 @@ body, html, a, p, h1, h2, h3, h4, h5, h6, table, row, td, th, tr, td, thead, tfo
 .tt-collapse-title, .tt-collapse-content, .tt-collapse-block .tt-item .tt-collapse-title,
 .tt-label, .tt-label-sale, tt-label-new, tt-label tt-label-our-fatured,
 .tt-product-single-info .tt-label [class^=tt-label], .tt-collapse-title,
-.tt-collapse-content, .tt-title-options, .form-group , .form, .tt-table-03
+.tt-collapse-content, .tt-title-options, .form-group , .form, .tt-table-03, select , option, .form-default select.form-control:not([size]):not([multiple])
 {
     font-family: 'Tajawal', 'sans-serif' !important;
     direction: rtl;

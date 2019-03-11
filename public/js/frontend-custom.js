@@ -115,14 +115,22 @@ $(document).ready(function () {
     $(e.currentTarget).find('#element-price').text(price);
     $(e.currentTarget).find('#element-currency-name').text(currency);
     $(e.currentTarget).find('#element-url').attr('href', url);
-  });
+  }); // Product Page --> add Product to Cart
+  // OnChanging Size DropDown
+
   $('#size').on('change', function (e) {
     $('a[id^="color-id-"]').addClass('d-none');
     $('a[id^="color-id-"]').attr('qty', '');
+    $('li[class^="color-id-element"]').removeClass('active'); // reset the max-qty
+
+    $('#max-qty').attr('size', 1);
+    $('#max-qty').attr('value', 1);
     $('#add_to_cart').attr('disabled', 'disabled');
     size_id = e.target.value;
     product_id = $('#product_id').attr('value');
-    $('input[name=size_id]').attr('value', size_id);
+    $('input[name=size_id]').attr('value', size_id); // reset the qty input
+
+    $('input[name=qty]').attr('value', 1);
     return axios.get('/api/qty', {
       params: {
         size_id: size_id,
@@ -148,10 +156,32 @@ $(document).ready(function () {
     qty = $(this).data('qty');
     product_attribute_id = $(this).data('product-attribute-id');
     $('input[name=color_id]').attr('value', color_id);
-    $('input[id=max-qty]').attr('size', qty);
+    $('#max-qty').attr('size', qty);
     $('input[name=size_id]').attr('value', size_id);
     $('input[name=product_attribute_id]').attr('value', size_id);
     $('#add_to_cart').attr('disabled', false);
+  });
+  $('.plus-btn').on('click', function () {
+    var qty = $('input[name=qty]');
+    currentQty = Number(qty.attr('value'));
+    maxSize = Number($('#max-qty').attr('size'));
+    newQty = Number(_.sum([currentQty, 1]));
+
+    if (newQty <= maxSize) {
+      qty.attr('value', newQty);
+      $('#max-qty').attr('value', newQty);
+    }
+  });
+  $('.minus-btn').on('click', function () {
+    var qty = $('input[name=qty]');
+    currentQty = parseInt(qty.attr('value'));
+    maxSize = Number($('#max-qty').attr('size'));
+    newQty = _.sum([currentQty, -1]);
+
+    if (newQty <= maxSize && newQty > 0) {
+      qty.attr('value', newQty);
+      $('#max-qty').attr('value', newQty);
+    }
   });
 });
 

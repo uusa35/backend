@@ -268,5 +268,6 @@ return array(
     "recent_products" => 'أحدث المنتجات',
     "hot_deal_products" => 'أفضل العروض',
     'quick_view' => 'مشاهدة مختصرة',
-    'view_details' => 'مشاهدة التفاصيل'
+    'view_details' => 'مشاهدة التفاصيل',
+    'choose_size' => 'اختر المقاس المناسب'
 );

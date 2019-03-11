@@ -26,10 +26,10 @@
                                     <a data-toggle="modal" data-target="#modalProductInfo" href="#">Size Guide</a>
                                     <a data-toggle="modal" data-target="#modalProductInfo-02" href="#">Shipping</a>
                                 </div>
-                                @if($element->sizes->isNotEmpty())
+                                @if($element->has_attributes && $element->sizes->isNotEmpty())
                                     @include('frontend.wokiee.four.partials._page_show_sizes',['sizes' => $element->sizes])
                                     @include('frontend.wokiee.four.partials._page_show_colors',['colors' => $element->colors,'hidden' => true])
-                                @elseif($element->colors->isNotEmpty())
+                                @elseif($element->has_attributes && $element->colors->isNotEmpty())
                                     @include('frontend.wokiee.four.partials._page_show_colors',['colors' => $element->colors,'hidden' => false])
                                 @endif
                             </div>
