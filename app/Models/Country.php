@@ -5,7 +5,7 @@ namespace App\Models;
 
 class Country extends PrimaryModel
 {
-    protected $localeStrings = ['name'];
+    protected $localeStrings = ['slug'];
     protected $guarded = [''];
 
     public function users()
