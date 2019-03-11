@@ -27,6 +27,8 @@ class ComposerServiceProvider extends ServiceProvider
         view()->composer([
             'frontend.*.*.*._search_form',
             'frontend.*.*.home',
+            'frontend.*.*.product.show',
+            'frontend.*.*.service.show',
             'backend.modules.currency.create',
             'backend.modules.currency.edit',
             'backend.partials.sidebar',

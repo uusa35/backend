@@ -24,7 +24,7 @@ trait ModelHelpers
         return $q->where('on_new', true);
     }
 
-    public function scopeHasImages($q)
+    public function scopeHasImage($q)
     {
         return $q->has('images', '>', 0);
     }

@@ -21,6 +21,17 @@
                     </td>
                 </tr>
             @endif
+            @if($element->user->country)
+                <tr>
+                    <td class="td-fixed-element">
+                    <span style="min-width: 130px;"><i class="fa fa-fw fa-building-o fa-lg"></i> <span
+                                class="ml-2"></span> {{ trans('general.country') }}:</span>
+                    </td>
+                    <td>
+                        {{ $element->user->country->slug  }}</li>
+                    </td>
+                </tr>
+            @endif
             @if(!is_null($element->duration))
                 <tr>
                     <td class="td-fixed-element"><span><i class="fa fa-fw fa-clock-o fa-lg"></i> <span

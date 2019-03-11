@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $guarded = [''];
-    protected $with = ['role'];
+    protected $with = [];
     protected $localeStrings = ['slug'];
 
     /**
@@ -106,4 +106,8 @@ class User extends Authenticatable
         return $this->hasMany(ShipmentPackage::class);
     }
 
+    public function country()
+    {
+        return $this->belongsTo(Country::class);
+    }
 }

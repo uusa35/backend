@@ -34,28 +34,14 @@ trait SellingModelHelpers
         return $orderMetasWithSameService->count() < 1 && $this->is_available && $this->active ? true : false;
     }
 
-    public function getAvailableQtyAttribute()
+    public function scopeAvailable($q)
     {
-        return $this->has_attributes ? $this->product_attributes->sum('qty') : $this->qty;
-    }
-
-    public function scopeAvailableItems($q)
-    {
-        return $q->where(['is_available' => true]);
-    }
-
-    public function scopeServeCountries($q)
-    {
-        return $q->whereHas('user', function ($q) {
-            $q->whereHas('shipment_packages', function ($q) {
-                return $q->where(['country_id' => getCurrentClientCountryId()]);
-            });
-        });
+        return $q->where('is_available',true);
     }
 
     public function scopeOnSaleOnHome($q)
     {
-        return $q->onSale()->onHome();
+        return $q->onSale()->where('on_home', true);
     }
 
     public function scopeOnSale($q)

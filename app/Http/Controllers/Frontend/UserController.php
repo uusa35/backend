@@ -47,7 +47,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $element = User::whereId($id)->with('services.timings','products.product_attributes','')->first();
+        $element = User::whereId($id)->first();
         return view('frontend.wokiee.four.modules.user.show', compact('element'));
     }
 

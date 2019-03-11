@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Country;
 use App\Models\Role;
 use Faker\Generator as Faker;
 
@@ -41,9 +42,11 @@ $factory->define(App\Models\User::class, function (Faker $faker) use ($fakerAr) 
         'building' => $faker->randomDigit,
         'floor' => $faker->randomDigit,
         'apartment' => $faker->name,
-        'country' => $faker->country,
+        'country_name' => $faker->country,
+        'country_id' => Country::all()->random()->id,
         'role_id' => Role::all()->random()->id,
         'api_token' => $faker->bankAccountNumber,
+        'merchant_id' => $faker->bankAccountNumber,
         'path' => '1.pdf',
         'website' => $faker->url,
         'facebook' => $faker->url,

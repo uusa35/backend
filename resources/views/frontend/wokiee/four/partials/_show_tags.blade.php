@@ -9,7 +9,7 @@
         @if($element->is_featured)
             <div class="tt-label tt-label-our-fatured">{{ trans('general.featured') }}</div>
         @endif
-        @if($element->is_available)
+        @if($element->canOrder)
             <span class="tt-label tt-label-new"
                   style="background-color: #978d2f;">{{ trans('general.available') }}</span>
         @else

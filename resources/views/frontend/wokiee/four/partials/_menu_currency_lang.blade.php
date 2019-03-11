@@ -15,7 +15,7 @@
                         <li class="{{ getCurrentClientCountryId() === $country->id ? 'active' : null  }}">
                             <a href="{{ route('frontend.country.set',['country_id' => $country->id]) }}">{{ $country->slug }}</a>
                         </li>
-                        @endforeach
+                    @endforeach
                 </ul>
                 <ul>
                     <li>

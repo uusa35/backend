@@ -25,4 +25,9 @@
     @if($element->is_featured)
         <span class=" tt-label-our-fatured">{{ trans('general.featured') }}</span>
     @endif
+    @if($element->user->country)
+        <span class=" tt-label-our-fatured">{{ $element->user->country->slug }}</span>
+    @else
+        <span class=" tt-label-sale">N/A</span>
+    @endif
 </span>

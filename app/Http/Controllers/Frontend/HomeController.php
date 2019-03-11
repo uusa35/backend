@@ -38,16 +38,18 @@ class HomeController extends Controller
     public function index()
     {
         $sliders = Slide::active()->onHome()->take(6)->get();
-//        $newServices = $this->service->active()->onHome()->onNew()->hasImages()->hasTiming()->with('user.role')->orderby('created_at', 'desc')->take(self::TAKE)->get();
-//        $onSaleServices = $this->service->active()->onSaleOnHome()->hasTiming()->with('user.role')->orderby('created_at', 'desc')->take(self::TAKE)->get();
-        $serviceHotDeals = $this->service->active()->availableItems()->onSale()->onHome()->hotDeals()->hasImages()->serveCountries()->with('user.role')->orderby('end_sale', 'desc')->take(self::TAKE)->get();
+//        $newServices = $this->service->serveCountries()->active()->available()->onHome()->onNew()->hasImage()->hasTiming()->with('user.role')->orderby('created_at', 'desc')->take(self::TAKE)->get();
+//        $onSaleServices = $this->service->serveCountries()->active()->available()->onSaleOnHome()->hasTiming()->with('user.role')->orderby('created_at', 'desc')->take(self::TAKE)->get();
+//        $serviceHotDeals = $this->service->active()->available()->onSale()->onHome()->hotDeals()->hasImage()->hasTiming()->with('user.role')->orderby('end_sale', 'desc')->take(self::TAKE)->get();
+        $serviceHotDeals = $this->service->active()->available()->onSale()->onHome()->hotDeals()->hasImage()->serveCountries()->hasTiming()->with('user.country')->orderby('end_sale', 'desc')->take(self::TAKE)->get();
+
         if (request()->has('mallr')) {
-            $newProducts = $this->product->active()->availableItems()->onHome()->onNew()->hasImages()->serveCountries()->with('images', 'user.role')->orderBy('created_at', 'desc')->take(self::TAKE)->get();
-            $onSaleProducts = $this->product->active()->availableItems()->onSaleOnHome()->hasImages()->serveCountries()->with('user.role')->orderby('end_sale', 'desc')->take(self::TAKE)->get();
-            $bestSalesProducts = $this->product->whereIn('id', $this->product->active()->hasImages()->bestSalesProducts())->availableItems()->serveCountries()->get();
-            $productHotDeals = $this->product->active()->availableItems()->onSale()->hotDeals()->hasImages()->serveCountries()->with('user.role')->orderby('end_sale', 'desc')->take(self::TAKE)->get();
-            $categoriesHome = Category::onHome()->take(self::TAKE)->orderBy('order', 'desc')->with('children.children')->get();
-            $categoriesFeatured = Category::where(['is_featured' => true])->take(self::TAKE)->orderBy('order', 'desc')->get();
+            $newProducts = $this->product->active()->available()->onHome()->onNew()->hasImage()->serveCountries()->hasStock()->with('images','product_attributes.color','user.country')->orderBy('created_at', 'desc')->take(self::TAKE)->get();
+            $onSaleProducts = $this->product->active()->available()->onSaleOnHome()->hasImage()->serveCountries()->with('images','product_attributes.color','user.country')->orderby('end_sale', 'desc')->take(self::TAKE)->get();
+            $bestSalesProducts = $this->product->whereIn('id', $this->product->active()->available()->hasImage()->serveCountries()->bestSalesProducts())->with('images','product_attributes.color','user.country')->get();
+            $productHotDeals = $this->product->active()->available()->onSale()->hotDeals()->hasImage()->serveCountries()->with('images','product_attributes.color','user.country')->orderby('end_sale', 'desc')->take(self::TAKE)->get();
+            $categoriesHome = Category::onHome()->orderBy('order', 'desc')->take(4)->get();
+//            $categoriesFeatured = Category::where(['is_featured' => true])->take(self::TAKE)->orderBy('order', 'desc')->get();
             $brands = Brand::active()->onHome()->orderBy('order', 'desc')->take(12)->get();
         }
         $topDoubleCommercials = Commercial::active()->double()->orderBy('order', 'desc')->take(2)->get();
@@ -77,12 +79,12 @@ class HomeController extends Controller
         if ($validator->fails()) {
             return redirect()->route('frontend.home')->withErrors($validator->messages());
         }
-        $products = $this->product->active()->availableItems()->hasAttributes()->hasImages()->filters($filters)->with(
+        $products = $this->product->active()->available()->hasAttributes()->hasImage()->filters($filters)->with(
             'brands', 'product_attributes.color', 'product_attributes.size', 'tags',
             'favorites', 'categories.children')
             ->orderBy('id', 'desc')->paginate(20);
 
-        $services = $this->product->active()->availableItems()->hasImages()->filters($filters)->with(
+        $services = $this->product->active()->available()->hasImage()->filters($filters)->with(
             'tags', 'favorites', 'categories.children')
             ->orderBy('id', 'desc')->paginate(20);
 

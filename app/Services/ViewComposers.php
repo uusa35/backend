@@ -71,9 +71,7 @@ class ViewComposers
 
     public function getCountries(View $view)
     {
-        $countries = Country::active()->whereHas('currency', function ($q) {
-            return $q->where('exchange_rate', '>', 0);
-        }, '>', 0)->get();
+        $countries = Country::active()->get();
         return $view->with(compact('countries'));
     }
 
@@ -113,18 +111,6 @@ class ViewComposers
         return $view->with(compact('branches'));
     }
 
-    public function getCountriesWorld(View $view)
-    {
-
-        if (!Cache::has('countriesWorld')) {
-            Cache::rememberForever('countriesWorld', function () {
-                return config('countriesWorld');
-            });
-        }
-        $countriesWorld = Cache::get('countriesWorld');
-        return $view->with(compact('countriesWorld'));
-    }
-
     public function getActiveColors(View $view)
     {
         $colors = Color::active()->get();
@@ -145,6 +131,18 @@ class ViewComposers
     public function getAllTimingsAvailable(View $view) {
         $timings = Timing::orderBy('start','asc')->get()->pluck('startTime','id')->unique();
         return $view->with(compact('timings'));
+    }
+
+    public function getCountriesWorld(View $view)
+    {
+
+        if (!Cache::has('countriesWorld')) {
+            Cache::rememberForever('countriesWorld', function () {
+                return config('countriesWorld');
+            });
+        }
+        $countriesWorld = Cache::get('countriesWorld');
+        return $view->with(compact('countriesWorld'));
     }
 }
 

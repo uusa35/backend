@@ -35,4 +35,29 @@ trait ProductHelpers
             ->take(7)->pluck('id');
     }
 
+    public function scopeServeCountries($q)
+    {
+        return $q->whereHas('user', function ($q) {
+            $q->whereHas('shipment_packages', function ($q) {
+                return $q->where(['country_id' => getCurrentClientCountryId()]);
+            });
+        });
+    }
+
+    public function getAvailableQtyAttribute()
+    {
+        return $this->has_attributes ? $this->product_attributes->sum('qty') : $this->qty;
+    }
+
+    public function scopeHasStock($q)
+    {
+        if ($this->has_attributes) {
+            return $q->whereHas('product_attributes', function ($q) {
+                return $this->product_attributes->sum('qty') >= 1 ? $q : $q->where('id', 0);
+            });
+        } else {
+            return $q->where('qty', '>=', 1);
+        }
+    }
+
 }

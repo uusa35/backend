@@ -38,7 +38,7 @@ class CreateUsersTable extends Migration
             $table->string('building')->nullable();
             $table->string('floor')->nullable();
             $table->string('apartment')->nullable();
-            $table->string('country')->nullable();
+            $table->string('country_name')->nullable();
             $table->mediumText('policy_ar')->nullable();
             $table->mediumText('policy_en')->nullable();
             $table->mediumText('cancellation_ar')->nullable();
@@ -66,6 +66,7 @@ class CreateUsersTable extends Migration
             $table->integer('role_id')->unsigned()->nullable();
             $table->foreign('role_id')->references('id')->on('roles');
 
+            $table->string('merchant_id')->nullable();
             $table->string('api_token')->nullable();
             $table->rememberToken();
             $table->softDeletes();

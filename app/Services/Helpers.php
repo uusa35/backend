@@ -140,7 +140,7 @@ function getClientCountry()
 function getCurrentClientCountryId()
 {
     if (!session()->has('country') && !is_null(session()->get('country'))) {
-        return false;
+        return 0;
     }
     return session()->get('country')['id'];
 }

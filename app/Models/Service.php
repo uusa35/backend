@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Service extends PrimaryModel
 {
-    use SoftDeletes, SellingModelHelpers;
+    use SoftDeletes, SellingModelHelpers, ServiceHelpers;
     protected $localeStrings = ['name', 'description', 'notes'];
     protected $guarded = [''];
     protected $appends = ['UId'];
@@ -66,34 +66,6 @@ class Service extends PrimaryModel
     public function scopeHasTimings()
     {
         return $this->has('timings', '>', 0);
-    }
-
-    public function getIsOnSaleAttribute()
-    {
-        return $this->on_sale && $this->end_sale > Carbon::now() ? true : false;
-    }
-
-    public function getFinalPriceAttribute()
-    {
-        return $this->isOnSale ? $this->sale_price : $this->price;
-    }
-
-    public function getConvertedFinalPriceAttribute()
-    {
-        $currentCurrency = session()->get('currency');
-        return $this->finalPrice * $currentCurrency->exchange_rate;
-    }
-
-    public function getConvertedPriceAttribute()
-    {
-        $currentCurrency = session()->get('currency');
-        return $this->price * $currentCurrency->exchange_rate;
-    }
-
-    public function getConvertedSalePriceAttribute()
-    {
-        $currentCurrency = session()->get('currency');
-        return $this->sale_price * $currentCurrency->exchange_rate;
     }
 
 }
