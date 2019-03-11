@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e163867a-e084-464b-b025-90563ffad1db" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Models/Country.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Country.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/CountriesTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/CountriesTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/ShipmentPackageFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ShipmentPackageFactory.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,6 +29,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2018_07_31_042536_create_shipment_packages_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="19" column="46" lean-forward="true" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/home.blade.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -49,19 +57,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_search_modal_home_page.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="27" column="6" lean-forward="true" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/factories/ShipmentPackageFactory.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="234">
+              <caret line="13" column="42" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
               <folding>
                 <element signature="e#7#30#0#PHP" expanded="true" />
               </folding>
@@ -114,11 +113,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Models/Country.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="40" lean-forward="true" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
+            <state relative-caret-position="468">
+              <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -238,7 +237,6 @@
         <option value="$PROJECT_DIR$/database/migrations/2016_04_12_132811_create_orders_table.php" />
         <option value="$PROJECT_DIR$/database/factories/OrderFactory.php" />
         <option value="$PROJECT_DIR$/database/migrations/2018_07_31_042536_create_shipment_packages_table.php" />
-        <option value="$PROJECT_DIR$/database/factories/ShipmentPackageFactory.php" />
         <option value="$PROJECT_DIR$/app/Models/ShipmentPackage.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/home.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2014_05_10_131051_create_countries_table.php" />
@@ -249,6 +247,7 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php" />
         <option value="$PROJECT_DIR$/database/seeds/CountriesTableSeeder.php" />
         <option value="$PROJECT_DIR$/app/Models/Country.php" />
+        <option value="$PROJECT_DIR$/database/factories/ShipmentPackageFactory.php" />
       </list>
     </option>
   </component>
@@ -678,12 +677,12 @@
       <workItem from="1552130009674" duration="18210000" />
       <workItem from="1552195660255" duration="30176000" />
       <workItem from="1552278609654" duration="9758000" />
-      <workItem from="1552292364161" duration="1187000" />
+      <workItem from="1552292364161" duration="1241000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="326749000" />
+    <option name="totallyTimeSpent" value="326803000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
@@ -941,13 +940,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2018_07_31_042536_create_shipment_packages_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="32" column="30" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Frontend/CartController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="522">
@@ -1046,16 +1038,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/factories/ShipmentPackageFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="e#7#30#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/factories/CountryFactory.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -1079,8 +1061,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/Country.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="40" lean-forward="true" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
+        <state relative-caret-position="468">
+          <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/factories/ShipmentPackageFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="42" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
+          <folding>
+            <element signature="e#7#30#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2018_07_31_042536_create_shipment_packages_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="19" column="46" lean-forward="true" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
         </state>
       </provider>
     </entry>
