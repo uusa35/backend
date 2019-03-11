@@ -23,10 +23,10 @@
               style="background-color: #972500;">{{ trans('general.not_available_for_booking') }}</span>
     @endif
     @if($element->is_featured)
-        <span class=" tt-label-our-fatured">{{ trans('general.featured') }}</span>
+        <span class="tt-label-our-fatured">{{ trans('general.featured') }}</span>
     @endif
     @if($element->user->country)
-        <span class=" tt-label-our-fatured">{{ $element->user->country->slug }}</span>
+        <span class="tt-label-new">{{ $element->user->country->slug }}</span>
     @else
         <span class=" tt-label-sale">N/A</span>
     @endif

@@ -105,7 +105,8 @@ $(document).ready(function () {
     var description = $(e.relatedTarget).data('description');
     var price = $(e.relatedTarget).data('price');
     var currency = $(e.relatedTarget).data('currency-name');
-    var url = $(e.relatedTarget).data('url'); //populate the textbox
+    var url = $(e.relatedTarget).data('url');
+    var qty = $(e.relatedTarget).data('qty'); //populate the textbox
 
     $(e.currentTarget).find('#element-id').text(id);
     $(e.currentTarget).find('#element-sku').text(sku);
@@ -114,6 +115,7 @@ $(document).ready(function () {
     $(e.currentTarget).find('#element-description').text(description);
     $(e.currentTarget).find('#element-price').text(price);
     $(e.currentTarget).find('#element-currency-name').text(currency);
+    $(e.currentTarget).find('#element-qty').text(qty);
     $(e.currentTarget).find('#element-url').attr('href', url);
   }); // Product Page --> add Product to Cart
   // OnChanging Size DropDown

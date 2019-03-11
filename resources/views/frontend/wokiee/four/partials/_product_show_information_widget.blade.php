@@ -1,7 +1,6 @@
 <div class="tt-add-info">
     <div class="tt-table-responsive">
         <table class="tt-table-shop-01">
-            {{--<table class="table table-responsive">--}}
             <tr>
                 <td class="td-fixed-element"><i class="icon-f-02 fa fa-fw fa-lg"></i><span class="ml-1"></span><span>{{ trans('general.sku') }} : </span>
                     <span class="ml-2"></span></td>
@@ -70,6 +69,16 @@
                     </td>
                     <td>
                         {{ $element->user->mobile }}
+                    </td>
+                </tr>
+            @endif
+            @if(!is_null($element->product_attributes))
+                <tr>
+                    <td class="td-fixed-element">
+                        <span><i class="fa fa-fw fa-lg icon-e-74"></i> <span class="ml-2"></span>{{ trans('general.available_items') }}:</span>
+                    </td>
+                    <td>
+                        {{ $element->availableQty }} {{ trans('general.item') }}
                     </td>
                 </tr>
             @endif

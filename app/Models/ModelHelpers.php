@@ -24,6 +24,10 @@ trait ModelHelpers
         return $q->where('on_new', true);
     }
 
+    public function scopeIsFeatured($q) {
+        return $q->where(['is_featured' => true]);
+    }
+
     public function scopeHasImage($q)
     {
         return $q->has('images', '>', 0);

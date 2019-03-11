@@ -83,7 +83,7 @@
                                 <div class="tt-add-info">
                                     <ul>
                                         <li><span>{{ trans('general.sku') }}: <span id="element-sku"></span></span></li>
-                                        <li><span>Availability:</span> 40 in Stock</li>
+                                        <li><span>{{ trans('general.availability') }}:</span> <span id="element-qty"></span></li>
                                     </ul>
                                 </div>
                                 <h2 class="tt-title">
