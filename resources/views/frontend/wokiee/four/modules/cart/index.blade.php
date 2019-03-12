@@ -7,111 +7,7 @@
 @section('body')
     <div class="container">
         <h1 class="tt-title-subpages noborder">{{ trans('general.shopping_cart') }}</h1>
-        <div class="tt-shopcart-table-02">
-            @if($elements->isNotEmpty())
-                <table>
-                    <tbody>
-                    <tr>
-                        <td>{{ trans('general.item_cart_name') }}</td>
-                        <td></td>
-                        <td>{{ trans('general.company_name') }}</td>
-                        <td>{{ trans('general.total_price') }}</td>
-                        <td>{{ trans('general.remove') }}</td>
-                    </tr>
-
-                    @foreach($elements as $element)
-                        <tr>
-                            <td>
-                                <div class="tt-product-img">
-                                    <a href="{{ route('frontend.product.show.name',['id' => $element->element_id,'name' => $element->options->element->name]) }}">
-                                        <img src="{{ asset(env('IMG_LOADER')) }}"
-                                             data-src="{{ $element->options->element->imageThumbLink }}" alt="">
-                                    </a>
-                                </div>
-                            </td>
-                            <td>
-                                <h2 class="tt-title">
-                                    <a href="{{ route('frontend.product.show.name',['id' => $element->product_id,'name' => $element->options->element->name]) }}">
-                                        {{ $element->options->element->name }}
-                                    </a>
-                                </h2>
-                                <ul class="tt-list-description">
-                                    @if($element->options->size)
-                                        <li>{{ trans('general.size') }}: {{ $element->options->size->name }}</li>
-                                    @endif
-                                    @if($element->options->color)
-                                        <li>{{ trans('general.color') }}: {{ $element->options->color->name }}</li>
-                                    @endif
-                                    @if($element->options->country_destination)
-                                        <li>{{ trans('general.shipment_destination') }}
-                                            : {{ $element->options->country_destination->slug }}
-                                        </li>
-                                    @endif
-                                    @if($element->options->day_selected)
-                                        <li>{{ trans('general.day_selected') }}
-                                            : {{ $element->options->day_selected->format('d/m/Y') }}</li>
-                                    @endif
-                                    @if($element->options->timing)
-                                        <li>{{ trans('general.start_time') }}
-                                            : {{ $element->options->timing->start_time }}</li>
-                                    @endif
-                                    <li>
-                                        <div class="tt-price">
-                                            {{ trans('general.final_price') }}  {{ $element->options->element->convertedFinalPrice }} {{ $currency->symbol }}
-                                        </div>
-                                        <div class="tt-price">
-                                            {{ trans('general.package_fee_price') }}  {{ getConvertedPrice($element->options->element->packageFeePrice) }} {{ $currency->symbol }}
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="tt-price">
-                                            {{ trans('general.qty') }} {{ $element->qty }}
-                                        </div>
-                                    </li>
-                                </ul>
-                            </td>
-                            <td>
-                                <div class="detach-quantity-desctope">
-                                    <a href="{{ route('frontend.user.show.name',['user_id' => $element->options->element->user_id,'name' => $element->options->company]) }}">
-                                        {{ $element->options->company }}
-                                    </a>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="tt-price">
-                                    {{ getConvertedPrice($element->price) }} {{ $currency->symbol }}
-                                </div>
-                            </td>
-                            <td>
-                                <a href="{{ route('frontend.cart.remove',$element->rowId) }}"
-                                   class="icon-h-02"></a>
-                            </td>
-                        </tr>
-                    @endforeach
-
-                    </tbody>
-                </table>
-            @else
-                <div class="row">
-                    <div class="col-12">
-                        <div class="alert alert-warning">{{ trans('general.no_items_in_cart') }}</div>
-                    </div>
-                </div>
-            @endif
-            <div class="tt-shopcart-btn">
-                <div class="col-left">
-                    <a class="btn-link" href="{{ route('frontend.home') }}"><i
-                                class="icon-e-19"></i>{{ trans('general.continue_shopping') }}</a>
-                </div>
-                <div class="col-right">
-                    @if($elements->isNotEmpty())
-                        <a class="btn-link" href="{{ route('frontend.cart.clear') }}"><i
-                                    class="icon-h-02"></i>{{ trans('general.clear_cart') }}</a>
-                        {{--<a class="btn-link" href="#"><i class="icon-h-48"></i>UPDATE CART</a>--}}
-                    @endif
-                </div>
-            </div>
-        </div>
+        @include('frontend.wokiee.four.partials._cart_items_table')
         @if($elements->isNotEmpty())
             <div class="tt-shopcart-col">
                 <div class="row">
@@ -134,7 +30,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 col-lg-4">
+                        <div class="col-md-12 col-lg-12">
                             <div class="tt-shopcart-box">
                                 <h4 class="tt-title">
                                     {{ trans('general.estimated_shipping_cost') }}
@@ -180,32 +76,8 @@
                     {{--</form>--}}
                     {{--</div>--}}
                     {{--</div>--}}
-                    <div class="col-md-12 col-lg-12">
-                        <div class="tt-shopcart-box tt-boredr-large">
-                            <table class="tt-shopcart-table01">
-                                <tbody>
-                                <tr>
-                                    <th>{{ trans('general.total_price') }}</th>
-                                    <td>{{ getConvertedPrice(Cart::total()) }} {{ $currency->symbol }}</td>
-                                </tr>
-                                </tbody>
-                                <tfoot>
-                                <tr>
-                                    <th>{{ trans('general.total_price_in_kuwaiti_dinar') }}</th>
-                                    <td>{{ Cart::total() }} {{ trans('general.kd') }}</td>
-                                </tr>
-                                </tfoot>
-                            </table>
-                            <a href="#" class="btn btn-lg"><span
-                                        class="icon icon-check_circle"></span>{{ trans('general.proceed_to_checkout') }}
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="alert alert-warning">
-                            {{ trans('message.payment_will_be_in_kuwaiti_dinar_only') }}
-                        </div>
-                    </div>
+                    @include('frontend.wokiee.four.partials._cart_order_user_info')
+                    @include('frontend.wokiee.four.partials._cart_prices')
                 </div>
             </div>
         @endif

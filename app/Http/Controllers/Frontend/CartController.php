@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 
 use App\Http\Controllers\Controller;
+use App\Jobs\CheckCartItems;
 use App\Models\Coupon;
 use App\Models\Product;
 use App\Models\ProductAttribute;
@@ -24,6 +25,7 @@ class CartController extends Controller
 
     public function index()
     {
+        CheckCartItems::dispatch();
         $elements = $this->cart->content();
         $coupon = session()->has('coupon') ? session('coupon') : null;
         return view('frontend.wokiee.four.modules.cart.index', compact('elements', 'coupon'));

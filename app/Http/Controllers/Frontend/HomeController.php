@@ -3,16 +3,15 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Jobs\CheckCartItems;
 use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Commercial;
 use App\Models\Country;
 use App\Models\Currency;
-use App\Models\Image;
 use App\Models\Product;
 use App\Models\Service;
 use App\Models\Slide;
-use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -191,15 +190,7 @@ class HomeController extends Controller
         if ($country) {
             session()->put('country', $country);
             // later we shall fire an event to check Cart
-            $cart = Cart::content();
-            $cart->each(function ($item, $rowId) {
-                if ($item->options->type === 'product') {
-                    $product = Product::whereId($item->options->element_id)->with('shipment_package.countries')->first();
-                    if (!checkShipmentAvailability(getClientCountry()->id, $product->shipment_package->countries->pluck('id')->toArray())) {
-                        Cart::remove($rowId);
-                    }
-                }
-            });
+            CheckCartItems::dispatch();
             return redirect()->back()->with('success', trans('general.country_successfully_set'));
         }
         return redirect()->back()->with('error', trans('general.country_is_not_set_successfully'));

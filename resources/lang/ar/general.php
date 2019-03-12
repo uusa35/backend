@@ -283,5 +283,6 @@ return array(
     'item_cart_name' => 'إسم الخدمة / المنتج',
     'countries_available_for_shipment' => 'الدول المتاحة للشحن',
     'kg' => 'كيلوجرام',
-    'weight' => 'الوزن'
+    'weight' => 'الوزن',
+    'proceed_to_checkout' => 'الذهاب لصفحة الدفع'
 );

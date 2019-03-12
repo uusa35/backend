@@ -51,13 +51,7 @@
     </div>
     <div class="tt-cart-btn">
         <div class="tt-item">
-            <a href="#" class="btn">{{ trans('general.proceed_to_checkout') }}</a>
-        </div>
-        <div class="tt-item">
-            <a href="{{ route('frontend.cart.index') }}"
-               class="btn-link-02 tt-hidden-mobile">{{ trans('general.view_cart') }}</a>
-            <a href="{{ route('frontend.cart.index') }}"
-               class="btn btn-border tt-hidden-desctope">{{ trans('general.view_cart') }}</a>
+            <a href="{{ route('frontend.cart.index') }}" class="btn">{{ trans('general.proceed_to_checkout') }}</a>
         </div>
     </div>
 </div>
