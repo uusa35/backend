@@ -50,6 +50,11 @@ Breadcrumbs::for('frontend.cart.index', function ($trail) {
     $trail->push(trans('general.cart'), route('frontend.cart.index'));
 });
 
+Breadcrumbs::for('frontend.cart.show', function ($trail) {
+    $trail->parent('frontend.cart.index');
+    $trail->push(trans('general.cart_confirmation'), route('frontend.cart.show'));
+});
+
 Breadcrumbs::for('frontend.user.index', function ($trail) {
     $trail->parent('frontend.home');
     $trail->push(trans('general.companies'), route('frontend.user.index'));

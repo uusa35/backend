@@ -11,6 +11,7 @@ use App\Models\ProductAttribute;
 use App\Models\Service;
 use App\Services\CartTrait;
 use Carbon\Carbon;
+use Gloudemans\Shoppingcart\Cart;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
@@ -71,7 +72,7 @@ class CartController extends Controller
             return redirect()->back()->withErrors($validator);
         }
         $product = Product::whereId($request->product_id)->first();
-        if ($this->addProductToCart($request, $product,$this->cart)) {
+        if ($this->addProductToCart($request, $product, $this->cart)) {
             return redirect()->back()->with('success', trans('message.product_added_to_cart_successfully'));
         }
         return redirect()->back()->with('error', trans('message.product_is_not_added_to_cart_successfully'));
@@ -105,20 +106,27 @@ class CartController extends Controller
     public function postCheckout(Request $request)
     {
         $validate = validator($request->all(), [
-            'grossTotal' => 'required|numeric',
-            'grandTotal' => 'required|numeric',
-            'package_id' => 'required|exists:shipment_packages,id',
-            'charge' => 'required|numeric',
-            'free_shipment' => 'required_with:branch',
-            'branch' => 'exists:branches,id'
+            'name' => 'required',
+            'email' => 'required|email',
+            'mobile' => 'required|numeric|min:8',
+            'address' => 'required|min:5',
+            'country_id' => 'required|exists:countries,id',
         ]);
         if ($validate->fails()) {
             return redirect()->route('frontend.cart.index')->withErrors($validate);
         }
-        $cart = $this->cart->content();
+        $elements = $this->cart->content();
         session()->put('shipment', $request->except('_token'));
         $shipment = session('shipment');
-        return view('frontend.modules.checkout.index', compact('cart', 'shipment'));
+        return redirect()->route('frontend.cart.show', $elements->count())->with(request()->all());
+    }
+
+    public function show()
+    {
+        dd(request()->all());
+        $elements = Cart::content();
+        $user = auth()->user();
+        return view('frontend.modules.cart.show', compact('elements', 'user'));
     }
 
     public function applyCoupon(Request $request)

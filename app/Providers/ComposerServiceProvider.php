@@ -29,6 +29,7 @@ class ComposerServiceProvider extends ServiceProvider
 //            'frontend.*.*.*._search_form',
             'frontend.*.*.*.header',
             'frontend.*.*.home',
+            'frontend.*.*.modules.cart.index',
 //            'frontend.*.*.product.show',
 //            'frontend.*.*.service.show',
             'backend.modules.currency.create',

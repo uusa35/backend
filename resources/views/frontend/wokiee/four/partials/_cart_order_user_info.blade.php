@@ -1,48 +1,62 @@
 <div class="container">
     <div class="tt-login-form">
         <div class="row justify-content-center">
-            <h1 class="tt-title-subpages noborder">CREATE AN ACCOUNT</h1>
             <div class="col-12">
                 <div class="tt-item">
-                    <h2 class="tt-title">PERSONAL INFORMATION</h2>
+                    <h2 class="tt-title text-center border-bottom">{{ trans('general.personal_information') }}</h2>
                     <div class="form-default">
-                        <form id="contactform" method="post" novalidate="novalidate">
-                            <div class="form-group">
-                                <label for="loginInputName">FIRST NAME *</label>
-                                <div class="tt-required">* Required Fields</div>
-                                <input type="text" name="name" class="form-control" id="loginInputName"
-                                       placeholder="Enter First Name">
-                            </div>
-                            <div class="form-group">
-                                <label for="loginLastName">LAST NAME *</label>
-                                <input type="text" name="lastName" class="form-control" id="loginLastName"
-                                       placeholder="Enter Last Name">
-                            </div>
-                            <div class="form-group">
-                                <label for="loginInputEmail">E-MAIL *</label>
-                                <input type="text" name="email" class="form-control" id="loginInputEmail"
-                                       placeholder="Enter E-mail">
-                            </div>
-                            <div class="form-group">
-                                <label for="loginInputPassword">PASSWORD *</label>
-                                <input type="text" name="passowrd" class="form-control" id="loginInputPassword"
-                                       placeholder="Enter Password">
-                            </div>
+                        <form method="post"
+                              action="{{ route('frontend.cart.checkout') }}">
+                            @csrf
                             <div class="row">
-                                <div class="col-auto">
+                                <div class="col-6">
                                     <div class="form-group">
-                                        <button class="btn btn-border" type="submit">CREATE</button>
+                                        <label for="loginInputName">{{ trans('general.name') }} *</label>
+                                        <input type="text" name="name" class="form-control" id="loginInputName"
+                                               value="{{ auth()->guest() ? old('name') : auth()->user()->name }}"
+                                               required
+                                               placeholder="{{ trans('general.name') }}">
                                     </div>
                                 </div>
-                                <div class="col-auto align-self-center">
+                                <div class="col-6">
                                     <div class="form-group">
-                                        <ul class="additional-links">
-                                            <li>or <a href="#">Return to Store</a></li>
-                                        </ul>
+                                        <label for="loginInputEmail">{{ trans('general.email') }} *</label>
+                                        <input type="text" name="email" class="form-control" id="loginInputEmail"
+                                               value="{{ auth()->guest() ? old('email') : auth()->user()->email }}"
+                                               required
+                                               placeholder="{{ trans('general.email') }}">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="loginLastName">{{ trans('general.mobile') }} *</label>
+                                        <input type="text" name="mobile" class="form-control" id="loginLastName"
+                                               value="{{ auth()->guest() ? old('mobile') : auth()->user()->mobile }}"
+                                               required
+                                               placeholder="{{ trans('general.mobile') }}">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="loginInputPassword">{{ trans('general.full_address') }} *</label>
+                                        <input type="text" name="address" class="form-control" id="loginInputPassword"
+                                               value="{{ auth()->guest() ? old('address') : auth()->user()->address }}"
+                                               required
+                                               placeholder="{{ trans('general.address') }}">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="address_country">{{ trans('general.country') }} <sup>*</sup></label>
+                                        <select name="country_id" class="form-control" required>
+                                            @foreach($countries as $country)
+                                                <option value="{{ $country->id }}" {{ getClientCountry()->id === $country->id ? 'selected' : null }}>{{ $country->slug }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                 </div>
                             </div>
-
+                            @include('frontend.wokiee.four.partials._cart_prices')
                         </form>
                     </div>
                 </div>

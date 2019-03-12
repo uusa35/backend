@@ -83,7 +83,7 @@ Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => ['
     Route::get('product/{id}/{name}', 'ProductController@show')->name('product.show.name');
     Route::resource('service', 'ServiceController');
     Route::get('service/{id}/{name}', 'ServiceController@show')->name('service.show.name');
-    Route::resource('cart', 'CartController')->only(['index']);
+    Route::resource('cart', 'CartController')->only(['index','show']);
     Route::post('cart/add/service', 'CartController@addService')->name('cart.add.service');
     Route::post('cart/add/product', 'CartController@addProduct')->name('cart.add.product');
     Route::get('cart/remove/{id}', 'CartController@removeItem')->name('cart.remove');
@@ -108,12 +108,12 @@ Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => ['
     Route::get('language/{locale}', 'HomeController@changeLanguage')->name('language.change');
     Route::get('country/set', 'HomeController@setCountry')->name('country.set');
 });
-Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => ['auth']], function () {
+Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => ['auth','country']], function () {
     Route::get('favorite', 'FavoriteController@index')->name('favorite.index');
     Route::get('favorite/add/{id}', 'FavoriteController@add')->name('favorite.add');
     Route::get('favorite/remove/{id}', 'FavoriteController@remove')->name('favorite.remove');
 });
-Route::get('/', 'Frontend\HomeController@index')->name('home');
+
 Auth::routes();
 // for development purpose only
 //if ((app()->environment('production') || app()->environment('local')) && Schema::hasTable('users')) {

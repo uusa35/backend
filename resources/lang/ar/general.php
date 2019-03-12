@@ -284,5 +284,10 @@ return array(
     'countries_available_for_shipment' => 'الدول المتاحة للشحن',
     'kg' => 'كيلوجرام',
     'weight' => 'الوزن',
-    'proceed_to_checkout' => 'الذهاب لصفحة الدفع'
+    'proceed_to_checkout' => 'الذهاب لصفحة الدفع',
+    'required_fields' => 'حقول مطلوبة',
+    'password' => 'كلمة المرور',
+    'personal_information' => 'معلومات الحساب',
+    'full_address' => 'العنوان بالكامل'
+
 );

@@ -19,12 +19,13 @@ class ClientCountry
         if (!session()->has('country') || is_null(session()->get('country'))) {
             if (auth()->check()) {
                 session()->put('country', auth()->user()->country);
-            }
-            if (getClientCountry()) {
-                session()->put('country', getClientCountry());
             } else {
-                $currentCountry = Country::where('main', true)->first();
-                session()->put('country', $currentCountry);
+                if (getClientCountry()) {
+                    session()->put('country', getClientCountry());
+                } else {
+                    $currentCountry = Country::where('main', true)->first();
+                    session()->put('country', $currentCountry);
+                }
             }
         }
         return $next($request);

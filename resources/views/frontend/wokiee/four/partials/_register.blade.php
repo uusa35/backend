@@ -8,21 +8,38 @@
                     <div class="form-default">
                         <form id="contactform" method="post" novalidate="novalidate">
                             <div class="form-group">
-                                <label for="loginInputName">FIRST NAME *</label>
-                                <div class="tt-required">* Required Fields</div>
-                                <input type="text" name="name" class="form-control" id="loginInputName" placeholder="Enter First Name">
+                                <label for="loginInputName">{{ trans('general.name') }} *</label>
+                                <div class="tt-required">* {{ trans('general.required_fields') }}</div>
+                                <input type="text" name="name" class="form-control" id="loginInputName"
+                                       placeholder="{{ trans('general.name') }}">
                             </div>
                             <div class="form-group">
-                                <label for="loginLastName">LAST NAME *</label>
-                                <input type="text" name="lastName" class="form-control" id="loginLastName" placeholder="Enter Last Name">
+                                <label for="loginLastName">{{ trans('general.last_name') }} *</label>
+                                <input type="text" name="lastName" class="form-control" id="loginLastName"
+                                       placeholder="{{ trans('general.last_name') }}">
                             </div>
                             <div class="form-group">
-                                <label for="loginInputEmail">E-MAIL *</label>
-                                <input type="text" name="email" class="form-control" id="loginInputEmail" placeholder="Enter E-mail">
+                                <label for="loginInputEmail">{{ trans('general.email') }} *</label>
+                                <input type="text" name="email" class="form-control" id="loginInputEmail"
+                                       placeholder="{{ trans('general.email') }}">
                             </div>
                             <div class="form-group">
                                 <label for="loginInputPassword">PASSWORD *</label>
-                                <input type="text" name="passowrd" class="form-control" id="loginInputPassword" placeholder="Enter Password">
+                                <input type="text" name="passowrd" class="form-control" id="loginInputPassword"
+                                       placeholder="Enter Password">
+                            </div>
+                            <div class="form-group">
+                                <label for="address_country">{{ trans('general.country') }} <sup>*</sup></label>
+                                <select id="address_country" class="form-control">
+                                    @foreach($countries as $country)
+                                        <option value="{{ $country->id }}" {{ getClientCountry()->id === $country->id ? 'selected' : null }}>{{ $country->slug }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="loginInputPassword">PASSWORD *</label>
+                                <input type="text" name="passowrd" class="form-control" id="loginInputPassword"
+                                       placeholder="Enter Password">
                             </div>
                             <div class="row">
                                 <div class="col-auto">

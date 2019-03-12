@@ -1,7 +1,7 @@
 @extends('frontend.wokiee.four.layouts.app')
 
 @section('breadcrumbs')
-    {{ Breadcrumbs::render('frontend.cart.index') }}
+    {{ Breadcrumbs::render('frontend.cart.show') }}
 @endsection
 
 @section('body')
