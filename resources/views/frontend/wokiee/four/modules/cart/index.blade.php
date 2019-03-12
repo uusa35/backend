@@ -8,16 +8,17 @@
     <div class="container">
         <h1 class="tt-title-subpages noborder">{{ trans('general.shopping_cart') }}</h1>
         <div class="tt-shopcart-table-02">
-            <table>
-                <tbody>
-                <tr>
-                    <td>{{ trans('general.item') }}</td>
-                    <td></td>
-                    <td>{{ trans('general.company_name') }}</td>
-                    <td>{{ trans('general.total_price') }}</td>
-                    <td>{{ trans('general.remove') }}</td>
-                </tr>
-                @if($elements->isNotEmpty())
+            @if($elements->isNotEmpty())
+                <table>
+                    <tbody>
+                    <tr>
+                        <td>{{ trans('general.item') }}</td>
+                        <td></td>
+                        <td>{{ trans('general.company_name') }}</td>
+                        <td>{{ trans('general.total_price') }}</td>
+                        <td>{{ trans('general.remove') }}</td>
+                    </tr>
+
                     @foreach($elements as $element)
                         <tr>
                             <td>
@@ -88,15 +89,16 @@
                             </td>
                         </tr>
                     @endforeach
-                @else
-                    <tr>
-                        <td>
-                            <div class="alert alert-warning">{{ trans('general.no_items_in_cart') }}</div>
-                        </td>
-                    </tr>
-                @endif
-                </tbody>
-            </table>
+
+                    </tbody>
+                </table>
+            @else
+                <div class="row">
+                    <div class="col-12">
+                        <div class="alert alert-warning">{{ trans('general.no_items_in_cart') }}</div>
+                    </div>
+                </div>
+            @endif
             <div class="tt-shopcart-btn">
                 <div class="col-left">
                     <a class="btn-link" href="{{ route('frontend.home') }}"><i
@@ -197,7 +199,9 @@
                                 </tr>
                                 </tfoot>
                             </table>
-                            <a href="#" class="btn btn-lg"><span class="icon icon-check_circle"></span>{{ trans('general.proceed_to_checkout') }}</a>
+                            <a href="#" class="btn btn-lg"><span
+                                        class="icon icon-check_circle"></span>{{ trans('general.proceed_to_checkout') }}
+                            </a>
                         </div>
                     </div>
                     <div class="col-12">

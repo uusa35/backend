@@ -2,13 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e163867a-e084-464b-b025-90563ffad1db" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/CartController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/ProductHelpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ProductHelpers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/CartTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/CartTrait.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Helpers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/ar/general.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ar/general.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/ar/message.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ar/message.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/cart/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/cart/index.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -76,8 +69,8 @@
               <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/cart/index.blade.php">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="398">
-                      <caret line="46" column="100" selection-start-line="46" selection-start-column="100" selection-end-line="46" selection-end-column="100" />
+                    <state relative-caret-position="180">
+                      <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
                     </state>
                   </provider>
                 </entry>
@@ -89,8 +82,8 @@
               <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/app/Services/CartTrait.php">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="144">
-                      <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+                    <state relative-caret-position="288">
+                      <caret line="27" column="13" lean-forward="true" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
                       <folding>
                         <element signature="e#32#53#0#PHP" expanded="true" />
                       </folding>
@@ -260,9 +253,9 @@
         <option value="$PROJECT_DIR$/app/Models/ProductHelpers.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Frontend/CartController.php" />
         <option value="$PROJECT_DIR$/app/Services/CartTrait.php" />
-        <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/cart/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Services/Helpers.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php" />
+        <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/cart/index.blade.php" />
       </list>
     </option>
   </component>
@@ -661,12 +654,12 @@
       <workItem from="1552195660255" duration="30176000" />
       <workItem from="1552278609654" duration="9758000" />
       <workItem from="1552292364161" duration="8716000" />
-      <workItem from="1552303216642" duration="28454000" />
+      <workItem from="1552303216642" duration="28551000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="362732000" />
+    <option name="totallyTimeSpent" value="362829000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
@@ -1036,24 +1029,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/cart/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="46" column="100" selection-start-line="46" selection-start-column="100" selection-end-line="46" selection-end-column="100" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Services/CartTrait.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="611">
-          <caret line="52" column="127" selection-start-line="52" selection-start-column="127" selection-end-line="52" selection-end-column="127" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Services/Helpers.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="805">
-          <caret line="148" column="34" lean-forward="true" selection-start-line="148" selection-start-column="34" selection-end-line="148" selection-end-column="34" />
+        <state relative-caret-position="697">
+          <caret line="141" column="49" selection-start-line="141" selection-start-column="49" selection-end-line="141" selection-end-column="49" />
         </state>
       </provider>
     </entry>
@@ -1064,6 +1043,20 @@
           <folding>
             <element signature="e#49#85#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Services/CartTrait.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="611">
+          <caret line="52" column="127" selection-start-line="52" selection-start-column="127" selection-end-line="52" selection-end-column="127" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/cart/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
         </state>
       </provider>
     </entry>
