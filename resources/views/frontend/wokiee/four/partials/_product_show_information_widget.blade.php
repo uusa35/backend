@@ -11,7 +11,7 @@
             @if(!is_null($element->user))
                 <tr>
                     <td class="td-fixed-element">
-                    <span style="min-width: 130px;"><i class="fa fa-fw fa-building-o fa-lg"></i> <span
+                    <span style="min-width: 130px;"><i class="fa fa-fw icon-e-39 fa-lg"></i> <span
                                 class="ml-2"></span> {{ trans('general.company_name') }}:</span>
                     </td>
                     <td>
@@ -23,18 +23,31 @@
             @if($element->user->country)
                 <tr>
                     <td class="td-fixed-element">
-                    <span style="min-width: 130px;"><i class="fa fa-fw fa-building-o fa-lg"></i> <span
+                    <span style="min-width: 130px;"><i class="fa fa-fw icon-f-23 fa-lg"></i> <span
                                 class="ml-2"></span> {{ trans('general.country') }}:</span>
                     </td>
                     <td>
-                        {{ $element->user->country->slug  }}</li>
+                        {{ $element->user->country->slug  }}
+                    </td>
+                </tr>
+            @endif
+            @if($element->shipment_package->countries)
+                <tr>
+                    <td class="td-fixed-element">
+                    <span style="min-width: 130px;"><i class="fa fa-fw icon-f-48 fa-lg"></i> <span
+                                class="ml-2"></span> {{ trans('general.countries_available_for_shipment') }}:</span>
+                    </td>
+                    <td>
+                        @foreach($element->shipment_package->countries as $country)
+                                {{ $country->slug }},
+                        @endforeach
                     </td>
                 </tr>
             @endif
             @if($element->user->country)
                 <tr>
                     <td class="td-fixed-element">
-                    <span style="min-width: 130px;"><i class="fa fa-fw fa-balance-scale fa-lg"></i> <span
+                    <span style="min-width: 130px;"><i class="fa fa-fw icon-g-45 fa-lg"></i> <span
                                 class="ml-2"></span> {{ trans('general.weight') }}:</span>
                     </td>
                     <td>
@@ -135,7 +148,8 @@
             @endif
             @if(!is_null($element->brands) && $element->brands->isNotEmpty())
                 <tr>
-                    <td class="td-fixed-element"><i class="icon-f-07 fa fa-fw fa-lg"></i>{{ trans("general.brands") }}:</td>
+                    <td class="td-fixed-element"><i class="icon-f-09 fa fa-fw fa-lg"></i>{{ trans("general.brands") }}:
+                    </td>
                     <td>
                         @foreach($element->brands as $brand)
                             <a class="theme-color"

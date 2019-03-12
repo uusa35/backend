@@ -280,5 +280,8 @@ return array(
     'total_price' => 'السعر الإجمالي',
     'shipment_destination' => 'جهة الشحن',
     'total_price_in_kuwaiti_dinar'=> 'السعر الإجمالي بالدينار الكويتي',
-    'item_cart_name' => 'إسم الخدمة / المنتج'
+    'item_cart_name' => 'إسم الخدمة / المنتج',
+    'countries_available_for_shipment' => 'الدول المتاحة للشحن',
+    'kg' => 'كيلوجرام',
+    'weight' => 'الوزن'
 );

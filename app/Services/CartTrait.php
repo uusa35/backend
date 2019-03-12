@@ -50,7 +50,7 @@ trait CartTrait
             if ($element) {
                 $cart->remove($element->rowId);
             }
-            if(checkShipmentAvailability(getClientCountry()->id,$product->shipment_package->countries->pluck('id')->toArray()))
+            if(checkShipmentAvailability(getClientCountry()->id,$product->shipment_package->countries->pluck('id')->toArray())) {
                 $cart->add($product->UId, $product->name, $request->qty, $product->finalPriceWithShipment,
                     [
                         'type' => 'product',
@@ -65,7 +65,9 @@ trait CartTrait
                         'element' => $product
                     ]
                 );
-            return true;
+                return true;
+            }
+            return false;
         }
         return false;
     }

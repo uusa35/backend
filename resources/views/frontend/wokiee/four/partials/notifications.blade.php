@@ -28,7 +28,6 @@
             @endif
 
             @if (isset($error) || $error = session()->get('error'))
-                {{ dd('here') }}
                 <div class="alert alert-danger alert-block">
                     <div class="row">
                         <div class="col-lg-1">
