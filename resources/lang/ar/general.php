@@ -279,5 +279,6 @@ return array(
     'package_fee_price' => 'قيمة سعر الشحن',
     'total_price' => 'السعر الإجمالي',
     'shipment_destination' => 'جهة الشحن',
-    'total_price_in_kuwaiti_dinar'=> 'السعر الإجمالي بالدينار الكويتي'
+    'total_price_in_kuwaiti_dinar'=> 'السعر الإجمالي بالدينار الكويتي',
+    'item_cart_name' => 'إسم الخدمة / المنتج'
 );

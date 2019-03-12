@@ -1,9 +1,13 @@
 <div class="container-indent">
     <div class="container container-fluid-custom-mobile-padding">
-        <div class="tt-block-title">
-            <h2 class="tt-title">{{ trans('general.hot_deal_services') }}</h2>
-            <div class="tt-description">{{ trans('message.hot_deal_services') }}</div>
-        </div>
+        @if(isset($title))
+            <div class="tt-block-title">
+                <h2 class="tt-title">{{ trans('general.hot_deal_services') }}</h2>
+                @if(isset($message))
+                    <div class="tt-description">{{ trans('message.hot_deal_services') }}</div>
+                @endif
+            </div>
+        @endif
         <div class="tt-carousel-products row arrow-location-tab arrow-location-tab01 tt-alignment-img tt-layout-product-item slick-animated-show-js"
              data-item='{{ isset($item) ? $item : 4 }}'
         >

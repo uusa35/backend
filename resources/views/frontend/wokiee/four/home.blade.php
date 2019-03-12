@@ -7,9 +7,7 @@
     @if(request()->has('evento'))
         @include('frontend.wokiee.four.partials._btns_home')
         {{--@include('frontend.wokiee.four.partials._commercials_top', ['elements' => $topDoubleCommercials])--}}
-        @include('frontend.wokiee.four.partials._services_slider_hot_deal', ['elements' => $newServices])
-        @include('frontend.wokiee.four.partials._services_slider_hot_deal', ['elements' => $serviceHotDeals])
-        @include('frontend.wokiee.four.partials._services_slider_hot_deal', ['elements' => $serviceHotDeals])
+        @include('frontend.wokiee.four.partials._services_slider_sm', ['elements' => $serviceHotDeals, 'title' => trans('general.hot_deals')])
         {{--@include('frontend.wokiee.four.partials._commercials_top', ['elements' => $bottomDoubleCommercials])--}}
     @endif
     @if(request()->has('mallr'))
