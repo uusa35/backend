@@ -140,6 +140,9 @@ function getClientCountry()
     } else {
         $clientCountry = Country::where('name', $country)->first();
     }
+    if (is_null(session()->get('country'))) {
+        session()->put('country', $clientCountry);
+    }
     return !is_null($clientCountry) ? $clientCountry : null;
 }
 

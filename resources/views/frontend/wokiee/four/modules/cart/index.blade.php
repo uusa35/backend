@@ -41,6 +41,10 @@
                                     @if($element->options->color)
                                         <li>{{ trans('general.color') }}: {{ $element->options->color->name }}</li>
                                     @endif
+                                    @if($element->options->country_destination)
+                                        <li>{{ trans('general.shipment_destination') }}
+                                            : {{ $element->options->country_destination->slug }}</li>
+                                    @endif
                                     @if($element->options->day_selected)
                                         <li>{{ trans('general.day_selected') }}
                                             : {{ $element->options->day_selected->format('d/m/Y') }}</li>
@@ -106,6 +110,28 @@
             </div>
         </div>
         @if($elements->isNotEmpty())
+
+            <div class="tt-shopcart-col">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="alert alert-info alert-block">
+                            <div class="row" style="padding-top: 10px;">
+                                <div class="col-lg-1">
+                                    <h6>
+                                        <i class="fa fa-1x fa-exclamation-triangle fa-fw"></i>
+                                    </h6>
+                                </div>
+                                <div class="col-lg-11">
+                                        <a href="{{ route('register') }}" class="align-content-center">
+                                            {{ trans('message.change_address_for_destination') }}
+                                        </a>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="tt-shopcart-col">
                 <div class="row">
                     <div class="col-md-6 col-lg-4">
