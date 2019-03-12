@@ -10,6 +10,13 @@
         <div class="tt-shopcart-table-02">
             <table>
                 <tbody>
+                <tr>
+                    <td>{{ trans('general.item') }}</td>
+                    <td></td>
+                    <td>{{ trans('general.company_name') }}</td>
+                    <td>{{ trans('general.final_price') }}</td>
+                    <td>{{ trans('general.remove') }}</td>
+                </tr>
                 @if($elements->isNotEmpty())
                     @foreach($elements as $element)
                         <tr>
@@ -47,19 +54,11 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <div class="detach-quantity-mobile"></div>
-                                    </li>
-                                    <li>
                                         <div class="tt-price">
                                             {{ trans('general.qty') }} {{ $element->qty }}
                                         </div>
                                     </li>
                                 </ul>
-                            </td>
-                            <td>
-                                <div class="tt-price">
-                                    {{ $element->price }} {{ trans('general.kd') }}
-                                </div>
                             </td>
                             <td>
                                 <div class="detach-quantity-desctope">
@@ -69,12 +68,13 @@
                                 </div>
                             </td>
                             <td>
-                                <div class="tt-price subtotal">
-                                    $124
+                                <div class="tt-price">
+                                    {{ $element->price }} {{ trans('general.kd') }}
                                 </div>
                             </td>
                             <td>
-                                <a href="#" class="tt-btn-close"></a>
+                                <a href="{{ route('frontend.cart.remove',$element->rowId) }}"
+                                   class="icon-h-02"></a>
                             </td>
                         </tr>
                     @endforeach
