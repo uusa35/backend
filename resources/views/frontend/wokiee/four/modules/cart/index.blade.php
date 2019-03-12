@@ -14,7 +14,7 @@
                     <td>{{ trans('general.item') }}</td>
                     <td></td>
                     <td>{{ trans('general.company_name') }}</td>
-                    <td>{{ trans('general.final_price') }}</td>
+                    <td>{{ trans('general.total_price') }}</td>
                     <td>{{ trans('general.remove') }}</td>
                 </tr>
                 @if($elements->isNotEmpty())
@@ -22,13 +22,17 @@
                         <tr>
                             <td>
                                 <div class="tt-product-img">
-                                    <img src="{{ asset(env('IMG_LOADER')) }}"
-                                         data-src="{{ $element->options->element->imageThumbLink }}" alt="">
+                                    <a href="{{ route('frontend.product.show.name',['id' => $element->product_id,'name' => $element->options->element->name]) }}">
+                                        <img src="{{ asset(env('IMG_LOADER')) }}"
+                                             data-src="{{ $element->options->element->imageThumbLink }}" alt="">
+                                    </a>
                                 </div>
                             </td>
                             <td>
                                 <h2 class="tt-title">
-                                    <a href="#">{{ $element->options->element->name }}</a>
+                                    <a href="{{ route('frontend.product.show.name',['id' => $element->product_id,'name' => $element->options->element->name]) }}">
+                                        {{ $element->options->element->name }}
+                                    </a>
                                 </h2>
                                 <ul class="tt-list-description">
                                     @if($element->options->size)

@@ -131,7 +131,7 @@ function get_client_ip()
 function getClientCountry()
 {
     // has no relation with Country of the session
-    $user_ip = app()->isLocal() ? '188.70.3.225' : get_client_ip();
+    $user_ip = app()->isLocal() ? '176.17.238.199' : get_client_ip();
     $geo = unserialize(file_get_contents("http://www.geoplugin.net/php.gp?ip=$user_ip"));
     $country = $geo["geoplugin_countryName"];
     $city = $geo["geoplugin_city"];
@@ -140,7 +140,7 @@ function getClientCountry()
     } else {
         $clientCountry = Country::where('name', $country)->first();
     }
-    return !is_null($clientCountry) ? $clientCountry : false;
+    return !is_null($clientCountry) ? $clientCountry : null;
 }
 
 function getCurrentCountrySessionId()

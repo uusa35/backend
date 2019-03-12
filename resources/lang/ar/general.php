@@ -276,5 +276,6 @@ return array(
     'country_successfully_set' => 'تم تغير الدولة بنجاح',
     'service_added_to_cart_successfully' => 'تم إضافة الخدمة إلى عربة التسوق بنجاح',
     'final_price' => 'السعر النهائي',
-    'package_fee_price' => 'قيمة سعر الشحن'
+    'package_fee_price' => 'قيمة سعر الشحن',
+    'total_price' => 'السعر الإجمالي'
 );
