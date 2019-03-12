@@ -2,7 +2,7 @@
     @if($categories->isNotEmpty())
         @foreach($categories->where('is_parent', true) as $cat)
             <li class="dropdown megamenu">
-                <a href="{{ route('frontend.search',['category_id']) }}">{{ str_limit($cat->name,20) }}</a>
+                <a href="{{ route('frontend.search',['category_id']) }}">{{ str_limit($cat->name,12,'') }}</a>
                 @if($cat->children->isNotEmpty())
                     <div class="dropdown-menu">
                         <div class="row">

@@ -39,14 +39,11 @@ trait ProductHelpers
     {
         return $q->whereHas('user', function ($q) {
             $q->whereHas('shipment_packages', function ($q) {
-                return $q->where(['country_id' => getCurrentClientCountryId()]);
+                return $q->whereHas('countries', function ($q) {
+                    return $q->where(['country_id' => getCurrentCountrySessionId()]);
+                });
             });
         });
-    }
-
-    public function getAvailableQtyAttribute()
-    {
-        return $this->has_attributes ? $this->product_attributes->sum('qty') : $this->qty;
     }
 
     public function scopeHasStock($q)
@@ -60,4 +57,27 @@ trait ProductHelpers
         }
     }
 
+    public function getAvailableQtyAttribute()
+    {
+        return $this->has_attributes ? $this->product_attributes->sum('qty') : $this->qty;
+    }
+
+    public function getTotalFinalPriceWithShipmentCheck(Product $product, Country $destinationCountry, User $merchant, $qty)
+    {
+        if (in_array($destinationCountry->id, $product->shipment_package->countries->pluck('id')->toArray(), true)) {
+            $finalPriceWithShipment = (($product->weight * $product->shipment_package->charge) + $product->finalPrice) * $qty;
+            return $finalPriceWithShipment;
+        }
+        return false;
+    }
+
+    public function getFinalPriceWithShipmentAttribute()
+    {
+        return ((double)$this->weight * (double)$this->shipment_package->charge) + $this->finalPrice;
+    }
+
+    public function getPackageFeePriceAttribute()
+    {
+        return (double)$this->weight * (double)$this->shipment_package->charge;
+    }
 }

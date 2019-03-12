@@ -36,6 +36,11 @@ class Product extends PrimaryModel
         return $this->belongsTo(OrderMeta::class);
     }
 
+    public function shipment_package()
+    {
+        return $this->belongsTo(ShipmentPackage::class);
+    }
+
     public function colors()
     {
         return $this->belongsToMany(Color::class, 'product_attributes', 'product_id', 'color_id');

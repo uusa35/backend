@@ -12,13 +12,13 @@ class ShipmentPackage extends PrimaryModel
         return $this->belongsTo(User::class);
     }
 
-    public function country()
+    public function products()
     {
-        return $this->belongsTo(Country::class);
+        return $this->hasMany(Product::class);
     }
 
-    public function area()
+    public function countries()
     {
-        return $this->belongsTo(Area::class);
+        return $this->belongsToMany(Country::class);
     }
 }

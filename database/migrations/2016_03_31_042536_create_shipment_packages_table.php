@@ -26,12 +26,6 @@ class CreateShipmentPackagesTable extends Migration
             $table->integer('user_id')->unsigned()->index();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
 
-            $table->integer('country_id')->unsigned()->index();
-            $table->foreign('country_id')->references('id')->on('countries')->onDelete('cascade')->onUpdate('cascade');
-
-            $table->integer('area_id')->unsigned()->index()->nullable();
-            $table->foreign('area_id')->references('id')->on('areas');
-
             $table->timestamps();
         });
     }

@@ -29,7 +29,7 @@
                                 @include('frontend.wokiee.four.partials._categories_main_menu_element_with_images')
 
                                 @if($pages->isNotEmpty())
-                                    @foreach($pages->where('on_menu_desktop',true) as $page)
+                                    @foreach($pages->where('on_menu_desktop',true)->take(3) as $page)
                                         <li class="dropdown">
                                             <a href="{{ route('frontend.page.show.name',['id' => $page->id,'name' => $page->title]) }}">
                                                 {{ str_limit($page->title,11,'') }}

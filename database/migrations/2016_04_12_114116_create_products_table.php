@@ -51,6 +51,9 @@ class CreateProductsTable extends Migration
             $table->integer('brand_id')->unsigned()->index()->nullable();
             $table->foreign('brand_id')->references('id')->on('brands');
 
+            $table->integer('shipment_package_id')->unsigned()->index()->nullable();
+            $table->foreign('shipment_package_id')->references('id')->on('shipment_packages');
+
             $table->timestamps();
             $table->softDeletes();
         });

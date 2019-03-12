@@ -14,7 +14,7 @@ trait ServiceHelpers
     public function scopeServeCountries($q)
     {
         return $q->whereHas('user', function ($q) {
-            $q->where(['country_id' => getCurrentClientCountryId()]);
+            $q->where(['country_id' => getCurrentCountrySessionId()]);
         });
 
     }

@@ -21,9 +21,4 @@ class Area extends PrimaryModel
     {
         return $this->belongsToMany(User::class);
     }
-
-    public function shipment_packages()
-    {
-        return $this->hasMany(ShipmentPackage::class);
-    }
 }

@@ -34,8 +34,8 @@ $factory->define(Service::class, function (Faker $faker) use ($fakerAr) {
         'end_sale' => $faker->dateTimeBetween('now', '1 year'),
 
         'user_id' => User::companies()->get()->random()->id,
-        'active' => $faker->boolean,
-        'is_available' => $faker->boolean,
+        'active' => $faker->boolean(true),
+        'is_available' => $faker->boolean(true),
         'multi_booking' => $faker->boolean,
         'booking_limit' => $faker->numberBetween(1, 4)
     ];

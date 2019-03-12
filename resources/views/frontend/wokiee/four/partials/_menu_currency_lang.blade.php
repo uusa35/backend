@@ -12,8 +12,11 @@
                         <strong class="border-bottom">{{ trans('general.country') }}</strong>
                     </li>
                     @foreach($countries as $country)
-                        <li class="{{ getCurrentClientCountryId() === $country->id ? 'active' : null  }}">
-                            <a href="{{ route('frontend.country.set',['country_id' => $country->id]) }}">{{ $country->slug }}</a>
+                        <li class="{{ getCurrentCountrySessionId() === $country->id ? 'active' : null  }}">
+                            <a href="{{ route('frontend.country.set',['country_id' => $country->id]) }}">
+                                <img class="img-responsive img-xxs" src="{{ $country->imageThumbLink }}"
+                                     alt="{{ $country->slug }}">
+                                {{ $country->slug }}</a>
                         </li>
                     @endforeach
                 </ul>
@@ -36,7 +39,7 @@
                         <li class="{{ getCurrencySymbol() === $currency->currency_symbol_en ? 'active' : null  }}">
                             <a href="{{ route('frontend.currency.change',['currency' => strtolower($currency->currency_symbol_en)]) }}">
                                 <img class="img-responsive img-xxs"
-                                     src="{{ asset(env('THUMBNAIL').$currency->country->flag) }}" alt="">
+                                     src="{{ $currency->country->imageThumbLink }}" alt="{{ $currency->name }}">
                                 {{ $currency->name }}
                             </a></li>
                     @endforeach

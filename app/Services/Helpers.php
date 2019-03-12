@@ -87,7 +87,8 @@ function getConvertedPrice($price)
     return $price * $currentCurrency->exchange_rate;
 }
 
-function getCurrencySymbol() {
+function getCurrencySymbol()
+{
     return session('currency')->currency_symbol_en;
 }
 
@@ -129,15 +130,20 @@ function get_client_ip()
 
 function getClientCountry()
 {
-    $user_ip = get_client_ip();
+    // has no relation with Country of the session
+    $user_ip = app()->isLocal() ? '188.70.3.225' : get_client_ip();
     $geo = unserialize(file_get_contents("http://www.geoplugin.net/php.gp?ip=$user_ip"));
     $country = $geo["geoplugin_countryName"];
     $city = $geo["geoplugin_city"];
-    $clientCountry = Country::where('name', $country)->first();
-    return $clientCountry;
+    if (auth()->check()) {
+        $clientCountry = auth()->user()->country;
+    } else {
+        $clientCountry = Country::where('name', $country)->first();
+    }
+    return !is_null($clientCountry) ? $clientCountry : false;
 }
 
-function getCurrentClientCountryId()
+function getCurrentCountrySessionId()
 {
     if (!session()->has('country') && !is_null(session()->get('country'))) {
         return 0;

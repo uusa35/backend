@@ -202,7 +202,3 @@
         </div>
     </div>
 </div>
-
-@if(!request()->has('evento'))
-    @include('frontend.wokiee.four.partials._country_modal')
-@endif

@@ -40,6 +40,6 @@ class Country extends PrimaryModel
 
     public function shipment_packages()
     {
-        return $this->hasMany(ShipmentPackage::class);
+        return $this->belongsToMany(ShipmentPackage::class);
     }
 }

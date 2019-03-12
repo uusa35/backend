@@ -50,20 +50,25 @@ trait CartTrait
             if ($element) {
                 $cart->remove($element->rowId);
             }
-            $cart->add($product->UId, $product->name, $request->qty, $product->finalPrice,
-                [
-                    'type' => 'product',
-                    'product_id' => $product->id,
-                    'product_attribute_id' => $request->product_attribute_id,
-                    'size_id' => $request->size_id,
-                    'color_id' => $request->color_id,
-                    'color' => Color::whereId($request->color_id)->first(),
-                    'size' => Size::whereId($request->size_id)->first(),
-                    'company' => $product->user->slug,
-                    'element' => $product
-                ]
-            );
-            return true;
+            $totalFinalPriceWithPackage = $product->getTotalFinalPriceWithShipmentCheck($product, getClientCountry(), $product->user, $request->qty);
+            if($totalFinalPriceWithPackage) {
+                $cart->add($product->UId, $product->name, $request->qty, $totalFinalPriceWithPackage,
+                    [
+                        'type' => 'product',
+                        'country_destination' => getClientCountry(),
+                        'product_id' => $product->id,
+                        'product_attribute_id' => $request->product_attribute_id,
+                        'size_id' => $request->size_id,
+                        'color_id' => $request->color_id,
+                        'color' => Color::whereId($request->color_id)->first(),
+                        'size' => Size::whereId($request->size_id)->first(),
+                        'company' => $product->user->slug,
+                        'element' => $product
+                    ]
+                );
+                return true;
+            }
+            return false; // destinationCountry is not served for such package category
         }
         return false;
     }

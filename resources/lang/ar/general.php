@@ -271,5 +271,10 @@ return array(
     'view_details' => 'مشاهدة التفاصيل',
     'choose_size' => 'اختر المقاس المناسب',
     'available_items' => 'القطع المتوفرة',
-    'item' => 'قطعة'
+    'item' => 'قطعة',
+    'home_page' => 'الصفحة الرئيسية',
+    'country_successfully_set' => 'تم تغير الدولة بنجاح',
+    'service_added_to_cart_successfully' => 'تم إضافة الخدمة إلى عربة التسوق بنجاح',
+    'final_price' => 'السعر النهائي',
+    'package_fee_price' => 'قيمة سعر الشحن'
 );
