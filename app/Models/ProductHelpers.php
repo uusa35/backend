@@ -62,15 +62,6 @@ trait ProductHelpers
         return $this->has_attributes ? $this->product_attributes->sum('qty') : $this->qty;
     }
 
-    public function getTotalFinalPriceWithShipmentCheck(Product $product, Country $destinationCountry, User $merchant, $qty)
-    {
-        if (in_array($destinationCountry->id, $product->shipment_package->countries->pluck('id')->toArray(), true)) {
-            $finalPriceWithShipment = (($product->weight * $product->shipment_package->charge) + $product->finalPrice) * $qty;
-            return $finalPriceWithShipment;
-        }
-        return false;
-    }
-
     public function getFinalPriceWithShipmentAttribute()
     {
         return ((double)$this->weight * (double)$this->shipment_package->charge) + $this->finalPrice;

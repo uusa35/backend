@@ -12,6 +12,7 @@ use App\Models\Image;
 use App\Models\Product;
 use App\Models\Service;
 use App\Models\Slide;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -43,10 +44,10 @@ class HomeController extends Controller
         $serviceHotDeals = $this->service->active()->available()->onSale()->onHome()->hotDeals()->hasImage()->serveCountries()->hasTiming()->with('user.country')->orderby('end_sale', 'desc')->take(self::TAKE)->get();
 
         if (request()->has('mallr')) {
-            $newProducts = $this->product->active()->available()->onHome()->onNew()->hasImage()->serveCountries()->hasStock()->with('images','product_attributes.color','user.country')->orderBy('created_at', 'desc')->take(self::TAKE)->get();
-            $onSaleProducts = $this->product->active()->available()->onSaleOnHome()->hasImage()->serveCountries()->with('images','product_attributes.color','user.country')->orderby('end_sale', 'desc')->take(self::TAKE)->get();
-            $bestSalesProducts = $this->product->whereIn('id', $this->product->active()->available()->hasImage()->serveCountries()->bestSalesProducts())->with('images','product_attributes.color','user.country')->get();
-            $productHotDeals = $this->product->active()->available()->onSale()->hotDeals()->hasImage()->serveCountries()->with('images','product_attributes.color','user.country')->orderby('end_sale', 'desc')->take(self::TAKE)->get();
+            $newProducts = $this->product->active()->available()->onHome()->onNew()->hasImage()->serveCountries()->hasStock()->with('images', 'product_attributes.color', 'user.country')->orderBy('created_at', 'desc')->take(self::TAKE)->get();
+            $onSaleProducts = $this->product->active()->available()->onSaleOnHome()->hasImage()->serveCountries()->with('images', 'product_attributes.color', 'user.country')->orderby('end_sale', 'desc')->take(self::TAKE)->get();
+            $bestSalesProducts = $this->product->whereIn('id', $this->product->active()->available()->hasImage()->serveCountries()->bestSalesProducts())->with('images', 'product_attributes.color', 'user.country')->get();
+            $productHotDeals = $this->product->active()->available()->onSale()->hotDeals()->hasImage()->serveCountries()->with('images', 'product_attributes.color', 'user.country')->orderby('end_sale', 'desc')->take(self::TAKE)->get();
             $categoriesHome = Category::onHome()->isFeatured()->orderBy('order', 'desc')->take(4)->get();
 //            $categoriesFeatured = Category::where(['is_featured' => true])->take(self::TAKE)->orderBy('order', 'desc')->get();
             $brands = Brand::active()->onHome()->orderBy('order', 'desc')->take(12)->get();
@@ -189,6 +190,16 @@ class HomeController extends Controller
         $country = Country::whereId($request->country_id)->first();
         if ($country) {
             session()->put('country', $country);
+            // later we shall fire an event to check Cart
+            $cart = Cart::content();
+            $cart->each(function ($item, $rowId) {
+                if ($item->options->type === 'product') {
+                    $product = Product::whereId($item->options->element_id)->with('shipment_package.countries')->first();
+                    if (!checkShipmentAvailability(getClientCountry()->id, $product->shipment_package->countries->pluck('id')->toArray())) {
+                        Cart::remove($rowId);
+                    }
+                }
+            });
             return redirect()->back()->with('success', trans('general.country_successfully_set'));
         }
         return redirect()->back()->with('error', trans('general.country_is_not_set_successfully'));

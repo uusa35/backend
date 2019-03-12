@@ -29,7 +29,7 @@ trait CartTrait
             $cart->add($service->UId, $service->name, 1, $service->finalPrice,
                 [
                     'type' => 'service',
-                    'service_id' => $service->id,
+                    'element_id' => $service->id,
                     'day_selected' => Carbon::parse($request->day_selected_format),
                     'timing_id' => $request->timing_id,
                     'notes' => $request->notes,
@@ -50,13 +50,12 @@ trait CartTrait
             if ($element) {
                 $cart->remove($element->rowId);
             }
-            $totalFinalPriceWithPackage = $product->getTotalFinalPriceWithShipmentCheck($product, getClientCountry(), $product->user, $request->qty);
-            if($totalFinalPriceWithPackage) {
-                $cart->add($product->UId, $product->name, $request->qty, $totalFinalPriceWithPackage,
+            if(checkShipmentAvailability(getClientCountry()->id,$product->shipment_package->countries->pluck('id')->toArray()))
+                $cart->add($product->UId, $product->name, $request->qty, $product->finalPriceWithShipment,
                     [
                         'type' => 'product',
                         'country_destination' => getClientCountry(),
-                        'product_id' => $product->id,
+                        'element_id' => $product->id,
                         'product_attribute_id' => $request->product_attribute_id,
                         'size_id' => $request->size_id,
                         'color_id' => $request->color_id,
@@ -66,9 +65,7 @@ trait CartTrait
                         'element' => $product
                     ]
                 );
-                return true;
-            }
-            return false; // destinationCountry is not served for such package category
+            return true;
         }
         return false;
     }

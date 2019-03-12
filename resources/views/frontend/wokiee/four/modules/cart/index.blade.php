@@ -22,7 +22,7 @@
                         <tr>
                             <td>
                                 <div class="tt-product-img">
-                                    <a href="{{ route('frontend.product.show.name',['id' => $element->product_id,'name' => $element->options->element->name]) }}">
+                                    <a href="{{ route('frontend.product.show.name',['id' => $element->element_id,'name' => $element->options->element->name]) }}">
                                         <img src="{{ asset(env('IMG_LOADER')) }}"
                                              data-src="{{ $element->options->element->imageThumbLink }}" alt="">
                                     </a>
@@ -43,7 +43,9 @@
                                     @endif
                                     @if($element->options->country_destination)
                                         <li>{{ trans('general.shipment_destination') }}
-                                            : {{ $element->options->country_destination->slug }}</li>
+                                            : {{ $element->options->country_destination->slug }}
+                                            {{ $element->options->element->shipment_package->id }} -
+                                        </li>
                                     @endif
                                     @if($element->options->day_selected)
                                         <li>{{ trans('general.day_selected') }}
@@ -55,10 +57,10 @@
                                     @endif
                                     <li>
                                         <div class="tt-price">
-                                            {{ trans('general.final_price') }}  {{ $element->options->element->finalPrice }} {{ trans('general.kd') }}
+                                            {{ trans('general.final_price') }}  {{ $element->options->element->convertedFinalPrice }} {{ $currency->symbol }}
                                         </div>
                                         <div class="tt-price">
-                                            {{ trans('general.package_fee_price') }}  {{ $element->options->element->packageFeePrice }} {{ trans('general.kd') }}
+                                            {{ trans('general.package_fee_price') }}  {{ getConvertedPrice($element->options->element->packageFeePrice) }} {{ $currency->symbol }}
                                         </div>
                                     </li>
                                     <li>
@@ -77,7 +79,7 @@
                             </td>
                             <td>
                                 <div class="tt-price">
-                                    {{ $element->price }} {{ trans('general.kd') }}
+                                    {{ getConvertedPrice($element->price) }} {{ $currency->symbol }}
                                 </div>
                             </td>
                             <td>
@@ -110,7 +112,6 @@
             </div>
         </div>
         @if($elements->isNotEmpty())
-
             <div class="tt-shopcart-col">
                 <div class="row">
                     <div class="col-12">
@@ -118,10 +119,11 @@
                             <div class="row" style="padding-top: 10px;">
                                 <div class="col-lg-1">
                                     <h6>
-                                        <i class="fa fa-1x fa-exclamation-triangle fa-fw"></i>
+                                        <i class="fa fa-2x fa-exclamation-triangle fa-fw"></i>
                                     </h6>
                                 </div>
                                 <div class="col-lg-11">
+                                    <h6>
                                         <a href="{{ route('register') }}" class="align-content-center">
                                             {{ trans('message.change_address_for_destination') }}
                                         </a>
@@ -145,27 +147,6 @@
                                     <label for="address_country">{{ trans('general.country') }} <sup>*</sup></label>
                                     <select id="address_country" class="form-control">
                                         <option>Austria</option>
-                                        <option>Belgium</option>
-                                        <option>Cyprus</option>
-                                        <option>Croatia</option>
-                                        <option>Czech Republic</option>
-                                        <option>Denmark</option>
-                                        <option>Finland</option>
-                                        <option>France</option>
-                                        <option>Germany</option>
-                                        <option>Greece</option>
-                                        <option>Hungary</option>
-                                        <option>Ireland</option>
-                                        <option>France</option>
-                                        <option>Italy</option>
-                                        <option>Luxembourg</option>
-                                        <option>Netherlands</option>
-                                        <option>Poland</option>
-                                        <option>Portugal</option>
-                                        <option>Slovakia</option>
-                                        <option>Slovenia</option>
-                                        <option>Spain</option>
-                                        <option>United Kingdom</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
@@ -189,35 +170,39 @@
                             </form>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="tt-shopcart-box">
-                            <h4 class="tt-title">
-                                NOTE
-                            </h4>
-                            <p>Add special instructions for your order...</p>
-                            <form class="form-default">
-                                <textarea class="form-control" rows="7"></textarea>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
+                    {{--<div class="col-md-6 col-lg-4">--}}
+                    {{--<div class="tt-shopcart-box">--}}
+                    {{--<h4 class="tt-title">--}}
+                    {{--NOTE--}}
+                    {{--</h4>--}}
+                    {{--<p>Add special instructions for your order...</p>--}}
+                    {{--<form class="form-default">--}}
+                    {{--<textarea class="form-control" rows="7"></textarea>--}}
+                    {{--</form>--}}
+                    {{--</div>--}}
+                    {{--</div>--}}
+                    <div class="col-md-12 col-lg-12">
                         <div class="tt-shopcart-box tt-boredr-large">
                             <table class="tt-shopcart-table01">
                                 <tbody>
                                 <tr>
-                                    <th>SUBTOTAL</th>
-                                    <td>$324</td>
+                                    <th>{{ trans('general.total_price') }}</th>
+                                    <td>{{ getConvertedPrice(Cart::total()) }} {{ $currency->symbol }}</td>
                                 </tr>
                                 </tbody>
                                 <tfoot>
                                 <tr>
-                                    <th>GRAND TOTAL</th>
-                                    <td>$324</td>
+                                    <th>{{ trans('general.total_price_in_kuwaiti_dinar') }}</th>
+                                    <td>{{ Cart::total() }} {{ trans('general.kd') }}</td>
                                 </tr>
                                 </tfoot>
                             </table>
-                            <a href="#" class="btn btn-lg"><span class="icon icon-check_circle"></span>PROCEED TO
-                                CHECKOUT</a>
+                            <a href="#" class="btn btn-lg"><span class="icon icon-check_circle"></span>{{ trans('general.proceed_to_checkout') }}</a>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="alert alert-warning">
+                            {{ trans('message.payment_will_be_in_kuwaiti_dinar_only') }}
                         </div>
                     </div>
                 </div>

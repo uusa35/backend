@@ -5,15 +5,11 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Coupon;
-use App\Models\OrderMeta;
 use App\Models\Product;
 use App\Models\ProductAttribute;
 use App\Models\Service;
-use App\Models\Timing;
 use App\Services\CartTrait;
-use App\Services\ShippingManager;
 use Carbon\Carbon;
-use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 
 class CartController extends Controller

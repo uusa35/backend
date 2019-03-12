@@ -131,7 +131,10 @@ function get_client_ip()
 function getClientCountry()
 {
     // has no relation with Country of the session
-    $user_ip = app()->isLocal() ? '176.17.238.199' : get_client_ip();
+    $kwd = '188.70.3.225';
+    $ksa = '176.17.238.199';
+    $uae = '109.177.176.229';
+    $user_ip = app()->isLocal() ? $uae : get_client_ip();
     $geo = unserialize(file_get_contents("http://www.geoplugin.net/php.gp?ip=$user_ip"));
     $country = $geo["geoplugin_countryName"];
     $city = $geo["geoplugin_city"];
@@ -152,4 +155,9 @@ function getCurrentCountrySessionId()
         return 0;
     }
     return session()->get('country')['id'];
+}
+
+function checkShipmentAvailability($destinationCountryId, $destinationRangeIds)
+{
+    return in_array($destinationCountryId, $destinationRangeIds, true);
 }
