@@ -49,9 +49,14 @@
                                     <div class="form-group">
                                         <label for="address_country">{{ trans('general.country') }} <sup>*</sup></label>
                                         <select name="country_id" class="form-control" required>
-                                            @foreach($countries as $country)
-                                                <option value="{{ $country->id }}" {{ getClientCountry()->id === $country->id ? 'selected' : null }}>{{ $country->slug }}</option>
-                                            @endforeach
+                                            @if(getClientCountry())
+                                                <option disabled selected
+                                                        value="{{ getClientCountry()->id }}">{{ getClientCountry()->slug }}</option>
+                                            @else
+                                                <option value="{{ $countries->where('main', true)->first()->id }}"
+                                                        disabled
+                                                        selected>{{ $countries->where('main', true)->first()->slug }}</option>
+                                            @endif
                                         </select>
                                     </div>
                                 </div>

@@ -21,7 +21,10 @@
                 <input type="hidden" name="product_attribute_id" value="">
                 <input type="hidden" name="type" value="product">
                 <button type="submit" id="add_to_cart"
-                        class="btn btn-lg" {{ $element->has_attributes ? 'disabled="disabled"' : null }}
+                        data-tooltip="{{ trans('general.choose_your_color') }}"
+                        data-tposition="top"
+                        role="tooltip"
+                        class="btn btn-lg  tooltip" {{ $element->has_attributes ? 'disabled="disabled"' : null }}
                         id="add_to_cart"><i class="icon-f-39"></i>{{ trans('general.add_to_cart') }}</button>
             </form>
         </div>
