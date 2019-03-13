@@ -28,16 +28,8 @@ class OrderStore extends FormRequest
             'name' => 'required',
             'email' => 'required|string|email|max:255',
             'mobile' => 'required|numeric',
-            'phone' => 'numeric|nullable',
             'address' => 'required|min:5',
-            'country' => 'required',
-            'area' => 'nullable',
-            'block' => 'nullable',
-            'building' => 'nullable',
-            'street' => 'nullable',
-            'floor' => 'nullable',
-            'apartment' => 'nullable',
-            'payment_method' => 'required|alpha',
+            'country_id' => 'required|exists:countries,id',
         ];
     }
 }

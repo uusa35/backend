@@ -17,15 +17,17 @@ $factory->define(OrderMeta::class, function (Faker $faker) {
         'service_id' => Service::all()->random()->id,
         'qty' => $faker->numberBetween(1, 3),
         'product_id' => Product::all()->random()->id,
+        'item_type' => 'product',
         'price' => function ($array) {
             $product = Product::whereId($array['product_id'])->first();
-            return $product->on_sale ? $product->sale_price : $product->price;
+            return $product->isOnSale ? $product->sale_price : $product->price;
         },
+        'shipment_cost' => $faker->numberBetween(1, 3),
         'product_attribute_id' => function ($array) {
             $attribute = ProductAttribute::where('product_id', $array['product_id'])->first();
             return $attribute ? $attribute->id : null;
         },
-        'product_name' => function ($array) {
+        'item_name' => function ($array) {
             return Product::whereId($array['product_id'])->first()->name;
         },
         'product_size' => function ($array) {
@@ -35,9 +37,6 @@ $factory->define(OrderMeta::class, function (Faker $faker) {
         'product_color' => function ($array) {
             $productAttribute = ProductAttribute::whereId($array['product_attribute_id'])->first();
             return $productAttribute ? $productAttribute->color()->first()->name : Color::all()->random()->name;
-        },
-        'service_name' => function ($array) {
-            return Service::whereId($array['service_id'])->first()->name;
         },
         'service_date' => $faker->date(),
         'service_time' => $faker->time(),

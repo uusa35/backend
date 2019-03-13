@@ -47,87 +47,86 @@ class OrderController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(OrderStore $request)
-    {
+    public function createUser($userCartInfo) {
         if (auth()->check()) {
             $user = auth()->user();
             $user->update([
-//            'email' => $request->email,
-                'country' => $request->country,
-                'mobile' => $request->mobile,
-                'address' => $request->address,
-                'phone' => $request->phone,
-                'area' => $request->area,
-                'block' => $request->block,
-                'building' => $request->building,
-                'street' => $request->street,
-                'floor' => $request->floor,
-                'apartment' => $request->apartment,
+                'name' => $userCartInfo->name,
+                'password' => bcrypt($userCartInfo->mobile),
+                'country_id' => $userCartInfo->country_id,
+                'mobile' => $userCartInfo->mobile,
+                'address' => $userCartInfo->address,
             ]);
         } else {
-            $user = User::where('email', $request->email)->first();
+            $user = User::where('email', $userCartInfo->email)->first();
             if ($user) {
                 $user->update([
-//            'email' => $request->email,
-                    'country' => $request->country,
-                    'mobile' => $request->mobile,
-                    'address' => $request->address,
-                    'phone' => $request->phone,
-                    'area' => $request->area,
-                    'block' => $request->block,
-                    'building' => $request->building,
-                    'street' => $request->street,
-                    'floor' => $request->floor,
-                    'apartment' => $request->apartment,
+                    'name' => $userCartInfo->name,
+                    'password' => bcrypt($userCartInfo->mobile),
+                    'country_id' => $userCartInfo->country_id,
+                    'mobile' => $userCartInfo->mobile,
+                    'address' => $userCartInfo->address,
                 ]);
             } else {
                 $user = User::create([
-                    'name' => $request->email,
-                    'email' => $request->email,
-                    'password' => bcrypt($request->mobile),
-                    'country' => $request->country,
-                    'mobile' => $request->mobile,
-                    'address' => $request->address,
-                    'phone' => $request->phone,
-                    'area' => $request->area,
-                    'block' => $request->block,
-                    'building' => $request->building,
-                    'street' => $request->street,
-                    'floor' => $request->floor,
-                    'apartment' => $request->apartment,
+                    'name' => $userCartInfo->email,
+                    'email' => $userCartInfo->email,
+                    'password' => bcrypt($userCartInfo->mobile),
+                    'country_id' => $userCartInfo->country_id,
+                    'mobile' => $userCartInfo->mobile,
+                    'address' => $userCartInfo->address,
                 ]);
             }
 
         }
+        return $user;
+    }
+    public function store()
+    {
+        $userCartInfo = (Object) session()->get('userCartInfo');
+        $validate = validator(session()->get('userCartInfo'), [
+            'name' => 'required',
+            'email' => 'required|email',
+            'mobile' => 'required|numeric|min:8',
+            'address' => 'required|min:5',
+            'country_id' => 'required|exists:countries,id',
+        ]);
+        if ($validate->fails()) {
+            return redirect()->route('frontend.cart.index')->withErrors($validate);
+        }
+        $user = $this->createUser($userCartInfo);
         if ($user) {
-            $shipment = session('shipment');
             $coupon = session()->has('coupon') ? session('coupon') : false;
             auth()->login($user);
             $order = Order::create([
-                'shipping_cost' => $shipment['charge'],
-                'price' => $shipment['grandTotal'],
-                'net_price' => $shipment['grossTotal'],
-                'discount' => $coupon ? ($coupon->is_percentage ? ($this->cart->subTotal() * ($coupon->value / 100)) : $coupon->value) : 0,
-                'mobile' => $request->mobile,
-                'phone' => $request->phone,
-                'area' => $request->area,
-                'country' => $request->country,
-                'email' => $request->email,
-                'address' => $request->address,
+                'price' => $this->cart->total(),
+                'net_price' => $this->cart->total(),
+                'mobile' => $userCartInfo->mobile,
+                'country' => $user->country->slug,
+                'email' => $userCartInfo->email,
+                'address' => $userCartInfo->address,
                 'user_id' => $user->id,
-                'receive_on_branch' => isset($shipment['free_shipment']) && $shipment['free_shipment'] ? $shipment['free_shipment'] : false,
-                'branch_id' => isset($shipment['branch']) ? $shipment['branch'] : null,
-                'payment_method' => $request->payment_method,
+                'discount' => $coupon ? ($coupon->is_percentage ? ($this->cart->subTotal() * ($coupon->value / 100)) : $coupon->value) : 0,
                 'coupon_id' => $coupon ? $coupon['id'] : null
             ]);
             if ($order) {
-                $this->cart->content()->each(function ($item) use ($order, $request) {
+                $this->cart->content()->each(function ($element) use ($order, $user) {
                     $order->order_metas()->create([
                         'order_id' => $order->id,
-                        'product_id' => $item->options->product->id,
-                        'product_attribute_id' => $item->id,
-                        'qty' => $item->qty,
-                        'price' => $item->price,
+                        'product_id' => $element->element_id,
+                        'item_name' => $element->options->item->name,
+                        'item_type' => $element->options->type,
+                        'product_attribute_id' => $element->product_attribute_id,
+                        'qty' => $element->qty,
+                        'price' => $element->price,
+                        'shipment_cost' => $element->options->shipment_cost,
+                        'product_size' => $this->options->size->name,
+                        'product_color' => $this->options->color->name,
+                        'service_date' => $this->options->day_selected,
+                        'service_time' => $this->options->timing->start,
+                        'timing_id' => $this->options->timing_id,
+                        'destination_id' => $user->country_id,
+                        'notes' => $this->options->notes,
                     ]);
                 });
                 return redirect()->route('frontend.order.show', $order->id)->with('success', trans('message.register_account_password_is_your_mobile'));

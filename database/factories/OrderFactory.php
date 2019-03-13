@@ -12,10 +12,9 @@ $factory->define(Order::class, function (Faker $faker) {
     return [
         'user_id' => User::all()->random()->id,
         'status' => $faker->randomElement(['pending', 'success', 'failed', 'delivered']),
-        'shipping_cost' => $faker->randomDigit,
         'price' => $faker->numberBetween(22, 99),
         'discount' => $faker->numberBetween(10, 22), // discount will be updated if there is a coupon applied.
-        'total_price' => function ($array) {
+        'net_price' => function ($array) {
             return $array['price'] - $array['discount'];
         },
         'email' => $faker->email,

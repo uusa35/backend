@@ -18,26 +18,30 @@ class CreateOrderMetasTable extends Migration
             $table->integer('qty')->unsigned();
             // price of the product / service  on the time the order is made (sale price in case on_sale applied)
             $table->decimal('price', 6, 2)->unsigned();
+            $table->decimal('shipment_cost',6,2)->unsigned();
 
             $table->integer('order_id')->unsigned()->index();
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade')->onUpdate('cascade');
 
-            $table->string('product_name')->nullable();
+            $table->string('item_type')->nullable();
+            $table->string('item_name')->nullable();
             $table->string('product_size')->nullable();
             $table->string('product_color')->nullable();
             $table->integer('product_id')->unsigned()->index()->nullable();
             $table->foreign('product_id')->references('id')->on('products')->onDelete('restrict')->onUpdate('restrict');
 
-            $table->integer('product_attribute_id')->unsigned()->index()->nullable();
-            $table->foreign('product_attribute_id')->references('id')->on('product_attributes')->onDelete('restrict')->onUpdate('restrict');
 
-
-            $table->string('service_name')->nullable();
             $table->date('service_date')->nullable();
             $table->time('service_time')->nullable();
 
+            $table->integer('product_attribute_id')->unsigned()->index()->nullable();
+            $table->foreign('product_attribute_id')->references('id')->on('product_attributes')->onDelete('restrict')->onUpdate('restrict');
+
             $table->integer('service_id')->unsigned()->index()->nullable();
             $table->foreign('service_id')->references('id')->on('services')->onDelete('restrict')->onUpdate('restrict');
+
+            $table->integer('destination_id')->unsigned()->index()->nullable();
+            $table->foreign('destination_id')->references('id')->on('countries')->onDelete('restrict')->onUpdate('restrict');
 
 
             $table->integer('timing_id')->unsigned()->index()->nullable();

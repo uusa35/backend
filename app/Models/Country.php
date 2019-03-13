@@ -38,8 +38,14 @@ class Country extends PrimaryModel
         return $this->hasManyThrough(Branch::class, Area::class);
     }
 
+    public function order_metas()
+    {
+        return $this->hasMany(OrderMeta::class, 'destination_id');
+    }
+
     public function shipment_packages()
     {
         return $this->belongsToMany(ShipmentPackage::class);
     }
+
 }

@@ -116,17 +116,15 @@ class CartController extends Controller
             return redirect()->route('frontend.cart.index')->withErrors($validate);
         }
         $elements = $this->cart->content();
-        session()->put('shipment', $request->except('_token'));
-        $shipment = session('shipment');
-        return redirect()->route('frontend.cart.show', $elements->count())->with(request()->all());
+        session()->put('userCartInfo', request()->except('_token'));
+        return view('frontend.wokiee.four.modules.cart.show', compact('elements'));
     }
 
     public function show()
     {
-        dd(request()->all());
-        $elements = Cart::content();
+        $elements = $this->cart->content();
         $user = auth()->user();
-        return view('frontend.modules.cart.show', compact('elements', 'user'));
+        return view('frontend.wokiee.four.modules.cart.show', compact('elements', 'user'));
     }
 
     public function applyCoupon(Request $request)
