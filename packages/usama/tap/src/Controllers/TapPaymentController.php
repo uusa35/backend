@@ -156,7 +156,7 @@ class TapPaymentController extends Controller
                 if ($orderMeta->product->check_stock && $orderMeta->product_attribute->qty > 0) {
                     if ($orderMeta->product->has_attributes) {
                         $decrement = (int)$orderMeta->product_attribute->qty - (int)$orderMeta->qty > 0 ? (int)$orderMeta->product_attribute->qty - (int)$orderMeta->qty : 0;
-                        $orderMeta->product->check_stock && $orderMeta->product_attribute->qty >= 0 ? $orderMeta->product_attribute->update(['qty' => $decrement]) : null;
+                        $orderMeta->product->check_stock  && $orderMeta->product_attribute->qty > 0 ? $orderMeta->product_attribute->update(['qty' => $decrement]) : null;
                     } else {
                         $decrement = (int)$orderMeta->product->qty - (int)$orderMeta->qty > 0 ? (int)$orderMeta->product->qty - (int)$orderMeta->qty : 0;
                         $orderMeta->product->decrement('qty', $decrement);
