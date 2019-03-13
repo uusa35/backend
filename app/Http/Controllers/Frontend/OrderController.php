@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Frontend\OrderStore;
+use App\Jobs\CreatePaymentURL;
 use App\Models\Order;
 use App\Models\OrderMeta;
 use App\Models\Product;
@@ -47,44 +48,45 @@ class OrderController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function createUser($userCartInfo) {
+    public function createUser(Request $request)
+    {
         if (auth()->check()) {
             $user = auth()->user();
             $user->update([
-                'name' => $userCartInfo->name,
-                'password' => bcrypt($userCartInfo->mobile),
-                'country_id' => $userCartInfo->country_id,
-                'mobile' => $userCartInfo->mobile,
-                'address' => $userCartInfo->address,
+                'name' => $request->name,
+                'password' => bcrypt($request->mobile),
+                'country_id' => $request->country_id,
+                'mobile' => $request->mobile,
+                'address' => $request->address,
             ]);
         } else {
-            $user = User::where('email', $userCartInfo->email)->first();
+            $user = User::where('email', $request->email)->first();
             if ($user) {
                 $user->update([
-                    'name' => $userCartInfo->name,
-                    'password' => bcrypt($userCartInfo->mobile),
-                    'country_id' => $userCartInfo->country_id,
-                    'mobile' => $userCartInfo->mobile,
-                    'address' => $userCartInfo->address,
+                    'name' => $request->name,
+                    'password' => bcrypt($request->mobile),
+                    'country_id' => $request->country_id,
+                    'mobile' => $request->mobile,
+                    'address' => $request->address,
                 ]);
             } else {
                 $user = User::create([
-                    'name' => $userCartInfo->email,
-                    'email' => $userCartInfo->email,
-                    'password' => bcrypt($userCartInfo->mobile),
-                    'country_id' => $userCartInfo->country_id,
-                    'mobile' => $userCartInfo->mobile,
-                    'address' => $userCartInfo->address,
+                    'name' => $request->email,
+                    'email' => $request->email,
+                    'password' => bcrypt($request->mobile),
+                    'country_id' => $request->country_id,
+                    'mobile' => $request->mobile,
+                    'address' => $request->address,
                 ]);
             }
 
         }
         return $user;
     }
-    public function store()
+
+    public function store(Request $request)
     {
-        $userCartInfo = (Object) session()->get('userCartInfo');
-        $validate = validator(session()->get('userCartInfo'), [
+        $validate = validator($request->all(), [
             'name' => 'required',
             'email' => 'required|email',
             'mobile' => 'required|numeric|min:8',
@@ -94,17 +96,17 @@ class OrderController extends Controller
         if ($validate->fails()) {
             return redirect()->route('frontend.cart.index')->withErrors($validate);
         }
-        $user = $this->createUser($userCartInfo);
+        $user = $this->createUser($request);
         if ($user) {
             $coupon = session()->has('coupon') ? session('coupon') : false;
-            auth()->login($user);
             $order = Order::create([
                 'price' => $this->cart->total(),
                 'net_price' => $this->cart->total(),
-                'mobile' => $userCartInfo->mobile,
+                'mobile' => $request->mobile,
                 'country' => $user->country->slug,
-                'email' => $userCartInfo->email,
-                'address' => $userCartInfo->address,
+                'email' => $request->email,
+                'address' => $request->address,
+                'notes' => $request->notes,
                 'user_id' => $user->id,
                 'discount' => $coupon ? ($coupon->is_percentage ? ($this->cart->subTotal() * ($coupon->value / 100)) : $coupon->value) : 0,
                 'coupon_id' => $coupon ? $coupon['id'] : null
@@ -113,25 +115,28 @@ class OrderController extends Controller
                 $this->cart->content()->each(function ($element) use ($order, $user) {
                     $order->order_metas()->create([
                         'order_id' => $order->id,
-                        'product_id' => $element->element_id,
-                        'item_name' => $element->options->item->name,
+                        'product_id' => $element->options->type === 'product' ? $element->options->element_id : null,
+                        'service_id' => $element->options->type === 'service' ? $element->options->element_id : null,
+                        'item_name' => $element->options->element->name,
                         'item_type' => $element->options->type,
-                        'product_attribute_id' => $element->product_attribute_id,
+                        'product_attribute_id' => $element->options->product_attribute_id,
                         'qty' => $element->qty,
                         'price' => $element->price,
                         'shipment_cost' => $element->options->shipment_cost,
-                        'product_size' => $this->options->size->name,
-                        'product_color' => $this->options->color->name,
-                        'service_date' => $this->options->day_selected,
-                        'service_time' => $this->options->timing->start,
-                        'timing_id' => $this->options->timing_id,
+                        'product_size' => $element->options->size->name,
+                        'product_color' => $element->options->color->name,
+                        'service_date' => $element->options->day_selected,
+                        'service_time' => $element->options->timing ? $element->options->timing->start : null,
+                        'timing_id' => $element->options->timing_id,
                         'destination_id' => $user->country_id,
-                        'notes' => $this->options->notes,
                     ]);
                 });
-                return redirect()->route('frontend.order.show', $order->id)->with('success', trans('message.register_account_password_is_your_mobile'));
+                auth()->login($user);
+                $elements = $this->cart->content();
+                return view('frontend.wokiee.four.modules.cart.show', compact('elements','order'))->with('success', trans('message.register_account_password_is_your_mobile'));
             }
         } else {
+            return 'here error case';
             return redirect()->route('frontend.cart.index')->with('error', trans('please_check_your_information_again'));
         }
     }

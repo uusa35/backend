@@ -117,7 +117,7 @@ class CartController extends Controller
         }
         $elements = $this->cart->content();
         session()->put('userCartInfo', request()->except('_token'));
-        return view('frontend.wokiee.four.modules.cart.show', compact('elements'));
+//        return view('frontend.wokiee.four.modules.cart.show', compact('elements'));
     }
 
     public function show()

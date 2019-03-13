@@ -10,6 +10,7 @@ use App\Models\Deal;
 use App\Models\Order;
 use App\Models\OrderAttribute;
 use App\Models\Plan;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Mail\Markdown;
 use Illuminate\Support\Facades\Mail;
@@ -60,9 +61,7 @@ class TapPaymentController extends Controller
 
     public function makePayment(Request $request)
     {
-        $className = config('tap.order');
-        $order = new $className();
-        $order = $order->whereId($request->id)->with('order_metas.product', 'order_metas.product_attribute')->first();
+        $order = Order::whereId($request->order_id)->with('order_metas.product', 'order_metas.service')->first();
         $user = auth()->user();
         $finalArray = [
             'CustomerDC' => [
@@ -146,9 +145,22 @@ class TapPaymentController extends Controller
     public function result(Request $request)
     {
         // once the result is success .. get the deal from refrence then delete all other free deals related to such ad.
-        $order = Order::where(['reference_id' => $request->ref])->with('order_metas.product', 'user', 'order_metas.product_attribute.size', 'order_metas.product_attribute.color')->first();
+        $order = Order::where(['reference_id' => $request->ref])->with([
+            'order_metas.product',
+            'user', 'order_metas.product_attribute.size',
+            'order_metas.product_attribute.color',
+            'order_metas.service'
+        ])->first();
         $order->order_metas->each(function ($orderMeta) use ($order) {
-            $orderMeta->product->check_stock && $orderMeta->product_attribute->qty > 0 ? $orderMeta->product_attribute->decrement('qty', 1) : null;
+            if ($orderMeta->type === 'product') {
+                if ($orderMeta->product->check_stock && $orderMeta->product_attribute->qty > 0) {
+                    if ($orderMeta->product->has_attributes) {
+                        $orderMeta->product_attribute->decrement('qty', $orderMeta->qty);
+                    } else {
+                        $orderMeta->product->decrement('qty', $orderMeta->qty);
+                    }
+                }
+            }
         });
         $done = $order->update(['status' => 'success']);
         $coupon = session('coupon');

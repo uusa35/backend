@@ -11,10 +11,14 @@
 
 </br>
 @component('mail::table')
-| {{ trans('general.product_name') }}       | {{ trans('general.price') }}         | Qty  | {{ trans('general.size') }}  | {{ trans('general.color') }}  | {{ trans('general.product_sku') }}  |
+| {{ trans('general.product_name') }}       | {{ trans('general.price') }}         | {{ trans('general.qty') }}  | {{  trans('general.size_or_date') }}  | {{ trans('general.color_or_time') }}  | {{ trans('general.product_sku') }}  |
 | ------------- |:-------------:| --------:| --------:|
 @foreach($order->order_metas as $orderMeta)
-    | {{ $orderMeta->product->name }}         | {{ $orderMeta->price }}| {{ $orderMeta->qty }}| {{ $orderMeta->product_attribute->size->name }} | {{ $orderMeta->product_attribute->color->name }} | {{ $orderMeta->product->id }}         |
+@if($orderMeta->item_type === 'product')
+| {{ $orderMeta->product->name }}         | {{ $orderMeta->price }}| {{ $orderMeta->qty }}| {{ $orderMeta->product_attribute->size->name }} | {{ $orderMeta->product_attribute->color->name }} | {{ $orderMeta->product->id }}         |
+@elseif($orderMeta->item_type === 'service')
+| {{ $orderMeta->service->name }}         | {{ $orderMeta->price }}| {{ $orderMeta->qty }}| {{ $orderMeta->service->service_date }} | {{ $orderMeta->service->service_time }} | {{ $orderMeta->service->id }}         |
+@endif
 @endforeach
 @if($order->shipping_cost > 0)
 | shipment        |     {{ $order->shipping_cost }}        |           |
