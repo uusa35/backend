@@ -35,7 +35,8 @@
                             @endif
                             @if($element->options->country_destination)
                                 <li>{{ trans('general.shipment_destination') }}
-                                    : {{ $element->options->country_destination->slug }}
+                                    : {{ $element->options->country_destination->slug }} ---
+                                    PackageCharge : {{ $element->options->element->shipment_package->charge }} ---- ProductWeight : {{ $element->options->element->weight }}
                                 </li>
                             @endif
                             @if($element->options->day_selected)
