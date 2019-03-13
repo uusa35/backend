@@ -18,7 +18,7 @@ class CreateOrderMetasTable extends Migration
             $table->integer('qty')->unsigned();
             // price of the product / service  on the time the order is made (sale price in case on_sale applied)
             $table->decimal('price', 6, 2)->unsigned();
-            $table->decimal('shipment_cost',6,2)->unsigned();
+            $table->decimal('shipment_cost',6,2)->unsigned()->nullable();
 
             $table->integer('order_id')->unsigned()->index();
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade')->onUpdate('cascade');

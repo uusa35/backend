@@ -152,12 +152,14 @@ class TapPaymentController extends Controller
             'order_metas.service'
         ])->first();
         $order->order_metas->each(function ($orderMeta) use ($order) {
-            if ($orderMeta->type === 'product') {
+            if ($orderMeta->item_type === 'product') {
                 if ($orderMeta->product->check_stock && $orderMeta->product_attribute->qty > 0) {
                     if ($orderMeta->product->has_attributes) {
-                        $orderMeta->product_attribute->decrement('qty', $orderMeta->qty);
+                        $decrement = (int)$orderMeta->product_attribute->qty - (int)$orderMeta->qty > 0 ? (int)$orderMeta->product_attribute->qty - (int)$orderMeta->qty : 0;
+                        $orderMeta->product->check_stock && $orderMeta->product_attribute->qty >= 0 ? $orderMeta->product_attribute->update(['qty' => $decrement]) : null;
                     } else {
-                        $orderMeta->product->decrement('qty', $orderMeta->qty);
+                        $decrement = (int)$orderMeta->product->qty - (int)$orderMeta->qty > 0 ? (int)$orderMeta->product->qty - (int)$orderMeta->qty : 0;
+                        $orderMeta->product->decrement('qty', $decrement);
                     }
                 }
             }
@@ -189,14 +191,14 @@ class TapPaymentController extends Controller
         foreach ($order->order_metas as $orderMeta) {
             array_push($productsList, [
                 'CurrencyCode' => env('TAP_CURRENCY_CODE'),
-                'ImgUrl' => asset(env('LARGE')) . $orderMeta->product->image,
+                'ImgUrl' => $orderMeta->item_type === 'product' ? $orderMeta->product->imageLargeLink : $orderMeta->service->imageLargeLink,
                 'Quantity' => $orderMeta->qty,
                 'TotalPrice' => $orderMeta->price * $orderMeta->qty,
-                'UnitID' => $orderMeta->product->id,
-                'UnitName' => $orderMeta->product->name_en,
+                'UnitID' => $orderMeta->item_type === 'product' ? $orderMeta->product->id : $orderMeta->service->id,
+                'UnitName' => $orderMeta->item_type === 'product' ? $orderMeta->product->name : $orderMeta->service->name,
                 'UnitPrice' => $orderMeta->price,
-                'UnitDesc' => $orderMeta->product->description,
-                'VndID' => '',
+                'UnitDesc' => $orderMeta->item_type === 'product' ? $orderMeta->product->description : $orderMeta->service->description,
+                'VndID' => $orderMeta->item_type === 'product' ? $orderMeta->product->user->merchant_id : $orderMeta->service->user->merchant_id,
             ]);
         }
         if ($order->shipping_cost > 0) {

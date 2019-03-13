@@ -17,7 +17,7 @@
 @if($orderMeta->item_type === 'product')
 | {{ $orderMeta->product->name }}         | {{ $orderMeta->price }}| {{ $orderMeta->qty }}| {{ $orderMeta->product_attribute->size->name }} | {{ $orderMeta->product_attribute->color->name }} | {{ $orderMeta->product->id }}         |
 @elseif($orderMeta->item_type === 'service')
-| {{ $orderMeta->service->name }}         | {{ $orderMeta->price }}| {{ $orderMeta->qty }}| {{ $orderMeta->service->service_date }} | {{ $orderMeta->service->service_time }} | {{ $orderMeta->service->id }}         |
+| {{ $orderMeta->service->name }}         | {{ $orderMeta->price }}| {{ $orderMeta->qty }}| {{ $orderMeta->service_date }} | {{ $orderMeta->service_time }} | {{ $orderMeta->service->id }}         |
 @endif
 @endforeach
 @if($order->shipping_cost > 0)

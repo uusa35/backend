@@ -143,10 +143,11 @@ $(document).ready(function () {
         $('#color').removeClass('d-none');
 
         _.each(r.data, function (e, i) {
+          console.log('the', e);
           color_element = $("#color-id-".concat(e.color_id));
           color_element.removeClass('d-none');
           color_element.attr('data-qty', e.qty);
-          color_element.attr('product-attribute-id', e.id);
+          color_element.attr('data-product-attribute-id', e.id);
         });
       }
     }).catch(function (e) {
@@ -160,7 +161,7 @@ $(document).ready(function () {
     $('input[name=color_id]').attr('value', color_id);
     $('#max-qty').attr('size', qty);
     $('input[name=size_id]').attr('value', size_id);
-    $('input[name=product_attribute_id]').attr('value', size_id);
+    $('input[name=product_attribute_id]').attr('value', product_attribute_id);
     $('#add_to_cart').attr('disabled', false);
   });
   $('.plus-btn').on('click', function () {

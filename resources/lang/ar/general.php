@@ -288,6 +288,8 @@ return array(
     'required_fields' => 'حقول مطلوبة',
     'password' => 'كلمة المرور',
     'personal_information' => 'معلومات الحساب',
-    'full_address' => 'العنوان بالكامل'
+    'full_address' => 'العنوان بالكامل',
+    'size_or_date' => 'التاريخ / المقاس',
+    'color_or_time' => 'اللون / الوقت'
 
 );
