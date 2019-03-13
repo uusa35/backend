@@ -3,7 +3,7 @@
 <html lang="en" class="ie8 no-js"> <![endif]-->
 <!--[if IE 9]>
 <html lang="en" class="ie9 no-js"> <![endif]-->
-<html lang="{{ app()->getLocale() }}">
+<html lang="{{ app()->getLocale() }}" dir="{{ app()->isLocale('ar') ? 'rtl' : 'ltr' }}">
 <head>
     <meta charset="utf-8"/>
     <title>{{ env('APP_NAME') }}</title>

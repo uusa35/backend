@@ -17,7 +17,7 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        $elements = Question::paginate(parent::PAGINATE);
+        $elements = Question::paginate(parent::TAKE);
         return view('backend.modules.question.index', compact('elements'));
     }
 

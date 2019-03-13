@@ -357,7 +357,7 @@
                                 <li class="divider"></li>
                             @endif
                             <li>
-                                <a href="{{ route('home') }}">
+                                <a href="{{ route('frontend.home') }}">
                                     <i class="icon-home"></i>{{ trans('general.home') }}</a>
                             </li>
                             <li>

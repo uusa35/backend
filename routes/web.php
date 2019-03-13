@@ -36,7 +36,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
         Route::resource('service', 'ServiceController');
         Route::resource('color', 'ColorController');
         Route::resource('size', 'SizeController');
-        Route::resource('slide', 'SlidController');
+        Route::resource('slide', 'SlideController');
         Route::resource('coupon', 'CouponController');
         Route::resource('survey', 'SurveyController');
         Route::resource('questionnaire', 'QuestionnaireController');
@@ -50,10 +50,20 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
         Route::resource('collection', 'CollectionController');
         Route::resource('package', 'ShipmentPackageController');
         Route::resource('tag', 'TagController');
+        Route::resource('newsletter', 'NewsletterController');
+        Route::resource('faq', 'FaqController');
+        Route::resource('commercial', 'CommercialController');
+        Route::resource('notification', 'NotificationController');
+        Route::resource('policy', 'PolicyController');
+        Route::resource('coupon', 'CouponController');
+        Route::resource('role', 'RoleController');
+        Route::resource('color', 'ColorController');
+        Route::resource('term', 'TermController');
+        Route::resource('answer', 'AnswerController');
     });
     // Backend :: companies
     Route::get('/', 'HomeController@index')->name('index');
-    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('backend/home', 'HomeController@index')->name('home');
     Route::get('activate', 'HomeController@toggleActivate')->name('activate');
     Route::get('language/{locale}', 'HomeController@changeLanguage')->name('language.change');
     Route::get('reset/password', 'UserController@getResetPassword')->name('reset.password');

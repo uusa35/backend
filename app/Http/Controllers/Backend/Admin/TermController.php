@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Http\Controllers\Backend;
+namespace App\Http\Controllers\Backend\Admin;
+
 
 use App\Models\Term;
 use Illuminate\Http\Request;

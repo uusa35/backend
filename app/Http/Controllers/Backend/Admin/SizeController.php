@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend;
+namespace App\Http\Controllers\Backend\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Size;
@@ -18,7 +18,7 @@ class SizeController extends Controller
     public function index()
     {
         $elements = Size::all();
-        return view('backend.modules.size.index',compact('elements'));
+        return view('backend.modules.size.index', compact('elements'));
     }
 
     /**
@@ -92,7 +92,6 @@ class SizeController extends Controller
         if ($element) {
 
             return redirect()->route('backend.size.index')->with('success', 'size deleted');
-
         }
         return redirect()->route('backend.size.index')->with('error', 'size not deleted');
     }

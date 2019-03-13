@@ -15,8 +15,9 @@ class SlideController extends Controller
      */
     public function index()
     {
+
         $elements = Slide::all();
-        return view('backend.modules.slider.index', compact('elements'));
+        return view('backend.modules.slide.index', compact('elements'));
     }
 
     /**
