@@ -35,11 +35,11 @@
             </a>
         </li>
         {{--<li class="nav-item ">--}}
-            {{--<a href="{{ route('backend.admin.product.trashed') }}" class="nav-link ">--}}
-                {{--<i class="fa fa-fw fa-recycle"></i>--}}
-                {{--<span class="title">Trashed</span>--}}
-                {{--<span class="arrow"></span>--}}
-            {{--</a>--}}
+        {{--<a href="{{ route('backend.admin.product.trashed') }}" class="nav-link ">--}}
+        {{--<i class="fa fa-fw fa-recycle"></i>--}}
+        {{--<span class="title">Trashed</span>--}}
+        {{--<span class="arrow"></span>--}}
+        {{--</a>--}}
         {{--</li>--}}
     </ul>
 </li>
@@ -133,7 +133,7 @@
 </li>
 
 <li class="nav-item {{ activeItem('coupon') }}">
-    <a href="{{ route('backend.coupon.index') }}" class="nav-link nav-toggle">
+    <a href="{{ route('backend.admin.coupon.index') }}" class="nav-link nav-toggle">
         <i class="fa fa-fw fa-credit-card"></i>
         <span class="title">Coupons</span>
         <span class="arrow"></span>
@@ -385,8 +385,7 @@
             </a>
         </li>
         <li class="nav-item ">
-            <a href="{{ route('backend.admin.order.index',['status' => 'success']) }}"
-               class="nav-link nav-toggle">
+            <a href="{{ route('backend.admin.order.index',['status' => 'success']) }}" class="nav-link nav-toggle">
                 <i class="fa fa-fw fa-pie-chart"></i>
                 <span class="title">Successful Orders</span>
                 <span class="arrow"></span>
@@ -498,3 +497,94 @@
         </li>
     </ul>
 </li>
+
+<li class="nav-item {{ activeItem('newsletter') }}">
+    <a href="{{ route('backend.admin.newsletter.index') }}" class="nav-link nav-toggle">
+        <i class="fa fa-fw fa-question-circle"></i>
+        <span class="title">Newsletter</span>
+        <span class="arrow"></span>
+    </a>
+
+</li>
+
+
+<li class="nav-item {{ activeItem('faq') }}">
+    <a href="{{ route('backend.admin.faq.index') }}" class="nav-link nav-toggle">
+        <i class="fa fa-fw fa-question-circle"></i>
+        <span class="title">FAQ</span>
+        <span class="arrow"></span>
+    </a>
+
+</li>
+
+<li class="nav-item {{ activeItem('commercial') }}">
+    <a href="{{ route('backend.admin.commercial.index') }}" class="nav-link nav-toggle">
+        <i class="fa fa-fw fa-question-circle"></i>
+        <span class="title">Commercials</span>
+        <span class="arrow"></span>
+    </a>
+
+</li>
+
+<li class="nav-item {{ activeItem('notification') }}">
+    <a href="{{ route('backend.admin.notification.index') }}" class="nav-link nav-toggle">
+        <i class="fa fa-fw fa-question-circle"></i>
+        <span class="title">Notifications</span>
+        <span class="arrow"></span>
+    </a>
+
+</li>
+
+<li class="nav-item {{ activeItem('coupon') }}">
+    <a href="{{ route('backend.admin.coupon.index') }}" class="nav-link nav-toggle">
+        <i class="fa fa-fw fa-question-circle"></i>
+        <span class="title">Coupons</span>
+        <span class="arrow"></span>
+    </a>
+
+</li>
+
+
+<li class="nav-item {{ activeItem('policy') }}">
+    <a href="{{ route('backend.admin.policy.index') }}" class="nav-link nav-toggle">
+        <i class="fa fa-fw fa-question-circle"></i>
+        <span class="title">Policies</span>
+        <span class="arrow"></span>
+    </a>
+
+</li>
+
+
+<li class="nav-item {{ activeItem('answer') }}">
+    <a href="{{ route('backend.admin.answer.index') }}" class="nav-link nav-toggle">
+        <i class="fa fa-fw fa-question-circle"></i>
+        <span class="title">Answers</span>
+        <span class="arrow"></span>
+    </a>
+
+</li>
+
+<li class="nav-item {{ activeItem('color') }}">
+    <a href="{{ route('backend.admin.color.index') }}" class="nav-link nav-toggle">
+        <i class="fa fa-fw fa-question-circle"></i>
+        <span class="title">Colors</span>
+        <span class="arrow"></span>
+    </a>
+
+</li>
+<li class="nav-item {{ activeItem('role') }}">
+    <a href="{{ route('backend.admin.role.index') }}" class="nav-link nav-toggle">
+        <i class="fa fa-fw fa-question-circle"></i>
+        <span class="title">Roles</span>
+        <span class="arrow"></span>
+    </a>
+
+</li>
+<li class="nav-item {{ activeItem('term') }}">
+    <a href="{{ route('backend.admin.term.index') }}" class="nav-link nav-toggle">
+        <i class="fa fa-fw fa-question-circle"></i>
+        <span class="title">Terms</span>
+        <span class="arrow"></span>
+    </a>
+
+</li> 

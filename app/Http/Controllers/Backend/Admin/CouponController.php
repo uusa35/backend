@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend\Coupon;
+namespace App\Http\Controllers\Backend\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Coupon;
@@ -19,6 +19,7 @@ class CouponController extends Controller
      */
     public function index()
     {
+
         $elements = Coupon::with('user')->orderBy('created_at', 'desc')->get();
 
         return view('backend.modules.coupon.index', compact('elements'));
@@ -61,7 +62,6 @@ class CouponController extends Controller
             return redirect()->route('backend.coupon.index')->with('success', 'coupon saved');
         }
         return view('backend.modules.coupon.create')->with('error', 'not saved');
-
     }
 
     /**

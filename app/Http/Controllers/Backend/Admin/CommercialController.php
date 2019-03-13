@@ -2,22 +2,25 @@
 
 namespace App\Http\Controllers\Backend\Admin;
 
-use App\Src\Ad\Ad;
+
+use App\Models\Commercial;
 use Illuminate\Http\Request;
 use App\Core\PrimaryController;
 use App\Core\Services\Image\PrimaryImageService;
 
+use App\Http\Controllers\Controller;
+
 use App\Http\Requests;
 
-class CommercialController extends PrimaryController
+class CommercialController extends Controller
 {
-    public $ad;
+    public $commercial;
     public $image;
 
-    public function __construct(Ad $ad, PrimaryImageService $image)
+    public function __construct(Commercial $commercial)
     {
-        $this->ad = $ad;
-        $this->image = $image;
+        $this->commercial = $commercial;
+        //$this->image = $image;
     }
 
     /**
@@ -27,8 +30,8 @@ class CommercialController extends PrimaryController
      */
     public function index()
     {
-        $ads = $this->ad->all();
-        return view('backend.modules.ad.index', compact('ads'));
+        $commercials = $this->commercial->all();
+        return view('backend.modules.commercial.index', compact('commercials'));
     }
 
     /**
@@ -51,22 +54,21 @@ class CommercialController extends PrimaryController
     {
         if ($request->file('image')) {
 
-            $image = $this->image->CreateImage($request->file('image'), ['100','140'], ['370', '550'], ['370', '550']);
-
+            $image = $this->image->CreateImage($request->file('image'), ['100', '140'], ['370', '550'], ['370', '550']);
         }
 
 
         if ($image) {
-            \DB::table('side_ads')->insert([
+            \DB::table('side_commercials')->insert([
                 'image_path' => $image,
                 'url' => $request->url,
                 'caption_en' => $request->caption_en,
                 'caption_ar' => $request->caption_ar,
                 'order' => $request->order,
             ]);
-            return redirect()->back()->with('success', 'Ad saved');
+            return redirect()->back()->with('success', 'commercial saved');
         }
-        return redirect()->back()->with('error', 'Ad not saved')->withInputs();
+        return redirect()->back()->with('error', 'commercial not saved')->withInputs();
     }
 
     /**
@@ -99,9 +101,7 @@ class CommercialController extends PrimaryController
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-
-    }
+    { }
 
     /**
      * Remove the specified resource from storage.
@@ -111,14 +111,13 @@ class CommercialController extends PrimaryController
      */
     public function destroy($id)
     {
-        if ($this->ad->find($id)->delete()) {
+        if ($this->commercial->find($id)->delete()) {
 
-            return redirect()->route('backend.ad.index')->with('success', 'ad Deleted Successfully!');
-
+            return redirect()->route('backend.commercial.index')->with('success', 'commercial Deleted Successfully!');
         }
         return redirect()->back()->with('error', 'System Error!!');
 
-//        \DB::table('ads')->where('id', '=', request()->id)->delete();
-//        return redirect()->back()->with('success', 'Slide deleted');
+        //        \DB::table('commercials')->where('id', '=', request()->id)->delete();
+        //        return redirect()->back()->with('success', 'Slide deleted');
     }
 }

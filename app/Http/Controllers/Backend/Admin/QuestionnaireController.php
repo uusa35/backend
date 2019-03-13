@@ -15,7 +15,7 @@ class QuestionnaireController extends Controller
      */
     public function index()
     {
-        $elements = Questionnaire::paginate(parent::PAGINATE);
+        $elements = Questionnaire::paginate(parent::TAKE);
         return view('backend.modules.questionnaire.index', compact('elements'));
     }
 
@@ -48,7 +48,7 @@ class QuestionnaireController extends Controller
      */
     public function show($id)
     {
-        $element = Questionnaire::whereId($id)->with('results.question','results.answer')->first();
+        $element = Questionnaire::whereId($id)->with('results.question', 'results.answer')->first();
         return view('backend.modules.questionnaire.show', compact('element'));
     }
 

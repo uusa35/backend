@@ -17,9 +17,9 @@ class AnswerController extends Controller
     public function index()
     {
         if (request()->has('question_id')) {
-            $elements = Question::whereId(request()->question_id)->first()->answers()->paginate(parent::PAGINATE);
+            $elements = Question::whereId(request()->question_id)->first()->answers()->paginate(parent::TAKE);
         } else {
-            $elements = Answer::orderby('id', 'desc')->paginate(parent::PAGINATE);
+            $elements = Answer::orderby('id', 'desc')->paginate(parent::TAKE);
         }
         return view('backend.modules.answer.index', compact('elements'));
     }

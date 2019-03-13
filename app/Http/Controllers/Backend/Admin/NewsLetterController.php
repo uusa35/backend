@@ -6,22 +6,22 @@ use App\Core\PrimaryController;
 use App\Core\Services\Email\PrimaryEmailService;
 use App\Http\Controllers\Controller;
 use App\Mail\sendEmailCampaign;
-use App\Src\Newsletter\Newsletter;
+use App\Models\Newsletter;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
-class NewsLetterController extends Controller
+class NewsletterController extends Controller
 {
 
-//    protected $mailchimp;
+    //    protected $mailchimp;
     protected $newsLetter;
 
-//    protected $listId = 'b0ffbb21cd';        // Id of newsletter list
+    //    protected $listId = 'b0ffbb21cd';        // Id of newsletter list
 
     public function __construct(Newsletter $newsLetter)
     {
-//        $this->mailchimp = $mailchimp;
+        //        $this->mailchimp = $mailchimp;
         $this->newsLetter = $newsLetter;
     }
 
@@ -56,7 +56,6 @@ class NewsLetterController extends Controller
         if ($email) {
 
             $email->delete();
-
         }
 
         $this->newsLetter->destroy($id);
@@ -69,7 +68,6 @@ class NewsLetterController extends Controller
     {
 
         return view('backend.modules.newsletter.create_campaign');
-
     }
 
     public function postCampaign(Requests\Backend\NewsletterCampaign $request)
@@ -79,10 +77,8 @@ class NewsLetterController extends Controller
         foreach ($subscribers as $subscriber) {
 
             Mail::to($subscriber->email)->queue(new sendEmailCampaign($subscriber, $request->title, $request->body));
-
         }
 
         return redirect()->route('backend.newsletter.index')->with('success', 'campaign sent successfully');
     }
-
 }

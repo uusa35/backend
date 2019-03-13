@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend;
+namespace App\Http\Controllers\Backend\Admin;
 
 use App\Models\Question;
 use App\Models\Survey;
@@ -16,7 +16,7 @@ class SurveyController extends Controller
      */
     public function index()
     {
-        $elements = Survey::orderBy('id', 'desc')->paginate(parent::PAGINATE);
+        $elements = Survey::orderBy('id', 'desc')->paginate(parent::TAKE);
         return view('backend.modules.survey.index', compact('elements'));
     }
 
@@ -86,7 +86,7 @@ class SurveyController extends Controller
     {
         $element = Survey::whereId($id)->with('questions')->first();
         $questions = Question::with('answers')->get();
-        return view('backend.modules.survey.edit', compact('questions','element'));
+        return view('backend.modules.survey.edit', compact('questions', 'element'));
     }
 
     /**
@@ -99,9 +99,9 @@ class SurveyController extends Controller
     public function update(Request $request, $id)
     {
         $validate = validator($request->all(), [
-            'name' => 'required|max:200|unique:surveys,name,'. $id,
-            'slug_ar' => 'required|max:200|unique:surveys,slug_ar,'. $id,
-            'slug_en' => 'required|max:200|unique:surveys,slug_en,'. $id,
+            'name' => 'required|max:200|unique:surveys,name,' . $id,
+            'slug_ar' => 'required|max:200|unique:surveys,slug_ar,' . $id,
+            'slug_en' => 'required|max:200|unique:surveys,slug_en,' . $id,
             'description_ar' => 'nullable|max:300',
             'description_en' => 'nullable|max:300',
             'is_home' => 'boolean|nullable',

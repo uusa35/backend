@@ -19,6 +19,7 @@ class CountryController extends Controller
      */
     public function index()
     {
+        //dd("hello");
         $elements = Country::with('currency')->get();
         return view('backend.modules.country.index', compact('elements'));
     }
@@ -80,6 +81,7 @@ class CountryController extends Controller
      */
     public function edit($id)
     {
+
         $element = Country::whereId($id)->first();
         return view('backend.modules.country.edit', compact('element'));
     }
@@ -122,9 +124,9 @@ class CountryController extends Controller
      */
     public function destroy($id)
     {
-        $element = Country::whereId($id)->with('currency','branches')->first();
-        if(is_null($element->currency) && $element->branches->isEmpty()) {
-            if($element->delete()) {
+        $element = Country::whereId($id)->with('  currency', 'branches')->first();
+        if (is_null($element->currency) && $element->branches->isEmpty()) {
+            if ($element->delete()) {
                 return redirect()->route('backend.country.index')->with('success', 'country deleted successfully');
             }
         }
