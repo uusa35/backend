@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Color;
+use App\Models\Country;
 use App\Models\Order;
 use App\Models\OrderMeta;
 use App\Models\Product;
@@ -41,5 +42,6 @@ $factory->define(OrderMeta::class, function (Faker $faker) {
         'service_date' => $faker->date(),
         'service_time' => $faker->time(),
         'timing_id' => Timing::workingDays()->get()->random()->id,
+        'destination_id' => Country::all()->random()->id,
     ];
 });
