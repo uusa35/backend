@@ -40,5 +40,6 @@ class CheckCartItems implements ShouldQueue
                 }
             }
         });
+//        dd($cart->sum('options.shipment_cost'));
     }
 }

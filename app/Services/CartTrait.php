@@ -54,6 +54,7 @@ trait CartTrait
                 $cart->add($product->UId, $product->name, $request->qty, (double) $product->finalPrice,
                     [
                         'type' => 'product',
+                        // each product * his own package Charge ==> consider different heights / weight
                         'shipment_cost' => $product->packageFeePrice,
                         'country_destination' => getClientCountry(),
                         'element_id' => $product->id,

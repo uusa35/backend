@@ -7,43 +7,9 @@
                 <button class="tt-close">{{ trans('general.close') }}</button>
             </div>
             <div class="tt-dropdown-inner">
-                <ul>
-                    <li>
-                        <strong class="border-bottom">{{ trans('general.country') }}</strong>
-                    </li>
-                    @foreach($countries as $country)
-                        <li class="{{ getCurrentCountrySessionId() === $country->id ? 'active' : null  }}">
-                            <a href="{{ route('frontend.country.set',['country_id' => $country->id]) }}">
-                                <img class="img-responsive img-xxs" src="{{ $country->imageThumbLink }}"
-                                     alt="{{ $country->slug }}">
-                                {{ $country->slug }}</a>
-                        </li>
-                    @endforeach
-                </ul>
-                <ul>
-                    <li>
-                        <strong class="border-bottom">{{ trans('general.language') }}</strong>
-                    </li>
-                    <li class="{{ app()->isLocale('ar') ? 'active' : null }}"><a
-                                href="{{ route('frontend.language.change',['locale' => 'ar']) }}">{{ trans('general.arabic') }}</a>
-                    </li>
-                    <li class="{{ app()->isLocale('en') ? 'active' : null }}"><a
-                                href="{{ route('frontend.language.change',['locale' => 'en']) }}">{{ trans('general.english') }}</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li>
-                        <strong class="border-bottom">{{ trans('general.currency') }}</strong>
-                    </li>
-                    @foreach($currencies as $currency)
-                        <li class="{{ getCurrencySymbol() === $currency->currency_symbol_en ? 'active' : null  }}">
-                            <a href="{{ route('frontend.currency.change',['currency' => strtolower($currency->currency_symbol_en)]) }}">
-                                <img class="img-responsive img-xxs"
-                                     src="{{ $currency->country->imageThumbLink }}" alt="{{ $currency->name }}">
-                                {{ $currency->name }}
-                            </a></li>
-                    @endforeach
-                </ul>
+{{--                @include('frontend.wokiee.four.partials._nav_countries_section')--}}
+                @include('frontend.wokiee.four.partials._nav_langauge_section')
+                @include('frontend.wokiee.four.partials._nav_currencies_section')
             </div>
         </div>
     </div>

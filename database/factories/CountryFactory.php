@@ -13,7 +13,7 @@ $factory->define(Country::class, function (Faker $faker) {
         'order' => $faker->numberBetween(1, 40),
         'minimum_shipment_charge' => $faker->numberBetween(1, 5),
         'fixed_shipment_charge' => $faker->numberBetween(1, 10),
-        'main' => $faker->boolean(true),
+        'is_local' => $faker->boolean(true),
         'calling_code' => '00965',
         'has_currency' => $faker->boolean,
         'longitude' => $faker->longitude,

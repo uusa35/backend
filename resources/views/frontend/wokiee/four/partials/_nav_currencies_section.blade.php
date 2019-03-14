@@ -1,7 +1,13 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: usama
- * Date: 2019-03-14
- * Time: 09:03
- */
+<ul>
+    <li>
+        <strong class="border-bottom">{{ trans('general.currency') }}</strong>
+    </li>
+    @foreach($currencies as $currency)
+        <li class="{{ getCurrencySymbol() === $currency->currency_symbol_en ? 'active' : null  }}">
+            <a href="{{ route('frontend.currency.change',['currency' => strtolower($currency->currency_symbol_en)]) }}">
+                <img class="img-responsive img-xxs"
+                     src="{{ $currency->country->imageThumbLink }}" alt="{{ $currency->name }}">
+                {{ $currency->name }}
+            </a></li>
+    @endforeach
+</ul>

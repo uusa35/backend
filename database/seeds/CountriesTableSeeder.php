@@ -25,7 +25,7 @@ class CountriesTableSeeder extends Seeder
                     'country_code' => $country['country_code'],
                     'currency_symbol_ar' => $country['currency_symbol_ar'],
                     'currency_symbol_en' => $country['currency_symbol_en'],
-                    'main' => ucfirst($country['name_en']) === 'Kuwait' ? true : false
+                    'is_local' => ucfirst($country['name_en']) === 'Kuwait' ? true : false
                 ]
             );
             if ($country->name == 'Kuwait') {

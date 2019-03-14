@@ -104,6 +104,7 @@ class OrderController extends Controller
                 'net_price' => $this->cart->total(),
                 'mobile' => $request->mobile,
                 'country' => $user->country->slug,
+                'country' => $request->area ? $request->area : null,
                 'email' => $request->email,
                 'address' => $request->address,
                 'notes' => $request->notes,
