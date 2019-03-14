@@ -19,8 +19,7 @@
         @include('frontend.wokiee.four.partials._btn_info')
     @endif
     {{--@include('frontend.wokiee.four.partials._services_slider',['title' => trans('general.new_arrivals'), 'elements' => $newProducts])--}}
-    @if(request()->has("evento"))
+
         {{--        @include('frontend.wokiee.four.partials._search_modal_home_page')--}}
         @include('frontend.wokiee.four.partials._country_modal')
-    @endif
 @endsection

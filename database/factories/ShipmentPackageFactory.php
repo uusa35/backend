@@ -13,7 +13,6 @@ $factory->define(ShipmentPackage::class, function (Faker $faker) {
         'slug_en' => $faker->name,
         'charge' => $faker->randomFloat(1, 0, 9),
         'active' => $faker->boolean(true),
-        'user_id' => User::companies()->get()->random()->id,
         'is_available' => $faker->boolean(true),
         'notes_ar' => $faker->paragraph,
         'notes_en' => $faker->paragraph,

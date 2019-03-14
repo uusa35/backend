@@ -6,6 +6,7 @@
  * Time: 9:02 AM
  */
 
+use App\Models\Area;
 use App\Models\Country;
 use App\Models\Setting;
 use Gloudemans\Shoppingcart\Facades\Cart;
@@ -131,17 +132,20 @@ function get_client_ip()
 function getClientCountry()
 {
     // has no relation with Country of the session
-    $kwd = '188.70.3.225';
+    $kwt = '188.70.48.243';
     $ksa = '176.17.238.199';
     $uae = '109.177.176.229';
-    $user_ip = app()->isLocal() ? $ksa : get_client_ip();
+    $user_ip = app()->isLocal() ? $kwt : get_client_ip();
     $geo = unserialize(file_get_contents("http://www.geoplugin.net/php.gp?ip=$user_ip"));
     $country = $geo["geoplugin_countryName"];
     $city = $geo["geoplugin_city"];
+    $region = $geo["geoplugin_region"];
     if (auth()->check()) {
         $clientCountry = auth()->user()->country;
     } else {
         $clientCountry = Country::where('name', $country)->first();
+        $region ? session()->put('area', Area::where(['name' => $region])->first()) : null;
+        $city ? session()->put('city', $region) : null;
     }
     if (is_null(session()->get('country'))) {
         session()->put('country', $clientCountry);

@@ -19,7 +19,7 @@ class CartController extends Controller
     public $cart;
     use CartTrait;
 
-    public function __construct(\Gloudemans\Shoppingcart\Cart $cart)
+    public function __construct(Cart $cart)
     {
         $this->cart = $cart;
     }
@@ -71,7 +71,11 @@ class CartController extends Controller
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator);
         }
-        $product = Product::whereId($request->product_id)->first();
+        $product = Product::whereId($request->product_id)->with(
+            [
+                'shipment_package.countries','product_attributes.color',
+                'product_attributes.size'
+            ])->first();
         if ($this->addProductToCart($request, $product, $this->cart)) {
             return redirect()->back()->with('success', trans('message.product_added_to_cart_successfully'));
         }

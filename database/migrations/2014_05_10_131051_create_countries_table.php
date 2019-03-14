@@ -26,6 +26,8 @@ class CreateCountriesTable extends Migration
             $table->string('currency_symbol_en', 25)->nullable();
             $table->boolean('active')->default(1);
             $table->boolean('main')->default(0);
+            $table->boolean('minimum_shipment_charge')->default(0);
+            $table->boolean('fixed_shipment_charge')->default(0);
             $table->string('longitude')->nullable();
             $table->string('latitude')->nullable();
             $table->timestamps();

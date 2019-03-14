@@ -101,11 +101,6 @@ class User extends Authenticatable
         return $this->belongsToMany(Area::class);
     }
 
-    public function shipment_packages()
-    {
-        return $this->hasMany(ShipmentPackage::class);
-    }
-
     public function country()
     {
         return $this->belongsTo(Country::class);

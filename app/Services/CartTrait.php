@@ -51,7 +51,7 @@ trait CartTrait
                 $cart->remove($element->rowId);
             }
             if (checkShipmentAvailability(getClientCountry()->id, $product->shipment_package->countries->pluck('id')->toArray())) {
-                $cart->add($product->UId, $product->name, $request->qty, (double) $product->finalPriceWithShipment,
+                $cart->add($product->UId, $product->name, $request->qty, (double) $product->finalPrice,
                     [
                         'type' => 'product',
                         'shipment_cost' => $product->packageFeePrice,

@@ -22,10 +22,6 @@ class CreateShipmentPackagesTable extends Migration
             $table->boolean('is_available')->default(1);
             $table->text('notes_ar')->nullable();
             $table->text('notes_en')->nullable();
-
-            $table->integer('user_id')->unsigned()->index();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
-
             $table->timestamps();
         });
     }

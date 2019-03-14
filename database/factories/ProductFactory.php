@@ -35,10 +35,8 @@ $factory->define(Product::class, function (Faker $faker) use ($fakerAr) {
         'end_sale' => $faker->dateTimeBetween('now', '1 year'),
         'check_stock' => $faker->boolean(true),
         'is_hot_deal' => $faker->boolean(true),
-        'user_id' => User::companies()->has('shipment_packages','>','0')->get()->random()->id,
-        'shipment_package_id' => function ($arr) {
-            return ShipmentPackage::where(['user_id' => $arr['user_id']])->get()->random()->id;
-        },
+        'user_id' => User::companies()->get()->random()->id,
+        'shipment_package_id' => ShipmentPackage::all()->random()->id,
         'has_attributes' => $faker->boolean(true),
         'video_url_one' => 'http://www.youtube.com/embed/GhyKqj_P2E4',
         'video_url_two' => 'http://www.youtube.com/embed/GhyKqj_P2E4',

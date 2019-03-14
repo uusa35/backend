@@ -37,13 +37,11 @@ trait ProductHelpers
 
     public function scopeServeCountries($q)
     {
-        return $q->whereHas('user', function ($q) {
-            $q->whereHas('shipment_packages', function ($q) {
+        return $q->whereHas('shipment_package', function ($q) {
                 return $q->whereHas('countries', function ($q) {
                     return $q->where(['country_id' => getCurrentCountrySessionId()]);
                 });
             });
-        });
     }
 
     public function scopeHasStock($q)
@@ -59,6 +57,7 @@ trait ProductHelpers
 
     public function getAvailableQtyAttribute()
     {
+        // only remove shipment price and make the shipment price separate according to ClientCountry
         return $this->has_attributes ? $this->product_attributes->sum('qty') : $this->qty;
     }
 

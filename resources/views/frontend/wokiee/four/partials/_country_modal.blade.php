@@ -1,6 +1,6 @@
 {{-- HomePage Modal--}}
 @guest
-    @if(is_null(getClientCountry()))
+    @if(is_null(getClientCountry()) && request()->has('evento'))
         <div class="modal  fade" id="Modalnewsletter" tabindex="-1" role="dialog" aria-label="myModalLabel"
              aria-hidden="true"
              data-pause=2000>
