@@ -59,6 +59,7 @@ class UserController extends Controller
         $colors = $products->pluck('product_attributes')->flatten()->pluck('color')->flatten()->unique('id')->sortKeysDesc();
         $brands = $products->pluck('brands')->flatten()->flatten()->unique('id')->sortKeysDesc();
         $categoriesList = $products->pluck('categories')->flatten()->unique('id');
+        $vendors = $products->pluck('user')->flatten()->unique('id');
         return view('frontend.wokiee.four.modules.user.show', compact('element', 'products', 'services','tags','sizes','colors','brands','categoriesList'));
     }
 

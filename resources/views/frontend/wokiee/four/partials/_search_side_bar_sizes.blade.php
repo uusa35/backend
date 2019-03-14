@@ -3,10 +3,11 @@
     <div class="tt-collapse-content">
         <ul class="tt-options-swatch options-middle">
             @foreach($sizes as $size)
-{{--                <li class="{{ request()->size_id === $size->id ? 'active' : null }}">--}}
-                    {{--<a href=""></a>--}}
-                    <a class="btn-border btn-small" href="{!! request()->fullUrlWithQuery(['size_id' => $size->id]) !!}">{{ $size->name }}</a>
-                {{--</li>--}}
+                <a class="badge {{ request('size_id') == $size->id ? 'badge-info' : 'badge-light'}}"
+                   style="font-size: medium; margin: 3px;"
+                   href="{!! request()->fullUrlWithQuery(['size_id' => $size->id]) !!}">
+                    {{ $size->name }}
+                </a>
             @endforeach
         </ul>
     </div>
