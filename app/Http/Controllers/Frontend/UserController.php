@@ -47,8 +47,13 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $element = User::whereId($id)->first();
-        return view('frontend.wokiee.four.modules.user.show', compact('element'));
+        $element = User::whereId($id)->with('products','services')->first();
+        $products = $element->products()->with([
+            'product_attributes.color',
+            'product_attributes.size'
+        ])->paginate(Self::TAKE);
+        $services = $element->services()->paginate(Self::TAKE);
+        return view('frontend.wokiee.four.modules.user.show', compact('element', 'products', 'services'));
     }
 
     /**

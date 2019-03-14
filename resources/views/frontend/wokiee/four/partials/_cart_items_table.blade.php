@@ -14,7 +14,7 @@
                 <tr>
                     <td>
                         <div class="tt-product-img">
-                            <a href="{{ route('frontend.product.show.name',['id' => $element->element_id,'name' => $element->options->element->name]) }}">
+                            <a href="{{ route('frontend.product.show.name',['id' => $element->options->element_id,'name' => $element->options->element->name]) }}">
                                 <img src="{{ asset(env('IMG_LOADER')) }}"
                                      data-src="{{ $element->options->element->imageThumbLink }}" alt="">
                             </a>
@@ -22,7 +22,7 @@
                     </td>
                     <td>
                         <h2 class="tt-title">
-                            <a href="{{ route('frontend.product.show.name',['id' => $element->product_id,'name' => $element->options->element->name]) }}">
+                            <a href="{{ route('frontend.product.show.name',['id' => $element->options->element_id,'name' => $element->options->element->name]) }}">
                                 {{ $element->options->element->name }}
                             </a>
                         </h2>

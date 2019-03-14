@@ -16,7 +16,7 @@
                     </td>
                     <td>
                         <a class="theme-color"
-                           href="{{ route('frontend.user.show',['id' => $element->user_id,'name' => $element->user->name]) }}">{{ $element->user->name }}</a>
+                           href="{{ route('frontend.user.show.name',['id' => $element->user_id,'name' => $element->user->name]) }}">{{ $element->user->slug }}</a>
                     </td>
                 </tr>
             @endif
