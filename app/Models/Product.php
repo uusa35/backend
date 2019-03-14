@@ -51,6 +51,17 @@ class Product extends PrimaryModel
         return $this->belongsToMany(Size::class, 'product_attributes', 'product_id', 'size_id');
     }
 
+    // in case product does not have Attribute --> it has only one size or one color
+    public function color()
+    {
+        return $this->belongsTo(Color::class);
+    }
+
+    public function size()
+    {
+        return $this->belongsTo(Size::class);
+    }
+
     public function categories()
     {
         return $this->belongsToMany(Category::class, 'category_product');

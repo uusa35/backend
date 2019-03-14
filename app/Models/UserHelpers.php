@@ -78,4 +78,20 @@ trait UserHelpers
             return $q->active();
         }, '>', 0);
     }
+
+    public function getBgLargeLinkAttribute()
+    {
+        return asset(env('LARGE') . $this->bg);
+    }
+
+    public function getBgMediumLinkAttribute()
+    {
+        return asset(env('MEDIUM') . $this->bg);
+    }
+
+    public function getBgThumbLinkAttribute()
+    {
+        return asset(env('THUMBNAIL') . $this->bg);
+    }
+
 }

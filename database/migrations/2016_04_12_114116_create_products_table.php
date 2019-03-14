@@ -51,6 +51,12 @@ class CreateProductsTable extends Migration
             $table->integer('brand_id')->unsigned()->index()->nullable();
             $table->foreign('brand_id')->references('id')->on('brands');
 
+            $table->integer('color_id')->unsigned()->index()->nullable();
+            $table->foreign('color_id')->references('id')->on('colors');
+
+            $table->integer('size_id')->unsigned()->index()->nullable();
+            $table->foreign('size_id')->references('id')->on('sizes');
+
             $table->integer('shipment_package_id')->unsigned()->index()->nullable();
             $table->foreign('shipment_package_id')->references('id')->on('shipment_packages');
 

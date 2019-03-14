@@ -5,7 +5,8 @@ return array(
     'size' => 'الحجم',
     'price' => 'السعر',
     'range' => 'المدى',
-    'sort_by' => 'الترتيب عن طريق',
+    'filter' => 'البحث',
+    'sort_by' => 'الترتيب حسب',
     'highest' => 'الأعلى',
     'lowest' => 'الأقل',
     'tags' => 'كلمات مفتاحية',
@@ -279,7 +280,7 @@ return array(
     'package_fee_price' => 'قيمة سعر الشحن',
     'total_price' => 'السعر الإجمالي',
     'shipment_destination' => 'جهة الشحن',
-    'total_price_in_kuwaiti_dinar'=> 'السعر الإجمالي بالدينار الكويتي',
+    'total_price_in_kuwaiti_dinar' => 'السعر الإجمالي بالدينار الكويتي',
     'item_cart_name' => 'إسم الخدمة / المنتج',
     'countries_available_for_shipment' => 'الدول المتاحة للشحن',
     'kg' => 'كيلوجرام',
@@ -290,6 +291,9 @@ return array(
     'personal_information' => 'معلومات الحساب',
     'full_address' => 'العنوان بالكامل',
     'size_or_date' => 'التاريخ / المقاس',
-    'color_or_time' => 'اللون / الوقت'
+    'color_or_time' => 'اللون / الوقت',
+    'sort_by_alpha' => 'الترتيب ابجدياً',
+    'sort_by_price_high_to_low' => 'الترتيب من السعر الأعلى فالأقل',
+    'sort_by_price_low_to_high' => 'الترتيب من السعر الأقل فالأعلى',
 
 );

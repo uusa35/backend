@@ -18,7 +18,7 @@ class User extends Authenticatable
      */
     protected $guarded = [''];
     protected $with = [];
-    protected $localeStrings = ['slug'];
+    protected $localeStrings = ['slug','description'];
 
     /**
      * The attributes that should be hidden for arrays.
