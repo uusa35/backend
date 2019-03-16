@@ -123,4 +123,8 @@
         </div>
     </div>
     <div id="lang" class="d-none">{{ app()->getLocale() }}</div>
+    <form id="logout-form" action="{{ url('/logout') }}" method="POST"
+          style="display: none;">
+        @csrf
+    </form>
 </footer>

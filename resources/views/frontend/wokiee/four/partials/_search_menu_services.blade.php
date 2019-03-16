@@ -18,7 +18,7 @@
                 <select name="area_id" class="form-control" required>
                     <option value="">{{ trans('general.choose_area') }}*</option>
                     @foreach($countries->where('is_local', true)->first()->areas as $area)
-                        <option value="{{ $area->id }}">{{ $area->slug }}</option>
+                        <option value="{{ $area->id }}" {{ session()->has('area_id') && session()->get('area_id') == $area->id ? 'selected' : null }}>{{ $area->slug }}</option>
                     @endforeach
                 </select>
             </div>

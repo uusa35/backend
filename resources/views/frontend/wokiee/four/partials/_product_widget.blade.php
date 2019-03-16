@@ -1,4 +1,4 @@
-<div class="tt-product thumbprod-center">
+<div class="tt-product thumbprod-center" style="padding: 10px;">
     <div class="tt-image-box">
         <a href="#" class="tt-btn-quickview" data-toggle="modal"
            data-target="#ModalquickView"

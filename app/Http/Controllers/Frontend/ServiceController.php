@@ -11,6 +11,7 @@ use App\Http\Controllers\Controller;
 class ServiceController extends Controller
 {
     public $service;
+
     public function __construct(Service $service)
     {
         $this->service = $service;
@@ -34,7 +35,7 @@ class ServiceController extends Controller
             return redirect()->route('frontend.home')->withErrors($validator->messages());
         }
         $elements = $this->service->active()->available()->hasImage()->filters($filters)->with(
-            'tags','user.country','images',
+            'tags', 'user.country', 'images',
             'favorites', 'categories.children'
         )->orderBy('id', 'desc')->paginate(20);
         $tags = $elements->pluck('tags')->flatten()->unique('id')->sortKeysDesc();
@@ -42,10 +43,13 @@ class ServiceController extends Controller
         $vendors = $elements->pluck('user')->flatten()->unique('id');
 
         if (!$elements->isEmpty()) {
-            $currentCategory =  request()->has('category_id') ? Category::whereId(request('category_id'))->first() : null;
+            session()->put('day_selected_format', request('day_selected_format'));
+            session()->put('day_selected', request('day_selected'));
+            session()->put('area_id', request('area_id'));
+            $currentCategory = request()->has('category_id') ? Category::whereId(request('category_id'))->first() : null;
             return view('frontend.wokiee.four.modules.service.index', compact(
                 'elements', 'tags',
-                 'categoriesList','currentCategory','vendors'
+                'categoriesList', 'currentCategory', 'vendors'
             ));
         } else {
             return redirect()->route('frontend.home')->with('error', trans('message.no_items_found'));
@@ -81,7 +85,7 @@ class ServiceController extends Controller
      */
     public function show($id)
     {
-        $element = Service::whereId($id)->with('categories','timings.days', 'images', 'tags', 'user')->first();
+        $element = Service::whereId($id)->with('categories', 'timings.days', 'images', 'tags', 'user')->first();
         $workingDays = $element->timings->pluck('day', 'day_no')->keys()->unique()->toArray();
         $dayOff = $element->timings->where('is_off', true)->first();
         $relatedItems = $element->getRelatedItems($element);
