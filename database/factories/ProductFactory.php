@@ -1,7 +1,9 @@
 <?php
 
+use App\Models\Color;
 use App\Models\Product;
 use App\Models\ShipmentPackage;
+use App\Models\Size;
 use App\Models\User;
 use Faker\Generator as Faker;
 
@@ -36,6 +38,8 @@ $factory->define(Product::class, function (Faker $faker) use ($fakerAr) {
         'check_stock' => $faker->boolean(true),
         'is_hot_deal' => $faker->boolean(true),
         'user_id' => User::companies()->get()->random()->id,
+        'color_id' => Color::all()->random()->id,
+        'size_id' => Size::all()->random()->id,
         'shipment_package_id' => ShipmentPackage::all()->random()->id,
         'has_attributes' => $faker->boolean(true),
         'video_url_one' => 'http://www.youtube.com/embed/GhyKqj_P2E4',

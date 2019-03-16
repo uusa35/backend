@@ -1,12 +1,11 @@
 @extends('frontend.wokiee.four.layouts.app')
 
 @section('breadcrumbs')
-    {{ Breadcrumbs::render('frontend.user.show',$element) }}
+    {{ Breadcrumbs::render('frontend.service.index',$elements) }}
 @endsection
 
 @section('body')
     <div class="container-indent nomargin">
-        @include('frontend.wokiee.four.partials._user_show_header')
         {{--<div class="container-fluid-custom container-fluid-custom-mobile-padding">--}}
         <div class="container-indent">
             {{--<div class="container container-fluid-custom-mobile-padding">--}}
@@ -21,7 +20,7 @@
                             </br>
                             <div class="tt-filters-options desctop-no-sidebar">
                                 {{--<div class="tt-btn-toggle">--}}
-                                    {{--<a href="#">{{ trans('general.filter') }}</a>--}}
+                                {{--<a href="#">{{ trans('general.filter') }}</a>--}}
                                 {{--</div>--}}
                                 <div class="tt-sort">
                                     <select>
@@ -34,7 +33,6 @@
                             </div>
                             <div class="tt-product-listing row">
                                 @include('frontend.wokiee.four.partials._services_user_show')
-                                @include('frontend.wokiee.four.partials._products_user_show')
                             </div>
                             <div class="text-center tt_product_showmore">
                                 <div class="col-lg-12">
@@ -42,7 +40,7 @@
                                 </div>
                                 {{--<a href="#" class="btn btn-border">LOAD MORE</a>--}}
                                 {{--<div class="tt_item_all_js">--}}
-                                    {{--<a href="#" class="btn btn-border01">NO MORE ITEM TO SHOW</a>--}}
+                                {{--<a href="#" class="btn btn-border01">NO MORE ITEM TO SHOW</a>--}}
                                 {{--</div>--}}
                             </div>
                         </div>

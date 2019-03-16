@@ -1,4 +1,4 @@
-@if($categories->isNotEmpty())
+@if(isset($categories) && $categories->isNotEmpty())
     @if($categories->isNotEmpty())
         @foreach($categories->where('is_parent', true) as $cat)
             <li class="dropdown megamenu">

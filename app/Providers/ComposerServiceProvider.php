@@ -31,7 +31,8 @@ class ComposerServiceProvider extends ServiceProvider
             'frontend.*.*.home',
             'frontend.*.*.modules.cart.index',
 //            'frontend.*.*.product.show',
-//            'frontend.*.*.service.show',
+            'frontend.*.*.user.show',
+            'frontend.*.*.service.show',
             'backend.modules.currency.create',
             'backend.modules.currency.edit',
             'backend.partials.sidebar',
@@ -39,6 +40,7 @@ class ComposerServiceProvider extends ServiceProvider
 
         view()->composer([
             'frontend.*.*.*._search_form',
+            'frontend.*.*.*._search_menu_services',
         ], 'App\Services\ViewComposers@getAllTimingsAvailable');
 
         view()->composer([
@@ -76,13 +78,10 @@ class ComposerServiceProvider extends ServiceProvider
         ], 'App\Services\ViewComposers@getCategories');
 
         view()->composer([
-            'backend.partials.nav',
-            'frontend.*.*.*.header',
-            'frontend.*.*.*.footer',
-            'frontend.*.*.*.head',
-            'frontend.*.*.*._social_icons_home',
-            'frontend.*.*.*.scripts',
             'frontend.*.*.home',
+            'frontend.*.*.*.show',
+            'frontend.*.*.*.index',
+//            'frontend.*.*.*.scripts',
             'backend.modules.order.show',
         ], 'App\Services\ViewComposers@getSettings');
 

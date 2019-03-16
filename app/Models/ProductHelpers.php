@@ -38,17 +38,17 @@ trait ProductHelpers
     public function scopeServeCountries($q)
     {
         return $q->whereHas('shipment_package', function ($q) {
-                return $q->whereHas('countries', function ($q) {
-                    return $q->where(['country_id' => getCurrentCountrySessionId()]);
-                });
+            return $q->whereHas('countries', function ($q) {
+                return $q->where(['country_id' => getCurrentCountrySessionId()]);
             });
+        });
     }
 
     public function scopeHasStock($q)
     {
         if ($this->has_attributes) {
             return $q->whereHas('product_attributes', function ($q) {
-                return $this->product_attributes->sum('qty') >= 1 ? $q : $q->where('id', 0);
+                return $q->where(['has_attributes' => true])->where('qty', '>=', 1);
             });
         } else {
             return $q->where('qty', '>=', 1);

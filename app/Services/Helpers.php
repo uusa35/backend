@@ -169,3 +169,7 @@ function checkShipmentAvailability($destinationCountryId, $destinationRangeIds)
 {
     return in_array($destinationCountryId, $destinationRangeIds, true);
 }
+
+function getRequestQueryUrlWithout($element = '') {
+    return request()->url().'?'.http_build_query(array_except(Request::query(), $element));
+}

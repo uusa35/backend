@@ -19,11 +19,6 @@ class CreateTagsTable extends Migration
             $table->string('slug_en')->nullable();
             $table->string('order')->nullable();
             $table->boolean('active')->default(1);
-
-            $table->integer('user_id')->unsigned()->index()->nullable();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('restrict')->onUpdate('restrict');
-
-            $table->morphs('taggable');
             $table->timestamps();
         });
     }

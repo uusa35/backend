@@ -27,17 +27,7 @@
                                     <a href="{{ route('frontend.home') }}">{{ trans('general.home_page') }}</a>
                                 </li>
                                 @include('frontend.wokiee.four.partials._categories_main_menu_element_with_images')
-
-                                @if($pages->isNotEmpty())
-                                    @foreach($pages->where('on_menu_desktop',true)->take(3) as $page)
-                                        <li class="dropdown">
-                                            <a href="{{ route('frontend.page.show.name',['id' => $page->id,'name' => $page->title]) }}">
-                                                {{ str_limit($page->title,11,'') }}
-                                            </a>
-                                        </li>
-                                    @endforeach
-                                @endif
-
+                                @include('frontend.wokiee.four.partials._pages_main_menu')
                                 <li class="dropdown">
                                     <a href="{{ route('frontend.language.change',['locale' => 'ar']) }}">RTL</a>
                                     <a href="{{ route('frontend.language.change',['locale' => 'en']) }}">En</a>

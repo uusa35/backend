@@ -13,6 +13,6 @@ class TagsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Tag::class, app()->environment('production') ? 1 : 50)->create();
+        factory(Tag::class, app()->environment('production') ? 1 : 20)->create();
     }
 }

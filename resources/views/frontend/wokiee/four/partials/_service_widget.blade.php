@@ -32,7 +32,7 @@
         <div class="tt-row">
             <ul class="tt-add-info">
                 <li>
-                    <a href="{{ route('frontend.user.show.name',['id' => $element->user_id, 'name' => $element->user->slug]) }}">
+                    <a href="{{ route('frontend.service.search',['user_id' => $element->user_id]) }}">
                         {{ $element->user->slug }}
                     </a>
                 </li>

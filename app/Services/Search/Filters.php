@@ -32,10 +32,27 @@ class Filters extends QueryFilters
             ->orWhere('notes_en', 'like', "%{$search}%");
     }
 
-    public function category_id()
+    public function product_category_id()
     {
-        $parent = $this->category->whereId(request()->category_id)->with('children.products')->first();
+        $parent = $this->category->whereId(request()->product_category_id)->with('children.products')->first();
         if ($parent->children->isNotEmpty() && $parent->children->pluck('products')->isNotEmpty()) {
+            $children = $parent->children->pluck('id');
+            return $this->builder->whereHas('categories', function ($q) use ($parent, $children) {
+                if ($parent->children->isEmpty()) {
+                    return $q->where('id', request('category_id'));
+                }
+                return $q->whereIn('id', $children);
+            });
+        }
+        return $this->builder->whereHas('categories', function ($q) {
+            return $q->where('id', request()->category_id);
+        });
+    }
+
+    public function service_category_id()
+    {
+        $parent = $this->category->whereId(request()->service_category_id)->with('children.services')->first();
+        if ($parent->children->isNotEmpty() && $parent->children->pluck('services')->isNotEmpty()) {
             $children = $parent->children->pluck('id');
             return $this->builder->whereHas('categories', function ($q) use ($parent, $children) {
                 if ($parent->children->isEmpty()) {
@@ -57,7 +74,7 @@ class Filters extends QueryFilters
     public function tag_id()
     {
         return $this->builder->whereHas('tags', function ($q) {
-            return $q->where('id', request()->tag_id);
+            return $q->where('tag_id', request()->tag_id);
         });
     }
 
@@ -106,7 +123,7 @@ class Filters extends QueryFilters
     {
         switch (request('sort')) {
             case 'name' :
-                return $this->builder->orderBy('name_en', 'asc');
+                return $this->builder->orderBy('name_'.app()->getLocale(), 'asc');
             default :
                 return $this->builder->orderBy('price', request('sort'));
         }

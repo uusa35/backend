@@ -43,6 +43,11 @@ class Category extends PrimaryModel
         return $this->belongsToMany(Product::class, 'category_product');
     }
 
+    public function services()
+    {
+        return $this->belongsToMany(Service::class, 'category_service');
+    }
+
     /**
      * MorphRelation
      * MorphOne = many hasONe relation
