@@ -1,13 +1,14 @@
-<div class="tt-collapse open">
-    <h3 class="tt-collapse-title">VENDOR</h3>
-    <div class="tt-collapse-content">
-        <ul class="tt-list-row">
-            <li><a href="#">Levi's</a></li>
-            <li><a href="#">Gap</a></li>
-            <li><a href="#">Polo</a></li>
-            <li><a href="#">Lacoste</a></li>
-            <li><a href="#">Guess</a></li>
-        </ul>
-        <a href="#" class="btn-link-02">+ More</a>
+@if(isset($vendors) && $vendors->isNotEmpty())
+    <div class="tt-collapse open">
+        <h3 class="tt-collapse-title">{{ trans('general.companies') }}</h3>
+        <div class="tt-collapse-content">
+            <ul class="tt-list-row">
+                @foreach($vendors as $vendor)
+                    <li>
+                        <a href="{!! request()->fullUrlWithQuery(['user_id' => $vendor->id]) !!}">{{ $vendor->slug }}</a>
+                    </li>
+                @endforeach
+            </ul>
+        </div>
     </div>
-</div>
+@endif

@@ -171,5 +171,5 @@ function checkShipmentAvailability($destinationCountryId, $destinationRangeIds)
 }
 
 function getRequestQueryUrlWithout($element = '') {
-    return request()->url().'?'.http_build_query(array_except(Request::query(), $element));
+    return request()->url().'?'.http_build_query(array_except(Request::query(), [$element,'page']));
 }
