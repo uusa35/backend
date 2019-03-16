@@ -78,12 +78,12 @@ class HomeController extends Controller
         if ($validator->fails()) {
             return redirect()->route('frontend.home')->withErrors($validator->messages());
         }
-        $products = $this->product->active()->available()->hasAttributes()->hasImage()->filters($filters)->with(
+        $products = $this->product->active()->hasAttributes()->hasImage()->filters($filters)->with(
             'brands', 'product_attributes.color', 'product_attributes.size', 'tags',
             'favorites', 'categories.children')
             ->orderBy('id', 'desc')->paginate(20);
 
-        $services = $this->product->active()->available()->hasImage()->filters($filters)->with(
+        $services = $this->product->active()->hasImage()->filters($filters)->with(
             'tags', 'favorites', 'categories.children')
             ->orderBy('id', 'desc')->paginate(20);
 

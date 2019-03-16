@@ -34,7 +34,7 @@ class ServiceController extends Controller
         if ($validator->fails()) {
             return redirect()->route('frontend.home')->withErrors($validator->messages());
         }
-        $elements = $this->service->active()->available()->hasImage()->filters($filters)->with(
+        $elements = $this->service->active()->hasImage()->filters($filters)->with(
             'tags', 'user.country', 'images',
             'favorites', 'categories.children'
         )->orderBy('id', 'desc')->paginate(20);

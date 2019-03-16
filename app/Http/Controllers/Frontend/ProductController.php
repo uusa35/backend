@@ -32,7 +32,7 @@ class ProductController extends Controller
         if ($validator->fails()) {
             return redirect()->route('frontend.home')->withErrors($validator->messages());
         }
-        $elements = $this->product->active()->available()->hasImage()->hasStock()->filters($filters)->with(
+        $elements = $this->product->active()->hasImage()->hasStock()->filters($filters)->with(
             'brands','product_attributes.color', 'product_attributes.size', 'tags','user.country','images',
             'colors','sizes', 'favorites', 'categories.children'
         )->orderBy('id', 'desc')->paginate(20);
