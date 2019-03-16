@@ -68,7 +68,7 @@
                     </td>
                     <td>
                         @foreach($element->categories as $cat)
-                            <a class="theme-color" href="{{ route('frontend.product.search',['category_id' => $cat->id]) }}">
+                            <a class="theme-color" href="{{ route('frontend.service.search',['service_category_id' => $cat->id]) }}">
                                 {{ $cat->name }},
                             </a>
                         @endforeach
@@ -77,13 +77,13 @@
             @endif
             @if($element->tags->isNotEmpty())
                 <tr>
-                    <td class="td-fixed-element"><i class="icon-f-07 fa fa-fw fa-lg"></i><span
-                                class="ml-1"></span>{{ trans("general.tags") }}
-                        :
+                    <td class="td-fixed-element">
+                        <i class="icon-f-07 fa fa-fw fa-lg"></i>
+                        <span class="ml-1"></span>{{ trans("general.tags") }}:
                     </td>
                     <td>
                         @foreach($element->tags as $tag)
-                            <a class="theme-color" href="{{ route('frontend.product.search',['tag_id' => $tag->id]) }}">
+                            <a class="theme-color" href="{{ route('frontend.service.search',['tag_id' => $tag->id]) }}">
                                 {{ $tag->slug }},
                             </a>
                         @endforeach
@@ -95,7 +95,7 @@
                     <td class="td-fixed-element">{{ trans("general.brands") }}:</td>
                     <td>
                         @foreach($element->brands as $brand)
-                            <a class="theme-color" href="{{ route('frontend.product.search',['brand_id' => $brand->id]) }}">
+                            <a class="theme-color" href="{{ route('frontend.service.search',['brand_id' => $brand->id]) }}">
                                 {{ $brand->slug }},
                             </a>
                         @endforeach

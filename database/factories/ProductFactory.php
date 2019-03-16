@@ -26,7 +26,7 @@ $factory->define(Product::class, function (Faker $faker) use ($fakerAr) {
         'sale_price' => function ($array) {
             return $array['price'] - rand(1, 5);
         },
-        'size_chart_image' => $faker->numberBetween(1, 42) . '.jpeg',
+        'size_chart_image' => env('APP_MODE') . '-' . $faker->numberBetween(1, 42) . '.jpeg',
         'description_en' => $faker->paragraph,
         'description_ar' => $faker->paragraph,
         'notes_ar' => $faker->paragraph,

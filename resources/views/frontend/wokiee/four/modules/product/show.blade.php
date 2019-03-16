@@ -23,8 +23,8 @@
                         @if($element->canOrder)
                             <div class="tt-swatches-container">
                                 <div class="tt-wrapper product-information-buttons">
-                                    <a data-toggle="modal" data-target="#modalProductInfo" href="#">Size Guide</a>
-                                    <a data-toggle="modal" data-target="#modalProductInfo-02" href="#">Shipping</a>
+                                    <a data-toggle="modal" data-target="#modalProductInfo" href="#">{{ trans('general.size_guide') }}</a>
+                                    <a data-toggle="modal" data-target="#modalProductInfo-02" href="#">{{ trans('general.shipping') }}</a>
                                 </div>
                                 @if($element->has_attributes && $element->sizes->isNotEmpty())
                                     @include('frontend.wokiee.four.partials._page_show_sizes',['sizes' => $element->sizes])
@@ -54,8 +54,8 @@
     </div>
     @include('frontend.wokiee.four.partials._show_page_social_icons')
     @include('frontend.wokiee.four.partials._show_page_related_items',['elements' => $relatedItems])
-    @include('frontend.wokiee.four.partials._modal_size_chart')
     @include('frontend.wokiee.four.partials._modal_page_show_video')
+    @include('frontend.wokiee.four.partials._modal_size_chart')
     @include('frontend.wokiee.four.partials._modal_page_show_shipment')
 @endsection
 

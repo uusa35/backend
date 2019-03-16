@@ -39,7 +39,7 @@
                     </td>
                     <td>
                         @foreach($element->shipment_package->countries as $country)
-                                {{ $country->slug }},
+                            {{ $country->slug }},
                         @endforeach
                     </td>
                 </tr>
@@ -124,7 +124,7 @@
                     <td>
                         @foreach($element->categories as $cat)
                             <a class="theme-color"
-                               href="{{ route('frontend.product.search',['category_id' => $cat->id]) }}">
+                               href="{{ route('frontend.product.search',['product_category_id' => $cat->id]) }}">
                                 {{ $cat->name }},
                             </a>
                         @endforeach
@@ -166,7 +166,7 @@
                         <td><i class="icon-e-87 fa fa-fw fa-lg"></i>{{ trans('general.colors') }} :</td>
                         <td>
                             @foreach($element->colors as $col)
-                                {!! $col->name !!},
+                                <span style="color: {{ $col->code }}">{!! $col->name !!}</span>,
                             @endforeach
                         </td>
                     </tr>
@@ -181,6 +181,19 @@
                         </td>
                     </tr>
                 @endif
+            @else
+                <tr>
+                    <td><i class="icon-e-69 fa fa-fw fa-lg"></i>{{ trans('general.size') }} :</td>
+                    <td>
+                        {{ $element->size->name }}
+                    </td>
+                </tr>
+                <tr>
+                    <td><i class="icon-e-69 fa fa-fw fa-lg"></i>{{ trans('general.color') }} :</td>
+                    <td>
+                        {{ $element->color->name }}
+                    </td>
+                </tr>
             @endif
             @if($element->notes)
                 <tr>

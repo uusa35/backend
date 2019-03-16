@@ -18,13 +18,8 @@ class PageController extends Controller
     public function show($id)
     {
         $element = Page::find($id);
-        $branches = Branch::active()->get();
         if ($element) {
-            return view('frontend.modules.page.show', compact('element','branches'));
-        }
-        $element = Page::where(['title_ar' => $id])->orWhere(['title_en' => $id])->first();
-        if ($element) {
-            return view('frontend.modules.page.show', compact('element','branches'));
+            return view('frontend.wokiee.four.modules.page.show', compact('element'));
         }
         return redirect()->back()->with('error', trans('message.page_does_not_exist'));
     }
