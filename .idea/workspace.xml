@@ -2,42 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e163867a-e084-464b-b025-90563ffad1db" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/product/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/service/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_pages_main_menu.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_products_user_show.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_search_menu_products.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_search_menu_services.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_search_side_bar_brands.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_search_side_bar_product_categories.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_search_side_bar_service_categories.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_search_sort_by.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_services_user_show.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_user_show_header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/ProductHelpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ProductHelpers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Tag.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Tag.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/ComposerServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/ComposerServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Helpers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Search/Filters.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Search/Filters.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/ProductFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ProductFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/TagFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/TagFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2016_07_02_105450_create_sizes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2015_07_02_105450_create_sizes_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2016_07_02_105506_create_colors_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2015_07_02_105506_create_colors_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2018_05_15_045718_create_tags_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2018_05_15_045718_create_tags_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/TagsTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/TagsTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/user/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/user/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_categories_main_menu_element_with_images.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_categories_main_menu_element_with_images.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_main_menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_main_menu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_product_widget.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_product_widget.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_search_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_search_form.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_search_side_bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_search_side_bar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_search_side_bar_sizes.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_search_side_bar_sizes.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_search_side_bar_tags.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_search_side_bar_tags.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_service_widget.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_service_widget.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_search_side_bar_prices.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_search_side_bar_prices.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -79,17 +45,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_search_side_bar.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="24" column="30" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
+            <state relative-caret-position="288">
+              <caret line="16" column="60" selection-start-line="16" selection-start-column="60" selection-end-line="16" selection-end-column="60" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Services/Search/Filters.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="859">
-              <caret line="123" column="34" lean-forward="true" selection-start-line="123" selection-start-column="34" selection-end-line="123" selection-end-column="34" />
+            <state relative-caret-position="805">
+              <caret line="120" lean-forward="true" selection-start-line="120" selection-end-line="120" />
             </state>
           </provider>
         </entry>
@@ -135,6 +101,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="414">
               <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_search_side_bar_prices.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="7" column="113" selection-start-line="7" selection-start-column="113" selection-end-line="7" selection-end-column="113" />
             </state>
           </provider>
         </entry>
@@ -225,7 +200,6 @@
         <option value="$PROJECT_DIR$/app/Models/Product.php" />
         <option value="$PROJECT_DIR$/app/Models/Color.php" />
         <option value="$PROJECT_DIR$/app/Models/Size.php" />
-        <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_search_side_bar_prices.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_search_side_bar_vendors.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_search_side_bar_categories.blade.php" />
         <option value="$PROJECT_DIR$/resources/assets/css/frontend-custom.css" />
@@ -261,11 +235,12 @@
         <option value="$PROJECT_DIR$/app/Models/Category.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_search_side_bar_service_categories.blade.php" />
         <option value="$PROJECT_DIR$/app/Services/Helpers.php" />
-        <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_search_side_bar.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_search_sorty_by.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/product/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_search_sort_by.blade.php" />
         <option value="$PROJECT_DIR$/app/Services/Search/Filters.php" />
+        <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_search_side_bar.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_search_side_bar_prices.blade.php" />
       </list>
     </option>
   </component>
@@ -726,12 +701,12 @@
       <workItem from="1552455729993" duration="21467000" />
       <workItem from="1552500894941" duration="363000" />
       <workItem from="1552537559157" duration="6663000" />
-      <workItem from="1552724946651" duration="3029000" />
+      <workItem from="1552724946651" duration="3297000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="424987000" />
+    <option name="totallyTimeSpent" value="425255000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
@@ -775,13 +750,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_pages_main_menu.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="42" lean-forward="true" selection-start-line="1" selection-start-column="42" selection-end-line="1" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="573">
@@ -1103,13 +1071,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_search_side_bar.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="24" column="30" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/product/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -1133,8 +1094,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Services/Search/Filters.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="859">
-          <caret line="123" column="34" lean-forward="true" selection-start-line="123" selection-start-column="34" selection-end-line="123" selection-end-column="34" />
+        <state relative-caret-position="805">
+          <caret line="120" lean-forward="true" selection-start-line="120" selection-end-line="120" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_search_side_bar.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="60" selection-start-line="16" selection-start-column="60" selection-end-line="16" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_search_side_bar_prices.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="113" selection-start-line="7" selection-start-column="113" selection-end-line="7" selection-end-column="113" />
         </state>
       </provider>
     </entry>

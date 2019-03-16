@@ -2,10 +2,10 @@
     <h3 class="tt-collapse-title">FILTER BY PRICE</h3>
     <div class="tt-collapse-content">
         <ul class="tt-list-row">
-            <li class="active"><a href="#">$0 — $50</a></li>
-            <li><a href="#">$50 — $100</a></li>
-            <li><a href="#">$100 — $150</a></li>
-            <li><a href="#">$150 — $200</a></li>
+            <li class="active"><a href="{{ request()->fullUrlWithQuery(['min' => 0, 'max' => 50]) }}">0 — 50 {{ $currency->symbol }} </a></li>
+            <li class="active"><a href="{{ request()->fullUrlWithQuery(['min' => 100, 'max' => 150]) }}">100 — 150 {{ $currency->symbol }} </a></li>
+            <li class="active"><a href="{{ request()->fullUrlWithQuery(['min' => 150, 'max' => 200]) }}">150 — 200 {{ $currency->symbol }} </a></li>
+            <li class="active"><a href="{{ request()->fullUrlWithQuery(['min' => 200, 'max' => 250]) }}">200 — 250 {{ $currency->symbol }} </a></li>
         </ul>
     </div>
 </div>
