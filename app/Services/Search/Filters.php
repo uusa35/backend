@@ -3,6 +3,7 @@
 namespace App\Services\Search;
 
 use App\Models\Category;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 /**
@@ -147,8 +148,7 @@ class Filters extends QueryFilters
     public function timing_id()
     {
         return $this->builder->whereHas('timings', function ($q) {
-            dd(request('timing_id'));
-            return $q->where(['day_no' => request('day_selected')]);
+            return $q->whereDate('start' ,'>=' ,Carbon::parse(request('timing_id'))->format('h:i a'));
         });
     }
 

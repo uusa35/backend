@@ -28,7 +28,7 @@
                     <select name="timing_id" class="form-control">
                         <option value="" selected>{{ trans('general.choose_timing') }}</option>
                         @foreach($timings as $k => $v)
-                            <option value="{{ $k }}">{{ $v }}</option>
+                            <option value="{{ Carbon\Carbon::parse($v)->format('h:i a') }}">{{ $v }}</option>
                         @endforeach
                     </select>
                 </div>
