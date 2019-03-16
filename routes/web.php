@@ -13,7 +13,7 @@
 
 use App\Models\User;
 
-Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.', 'middleware' => ['auth', 'onlyActiveUsers','country']], function () {
+Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.', 'middleware' => ['auth', 'onlyActiveUsers', 'country']], function () {
     // Route may be same But
     // 1- Date will be displayed are different (therefore made many controllers for the same exact Model)
     // 2- Action Also is different therefore ModelPolicy applied for each Model Action
@@ -93,7 +93,7 @@ Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => ['
     Route::get('product/{id}/{name}', 'ProductController@show')->name('product.show.name');
     Route::resource('service', 'ServiceController');
     Route::get('service/{id}/{name}', 'ServiceController@show')->name('service.show.name');
-    Route::resource('cart', 'CartController')->only(['index','show']);
+    Route::resource('cart', 'CartController')->only(['index', 'show']);
     Route::post('cart/add/service', 'CartController@addService')->name('cart.add.service');
     Route::post('cart/add/product', 'CartController@addProduct')->name('cart.add.product');
     Route::get('cart/remove/{id}', 'CartController@removeItem')->name('cart.remove');
@@ -118,10 +118,12 @@ Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => ['
     Route::get('language/{locale}', 'HomeController@changeLanguage')->name('language.change');
     Route::get('country/set', 'HomeController@setCountry')->name('country.set');
 });
-Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => ['auth','country']], function () {
+Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => ['auth', 'country']], function () {
     Route::get('favorite', 'FavoriteController@index')->name('favorite.index');
-    Route::get('favorite/add/{id}', 'FavoriteController@add')->name('favorite.add');
-    Route::get('favorite/remove/{id}', 'FavoriteController@remove')->name('favorite.remove');
+    Route::get('favorite/add/product/{id}', 'FavoriteController@addProduct')->name('favorite.product.add');
+    Route::get('favorite/add/service/{id}', 'FavoriteController@addService')->name('favorite.service.add');
+    Route::get('favorite/remove/product/{id}', 'FavoriteController@removeProduct')->name('favorite.product.remove');
+    Route::get('favorite/remove/service/{id}', 'FavoriteController@removeService')->name('favorite.service.remove');
 });
 
 Auth::routes();

@@ -3,7 +3,9 @@
     <div class="container-fluid">
         <div class="header-tel-info">
             {{--<i class="icon-f-93"></i> 777 2345 7885; +777 2345 7886--}}
-            @include('frontend.wokiee.four.partials._search_form')
+            @mobile
+            {{--@include('frontend.wokiee.four.partials._search_form')--}}
+            @endmobile
         </div>
     </div>
     <div class="container-fluid tt-top-line">

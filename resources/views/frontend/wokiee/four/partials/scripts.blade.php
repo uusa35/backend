@@ -12,7 +12,6 @@
         startDate: '{{  \Carbon\Carbon::today()->format('d/m/Y') }}',
         endDate: '{{  \Carbon\Carbon::today()->addMonth(1)->format('d/m/Y') }}',
         show: function(e) {
-            $('*[class^="timing-element-"]').addClass('d-none');
         },
         hide: function(e) {
         },
@@ -20,12 +19,12 @@
             dayNo = e.date.getDay();
             day_selected_format = moment(e.date).format('MM/DD/YYYY');
             dayName = moment(e.date).format('dddd');
-            console.log('date_selecte', day_selected_format);
+            console.log('day namee', dayName);
+            console.log('day no', dayNo);
+            console.log('date_selected format', day_selected_format);
             // set Day No + Day Format Value
             $('#day_selected').attr('value', dayNo);
             $('#day_selected_format').attr('value', day_selected_format);
-            $(`*[class^="timing-element-${dayNo}"]`).toggleClass('d-none');
-            $('#chooseTimeModal').modal('show');
         },
         update: function(e) {
         }
@@ -63,7 +62,7 @@
             dayNo = e.date.getDay();
             day_selected_format = moment(e.date).format('MM/DD/YYYY');
             dayName = moment(e.date).format('dddd');
-            console.log('date_selecte', day_selected_format);
+            console.log('date_selected', day_selected_format);
             // set Day No + Day Format Value
             $('#day_selected').attr('value', dayNo);
             $('#day_selected_format').attr('value', day_selected_format);

@@ -1,7 +1,7 @@
 <div class="tt-wrapper">
     <div class="tt-row-custom-01">
         <div class="col-item">
-            <div class="tt-input-counter style-01">
+            <div class="tt-input-counter style-01" data-tooltip="{{ trans('general.choose_color_first') }}" data-tposition="bottom">
                 <span class="minus-btn"></span>
                 @if($element->has_attributes)
                     <input id="max-qty" type="number" value="1" size="1"/>

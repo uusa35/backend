@@ -62,7 +62,7 @@ class CartController extends Controller
         $validator = validator($request->all(),
             [
                 'product_id' => 'required|exists:products,id',
-                'product_attribute_id' => 'nullable|exists:services,id',
+                'product_attribute_id' => 'nullable|exists:product_attributes,id',
                 'size_id' => 'required_with:product_attribute_id|nullable|exists:sizes,id',
                 'color_id' => 'required_with:product_attribute_id|nullable|exists:colors,id',
                 'qty' => 'required|numeric|min:1',

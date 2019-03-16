@@ -36,7 +36,8 @@
                             @if($element->options->country_destination)
                                 <li>{{ trans('general.shipment_destination') }}
                                     : {{ $element->options->country_destination->slug }} ---
-                                    PackageCharge : {{ $element->options->element->shipment_package->charge }} ---- ProductWeight : {{ $element->options->element->weight }}
+                                    PackageCharge : {{ $element->options->element->shipment_package->charge }} ----
+                                    ProductWeight : {{ $element->options->element->weight }}
                                 </li>
                             @endif
                             @if($element->options->day_selected)
@@ -81,6 +82,12 @@
                            class="icon-h-02"></a>
                     </td>
                 </tr>
+                @if($element->options->notes)
+                    <tr>
+                        {!! $element->options->notes !!}
+                    </tr>
+                @endif
+
             @endforeach
 
             </tbody>

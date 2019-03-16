@@ -81,8 +81,9 @@ class ComposerServiceProvider extends ServiceProvider
             'frontend.*.*.home',
             'frontend.*.*.*.show',
             'frontend.*.*.*.index',
-//            'frontend.*.*.*.scripts',
+            'backend.*.*.*.scripts',
             'backend.modules.order.show',
+            'backend.partials.nav',
         ], 'App\Services\ViewComposers@getSettings');
 
         view()->composer([

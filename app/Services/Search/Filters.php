@@ -123,10 +123,46 @@ class Filters extends QueryFilters
     {
         switch (request('sort')) {
             case 'name' :
-                return $this->builder->orderBy('name_'.app()->getLocale(), 'asc');
+                return $this->builder->orderBy('name_' . app()->getLocale(), 'asc');
             default :
                 return $this->builder->orderBy('price', request('sort'));
         }
     }
+
+    public function area_id()
+    {
+        // List of users that servie area_id
+        return $this->builder->whereHas('user.areas', function ($q) {
+            return $q->where(['id' => request('area_id')]);
+        });
+    }
+
+    public function day_selected()
+    {
+        return $this->builder->whereHas('timings', function ($q) {
+            return $q->where(['day_no' => request('day_selected')]);
+        });
+    }
+
+    public function timing_id()
+    {
+        return $this->builder->whereHas('timings', function ($q) {
+            dd(request('timing_id'));
+            return $q->where(['day_no' => request('day_selected')]);
+        });
+    }
+
+    public function day_selected_format()
+    {
+        return $this->builder;
+    }
+
+    public function country_id()
+    {
+        return $this->builder->whereHas('user', function ($q) {
+            return $q->where(['country_id' => request('country_id')]);
+        });
+    }
+
 
 }

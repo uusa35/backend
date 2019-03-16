@@ -1,7 +1,7 @@
 <div class="tt-wrapper">
     <div class="tt-title-options">{{ trans('general.sizes') }} :</div>
     <form class="form-default">
-        <div class="form-group">
+        <div class="form-group" data-tooltip="{{ trans('general.choose_color_then_size') }}">
             <select class="form-control" id="size" required>
                 <option value="">{{ trans('general.choose_size') }}</option>
                 @foreach($sizes as $size)

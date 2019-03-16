@@ -24,7 +24,7 @@ abstract class QueryFilters
 
     public function filters()
     {
-        $removeNull = array_filter($this->request->all(), function ($value) {
+        $removeNull = array_filter($this->request->except('_token'), function ($value) {
             if (!is_null($value)) {
                 return $value;
             }

@@ -2,7 +2,7 @@
     <div class="tt-title-options">{{ trans('general.colors') }}:</div>
     <ul class="tt-options-swatch options-large">
         @foreach($colors as $col)
-            <li class="color-id-element"><a class="options-color d-none" id="color-id-{{ $col->id }}"
+            <li class="color-id-element" data-tooltip="{{ trans('general.choose_your_color') }}"><a class="options-color d-none" id="color-id-{{ $col->id }}"
                    data-color-id="{{ $col->id }}"
                    data-qty=""
                    data-product-attribute-id=""

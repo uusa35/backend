@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Services\Search\QueryFilters;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Product extends PrimaryModel
@@ -102,16 +101,5 @@ class Product extends PrimaryModel
     public function collections()
     {
         return $this->morphToMany(Collection::class, 'collectionable');
-    }
-
-    /**
-     * @param $q
-     * @param QueryFilters $filters
-     * @return \Illuminate\Database\Eloquent\Builder
-     * QueryFilters used within the search
-     */
-    public function scopeFilters($q, QueryFilters $filters)
-    {
-        return $filters->apply($q);
     }
 }

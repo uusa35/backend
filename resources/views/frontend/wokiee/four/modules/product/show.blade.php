@@ -23,25 +23,38 @@
                         @if($element->canOrder)
                             <div class="tt-swatches-container">
                                 <div class="tt-wrapper product-information-buttons">
-                                    <a data-toggle="modal" data-target="#modalProductInfo" href="#">{{ trans('general.size_guide') }}</a>
-                                    <a data-toggle="modal" data-target="#modalProductInfo-02" href="#">{{ trans('general.shipping') }}</a>
+                                    <a data-toggle="modal" data-target="#modalProductInfo"
+                                       href="#">{{ trans('general.size_guide') }}</a>
+                                    <a data-toggle="modal" data-target="#modalProductInfo-02"
+                                       href="#">{{ trans('general.shipping') }}</a>
                                 </div>
                                 @if($element->has_attributes && $element->sizes->isNotEmpty())
                                     @include('frontend.wokiee.four.partials._page_show_sizes',['sizes' => $element->sizes])
                                     @include('frontend.wokiee.four.partials._page_show_colors',['colors' => $element->colors,'hidden' => true])
-                                @elseif($element->has_attributes && $element->colors->isNotEmpty())
-                                    @include('frontend.wokiee.four.partials._page_show_colors',['colors' => $element->colors,'hidden' => false])
+                                @else
+                                    <div class="row">
+                                        <div class="col-12">
+                                            @if($element->size_id)
+                                                <p>{{ trans('general.size') }} : {{ $element->size->name }}</p>
+                                            @endif
+                                            @if($element->color_id)
+                                                <p>{{ trans('general.color') }} : {{ $element->color->name }}</p>
+                                            @endif
+                                        </div>
+                                    </div>
                                 @endif
                             </div>
                             @include('frontend.wokiee.four.partials._product_show_add_to_cart_btn')
                         @endif
                         @auth
-                        <div class="tt-wrapper">
-                            <ul class="tt-list-btn">
-                                <li><a class="btn-link" href="#"><i class="icon-n-072"></i>{{ trans('general.add_to_wish_list') }}</a></li>
-                                {{--<li><a class="btn-link" href="#"><i class="icon-n-08"></i>ADD TO COMPARE</a></li>--}}
-                            </ul>
-                        </div>
+                            <div class="tt-wrapper">
+                                <ul class="tt-list-btn">
+                                    <li><a class="btn-link" href="#"><i
+                                                    class="icon-n-072"></i>{{ trans('general.add_to_wish_list') }}</a>
+                                    </li>
+                                    {{--<li><a class="btn-link" href="#"><i class="icon-n-08"></i>ADD TO COMPARE</a></li>--}}
+                                </ul>
+                            </div>
                         @endauth
 
                         <div class="tt-wrapper">

@@ -10,16 +10,22 @@
                 <div class="tt-dropdown-inner">
                     <ul>
                         <li><a href="{{ route('backend.home') }}">
-                                <i class="fa fw-fw fa-dashboard"></i>
+                                <i class="icon-theme fa fa-fw fa-lg"></i>
                                 {{ trans('general.control_panel') }}
                             </a>
                         </li>
-                        <li><a href="wishlist.html"><i class="icon-n-072"></i>Wishlist</a></li>
-                        <li><a href="compare.html"><i class="icon-n-08"></i>Compare</a></li>
-                        <li><a href="page404.html"><i class="icon-f-68"></i>Check Out</a></li>
-                        <li><a href="login.html"><i class="icon-f-76"></i>Sign In</a></li>
-                        <li><a href="page404.html"><i class="icon-f-77"></i>Sign Out</a></li>
-                        <li><a href="create-account.html"><i class="icon-f-94"></i>Register</a></li>
+                        <li><a href="{{ route('frontend.favorite.index') }}">
+                                <i class="icon-h-13 fa fa-fw fa-lg"></i>
+                                {{ trans('general.wish_list') }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url('/logout') }}" class="dropdown-toggle"
+                               onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                <i class="icon-h-24 fa fa-fw fa-lg"></i>
+                                    {{ trans('general.sign_out') }}
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>

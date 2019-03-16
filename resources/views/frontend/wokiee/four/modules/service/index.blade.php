@@ -32,11 +32,11 @@
                                 </div>
                             </div>
                             <div class="tt-product-listing row">
-                                @include('frontend.wokiee.four.partials._services_user_show')
+                                @include('frontend.wokiee.four.partials._services_user_show',['services' => $elements])
                             </div>
                             <div class="text-center tt_product_showmore">
                                 <div class="col-lg-12">
-                                    @include('frontend.wokiee.four.partials._pagination',['elements' => $products])
+                                    @include('frontend.wokiee.four.partials._pagination',['elements' => $elements])
                                 </div>
                                 {{--<a href="#" class="btn btn-border">LOAD MORE</a>--}}
                                 {{--<div class="tt_item_all_js">--}}

@@ -2,8 +2,8 @@
     <div class="tt-cart-list">
         @foreach(Cart::content() as $element)
             <div class="tt-item">
-                <a href="product.html">
-                    @if($element->options->type === 'service')
+                @if($element->options->type === 'service')
+                    <a href="{{ route('frontend.service.show', $element->options->element_id) }}">
                         <div class="tt-item-img">
                             <img src="{{ asset(env('IMG_LOADER')) }}"
                                  data-src="{{ $element->options->element->imageThumbLink}}" alt="">
@@ -18,27 +18,27 @@
                             </ul>
                             <div class="tt-price">{{ getConvertedPrice($element->price) }} {{ $currency->symbol }}</div>
                         </div>
-                    @else
-                        <div class="tt-item-img">
-                            <img src="{{ asset(env('IMG_LOADER'))}}"
-                                 data-src="{{ $element->options->element->imageThumbLink}}" alt="">
-                        </div>
-                        <div class="tt-item-descriptions">
-                            <h2 class="tt-title">{{ $element->name }}</h2>
-                            <ul class="tt-add-info">
-                                <li>{{ trans('general.qty') }} : {{ $element->qty }}</li>
-                                <li>{{ trans('general.company_name') }}: {{ $element->options->company }}</li>
-                                @if($element->options->color)
-                                    <li>{{ trans('general.color') }}: {{ $element->options->color->name}}</li>
-                                @endif
-                                @if($element->options->size)
-                                    <li>{{ trans('general.size') }}: {{ $element->options->size->name}}</li>
-                                @endif
-                            </ul>
-                            <div class="tt-price">{{ getConvertedPrice($element->price) }} {{ $currency->symbol }}</div>
-                        </div>
-                    @endif
-                </a>
+                        @else
+                            <div class="tt-item-img">
+                                <img src="{{ asset(env('IMG_LOADER'))}}"
+                                     data-src="{{ $element->options->element->imageThumbLink}}" alt="">
+                            </div>
+                            <div class="tt-item-descriptions">
+                                <h2 class="tt-title">{{ $element->name }}</h2>
+                                <ul class="tt-add-info">
+                                    <li>{{ trans('general.qty') }} : {{ $element->qty }}</li>
+                                    <li>{{ trans('general.company_name') }}: {{ $element->options->company }}</li>
+                                    @if($element->options->color)
+                                        <li>{{ trans('general.color') }}: {{ $element->options->color->name}}</li>
+                                    @endif
+                                    @if($element->options->size)
+                                        <li>{{ trans('general.size') }}: {{ $element->options->size->name}}</li>
+                                    @endif
+                                </ul>
+                                <div class="tt-price">{{ getConvertedPrice($element->price) }} {{ $currency->symbol }}</div>
+                            </div>
+                    </a>
+                @endif
                 <div class="tt-item-close">
                     <a href="{{ route('frontend.cart.remove',$element->rowId) }}" class="tt-btn-close"></a>
                 </div>

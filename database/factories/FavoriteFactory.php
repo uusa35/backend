@@ -2,6 +2,7 @@
 
 use App\Models\Favorite;
 use App\Models\Product;
+use App\Models\Service;
 use App\Models\User;
 use Faker\Generator as Faker;
 
@@ -18,8 +19,9 @@ use Faker\Generator as Faker;
 
 $factory->define(Favorite::class, function (Faker $faker) {
     return [
-        'user_id' => User::doesntHave('favorites')->get()->random()->id,
+        'user_id' => User::all()->random()->id,
         'product_id' => Product::doesntHave('favorites')->get()->random()->id,
+        'service_id' => Service::doesntHave('favorites')->get()->random()->id,
     ];
 });
 

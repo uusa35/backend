@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Services\Search\QueryFilters;
 use Carbon\Carbon;
 
 /**
@@ -109,7 +110,18 @@ trait SellingModelHelpers
 
     public function getIsFavoritedAttribute()
     {
-        return auth()->check() ? in_array(auth()->user()->id, $this->favorites->pluck('id')->toArray()) : null;
+        return auth()->check() ? in_array(auth()->user()->id, $this->favorites->pluck('id')->toArray()) : false;
+    }
+
+    /**
+     * @param $q
+     * @param QueryFilters $filters
+     * @return \Illuminate\Database\Eloquent\Builder
+     * QueryFilters used within the search
+     */
+    public function scopeFilters($q, QueryFilters $filters)
+    {
+        return $filters->apply($q);
     }
 
 }

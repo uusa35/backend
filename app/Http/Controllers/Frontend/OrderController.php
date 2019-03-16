@@ -124,6 +124,7 @@ class OrderController extends Controller
                         'qty' => $element->qty,
                         'price' => $element->price,
                         'shipment_cost' => $element->options->shipment_cost,
+                        'notes' => $element->options->notes ? $element->options->notes : null,
                         'product_size' => $element->options->size ? $element->options->size->name : null,
                         'product_color' => $element->options->color ? $element->options->color->name : null,
                         'service_date' => $element->options->day_selected,
@@ -134,7 +135,7 @@ class OrderController extends Controller
                 });
                 auth()->login($user);
                 $elements = $this->cart->content();
-                return view('frontend.wokiee.four.modules.cart.show', compact('elements','order'))->with('success', trans('message.register_account_password_is_your_mobile'));
+                return view('frontend.wokiee.four.modules.cart.show', compact('elements', 'order'))->with('success', trans('message.register_account_password_is_your_mobile'));
             }
         } else {
             return 'here error case';

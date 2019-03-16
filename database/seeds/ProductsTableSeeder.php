@@ -2,6 +2,7 @@
 
 use App\Models\Category;
 use App\Models\Collection;
+use App\Models\Favorite;
 use App\Models\Image;
 use App\Models\Notification;
 use App\Models\Product;

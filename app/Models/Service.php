@@ -39,6 +39,11 @@ class Service extends PrimaryModel
         return $this->morphMany(Image::class, 'imagable');
     }
 
+    public function favorites()
+    {
+        return $this->belongsToMany(User::class, 'favorites','service_id');
+    }
+
     // Many Morph
     public function slides()
     {

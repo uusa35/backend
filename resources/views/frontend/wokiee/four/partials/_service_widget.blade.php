@@ -14,7 +14,7 @@
            data-tposition="{{ app()->isLocale('ar') ? 'right' : 'left' }}"
         ></a>
         @auth
-            <a href="#" class="tt-btn-wishlist" data-tooltip="{{ trans('general.add_to_wish_list') }}"
+            <a href="{{ route('frontend.favorite.service.add', $element->id) }}" class="tt-btn-wishlist" data-tooltip="{{ trans('general.add_to_wish_list') }}"
                data-tposition="{{ app()->isLocale('ar') ? 'right' : 'left' }}"
             ></a>
         @endauth

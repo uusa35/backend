@@ -34,9 +34,8 @@ class ProductController extends Controller
         }
         $elements = $this->product->active()->available()->hasImage()->hasStock()->filters($filters)->with(
             'brands','product_attributes.color', 'product_attributes.size', 'tags','user.country','images',
-            'colors','sizes',
-            'favorites', 'categories.children')
-            ->orderBy('id', 'desc')->paginate(20);
+            'colors','sizes', 'favorites', 'categories.children'
+        )->orderBy('id', 'desc')->paginate(20);
         $tags = $elements->pluck('tags')->flatten()->unique('id')->sortKeysDesc();
         $sizes = $elements->pluck('product_attributes')->flatten()->pluck('size')->flatten()->unique('id')->sortKeysDesc();
         $colors = $elements->pluck('product_attributes')->flatten()->pluck('color')->flatten()->unique('id')->sortKeysDesc();
@@ -46,8 +45,7 @@ class ProductController extends Controller
         if (!$elements->isEmpty()) {
             $currentCategory =  request()->has('category_id') ? Category::whereId(request('category_id'))->first() : null;
             return view('frontend.wokiee.four.modules.product.index', compact(
-                'elements', 'tags', 'attributeColors', 'attributeSizes',
-                'colors', 'sizes', 'categoriesList','brands', 'currentCategory','vendors'
+                'elements', 'tags', 'colors', 'sizes', 'categoriesList','brands', 'currentCategory','vendors'
             ));
         } else {
             return redirect()->route('frontend.home')->with('error', trans('message.no_items_found'));

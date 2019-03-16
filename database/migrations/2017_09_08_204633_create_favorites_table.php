@@ -21,6 +21,9 @@ class CreateFavoritesTable extends Migration
             $table->integer('product_id')->unsigned()->index()->nullable();
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
 
+            $table->integer('service_id')->unsigned()->index()->nullable();
+            $table->foreign('service_id')->references('id')->on('products')->onDelete('cascade');
+
             $table->timestamps();
         });
     }

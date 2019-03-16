@@ -4134,21 +4134,21 @@ var _extends=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var 
     };
     // switching click product item(*wishlist, *compare)
     if (blocks.ttProductItem.length){
-        var ttBtnWishlist= blocks.ttProductItem.find(".tt-btn-wishlist"),
-            ttBtnCompare= blocks.ttProductItem.find(".tt-btn-compare");
-
-        if(ttBtnWishlist.length){
-            ttBtnWishlist.on('click', function(){
-                $(this).toggleClass('active');
-                return false;
-            });
-        };
-        if(ttBtnCompare.length){
-            ttBtnCompare.on('click', function(){
-                $(this).toggleClass('active');
-                return false;
-            });
-        };
+        // var ttBtnWishlist= blocks.ttProductItem.find(".tt-btn-wishlist"),
+        //     ttBtnCompare= blocks.ttProductItem.find(".tt-btn-compare");
+        //
+        // if(ttBtnWishlist.length){
+        //     ttBtnWishlist.on('click', function(){
+        //         $(this).toggleClass('active');
+        //         return false;
+        //     });
+        // };
+        // if(ttBtnCompare.length){
+        //     ttBtnCompare.on('click', function(){
+        //         $(this).toggleClass('active');
+        //         return false;
+        //     });
+        // };
     };
     // Slide Column *listing-left-column.html
     if ($ttLeftColumnAside && blocks.ttBtnColumnClose && blocks.ttBtnToggle) {

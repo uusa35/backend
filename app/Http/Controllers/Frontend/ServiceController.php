@@ -10,6 +10,12 @@ use App\Http\Controllers\Controller;
 
 class ServiceController extends Controller
 {
+    public $service;
+    public function __construct(Service $service)
+    {
+        $this->service = $service;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -17,22 +23,30 @@ class ServiceController extends Controller
      */
     public function index(Filters $filters)
     {
-        $services = Service::filters($filters)->hasImages()->active()->paginate(12);
+        $services = Service::filters($filters)->hasImage()->active()->available()->paginate(12);
         return view('frontend.modules.favorite.index', compact('services'));
     }
 
     public function search(Filters $filters)
     {
-        dd(request()->all());
         $validator = validator(request()->all(), ['search' => 'nullable']);
         if ($validator->fails()) {
             return redirect()->route('frontend.home')->withErrors($validator->messages());
         }
-        $elements = Service::active()->hasImages()->filters($filters)->with('categories')->orderBy('id', 'desc')->paginate(20);
+        $elements = $this->service->active()->available()->hasImage()->filters($filters)->with(
+            'tags','user.country','images',
+            'favorites', 'categories.children'
+        )->orderBy('id', 'desc')->paginate(20);
+        $tags = $elements->pluck('tags')->flatten()->unique('id')->sortKeysDesc();
         $categoriesList = $elements->pluck('categories')->flatten()->unique('id');
+        $vendors = $elements->pluck('user')->flatten()->unique('id');
+
         if (!$elements->isEmpty()) {
-            $currentCategory = request()->has('category_id') ? Category::whereId(request('category_id'))->first() : null;
-            return view('frontend.modules.service.index', compact('elements', 'categoriesList', 'currentCategory'));
+            $currentCategory =  request()->has('category_id') ? Category::whereId(request('category_id'))->first() : null;
+            return view('frontend.wokiee.four.modules.service.index', compact(
+                'elements', 'tags',
+                 'categoriesList','currentCategory','vendors'
+            ));
         } else {
             return redirect()->route('frontend.home')->with('error', trans('message.no_items_found'));
         }

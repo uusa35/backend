@@ -15,7 +15,8 @@
            data-url="{{ route('frontend.product.show.name', ['id' => $element->id, 'name' => $element->name]) }}"
         ></a>
         @auth
-            <a href="#" class="tt-btn-wishlist" data-tooltip="{{ trans('general.add_to_wish_list') }}"
+            <a href="{{ route('frontend.favorite.product.add', $element->id) }}" class="tt-btn-wishlist {{ $element->isFavorited ? 'active' : null }}"
+               data-tooltip="{{ trans('general.add_to_wish_list') }}"
                data-tposition="{{ app()->isLocale('ar') ? 'right' : 'left' }}"
             ></a>
         @endauth

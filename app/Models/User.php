@@ -18,7 +18,7 @@ class User extends Authenticatable
      */
     protected $guarded = [''];
     protected $with = [];
-    protected $localeStrings = ['slug','description'];
+    protected $localeStrings = ['slug', 'description'];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -59,9 +59,14 @@ class User extends Authenticatable
         return $this->belongsTo(Coupon::class);
     }
 
-    public function favorites()
+    public function product_favorites()
     {
-        return $this->belongsToMany(Product::class, 'favorites');
+        return $this->belongsToMany(Product::class, 'favorites', 'user_id','product_id');
+    }
+
+    public function service_favorites()
+    {
+        return $this->belongsToMany(Service::class, 'favorites', 'user_id','service_id');
     }
 
     public function images()
