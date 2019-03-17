@@ -50,11 +50,11 @@ class UserController extends Controller
     public function show($id, Filters $filters)
     {
         $element = User::whereId($id)->with('products','services')->first();
-        $products = $element->products()->filters($filters)->with([
-            'product_attributes.color','color',
-            'product_attributes.size',
-            'tags','categories.children','brands'
-        ])->paginate(Self::TAKE);
+//        $products = $element->products()->filters($filters)->with([
+//            'product_attributes.color','color',
+//            'product_attributes.size',
+//            'tags','categories.children','brands'
+//        ])->paginate(Self::TAKE);
         $services = $element->services()->filters($filters)->paginate(Self::TAKE);
         $tags = $services->pluck('tags')->flatten()->unique('id')->sortKeysDesc();
 //        $sizes = $products->pluck('product_attributes')->flatten()->pluck('size')->flatten()->unique('id')->sortKeysDesc();

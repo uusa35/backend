@@ -3,6 +3,7 @@
 namespace App\Services\Search;
 
 use App\Models\Category;
+use App\Models\Service;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -140,9 +141,18 @@ class Filters extends QueryFilters
 
     public function day_selected()
     {
+//        $services = Service::active()->available()->hasImage()->serveCountries()->whereHas('timings', function ($q) {
+//            return $q->where(['day_no' => request('day_selected')])->whereDate('start','>=', Carbon::parse(request('timing_id'))->format('h:i a'));
+//        })->whereHas('user', function($q) {
+//            return $q->whereHas('areas', function ($q) {
+//               return $q->where('id', request('area_id'));
+//            });
+//        })->get();
+//        dd($services);
         return $this->builder->whereHas('timings', function ($q) {
             return $q->where(['day_no' => request('day_selected')]);
         });
+
     }
 
     public function timing_id()

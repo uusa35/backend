@@ -2,7 +2,7 @@
     @if($categories->isNotEmpty())
         @foreach($categories->where('is_parent', true) as $cat)
             <li class="dropdown megamenu">
-                <a href="{{ route('frontend.search',['category_id']) }}">{{ str_limit($cat->name,12,'') }}</a>
+                <a href="{{ route('frontend.service.search',['service_category_id' => $cat->id]) }}">{{ str_limit($cat->name,12,'') }}</a>
                 @if($cat->children->isNotEmpty())
                     <div class="dropdown-menu">
                         <div class="row">
@@ -10,7 +10,7 @@
                                 <div class="row tt-col-list">
                                     @foreach($cat->children as $sub)
                                         <div class="col-sm-4">
-                                            <a href="listing-right-column.html" class="tt-title-submenu">
+                                            <a href="{{ route('frontend.service.search',['service_category_id' => $sub->id]) }}" class="tt-title-submenu">
                                                 @if($sub->imageLargeLink)
                                                     {{ $sub->name }}
                                                     <img class="img-menu-category img-responsive"
@@ -23,7 +23,7 @@
                                                 <ul class="tt-megamenu-submenu">
                                                     @foreach($sub->children as $child)
                                                         <li>
-                                                            <a href="{{ route('frontend.search',['category_id']) }}">{{ $child->name }}
+                                                            <a href="{{ route('frontend.service.search',['service_category_id' => $child->id]) }}">{{ $child->name }}
                                                                 @if($child->on_new)
                                                                     <span class="tt-badge tt-new">{{ trans('general.new') }}</span>
                                                                 @endif
@@ -39,7 +39,7 @@
                             @if($cat->imageLargeLink)
                                 <div class="col-sm-3">
                                     <div class="tt-offset-7">
-                                        <a href="{{ route('frontend.search',['category_id']) }}" class="tt-promo-02">
+                                        <a href="{{ route('frontend.service.search',['service_category_id' => $cat->id]) }}" class="tt-promo-02">
                                             <img class="img-category img-responsive" src="{{ $cat->imageLargeLink }}"
                                                  data-src="{{ $cat->imageLargeLink }}"
                                                  alt="{{ $cat->name }}">

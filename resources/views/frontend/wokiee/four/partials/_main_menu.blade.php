@@ -29,8 +29,8 @@
                                 @include('frontend.wokiee.four.partials._categories_main_menu_element_with_images')
                                 @include('frontend.wokiee.four.partials._pages_main_menu')
                                 <li class="dropdown">
-                                    <a href="{{ route('frontend.language.change',['locale' => 'ar']) }}">RTL</a>
-                                    <a href="{{ route('frontend.language.change',['locale' => 'en']) }}">En</a>
+                                    <a href="{{ route('frontend.language.change',['locale' => 'ar']) }}">{{ trans('general.arabic') }}</a>
+                                    <a href="{{ route('frontend.language.change',['locale' => 'en']) }}">{{ trans('general.english') }}</a>
                                 </li>
                             </ul>
                         </nav>
@@ -58,90 +58,6 @@
                                     <div class="tt-info-text">
                                         What are you Looking for?
                                     </div>
-                                    <div class="search-results">
-                                        <ul>
-                                            <li>
-                                                <a href="product.html">
-                                                    <div class="thumbnail"><img src="images/loader.svg"
-                                                                                data-src="images/product/product-03.jpg"
-                                                                                alt=""></div>
-                                                    <div class="tt-description">
-                                                        <div class="tt-title">Flared Shift Bag</div>
-                                                        <div class="tt-price">
-                                                            <span class="new-price">$14</span>
-                                                            <span class="old-price">$24</span>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="product.html">
-                                                    <div class="thumbnail"><img src="images/loader.svg"
-                                                                                data-src="images/product/product-02.jpg"
-                                                                                alt=""></div>
-                                                    <div class="tt-description">
-                                                        <div class="tt-title">Flared Shift Bag</div>
-                                                        <div class="tt-price">
-                                                            $24
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="product.html">
-                                                    <div class="thumbnail"><img src="images/loader.svg"
-                                                                                data-src="images/product/product-01.jpg"
-                                                                                alt=""></div>
-                                                    <div class="tt-description">
-                                                        <div class="tt-title">Flared Shift Bag</div>
-                                                        <div class="tt-price">
-                                                            $14
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="product.html">
-                                                    <div class="thumbnail"><img src="images/loader.svg"
-                                                                                data-src="images/product/product-04.jpg"
-                                                                                alt=""></div>
-                                                    <div class="tt-description">
-                                                        <div class="tt-title">Flared Shift Bag</div>
-                                                        <div class="tt-price">
-                                                            $24
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="product.html">
-                                                    <div class="thumbnail"><img src="images/loader.svg"
-                                                                                data-src="images/product/product-05.jpg"
-                                                                                alt=""></div>
-                                                    <div class="tt-description">
-                                                        <div class="tt-title">Flared Shift Bag</div>
-                                                        <div class="tt-price">
-                                                            $17
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="product.html">
-                                                    <div class="thumbnail"><img src="images/loader.svg"
-                                                                                data-src="images/product/product-06.jpg"
-                                                                                alt=""></div>
-                                                    <div class="tt-description">
-                                                        <div class="tt-title">Flared Shift Bag</div>
-                                                        <div class="tt-price">
-                                                            $20
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                        <button type="button" class="tt-view-all">View all products</button>
-                                    </div>
                                 </form>
                             </div>
                         </div>
@@ -157,8 +73,8 @@
                         </button>
                         <div class="tt-dropdown-menu">
                             <div class="tt-mobile-add">
-                                <h6 class="tt-title">SHOPPING CART</h6>
-                                <button class="tt-close">Close</button>
+                                <h6 class="tt-title">{{ trans('general.shopping_cart') }}</h6>
+                                <button class="tt-close">{{ trans('general.close') }}</button>
                             </div>
                             <div class="tt-dropdown-inner">
                                 <div class="tt-cart-layout">
