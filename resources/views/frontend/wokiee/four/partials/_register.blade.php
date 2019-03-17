@@ -9,7 +9,7 @@
                         <form id="contactform" method="post" novalidate="novalidate">
                             <div class="form-group">
                                 <label for="loginInputName">{{ trans('general.name') }} *</label>
-                                <div class="tt-required">* {{ trans('general.required_fields') }}</div>
+                                {{--<div class="tt-required">* {{ trans('general.required_fields') }}</div>--}}
                                 <input type="text" name="name" class="form-control" id="loginInputName"
                                        placeholder="{{ trans('general.name') }}">
                             </div>
