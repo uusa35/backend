@@ -6,14 +6,14 @@
         <div class="form-row justify-content-center align-items-center">
             <input type="hidden" name="country_id"
                    value="{{ $countries->where('is_local',true)->first()->id }}">
-            <div class="form-group col-3">
+            <div class="form-group col-lg-3 col-xs-12">
                 <label for="date_selected" class="sr-only">{{ trans('general.day') }}*</label>
                 <input data-toggle="datepicker" type="text"
                        value="{{ getDaySelected_format() ? getDaySelected_format() : trans('general.choose_date') }}*"
                        class="form-control docs-datepicker-trigger-search"
                        placeholder="{{ trans('general.choose_day') }}" required>
             </div>
-            <div class="form-group col-3">
+            <div class="form-group col-lg-3 col-xs-12">
                 <label for="area_id" class="sr-only">{{ trans('general.area') }}*</label>
                 <select name="area_id" class="form-control" required>
                     <option value="">{{ trans('general.choose_area') }}*</option>
@@ -23,7 +23,7 @@
                 </select>
             </div>
             @if(isset($timings))
-                <div class="form-group col-3">
+                <div class="form-group col-lg-3 col-xs-12">
                     <label for="timings" class="sr-only">{{ trans('general.timing') }}</label>
                     <select name="timing_id" class="form-control">
                         <option value="" selected>{{ trans('general.choose_timing') }}</option>
@@ -33,7 +33,7 @@
                     </select>
                 </div>
             @endif
-            <div class="form-group col-3">
+            <div class="form-group col-lg-3 col-xs-12">
                 <button type="submit"
                         class="btn btn-primary">{{ trans('general.search') }}</button>
             </div>

@@ -13,6 +13,6 @@ class Setting extends PrimaryModel
     }
 
     public function getLogoThumbAttribute() {
-        return asset(env('THUMB') . $this->logo);
+        return asset(env('THUMBNAIL') . $this->logo);
     }
 }

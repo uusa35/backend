@@ -258,6 +258,9 @@ return array(
     'choose_day' => 'أختر اليوم',
     'choose_date' => 'أختر التاريخ',
     'choose_timing' => 'اختر التوقيت',
+    'day' => 'اليوم',
+    'date' => 'التاريخ',
+    'timing' => 'التوقيت',
     'choose_area' => 'اختر المنطقة',
     'hot_deal_services' => 'عروض الخدمات المختارة',
     'contact_us_info' => 'معلومات الاتصال بنا',
@@ -317,6 +320,7 @@ return array(
     'areas' => 'المناطق',
     'filter_by_areas' => 'أضف المناطق إلى معايير البحث',
     'create_an_account' => 'إنشاء حساب جديد',
-    'create' => 'إنشاء'
+    'create' => 'إنشاء',
+    'cart' => 'عربة التسوق'
 
 );

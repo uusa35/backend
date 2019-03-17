@@ -4,7 +4,7 @@
         <div class="header-tel-info">
             {{--<i class="icon-f-93"></i> 777 2345 7885; +777 2345 7886--}}
             @mobile
-            {{--@include('frontend.wokiee.four.partials._search_form')--}}
+            @include('frontend.wokiee.four.partials._search_form')
             @endmobile
         </div>
     </div>
@@ -15,11 +15,11 @@
                     <i class="icon-03"></i>
                 </div>
             </div>
-            <div class="tt-mobile-parent-menu-categories tt-parent-box">
-                <button class="tt-categories-toggle">
-                    <i class="icon-categories"></i>
-                </button>
-            </div>
+            {{--<div class="tt-mobile-parent-menu-categories tt-parent-box">--}}
+                {{--<button class="tt-categories-toggle">--}}
+                    {{--<i class="icon-categories"></i>--}}
+                {{--</button>--}}
+            {{--</div>--}}
             <!-- search -->
             {{--<div class="tt-mobile-parent-search tt-parent-box"></div>--}}
             <!-- /search -->
@@ -38,7 +38,7 @@
         <div class="row">
             <div class="tt-logo-container">
                 <!-- mobile logo -->
-                <a class="tt-logo tt-logo-alignment" href="index.html"><img src="images/custom/logo.png" alt=""></a>
+                <a class="tt-logo tt-logo-alignment" href="{{ route('frontend.home') }}"><img src="{{ $settings->logoThumb }}" alt="{{ $settings->description }}"></a>
                 <!-- /mobile logo -->
             </div>
         </div>
