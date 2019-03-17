@@ -80,6 +80,11 @@ Breadcrumbs::for('frontend.favorite.index', function ($trail) {
     $trail->push(trans('general.wish_list'), route('frontend.favorite.index'));
 });
 
+Breadcrumbs::for('password.email', function ($trail) {
+    $trail->parent('frontend.home');
+    $trail->push(trans('general.forget_password'), route('password.email'));
+});
+
 
 // backend
 
