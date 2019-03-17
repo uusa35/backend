@@ -323,7 +323,9 @@ return array(
     'create' => 'إنشاء',
     'cart' => 'عربة التسوق',
     'enter_your_password' => 'ادخل كلمة المرور',
+    'enter_your_email' => 'ادخل البريد الإلكتروني',
     'forget_your_password' => 'نسيت كلمة المرور',
     'new_user' => 'مستخدم جديد',
+    'already_have_account' => 'لديك حساب بالفعل',
 
 );
