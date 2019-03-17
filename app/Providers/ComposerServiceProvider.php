@@ -88,6 +88,7 @@ class ComposerServiceProvider extends ServiceProvider
             'frontend.wokie.four.modules.user.login',
             'frontend.*.*.*.show',
             'frontend.*.*.*.index',
+            'auth.*',
             'backend.*.*.*.scripts',
             'backend.modules.order.show',
             'backend.partials.nav',
