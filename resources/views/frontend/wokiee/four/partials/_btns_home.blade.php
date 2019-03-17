@@ -15,8 +15,8 @@
                             <div class="tt-description">
                                 <div class="tt-description-wrapper">
                                     <div class="tt-background"></div>
-                                    <div class="tt-title-small">{{ trans('general.create_event') }}</div>
-                                    <div class="tt-title-large">{{ trans('message.create_event') }}</span>
+                                    <div class="tt-title-large">{{ trans('general.create_event') }}</div>
+                                    <div class="tt-title-small">{{ trans('message.create_event') }}</span>
                                     </div>
                                 </div>
                             </div>
@@ -32,8 +32,8 @@
                             <div class="tt-description">
                                 <div class="tt-description-wrapper">
                                     <div class="tt-background"></div>
-                                    <div class="tt-title-small">{{ trans('general.offers') }}</div>
-                                    <div class="tt-title-large">{{ trans('message.offers_home_message') }}</span>
+                                    <div class="tt-title-large">{{ trans('general.offers') }}</div>
+                                    <div class="tt-title-small">{{ trans('message.offers_home_message') }}</span>
                                     </div>
                                 </div>
                             </div>
@@ -49,8 +49,8 @@
                             <div class="tt-description">
                                 <div class="tt-description-wrapper">
                                     <div class="tt-background"></div>
-                                    <div class="tt-title-small">{{ trans('general.designers') }}</div>
-                                    <div class="tt-title-large">{{ trans('message.designers_home_message') }}</span>
+                                    <div class="tt-title-large">{{ trans('general.designers') }}</div>
+                                    <div class="tt-title-small">{{ trans('message.designers_home_message') }}</span>
                                     </div>
                                 </div>
                             </div>

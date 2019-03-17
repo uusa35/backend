@@ -24,8 +24,12 @@ class ServiceController extends Controller
      */
     public function index(Filters $filters)
     {
-        $services = Service::filters($filters)->hasImage()->active()->available()->paginate(12);
-        return view('frontend.modules.favorite.index', compact('services'));
+        $elements = Service::filters($filters)->hasImage()->active()->available()->paginate(self::TAKE);
+        $tags = $elements->pluck('tags')->flatten()->unique('id')->sortKeysDesc();
+        $categoriesList = $elements->pluck('categories')->flatten()->unique('id');
+        $vendors = $elements->pluck('user')->flatten()->unique('id');
+        $areas = $elements->pluck('user.areas')->flatten()->unique('id');
+        return view('frontend.wokiee.four.modules.service.index', compact('elements','tags','categoriesList','vendors','areas'));
     }
 
     public function search(Filters $filters)

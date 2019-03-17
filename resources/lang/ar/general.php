@@ -307,6 +307,11 @@ return array(
     'clear_all' => 'إزالة الكل',
     'filter_by_price' => 'أضف السعر إلى معايير البحث',
     'clear_all' => 'إزالة الكل',
-    'areas_served_by_user' => 'المناطق المتاح بها الخدمة'
+    'areas_served_by_user' => 'المناطق المتاح بها الخدمة',
+    'offers' => 'العروض',
+    'designers' => 'مصممي العروض والخدمات',
+    'mail' => 'البريد',
+    'whatsapp' => 'واتس اب',
+     'duty_time'  => 'أوقات الدوام',
 
 );

@@ -95,6 +95,7 @@ class ComposerServiceProvider extends ServiceProvider
 
         view()->composer([
             'frontend.*.*.*.header',
+            'frontend.*.*.*.footer',
         ], 'App\Services\ViewComposers@getPages');
 
         view()->composer([

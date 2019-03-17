@@ -11,5 +11,8 @@ return array(
     'this_timing_is_booked_please_try_another_timing' => 'الموعد محجوز من قبل',
     'service_cart_add_item_notes' => 'يرجى إضافة أي ملاحخظات أو طلبات خاصة وسيتم التواصل معكم',
     'change_address_for_destination' => 'لتغير جهة الشحن .. يرجى التسجيل واختيار الدولة والعنوان المراد استلام الشحنة من خلاله.',
-    'payment_will_be_in_kuwaiti_dinar_only' => 'يرجى العلم بأن عملية الدفع ستتم بالدينار الكويتي'
+    'payment_will_be_in_kuwaiti_dinar_only' => 'يرجى العلم بأن عملية الدفع ستتم بالدينار الكويتي',
+    'create_event' => 'البحث في جميع خدمات الموقع واضافه الخدمات بعربة التسوق لاستكمال المناسبة الخاصه بك',
+    'offers_home_message' => 'عروض الخدمات',
+    'designers_home_message' => 'عرض جميع الخدمات المتاحة والمضافه من قبل الشركات المشاركة',
 );

@@ -58,11 +58,17 @@
                         </h4>
                         <div class="tt-collapse-content">
                             <ul class="tt-list">
-                                <li><a href="account_order.html">Orders</a></li>
-                                <li><a href="page404.html">Compare</a></li>
-                                <li><a href="page404.html">Wishlist</a></li>
-                                <li><a href="login.html">Log In</a></li>
-                                <li><a href="create-account.html">Register</a></li>
+                                @foreach($pages->where('on_footer', true) as $page)
+                                    <li><a href="{{ $page->url }}">{{ $page->slug }}</a></li>
+                                @endforeach
+                                @guest
+                                    <li><a href="{{ route('register') }}">{{ trans('general.register') }}</a></li>
+                                @endguest
+                                @auth
+                                    <li>
+                                        <a href="{{ route('frontend.favorite.index') }}">{{ trans('general.wish_list') }}</a>
+                                    </li>
+                                @endauth
                             </ul>
                         </div>
                     </div>
@@ -87,11 +93,16 @@
                             </h4>
                             <div class="tt-collapse-content">
                                 <address>
-                                    <p><span>Address:</span> 2548 Broaddus Maple Court Avenue, Madisonville KY 4783,
-                                        United States of America</p>
-                                    <p><span>Phone:</span> +777 2345 7885; +777 2345 7886</p>
-                                    <p><span>Hours:</span> 7 Days a week from 10 am to 6 pm</p>
-                                    <p><span>E-mail:</span> <a href="mailto:info@mydomain.com">info@mydomain.com</a></p>
+                                    <p><span>{{ trans('general.address') }}:</span> {{ $settings->address }}</p>
+                                    <p><span>{{ trans('general.phone') }}:</span> {{ $settings->phone }}</p>
+                                    <p><span>{{ trans('general.mobile') }}:</span> {{ $settings->mobile }}</p>
+                                    <p><span>{{ trans('general.mobile') }}:</span> {{ $settings->mobile }}</p>
+                                    <p><span>{{ trans('general.whatsapp') }}:</span> {{ $settings->whatsapp }}</p>
+                                    <p>
+                                        <span>{{ trans('general.duty_time') }}:</span> {{ trans('message.duty_time_message') }}
+                                    </p>
+                                    <p><span>{{ trans('general.mail') }}:</span> <a
+                                                href="mailto:{{ $settings->email }}">{{ $settings->email }}</a></p>
                                 </address>
                             </div>
                         </div>
