@@ -3,7 +3,7 @@
         <h3 class="tt-collapse-title">{{ trans('general.filter_by_areas') }}</h3>
         <div class="tt-collapse-content">
             <ul class="tt-list-row">
-                @foreach($areas as $area)
+                @foreach($areas->where('country_id', getCurrentCountrySessionId()) as $area)
                     <li>
                         <a href="{!! request()->fullUrlWithQuery(['area_id' => $area->id]) !!}">{{ $area->slug }}</a>
                     </li>
