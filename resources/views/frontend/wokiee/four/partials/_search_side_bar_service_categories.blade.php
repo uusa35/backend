@@ -7,15 +7,15 @@
                     <li class="active">
                         <a href="{!! request()->fullUrlWithQuery(['service_category_id' => $category->id]) !!}">{{ $category->name }}</a>
                     </li>
-                    @if($category->children->isNotEmpty())
-                        <ul>
-                            @foreach($category->children as $child)
-                                <li>
-                                    <a href="{!! request()->fullUrlWithQuery(['service_category_id' => $child->id]) !!}">{{ $child->name }}</a>
-                                </li>
-                            @endforeach
-                        </ul>
-                    @endif
+                    {{--@if($category->children->isNotEmpty())--}}
+                        {{--<ul>--}}
+                            {{--@foreach($category->children as $child)--}}
+                                {{--<li>--}}
+                                    {{--<a href="{!! request()->fullUrlWithQuery(['service_category_id' => $child->id]) !!}">{{ $child->name }}</a>--}}
+                                {{--</li>--}}
+                            {{--@endforeach--}}
+                        {{--</ul>--}}
+                    {{--@endif--}}
                 @endforeach
             </ul>
             <a href="{{ getRequestQueryUrlWithout('service_category_id') }}"
