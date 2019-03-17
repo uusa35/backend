@@ -313,5 +313,6 @@ return array(
     'mail' => 'البريد',
     'whatsapp' => 'واتس اب',
      'duty_time'  => 'أوقات الدوام',
+     'history_orders'  => 'الطلبات السابقة',
 
 );

@@ -43,7 +43,7 @@ $factory->define(App\Models\User::class, function (Faker $faker) use ($fakerAr) 
         'floor' => $faker->randomDigit,
         'apartment' => $faker->name,
         'country_name' => $faker->country,
-        'country_id' => Country::all()->random()->id,
+        'country_id' => Country::where('is_local', true)->first()->id,
         'role_id' => Role::all()->random()->id,
         'api_token' => $faker->bankAccountNumber,
         'merchant_id' => $faker->bankAccountNumber,

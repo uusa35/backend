@@ -14,6 +14,11 @@
                                 {{ trans('general.control_panel') }}
                             </a>
                         </li>
+                        <li><a href="{{ route('frontend.order.index') }}">
+                                <i class="icon-h-13 fa fa-fw fa-lg"></i>
+                                {{ trans('general.history_orders') }}
+                            </a>
+                        </li>
                         <li><a href="{{ route('frontend.favorite.index') }}">
                                 <i class="icon-h-13 fa fa-fw fa-lg"></i>
                                 {{ trans('general.wish_list') }}

@@ -26,10 +26,10 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = Order::where(['user_id' => auth()->user()->id, 'status' => 'success'])->with('order_metas.product')->get();
-        $ids = $orders->pluck('order_metas')->flatten()->unique()->pluck('product.id')->toArray();
-        $elements = Product::whereIn('id', $ids)->paginate(12);
-        return view('frontend.modules.order.index', compact('elements', 'orders'));
+        $elements = Order::where(['user_id' => auth()->user()->id, 'status' => 'success'])->with('order_metas.product','order_metas.service')->paginate(self::TAKE);
+//        $ids = $orders->pluck('order_metas')->flatten()->unique()->pluck('product.id')->toArray();
+//        $elements = Product::whereIn('id', $ids)->paginate(12);
+        return view('frontend.wokiee.four.modules.order.index', compact('elements', 'orders'));
     }
 
     /**

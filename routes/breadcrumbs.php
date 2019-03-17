@@ -70,6 +70,11 @@ Breadcrumbs::for('frontend.page.show', function ($trail, $element) {
     $trail->push($element->title, route('frontend.page.show', $element->id));
 });
 
+Breadcrumbs::for('frontend.order.index', function ($trail) {
+    $trail->parent('frontend.home');
+    $trail->push(trans('general.history_orders'), route('frontend.order.index'));
+});
+
 Breadcrumbs::for('frontend.favorite.index', function ($trail) {
     $trail->parent('frontend.home');
     $trail->push(trans('general.wish_list'), route('frontend.favorite.index'));
