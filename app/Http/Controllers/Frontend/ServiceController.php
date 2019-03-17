@@ -24,7 +24,10 @@ class ServiceController extends Controller
      */
     public function index(Filters $filters)
     {
-        $elements = Service::filters($filters)->hasImage()->active()->available()->paginate(self::TAKE);
+        $elements = Service::filters($filters)->hasImage()->active()->available()->with([
+            'tags', 'user.country', 'images', 'user.areas',
+            'favorites', 'categories.children'
+        ])->paginate(self::TAKE);
         $tags = $elements->pluck('tags')->flatten()->unique('id')->sortKeysDesc();
         $categoriesList = $elements->pluck('categories')->flatten()->unique('id');
         $vendors = $elements->pluck('user')->flatten()->unique('id');

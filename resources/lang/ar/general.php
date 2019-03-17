@@ -314,5 +314,7 @@ return array(
     'whatsapp' => 'واتس اب',
      'duty_time'  => 'أوقات الدوام',
      'history_orders'  => 'الطلبات السابقة',
+    'areas' => 'المناطق',
+    'filter_by_areas' => 'أضف المناطق إلى معايير البحث'
 
 );
