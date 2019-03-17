@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Models\User;
+use App\Services\Search\Filters;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -15,7 +16,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $elements = User::companies()->with('country')->paginate(Self::TAKE);
+        return view('frontend.wokiee.four.modules.user.index', compact('elements'));
     }
 
     /**
@@ -45,21 +47,21 @@ class UserController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id, Filters $filters)
     {
         $element = User::whereId($id)->with('products','services')->first();
-        $products = $element->products()->with([
+        $products = $element->products()->filters($filters)->with([
             'product_attributes.color','color',
             'product_attributes.size',
             'tags','categories.children','brands'
         ])->paginate(Self::TAKE);
-        $services = $element->services()->paginate(Self::TAKE);
-        $tags = $products->pluck('tags')->flatten()->unique('id')->sortKeysDesc();
-        $sizes = $products->pluck('product_attributes')->flatten()->pluck('size')->flatten()->unique('id')->sortKeysDesc();
-        $colors = $products->pluck('product_attributes')->flatten()->pluck('color')->flatten()->unique('id')->sortKeysDesc();
-        $brands = $products->pluck('brands')->flatten()->flatten()->unique('id')->sortKeysDesc();
-        $categoriesList = $products->pluck('categories')->flatten()->unique('id');
-        $vendors = $products->pluck('user')->flatten()->unique('id');
+        $services = $element->services()->filters($filters)->paginate(Self::TAKE);
+        $tags = $services->pluck('tags')->flatten()->unique('id')->sortKeysDesc();
+//        $sizes = $products->pluck('product_attributes')->flatten()->pluck('size')->flatten()->unique('id')->sortKeysDesc();
+//        $colors = $products->pluck('product_attributes')->flatten()->pluck('color')->flatten()->unique('id')->sortKeysDesc();
+//        $brands = $products->pluck('brands')->flatten()->flatten()->unique('id')->sortKeysDesc();
+        $categoriesList = $services->pluck('categories')->flatten()->unique('id');
+        $vendors = $services->pluck('user')->flatten()->unique('id');
         return view('frontend.wokiee.four.modules.user.show', compact('element', 'products', 'services','tags','sizes','colors','brands','categoriesList'));
     }
 

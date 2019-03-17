@@ -1,22 +1,24 @@
-<div class="tt-collapse open">
-    <h3 class="tt-collapse-title">{{ trans('general.filter_by_product_categories') }}</h3>
-    <div class="tt-collapse-content">
-        <ul class="tt-filter-list">
-            @foreach($categoriesList as $category)
-                <li class="active">
-                    <a href="{!! request()->fullUrlWithQuery(['product_category_id' => $category->id]) !!}">{{ $category->name }}</a>
-                </li>
-                @if($category->children->isNotEmpty())
-                    <ul>
-                        @foreach($category->children as $child)
-                            <li>
-                                <a href="{!! request()->fullUrlWithQuery(['product_category_id' => $child->id]) !!}">{{ $child->name }}</a>
-                            </li>
-                        @endforeach
-                    </ul>
-                @endif
-            @endforeach
-        </ul>
-        <a href="#" class="btn-link-02">Clear All</a>
+@if(isset($categoriesList) && $categoriesList->isNotEmpty())
+    <div class="tt-collapse open">
+        <h3 class="tt-collapse-title">{{ trans('general.filter_by_product_categories') }}</h3>
+        <div class="tt-collapse-content">
+            <ul class="tt-filter-list">
+                @foreach($categoriesList as $category)
+                    <li class="active">
+                        <a href="{!! request()->fullUrlWithQuery(['product_category_id' => $category->id]) !!}">{{ $category->name }}</a>
+                    </li>
+                    @if($category->children->isNotEmpty())
+                        <ul>
+                            @foreach($category->children as $child)
+                                <li>
+                                    <a href="{!! request()->fullUrlWithQuery(['product_category_id' => $child->id]) !!}">{{ $child->name }}</a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    @endif
+                @endforeach
+            </ul>
+            <a href="{{ getRequestQueryUrlWithout('product_category_id') }}" class="btn-link-02">{{ trans('general.clear') }}</a>
+        </div>
     </div>
-</div>
+@endif
