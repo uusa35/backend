@@ -315,6 +315,8 @@ return array(
      'duty_time'  => 'أوقات الدوام',
      'history_orders'  => 'الطلبات السابقة',
     'areas' => 'المناطق',
-    'filter_by_areas' => 'أضف المناطق إلى معايير البحث'
+    'filter_by_areas' => 'أضف المناطق إلى معايير البحث',
+    'create_an_account' => 'إنشاء حساب جديد',
+    'create' => 'إنشاء'
 
 );

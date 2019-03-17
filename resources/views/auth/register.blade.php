@@ -18,7 +18,7 @@
                                     @csrf
                                     <div class="form-group">
                                         <label for="name">{{ trans('general.name') }}*</label>
-                                        <div class="tt-required">* {{ trans('general.required_firleds') }}</div>
+                                        {{--<div class="tt-required">* {{ trans('general.required_firleds') }}</div>--}}
                                         <input id="name" type="text"
                                                class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
                                                name="name" value="{{ old('name') }}" required autofocus>
