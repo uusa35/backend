@@ -1,6 +1,6 @@
 <div class="tt-shopcart-table-02">
     @if($elements->isNotEmpty())
-        <table>
+        <table class="table-bordered">
             <tbody>
             <tr>
                 <td>{{ trans('general.item_cart_name') }}</td>
@@ -58,11 +58,13 @@
                                     </div>
                                 @endif
                             </li>
-                            <li>
-                                <div class="tt-price">
-                                    {{ trans('general.qty') }} {{ $element->qty }}
-                                </div>
-                            </li>
+                            @if($element->options->type === 'product')
+                                <li>
+                                    <div class="tt-price">
+                                        {{ trans('general.qty') }} {{ $element->qty }}
+                                    </div>
+                                </li>
+                            @endif
                         </ul>
                     </td>
                     <td>
@@ -83,9 +85,12 @@
                     </td>
                 </tr>
                 @if($element->options->notes)
-                    <tr>
-                        {!! $element->options->notes !!}
-                    </tr>
+                    <td colspan="5">
+                        <div class="title">{{ trans('general.notes') }}</div>
+                        <p>
+                            {!! $element->options->notes !!}
+                        </p>
+                    </td>
                 @endif
 
             @endforeach

@@ -58,17 +58,19 @@
                                         </div>
                                     </div>
                                     @if(session()->get('country')->is_local)
-                                        <div class="col-6">
-                                            <div class="form-group">
-                                                <label for="address_country">{{ trans('general.country') }}
-                                                    <sup>*</sup></label>
-                                                <select name="country_id" class="form-control" required>
-                                                    {{-- No Auth required as it's prevesiously done--}}
-                                                    <option value="{{ session()->get('area')->name }}"
-                                                            selected>{{ session()->get('area')->slug }}</option>
-                                                </select>
+                                        @if(session()->has('area'))
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <label for="address_country">{{ trans('general.area') }}
+                                                        <sup>*</sup></label>
+                                                    <select name="country_id" class="form-control" required>
+                                                        {{-- No Auth required as it's prevesiously done--}}
+                                                        <option value="{{ session()->get('area')->slug }}"
+                                                                selected>{{ session()->get('area')->slug }}</option>
+                                                    </select>
+                                                </div>
                                             </div>
-                                        </div>
+                                        @endif
                                     @endif
                                 @endif
                                 <div class="col-md-12">
