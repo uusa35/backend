@@ -4,13 +4,6 @@
         $(document).ready(function () {
             var lang = $('#lang').text();
             console.log('the lang', lang);
-            // $('#timing_drop_id').on('change', function (e) {
-            //     console.log('the e target form drop_id', e.target.value);
-            //     val = $(e.target).data('test');
-            //     console.log('the val',val);
-            // });
-
-
             $('.timing-start-end').on('click', function(e) {
                 console.log('timing choosen');
                 timing_id = $(e.target).data('id');

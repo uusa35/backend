@@ -1,8 +1,8 @@
 @if($countries->where('is_local',true)->first())
     <form method="get" action="{{ route("frontend.service.search") }}">
         @csrf
-        <input type="hidden" name="day_selected" id="day_selected" value="">
-        <input type="hidden" name="day_selected_format" id="day_selected_format" value="">
+        <input type="hidden" name="day_selected" id="day_selected_search" value="">
+        <input type="hidden" name="day_selected_format" id="day_selected_format_search" value="">
         <div class="form-row justify-content-center align-items-center">
             <input type="hidden" name="country_id"
                    value="{{ $countries->where('is_local',true)->first()->id }}">

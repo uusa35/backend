@@ -19,7 +19,7 @@
                    aria-label="{{ trans('general.choose_date') }}"
                    data-tooltip="{{ trans('general.choose_date') }}"
                    placeholder="{{ trans('general.choose_date') }}"
-                   value="{{ trans('general.choose_date') }}"
+                   value="{{ session()->has('day_selected_format') ? session()->get('day_selected_format') : trans('general.choose_date') }}"
                    name="day_selected_format">
             <div class="docs-datepicker-container" style="display: block;"></div>
         </div>

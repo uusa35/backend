@@ -30,7 +30,7 @@
                                     <input type="hidden" name="timing_id" id="timing_id" value="">
                                     <input type="hidden" name="user_id" value="{{ $element->user_id }}">
                                     <input type="hidden" name="day_selected" id="day_selected" value="">
-                                    <input type="hidden" name="day_selected_format" id="day_selected_format" value="">
+                                    <input type="hidden" name="day_selected_format" id="day_selected_format" value="{{ session()->has('day_selected_format') ? session()->get('day_selected_format') : null }}">
                                     <input type="hidden" name="type" value="service">
                                     <button type="submit" class="btn btn-lg cart-btn disabled"><i
                                                 class="icon-f-39"></i>{{ trans('general.add_to_cart') }}</button>
