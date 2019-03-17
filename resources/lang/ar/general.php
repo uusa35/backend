@@ -321,6 +321,9 @@ return array(
     'filter_by_areas' => 'أضف المناطق إلى معايير البحث',
     'create_an_account' => 'إنشاء حساب جديد',
     'create' => 'إنشاء',
-    'cart' => 'عربة التسوق'
+    'cart' => 'عربة التسوق',
+    'enter_your_password' => 'ادخل كلمة المرور',
+    'forget_your_password' => 'نسيت كلمة المرور',
+    'new_user' => 'مستخدم جديد',
 
 );
