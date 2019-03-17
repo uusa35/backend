@@ -23,7 +23,7 @@
                         </a>
                     </div>
                     <div class="col-sm-12">
-                        <a href="{{ route('frontend.service.index') }}" class="tt-promo-box">
+                        <a href="{{ route('frontend.service.search',['on_sale' => true]) }}" class="tt-promo-box">
                             <img src="{{ asset(env('THUMBNAIL').$settings->logo) }}"
                                  data-src="{{ asset(env('THUMBNAIL').$settings->logo) }}"
                                  alt="{{ $settings->company }}"

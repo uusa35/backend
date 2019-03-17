@@ -144,10 +144,12 @@ function getClientCountry()
         $clientCountry = auth()->user()->country;
     } else {
         $clientCountry = Country::where('name', $country)->first();
-        if($clientCountry) {
+        if ($clientCountry) {
             $region ? session()->put('area', Area::where(['name' => $region])->first()) : null;
             $city ? session()->put('city', $city) : null;
             session()->put('country', $clientCountry);
+        } else {
+            $clientCountry = Country::where(['is_local' => true])->first();
         }
     }
     if (is_null(session()->get('country'))) {
@@ -170,6 +172,7 @@ function checkShipmentAvailability($destinationCountryId, $destinationRangeIds)
     return in_array($destinationCountryId, $destinationRangeIds, true);
 }
 
-function getRequestQueryUrlWithout($element = '') {
-    return request()->url().'?'.http_build_query(array_except(Request::query(), [$element,'page']));
+function getRequestQueryUrlWithout($element = '')
+{
+    return request()->url() . '?' . http_build_query(array_except(Request::query(), [$element, 'page']));
 }

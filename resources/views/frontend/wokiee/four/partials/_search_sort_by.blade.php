@@ -18,7 +18,7 @@
         $('#sort').on('change', function(e) {
             var sort = e.target.value;
             console.log('the sort', sort)
-            window.location.replace('{!! request()->getUri()!!}&sort=' + sort);
+            window.location.replace('{!! request()->getUri()!!}?&sort=' + sort);
         });
     </script>
 @endsection

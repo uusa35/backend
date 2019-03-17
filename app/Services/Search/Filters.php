@@ -95,7 +95,7 @@ class Filters extends QueryFilters
 
     public function on_sale()
     {
-        return $this->builder->where('on_sale', true);
+        return $this->builder->where('on_sale', true)->whereDate('end_sale', '>', Carbon::now());
     }
 
     public function min()
@@ -148,7 +148,7 @@ class Filters extends QueryFilters
     public function timing_id()
     {
         return $this->builder->whereHas('timings', function ($q) {
-            return $q->whereDate('start' ,'>=' ,Carbon::parse(request('timing_id'))->format('h:i a'));
+            return $q->whereDate('start', '>=', Carbon::parse(request('timing_id'))->format('h:i a'));
         });
     }
 

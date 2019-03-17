@@ -18,19 +18,7 @@
                     <div class="col-md-9">
                         <div class="content-indent">
                             </br>
-                            <div class="tt-filters-options desctop-no-sidebar">
-                                {{--<div class="tt-btn-toggle">--}}
-                                {{--<a href="#">{{ trans('general.filter') }}</a>--}}
-                                {{--</div>--}}
-                                <div class="tt-sort">
-                                    <select>
-                                        <option value="" selected>{{ trans('general.sort_by') }}</option>
-                                        <option value="Default Sorting">{{ trans('general.sort_by_alpha') }}</option>
-                                        <option value="Default Sorting">{{ trans('general.sort_by_price_high_to_low') }}</option>
-                                        <option value="Default Sorting">{{ trans('general.sort_by_price_low_to_high') }}</option>
-                                    </select>
-                                </div>
-                            </div>
+                            @include('frontend.wokiee.four.partials._search_sort_by')
                             <div class="tt-product-listing row">
                                 @include('frontend.wokiee.four.partials._services_user_show',['services' => $elements])
                             </div>
