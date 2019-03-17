@@ -16,9 +16,28 @@
                                 class="ml-2"></span> {{ trans('general.company_name') }}:</span>
                     </td>
                     <td>
-                        <a class="theme-color" href="{{ route('frontend.user.show',['id' => $element->user_id,'name' => $element->user->name]) }}">{{ $element->user->name }}</a>
+                        <a class="theme-color"
+                           href="{{ route('frontend.user.show.name',['id' => $element->user_id,'name' => $element->user->name]) }}">{{ $element->user->name }}</a>
                     </td>
                 </tr>
+                @if($element->user->areas->isNotEmpty())
+                    <tr>
+                        <td class="td-fixed-element">
+                    <span style="min-width: 130px;"><i class="fa fa-fw icon-f-24 fa-lg"></i> <span
+                                class="ml-2"></span> {{ trans('general.areas_served_by_user') }}:</span>
+                        </td>
+                        <td>
+                            <ul>
+                                @foreach($element->user->areas as $area)
+                                    <li>
+                                        <a class="theme-color"
+                                           href="{{ route('frontend.service.search',['user_id' => $element->user_id,'area_id' => $area->id]) }}">{{ $area->slug }}</a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </td>
+                    </tr>
+                @endif
             @endif
             @if(!is_null($element->duration))
                 <tr>
@@ -68,7 +87,8 @@
                     </td>
                     <td>
                         @foreach($element->categories as $cat)
-                            <a class="theme-color" href="{{ route('frontend.service.search',['service_category_id' => $cat->id]) }}">
+                            <a class="theme-color"
+                               href="{{ route('frontend.service.search',['service_category_id' => $cat->id]) }}">
                                 {{ $cat->name }},
                             </a>
                         @endforeach
@@ -95,7 +115,8 @@
                     <td class="td-fixed-element">{{ trans("general.brands") }}:</td>
                     <td>
                         @foreach($element->brands as $brand)
-                            <a class="theme-color" href="{{ route('frontend.service.search',['brand_id' => $brand->id]) }}">
+                            <a class="theme-color"
+                               href="{{ route('frontend.service.search',['brand_id' => $brand->id]) }}">
                                 {{ $brand->slug }},
                             </a>
                         @endforeach
@@ -104,7 +125,8 @@
             @endif
             @if($element->notes)
                 <tr>
-                    <td class="td-fixed-element"><i class="icon-f-07 fa fa-fw fa-lg"></i><span class="ml-1"></span><span>{{ trans('general.notes') }} : </span>
+                    <td class="td-fixed-element"><i class="icon-f-07 fa fa-fw fa-lg"></i><span
+                                class="ml-1"></span><span>{{ trans('general.notes') }} : </span>
                         <span class="ml-2"></span></td>
                     <td>
                         {{ $element->notes }}
@@ -117,7 +139,7 @@
 
 <div class="tt-wrapper">
     <ul class="tt-list-btn">
-        <li><a class="btn-link" href="#">
+        <li><a class="btn-link" href="{{ route('frontend.favorite.service.add', $element->id) }}">
                 <i class="fa fa-fw fa-heart fa-lg"></i>
                 <span class="ml-2"></span>
                 {{ trans('general.add_to_wish_list') }}

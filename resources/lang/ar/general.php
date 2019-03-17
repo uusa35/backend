@@ -301,5 +301,12 @@ return array(
     'control_panel' => 'لوحة التحكم',
     'wish_list' => 'قائمة المفضلة',
     'sign_out' => 'تسجيل الخروج',
+    'filter_by_product_categories' => 'أضف التصنيف إلى معايير البحث',
+    'filter_by_service_categories' => 'أضف التصنيف إلى معايير البحث',
+    'companies' => 'الشركات',
+    'clear_all' => 'إزالة الكل',
+    'filter_by_price' => 'أضف السعر إلى معايير البحث',
+    'clear_all' => 'إزالة الكل',
+    'areas_served_by_user' => 'المناطق المتاح بها الخدمة'
 
 );

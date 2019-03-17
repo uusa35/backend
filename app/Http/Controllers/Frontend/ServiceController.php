@@ -35,12 +35,13 @@ class ServiceController extends Controller
             return redirect()->route('frontend.home')->withErrors($validator->messages());
         }
         $elements = $this->service->active()->hasImage()->serveCountries()->filters($filters)->with(
-            'tags', 'user.country', 'images',
+            'tags', 'user.country', 'images', 'user.areas',
             'favorites', 'categories.children'
         )->orderBy('id', 'desc')->paginate(self::TAKE);
         $tags = $elements->pluck('tags')->flatten()->unique('id')->sortKeysDesc();
         $categoriesList = $elements->pluck('categories')->flatten()->unique('id');
         $vendors = $elements->pluck('user')->flatten()->unique('id');
+        $areas = $elements->pluck('user.areas')->flatten()->unique('id');
 
         if (!$elements->isEmpty()) {
             session()->put('day_selected_format', request('day_selected_format'));
@@ -48,7 +49,7 @@ class ServiceController extends Controller
             session()->put('area_id', request('area_id'));
             $currentCategory = request()->has('category_id') ? Category::whereId(request('category_id'))->first() : null;
             return view('frontend.wokiee.four.modules.service.index', compact(
-                'elements', 'tags',
+                'elements', 'tags', 'areas',
                 'categoriesList', 'currentCategory', 'vendors'
             ));
         } else {

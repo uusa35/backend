@@ -10,7 +10,7 @@
     </div>
 </div>
 <div class="tt-content-aside">
-    <a href="{{ request()->url() }}" class="tt-promo-03">
+    <a href="{{ request()->url() }}" class="tt-promo-03 btn btn-border">
         {{ trans('general.clear_all') }}
     </a>
 </div>

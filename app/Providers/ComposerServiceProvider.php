@@ -79,6 +79,13 @@ class ComposerServiceProvider extends ServiceProvider
 
         view()->composer([
             'frontend.*.*.home',
+            'frontend.*.*.*.head',
+            'frontend.*.*.*._top_bar',
+            'frontend.*.*.*._main_menu',
+            'frontend.*.*.*._social_icons_home',
+            'frontend.*.*.*.footer',
+            'frontend.*.*.*.scripts',
+            'frontend.wokie.four.modules.user.login',
             'frontend.*.*.*.show',
             'frontend.*.*.*.index',
             'backend.*.*.*.scripts',

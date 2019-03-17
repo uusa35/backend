@@ -22,7 +22,7 @@
                 </div>
                 <div class="col-12">
                     {{-- Tabs --}}
-                    @include('frontend.wokiee.four.partials._service_show_timings_and_additional_information')
+{{--                    @include('frontend.wokiee.four.partials._service_show_timings_and_additional_information')--}}
                 </div>
             </div>
         </div>
