@@ -1,6 +1,6 @@
 <div class="tt-mobile-product-layout visible-xs">
     <div class="tt-mobile-product-slider arrow-location-center slick-animated-show-js">
-        <div class="slick-slide slick-current slick-active"><img class="active" src="{{ $element->imageLargeLink }}" alt="{{ $element->slug }}"></div>
+        <div><img src="{{ $element->imageLargeLink }}" alt="{{ $element->slug }}"></div>
         @if($element->images->isNotEmpty())
             @foreach($element->images as $img)
                 <div><img src="{{ $img->imageLargeLink}}" alt="{{ $element->slug }}"></div>
