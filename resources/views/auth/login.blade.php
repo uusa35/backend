@@ -64,7 +64,7 @@
                                         <div class="row">
                                             <div class="col-auto mr-auto">
                                                 <div class="form-group">
-                                                    <button class="btn btn-border" type="submit">LOGIN</button>
+                                                    <button class="btn btn-border" type="submit">{{ trans('general.login') }}</button>
                                                 </div>
                                             </div>
                                             <div class="col-auto align-self-end">
