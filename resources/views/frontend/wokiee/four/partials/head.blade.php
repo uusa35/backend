@@ -7,7 +7,7 @@
 <![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="{{ config('app.name') }}" content="E-commerce">
-<meta name="theme-color" content="black">
+<meta name="theme-color" content="{{ $settings->main_theme_color }}">
 <meta name="description" content="{{ trans('general.meta_description') . $settings->company_ar . $settings->company_en . trans('general.app_keywords')}}">
 <meta name="keywords" content="{{ trans('general.app_keywords') }}"/>
 <meta name="author" content="{{ trans('general.app_author') }}">
