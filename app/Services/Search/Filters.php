@@ -101,12 +101,12 @@ class Filters extends QueryFilters
 
     public function min()
     {
-        return $this->builder->where('price', '>=', request()->min);
+        return $this->builder->where('price', '>=', (double) request()->min);
     }
 
     public function max()
     {
-        return $this->builder->where('price', '<=', request()->max);
+        return $this->builder->where('price', '<=', (double) request()->max);
     }
 
     public function page()
