@@ -332,6 +332,7 @@ return array(
     'return_home' => 'العودة للصفحة الرئيسية',
     'hello' => 'هلا ',
     'no_items_in_cart' => 'الكارت فارغ',
-    'exclusive' => 'حصري'
+    'exclusive' => 'حصري',
+    'this_user_does_not_exist' => 'لم يتم العثور على هذا المستخدم.'
 
 );
