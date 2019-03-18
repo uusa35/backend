@@ -333,6 +333,7 @@ return array(
     'hello' => 'هلا ',
     'no_items_in_cart' => 'الكارت فارغ',
     'exclusive' => 'حصري',
-    'this_user_does_not_exist' => 'لم يتم العثور على هذا المستخدم.'
+    'this_user_does_not_exist' => 'لم يتم العثور على هذا المستخدم.',
+    'our_selection' => 'اختارنا لكم'
 
 );

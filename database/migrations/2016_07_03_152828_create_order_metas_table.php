@@ -38,6 +38,9 @@ class CreateOrderMetasTable extends Migration
             $table->integer('product_attribute_id')->unsigned()->index()->nullable();
             $table->foreign('product_attribute_id')->references('id')->on('product_attributes')->onDelete('restrict')->onUpdate('restrict');
 
+            $table->integer('collection_id')->unsigned()->index()->nullable();
+            $table->foreign('collection_id')->references('id')->on('collections')->onDelete('restrict')->onUpdate('restrict');
+
             $table->integer('service_id')->unsigned()->index()->nullable();
             $table->foreign('service_id')->references('id')->on('services')->onDelete('restrict')->onUpdate('restrict');
 

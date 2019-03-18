@@ -30,11 +30,11 @@ class ProductsTableSeeder extends Seeder
                 $p->product_attributes()->saveMany(factory(ProductAttribute::class, 2)->create());
             }
             $p->categories()->saveMany(Category::all()->random(2));
-            $p->collections()->saveMany(Collection::all()->random(2));
             $p->tags()->saveMany(Tag::all()->random(2));
             $p->notifications()->saveMany(Notification::all()->random(2));
             $p->slides()->saveMany(Slide::all()->random(2));
             $p->images()->saveMany(factory(Image::class, 3)->create());
+            $p->collections()->saveMany(Collection::all()->random(1));
         });
     }
 }

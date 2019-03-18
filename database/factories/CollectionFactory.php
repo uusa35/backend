@@ -10,9 +10,8 @@ $factory->define(Collection::class, function (Faker $faker) use($fakerAr) {
         'name' => $faker->name,
         'slug_ar' => $faker->realText(40),
         'slug_en' => $faker->name,
+        'on_home' => $faker->boolean(true),
         'keywords' => $faker->sentence,
         'user_id' => User::all()->random()->id,
-//        'collectionable_id' => $faker->numberBetween(1,50),
-//        'collectionable_type' => Product::class,
     ];
 });

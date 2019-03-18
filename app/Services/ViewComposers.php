@@ -124,7 +124,7 @@ class ViewComposers
     }
 
     public function getBrands(View $view) {
-        $brands = Brand::active()->where('is_home', true)->has('products', '>', 0)->take(12)->get();
+        $brands = Brand::active()->onHome()->has('products', '>', 0)->take(12)->get();
         return $view->with(compact('brands'));
     }
 

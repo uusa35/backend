@@ -18,6 +18,8 @@ class CreateCollectionsTable extends Migration
             $table->string('slug_ar')->nullable();
             $table->string('slug_en')->nullable();
             $table->string('keywords')->nullable();
+            $table->boolean('on_home')->default(0);
+            $table->boolean('active')->default(1);
 
             $table->integer('user_id')->unsigned()->index();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

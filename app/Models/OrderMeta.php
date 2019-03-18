@@ -35,4 +35,8 @@ class OrderMeta extends PrimaryModel
     public function country() {
         return $this->belongsTo(Country::class);
     }
+
+    public function collection() {
+        return $this->belongsTo(Collection::class);
+    }
 }

@@ -1,5 +1,14 @@
-<div class="tt-product thumbprod-center" style="padding: 10px;">
-    <div class="tt-image-box">
+<div class="element-item {{ isset($double) && $double ? 'double-size' : null }}">
+    <div class="tt-product-design02 thumbprod-center">
+        <div class="tt-image-box">
+            <a href="product.html">
+                <span class="tt-img"><img src="{{ $element->imageThumbLink }}" alt="{{ $element->name }}"></span>
+            </a>
+            @if($element->isReallyHot)
+                @include('frontend.wokiee.four.partials._widget_is_really_hot')
+            @endif
+        </div>
+        @include('frontend.wokiee.four.partials._product_widget_description', ['collection' => true])
         <a href="#" class="tt-btn-quickview" data-toggle="modal"
            data-target="#ModalquickView"
            data-tooltip="{{ trans('general.quick_view') }}"
@@ -20,15 +29,5 @@
                data-tposition="{{ app()->isLocale('ar') ? 'right' : 'left' }}"
             ></a>
         @endauth
-        {{--<a href="#" class="tt-btn-compare" data-tooltip="Add to Compare"--}}
-        {{--data-tposition="{{ app()->isLocale('ar') ? 'right' : 'left' }}"--}}
-        {{--></a>--}}
-        <a href="{{ route('frontend.product.show.name', ['id' => $element->id, 'name' => $element->name]) }}">
-            @include('frontend.wokiee.four.partials._widget_tags_and_images')
-        </a>
-        @if($element->isReallyHot)
-            @include('frontend.wokiee.four.partials._widget_is_really_hot')
-        @endif
     </div>
-    @include('frontend.wokiee.four.partials._product_widget_description')
 </div>

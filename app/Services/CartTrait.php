@@ -30,6 +30,7 @@ trait CartTrait
                 [
                     'type' => 'service',
                     'element_id' => $service->id,
+                    'collection_id' => $request->has('collection_id') ? $request->collection_id : null,
                     'day_selected' => Carbon::parse($request->day_selected_format),
                     'timing_id' => $request->timing_id,
                     'notes' => $request->notes,
@@ -45,7 +46,7 @@ trait CartTrait
 
     public function addProductToCart(Request $request, Product $product, $cart)
     {
-        if ($product->getCanOrderAttribute($request->qty)) {
+        if ($product->getCanOrderAttribute($request->qty, $request->product_attribute_id)) {
             $element = $cart->content()->where('id', '=', $product->UId)->first();
             if ($element) {
                 $cart->remove($element->rowId);
@@ -54,10 +55,11 @@ trait CartTrait
                 $cart->add($product->UId, $product->name, $request->qty, (double) $product->finalPrice,
                     [
                         'type' => 'product',
+                        'element_id' => $product->id,
+                        'collection_id' => $request->has('collection_id') ? $request->collection_id : null,
                         // each product * his own package Charge ==> consider different heights / weight
                         'shipment_cost' => $product->packageFeePrice,
                         'country_destination' => getClientCountry(),
-                        'element_id' => $product->id,
                         'product_attribute_id' => $request->product_attribute_id,
                         'size_id' => $request->size_id,
                         'color_id' => $request->color_id,

@@ -103,7 +103,7 @@ class ComposerServiceProvider extends ServiceProvider
         ], 'App\Services\ViewComposers@getPages');
 
         view()->composer([
-            'frontend.home',
+            'frontend.*.*.home',
             'frontend.modules.product.show'
         ], 'App\Services\ViewComposers@getBrands');
 

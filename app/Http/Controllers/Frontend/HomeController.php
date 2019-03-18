@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Jobs\CheckCartItems;
 use App\Models\Brand;
 use App\Models\Category;
+use App\Models\Collection;
 use App\Models\Commercial;
 use App\Models\Country;
 use App\Models\Currency;
@@ -42,17 +43,17 @@ class HomeController extends Controller
         $onSaleServices = $this->service->serveCountries()->active()->available()->onSaleOnHome()->hasTiming()->with('user.country')->orderby('created_at', 'desc')->take(self::TAKE)->get();
         $serviceHotDeals = $this->service->active()->available()->onSale()->onHome()->hotDeals()->hasImage()->serveCountries()->hasTiming()->with('user.country')->orderby('end_sale', 'desc')->take(self::TAKE)->get();
 
-        if (request()->has('mallr')) {
-            $newProducts = $this->product->active()->available()->onHome()->onNew()->hasImage()->serveCountries()->hasStock()->with('images', 'product_attributes.color', 'user.country','favorites')->orderBy('created_at', 'desc')->take(self::TAKE)->get();
-            $onSaleProducts = $this->product->active()->available()->onSaleOnHome()->hasImage()->serveCountries()->hasStock()->with('images', 'product_attributes.color', 'user.country','favorites')->orderby('end_sale', 'desc')->take(self::TAKE)->get();
-            $bestSalesProducts = $this->product->whereIn('id', $this->product->active()->available()->hasImage()->serveCountries()->hasStock()->bestSalesProducts())->with('images', 'product_attributes.color', 'user.country','favorites')->get();
-            $productHotDeals = $this->product->active()->available()->onSale()->hotDeals()->hasImage()->serveCountries()->with('images', 'product_attributes.color', 'user.country','favorites')->orderby('end_sale', 'desc')->take(self::TAKE)->get();
-            $categoriesHome = Category::onHome()->isFeatured()->orderBy('order', 'desc')->take(4)->get();
-//            $categoriesFeatured = Category::where(['is_featured' => true])->take(self::TAKE)->orderBy('order', 'desc')->get();
-            $brands = Brand::active()->onHome()->orderBy('order', 'desc')->take(12)->get();
-        }
+        $newProducts = $this->product->active()->available()->onHome()->onNew()->hasImage()->serveCountries()->hasStock()->with('images', 'product_attributes.color', 'user.country', 'favorites')->orderBy('created_at', 'desc')->take(self::TAKE)->get();
+        $onSaleProducts = $this->product->active()->available()->onSaleOnHome()->hasImage()->serveCountries()->hasStock()->with('images', 'product_attributes.color', 'user.country', 'favorites')->orderby('end_sale', 'desc')->take(self::TAKE)->get();
+        $bestSalesProducts = $this->product->whereIn('id', $this->product->active()->available()->hasImage()->serveCountries()->hasStock()->bestSalesProducts())->with('images', 'product_attributes.color', 'user.country', 'favorites')->get();
+        $productHotDeals = $this->product->active()->available()->onSale()->hotDeals()->hasImage()->serveCountries()->with('images', 'product_attributes.color', 'user.country', 'favorites')->orderby('end_sale', 'desc')->take(self::TAKE)->get();
+        $homeCollection = Collection::active()->onHome()->with('products')->first();
+
+        $categoriesHome = Category::onHome()->isFeatured()->orderBy('order', 'desc')->take(4)->get();
+        $brands = Brand::active()->onHome()->orderBy('order', 'desc')->take(12)->get();
         $topDoubleCommercials = Commercial::active()->double()->orderBy('order', 'desc')->take(2)->get();
         $bottomDoubleCommercials = Commercial::active()->double()->orderBy('order', 'desc')->take(2)->get();
+        $tipleCommercials = Commercial::active()->triple()->orderBy('order', 'desc')->take(3)->get();
         return view('frontend.wokiee.four.home', compact(
             'sliders',
             'newServices',
@@ -63,11 +64,11 @@ class HomeController extends Controller
             'productHotDeals',
             'serviceHotDeals',
             'categoriesHome',
-            'categoriesFeatured',
             'brands',
             'topDoubleCommercials',
             'bottomDoubleCommercials',
-            'tripleCommercials'
+            'tipleCommercials',
+            'homeCollection'
         ));
     }
 

@@ -13,10 +13,13 @@ use Carbon\Carbon;
  */
 trait SellingModelHelpers
 {
-    public function getCanOrderAttribute($qty = 1)
+    public function getCanOrderAttribute($qty = 1,$attributeId = null)
     {
         if ($this->has_attributes) {
-            return $this->active && $this->is_available && $this->product_attributes->sum('qty') >= $qty;
+            if (is_null($attributeId)) {
+                return $this->active && $this->is_available && $this->product_attributes->sum('qty') >= $qty;
+            }
+            return $this->active && $this->is_available && $this->product_attributes->where('id', $attributeId)->first()->qty >= $qty;
         }
         return $this->active && $this->is_available && $this->qty >= $qty;
     }
@@ -37,7 +40,7 @@ trait SellingModelHelpers
 
     public function scopeAvailable($q)
     {
-        return $q->where('is_available',true);
+        return $q->where('is_available', true);
     }
 
     public function scopeOnSaleOnHome($q)

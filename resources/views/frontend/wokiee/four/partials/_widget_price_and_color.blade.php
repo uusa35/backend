@@ -8,9 +8,15 @@
 </div>
 @if($element->has_attributes && $element->product_attributes->isNotEmpty())
     <div class="tt-option-block">
+        {{--<ul class="tt-options-swatch">--}}
+            {{--@foreach($element->product_attributes as $productAttribute)--}}
+                {{--<li><a href="#">{{ $productAttribute->size->name }}</a></li>--}}
+            {{--@endforeach--}}
+        {{--</ul>--}}
         <ul class="tt-options-swatch">
             @foreach($element->product_attributes as $productAttribute)
-                <li><a class="options-color" style="background-color: {{ $productAttribute->color->code }};" href="#"></a></li>
+                <li><a class="options-color" style="background-color: {{ $productAttribute->color->code }};"
+                       href="#"></a></li>
             @endforeach
         </ul>
     </div>
