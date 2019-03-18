@@ -9,13 +9,18 @@
                 </div>
                 <div class="tt-dropdown-inner">
                     <ul>
+                        <li><a href="{{ route('frontend.order.index') }}">
+                                <i class="icon-f-94 fa fa-fw fa-lg"></i>
+                                {{ trans('general.hello') }} {{ auth()->user()->name }}
+                            </a>
+                        </li>
                         <li><a href="{{ route('backend.home') }}">
-                                <i class="icon-theme fa fa-fw fa-lg"></i>
+                                <i class="icon-f-81 fa fa-fw fa-lg"></i>
                                 {{ trans('general.control_panel') }}
                             </a>
                         </li>
                         <li><a href="{{ route('frontend.order.index') }}">
-                                <i class="icon-h-13 fa fa-fw fa-lg"></i>
+                                <i class="icon-f-45 fa fa-fw fa-lg"></i>
                                 {{ trans('general.history_orders') }}
                             </a>
                         </li>
@@ -28,7 +33,7 @@
                             <a href="{{ url('/logout') }}" class="dropdown-toggle"
                                onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                                 <i class="icon-h-24 fa fa-fw fa-lg"></i>
-                                    {{ trans('general.sign_out') }}
+                                {{ trans('general.sign_out') }}
                             </a>
                         </li>
                     </ul>

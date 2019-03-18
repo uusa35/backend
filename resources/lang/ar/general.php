@@ -329,6 +329,7 @@ return array(
     'new_user' => 'مستخدم جديد',
     'already_have_account' => 'لديك حساب بالفعل',
     'choose_date_for_your_service' => 'اختر تاريخ الخدمة المطلوب',
-    'return_home' => 'العودة للصفحة الرئيسية'
+    'return_home' => 'العودة للصفحة الرئيسية',
+    'hello' => 'هلا '
 
 );
