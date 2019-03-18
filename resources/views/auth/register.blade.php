@@ -64,8 +64,8 @@
                                         <div class="col-auto align-self-center">
                                             <div class="form-group">
                                                 <ul class="additional-links">
-                                                    <li>or
-                                                        <a href="{{ route('frontend.home') }}">{{ trans('general.return_home') }}</a>
+                                                    <li>
+                                                        <a class="" href="{{ route('frontend.home') }}">{{ trans('general.return_home') }}</a>
                                                     </li>
                                                 </ul>
                                             </div>
