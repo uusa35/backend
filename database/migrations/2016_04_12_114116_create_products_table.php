@@ -21,6 +21,7 @@ class CreateProductsTable extends Migration
             $table->boolean('home_delivery_availability')->default(0);
             $table->boolean('shipment_availability')->default(0);
             $table->string('delivery_time')->nullable();
+            $table->boolean('exclusive')->default(0);
             $table->boolean('on_sale')->default(0);
             $table->boolean('on_home')->default(0);
             $table->boolean('is_available')->default(0);

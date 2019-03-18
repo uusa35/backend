@@ -7,8 +7,11 @@
 </span>
 @endif
 <span class="tt-label-location">
-        @if($element->on_new)
+    @if($element->on_new)
         <span class="tt-label-new">{{ trans('general.new') }}</span>
+    @endif
+    @if($element->exclusive)
+        <span class="tt-label-our-stock">{{ trans('general.exclusive') }}</span>
     @endif
     @if($element->isOnSale)
         <span class="tt-label-sale">{{ trans('general.on_sale') }}</span>

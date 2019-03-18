@@ -11,6 +11,7 @@ $factory->define(Service::class, function (Faker $faker) use ($fakerAr) {
         'name_ar' => $faker->name,
         'name_en' => $faker->name,
         'on_sale' => $faker->boolean,
+        'exclusive' => $faker->boolean(true),
         'on_home' => $faker->boolean,
         'on_new' => $faker->boolean,
         'duration' => $faker->numberBetween(1, 9),

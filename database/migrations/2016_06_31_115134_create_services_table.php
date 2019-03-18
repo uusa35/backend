@@ -18,6 +18,7 @@ class CreateServicesTable extends Migration
             $table->string('name_ar');
             $table->string('name_en');
             $table->boolean('on_sale')->default(0);
+            $table->boolean('exclusive')->default(0);
             $table->boolean('on_home')->default(0);
             $table->boolean('on_new')->default(0);
             $table->integer('duration')->default(1);
