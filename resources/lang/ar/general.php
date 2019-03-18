@@ -330,6 +330,7 @@ return array(
     'already_have_account' => 'لديك حساب بالفعل',
     'choose_date_for_your_service' => 'اختر تاريخ الخدمة المطلوب',
     'return_home' => 'العودة للصفحة الرئيسية',
-    'hello' => 'هلا '
+    'hello' => 'هلا ',
+    'no_items_in_cart' => 'الكارت فارغ'
 
 );
