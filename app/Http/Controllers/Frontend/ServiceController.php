@@ -44,13 +44,12 @@ class ServiceController extends Controller
         $elements = $this->service->active()->hasImage()->serveCountries()->filters($filters)->with(
             'tags', 'user.country', 'images', 'user.areas', 'favorites'
         )->with(['categories' => function ($q) {
-            return $q->has('products', '>=', 4);
+            return $q->has('services', '>', 0);
         }])->orderBy('id', 'desc')->paginate(self::TAKE);
         $tags = $elements->pluck('tags')->unique('id')->flatten()->sortKeysDesc();
         $categoriesList = $elements->pluck('categories')->unique('id')->flatten();
         $vendors = $elements->pluck('user')->unique('id')->flatten();
         $areas = $elements->pluck('user.areas')->unique('id')->flatten();
-
         if (!$elements->isEmpty()) {
             session()->put('day_selected_format', request('day_selected_format'));
             session()->put('day_selected', request('day_selected'));
