@@ -32,7 +32,7 @@ class ServiceController extends Controller
         $categoriesList = $elements->pluck('categories')->flatten()->unique('id');
         $vendors = $elements->pluck('user')->flatten()->unique('id');
         $areas = $elements->pluck('user.areas')->flatten()->unique('id');
-        return view('frontend.wokiee.four.modules.service.index', compact('elements','tags','categoriesList','vendors','areas'));
+        return view('frontend.wokiee.four.modules.service.index', compact('elements', 'tags', 'categoriesList', 'vendors', 'areas'));
     }
 
     public function search(Filters $filters)
@@ -42,13 +42,14 @@ class ServiceController extends Controller
             return redirect()->route('frontend.home')->withErrors($validator->messages());
         }
         $elements = $this->service->active()->hasImage()->serveCountries()->filters($filters)->with(
-            'tags', 'user.country', 'images', 'user.areas',
-            'favorites', 'categories.children'
-        )->orderBy('id', 'desc')->paginate(self::TAKE);
-        $tags = $elements->pluck('tags')->flatten()->unique('id')->sortKeysDesc();
-        $categoriesList = $elements->pluck('categories')->flatten()->unique('id');
-        $vendors = $elements->pluck('user')->flatten()->unique('id');
-        $areas = $elements->pluck('user.areas')->flatten()->unique('id');
+            'tags', 'user.country', 'images', 'user.areas', 'favorites'
+        )->with(['categories' => function ($q) {
+            return $q->has('products', '>=', 4);
+        }])->orderBy('id', 'desc')->paginate(self::TAKE);
+        $tags = $elements->pluck('tags')->unique('id')->flatten()->sortKeysDesc();
+        $categoriesList = $elements->pluck('categories')->unique('id')->flatten();
+        $vendors = $elements->pluck('user')->unique('id')->flatten();
+        $areas = $elements->pluck('user.areas')->unique('id')->flatten();
 
         if (!$elements->isEmpty()) {
             session()->put('day_selected_format', request('day_selected_format'));

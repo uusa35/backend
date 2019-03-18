@@ -33,19 +33,19 @@ class ProductController extends Controller
             return redirect()->route('frontend.home')->withErrors($validator->messages());
         }
         $elements = $this->product->active()->hasImage()->hasStock()->filters($filters)->with(
-            'brands','product_attributes.color', 'product_attributes.size', 'tags','user.country','images',
-            'colors','sizes', 'favorites', 'categories.children'
+            'brands', 'product_attributes.color', 'product_attributes.size', 'tags', 'user.country', 'images',
+            'colors', 'sizes', 'favorites', 'categories.children'
         )->orderBy('id', 'desc')->paginate(20);
-        $tags = $elements->pluck('tags')->flatten()->unique('id')->sortKeysDesc();
-        $sizes = $elements->pluck('product_attributes')->flatten()->pluck('size')->flatten()->unique('id')->sortKeysDesc();
-        $colors = $elements->pluck('product_attributes')->flatten()->pluck('color')->flatten()->unique('id')->sortKeysDesc();
-        $brands = $elements->pluck('brands')->flatten()->flatten()->unique('id')->sortKeysDesc();
-        $categoriesList = $elements->pluck('categories')->flatten()->unique('id');
-        $vendors = $elements->pluck('user')->flatten()->unique('id');
+        $tags = $elements->pluck('tags')->unique('id')->flatten()->sortKeysDesc();
+        $sizes = $elements->pluck('product_attributes')->flatten()->pluck('size')->unique('id')->flatten()->sortKeysDesc();
+        $colors = $elements->pluck('product_attributes')->flatten()->pluck('color')->unique('id')->flatten()->sortKeysDesc();
+        $brands = $elements->pluck('brands')->unique('id')->flatten()->sortKeysDesc();
+        $categoriesList = $elements->pluck('categories')->unique('id')->flatten();
+        $vendors = $elements->pluck('user')->unique('id')->flatten();
         if (!$elements->isEmpty()) {
-            $currentCategory =  request()->has('category_id') ? Category::whereId(request('category_id'))->first() : null;
+            $currentCategory = request()->has('category_id') ? Category::whereId(request('category_id'))->first() : null;
             return view('frontend.wokiee.four.modules.product.index', compact(
-                'elements', 'tags', 'colors', 'sizes', 'categoriesList','brands', 'currentCategory','vendors'
+                'elements', 'tags', 'colors', 'sizes', 'categoriesList', 'brands', 'currentCategory', 'vendors'
             ));
         } else {
             return redirect()->route('frontend.home')->with('error', trans('message.no_items_found'));
@@ -54,11 +54,11 @@ class ProductController extends Controller
 
     public function show($productId)
     {
-        $element = $this->product->whereId($productId)->with('product_attributes.color', 'product_attributes.size', 'images', 'tags', 'categories', 'favorites','brands')->first();
+        $element = $this->product->whereId($productId)->with('product_attributes.color', 'product_attributes.size', 'images', 'tags', 'categories', 'favorites', 'brands')->first();
         // return array of ['size_id', 'color', 'att_id','qty' ] for one product
         $data = $element->product_attributes->toArray();
         $relatedItems = $element->getRelatedItems($element);
-        return view('frontend.wokiee.four.modules.product.show', compact('element','relatedItems', 'product', 'data'));
+        return view('frontend.wokiee.four.modules.product.show', compact('element', 'relatedItems', 'product', 'data'));
     }
 
     /**
