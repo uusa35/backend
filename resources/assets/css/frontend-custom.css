@@ -47,7 +47,7 @@ span > .countdown-section {
 
 .tt-collapse-title {
     text-align: center;
-    border-bottom: 1px solid #4611a7;
+    /*border-bottom: 1px solid #4611a7;*/
     margin-bottom: 5px;
 }
 
@@ -64,7 +64,7 @@ span > .countdown-section {
 }
 
 .theme-color {
-    color : #4611a7 !important;
+    /*color : #4611a7 !important;*/
 }
 
 .tt-header-holder .tt-obj-logo + .tt-obj-search-type2 {

@@ -328,5 +328,6 @@ return array(
     'forgot_your_password' => 'نسيت كلمة المرور',
     'new_user' => 'مستخدم جديد',
     'already_have_account' => 'لديك حساب بالفعل',
+    'choose_date_for_your_service' => 'اختر تاريخ الخدمة المطلوب'
 
 );

@@ -7,10 +7,12 @@
                 {{ trans('message.payment_will_be_in_kuwaiti_dinar_only') }}
             </div>
         </tr>
-        <tr>
-            <th>{{ trans('general.total_price') }} {{ $currency->name }}</th>
-            <td>{{ getConvertedPrice(Cart::total()) }} {{ $currency->symbol }}</td>
-        </tr>
+        @if(!$currency->country->is_local)
+            <tr>
+                <th>{{ trans('general.total_price') }} {{ $currency->name }}</th>
+                <td>{{ getConvertedPrice(Cart::total()) }} {{ $currency->symbol }}</td>
+            </tr>
+        @endif
         </tbody>
         <tfoot>
         <tr>
