@@ -23,6 +23,7 @@
                                     <div class="form-group">
                                     <textarea name="notes" class="form-control" rows="3"
                                               placeholder="{{ trans('message.service_cart_add_item_notes') }}"
+                                              data-tooltip="{{ trans('message.cart_notes') }}"
                                               id="textareaMessage"></textarea>
                                     </div>
                                     <input type="hidden" name="service_id" id="service_id"
@@ -32,7 +33,10 @@
                                     <input type="hidden" name="day_selected" id="day_selected" value="">
                                     <input type="hidden" name="day_selected_format" id="day_selected_format" value="{{ session()->has('day_selected_format') ? session()->get('day_selected_format') : null }}">
                                     <input type="hidden" name="type" value="service">
-                                    <button type="submit" class="btn btn-lg cart-btn disabled"><i
+                                    <button type="submit"
+                                            class="btn btn-lg cart-btn disabled"
+                                            data-tooltip="{{ trans('message.cart_btn') }}"
+                                    ><i
                                                 class="icon-f-39"></i>{{ trans('general.add_to_cart') }}</button>
                                 </form>
                             </div>
