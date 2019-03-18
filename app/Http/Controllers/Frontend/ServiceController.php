@@ -47,7 +47,7 @@ class ServiceController extends Controller
             return $q->has('services', '>', 0);
         }])->orderBy('id', 'desc')->paginate(self::TAKE);
         $tags = $elements->pluck('tags')->unique('id')->flatten()->sortKeysDesc();
-        $categoriesList = $elements->pluck('categories')->unique('id')->flatten();
+        $categoriesList= $elements->pluck('categories')->unique('id')->flatten()->sortKeysDesc();
         $vendors = $elements->pluck('user')->unique('id')->flatten();
         $areas = $elements->pluck('user.areas')->unique('id')->flatten();
         if (!$elements->isEmpty()) {

@@ -41,13 +41,13 @@ class Filters extends QueryFilters
             $children = $parent->children->pluck('id');
             return $this->builder->whereHas('categories', function ($q) use ($parent, $children) {
                 if ($parent->children->isEmpty()) {
-                    return $q->where('id', request('category_id'));
+                    return $q->where('id', request('product_category_id'));
                 }
                 return $q->whereIn('id', $children);
             });
         }
         return $this->builder->whereHas('categories', function ($q) {
-            return $q->where('id', request()->category_id);
+            return $q->where('id', request()->product_category_id);
         });
     }
 
@@ -58,13 +58,13 @@ class Filters extends QueryFilters
             $children = $parent->children->pluck('id');
             return $this->builder->whereHas('categories', function ($q) use ($parent, $children) {
                 if ($parent->children->isEmpty()) {
-                    return $q->where('id', request('category_id'));
+                    return $q->where('id', request('service_category_id'));
                 }
                 return $q->whereIn('id', $children);
             });
         }
         return $this->builder->whereHas('categories', function ($q) {
-            return $q->where('id', request()->category_id);
+            return $q->where('id', request()->service_category_id);
         });
     }
 

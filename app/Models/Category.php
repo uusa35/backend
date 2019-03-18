@@ -45,7 +45,7 @@ class Category extends PrimaryModel
 
     public function services()
     {
-        return $this->belongsToMany(Service::class, 'category_service');
+        return $this->belongsToMany(Service::class, 'category_service','category_id','service_id');
     }
 
     /**
