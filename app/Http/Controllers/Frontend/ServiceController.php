@@ -51,10 +51,10 @@ class ServiceController extends Controller
         $categoriesList= $elements->pluck('categories')->flatten()->unique('id')->sortKeysDesc();
         $vendors = $elements->pluck('user')->unique('id')->flatten();
         $areas = $elements->pluck('user.areas')->flatten()->unique('id');
-        session()->put('day_selected_format', request('day_selected_format'));
-        session()->put('day_selected', request('day_selected'));
-        session()->put('area_id', request('area_id'));
         if (!$elements->isEmpty()) {
+            session()->put('day_selected_format', request()->day_selected_format);
+            session()->put('day_selected', request()->day_selected);
+            session()->put('area_id', request()->area_id);
             return view('frontend.wokiee.four.modules.service.index', compact(
                 'elements', 'tags', 'areas',
                 'categoriesList', 'currentCategory', 'vendors'
