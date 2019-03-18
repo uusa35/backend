@@ -48,13 +48,15 @@ class ServiceController extends Controller
             return $q->has('services', '>', 0);
         }])->orderBy('id', 'desc')->paginate(self::TAKE);
         $tags = $elements->pluck('tags')->flatten()->unique('id')->sortKeysDesc();
-        $categoriesList= $elements->pluck('categories')->flatten()->unique('id')->sortKeysDesc();
+        $categoriesList = $elements->pluck('categories')->flatten()->unique('id')->sortKeysDesc();
         $vendors = $elements->pluck('user')->unique('id')->flatten();
         $areas = $elements->pluck('user.areas')->flatten()->unique('id');
         if (!$elements->isEmpty()) {
-            session()->put('day_selected_format', request()->day_selected_format);
-            session()->put('day_selected', request()->day_selected);
-            session()->put('area_id', request()->area_id);
+            if (request()->has('save') && request()->save) {
+                session()->put('day_selected_format', request()->day_selected_format);
+                session()->put('day_selected', request()->day_selected);
+                session()->put('area_id', request()->area_id);
+            }
             return view('frontend.wokiee.four.modules.service.index', compact(
                 'elements', 'tags', 'areas',
                 'categoriesList', 'currentCategory', 'vendors'
