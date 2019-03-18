@@ -4,8 +4,9 @@
         <div class="tt-collapse-content">
             <ul class="tt-filter-list">
                 @foreach($brands as $brand)
-                    <li class="active">
-                        <a href="{!! request()->fullUrlWithQuery(['brand_id' => $brand->id]) !!}">{{ $brand->name }}</a>
+                    <li>
+                        <a class="{{ request('brand_id') == $brand->id ? 'text-warning' : null }}"
+                                href="{!! request()->fullUrlWithQuery(['brand_id' => $brand->id]) !!}">{{ $brand->name }}</a>
                     </li>
                 @endforeach
             </ul>

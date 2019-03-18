@@ -5,7 +5,8 @@
             <ul class="tt-list-row">
                 @foreach($areas->where('country_id', getCurrentCountrySessionId()) as $area)
                     <li>
-                        <a href="{!! request()->fullUrlWithQuery(['area_id' => $area->id]) !!}">{{ $area->slug }}</a>
+                        <a class="{{ request('area_id') == $area->id ? 'text-warning' : null }}"
+                                href="{!! request()->fullUrlWithQuery(['area_id' => $area->id]) !!}">{{ $area->slug }}</a>
                     </li>
                 @endforeach
             </ul>

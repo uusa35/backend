@@ -4,21 +4,29 @@
         <div class="tt-collapse-content">
             <ul class="tt-filter-list">
                 @foreach($categoriesList as $category)
-                    <li class="active">
-                        <a href="{!! request()->fullUrlWithQuery(['product_category_id' => $category->id]) !!}">{{ $category->name }}</a>
+                    <li>
+                        <a class="{{ request('product_category_id') == $category->id ? 'text-warning' : null }}"
+                                href="{!! request()->fullUrlWithQuery(['product_category_id' => $category->id]) !!}">{{ $category->name }}</a>
                     </li>
                     @if($category->children->isNotEmpty())
                         <ul>
                             @foreach($category->children as $child)
                                 <li>
-                                    <a href="{!! request()->fullUrlWithQuery(['product_category_id' => $child->id]) !!}">{{ $child->name }}</a>
+                                    <a class="{{ request('product_category_id') == $category->id ? 'text-warning' : null }}"
+                                            href="{!! request()->fullUrlWithQuery(['product_category_id' => $child->id]) !!}">{{ $child->name }}</a>
                                 </li>
                             @endforeach
+                            <li>
+                                <a href="{{ getRequestQueryUrlWithout('product_category_id') }}" class="btn-link-02">
+                                    <i class="fa fa-fw fa-lg "></i>
+                                    {{ trans('general.clear') }}
+                                </a>
+                            </li>
                         </ul>
                     @endif
                 @endforeach
             </ul>
-            <a href="{{ getRequestQueryUrlWithout('product_category_id') }}" class="btn-link-02">{{ trans('general.clear') }}</a>
+
         </div>
     </div>
 @endif

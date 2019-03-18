@@ -38,16 +38,15 @@ class ProductController extends Controller
         )->with(['categories' => function ($q) {
             return $q->has('products', '>', 0);
         }])->orderBy('id', 'desc')->paginate(20);
-        $tags = $elements->pluck('tags')->unique('id')->flatten()->sortKeysDesc();
-        $sizes = $elements->pluck('product_attributes')->flatten()->pluck('size')->unique('id')->flatten()->sortKeysDesc();
-        $colors = $elements->pluck('product_attributes')->flatten()->pluck('color')->unique('id')->flatten()->sortKeysDesc();
-        $brands = $elements->pluck('brands')->unique('id')->flatten()->sortKeysDesc();
-        $categoriesList = $elements->pluck('categories')->unique('id')->flatten();
+        $tags = $elements->pluck('tags')->flatten()->unique('id')->sortKeysDesc();
+        $sizes = $elements->pluck('product_attributes')->flatten()->pluck('size')->flatten()->unique('id')->sortKeysDesc();
+        $colors = $elements->pluck('product_attributes')->flatten()->pluck('color')->flatten()->unique('id')->sortKeysDesc();
+        $brands = $elements->pluck('brands')->flatten()->unique('id')->sortKeysDesc();
+        $categoriesList = $elements->pluck('categories')->flatten()->unique('id');
         $vendors = $elements->pluck('user')->unique('id')->flatten();
         if (!$elements->isEmpty()) {
-            $currentCategory = request()->has('category_id') ? Category::whereId(request('category_id'))->first() : null;
             return view('frontend.wokiee.four.modules.product.index', compact(
-                'elements', 'tags', 'colors', 'sizes', 'categoriesList', 'brands', 'currentCategory', 'vendors'
+                'elements', 'tags', 'colors', 'sizes', 'categoriesList', 'brands', 'vendors'
             ));
         } else {
             return redirect()->route('frontend.home')->with('error', trans('message.no_items_found'));

@@ -5,9 +5,13 @@
             <ul class="tt-list-row">
                 @foreach($vendors as $vendor)
                     <li>
-                        <a href="{!! request()->fullUrlWithQuery(['user_id' => $vendor->id]) !!}">{{ $vendor->slug }}</a>
+                        <a class="{{ request('user_id') == $vendor->id ? 'text-warning' : null }}"
+                                href="{!! request()->fullUrlWithQuery(['user_id' => $vendor->id]) !!}">{{ $vendor->slug }}</a>
                     </li>
                 @endforeach
+                <li>
+                    <a href="{{ getRequestQueryUrlWithout('user_id') }}" class="btn-link-02">{{ trans('general.clear') }}</a>
+                </li>
             </ul>
         </div>
     </div>

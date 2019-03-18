@@ -2,10 +2,10 @@
     <div class="tt-collapse open">
         <h3 class="tt-collapse-title">{{ trans('general.filter_by_service_categories') }}</h3>
         <div class="tt-collapse-content">
-            <ul class="tt-filter-list">
+            <ul class="tt-filter-list ">
                 @foreach($categoriesList as $category)
-                    <li class="active">
-                        <a href="{!! request()->fullUrlWithQuery(['service_category_id' => $category->id]) !!}">{{ $category->name }}</a>
+                    <li>
+                        <a class="{{ request('service_category_id') == $category->id ? 'text-warning' : null }}" href="{!! request()->fullUrlWithQuery(['service_category_id' => $category->id]) !!}">{{ $category->name }}</a>
                     </li>
                     {{--@if($category->children->isNotEmpty())--}}
                         {{--<ul>--}}

@@ -60,7 +60,7 @@ class Filters extends QueryFilters
                 if ($parent->children->isEmpty()) {
                     return $q->where('id', request('service_category_id'));
                 }
-                return $q->whereIn('id', $children);
+                return $q->whereIn('id', [request('service_category_id') , $children]);
             });
         }
         return $this->builder->whereHas('categories', function ($q) {
