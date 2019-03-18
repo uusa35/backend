@@ -19,7 +19,7 @@
                                     @endif
                                 </div>
                                 <div class="col-1">
-                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                    <button type="button" class="close" data-dismiss="alert"><i class="fa fa-fw fa-lg icon-f-84"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -30,18 +30,20 @@
             @if (isset($error) || $error = session()->get('error'))
                 <div class="alert alert-danger alert-block">
                     <div class="row">
-                        <div class="col-lg-1">
-                            <i class="fa fa-1x fa-exclamation-triangle fa-fw"></i>
+                        <div class="col-1">
+                            <i class="fa fa-2x icon-h-08 fa-fw"></i>
                         </div>
-                        <div class="col-lg-11">
-                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <div class="col-10">
                             @if(is_array($error))
                                 @foreach ($error as $m)
-                                    {{ $m }}
+                                    <h3>{{ $m }}</h3>
                                 @endforeach
                             @else
-                                {{ $error }}
+                                <h6>{{ $error }}</h6>
                             @endif
+                        </div>
+                        <div class="col-1">
+                            <button type="button" class="close" data-dismiss="alert"><i class="fa fa-fw fa-lg icon-f-84"></i></button>
                         </div>
                     </div>
                 </div>
