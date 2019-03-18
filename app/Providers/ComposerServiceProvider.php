@@ -63,6 +63,8 @@ class ComposerServiceProvider extends ServiceProvider
             'frontend.wokiee.four.home',
             'frontend.wokiee.four.*.show',
             'frontend.wokiee.four.*.index',
+            'auth.register',
+            'auth.login',
         ], 'App\Services\ViewComposers@getCurrency');
 
 
