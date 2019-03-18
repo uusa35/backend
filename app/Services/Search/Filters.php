@@ -60,7 +60,7 @@ class Filters extends QueryFilters
                 if ($parent->children->isEmpty()) {
                     return $q->where('id', request('service_category_id'));
                 }
-                return $q->whereIn('id', [request('service_category_id') , $children]);
+                return $q->whereIn('id', [request('service_category_id'), $children]);
             });
         }
         return $this->builder->whereHas('categories', function ($q) {
@@ -101,12 +101,12 @@ class Filters extends QueryFilters
 
     public function min()
     {
-        return $this->builder->where('price', '>=', (double) request()->min);
+        return $this->builder->where('price', '>=', (double)request()->min);
     }
 
     public function max()
     {
-        return $this->builder->where('price', '<=', (double) request()->max);
+        return $this->builder->where('price', '<=', (double)request()->max);
     }
 
     public function page()
@@ -172,6 +172,16 @@ class Filters extends QueryFilters
         return $this->builder->whereHas('user', function ($q) {
             return $q->where(['country_id' => request('country_id')]);
         });
+    }
+
+    public function save()
+    {
+        if (request()->has('save') && request()->save) {
+            session()->put('day_selected_format', request()->day_selected_format);
+            session()->put('day_selected', request()->day_selected);
+            session()->put('area_id', request()->area_id);
+        }
+        return $this->builder;
     }
 
 
