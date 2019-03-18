@@ -42,11 +42,11 @@
                 @endforeach
             </li>
         @endif
-        <li><a href="{{ route('frontend.language.change',['locale' => 'ar']) }}">RTL</a></li>
-        <li><a href="{{ route('frontend.language.change',['locale' => 'en']) }}">En</a></li>
+        <li><a href="{{ route('frontend.language.change',['locale' => 'ar']) }}">{{ trans('general.arabic') }}</a></li>
+        <li><a href="{{ route('frontend.language.change',['locale' => 'en']) }}">{{ trans('general.english') }}</a></li>
     </ul>
     <div class="mm-navbtn-names">
-        <div class="mm-closebtn">Close</div>
-        <div class="mm-backbtn">Back</div>
+        <div class="mm-closebtn">{{ trans('general.close') }}</div>
+        <div class="mm-backbtn">{{ trans('general.back') }}</div>
     </div>
 </nav>

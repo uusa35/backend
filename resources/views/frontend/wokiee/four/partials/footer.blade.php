@@ -117,7 +117,7 @@
                 <div class="tt-col-left">
                     <div class="tt-col-item tt-logo-col">
                         <!-- logo -->
-                        <a class="tt-logo tt-logo-alignment" href="index.html">
+                        <a class="tt-logo tt-logo-alignment" href="{{ route('frontend.home') }}">
                             <img src="{{ $settings->logoLarge }}" alt="">
                         </a>
                         <!-- /logo -->

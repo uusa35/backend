@@ -3,8 +3,8 @@
         <div class="tt-header-holder">
             <div class="tt-col-obj tt-obj-logo">
                 <!-- logo -->
-                <a class="tt-logo tt-logo-alignment" href="{{ route('frontend.home') }}"><img
-                            src="{{ asset(env('LARGE').$settings->logo) }}" alt="{{ $settings->company }}"></a>
+                <a class="tt-logo tt-logo-alignment" href="{{ route('frontend.home') }}">
+                    <img class="text-center" src="{{ asset(env('LARGE').$settings->logo) }}" alt="{{ $settings->company }}"></a>
                 <!-- /logo -->
             </div>
             <div class="tt-col-obj tt-obj-search-type2">
