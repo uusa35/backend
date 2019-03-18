@@ -13,7 +13,7 @@
                         <div class="tt-item">
                             <h2 class="tt-title">{{ trans('general.information') }}</h2>
                             <div class="form-default">
-                                <form id="contactform" method="post" novalidate="novalidate"
+                                <form method="post" novalidate="novalidate"
                                       action="{{ route('register') }}">
                                     @csrf
                                     <div class="form-group">
@@ -54,6 +54,15 @@
                                         <input id="password-confirm" type="password" class="form-control"
                                                name="password_confirmation" required>
                                     </div>
+                                    <div class="form-group">
+                                        <label for="country">{{ trans('general.country') }} *</label>
+                                        <select name="country_id" id="country" style="width: 100%; height: 40px;" required>
+                                            <option value="">{{ trans('general.select_country') }}</option>
+                                            @foreach($countries as $country)
+                                                <option value="{{ $country->id }}">{{ $country->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
                                     <div class="row">
                                         <div class="col-auto">
                                             <div class="form-group">
@@ -65,7 +74,8 @@
                                             <div class="form-group">
                                                 <ul class="additional-links">
                                                     <li>
-                                                        <a class="" href="{{ route('frontend.home') }}">{{ trans('general.return_home') }}</a>
+                                                        <a class=""
+                                                           href="{{ route('frontend.home') }}">{{ trans('general.return_home') }}</a>
                                                     </li>
                                                 </ul>
                                             </div>

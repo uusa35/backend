@@ -36,6 +36,7 @@ class ComposerServiceProvider extends ServiceProvider
             'backend.modules.currency.create',
             'backend.modules.currency.edit',
             'backend.partials.sidebar',
+            'auth.register',
         ], 'App\Services\ViewComposers@getCountries');
 
         view()->composer([
