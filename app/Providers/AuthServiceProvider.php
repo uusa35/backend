@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use App\Http\Controllers\CountryPolicy;
 use App\Models\Country;
+use App\Models\Product;
+use App\Policies\ProductPolicy;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
@@ -15,7 +17,8 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        Country::class => CountryPolicy::class
+//        Country::class => CountryPolicy::class,
+//        Product::class => ProductPolicy::class
     ];
 
     /**
@@ -26,7 +29,7 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerPolicies();
-
+        Gate::resource('product', ProductPolicy::class);
         Gate::define('isAdminOrAbove', function () {
             return auth()->user()->isAdminOrAbove; // means if isSuper or isAdmin then go ahead
         });
