@@ -5,7 +5,7 @@
     .tt-back-to-top,
     /*.tt-dropdown-toggle,*/
     .tt-badge-cart,
-    .tt-show
+    .tt-show, .tt-search-type2-rtl, .tt-btn-search-rtl
     {
         background-color: {{ $settings->main_theme_color }} !important;
     }
@@ -20,7 +20,7 @@
      .tt-price, .old-price,
     .money,
     header .tt-multi-obj ul li.active a, header .tt-multi-obj ul li.active a [class^=icon-], header .tt-multi-obj ul li a:hover, header .tt-multi-obj ul li a:hover [class^=icon-],
-    footer .tt-color-scheme-01, .tt-table-shop-01 tbody td a
+    footer .tt-color-scheme-01, .tt-table-shop-01 tbody td a, .product-information-buttons a
     {
         color : {{ $settings->title_theme_color }} !important;
     }
