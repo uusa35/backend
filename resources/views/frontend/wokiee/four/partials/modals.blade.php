@@ -80,23 +80,30 @@
                         </div>
                         <div class="col-12 col-md-7 col-lg-6">
                             <div class="tt-product-single-info">
-                                <div class="tt-add-info">
+                                <div class="tt-add-info border-bottom">
                                     <ul>
-                                        <li><span>{{ trans('general.sku') }}: <span id="element-sku"></span></span></li>
-                                        <li><span>{{ trans('general.availability') }}:</span> <span id="element-qty"></span></li>
+                                        <li><span><i class="icon-f-02 fa fa-fw fa-lg"></i>{{ trans('general.sku') }}: <span id="element-sku"></span></span></li>
+                                        <li><span><i class="fa fa-fw fa-lg icon-e-74"></i>{{ trans('general.availability') }}:</span> <span id="element-qty"></span></li>
                                     </ul>
                                 </div>
                                 <h2 class="tt-title">
                                     <div id="element-name"></div>
                                 </h2>
-                                <div class="tt-price">
+                                <div class="tt-price border-bottom" style="margin-top: 20px; margin-bottom: 20px;">
                                     <span class="new-price">
                                         <span id="element-price"></span>
                                         <span id="element-currency-name"></span>
                                     </span>
                                 </div>
                                 <div class="tt-wrapper">
+                                    <h2 class="tt-title border-bottom" style="margin-bottom: 10px;">
+                                        {{ trans('general.description') }}
+                                    </h2>
                                     <div id="element-description"></div>
+                                    <div id="element-notes"></div>
+                                    <hr>
+                                    <div id="element-colors"></div>
+                                    <div id="element-sizes"></div>
                                 </div>
                                 {{--<div class="tt-swatches-container">--}}
                                 {{--<div class="tt-wrapper">--}}

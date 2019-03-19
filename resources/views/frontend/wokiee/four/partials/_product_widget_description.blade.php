@@ -28,20 +28,7 @@
             </div>
         @endif
         <div class="tt-row-btn">
-            <a href="#" class="tt-btn-quickview" data-toggle="modal"
-               data-tooltip="{{ trans('general.quick_view') }}"
-               data-tposition="{{ app()->isLocale('ar') ? 'right' : 'left' }}"
-               data-target="#ModalquickView"
-               data-name="{{ $element->name }}"
-               data-id="{{ $element->id }}"
-               data-qty="{{ $element->availableQty }}"
-               data-image="{{ $element->imageLargeLink }}"
-               data-description="{{ $element->description }}"
-               data-sku="{{ $element->sku }}"
-               data-price="{{ $element->convertedFinalPrice }}"
-               data-currency-name="{{ $currency->symbol }}"
-               data-url="{{ route('frontend.product.show.name', ['id' => $element->id, 'name' => $element->name]) }}"
-            ></a>
+            @include('frontend.wokiee.four.partials._quick_view_product_btn')
             @auth
                 <a href="#" class="tt-btn-wishlist"></a>
             @endauth

@@ -103,7 +103,7 @@ return array(
     'contact_number' => 'الموبايل للتواصل',
     'contact_us' => 'اتصل بنا',
     'delivery_within_3_days' => 'التوصيل خلال 3 أيام',
-    'description' => 'الوصف باللغة العربية',
+    'description' => 'الوصف',
     'edit' => 'تعديل',
     'firstname' => 'الأسم الأول',
     'free_delivery_within_24_hours' => 'التوصيل مجاناً خلال 24 ساعة',

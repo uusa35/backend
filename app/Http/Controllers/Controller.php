@@ -12,4 +12,5 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests, ImageHelpers;
     const TAKE = 100;
+    const TAKE_MIN = 12;
 }

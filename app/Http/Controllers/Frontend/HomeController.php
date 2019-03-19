@@ -43,11 +43,11 @@ class HomeController extends Controller
         $onSaleServices = $this->service->serveCountries()->active()->available()->onSaleOnHome()->hasTiming()->with('user.country')->orderby('created_at', 'desc')->take(self::TAKE)->get();
         $serviceHotDeals = $this->service->active()->available()->onSale()->onHome()->hotDeals()->hasImage()->serveCountries()->hasTiming()->with('user.country')->orderby('end_sale', 'desc')->take(self::TAKE)->get();
 
-        $newProducts = $this->product->active()->available()->onHome()->onNew()->hasImage()->serveCountries()->hasStock()->with('images', 'product_attributes.color', 'user.country', 'favorites')->orderBy('created_at', 'desc')->take(self::TAKE)->get();
-        $onSaleProducts = $this->product->active()->available()->onSaleOnHome()->hasImage()->serveCountries()->hasStock()->with('images', 'product_attributes.color', 'user.country', 'favorites')->orderby('end_sale', 'desc')->take(self::TAKE)->get();
-        $bestSalesProducts = $this->product->whereIn('id', $this->product->active()->available()->hasImage()->serveCountries()->hasStock()->bestSalesProducts())->with('images', 'product_attributes.color', 'user.country', 'favorites')->get();
-        $productHotDeals = $this->product->active()->available()->onSale()->hotDeals()->hasImage()->serveCountries()->with('images', 'product_attributes.color', 'user.country', 'favorites')->orderby('end_sale', 'desc')->take(self::TAKE)->get();
-        $homeCollection = Collection::active()->onHome()->with('products')->first();
+        $newProducts = $this->product->active()->available()->onHome()->onNew()->hasImage()->serveCountries()->hasStock()->with('product_attributes','colors','sizes','color','size','images', 'user.country', 'favorites')->orderBy('created_at', 'desc')->take(self::TAKE_MIN)->get();
+        $onSaleProducts = $this->product->active()->available()->onSaleOnHome()->hasImage()->serveCountries()->hasStock()->with('product_attributes','colors','sizes','color','size','images', 'user.country', 'favorites')->orderby('end_sale', 'desc')->take(self::TAKE_MIN)->get();
+        $bestSalesProducts = $this->product->whereIn('id', $this->product->active()->available()->hasImage()->serveCountries()->hasStock()->bestSalesProducts())->with('product_attributes','colors','sizes','color','size','images', 'user.country', 'favorites')->take(self::TAKE_MIN)->get();;
+        $productHotDeals = $this->product->active()->available()->onSale()->hotDeals()->hasImage()->serveCountries()->with('product_attributes','colors','sizes','color','size','images', 'user.country', 'favorites')->orderby('end_sale', 'desc')->take(self::TAKE_MIN)->get();
+        $homeCollection = Collection::active()->onHome()->with('products.images','products.colors','products.sizes','products.color','products.size','products.user.country','products.favorites','products.product_attributes')->first();
 
         $categoriesHome = Category::onHome()->isFeatured()->orderBy('order', 'desc')->take(4)->get();
         $brands = Brand::active()->onHome()->orderBy('order', 'desc')->take(12)->get();

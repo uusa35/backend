@@ -8,10 +8,13 @@ $(document).ready(function() {
         var name = $(e.relatedTarget).data('name');
         var image = $(e.relatedTarget).data('image');
         var description = $(e.relatedTarget).data('description');
+        var notes = $(e.relatedTarget).data('notes');
         var price = $(e.relatedTarget).data('price');
         var currency = $(e.relatedTarget).data('currency-name');
         var url = $(e.relatedTarget).data('url');
         var qty = $(e.relatedTarget).data('qty');
+        var colors = $(e.relatedTarget).data('colors');
+        var sizes = $(e.relatedTarget).data('sizes');
 
         //populate the textbox
         $(e.currentTarget).find('#element-id').text(id);
@@ -19,10 +22,13 @@ $(document).ready(function() {
         $(e.currentTarget).find('#element-image').attr('src', image);
         $(e.currentTarget).find('#element-name').text(name);
         $(e.currentTarget).find('#element-description').text(description);
+        $(e.currentTarget).find('#element-notes').text(notes);
         $(e.currentTarget).find('#element-price').text(price);
         $(e.currentTarget).find('#element-currency-name').text(currency);
         $(e.currentTarget).find('#element-qty').text(qty);
         $(e.currentTarget).find('#element-url').attr('href', url);
+        $(e.currentTarget).find('#element-colors').text(colors);
+        $(e.currentTarget).find('#element-sizes').text(sizes);
     });
 
     // Product Page --> add Product to Cart

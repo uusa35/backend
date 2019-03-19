@@ -6,7 +6,7 @@
         <span class="sale-price">{{ $element->convertedPrice }}<span>{{ $currency->symbol }}</span></span>
     @endif
 </div>
-@if($element->has_attributes && $element->product_attributes->isNotEmpty())
+@if($element->has_attributes && $element->colors->isNotEmpty())
     <div class="tt-option-block">
         {{--<ul class="tt-options-swatch">--}}
             {{--@foreach($element->product_attributes as $productAttribute)--}}
@@ -14,8 +14,8 @@
             {{--@endforeach--}}
         {{--</ul>--}}
         <ul class="tt-options-swatch">
-            @foreach($element->product_attributes as $productAttribute)
-                <li><a class="options-color" style="background-color: {{ $productAttribute->color->code }};"
+            @foreach($element->colors as $color)
+                <li><a class="options-color" style="background-color: {{ $color->code }};"
                        href="#"></a></li>
             @endforeach
         </ul>
