@@ -50,7 +50,8 @@
                                 {{--<td>{{ $timing->notes }}</td>--}}
                                 <td
                                         data-tooltip="{{ trans('general.notes') }} : {{ $timing->notes }}"
-                                ><a href="#" class="btn timing-start-end" data-dismiss="modal"
+                                ><a href="#" class="btn btn-small" data-dismiss="modal"
+                                    style="color : white !important;"
                                     data-id="{{ $timing->id }}"
                                     data-service-id="{{ $element->id }}"
                                     data-service-name="{{ $element->name }}"
