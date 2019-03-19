@@ -9,6 +9,7 @@ use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Tag;
+
 use Carbon\Carbon;
 
 class ProductController extends Controller
@@ -41,9 +42,11 @@ class ProductController extends Controller
      */
     public function create()
     {
+
         $categories = Category::active()->onlyParent()->with('children.children')->get();
         $tags = Tag::active()->get();
         $brands = Brand::active()->get();
+
         return view('backend.modules.product.create', compact('categories', 'tags', 'brands'));
     }
 

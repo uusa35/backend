@@ -46,8 +46,5 @@ class DatabaseSeeder extends Seeder
         $this->call(RatingsTableSeeder::class);
         $this->call(QuotesTableSeeder::class);
         $this->call(BrandsTableSeeder::class);
-
-
-
     }
 }
