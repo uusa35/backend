@@ -8,7 +8,7 @@
         @include('frontend.wokiee.four.partials._products_slider',['title' => trans('general.new_arrivals'), 'elements' => $newProducts])
         @include('frontend.wokiee.four.partials._five_categories',['elements' => $categoriesHome])
         @include('frontend.wokiee.four.partials._horizontal_three_categories',['elements' => $tipleCommercials])
-        @include('frontend.wokiee.four.partials._products_slider_hot_deal', ['elements' => $productHotDeals])
+        @include('frontend.wokiee.four.partials._products_slider_hot_deal', ['elements' => $productHotDeals,'items' => 3])
         @include('frontend.wokiee.four.partials._btn_info')
     @elseif(env('APP_CASE') === 'evento')
         @include('frontend.wokiee.four.partials._btns_home')

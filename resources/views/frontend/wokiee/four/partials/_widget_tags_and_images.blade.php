@@ -6,7 +6,7 @@
         <img src="{{ $element->images->first()->imageLargeLink }}" alt="{{ $element->description }}">
 </span>
 @endif
-<span class="tt-label-location">
+<span class="tt-label-location d-none d-md-block">
     @if($element->on_new)
         <span class="tt-label-new">{{ trans('general.new') }}</span>
     @endif

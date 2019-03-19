@@ -1,4 +1,4 @@
-<div class="tt-countdown_box">
+<div class="tt-countdown_box d-none d-md-block">
     <div class="tt-countdown_inner">
         <div class="tt-countdown"
              data-date="{{ $element->end_sale->format('Y-m-d') }}"

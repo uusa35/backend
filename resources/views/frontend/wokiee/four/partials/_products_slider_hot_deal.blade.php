@@ -5,9 +5,10 @@
             <div class="tt-description">{{ trans('message.hot_deal_products') }}</div>
         </div>
         <div class="tt-carousel-products row arrow-location-tab arrow-location-tab01 tt-alignment-img tt-layout-product-item slick-animated-show-js"
-             data-item='3'>
+             data-item="{{ isset($items) ? $items : 4  }}"
+        >
             @foreach($productHotDeals as $element)
-                <div class="col-2 col-md-4 col-lg-3">
+                <div class="col-lg-4 col-xs-12">
                     @include('frontend.wokiee.four.partials._product_widget',['element' => $element])
                 </div>
             @endforeach
