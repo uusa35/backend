@@ -23,8 +23,8 @@
             console.log('day no', dayNo);
             console.log('date_selected format', day_selected_format);
             // set Day No + Day Format Value
-            $('#day_selected_search').attr('value', dayNo);
-            $('#day_selected_format_search').attr('value', day_selected_format);
+            $('input[id^="day_selected"]').attr('value', dayNo);
+            $('input[id^="day_selected_format"]').attr('value', day_selected_format);
         },
         update: function(e) {
         }
@@ -64,8 +64,8 @@
             dayName = moment(e.date).format('dddd');
             console.log('date_selected', day_selected_format);
             // set Day No + Day Format Value
-            $('#day_selected').attr('value', dayNo);
-            $('#day_selected_format').attr('value', day_selected_format);
+            $('input[id^="day_selected"]').attr('value', dayNo);
+            $('input[id^="day_selected_format"]').attr('value', day_selected_format);
             $(`*[class^="timing-element-${dayNo}"]`).toggleClass('d-none');
             $('#chooseTimeModal').modal('show');
         },

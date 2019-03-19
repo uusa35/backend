@@ -51,7 +51,7 @@ class ServiceController extends Controller
         $categoriesList = $elements->pluck('categories')->flatten()->unique('id')->sortKeysDesc();
         $vendors = $elements->pluck('user')->unique('id')->flatten();
         $areas = $elements->pluck('user.areas')->flatten()->unique('id');
-        if (!$elements->isEmpty()) {
+        if ($elements->isNotEmpty()) {
             if (request()->has('save') && request()->save) {
                 session()->put('day_selected_format', request()->day_selected_format);
                 session()->put('day_selected', request()->day_selected);
