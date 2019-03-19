@@ -16,7 +16,7 @@
             <div class="tt-row-btn">
                 <a href="{{ route('frontend.product.show.name',['id' => $element->id,'name'=> $element->name,'collection_id' => $collection]) }}"
                    class="btn btn-small">
-                    <i class="fa fa-fw fa-lg fa-cart-plus"></i>
+                    <i class="fa fa-fw fa-lg icon-f-46"></i>
                     {{ trans('general.add_collection_item_to_cart') }}
                 </a>
             </div>
