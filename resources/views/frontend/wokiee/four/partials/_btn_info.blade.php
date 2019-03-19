@@ -7,8 +7,8 @@
                         <i class="icon-f-48"></i>
                     </div>
                     <div class="tt-col-description">
-                        <h4 class="tt-title">FREE SHIPPING</h4>
-                        <p>Free shipping on all US order or order above $99</p>
+                        <h4 class="tt-title">{{ trans('general.home_shipping') }}</h4>
+                        <p>{{ trans('message.home_shipping') }}</p>
                     </div>
                 </a>
             </div>
@@ -18,8 +18,8 @@
                         <i class="icon-f-35"></i>
                     </div>
                     <div class="tt-col-description">
-                        <h4 class="tt-title">SUPPORT 24/7</h4>
-                        <p>Contact us 24 hours a day, 7 days a week</p>
+                        <h4 class="tt-title">{{ trans('general.home_support') }}</h4>
+                        <p>{{ trans('message.home_support') }}</p>
                     </div>
                 </a>
             </div>
@@ -29,8 +29,8 @@
                         <i class="icon-e-09"></i>
                     </div>
                     <div class="tt-col-description">
-                        <h4 class="tt-title">30 DAYS RETURN</h4>
-                        <p>Simply return it within 24 days for an exchange.</p>
+                        <h4 class="tt-title">{{ trans('general.home_return_policy') }}</h4>
+                        <p>{{ trans('message.home_return_policy') }}</p>
                     </div>
                 </a>
             </div>

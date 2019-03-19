@@ -344,6 +344,9 @@ return array(
     'size_guide' => 'جدول المقاسات',
     'shipping' => 'سياسة الشحن',
     'size_chart' => 'جدول المقاسات',
-    'our_selection_from_collections' => 'اختيارات مصممينا'
+    'our_selection_from_collections' => 'اختيارات مصممينا',
+    'home_shipping'  => 'رسالة شحن المنتجات',
+    'home_support'  => 'الدعم الفني',
+    'home_return_policy'  => 'سياسة الاسترجاع',
 
 );

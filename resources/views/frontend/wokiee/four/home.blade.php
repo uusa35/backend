@@ -19,7 +19,5 @@
             @include('frontend.wokiee.four.partials._search_modal_home_page')
         @endif
     @endif
-
     @include('frontend.wokiee.four.partials._country_modal')
-
 @endsection
