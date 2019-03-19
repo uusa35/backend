@@ -8,7 +8,7 @@
             <button type="submit"
                     class="{{ app()->isLocale('ar') ? 'tt-btn-search-rtl' : 'tt-btn-search' }}">
                 <i class="icon-search"></i>
-                SEARCH
+                {{ trans('general.search') }}
             </button>
             <div class="search-results" style="display: none;"></div>
         </form>
