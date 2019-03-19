@@ -17,7 +17,7 @@ Breadcrumbs::for('register', function ($trail) {
 
 Breadcrumbs::for('frontend.product.index', function ($trail) {
     $trail->parent('frontend.home');
-    $trail->push(trans('general.products'), route('frontend.product.index'));
+    $trail->push(trans('general.products'), route('frontend.product.search'));
 });
 Breadcrumbs::for('frontend.product.show', function ($trail, $element) {
     $trail->parent('frontend.product.index');
@@ -26,7 +26,7 @@ Breadcrumbs::for('frontend.product.show', function ($trail, $element) {
 
 Breadcrumbs::for('frontend.service.index', function ($trail) {
     $trail->parent('frontend.home');
-    $trail->push(trans('general.services'), route('frontend.service.index'));
+    $trail->push(trans('general.services'), route('frontend.service.search'));
 });
 
 Breadcrumbs::for('frontend.service.show', function ($trail, $element) {
