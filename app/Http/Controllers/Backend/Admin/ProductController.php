@@ -9,6 +9,9 @@ use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Tag;
+
+use App\Models\User;
+use App\Models\ShipmentPackage;
 use Carbon\Carbon;
 
 class ProductController extends Controller
@@ -44,7 +47,11 @@ class ProductController extends Controller
         $categories = Category::active()->onlyParent()->with('children.children')->get();
         $tags = Tag::active()->get();
         $brands = Brand::active()->get();
-        return view('backend.modules.product.create', compact('categories', 'tags','brands'));
+        $users = User::all();
+
+        $shipment_packages = ShipmentPackage::all();
+        //dd($shipment_package);
+        return view('backend.modules.product.create', compact('categories', 'tags', 'brands', 'users', 'shipment_packages'));
     }
 
 
@@ -55,13 +62,13 @@ class ProductController extends Controller
      */
     public function store(ProductStore $request)
     {
-        if($request->has('end_sale')) {
-            $date = str_replace('-','',$request->end_sale);
+        if ($request->has('end_sale')) {
+            $date = str_replace('-', '', $request->end_sale);
             $date = Carbon::parse($date)->toDateTimeString();
         }
-        $element = Product::create($request->except(['_token', 'image', 'categories', 'tags','brands','end_sale']));
+        $element = Product::create($request->except(['_token', 'image', 'categories', 'tags', 'brands', 'end_sale']));
         if ($element) {
-            if($date) {
+            if ($date) {
                 $element->update(['end_sale' => $date]);
             }
             $element->tags()->sync($request->tags);
@@ -76,7 +83,6 @@ class ProductController extends Controller
             return redirect()->route('backend.attribute.create', ['product_id' => $element->id, 'type' => 'product'])->with('success', 'product saved.');
         }
         return redirect()->back()->with('error', 'unknown error');
-
     }
 
     /**
@@ -89,7 +95,7 @@ class ProductController extends Controller
     {
         $product = $this->productRepository->getById($id);
 
-//        var_dump($product);
+        //        var_dump($product);
     }
 
     /**
@@ -104,7 +110,7 @@ class ProductController extends Controller
         $categories = Category::active()->onlyParent()->with('children.children')->get();
         $tags = Tag::active()->get();
         $brands = Brand::active()->get();
-        return view('backend.modules.product.edit', compact('element', 'tags', 'categories','brands'));
+        return view('backend.modules.product.edit', compact('element', 'tags', 'categories', 'brands'));
     }
 
     /**
@@ -115,13 +121,13 @@ class ProductController extends Controller
      */
     public function update(ProductUpdate $request, $id)
     {
-        if($request->has('end_sale')) {
-            $date = str_replace('-','',$request->end_sale);
+        if ($request->has('end_sale')) {
+            $date = str_replace('-', '', $request->end_sale);
             $date = Carbon::parse($date)->toDateTimeString();
         }
         $element = Product::whereId($id)->first();
-        $updated = $element->update($request->except(['_token', 'image', 'tags', 'categories','brands','end_sale']));
-        if($date) {
+        $updated = $element->update($request->except(['_token', 'image', 'tags', 'categories', 'brands', 'end_sale']));
+        if ($date) {
             $element->update(['end_sale' => $date]);
         }
         if ($request->hasFile('image')) {
@@ -159,5 +165,4 @@ class ProductController extends Controller
         $element->restore();
         return redirect()->back()->with('success', 'product restored');
     }
-
 }
