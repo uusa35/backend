@@ -24,7 +24,9 @@ $factory->define(Setting::class, function (Faker $faker) use ($fakerAr) {
         'facebook' => $faker->url,
         'logo' => app()->isLocal() ? 'logo-01.jpg' : 'logo-0' . $faker->numberBetween(1, 8) . '.png',
         'size_chart' => $faker->numberBetween(1, 42) . '.jpeg',
-        'main_theme_color' => '#4611a7'
+        'main_theme_color' => '#4611a7',
+        'title_theme_color' => '#4611a7',
+        'text_theme_color' => '#4611a7',
 //        'shipment_service' => $faker->boolean(true),
 //        'delivery_service' => $faker->boolean(false),
 //        'delivery_service_cost' => 5,

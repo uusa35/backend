@@ -43,6 +43,7 @@ class Kernel extends HttpKernel
             'throttle:120,1',
             'bindings',
             \App\Http\Middleware\ApiLocalization::class,
+            \App\Http\Middleware\ApiCurrency::class,
         ],
     ];
 

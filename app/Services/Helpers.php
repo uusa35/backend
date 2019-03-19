@@ -8,6 +8,7 @@
 
 use App\Models\Area;
 use App\Models\Country;
+use App\Models\Currency;
 use App\Models\Setting;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Route;
@@ -82,15 +83,21 @@ function getDeliveryServiceCost()
 }
 
 
+function getCurrentCurrency()
+{
+    return $currentCurrency = session()->has('currency') ? session()->get('currency') : Currency::where('currency_symbol_en', request()->header('currency'))->first();
+}
+
 function getConvertedPrice($price)
 {
-    $currentCurrency = session()->get('currency');
+    $currentCurrency = getCurrentCurrency();
     return $price * $currentCurrency->exchange_rate;
 }
 
 function getCurrencySymbol()
 {
-    return session('currency')->currency_symbol_en;
+    $currentCurrency = getCurrentCurrency();
+    return $currentCurrency->currency_symbol_en;
 }
 
 

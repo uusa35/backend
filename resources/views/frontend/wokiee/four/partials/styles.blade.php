@@ -20,7 +20,7 @@
      .tt-price, .old-price,
     .money,
     header .tt-multi-obj ul li.active a, header .tt-multi-obj ul li.active a [class^=icon-], header .tt-multi-obj ul li a:hover, header .tt-multi-obj ul li a:hover [class^=icon-],
-    footer .tt-color-scheme-01
+    footer .tt-color-scheme-01, .tt-table-shop-01 tbody td a
     {
         color : {{ $settings->title_theme_color }} !important;
     }

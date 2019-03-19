@@ -70,12 +70,12 @@ trait SellingModelHelpers
 
     public function getFinalPriceAttribute()
     {
-        return $this->isOnSale ? $this->sale_price : $this->price;
+        return $this->isOnSale ? (double)$this->sale_price : (double)$this->price;
     }
 
     public function getConvertedFinalPriceAttribute()
     {
-        $currentCurrency = session()->get('currency');
+        $currentCurrency = getCurrentCurrency();
         return $this->finalPrice * $currentCurrency->exchange_rate;
     }
 
