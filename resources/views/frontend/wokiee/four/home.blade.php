@@ -4,7 +4,7 @@
     @if(env('APP_CASE') === 'mallr')
         @include('frontend.wokiee.four.partials.slider')
         @include('frontend.wokiee.four.partials._all_brands')
-        @include('frontend.wokiee.four.partials._products_metro_collection',['element' => $homeCollection, 'title' => trans('general.our_selection')])
+        @include('frontend.wokiee.four.partials._products_metro_collection',['element' => $homeCollection, 'title' => trans('general.our_selection_from_collections')])
         @include('frontend.wokiee.four.partials._products_slider',['title' => trans('general.new_arrivals'), 'elements' => $newProducts])
         @include('frontend.wokiee.four.partials._five_categories',['elements' => $categoriesHome])
         @include('frontend.wokiee.four.partials._horizontal_three_categories',['elements' => $tipleCommercials])

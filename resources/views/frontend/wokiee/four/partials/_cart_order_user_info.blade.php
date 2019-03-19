@@ -63,7 +63,7 @@
                                                 <div class="form-group">
                                                     <label for="address_country">{{ trans('general.area') }}
                                                         <sup>*</sup></label>
-                                                    <select name="country_id" class="form-control" required>
+                                                    <select name="area" class="form-control" required>
                                                         {{-- No Auth required as it's prevesiously done--}}
                                                         <option value="{{ session()->get('area')->slug }}"
                                                                 selected>{{ session()->get('area')->slug }}</option>

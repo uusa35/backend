@@ -20,5 +20,7 @@ return array(
     'cart_btn' => 'إضافة الخدمة إلى قائمة التسوق',
     'cart_notes' => 'في حالة وجود أية ملاحظات اخرى يرجى ارفاقها مع الخدمة ...',
     'cart_item_removed_successfully' => 'تم الحذف من الكارت',
-    'item_required' => 'هذا الحقل مطلوب'
+    'item_required' => 'هذا الحقل مطلوب',
+    'register_account_password_is_your_mobile' => 'تم تسجيل بياناتك .. يمكنك الدخول إلى حسابك بالبريد الإلكتروني ورقم الهاتف',
+    'size_chart' => ' كلمة خاصة بجدول المقاسات'
 );

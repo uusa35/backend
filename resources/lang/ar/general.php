@@ -334,6 +334,16 @@ return array(
     'no_items_in_cart' => 'الكارت فارغ',
     'exclusive' => 'حصري',
     'this_user_does_not_exist' => 'لم يتم العثور على هذا المستخدم.',
-    'our_selection' => 'اختارنا لكم'
+    'our_selection' => 'اختارنا لكم',
+    'payment_confirmation' => 'تأكيد عملية الدفع',
+    'information_confirmation' => 'تأكيد المعلومات المدخلة',
+    'personal_information_confirmation' => 'تأكيد المعلومات الشخصية',
+    'continue_shopping' => 'الاستمرار بالتسوق',
+    'payment_confirm_go_to_payment' => 'تم التأكد من البيانات المدخلة .. الذهاب لصفحة الدفع',
+    'add_collection_item_to_cart' => 'اضف إلى عربة التسوق',
+    'size_guide' => 'جدول المقاسات',
+    'shipping' => 'سياسة الشحن',
+    'size_chart' => 'جدول المقاسات',
+    'our_selection_from_collections' => 'اختيارات مصممينا'
 
 );

@@ -92,6 +92,7 @@ class OrderController extends Controller
             'mobile' => 'required|numeric|min:8',
             'address' => 'required|min:5',
             'country_id' => 'required|exists:countries,id',
+            'collection_id' => 'exists:collections,id',
         ]);
         if ($validate->fails()) {
             return redirect()->route('frontend.cart.index')->withErrors($validate);
@@ -104,7 +105,7 @@ class OrderController extends Controller
                 'net_price' => $this->cart->total(),
                 'mobile' => $request->mobile,
                 'country' => $user->country->slug,
-                'country' => $request->area ? $request->area : null,
+                'area' => $request->area ? $request->area : null,
                 'email' => $request->email,
                 'address' => $request->address,
                 'notes' => $request->notes,
@@ -118,9 +119,10 @@ class OrderController extends Controller
                         'order_id' => $order->id,
                         'product_id' => $element->options->type === 'product' ? $element->options->element_id : null,
                         'service_id' => $element->options->type === 'service' ? $element->options->element_id : null,
+                        'product_attribute_id' => $element->options->product_attribute_id,
+                        'collection_id' => $element->options->collection_id ? $element->options->collection_id : null,
                         'item_name' => $element->options->element->name,
                         'item_type' => $element->options->type,
-                        'product_attribute_id' => $element->options->product_attribute_id,
                         'qty' => $element->qty,
                         'price' => $element->price,
                         'shipment_cost' => $element->options->shipment_cost,

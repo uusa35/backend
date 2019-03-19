@@ -12,16 +12,21 @@
     </h2>
     @include('frontend.wokiee.four.partials._widget_price_and_color')
     <div class="tt-product-inside-hover">
-        {{--@if(isset($collection) && $collection)--}}
-            {{--<div class="tt-row-btn">--}}
-                {{--<a href="{{ route('frontend.cart.add') }}" class="tt-btn-addtocart thumbprod-button-bg">{{ trans('general.add_collection_to_cart') }}</a>--}}
-            {{--</div>--}}
-        {{--@endif--}}
-        <br>
-        <div class="tt-row-btn">
-            <a href="{{ route('frontend.product.show.name', ['id' => $element->id, 'name' => $element->name]) }}"
-               class="btn btn-small">{{ trans('general.view_details') }}</a>
-        </div>
+        @if(isset($collection) && !is_null($collection))
+            <div class="tt-row-btn">
+                <a href="{{ route('frontend.product.show.name',['id' => $element->id,'name'=> $element->name,'collection_id' => $collection]) }}"
+                   class="btn btn-small">
+                    <i class="fa fa-fw fa-lg fa-cart-plus"></i>
+                    {{ trans('general.add_collection_item_to_cart') }}
+                </a>
+            </div>
+        @else
+            <br>
+            <div class="tt-row-btn">
+                <a href="{{ route('frontend.product.show.name', ['id' => $element->id, 'name' => $element->name]) }}"
+                   class="btn btn-small">{{ trans('general.view_details') }}</a>
+            </div>
+        @endif
         <div class="tt-row-btn">
             <a href="#" class="tt-btn-quickview" data-toggle="modal"
                data-tooltip="{{ trans('general.quick_view') }}"

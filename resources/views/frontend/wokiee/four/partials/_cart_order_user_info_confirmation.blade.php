@@ -91,7 +91,7 @@
                                     </tfoot>
                                 </table>
                                 <button type="submit" class="btn btn-lg"><span
-                                            class="icon icon-check_circle"></span>{{ trans('general.confirm') }}
+                                            class="icon icon-check_circle"></span>{{ trans('general.payment_confirm_go_to_payment') }}
                                 </button>
                             </div>
                         </form>

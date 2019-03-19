@@ -1,7 +1,8 @@
 <div class="tt-wrapper">
     <div class="tt-row-custom-01">
         <div class="col-item">
-            <div class="tt-input-counter style-01" data-tooltip="{{ trans('general.choose_color_first') }}" data-tposition="bottom">
+            <div class="tt-input-counter style-01" data-tooltip="{{ trans('general.choose_color_first') }}"
+                 data-tposition="bottom">
                 <span class="minus-btn"></span>
                 @if($element->has_attributes)
                     <input id="max-qty" type="number" value="1" size="1"/>
@@ -14,6 +15,9 @@
         <div class="col-item">
             <form method="post" action="{{ route('frontend.cart.add.product') }}">
                 @csrf
+                @if(request()->has('collection_id'))
+                    <input type="hidden" id="collection_id" name="collection_id" value="{{ request('collection_id') }}">
+                @endif
                 <input type="hidden" id="product_id" name="product_id" value="{{ $element->id }}">
                 <input type="hidden" name="size_id" value="">
                 <input type="hidden" name="color_id" value="">
