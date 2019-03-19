@@ -1,7 +1,7 @@
 <div class="tt-price">
     @if($element->isOnSale)
         <span class="new-price">{{ $element->convertedSalePrice}}<span>{{ $currency->symbol }}</span></span>
-        <span class="old-price">{{ $element->convertedPrice }}<span>{{ $currency->symbol }}</span></span>
+        <span class="old-price hidden-xs">{{ $element->convertedPrice }}<span>{{ $currency->symbol }}</span></span>
     @else
         <span class="sale-price">{{ $element->convertedPrice }}<span>{{ $currency->symbol }}</span></span>
     @endif
