@@ -2,28 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e163867a-e084-464b-b025-90563ffad1db" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/backend-rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/backend-rtl.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/backend.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/backend.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/frontend-custom-ar.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/frontend-custom-ar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/frontend-custom-en.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/frontend-custom-en.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/plugins.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/plugins.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/wokiee-theme-sass-rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/wokiee-theme-sass-rtl.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/wokiee-theme-sass.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/wokiee-theme-sass.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/backend-custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/backend-custom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/backend.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/backend.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/frontend-ar.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/frontend-ar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/frontend-custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/frontend-custom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/frontend-en.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/frontend-en.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/tinymce.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/tinymce.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/wokiee.demo.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/wokiee.demo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/css/frontend-custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/css/frontend-custom.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_product_widget_metro.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_product_widget_metro.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_search_menu_products.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_search_menu_products.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,29 +32,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_search_form.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="1" column="61" selection-start-line="1" selection-start-column="61" selection-end-line="1" selection-end-column="61" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_search_menu_products.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/assets/css/frontend-custom.css">
+        <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_product_widget_metro.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="841">
-              <caret line="87" column="26" lean-forward="true" selection-start-line="87" selection-start-column="26" selection-end-line="87" selection-end-column="26" />
+            <state>
+              <caret column="91" lean-forward="true" selection-start-column="91" selection-end-column="91" />
             </state>
           </provider>
         </entry>
@@ -208,9 +169,9 @@
         <option value="$PROJECT_DIR$/app/Models/SellingModelHelpers.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/styles.blade.php" />
         <option value="$PROJECT_DIR$/database/factories/SettingFactory.php" />
-        <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_product_widget_metro.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_search_menu_products.blade.php" />
         <option value="$PROJECT_DIR$/resources/assets/css/frontend-custom.css" />
+        <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_product_widget_metro.blade.php" />
       </list>
     </option>
   </component>
@@ -681,12 +642,12 @@
       <workItem from="1552892096876" duration="4756000" />
       <workItem from="1552901034199" duration="1627000" />
       <workItem from="1552913382186" duration="9637000" />
-      <workItem from="1552967904310" duration="12708000" />
+      <workItem from="1552967904310" duration="12838000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="491907000" />
+    <option name="totallyTimeSpent" value="492037000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
@@ -1080,17 +1041,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_product_widget_metro.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/assets/css/frontend-custom.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="90" selection-start-line="10" selection-start-column="90" selection-end-line="10" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_search_form.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="61" selection-start-line="1" selection-start-column="61" selection-end-line="1" selection-end-column="61" />
+        <state relative-caret-position="355">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
         </state>
       </provider>
     </entry>
@@ -1101,10 +1055,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/css/frontend-custom.css">
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_search_form.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="841">
-          <caret line="87" column="26" lean-forward="true" selection-start-line="87" selection-start-column="26" selection-end-line="87" selection-end-column="26" />
+        <state relative-caret-position="18">
+          <caret line="1" column="61" selection-start-line="1" selection-start-column="61" selection-end-line="1" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_product_widget_metro.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="91" lean-forward="true" selection-start-column="91" selection-end-column="91" />
         </state>
       </provider>
     </entry>
