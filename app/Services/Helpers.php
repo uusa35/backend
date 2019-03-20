@@ -171,7 +171,7 @@ function getCurrentCountrySessionId()
     if (!session()->has('country') && !is_null(session()->get('country'))) {
         return 0;
     }
-    return session()->get('country')['id'];
+    return session()->get('country')->id;
 }
 
 function checkShipmentAvailability($destinationCountryId, $destinationRangeIds)
