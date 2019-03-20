@@ -22,7 +22,7 @@ class ComposerServiceProvider extends ServiceProvider
 
         view()->composer([
             'frontend.*.*.home',
-            'frontend.wokie.four.modules.*.*',
+            'frontend.wokiee.four.modules.*.*',
             'backend.modules.currency.create',
             'backend.modules.currency.edit',
             'backend.partials.sidebar',
@@ -62,19 +62,21 @@ class ComposerServiceProvider extends ServiceProvider
         view()->composer([
             'frontend.*.*.home',
             'auth.*',
-            'frontend.wokie.four.modules.*.*',
+            'frontend.wokiee.four.modules.*.*',
+            'frontend.wokiee.four.modules.product.index',
         ], 'App\Services\ViewComposers@getCurrencies');
 
 
         view()->composer([
             'frontend.*.*.home',
-            'frontend.wokie.four.modules.*.*',
+            'frontend.wokiee.four.modules.*.*',
             'frontend.partials.header_four',
         ], 'App\Services\ViewComposers@getCategories');
 
         view()->composer([
             'frontend.*.*.home',
-            'frontend.wokie.four.modules.*.*',
+            'frontend.wokiee.four.modules.*.*',
+            'frontend.wokiee.four.modules.product.index',
 //            'frontend.*.*.*.head',
 //            'frontend.*.*.*._top_bar',
 //            'frontend.*.*.*._main_menu',
@@ -91,12 +93,13 @@ class ComposerServiceProvider extends ServiceProvider
 
         view()->composer([
             'frontend.*.*.home',
-            'frontend.wokie.four.modules.*.*',
+            'frontend.wokiee.four.modules.*.*',
+            'frontend.wokiee.four.modules.product.index',
         ], 'App\Services\ViewComposers@getPages');
 
         view()->composer([
             'frontend.*.*.home',
-            'frontend.wokie.four.modules.*.*',
+            'frontend.wokiee.four.modules.*.*',
             'frontend.modules.product.show'
         ], 'App\Services\ViewComposers@getBrands');
 
