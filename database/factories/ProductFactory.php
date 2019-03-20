@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Brand;
 use App\Models\Color;
 use App\Models\Product;
 use App\Models\ShipmentPackage;
@@ -45,6 +46,7 @@ $factory->define(Product::class, function (Faker $faker) use ($fakerAr) {
         'has_attributes' => $faker->boolean(true),
         'video_url_one' => 'http://www.youtube.com/embed/GhyKqj_P2E4',
         'video_url_two' => 'http://www.youtube.com/embed/GhyKqj_P2E4',
-        'qty' => $faker->numberBetween(1, 99)
+        'qty' => $faker->numberBetween(1, 99),
+        'brand_id' => Brand::all()->random()->id
     ];
 });

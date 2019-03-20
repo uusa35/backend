@@ -8,7 +8,8 @@ class Brand extends PrimaryModel
     protected $localeStrings = ['slug'];
     protected $guarded = [''];
 
-    public function products() {
-        return $this->belongsToMany(Product::class,'brand_product');
+    public function products()
+    {
+        return $this->hasMany(Product::class);
     }
 }

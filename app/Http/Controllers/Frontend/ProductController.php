@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\User;
 use App\Services\Search\Filters;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -33,11 +34,11 @@ class ProductController extends Controller
             return redirect()->route('frontend.home')->withErrors($validator->messages());
         }
         $elements = $this->product->active()->hasImage()->hasStock()->filters($filters)->with(
-            'brands', 'product_attributes.color', 'product_attributes.size', 'tags', 'user.country', 'images',
+            'brand', 'product_attributes.color', 'product_attributes.size', 'tags', 'user.country', 'images',
             'colors', 'sizes', 'favorites'
         )->with(['categories' => function ($q) {
             return $q->has('products', '>', 0);
-        }])->orderBy('id', 'desc')->paginate(20);
+        }])->orderBy('id', 'desc')->paginate(Self::TAKE_MIN);
         $tags = $elements->pluck('tags')->flatten()->unique('id')->sortKeysDesc();
         $sizes = $elements->pluck('product_attributes')->flatten()->pluck('size')->flatten()->unique('id')->sortKeysDesc();
         $colors = $elements->pluck('product_attributes')->flatten()->pluck('color')->flatten()->unique('id')->sortKeysDesc();

@@ -59,6 +59,7 @@ class CreateUsersTable extends Migration
             $table->string('latitude')->nullable();
             $table->integer('balance')->default(0)->nullable();
 
+            $table->boolean('on_home')->default(0);
             $table->boolean('active')->default(1);
 
             $table->integer('country_id')->unsigned()->nullable();

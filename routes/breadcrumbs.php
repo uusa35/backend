@@ -61,7 +61,7 @@ Breadcrumbs::for('frontend.user.index', function ($trail) {
 });
 
 Breadcrumbs::for('frontend.user.show', function ($trail, $element) {
-    $trail->parent('frontend.user.index');
+    $trail->parent('frontend.home');
     $trail->push($element->name, route('frontend.user.show', $element->id));
 });
 

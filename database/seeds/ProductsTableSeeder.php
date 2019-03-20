@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Collection;
 use App\Models\Favorite;
