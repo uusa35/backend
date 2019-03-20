@@ -49,7 +49,7 @@ class HomeController extends Controller
         $bestSalesProducts = $this->product->whereIn('id', $this->product->active()->available()->hasImage()->serveCountries()->hasStock()->bestSalesProducts())->with('brand', 'product_attributes', 'colors', 'sizes', 'color', 'size', 'images', 'user.country', 'favorites')->take(self::TAKE_MIN)->get();;
         $productHotDeals = $this->product->active()->available()->onSale()->hotDeals()->hasImage()->serveCountries()->with('brand', 'product_attributes', 'colors', 'sizes', 'color', 'size', 'images', 'user.country', 'favorites')->orderby('end_sale', 'desc')->take(self::TAKE_MIN)->get();
         $homeCollection = Collection::active()->onHome()
-            ->has('products', '>', 4)
+            ->has('products', '>=', 5)
             ->with('products.brand', 'products.images', 'products.colors', 'products.sizes', 'products.color', 'products.size', 'products.user.country', 'products.favorites', 'products.product_attributes')
             ->first();
 
