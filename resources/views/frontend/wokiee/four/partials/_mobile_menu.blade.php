@@ -4,31 +4,59 @@
         <li>
             @if(isset($categories) && $categories->isNotEmpty())
                 @if($categories->isNotEmpty())
-                    @foreach($categories->where('is_parent', true) as $cat)
-                        <a href="{{ route('frontend.service.search',['service_category_id' => $cat->id]) }}">{{ $cat->name }}</a>
-                        @if($cat->children->isNotEmpty())
-                            <ul>
-                                @foreach($cat->children as $sub)
-                                    <li>
-                                        <a href="{{ route('frontend.service.search',['service_category_id' => $sub->id]) }}">{{ $sub->name }}</a>
-                                        @if($sub->children->isNotEmpty())
-                                            <ul>
-                                                @foreach($cat->children as $sub)
-                                                    <li>
-                                                        <a href="{{ route('frontend.service.search',['service_category_id' => $sub->id]) }}">{{ $sub->name }}
-                                                            @if($sub->on_new)
-                                                                <span class="tt-badge tt-fatured">{{ trans('genera.new') }}</span>
-                                                            @endif
-                                                        </a>
-                                                    </li>
-                                                @endforeach
-                                            </ul>
-                                        @endif
-                                    </li>
-                                @endforeach
-                            </ul>
-                        @endif
-                    @endforeach
+                    @if(env('APP_CASE') === 'evento')
+                        @foreach($categories->where('is_parent', true) as $cat)
+                            <a href="{{ route('frontend.service.search',['service_category_id' => $cat->id]) }}">{{ $cat->name }}</a>
+                            @if($cat->children->isNotEmpty())
+                                <ul>
+                                    @foreach($cat->children as $sub)
+                                        <li>
+                                            <a href="{{ route('frontend.service.search',['service_category_id' => $sub->id]) }}">{{ $sub->name }}</a>
+                                            @if($sub->children->isNotEmpty())
+                                                <ul>
+                                                    @foreach($cat->children as $sub)
+                                                        <li>
+                                                            <a href="{{ route('frontend.service.search',['service_category_id' => $sub->id]) }}">{{ $sub->name }}
+                                                                @if($sub->on_new)
+                                                                    <span class="tt-badge tt-fatured">{{ trans('genera.new') }}</span>
+                                                                @endif
+                                                            </a>
+                                                        </li>
+                                                    @endforeach
+                                                </ul>
+                                            @endif
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            @endif
+                        @endforeach
+                    @else
+                        @foreach($categories->where('is_parent', true) as $cat)
+                            <a href="{{ route('frontend.service.search',['product_category_id' => $cat->id]) }}">{{ $cat->name }}</a>
+                            @if($cat->children->isNotEmpty())
+                                <ul>
+                                    @foreach($cat->children as $sub)
+                                        <li>
+                                            <a href="{{ route('frontend.product.search',['product_category_id' => $sub->id]) }}">{{ $sub->name }}</a>
+                                            @if($sub->children->isNotEmpty())
+                                                <ul>
+                                                    @foreach($cat->children as $sub)
+                                                        <li>
+                                                            <a href="{{ route('frontend.product.search',['product_category_id' => $sub->id]) }}">{{ $sub->name }}
+                                                                @if($sub->on_new)
+                                                                    <span class="tt-badge tt-fatured">{{ trans('genera.new') }}</span>
+                                                                @endif
+                                                            </a>
+                                                        </li>
+                                                    @endforeach
+                                                </ul>
+                                            @endif
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            @endif
+                        @endforeach
+                    @endif
                 @endif
             @endif
         </li>
