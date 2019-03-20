@@ -15,8 +15,10 @@
    data-colors="@foreach($element->colors as $col) {!! $col->name !!}, @endforeach"
    data-sizes="@foreach($element->sizes as $size) {!! $size->name !!}, @endforeach"
    @else
+   @if($element->color)
    data-colors="{!! $element->color->name !!}"
    data-sizes="{!! $element->size->name !!}"
+   @endif
    @endif
    data-url="{{ route('frontend.product.show.name', ['id' => $element->id, 'name' => $element->name]) }}"
 ></a>
