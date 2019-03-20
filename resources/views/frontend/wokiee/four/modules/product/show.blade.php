@@ -22,11 +22,21 @@
 
                         @if($element->canOrder)
                             <div class="tt-swatches-container">
-                                <div class="tt-wrapper product-information-buttons">
-                                    <a data-toggle="modal" data-target="#modalProductInfo"
-                                       href="#">{{ trans('general.size_guide') }}</a>
-                                    <a data-toggle="modal" data-target="#modalProductInfo-02"
-                                       href="#">{{ trans('general.shipping') }}</a>
+                                <div class="tt-wrapper product-information-buttons text-center">
+                                    <a data-toggle="modal" data-target="#modalProductInfo" href="#">
+                                        <span class="align-content-center">
+                                            <i class="fa fa-fw fa-lg icon-e-75"></i>
+                                            <span>
+                                        {{ trans('general.size_guide') }}
+                                            </span>
+                                        </span>
+                                    </a>
+                                    <a data-toggle="modal" data-target="#modalProductInfo-02" href="#">
+                                        <span>
+                                            <i class="fa fa-fw fa-lg icon-f-48"></i>
+                                        {{ trans('general.shipping') }}
+                                        </span>
+                                    </a>
                                 </div>
                                 @if($element->has_attributes && $element->sizes->isNotEmpty())
                                     @include('frontend.wokiee.four.partials._page_show_sizes',['sizes' => $element->sizes])

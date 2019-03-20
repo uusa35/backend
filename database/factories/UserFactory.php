@@ -63,5 +63,6 @@ $factory->define(App\Models\User::class, function (Faker $faker) use ($fakerAr) 
         'cancellation_ar' => $faker->name,
         'cancellation_en' => $faker->name,
         'keywords' => $faker->sentence,
+        'balance' => $faker->numberBetween(5, 99),
     ];
 });

@@ -9,8 +9,7 @@
                 @foreach($brands as $b)
                     <div class="col-6 col-sm-4 col-md-3">
                         <a href="{{ route('frontend.product.search',['brand_id' => $b->id]) }}" class="tt-img-box">
-                            <img src="{{ asset(env('IMG_LOADER')) }}" class="img-sm"
-                                 data-src="{{ $b->imageThumbLink }}" alt="{{ $b->slug  }}">
+                            <img src="{{ env('IMG_LOADER') }}" data-src="{{ $b->imageThumbLink }}" class="img-sm" alt="{{ $b->slug  }}">
                         </a>
                     </div>
                 @endforeach

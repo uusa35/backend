@@ -57,6 +57,7 @@ class CreateUsersTable extends Migration
             $table->string('android')->nullable();
             $table->string('longitude')->nullable();
             $table->string('latitude')->nullable();
+            $table->integer('balance')->default(0)->nullable();
 
             $table->boolean('active')->default(1);
 

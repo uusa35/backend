@@ -16,8 +16,8 @@
                                                     @if($sub->imageLargeLink)
                                                         {{ $sub->name }}
                                                         <img class="img-menu-category img-responsive"
-                                                             src="{{ $sub->imageLargeLink }}"
-                                                             data-src="{{ $sub->imageLargeLink }}"
+                                                             src="{{ env('IMG_LOADER') }}"
+                                                             data-src="{{ $sub->imageThumbLink }}"
                                                              alt="{{ $sub->name }}">
                                                     @endif
                                                 </a>
@@ -44,8 +44,8 @@
                                             <a href="{{ route('frontend.service.search',['service_category_id' => $cat->id]) }}"
                                                class="tt-promo-02">
                                                 <img class="img-category img-responsive"
-                                                     src="{{ $cat->imageLargeLink }}"
-                                                     data-src="{{ $cat->imageLargeLink }}"
+                                                     src="{{ env('IMG_LOADER') }}"
+                                                     data-src="{{ $cat->imageThumbLink }}"
                                                      alt="{{ $cat->name }}">
                                                 <div class="tt-description tt-point-h-l tt-point-v-t">
                                                     <div class="tt-description-wrapper">
@@ -84,8 +84,8 @@
                                                     @if($sub->imageLargeLink)
                                                         {{ $sub->name }}
                                                         <img class="img-menu-category img-responsive"
-                                                             src="{{ $sub->imageLargeLink }}"
-                                                             data-src="{{ $sub->imageLargeLink }}"
+                                                             src="{{ env('IMG_LOADER') }}"
+                                                             data-src="{{ $sub->imageThumbLink }}"
                                                              alt="{{ $sub->name }}">
                                                     @endif
                                                 </a>
@@ -112,8 +112,8 @@
                                             <a href="{{ route('frontend.product.search',['product_category_id' => $cat->id]) }}"
                                                class="tt-promo-02">
                                                 <img class="img-category img-responsive"
-                                                     src="{{ $cat->imageLargeLink }}"
-                                                     data-src="{{ $cat->imageLargeLink }}"
+                                                     src="{{ env('IMG_LOADER') }}"
+                                                     data-src="{{ $cat->imageThumbLink }}"
                                                      alt="{{ $cat->name }}">
                                                 <div class="tt-description tt-point-h-l tt-point-v-t">
                                                     <div class="tt-description-wrapper">

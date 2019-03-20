@@ -1,4 +1,5 @@
-<h1 class="tt-title tt-title-border">{{ $element->name }}
+<h1 class="tt-title tt-title-border">
+        {{ $element->name }}
 </h1>
 <div class="tt-price tt-title-border">
     @if($element->isOnSale)
