@@ -1,4 +1,4 @@
-<div class="tt-description">
+<div class="tt-description text-center">
     <div class="tt-row">
         <ul class="tt-add-info">
             <li>
@@ -16,7 +16,7 @@
         <a href="{{ route('frontend.product.show.name',['id' => $element->id , 'name' => $element->name]) }}">{{ str_limit($element->name,35,'..') }}</a>
     </h2>
     @include('frontend.wokiee.four.partials._widget_price_and_color')
-    <div class="tt-product-inside-hover">
+    <div class="tt-product-inside-hover text-center">
         @if(isset($collection) && !is_null($collection))
             <div class="tt-row-btn">
                 <a href="{{ route('frontend.product.show.name',['id' => $element->id,'name'=> $element->name,'collection_id' => $collection]) }}"

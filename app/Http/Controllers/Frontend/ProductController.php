@@ -42,7 +42,7 @@ class ProductController extends Controller
         $tags = $elements->pluck('tags')->flatten()->unique('id')->sortKeysDesc();
         $sizes = $elements->pluck('product_attributes')->flatten()->pluck('size')->flatten()->unique('id')->sortKeysDesc();
         $colors = $elements->pluck('product_attributes')->flatten()->pluck('color')->flatten()->unique('id')->sortKeysDesc();
-        $brands = $elements->pluck('brands')->flatten()->unique('id')->sortKeysDesc();
+        $brands = $elements->pluck('brand')->flatten()->unique('id')->sortKeysDesc();
         $categoriesList = $elements->pluck('categories')->flatten()->unique('id');
         $vendors = $elements->pluck('user')->unique('id')->flatten();
         if (!$elements->isEmpty()) {
@@ -56,7 +56,7 @@ class ProductController extends Controller
 
     public function show($productId)
     {
-        $element = $this->product->whereId($productId)->with('product_attributes.color', 'product_attributes.size', 'images', 'tags', 'categories', 'favorites', 'brands')->first();
+        $element = $this->product->whereId($productId)->with('product_attributes.color', 'product_attributes.size', 'images', 'tags', 'categories', 'favorites', 'brand')->first();
         // return array of ['size_id', 'color', 'att_id','qty' ] for one product
         $data = $element->product_attributes->toArray();
         $relatedItems = $element->getRelatedItems($element);
