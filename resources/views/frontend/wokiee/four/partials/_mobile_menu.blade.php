@@ -32,7 +32,7 @@
                         @endforeach
                     @else
                         @foreach($categories->where('is_parent', true) as $cat)
-                            <a href="{{ route('frontend.service.search',['product_category_id' => $cat->id]) }}">{{ $cat->name }}</a>
+                            <a href="{{ route('frontend.product.search',['product_category_id' => $cat->id]) }}">{{ $cat->name }}</a>
                             @if($cat->children->isNotEmpty())
                                 <ul>
                                     @foreach($cat->children as $sub)
