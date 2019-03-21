@@ -93,7 +93,6 @@ Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => ['
     Route::get('product/{id}/{name}', 'ProductController@show')->name('product.show.name');
     Route::resource('service', 'ServiceController');
     Route::get('service/{id}/{name}', 'ServiceController@show')->name('service.show.name');
-    Route::resource('cart', 'CartController')->only(['index', 'show']);
     Route::post('cart/add/service', 'CartController@addService')->name('cart.add.service');
     Route::post('cart/add/product', 'CartController@addProduct')->name('cart.add.product');
     Route::get('cart/remove/{id}', 'CartController@removeItem')->name('cart.remove');
@@ -102,6 +101,7 @@ Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => ['
     Route::get('cart/checkout', 'CartController@getCheckout')->name('cart.checkout');
     Route::post('cart/checkout', 'CartController@postCheckout')->name('cart.checkout');
     Route::post('cart/store', 'CartController@checkout')->name('cart.store');
+    Route::resource('cart', 'CartController')->only(['index', 'show']);
     // checkout.review is order.show
     Route::resource('order', 'OrderController');
     Route::resource('category', 'CategoryController');

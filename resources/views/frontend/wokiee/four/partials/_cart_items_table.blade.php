@@ -111,8 +111,10 @@
         </div>
         <div class="col-right">
             @if($elements->isNotEmpty())
-                <a class="btn-link" href="{{ route('frontend.cart.clear') }}"><i
-                            class="icon-h-02"></i>{{ trans('general.clear_cart') }}</a>
+                <a class="btn-link" href="{{ route('frontend.cart.clear') }}">
+                    <i class="icon-h-02"></i>
+                    {{ trans('general.clear_cart') }}
+                </a>
                 {{--<a class="btn-link" href="#"><i class="icon-h-48"></i>UPDATE CART</a>--}}
             @endif
         </div>

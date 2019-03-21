@@ -99,7 +99,7 @@ class CartController extends Controller
     public function clearCart()
     {
         $this->cart->destroy();
-        return redirect()->home()->with('success', trans('message.cart_destroyed'));
+        return redirect()->route('frontend.home')->with('success', trans('message.cart_destroyed'));
     }
 
     public function getCheckout()

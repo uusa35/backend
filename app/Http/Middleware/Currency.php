@@ -16,7 +16,7 @@ class Currency
     public function handle($request, Closure $next)
     {
         if (!session()->has('currency')) {
-            $currency = \App\Models\Currency::where('currency_symbol_en', 'KWD')->first();
+            $currency = \App\Models\Currency::where('currency_symbol_en', 'KWD')->with('country')->first();
             session()->put('currency', $currency);
         }
         return $next($request);

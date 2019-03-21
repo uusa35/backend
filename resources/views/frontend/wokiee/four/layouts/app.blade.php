@@ -22,11 +22,7 @@
 @show
 @section('content')
     <div id="tt-pageContent">
-        <div class="container-indent">
-            <div class="container container-fluid-custom-mobile-padding">
-                @include('frontend.wokiee.four.partials.notifications')
-            </div>
-        </div>
+        @include('frontend.wokiee.four.partials.notifications')
         @yield('body')
     </div>
 @show

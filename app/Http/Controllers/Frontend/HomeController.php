@@ -114,7 +114,7 @@ class HomeController extends Controller
 
     public function changeCurrency()
     {
-        $currency = Currency::where('currency_symbol_en', strtoupper(request('currency')))->first();
+        $currency = Currency::where('currency_symbol_en', strtoupper(request('currency')))->with('country')->first();
         session()->put('currency', $currency);
         return redirect()->back();
     }
