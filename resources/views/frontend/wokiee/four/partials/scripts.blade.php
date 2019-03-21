@@ -8,14 +8,15 @@
         transmissionFormat: 'mm/dd/yyyy',
         weekStart: 1,
         disabledClass: 'dayOff',
-        date: '{{ \Carbon\Carbon::today()->format('d/m/Y') }}',
-        startDate: '{{  \Carbon\Carbon::today()->format('d/m/Y') }}',
-        endDate: '{{  \Carbon\Carbon::today()->addMonth(1)->format('d/m/Y') }}',
+        date: '{{ \Carbon\Carbon::today()->format('d/m/y') }}',
+        startDate: '{{  \Carbon\Carbon::today()->format('d/m/y') }}',
+        endDate: '{{  \Carbon\Carbon::today()->addMonth(1)->format('d/m/y') }}',
         show: function(e) {
         },
         hide: function(e) {
         },
         pick: function(e) {
+            console.log('from the search form');
             dayNo = e.date.getDay();
             day_selected_format = moment(e.date).format('MM/DD/YYYY');
             dayName = moment(e.date).format('dddd');
@@ -49,9 +50,10 @@
             }
             @endif
         },
-        date: '{{ \Carbon\Carbon::today()->format('d/m/Y') }}',
-        startDate: '{{  \Carbon\Carbon::today()->format('d/m/Y') }}',
-        endDate: '{{  \Carbon\Carbon::today()->addMonth(1)->format('d/m/Y') }}',
+        date: '{{ \Carbon\Carbon::today()->format('d/m/y') }}',
+        startDate: '{{  \Carbon\Carbon::today()->format('d/m/y') }}',
+        endDate: '{{  \Carbon\Carbon::today()->addMonth(1)->format('d/m/y') }}',
+        // endDate: 'one month',
         trigger: '.docs-datepicker-trigger',
         show: function(e) {
             $('*[class^="timing-element-"]').addClass('d-none');
@@ -59,14 +61,16 @@
         hide: function(e) {
         },
         pick: function(e) {
+            console.log('from the service Element Picker');
             dayNo = e.date.getDay();
             day_selected_format = moment(e.date).format('MM/DD/YYYY');
             dayName = moment(e.date).format('dddd');
-            console.log('date_selected', day_selected_format);
+            console.log('console.log the service Element :: date_selected', day_selected_format);
             // set Day No + Day Format Value
             $('input[id^="day_selected"]').attr('value', dayNo);
             $('input[id^="day_selected_format"]').attr('value', day_selected_format);
-            $(`*[class^="timing-element-${dayNo}"]`).toggleClass('d-none');
+            $(`*[class^="timing-element-"]`).addClass('d-none');
+            $(`*[class^="timing-element-${dayNo}"]`).removeClass('d-none');
             $('#chooseTimeModal').modal('show');
         },
         update: function(e) {

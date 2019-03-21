@@ -4,11 +4,13 @@
         $(document).ready(function () {
             var lang = $('#lang').text();
             console.log('the lang', lang);
-            $('.timing-start-end').on('click', function(e) {
+            $('[class*="timing-start-end-"]').on('click', function(e) {
                 console.log('timing choosen');
+                console.log('the e', e.target);
                 timing_id = $(e.target).data('id');
                 $('#timing_id').attr('value', timing_id);
                 day_selected_format = $('#day_selected_format').attr('value');
+                console.log('the day_selected format', day_selected_format);
                 service_id = $(e.target).data('service-id');
                 service_name = $(e.target).data('service-name');
                 day_name = $(e.target).data('day-name');
@@ -17,7 +19,6 @@
                 console.log('the timing id', timing_id);
                 console.log('the day_name', day_name);
                 console.log('the service_name', service_name);
-                console.log('the day_selected', day_selected_format);
                 $('.service_alert').removeClass('d-none');
                 $('.cart-btn').removeClass('disabled');
                 if (lang === 'ar') {

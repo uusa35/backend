@@ -50,7 +50,7 @@
                                 {{--<td>{{ $timing->notes }}</td>--}}
                                 <td
                                         data-tooltip="{{ trans('general.notes') }} : {{ $timing->notes }}"
-                                ><a href="#" class="btn timing-start-end btn-small" data-dismiss="modal"
+                                ><a href="#" class="btn timing-start-end-{{ $element->id }} btn-small" data-dismiss="modal"
                                     style="color : white!important;"
                                     data-id="{{ $timing->id }}"
                                     data-service-id="{{ $element->id }}"
@@ -60,8 +60,8 @@
                                     data-timing-end="{{ $timing->end }}"
                                     data-date=""
                                     >
-                                        <i class="fa fa-fw icon-f-55 fa-lg"></i>
-                                        &nbsp;
+                                        {{--<i class="fa fa-fw icon-f-55 fa-lg"></i>--}}
+                                        &nbsp;{{ trans('general.service_start_time') }} :
                                         {{ \Carbon\Carbon::parse($timing->start)->format('h:m A') }}
                                     </a></td>
                             </tr>
