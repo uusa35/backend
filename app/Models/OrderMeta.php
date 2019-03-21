@@ -32,11 +32,18 @@ class OrderMeta extends PrimaryModel
         return $this->belongsTo(ProductAttribute::class);
     }
 
-    public function country() {
+    public function country()
+    {
         return $this->belongsTo(Country::class);
     }
 
-    public function collection() {
+    public function collection()
+    {
         return $this->belongsTo(Collection::class);
+    }
+
+    public function getIsProductTypeAttribute()
+    {
+        return $this->item_type === 'product';
     }
 }

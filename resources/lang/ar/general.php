@@ -353,6 +353,7 @@ return array(
     'company_country' => 'دولة الشركة',
     'our_designers' => 'مصممينا المشاركين في اختيارات افضل المنتجات والعروض',
     'find_us_on_stores' => 'حمل تطبيقنا على الاستور',
-    'service_start_time' => 'وقت بداية الخدمة'
+    'service_start_time' => 'وقت بداية الخدمة',
+
 
 );

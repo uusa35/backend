@@ -16,6 +16,7 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
             $table->string('status')->nullable()->default('pending');
+            $table->boolean('paid')->default(0);
             $table->decimal('price',6,2)->unsigned();
             $table->decimal('discount',6,2)->unsigned()->nullable(); //
             $table->decimal('net_price',6,2)->unsigned(); // used if coupon code exists

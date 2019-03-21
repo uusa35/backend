@@ -152,7 +152,7 @@ class TapPaymentController extends Controller
             'order_metas.service'
         ])->first();
         $order->order_metas->each(function ($orderMeta) use ($order) {
-            if ($orderMeta->item_type === 'product') {
+            if ($orderMeta->isProduct) {
                 if ($orderMeta->product->check_stock && $orderMeta->product_attribute->qty > 0) {
                     if ($orderMeta->product->has_attributes) {
                         $decrement = (int)$orderMeta->product_attribute->qty - (int)$orderMeta->qty > 0 ? (int)$orderMeta->product_attribute->qty - (int)$orderMeta->qty : 0;
@@ -191,14 +191,14 @@ class TapPaymentController extends Controller
         foreach ($order->order_metas as $orderMeta) {
             array_push($productsList, [
                 'CurrencyCode' => env('TAP_CURRENCY_CODE'),
-                'ImgUrl' => $orderMeta->item_type === 'product' ? $orderMeta->product->imageLargeLink : $orderMeta->service->imageLargeLink,
+                'ImgUrl' => $orderMeta->isProduct ? $orderMeta->product->imageLargeLink : $orderMeta->service->imageLargeLink,
                 'Quantity' => $orderMeta->qty,
                 'TotalPrice' => $orderMeta->price * $orderMeta->qty,
-                'UnitID' => $orderMeta->item_type === 'product' ? $orderMeta->product->id : $orderMeta->service->id,
-                'UnitName' => $orderMeta->item_type === 'product' ? $orderMeta->product->name : $orderMeta->service->name,
+                'UnitID' => $orderMeta->isProduct ? $orderMeta->product->id : $orderMeta->service->id,
+                'UnitName' => $orderMeta->isProduct ? $orderMeta->product->name : $orderMeta->service->name,
                 'UnitPrice' => $orderMeta->price,
-                'UnitDesc' => $orderMeta->item_type === 'product' ? $orderMeta->product->description : $orderMeta->service->description,
-                'VndID' => $orderMeta->item_type === 'product' ? $orderMeta->product->user->merchant_id : $orderMeta->service->user->merchant_id,
+                'UnitDesc' => $orderMeta->isProduct ? $orderMeta->product->description : $orderMeta->service->description,
+                'VndID' => $orderMeta->isProduct ? $orderMeta->product->user->merchant_id : $orderMeta->service->user->merchant_id,
             ]);
         }
         if ($order->shipping_cost > 0) {

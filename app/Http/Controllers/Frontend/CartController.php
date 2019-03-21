@@ -53,7 +53,7 @@ class CartController extends Controller
         if ($this->addServiceToCart($request, $service, $this->cart)) {
             return redirect()->back()->with('success', trans('message.service_added_to_cart_successfully'));
         }
-        return redirect()->back()->with('error', trans('message.service_is_not_added_to_cart'));
+        return redirect()->back()->with('error', trans('message.service_is_not_added_to_cart_timing_u_selected_may_be_booked_please_try_another_timing'));
     }
 
 

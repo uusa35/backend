@@ -3,6 +3,7 @@
 namespace App\Jobs;
 
 use App\Models\Product;
+use App\Models\Service;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
@@ -41,9 +42,12 @@ class CheckCartItems implements ShouldQueue
                 if (!$product->getCanOrderAttribute($item->qty, $item->options->product_attribute_id)) {
                     Cart::remove($rowId);
                 }
-                return true;
+            } else {
+                $service = Service::whereId($item->options->element_id)->first();
+                if (!$service->getCanBookAttribute($item->options->timing->id, $item->options->day_selected)) {
+                    Cart::remove($rowId);
+                }
             }
-            return true;
         });
     }
 }
