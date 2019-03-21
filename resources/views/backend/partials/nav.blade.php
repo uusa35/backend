@@ -26,6 +26,10 @@
                 <ul class="dropdown-menu" role="menu">
                     @can('isSuper')
                     <li>
+                        <a href="{{ route('backend.admin.product.create') }}">
+                            <i class="icon-plus"></i> {{ trans('general.new_product') }}</a>
+                    </li>
+                    <li>
                         <a href="{{ route('backend.admin.user.create') }}">
                             <i class="icon-plus"></i> {{ trans('general.new_user') }}</a>
                     </li>
