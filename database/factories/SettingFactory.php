@@ -17,6 +17,8 @@ $factory->define(Setting::class, function (Faker $faker) use ($fakerAr) {
         'country_en' => $faker->country,
         'zipcode' => $faker->randomDigit,
         'email' => $faker->email,
+        'android' => $faker->url,
+        'apple' => $faker->url,
         'youtube' => $faker->url,
         'instagram' => $faker->url,
         'twitter' => $faker->url,
