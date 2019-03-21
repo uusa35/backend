@@ -76,9 +76,9 @@ class Product extends PrimaryModel
         return $this->belongsToMany(User::class, 'favorites');
     }
 
-    public function brands()
+    public function brand()
     {
-        return $this->belongsToMany(Brand::class, 'brand_product');
+        return $this->belongsTo(Brand::class);
     }
 
     public function images()

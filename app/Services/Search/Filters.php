@@ -4,6 +4,7 @@ namespace App\Services\Search;
 
 use App\Models\Category;
 use App\Models\Service;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -116,9 +117,7 @@ class Filters extends QueryFilters
 
     public function brand_id()
     {
-        return $this->builder->whereHas('brands', function ($q) {
-            return $q->where('id', request()->brand_id);
-        });
+        return $this->builder->where(['brand_id' => request('brand_id')]);
     }
 
     public function sort()
@@ -182,6 +181,14 @@ class Filters extends QueryFilters
             session()->put('area_id', request()->area_id);
         }
         return $this->builder;
+    }
+
+    public function designer_id()
+    {
+        $productIds = User::whereId(request('designer_id'))->first()->collections()->with(['products' => function ($q) {
+            return $q->active()->hasStock()->hasImage();
+        }])->get()->pluck('products')->flatten()->unique('id')->pluck('id')->toArray();
+        return $this->builder->whereIn('id', $productIds);
     }
 
 

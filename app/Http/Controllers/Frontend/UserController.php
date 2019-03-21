@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Models\Product;
 use App\Models\User;
 use App\Services\Search\Filters;
 use Illuminate\Http\Request;
@@ -49,20 +50,36 @@ class UserController extends Controller
      */
     public function show($id, Filters $filters)
     {
-        $element = User::whereId($id)->with('products','services')->first();
-//        $products = $element->products()->filters($filters)->with([
-//            'product_attributes.color','color',
-//            'product_attributes.size',
-//            'tags','categories.children','brands'
-//        ])->paginate(Self::TAKE);
+        $element = User::whereId($id)->with('products', 'services')->first();
         $services = $element->services()->filters($filters)->paginate(Self::TAKE);
+        if ($element->isDesigner) {
+            $productIds = $element->collections()->with('products')->get()->pluck('products')->flatten()->unique('id')->pluck('id')->toArray();
+            $products = Product::whereIn('id',$productIds)->filters($filters)->with([
+                'product_attributes.color', 'color',
+                'colors', 'sizes', 'size',
+                'product_attributes.size',
+                'tags', 'categories.children', 'brands'
+            ])->paginate(Self::TAKE);
+        } else {
+            $products = $element->products()->filters($filters)->with([
+                'product_attributes.color', 'color',
+                'colors', 'sizes', 'size',
+                'product_attributes.size',
+                'tags', 'categories.children', 'brands'
+            ])->paginate(Self::TAKE);
+        }
         $tags = $services->pluck('tags')->flatten()->unique('id')->sortKeysDesc();
-//        $sizes = $products->pluck('product_attributes')->flatten()->pluck('size')->flatten()->unique('id')->sortKeysDesc();
-//        $colors = $products->pluck('product_attributes')->flatten()->pluck('color')->flatten()->unique('id')->sortKeysDesc();
-//        $brands = $products->pluck('brands')->flatten()->flatten()->unique('id')->sortKeysDesc();
+        $sizes = $products->pluck('product_attributes')->flatten()->pluck('size')->flatten()->unique('id')->sortKeysDesc();
+        $colors = $products->pluck('product_attributes')->flatten()->pluck('color')->flatten()->unique('id')->sortKeysDesc();
+        $brands = $products->pluck('brands')->flatten()->flatten()->unique('id')->sortKeysDesc();
         $categoriesList = $services->pluck('categories')->flatten()->unique('id');
         $vendors = $services->pluck('user')->flatten()->unique('id');
-        return view('frontend.wokiee.four.modules.user.show', compact('element', 'products', 'services','tags','sizes','colors','brands','categoriesList'));
+        $companies = $products->pluck('user')->flatten()->unique('id');
+        return view('frontend.wokiee.four.modules.user.show', compact(
+            'element', 'products',
+            'services', 'tags', 'sizes', 'colors', 'brands', 'categoriesList',
+            'vendors','companies'
+        ));
     }
 
     /**

@@ -15,24 +15,14 @@ class ComposerServiceProvider extends ServiceProvider
     {
         // frontend
         view()->composer([
-            'frontend.partials.header_one',
-            'frontend.partials.header_four',
-            'frontend.partials._pop_up_cart'
+//            'frontend.partials.header_one',
+//            'frontend.partials.header_four',
+//            'frontend.partials._pop_up_cart'
         ], 'App\Services\ViewComposers@getCart');
+
         view()->composer([
-            'frontend.partials.header_one',
-            'frontend.partials.header_four',
-            'frontend.modules.cart.index',
-        ], 'App\Services\ViewComposers@getCartCount');
-        view()->composer([
-            'frontend.*.*.*._country_modal',
-//            'frontend.*.*.*._search_form',
-            'frontend.*.*.*.header',
             'frontend.*.*.home',
-            'frontend.*.*.modules.cart.index',
-//            'frontend.*.*.product.show',
-            'frontend.*.*.user.show',
-            'frontend.*.*.service.show',
+            'frontend.wokiee.four.modules.*.*',
             'backend.modules.currency.create',
             'backend.modules.currency.edit',
             'backend.partials.sidebar',
@@ -70,40 +60,46 @@ class ComposerServiceProvider extends ServiceProvider
 
 
         view()->composer([
-            'frontend.*.*.partials.header',
+            'frontend.*.*.home',
+            'auth.*',
+            'frontend.wokiee.four.modules.*.*',
+            'frontend.wokiee.four.modules.product.index',
         ], 'App\Services\ViewComposers@getCurrencies');
 
 
         view()->composer([
-            'frontend.*.*.*.header',
-            'frontend.*.*.*.footer',
+            'frontend.*.*.home',
+            'frontend.wokiee.four.modules.*.*',
             'frontend.partials.header_four',
         ], 'App\Services\ViewComposers@getCategories');
 
         view()->composer([
             'frontend.*.*.home',
-            'frontend.*.*.*.head',
-            'frontend.*.*.*._top_bar',
-            'frontend.*.*.*._main_menu',
-            'frontend.*.*.*._social_icons_home',
-            'frontend.*.*.*.footer',
-            'frontend.*.*.*.scripts',
-            'frontend.wokie.four.modules.user.login',
-            'frontend.*.*.*.show',
-            'frontend.*.*.*.index',
+            'frontend.wokiee.four.modules.*.*',
+            'frontend.wokiee.four.modules.product.index',
+//            'frontend.*.*.*.head',
+//            'frontend.*.*.*._top_bar',
+//            'frontend.*.*.*._main_menu',
+//            'frontend.*.*.*._social_icons_home',
+//            'frontend.*.*.*.footer',
+//            'frontend.*.*.*.scripts',
+//            'frontend.*.*.*.show',
+//            'frontend.*.*.*.index',
             'auth.*',
-            'backend.*.*.*.scripts',
+//            'backend.*.*.*.scripts',
             'backend.modules.order.show',
             'backend.partials.nav',
         ], 'App\Services\ViewComposers@getSettings');
 
         view()->composer([
-            'frontend.*.*.*.header',
-            'frontend.*.*.*.footer',
+            'frontend.*.*.home',
+            'frontend.wokiee.four.modules.*.*',
+            'frontend.wokiee.four.modules.product.index',
         ], 'App\Services\ViewComposers@getPages');
 
         view()->composer([
             'frontend.*.*.home',
+            'frontend.wokiee.four.modules.*.*',
             'frontend.modules.product.show'
         ], 'App\Services\ViewComposers@getBrands');
 

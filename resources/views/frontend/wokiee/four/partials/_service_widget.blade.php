@@ -42,7 +42,7 @@
         <h2 class="tt-title">
             <a href="{{ route('frontend.service.show.name',['id' => $element->id , 'name' => $element->name ]) }}">{{ $element->name }}</a>
         </h2>
-        @include('frontend.wokiee.four.partials._widget_price_and_color')
+        {{--@include('frontend.wokiee.four.partials._widget_price_and_color')--}}
         <div class="tt-product-inside-hover">
             {{--<div class="tt-row-btn">--}}
             {{--<a href="{{ route('frontend.product.show', $element->id) }}"--}}

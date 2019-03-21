@@ -13,10 +13,6 @@ class BrandsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Brand::class, app()->environment('production') ? 1 : 10)->create()->each(function ($q) {
-            if(app()->environment('local')) {
-                return $q->products()->saveMany(Product::all()->random(2));
-            }
-        });
+        factory(Brand::class, app()->environment('production') ? 1 : 10)->create();
     }
 }

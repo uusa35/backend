@@ -1,9 +1,9 @@
 <span class="tt-img">
-        <img src="{{ $element->imageLargeLink }}" alt="{{ $element->description }}">
+        <img class="img-responsive" src="{{ $element->imageThumbLink }}" alt="{{ $element->description }}">
 </span>
 @if($element->images->isNotEmpty())
     <span class="tt-img-roll-over">
-        <img src="{{ $element->images->first()->imageLargeLink }}" alt="{{ $element->description }}">
+        <img src="{{ $element->images->first()->imageThumbLink }}" alt="{{ $element->description }}">
 </span>
 @endif
 <span class="tt-label-location d-none d-md-block">

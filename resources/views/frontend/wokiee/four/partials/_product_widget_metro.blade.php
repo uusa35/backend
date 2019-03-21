@@ -1,7 +1,7 @@
 <div class="element-item {{ isset($double) && $double ? 'double-size hidden-xs' : null }}">
     <div class="tt-product-design02 thumbprod-center">
         <div class="tt-image-box">
-            <a href="product.html">
+            <a href="{{ route('frontend.product.show',['collection_id' => $collection]) }}">
                 <span class="tt-img"><img src="{{ $element->imageThumbLink }}" alt="{{ $element->name }}"></span>
             </a>
             @if($element->isReallyHot)

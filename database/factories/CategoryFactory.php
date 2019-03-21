@@ -14,7 +14,7 @@ $factory->define(Category::class, function (Faker $faker) use ($fakerAr) {
         'order' => $faker->numberBetween(1, 99),
         'description_en' => $faker->paragraph(1),
         'description_ar' => $faker->paragraph(1),
-        'image' => env('APP_MODE') . '-' . $faker->numberBetween(1, 42) . '.jpeg',
+        'image' => env('APP_MODE') . '-' . $faker->numberBetween(1, 12) . '.jpeg',
         'limited' => $faker->numberBetween(0, 1),
         'parent_id' => Category::where('parent_id', 0)->pluck('id')->shuffle()->first(),
         'on_home' => $faker->boolean,

@@ -24,7 +24,7 @@
                 <tr>
                     <td class="td-fixed-element">
                     <span style="min-width: 130px;"><i class="fa fa-fw icon-f-23 fa-lg"></i> <span
-                                class="ml-2"></span> {{ trans('general.country') }}:</span>
+                                class="ml-2"></span> {{ trans('general.company_country') }}:</span>
                     </td>
                     <td>
                         {{ $element->user->country->slug  }}
@@ -96,16 +96,6 @@
                     </td>
                 </tr>
             @endif
-            @if(!is_null($element->product_attributes))
-                <tr>
-                    <td class="td-fixed-element">
-                        <span><i class="fa fa-fw fa-lg icon-e-74"></i> <span class="ml-2"></span>{{ trans('general.available_items') }}:</span>
-                    </td>
-                    <td>
-                        {{ $element->availableQty }} {{ trans('general.item') }}
-                    </td>
-                </tr>
-            @endif
             @if(!is_null($element->user->phone))
                 <tr>
                     <td class="td-fixed-element">
@@ -116,9 +106,19 @@
                     </td>
                 </tr>
             @endif
+            @if(!is_null($element->product_attributes))
+                <tr>
+                    <td class="td-fixed-element">
+                        <span><i class="fa fa-fw fa-lg icon-e-74"></i> <span class="ml-2"></span>{{ trans('general.available_items') }}:</span>
+                    </td>
+                    <td>
+                        {{ $element->availableQty }} {{ trans('general.item') }}
+                    </td>
+                </tr>
+            @endif
             @if($element->categories->isNotEmpty())
                 <tr>
-                    <td class="td-fixed-element"><span><i class="fa fa-fw fa-filter fa-lg"></i><span
+                    <td class="td-fixed-element"><span><i class="fa fa-fw icon-f-90 fa-lg"></i><span
                                     class="ml-2"></span></span>{{ trans('general.categories') }}:
                     </td>
                     <td>
@@ -163,7 +163,7 @@
             @if($element->has_attributes)
                 @if($element->colors->isNotEmpty())
                     <tr>
-                        <td><i class="icon-e-87 fa fa-fw fa-lg"></i>{{ trans('general.colors') }} :</td>
+                        <td class="td-fixed-element"><i class="icon-e-87 fa fa-fw fa-lg"></i>{{ trans('general.colors') }} :</td>
                         <td>
                             @foreach($element->colors as $col)
                                 <span style="color: {{ $col->code }}">{!! $col->name !!}</span>,
@@ -173,7 +173,7 @@
                 @endif
                 @if($element->sizes->isNotEmpty())
                     <tr>
-                        <td><i class="icon-e-69 fa fa-fw fa-lg"></i>{{ trans('general.sizes') }} :</td>
+                        <td class="td-fixed-element"><i class="icon-e-69 fa fa-fw fa-lg"></i>{{ trans('general.sizes') }} :</td>
                         <td>
                             @foreach($element->sizes as $size)
                                 {!! $size->name !!},
@@ -183,13 +183,13 @@
                 @endif
             @else
                 <tr>
-                    <td><i class="icon-e-69 fa fa-fw fa-lg"></i>{{ trans('general.size') }} :</td>
+                    <td class="td-fixed-element"><i class="icon-e-69 fa fa-fw fa-lg"></i>{{ trans('general.size') }} :</td>
                     <td>
                         {{ $element->size->name }}
                     </td>
                 </tr>
                 <tr>
-                    <td><i class="icon-e-69 fa fa-fw fa-lg"></i>{{ trans('general.color') }} :</td>
+                    <td class="td-fixed-element"><i class="icon-e-69 fa fa-fw fa-lg"></i>{{ trans('general.color') }} :</td>
                     <td>
                         {{ $element->color->name }}
                     </td>

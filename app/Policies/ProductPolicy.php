@@ -19,7 +19,7 @@ class ProductPolicy
      */
     public function view(User $user, Product $product)
     {
-        //
+        $user->isAdminOrAbove ?  $user->role->privileges->where('name','product')->first()->pivot->view : $user->id === $product->user_id;
     }
 
     /**
@@ -42,7 +42,7 @@ class ProductPolicy
      */
     public function update(User $user, Product $product)
     {
-        //
+        $user->isAdminOrAbove ?  $user->role->privileges->where('name','product')->first()->pivot->update : $user->id === $product->user_id;
     }
 
     /**
@@ -54,7 +54,7 @@ class ProductPolicy
      */
     public function delete(User $user, Product $product)
     {
-        //
+        $user->isAdminOrAbove ?  $user->role->privileges->where('name','product')->first()->pivot->delete : $user->id === $product->user_id;
     }
 
     /**

@@ -31,7 +31,7 @@ $factory->define(App\Models\User::class, function (Faker $faker) use ($fakerAr) 
         'mobile' => $faker->bankAccountNumber,
         'phone' => $faker->bankAccountNumber,
         'fax' => $faker->name,
-        'image' => env('APP_MODE') . '-' . $faker->numberBetween(1, 10) . '.jpeg',
+        'image' => 'user-' . $faker->numberBetween(1, 5) . '.jpg',
         'banner' => env('APP_MODE') . '-' . $faker->numberBetween(1, 10) . '.jpeg',
         'bg' => env('APP_MODE') . '-' . $faker->numberBetween(1, 10) . '.jpeg',
         'phone' => $faker->bankAccountNumber,
@@ -63,5 +63,7 @@ $factory->define(App\Models\User::class, function (Faker $faker) use ($fakerAr) 
         'cancellation_ar' => $faker->name,
         'cancellation_en' => $faker->name,
         'keywords' => $faker->sentence,
+        'balance' => $faker->numberBetween(5, 99),
+        'on_home' => $faker->boolean(true)
     ];
 });

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Collection;
 use App\Models\Favorite;
@@ -34,7 +35,7 @@ class ProductsTableSeeder extends Seeder
             $p->notifications()->saveMany(Notification::all()->random(2));
             $p->slides()->saveMany(Slide::all()->random(2));
             $p->images()->saveMany(factory(Image::class, 3)->create());
-            $p->collections()->saveMany(Collection::all()->random(1));
+            $p->collections()->saveMany(Collection::all()->random(5));
         });
     }
 }

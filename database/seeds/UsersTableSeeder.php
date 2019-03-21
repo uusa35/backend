@@ -19,7 +19,7 @@ class UsersTableSeeder extends Seeder
     {
         factory(User::class, app()->environment('production') ? 3 : 50)->create()->each(function ($u) {
             if ($u->isDesigner) {
-                $u->collections()->saveMany(factory(Collection::class, 10));
+                $u->collections()->saveMany(factory(Collection::class, 10)->create());
             }
             if ($u->isCompany) {
                 $u->areas()->saveMany(Area::all()->random(3));
