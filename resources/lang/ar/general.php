@@ -248,7 +248,7 @@ return array(
     'about_us' => 'نبذة عنا',
     'contact_us' => 'إتصل بنا',
     'add_to_wish_list' => 'أضف لقائمة الأمنيات',
-    'available_timings' => 'وقت التنفيذ المتاح',
+    'available_timings' => 'أوقات التنفيذ المتاحة',
     'company_name' => 'اسم الشركة',
     'choosen_service' => 'الخدمة التي تم اختيارها',
     'day_selected' => 'يوم التنفيذ',
