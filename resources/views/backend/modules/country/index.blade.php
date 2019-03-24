@@ -1,7 +1,7 @@
 @extends('backend.layouts.app')
 
 @section('breadcrumbs')
-{{--    {{ Breadcrumbs::render('backend.admin.country.index') }}--}}
+    {{ Breadcrumbs::render('backend.admin.country.index') }}
 @endsection
 @section('content')
     <div class="row">

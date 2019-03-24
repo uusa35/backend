@@ -20,12 +20,13 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
 
     // Backend :: super only
     Route::group(['namespace' => 'Admin', 'as' => 'super.', 'prefix' => 'super', 'middleware' => ['super']], function () {
-        Route::resource('role', 'RoleController');
-        Route::resource('privilege', 'PrivilegeController');
-        Route::resource('setting', 'SettingController');
+
     });
     // Backend :: super + admin
     Route::group(['namespace' => 'Admin', 'as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['admin']], function () {
+        Route::resource('role', 'RoleController');
+        Route::resource('privilege', 'PrivilegeController');
+        Route::resource('setting', 'SettingController');
         Route::get('backup/db', ['as' => 'backup.db', 'uses' => 'HomeController@BackupDB']);
         Route::get('export/translations', ['as' => 'export.translation', 'uses' => 'HomeController@exportTranslations']);
         Route::resource('country', 'CountryController');

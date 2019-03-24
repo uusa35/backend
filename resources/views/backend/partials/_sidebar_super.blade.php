@@ -157,14 +157,14 @@
 </li>
 {{--Settings--}}
 <li class="nav-item {{ activeItem('setting', ['policy','term','faq','page','contactus', 'aboutus','gallery','image']) }}">
-    <a href="{{ route('backend.super.setting.index') }}" class="nav-link nav-toggle">
+    <a href="{{ route('backend.admin.setting.index') }}" class="nav-link nav-toggle">
         <i class="fa fa-fw fa-cogs"></i>
         <span class="title">App Settings</span>
         <span class="arrow"></span>
     </a>
     <ul class="sub-menu">
         <li class="nav-item ">
-            <a href="{{ route('backend.super.setting.index') }}" class="nav-link ">
+            <a href="{{ route('backend.admin.setting.index') }}" class="nav-link ">
                 <i class="fa fa-fw fa-edit"></i>
                 <span class="title">Edit App Settings</span>
                 <span class="arrow"></span>
