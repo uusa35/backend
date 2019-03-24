@@ -22,9 +22,9 @@ class ProductController extends Controller
     public function index()
     {
         if (request()->has('type')) {
-            $elements = Product::where(request('type'), true)->with('gallery', 'product_attributes.size', 'product_attributes.color')->orderBy('id', 'desc')->get();
+            $elements = Product::where(request('type'), true)->with('images', 'product_attributes.size', 'product_attributes.color')->orderBy('id', 'desc')->get();
         } else {
-            $elements = Product::with('gallery', 'product_attributes.size', 'product_attributes.color')->orderBy('id', 'desc')->get();
+            $elements = Product::with('images', 'product_attributes.size', 'product_attributes.color')->orderBy('id', 'desc')->get();
         }
         return view('backend.modules.product.index', compact('elements'));
     }

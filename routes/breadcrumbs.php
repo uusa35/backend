@@ -90,7 +90,7 @@ Breadcrumbs::for('password.email', function ($trail) {
 
 
 Breadcrumbs::for('backend.home', function ($trail) {
-    $trail->push('Home', route('backend.home'));
+    $trail->push(trans('general.home'), route('backend.home'));
 });
 
 Breadcrumbs::for('backend.index', function ($trail) {

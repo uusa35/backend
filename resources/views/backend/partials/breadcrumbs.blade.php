@@ -3,11 +3,11 @@
         @section('breadcrumbs')
             @if(Breadcrumbs::exists(request()->route()->getName()))
                 @if(!isset($element))
-                    {{ Breadcrumbs::render(request()->route()->getName()) }}
-                @elseif(isset($elements))
-                    {{ Breadcrumbs::render(request()->route()->getName()) }}
-                @elseif(isset($element))
-                    {{ Breadcrumbs::render(request()->route()->getName(), $element) }}
+                    {{--{{ Breadcrumbs::render(request()->route()->getName()) }}--}}
+                {{--@elseif(isset($elements))--}}
+                    {{--{{ Breadcrumbs::render(request()->route()->getName()) }}--}}
+                {{--@elseif(isset($element))--}}
+                    {{--{{ Breadcrumbs::render(request()->route()->getName(), $element) }}--}}
                 @endif
             @endif
         @endsection
