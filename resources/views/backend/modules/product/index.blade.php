@@ -2,13 +2,12 @@
 
 
 @section('breadcrumbs')
-    {{ Breadcrumbs::render('backend.home') }}
+    {{ Breadcrumbs::render('backend.product.index') }}
 @endsection
 
 @section('content')
     <div class="row">
         <div class="col-md-12">
-            <!-- BEGIN EXAMPLE TABLE PORTLET-->
             <div class="portlet light ">
                 @include('backend.partials.forms.form_title')
                 <div class="portlet-body">

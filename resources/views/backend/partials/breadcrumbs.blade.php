@@ -2,15 +2,28 @@
     <ul class="page-breadcrumb">
         @section('breadcrumbs')
             @if(Breadcrumbs::exists(request()->route()->getName()))
-                @if(!isset($element))
-                    {{--{{ Breadcrumbs::render(request()->route()->getName()) }}--}}
-                {{--@elseif(isset($elements))--}}
-                    {{--{{ Breadcrumbs::render(request()->route()->getName()) }}--}}
-                {{--@elseif(isset($element))--}}
-                    {{--{{ Breadcrumbs::render(request()->route()->getName(), $element) }}--}}
+                @if(isset($element))
+                    {{ Breadcrumbs::render(request()->route()->getName()) }}
+                @elseif(isset($elements))
+                    {{ Breadcrumbs::render(request()->route()->getName()) }}
+                @else
+                    @if($breadcrumbs->isNotEmpty())
+                        <ol class="breadcrumb">
+                            @foreach ($breadcrumbs as $breadcrumb)
+                                @if ($breadcrumb->url && !$loop->last)
+                                    <li class="breadcrumb-item">
+                                        <a href="{{ $breadcrumb->url }}">{{ $breadcrumb->title }}</a>
+                                    </li>
+                                @else
+                                    <li class="breadcrumb-item active">
+                                        {{ $breadcrumb->title }}</li>
+                                @endif
+                            @endforeach
+                        </ol>
+                    @endif
                 @endif
             @endif
-        @endsection
+        @show
     </ul>
     <div class="page-toolbar">
         <div class="btn-group pull-right">

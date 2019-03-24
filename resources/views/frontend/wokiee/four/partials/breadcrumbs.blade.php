@@ -1,7 +1,7 @@
 @if(str_contains(request()->route()->getPrefix(),'backend'))
     @include('backend.partials.breadcrumbs')
 @else
-    @if (count($breadcrumbs))
+    @if (count($breadcrumbs) > 0)
         <div class="tt-breadcrumb">
             <div class="container">
                 <ul>
