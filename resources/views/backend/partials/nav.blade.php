@@ -26,8 +26,44 @@
                 <ul class="dropdown-menu" role="menu">
                     @can('isSuper')
                     <li>
+                        <a href="{{ route('backend.admin.product.create') }}">
+                            <i class="icon-plus"></i> {{ trans('general.new_product') }}</a>
+                    </li>
+                    <li>
                         <a href="{{ route('backend.admin.user.create') }}">
                             <i class="icon-plus"></i> {{ trans('general.new_user') }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('backend.admin.country.create') }}">
+                            <i class="icon-plus"></i> {{ trans('general.new_country') }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('backend.admin.currency.create') }}">
+                            <i class="icon-plus"></i> {{ trans('general.new_currency') }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('backend.admin.coupon.create') }}">
+                            <i class="icon-plus"></i> {{ trans('general.new_coupon') }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('backend.admin.tag.create') }}">
+                            <i class="icon-plus"></i> {{ trans('general.new_tag') }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('backend.admin.brand.create') }}">
+                            <i class="icon-plus"></i> {{ trans('general.new_brand') }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('backend.admin.color.create') }}">
+                            <i class="icon-plus"></i> {{ trans('general.new_color') }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('backend.admin.size.create') }}">
+                            <i class="icon-plus"></i> {{ trans('general.new_size') }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('backend.admin.survey.create') }}">
+                            <i class="icon-plus"></i> {{ trans('general.new_survey') }}</a>
                     </li>
                     <li class="divider"></li>
                     <li>

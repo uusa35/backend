@@ -4,6 +4,10 @@
 <<<<<<< HEAD
     <list default="true" id="e163867a-e084-464b-b025-90563ffad1db" name="Default Changelist" comment="">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3081f5f745d12a90653184ab4d8a881bd066fb1f
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
 =======
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/Admin/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/Admin/ProductController.php" afterDir="false" />
@@ -13,6 +17,13 @@
       <change beforePath="$PROJECT_DIR$/resources/views/backend/partials/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/partials/nav.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
 >>>>>>> backend
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> 9f6f2743f904f3474fcaf4a2391aa181f14195c0
+=======
+>>>>>>> 3081f5f745d12a90653184ab4d8a881bd066fb1f
     </list>
 =======
     <list default="true" id="e163867a-e084-464b-b025-90563ffad1db" name="Default Changelist" comment="" />
@@ -87,6 +98,10 @@
               <caret line="37" column="46" lean-forward="true" selection-start-line="37" selection-start-column="46" selection-end-line="37" selection-end-column="46" />
 >>>>>>> backend
 =======
+<<<<<<< HEAD
+            <state relative-caret-position="590">
+              <caret line="51" column="34" lean-forward="true" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
+=======
             <state relative-caret-position="698">
               <caret line="57" column="116" selection-start-line="57" selection-start-column="116" selection-end-line="57" selection-end-column="116" />
             </state>
@@ -107,6 +122,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="576">
               <caret line="32" column="54" selection-start-line="32" selection-start-column="54" selection-end-line="32" selection-end-column="54" />
+>>>>>>> 3081f5f745d12a90653184ab4d8a881bd066fb1f
             </state>
           </provider>
         </entry>
@@ -114,9 +130,15 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Resources/ProductResource.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state>
+              <caret column="19" selection-start-column="19" selection-end-column="19" />
+>>>>>>> 9f6f2743f904f3474fcaf4a2391aa181f14195c0
+=======
             <state relative-caret-position="305">
               <caret line="29" column="41" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
 >>>>>>> backend
+>>>>>>> 3081f5f745d12a90653184ab4d8a881bd066fb1f
             </state>
           </provider>
         </entry>
@@ -209,7 +231,11 @@
 >>>>>>> backend
         <option value="$PROJECT_DIR$/app/Services/Search/Filters.php" />
 =======
+<<<<<<< HEAD
+>>>>>>> 9f6f2743f904f3474fcaf4a2391aa181f14195c0
+=======
 >>>>>>> backend
+>>>>>>> 3081f5f745d12a90653184ab4d8a881bd066fb1f
         <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_search_form.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_search_menu_services.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/scripts.blade.php" />
@@ -267,7 +293,11 @@
 >>>>>>> backend
 =======
         <option value="$PROJECT_DIR$/.gitignore" />
+<<<<<<< HEAD
+>>>>>>> 9f6f2743f904f3474fcaf4a2391aa181f14195c0
+=======
 >>>>>>> backend
+>>>>>>> 3081f5f745d12a90653184ab4d8a881bd066fb1f
       </list>
     </option>
   </component>
@@ -744,8 +774,13 @@
       <workItem from="1552999883459" duration="160000" />
 =======
       <workItem from="1552967904310" duration="16227000" />
+<<<<<<< HEAD
+      <workItem from="1553002889080" duration="37000" />
+>>>>>>> 9f6f2743f904f3474fcaf4a2391aa181f14195c0
+=======
       <workItem from="1553002889080" duration="658000" />
 >>>>>>> backend
+>>>>>>> 3081f5f745d12a90653184ab4d8a881bd066fb1f
     </task>
     <servers />
   </component>
@@ -759,8 +794,13 @@
 =======
     <option name="totallyTimeSpent" value="495719000" />
 =======
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="495756000" />
+>>>>>>> 9f6f2743f904f3474fcaf4a2391aa181f14195c0
+=======
     <option name="totallyTimeSpent" value="496377000" />
 >>>>>>> backend
+>>>>>>> 3081f5f745d12a90653184ab4d8a881bd066fb1f
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1177" extended-state="0" />
@@ -852,7 +892,11 @@
       </provider>
     </entry>
 =======
+<<<<<<< HEAD
+>>>>>>> 9f6f2743f904f3474fcaf4a2391aa181f14195c0
+=======
 >>>>>>> backend
+>>>>>>> 3081f5f745d12a90653184ab4d8a881bd066fb1f
     <entry file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_categories_main_menu_element_with_images.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="702">
