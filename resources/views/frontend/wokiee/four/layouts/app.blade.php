@@ -12,18 +12,18 @@
 </head>
 
 <body>
-{{--@if(!app()->isLocal())--}}
+@if(!app()->isLocal())
     @include('frontend.wokiee.four.partials.loader')
-{{--@endif--}}
+@endif
 @section('header')
-    {{--@include('frontend.wokiee.four.partials.header')--}}
+    @include('frontend.wokiee.four.partials.header')
 @show
 @section('breadcrumbs')
 @show
 @section('content')
     <div id="tt-pageContent">
-        {{--@include('frontend.wokiee.four.partials.notifications')--}}
-        {{--@yield('body')--}}
+        @include('frontend.wokiee.four.partials.notifications')
+        @yield('body')
     </div>
 @show
 
@@ -37,7 +37,7 @@
 @show
 
 @section('scripts')
-    {{--@include('frontend.wokiee.four.partials.scripts')--}}
+    @include('frontend.wokiee.four.partials.scripts')
 @show
 </body>
 </html>
