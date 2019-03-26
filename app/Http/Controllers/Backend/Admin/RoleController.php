@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Role;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class RoleController extends Controller
 {
@@ -26,7 +27,9 @@ class RoleController extends Controller
      */
     public function create()
     {
-        return view('backend.modules.role.create');
+        $json = File::get(base_path("icons.json"));
+        $icons = collect(json_decode($json))['icons'];
+        return view('backend.modules.role.create', compact('icons'));
     }
 
     /**
