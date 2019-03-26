@@ -93,7 +93,7 @@
                                         </li> --}}
                                         <li>
                                             <form method="post" action="{{ route('backend.admin.role.destroy',$element->id) }}">
-                                                {{ csrf_field() }}
+                                                @csrf
                                                 <input type="hidden" name="_method" value="delete" />
                                                 <button type="submit" class="btn btn-outline btn-sm red">
                                                     <i class="fa fa-remove"></i>delete

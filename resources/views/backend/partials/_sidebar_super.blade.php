@@ -514,7 +514,16 @@
         <span class="title">FAQ</span>
         <span class="arrow"></span>
     </a>
+    <ul class="sub-menu">
 
+        <li class="nav-item ">
+            <a href="{{ route('backend.admin.faq.create') }}" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-paint-brush"></i>
+                <span class="title">Create New FAQ</span>
+                <span class="arrow"></span>
+            </a>
+        </li>
+    </ul>
 </li>
 
 <li class="nav-item {{ activeItem('commercial') }}">
@@ -532,18 +541,17 @@
         <span class="title">Notifications</span>
         <span class="arrow"></span>
     </a>
+    <ul class="sub-menu">
 
+        <li class="nav-item ">
+            <a href="{{ route('backend.admin.notification.create') }}" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-paint-brush"></i>
+                <span class="title">Create New Notification</span>
+                <span class="arrow"></span>
+            </a>
+        </li>
+    </ul>
 </li>
-
-<li class="nav-item {{ activeItem('coupon') }}">
-    <a href="{{ route('backend.admin.coupon.index') }}" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-question-circle"></i>
-        <span class="title">Coupons</span>
-        <span class="arrow"></span>
-    </a>
-
-</li>
-
 
 <li class="nav-item {{ activeItem('policy') }}">
     <a href="{{ route('backend.admin.policy.index') }}" class="nav-link nav-toggle">
@@ -551,7 +559,16 @@
         <span class="title">Policies</span>
         <span class="arrow"></span>
     </a>
+    <ul class="sub-menu">
 
+        <li class="nav-item ">
+            <a href="{{ route('backend.admin.policy.create') }}" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-paint-brush"></i>
+                <span class="title">Create New Policy</span>
+                <span class="arrow"></span>
+            </a>
+        </li>
+    </ul>
 </li>
 
 
@@ -564,14 +581,6 @@
 
 </li>
 
-<li class="nav-item {{ activeItem('color') }}">
-    <a href="{{ route('backend.admin.color.index') }}" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-question-circle"></i>
-        <span class="title">Colors</span>
-        <span class="arrow"></span>
-    </a>
-
-</li>
 <li class="nav-item {{ activeItem('role') }}">
     <a href="{{ route('backend.admin.role.index') }}" class="nav-link nav-toggle">
         <i class="fa fa-fw fa-question-circle"></i>

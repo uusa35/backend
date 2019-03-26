@@ -19,9 +19,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
     // 2- Action Also is different therefore ModelPolicy applied for each Model Action
 
     // Backend :: super only
-    Route::group(['namespace' => 'Admin', 'as' => 'super.', 'prefix' => 'super', 'middleware' => ['super']], function () {
-
-    });
+    Route::group(['namespace' => 'Admin', 'as' => 'super.', 'prefix' => 'super', 'middleware' => ['super']], function () { });
     // Backend :: super + admin
     Route::group(['namespace' => 'Admin', 'as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['admin']], function () {
         Route::resource('role', 'RoleController');
@@ -61,6 +59,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
         Route::resource('color', 'ColorController');
         Route::resource('term', 'TermController');
         Route::resource('answer', 'AnswerController');
+        Route::resource('branch', 'BranchController');
     });
     // Backend :: companies
     Route::get('/', 'HomeController@index')->name('index');

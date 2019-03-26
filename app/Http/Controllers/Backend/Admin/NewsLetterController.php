@@ -32,6 +32,11 @@ class NewsletterController extends Controller
         return view('backend.modules.newsletter.index', compact('subscribers'));
     }
 
+    public function create()
+    {
+        return view('backend.modules.newsletter.create');
+    }
+
     public function edit($id)
     {
         $subscriber = Newsletter::find($id);
