@@ -11,7 +11,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group {{ $errors->has('title_ar') ? ' has-error' : '' }}">
-                            <label for="title_ar" class="control-label">title Arabic*</label>
+                            <label for="title_ar" class="control-label">{{ trans('general.title_ar') }}*</label>
                             <input id="title_ar" type="text" class="form-control" name="title_ar" value="{{ old('title_ar') }}" placeholder="name in arabic" required autofocus>
                             @if ($errors->has('title_ar'))
                             <span class="help-block">
@@ -24,7 +24,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group{{ $errors->has('title_en') ? ' has-error' : '' }}">
-                            <label for="title_en" class="control-label">title English*</label>
+                            <label for="title_en" class="control-label">{{ trans('general.title_en') }}*</label>
                             <input id="title_en" type="text" class="form-control" name="title_en" value="{{ old('title_en') }}" placeholder="name in english" required autofocus>
                             @if ($errors->has('title_en'))
                             <span class="help-block">
@@ -39,13 +39,13 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="description" class="control-label">content arabic</label>
+                            <label for="description" class="control-label">{{ trans('general.content_ar') }}</label>
                             <textarea type="text" class="form-control tinymce" id="content_ar" name="content_ar" aria-multiline="true" maxlength="500"></textarea>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="description" class="control-label">content english</label>
+                            <label for="description" class="control-label">{{ trans('general.content_en') }}</label>
                             <textarea type="text" class="form-control tinymce" id="content_en" name="content_en" aria-multiline="true" maxlength="500"></textarea>
                         </div>
                     </div>

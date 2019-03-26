@@ -27,7 +27,7 @@ class SlideController extends Controller
      */
     public function create()
     {
-        return view('backend.modules.slider.create');
+        return view('backend.modules.slide.create');
     }
 
     /**
@@ -48,7 +48,7 @@ class SlideController extends Controller
                 $path = str_replace('public/uploads/files/', '', $path);
                 $element->update(['path' => $path]);
             }
-            return redirect()->route('backend.slider.index')->with('success', trans('message.store_success'));
+            return redirect()->route('backend.slide.index')->with('success', trans('message.store_success'));
         }
         return redirect()->back()->with('error', trans('message.store_error'));
     }
@@ -73,7 +73,7 @@ class SlideController extends Controller
     public function edit($id)
     {
         $element = Slide::whereId($id)->first();
-        return view('backend.modules.slider.edit', compact('element'));
+        return view('backend.modules.slide.edit', compact('element'));
     }
 
     /**
@@ -96,7 +96,7 @@ class SlideController extends Controller
                 $path = str_replace('public/uploads/files/', '', $path);
                 $element->update(['path' => $path]);
             }
-            return redirect()->route('backend.slider.index')->with('success', trans('message.update_success'));
+            return redirect()->route('backend.slide.index')->with('success', trans('message.update_success'));
         }
         return redirect()->back()->with('error', trans('message.update_error'));
     }

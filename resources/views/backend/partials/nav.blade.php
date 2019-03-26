@@ -65,6 +65,30 @@
                         <a href="{{ route('backend.admin.survey.create') }}">
                             <i class="icon-plus"></i> {{ trans('general.new_survey') }}</a>
                     </li>
+                    <li>
+                        <a href="{{ route('backend.admin.faq.create') }}">
+                            <i class="icon-plus"></i> {{ trans('general.new_faq') }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('backend.admin.notification.create') }}">
+                            <i class="icon-plus"></i> {{ trans('general.new_notification') }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('backend.admin.policy.create') }}">
+                            <i class="icon-plus"></i> {{ trans('general.new_policy') }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('backend.admin.term.create') }}">
+                            <i class="icon-plus"></i> {{ trans('general.new_term') }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('backend.admin.package.create') }}">
+                            <i class="icon-plus"></i> {{ trans('general.new_package') }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('backend.admin.page.create') }}">
+                            <i class="icon-plus"></i> {{ trans('general.new_page') }}</a>
+                    </li>
                     <li class="divider"></li>
                     <li>
                         <a href="{{ route('backend.admin.slide.create') }}">
