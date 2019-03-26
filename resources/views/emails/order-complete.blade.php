@@ -11,11 +11,11 @@
 
 </br>
 @component('mail::table')
-| {{ trans('general.product_name') }}       | {{ trans('general.price') }}         | {{ trans('general.qty') }}  | {{  trans('general.size_or_date') }}  | {{ trans('general.color_or_time') }}  | {{ trans('general.product_sku') }}  |
+| {{ trans('general.name') }}       | {{ trans('general.price') }}         | {{ trans('general.qty') }}  | {{  trans('general.size_or_date') }}  | {{ trans('general.color_or_time') }}  | {{ trans('general.sku') }}  |
 | ------------- |:-------------:| --------:| --------:|
 @foreach($order->order_metas as $orderMeta)
 @if($orderMeta->item_type === 'product')
-| {{ $orderMeta->product->name }}         | {{ $orderMeta->price }}| {{ $orderMeta->qty }}| {{ $orderMeta->product_attribute->size->name }} | {{ $orderMeta->product_attribute->color->name }} | {{ $orderMeta->product->id }}         |
+| {{ $orderMeta->product->name }}         | {{ $orderMeta->price }}| {{ $orderMeta->qty }}| {{ $orderMeta->product_attribute->size->name }} | {{ $orderMeta->product_attribute->color->name }} | {{ $orderMeta->product->sku }}         |
 @elseif($orderMeta->item_type === 'service')
 | {{ $orderMeta->service->name }}         | {{ $orderMeta->price }}| {{ $orderMeta->qty }}| {{ $orderMeta->service_date }} | {{ $orderMeta->service_time }} | {{ $orderMeta->service->id }}         |
 @endif
