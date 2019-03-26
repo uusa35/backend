@@ -4,14 +4,14 @@
         <div class="col-md-12">
             <!-- BEGIN EXAMPLE TABLE PORTLET-->
             <div class="portlet light ">
-                @include('backend.partials.form_title')
+{{--                @include('backend.partials.form_title')--}}
                 <div class="portlet box blue">
-                    @include('backend.partials.forms.form_title')
+{{--                    @include('backend.partials.forms.form_title')--}}
                     <div class="portlet-body form">
                         <!-- BEGIN FORM-->
-                        <h3 class="form-section">create Role</h3>
-                        <form action="{{ route('backend.role.store') }}" class="horizontal-form">
-                            {{ csrf_field() }}
+                        <h3 class="form-section">{{ trans('general.create_role') }}</h3>
+                        <form action="{{ route('backend.admin.role.store') }}" class="horizontal-form">
+                            @csrf
                             <input type="hidden" name="_method" value="patch">
                             <div class="form-body">
                                 <h3 class="form-section">Create New Role</h3>
