@@ -188,9 +188,9 @@ return [
     [
         'name_ar' => 'السعودية',
         'name_en' => 'Saudi Arabia',
-        "calling_code" => "965",
+        "calling_code" => "966",
         'currency_ar' => "ريال سعودي",
-        'currency_en' => 'Kuwait Dinar',
+        'currency_en' => 'Ryal Saudi',
         "currency_symbol_en" => "SR",
         "currency_symbol_ar" => "ر.س",
         'country_code' => 'SAR',
@@ -200,7 +200,7 @@ return [
     [
         'name_ar' => 'الإمارات',
         'name_en' => 'United Arab Emirates',
-        "calling_code" => "965",
+        "calling_code" => "967",
         'currency_ar' => "درهم إماراتي",
         'currency_en' => 'AED',
         "currency_symbol_en" => "AED",

@@ -24,6 +24,8 @@ class CreateSettingsTable extends Migration
             $table->string('country_en')->nullable();
             $table->integer('zipcode')->nullable();
             $table->string('email')->nullable();
+            $table->string('android')->nullable();
+            $table->string('apple')->nullable();
             $table->string('youtube')->nullable();
             $table->string('instagram')->nullable();
             $table->string('facebook')->nullable();

@@ -6,7 +6,7 @@
 
 @section('body')
     <div class="container">
-        <h1 class="tt-title-subpages noborder">{{ trans('general.payment_confirmation') }}</h1>
+        <h1 class="tt-title-subpages noborder">{{ trans('general.shopping_cart') }}</h1>
         @include('frontend.wokiee.four.partials._cart_items_table')
         @if($elements->isNotEmpty())
             <div class="tt-shopcart-col">

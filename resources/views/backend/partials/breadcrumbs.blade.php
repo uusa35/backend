@@ -1,16 +1,21 @@
 <div class="page-bar">
     <ul class="page-breadcrumb">
         @section('breadcrumbs')
-            @if(Breadcrumbs::exists(request()->route()->getName()))
-                @if(!isset($element))
-                    {{ Breadcrumbs::render(request()->route()->getName()) }}
-                @elseif(isset($elements))
-                    {{ Breadcrumbs::render(request()->route()->getName()) }}
-                @elseif(isset($element))
-                    {{ Breadcrumbs::render(request()->route()->getName(), $element) }}
-                @endif
+            @if(isset($breadcrumbs) && $breadcrumbs->isNotEmpty())
+                <ol class="breadcrumb">
+                    @foreach ($breadcrumbs as $breadcrumb)
+                        @if ($breadcrumb->url && !$loop->last)
+                            <li class="breadcrumb-item">
+                                <a href="{{ $breadcrumb->url }}">{{ $breadcrumb->title }}</a>
+                            </li>
+                        @else
+                            <li class="breadcrumb-item active">
+                                {{ $breadcrumb->title }}</li>
+                        @endif
+                    @endforeach
+                </ol>
             @endif
-        @endsection
+        @show
     </ul>
     <div class="page-toolbar">
         <div class="btn-group pull-right">
@@ -21,21 +26,21 @@
             <ul class="dropdown-menu pull-right" role="menu">
                 <li>
                     <a href="{{ route('backend.home') }}">
-                        <i class="icon-user-following"></i> Dashbaord</a>
+                        <i class="icon-user-following"></i> {{ trans('general.dashboard') }}</a>
                 </li>
                 <li>
                     <a href="{{ route('frontend.home') }}">
-                        <i class="icon-home"></i> Home</a>
+                        <i class="icon-home"></i> {{ trans('general.home') }}</a>
                 </li>
                 <li class="divider"></li>
                 @can('isSuper')
                     <li>
-                        <a href="{{ route('backend.super.setting.edit',1) }}">
-                            <i class="icon-settings"></i> Edit Settings</a>
+                        <a href="{{ route('backend.admin.setting.edit',1) }}">
+                            <i class="icon-settings"></i>{{ trans('general.edit_settings') }}</a>
                     </li>
                     <li>
-                        <a href="{{ route('backend.super.setting.index') }}">
-                            <i class="icon-settings"></i> Settings</a>
+                        <a href="{{ route('backend.admin.setting.index') }}">
+                            <i class="icon-settings"></i> {{ trans('general.settings') }}</a>
                     </li>
                 @endcan
             </ul>

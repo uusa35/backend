@@ -27,13 +27,14 @@ $factory->define(Order::class, function (Faker $faker) {
         'country' => Country::all()->random()->name,
         'area' => $faker->country,
         'coupon_id' => Coupon::all()->random()->id,
-        'booked_at' => Carbon::now()->addDays($faker->numberBetween(1,9)),
+        'booked_at' => Carbon::now()->addDays($faker->numberBetween(1, 9)),
         'day' => function ($array) {
             return Carbon::parse($array['booked_at'])->format('l');
         },
         'time' => function ($array) {
             return Carbon::parse(($array['booked_at']))->format('h:i:s');
         },
-        'notes' => $faker->paragraph
+        'notes' => $faker->paragraph,
+        'paid' => $faker->boolean(true)
     ];
 });

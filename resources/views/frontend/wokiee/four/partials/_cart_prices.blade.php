@@ -1,15 +1,15 @@
 <div class="tt-shopcart-box tt-boredr-large">
     <table class="tt-shopcart-table01">
         <tbody>
-        <tr>
-            <div class="alert alert-warning">
-                <i class="fa fa-fw fa-info-circle fa-lg"></i>
-                {{ trans('message.payment_will_be_in_kuwaiti_dinar_only') }}
-            </div>
-        </tr>
         @if(!$currency->country->is_local)
             <tr>
-                <th>{{ trans('general.total_price') }} {{ $currency->name }}</th>
+                <div class="alert alert-warning">
+                    <i class="fa fa-fw fa-info-circle fa-lg"></i>
+                    {{ trans('message.payment_will_be_in_kuwaiti_dinar_only') }}
+                </div>
+            </tr>
+            <tr>
+                <th>{{ trans('general.total_price') }} ({{ $currency->name }})</th>
                 <td>{{ getConvertedPrice(Cart::total()) }} {{ $currency->symbol }}</td>
             </tr>
         @endif

@@ -22,9 +22,9 @@
 </head>
 
 {{--<body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white page-md">--}}
-<body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid page-md">
+{{--<body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid page-md">--}}
 {{--<body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid page-sidebar-closed">--}}
-{{--<body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">--}}
+<body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
 @include('backend.partials.nav')
 <div class="clearfix"></div>
 <div class="page-container">
@@ -33,7 +33,8 @@
         <div class="page-content" style="min-height: 800px;">
             @include('backend.partials.notifications')
             @include('backend.partials._confirm_delete_modal')
-            @section('content')
+            @include('backend.partials.breadcrumbs')
+        @section('content')
             @show
         </div>
     </div>

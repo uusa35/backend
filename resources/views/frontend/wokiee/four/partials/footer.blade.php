@@ -33,24 +33,33 @@
     <div class="tt-footer-col tt-color-scheme-01">
         <div class="container">
             <div class="row">
-                @if($categories->isNotEmpty())
-                    <div class="col-md-6 col-lg-2 col-xl-3">
-                        <div class="tt-mobile-collapse">
-                            <h4 class="tt-collapse-title">
-                                {{ trans('general.categories') }}
-                            </h4>
-                            <div class="tt-collapse-content">
-                                <ul class="tt-list">
-                                    @foreach($categories->where('is_parent', true) as $cat)
-                                        <li>
-                                            <a href="{{ route('frontend.search',['category_id' => $cat->id]) }}">{{ $cat->name }}</a>
-                                        </li>
-                                    @endforeach
-                                </ul>
-                            </div>
+                <div class="col-md-6 col-lg-2 col-xl-3">
+                    <div class="tt-mobile-collapse">
+                        <h4 class="tt-collapse-title">
+                            {{ trans('general.find_us_on_stores') }}
+                        </h4>
+                        <div class="tt-collapse-content text-center">
+                            <ul class="tt-list">
+                                @if($settings->apple)
+                                    <li>
+                                        <a href="{{ url($settings->apple) }}">
+                                            <img src="{{ asset('images/apple.png') }}" alt="{{ $settings->company }}"
+                                                 class="img-responsive" style="max-width: 150px;">
+                                        </a>
+                                    </li>
+                                @endif
+                                @if($settings->android)
+                                    <li>
+                                        <a href="{{ url($settings->android) }}">
+                                            <img src="{{ asset('images/android.png') }}" alt="{{ $settings->company }}"
+                                                 class="img-responsive" style="max-width: 150px;">
+                                        </a>
+                                    </li>
+                                @endif
+                            </ul>
                         </div>
                     </div>
-                @endif
+                </div>
                 <div class="col-md-6 col-lg-2 col-xl-3">
                     <div class="tt-mobile-collapse">
                         <h4 class="tt-collapse-title">

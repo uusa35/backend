@@ -1,11 +1,13 @@
 @extends('backend.layouts.app')
 
 
+@section('breadcrumbs')
+    {{ Breadcrumbs::render('backend.product.index') }}
+@endsection
+
 @section('content')
     <div class="row">
         <div class="col-md-12">
-        {{ Breadcrumbs::render('backend.product.index') }}
-            <!-- BEGIN EXAMPLE TABLE PORTLET-->
             <div class="portlet light ">
                 @include('backend.partials.forms.form_title')
                 <div class="portlet-body">

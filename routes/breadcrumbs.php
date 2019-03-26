@@ -90,7 +90,7 @@ Breadcrumbs::for('password.email', function ($trail) {
 
 
 Breadcrumbs::for('backend.home', function ($trail) {
-    $trail->push('Home', route('backend.home'));
+    $trail->push(trans('general.home'), route('backend.home'));
 });
 
 Breadcrumbs::for('backend.index', function ($trail) {
@@ -171,9 +171,9 @@ Breadcrumbs::for('backend.size.index', function ($trail) {
     $trail->push('size', route('backend.size.index'));
 });
 
-Breadcrumbs::for('backend.country.index', function ($trail) {
+Breadcrumbs::for('backend.admin.country.index', function ($trail) {
     $trail->parent('backend.home');
-    $trail->push('country', route('backend.country.index'));
+    $trail->push('country', route('backend.admin.country.index'));
 });
 
 Breadcrumbs::for('backend.gallery.index', function ($trail) {
@@ -186,9 +186,9 @@ Breadcrumbs::for('backend.role.index', function ($trail) {
     $trail->push('role', route('backend.role.index'));
 });
 
-Breadcrumbs::for('backend.super.setting.index', function ($trail) {
+Breadcrumbs::for('backend.admin.setting.index', function ($trail) {
     $trail->parent('backend.home');
-    $trail->push(trans('general.setting'), route('backend.super.setting.index'));
+    $trail->push(trans('general.setting'), route('backend.admin.setting.index'));
 });
 
 Breadcrumbs::for('backend.order.index', function ($trail) {
@@ -259,9 +259,9 @@ Breadcrumbs::for('backend.survey.create', function ($trail) {
 });
 
 
-Breadcrumbs::for('backend.super.survey.edit', function ($trail, $element) {
-    $trail->parent('backend.super.survey.index');
-    $trail->push(trans('general.edit'), route('backend.super.survey.edit', $element->id));
+Breadcrumbs::for('backend.admin.survey.edit', function ($trail, $element) {
+    $trail->parent('backend.admin.survey.index');
+    $trail->push(trans('general.edit'), route('backend.admin.survey.edit', $element->id));
 });
 
 Breadcrumbs::for('backend.question.create', function ($trail) {
@@ -315,9 +315,9 @@ Breadcrumbs::for('backend.product.edit', function ($trail, $element) {
     $trail->push('edit product', route('backend.product.edit', $element->id));
 });
 
-Breadcrumbs::for('backend.super.setting.edit', function ($trail, $element) {
-    $trail->parent('backend.super.setting.index');
-    $trail->push(trans('general.edit'), route('backend.super.setting.edit', $element->id));
+Breadcrumbs::for('backend.admin.setting.edit', function ($trail, $element) {
+    $trail->parent('backend.admin.setting.index');
+    $trail->push(trans('general.edit'), route('backend.admin.setting.edit', $element->id));
 });
 
 Breadcrumbs::for('backend.color.create', function ($trail) {
@@ -342,12 +342,12 @@ Breadcrumbs::for('backend.size.edit', function ($trail, $element) {
 });
 
 Breadcrumbs::for('backend.country.create', function ($trail) {
-    $trail->parent('backend.country.index');
+    $trail->parent('backend.admin.country.index');
     $trail->push('create country', route('backend.country.create'));
 });
 
 Breadcrumbs::for('backend.country.edit', function ($trail, $element) {
-    $trail->parent('backend.country.index');
+    $trail->parent('backend.admin.country.index');
     $trail->push('edit country', route('backend.country.edit', $element->id));
 });
 

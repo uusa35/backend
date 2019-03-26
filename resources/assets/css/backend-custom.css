@@ -11,12 +11,12 @@ body, html, div, a, p, h1, h2, h3, h4, h5, h6, table, row, td, th, tr, thead, tf
 }
 
 /*.page-top , .page-header.navbar .page-logo {*/
-    /*background-color: dimgrey;*/
+    /*background-color: dimgrey !important;*/
 /*}*/
 
-/*.page-header.navbar {*/
-    /*background-color: dimgrey;*/
-/*}*/
+.page-header.navbar {
+    background-color: whitesmoke !important;
+}
 
 .page-header.navbar .page-top {
     height : 130% !important;

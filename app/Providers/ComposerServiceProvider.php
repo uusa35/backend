@@ -26,7 +26,7 @@ class ComposerServiceProvider extends ServiceProvider
             'backend.modules.currency.create',
             'backend.modules.currency.edit',
             'backend.partials.sidebar',
-            'auth.register',
+            'auth.*',
         ], 'App\Services\ViewComposers@getCountries');
 
         view()->composer([
@@ -93,6 +93,7 @@ class ComposerServiceProvider extends ServiceProvider
 
         view()->composer([
             'frontend.*.*.home',
+            'auth.*',
             'frontend.wokiee.four.modules.*.*',
             'frontend.wokiee.four.modules.product.index',
         ], 'App\Services\ViewComposers@getPages');

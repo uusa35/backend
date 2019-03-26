@@ -15,7 +15,7 @@ class CurrenciesTableSeeder extends Seeder
     {
         $countries = config('countries');
         foreach ($countries as $country) {
-            $currentCountry = Country::where(['calling_code' => $country['calling_code']])->first();
+            $currentCountry = Country::where(['country_code' => $country['country_code']])->first();
             factory(Currency::class)->create(
                 [
                     'name_ar' => $country['currency_ar'],
