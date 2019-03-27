@@ -37,16 +37,17 @@ class Filters extends QueryFilters
 
     public function product_category_id()
     {
-        $parent = $this->category->whereId(request()->product_category_id)->with('children.products')->first();
-        if ($parent->children->isNotEmpty() && $parent->children->pluck('products')->isNotEmpty()) {
-            $children = $parent->children->pluck('id');
-            return $this->builder->whereHas('categories', function ($q) use ($parent, $children) {
-                if ($parent->children->isEmpty()) {
-                    return $q->where('id', request('product_category_id'));
-                }
-                return $q->whereIn('id', $children);
-            });
-        }
+        // dont bring parent products
+//        $parent = $this->category->whereId(request()->product_category_id)->with('children.products')->first();
+//        if ($parent->children->isNotEmpty() && $parent->children->pluck('products')->isNotEmpty()) {
+//            $children = $parent->children->pluck('id');
+//            return $this->builder->whereHas('categories', function ($q) use ($parent, $children) {
+//                if ($parent->children->isEmpty()) {
+//                    return $q->where('id', request('product_category_id'));
+//                }
+//                return $q->whereIn('id', $children);
+//            });
+//        }
         return $this->builder->whereHas('categories', function ($q) {
             return $q->where('id', request()->product_category_id);
         });
@@ -54,16 +55,18 @@ class Filters extends QueryFilters
 
     public function service_category_id()
     {
-        $parent = $this->category->whereId(request()->service_category_id)->with('children.services')->first();
-        if ($parent->children->isNotEmpty() && $parent->children->pluck('services')->isNotEmpty()) {
-            $children = $parent->children->pluck('id');
-            return $this->builder->whereHas('categories', function ($q) use ($parent, $children) {
-                if ($parent->children->isEmpty()) {
-                    return $q->where('id', request('service_category_id'));
-                }
-                return $q->whereIn('id', [request('service_category_id'), $children]);
-            });
-        }
+        // dont bring parent products
+//        $parent = $this->category->whereId(request()->service_category_id)->with('children.services')->first();
+//        dd($parent);
+//        if ($parent->children->isNotEmpty() && $parent->children->pluck('services')->isNotEmpty()) {
+//            $children = $parent->children->pluck('id');
+//            return $this->builder->whereHas('categories', function ($q) use ($parent, $children) {
+//                if ($parent->children->isEmpty()) {
+//                    return $q->where('id', request('service_category_id'));
+//                }
+//                return $q->whereIn('id', [request('service_category_id'), $children]);
+//            });
+//        }
         return $this->builder->whereHas('categories', function ($q) {
             return $q->where('id', request()->service_category_id);
         });
