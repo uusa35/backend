@@ -25,15 +25,32 @@ class ServiceController extends Controller
      */
     public function index(Filters $filters)
     {
-        $elements = Service::filters($filters)->hasImage()->active()->available()->with([
-            'tags', 'user.country', 'images', 'user.areas',
-            'favorites', 'categories.children'
-        ])->paginate(self::TAKE);
+        $validator = validator(request()->all(), ['search' => 'nullable']);
+        if ($validator->fails()) {
+            return redirect()->route('frontend.home')->withErrors($validator->messages());
+        }
+        $elements = $this->service->active()->hasImage()->serveCountries()->filters($filters)->with(
+            'tags', 'user.country', 'images', 'user.areas', 'favorites'
+        )->with(['categories' => function ($q) {
+            return $q->has('services', '>', 0)->with('services');
+        }])->orderBy('id', 'desc')->paginate(self::TAKE);
         $tags = $elements->pluck('tags')->flatten()->unique('id')->sortKeysDesc();
-        $categoriesList = $elements->pluck('categories')->flatten()->unique('id');
-        $vendors = $elements->pluck('user')->flatten()->unique('id');
+        $categoriesList = $elements->pluck('categories')->flatten()->unique('id')->sortKeysDesc();
+        $vendors = $elements->pluck('user')->unique('id')->flatten();
         $areas = $elements->pluck('user.areas')->flatten()->unique('id');
-        return view('frontend.wokiee.four.modules.service.index', compact('elements', 'tags', 'categoriesList', 'vendors', 'areas'));
+        if ($elements->isNotEmpty()) {
+            if (request()->has('save') && request()->save) {
+                session()->put('day_selected_format', request()->day_selected_format);
+                session()->put('day_selected', request()->day_selected);
+                session()->put('area_id', request()->area_id);
+            }
+            return view('frontend.wokiee.four.modules.service.index', compact(
+                'elements', 'tags', 'areas',
+                'categoriesList', 'currentCategory', 'vendors'
+            ));
+        } else {
+            return redirect()->route('frontend.home')->with('error', trans('message.no_items_found'));
+        }
     }
 
     public function search(Filters $filters)
