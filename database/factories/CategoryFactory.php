@@ -21,6 +21,7 @@ $factory->define(Category::class, function (Faker $faker) use ($fakerAr) {
         'on_new' => $faker->boolean,
         'is_featured' => $faker->boolean,
         'is_service' => $faker->boolean,
-        'is_product' => $faker->boolean
+        'is_product' => $faker->boolean,
+        'icon' => $faker->randomElement(['fa-user','fa-eye','fa-map','fa-paper'])
     ];
 });

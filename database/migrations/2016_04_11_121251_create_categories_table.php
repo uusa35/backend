@@ -22,6 +22,7 @@ class CreateCategoriesTable extends Migration
             $table->mediumText('description_en')->nullable();
             $table->mediumText('description_ar')->nullable();
             $table->string('image')->nullable();
+            $table->string('icon')->nullable();
             $table->boolean('limited')->default(0);
             $table->integer('order')->nullable();
             $table->boolean('on_home')->default(0);

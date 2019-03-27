@@ -68,40 +68,37 @@ class ComposerServiceProvider extends ServiceProvider
 
 
         view()->composer([
-            'frontend.*.*.home',
-            'frontend.wokiee.four.modules.*.*',
-            'frontend.partials.header_four',
+            'frontend.wokiee.four.layouts.app',
+//            'frontend.wokiee.four.modules.*.*',
+//            'frontend.partials.header_four',
         ], 'App\Services\ViewComposers@getCategories');
 
         view()->composer([
-            'frontend.*.*.home',
-            'frontend.wokiee.four.modules.*.*',
-            'frontend.wokiee.four.modules.product.index',
+            'frontend.wokiee.four.layouts.app',
 //            'frontend.*.*.*.head',
 //            'frontend.*.*.*._top_bar',
 //            'frontend.*.*.*._main_menu',
 //            'frontend.*.*.*._social_icons_home',
+
+            'frontend.*.*.partials._search_side_bar',
+            'frontend.*.*.partials._btns_home',
 //            'frontend.*.*.*.footer',
 //            'frontend.*.*.*.scripts',
 //            'frontend.*.*.*.show',
 //            'frontend.*.*.*.index',
-            'auth.*',
+//            'auth.*',
 //            'backend.*.*.*.scripts',
             'backend.modules.order.show',
             'backend.partials.nav',
         ], 'App\Services\ViewComposers@getSettings');
 
         view()->composer([
-            'frontend.*.*.home',
-            'auth.*',
-            'frontend.wokiee.four.modules.*.*',
-            'frontend.wokiee.four.modules.product.index',
+            'frontend.wokiee.four.layouts.app',
         ], 'App\Services\ViewComposers@getPages');
 
         view()->composer([
             'frontend.*.*.home',
-            'frontend.wokiee.four.modules.*.*',
-            'frontend.modules.product.show'
+            'frontend.wokiee.four.modules.product.*',
         ], 'App\Services\ViewComposers@getBrands');
 
         view()->composer([

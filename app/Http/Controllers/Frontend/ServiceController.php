@@ -45,7 +45,7 @@ class ServiceController extends Controller
         $elements = $this->service->active()->hasImage()->serveCountries()->filters($filters)->with(
             'tags', 'user.country', 'images', 'user.areas', 'favorites'
         )->with(['categories' => function ($q) {
-            return $q->has('services', '>', 0);
+            return $q->has('services', '>', 0)->with('services');
         }])->orderBy('id', 'desc')->paginate(self::TAKE);
         $tags = $elements->pluck('tags')->flatten()->unique('id')->sortKeysDesc();
         $categoriesList = $elements->pluck('categories')->flatten()->unique('id')->sortKeysDesc();
