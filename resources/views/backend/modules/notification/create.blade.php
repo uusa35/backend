@@ -68,6 +68,15 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="form_control_1">{{ trans('general.url') }}</label>
+                            <input type="text" class="form-control" name="url" placeholder="{{ trans('general.url') }}">
+                            <div class="help-block text-left">
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 @include('backend.partials.forms._btn-group')

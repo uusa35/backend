@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Backend\Admin;
 use App\Http\Requests\Backend\UserStore;
 use App\Http\Requests\Backend\UserUpdate;
 use App\Models\User;
+use App\Models\Country;
+use App\Models\Role;
 use App\Services\Traits\ImageHelpers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -37,7 +39,9 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('backend.modules.user.create');
+        $countries = Country::all();
+        $roles = Role::all();
+        return view('backend.modules.user.create', compact('countries', 'roles'));
     }
 
     /**
@@ -96,7 +100,7 @@ class UserController extends Controller
     public function update(UserUpdate $request, $id)
     {
         $element = User::whereId($id)->first();
-        $updated = $element->update($request->except(['logo', 'bg', 'balance','user_id']));
+        $updated = $element->update($request->except(['logo', 'bg', 'balance', 'user_id']));
         if ($updated) {
             $element->balance()->update(['points' => $request->balance]);
             if ($request->hasFile('logo')) {
@@ -138,7 +142,6 @@ class UserController extends Controller
         }
         $email = $request->email;
         return view('auth.passwords.reset', compact('email'));
-
     }
 
     /**

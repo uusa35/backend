@@ -41,7 +41,7 @@ class CommercialController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.modules.commercial.create');
     }
 
     /**

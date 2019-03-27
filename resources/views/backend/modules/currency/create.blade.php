@@ -6,13 +6,13 @@
         <form class="horizontal-form" role="form" method="POST" action="{{ route('backend.admin.currency.store') }}" enctype="multipart/form-data">
             @csrf
             <div class="form-body">
-                <h3 class="form-section">Edit Currency</h3>
+                <h3 class="form-section">{{ trans('general.create_currency') }}</h3>
                 {{--name arabic / name english --}}
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group{{ $errors->has('name_ar') ? ' has-error' : '' }}">
                             <label for="name_ar" class="control-label">{{ trans('general.name_ar') }}*</label>
-                            <input id="name_ar" type="text" class="form-control" name="name_ar" value="{{ old('name_ar') }}" placeholder="name_ar" required autofocus>
+                            <input id="name_ar" type="text" class="form-control" name="name_ar" value="{{ old('name_ar') }}" placeholder="{{ trans('general.name_ar') }}" required autofocus>
                             @if ($errors->has('name_ar'))
                             <span class="help-block">
                                 <strong>
@@ -25,7 +25,7 @@
                     <div class="col-md-6">
                         <div class="form-group{{ $errors->has('name_en') ? ' has-error' : '' }}">
                             <label for="name_en" class="control-label">{{ trans('general.name_en') }}*</label>
-                            <input id="name_en" type="text" class="form-control" name="name_en" value="{{ old('name_en') }}" placeholder="name_en" required autofocus>
+                            <input id="name_en" type="text" class="form-control" name="name_en" value="{{ old('name_en') }}" placeholder="{{ trans('general.name_en') }}" required autofocus>
                             @if ($errors->has('name_en'))
                             <span class="help-block">
                                 <strong>
@@ -38,7 +38,7 @@
                     <div class="col-md-6">
                         <div class="form-group{{ $errors->has('exchange_rate') ? ' has-error' : '' }}">
                             <label for="exchange_rate" class="control-label">{{ trans('general.exchange_rate') }}*</label>
-                            <input id="exchange_rate" type="text" class="form-control" name="exchange_rate" value="{{ old('exchange_rate') }}" required autofocus>
+                            <input id="exchange_rate" type="text" class="form-control" name="exchange_rate" value="{{ old('exchange_rate') }}" placeholder="{{ trans('general.exchange_rate') }}" required autofocus>
                             @if ($errors->has('exchange_rate'))
                             <span class="help-block">
                                 <strong>
@@ -51,7 +51,7 @@
                     <div class="col-md-6">
                         <div class="form-group{{ $errors->has('currency_symbol_ar') ? ' has-error' : '' }}">
                             <label for="currency_symbol_ar" class="control-label">{{ trans('general.currency_symbol_ar') }}*</label>
-                            <input id="currency_symbol_ar" type="text" class="form-control" name="currency_symbol_ar" value="{{ old('currency_symbol_ar') }}" placeholder="currency_symbol_ar in arabic" maxlength="4" required autofocus>
+                            <input id="currency_symbol_ar" type="text" class="form-control" name="currency_symbol_ar" value="{{ old('currency_symbol_ar') }}" placeholder="{{ trans('general.currency_symbol_ar') }}" maxlength="4" required autofocus>
                             @if ($errors->has('currency_symbol_ar'))
                             <span class="help-block">
                                 <strong>
@@ -64,7 +64,7 @@
                     <div class="col-md-6">
                         <div class="form-group{{ $errors->has('currency_symbol_en') ? ' has-error' : '' }}">
                             <label for="currency_symbol_en" class="control-label">{{ trans('general.currency_symbol_en') }}*</label>
-                            <input id="currency_symbol_en" type="text" class="form-control" name="currency_symbol_en" value="{{ old('currency_symbol_en') }}" placeholder="currency_symbol_en in arabic" maxlength="4" required autofocus>
+                            <input id="currency_symbol_en" type="text" class="form-control" name="currency_symbol_en" value="{{ old('currency_symbol_en') }}" placeholder="{{ trans('general.currency_symbol_en') }}" maxlength="4" required autofocus>
                             @if ($errors->has('currency_symbol_en'))
                             <span class="help-block">
                                 <strong>

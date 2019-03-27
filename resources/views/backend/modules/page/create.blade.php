@@ -12,7 +12,7 @@
                     <div class="col-md-6">
                         <div class="form-group {{ $errors->has('title_ar') ? ' has-error' : '' }}">
                             <label for="title_ar" class="control-label">{{ trans('general.title_ar') }}*</label>
-                            <input id="title_ar" type="text" class="form-control" name="title_ar" value="{{ old('title_ar') }}" placeholder="name in arabic" required autofocus>
+                            <input id="title_ar" type="text" class="form-control" name="title_ar" value="{{ old('title_ar') }}" placeholder="{{ trans('general.title_ar') }}" required autofocus>
                             @if ($errors->has('title_ar'))
                             <span class="help-block">
                                 <strong>
@@ -25,7 +25,7 @@
                     <div class="col-md-6">
                         <div class="form-group{{ $errors->has('title_en') ? ' has-error' : '' }}">
                             <label for="title_en" class="control-label">{{ trans('general.title_en') }}*</label>
-                            <input id="title_en" type="text" class="form-control" name="title_en" value="{{ old('title_en') }}" placeholder="name in english" required autofocus>
+                            <input id="title_en" type="text" class="form-control" name="title_en" value="{{ old('title_en') }}" placeholder="{{ trans('general.title_en') }}" required autofocus>
                             @if ($errors->has('title_en'))
                             <span class="help-block">
                                 <strong>
@@ -40,7 +40,7 @@
                     <div class="col-md-6">
                         <div class="form-group {{ $errors->has('slug_ar') ? ' has-error' : '' }}">
                             <label for="slug_ar" class="control-label">{{ trans('general.slug_ar') }}*</label>
-                            <input id="slug_ar" type="text" class="form-control" name="slug_ar" value="{{ old('slug_ar') }}" placeholder="name in arabic" required autofocus>
+                            <input id="slug_ar" type="text" class="form-control" name="slug_ar" value="{{ old('slug_ar') }}" placeholder="{{ trans('general.slug_ar') }}" required autofocus>
                             @if ($errors->has('slug_ar'))
                             <span class="help-block">
                                 <strong>
@@ -53,7 +53,7 @@
                     <div class="col-md-6">
                         <div class="form-group{{ $errors->has('slug_en') ? ' has-error' : '' }}">
                             <label for="slug_en" class="control-label">{{ trans('general.slug_en') }}*</label>
-                            <input id="slug_en" type="text" class="form-control" name="slug_en" value="{{ old('slug_en') }}" placeholder="name in english" required autofocus>
+                            <input id="slug_en" type="text" class="form-control" name="slug_en" value="{{ old('slug_en') }}" placeholder="{{ trans('general.slug_en') }}" required autofocus>
                             @if ($errors->has('slug_en'))
                             <span class="help-block">
                                 <strong>
@@ -68,7 +68,7 @@
                     <div class="col-md-3">
                         <div class="form-group{{ $errors->has('url') ? ' has-error' : '' }}">
                             <label for="url" class="control-label">{{ trans('general.url') }} *</label>
-                            <input id="url" type="text" class="form-control" name="url" value="{{ old('url') }}" placeholder="http://google.com" autofocus>
+                            <input id="url" type="text" class="form-control" name="url" value="{{ old('url') }}" placeholder="{{ trans('general.url') }}" autofocus>
                             @if ($errors->has('url'))
                             <span class="help-block">
                                 <strong>
@@ -81,7 +81,7 @@
                     <div class="col-md-6">
                         <div class="form-group{{ $errors->has('order') ? ' has-error' : '' }}">
                             <label for="order" class="control-label">{{ trans('general.order') }}*</label>
-                            <input id="order" type="number" class="form-control" name="order" value="{{ old('order') }}" placeholder="name in english" required autofocus>
+                            <input id="order" type="number" class="form-control" name="order" value="{{ old('order') }}" placeholder="{{ trans('general.order') }}" required autofocus>
                             @if ($errors->has('order'))
                             <span class="help-block">
                                 <strong>
@@ -93,7 +93,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
-                            <input type="file" class="form-control" name="image" placeholder="image">
+                            <input type="file" class="form-control" name="image" placeholder="{{ trans('general.main_image') }}">
                             <label for="form_control_1">{{ trans('general.main_image') }}*</label>
                             <div class="help-block text-left">
                                 W * H - Best fit 1024 x 800 pixels
@@ -121,9 +121,9 @@
                         <div class="form-group">
                             <label class="control-label sbold">{{ trans('general.active') }}</label></br>
                             <label class="radio-inline">
-                                <input type="radio" name="active" id="optionsRadios3" checked value="1"> {{ trans('general.active') }}</label>
+                                <input type="radio" name="active" id="optionsRadios3" value="1"> {{ trans('general.active') }}</label>
                             <label class="radio-inline">
-                                <input type="radio" name="active" id="optionsRadios4" value="0"> {{ trans('general.not_active') }}</label>
+                                <input type="radio" name="active" id="optionsRadios4" checked value="0"> {{ trans('general.not_active') }}</label>
                         </div>
                     </div>
                     <div class="col-md-3">

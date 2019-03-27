@@ -31,7 +31,7 @@ class AnswerController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.modules.answer.create');
     }
 
     /**
