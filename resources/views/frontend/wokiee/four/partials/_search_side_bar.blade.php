@@ -17,10 +17,13 @@
 @include('frontend.wokiee.four.partials._search_side_bar_prices')
 @include('frontend.wokiee.four.partials._search_side_bar_vendors')
 @include('frontend.wokiee.four.partials._search_side_bar_areas')
-{{--@include('frontend.wokiee.four.partials._search_side_bar_sizes')--}}
-{{--@include('frontend.wokiee.four.partials._search_side_bar_colors')--}}
-{{--@include('frontend.wokiee.four.partials._search_side_bar_product_categories')--}}
-@include('frontend.wokiee.four.partials._search_side_bar_service_categories')
+@if(env('APP_CASE') === 'mallr')
+    @include('frontend.wokiee.four.partials._search_side_bar_sizes')
+    @include('frontend.wokiee.four.partials._search_side_bar_colors')
+    @include('frontend.wokiee.four.partials._search_side_bar_product_categories')
+@else
+    @include('frontend.wokiee.four.partials._search_side_bar_service_categories')
+@endif
 @include('frontend.wokiee.four.partials._search_side_bar_tags')
 
 <div class="tt-content-aside">
