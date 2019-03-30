@@ -50,6 +50,16 @@
         <span class="selected"></span>
         <span class="arrow open"></span>
     </a>
+    <ul class="sub-menu">
+
+        <li class="nav-item ">
+            <a href="{{ route('backend.admin.user.create') }}" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-paint-brush"></i>
+                <span class="title">Create New User</span>
+                <span class="arrow"></span>
+            </a>
+        </li>
+    </ul>
 </li>
 
 
