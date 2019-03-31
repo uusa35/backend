@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend\Admin;
 
+use File;
 use App\Models\Answer;
 use App\Models\Question;
 use Illuminate\Http\Request;
@@ -31,7 +32,9 @@ class AnswerController extends Controller
      */
     public function create()
     {
-        //
+        $json = File::get(base_path("icons.json"));
+        $icons = collect(json_decode($json))['icons'];
+        return view('backend.modules.answer.create', compact('icons'));
     }
 
     /**

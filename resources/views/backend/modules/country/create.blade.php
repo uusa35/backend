@@ -11,34 +11,34 @@
         <form action="{{ route('backend.admin.country.store') }}" role="form" method="post" class="horizontal-form" enctype="multipart/form-data">
             @csrf
             <div class="form-body">
-                <h3 class="form-section">Create New Country</h3>
+                <h3 class="form-section">{{ trans('general.create_country') }}</h3>
                 <div class="row">
                     {{-- <div class="col-md-6">
                         <div class="form-group">
-                            <label class="control-label">Name Arabic</label>
-                            <input type="text" id="name_ar" name="name_ar" class="form-control" placeholder="Country name in arabic" value="{{ old('name_ar') }}" required>
+                            <label class="control-label">{{ trans('general.name_ar') }}</</label> <input type="text" id="name_ar" name="name_ar" class="form-control" placeholder="Country name in arabic" value="{{ old('name_ar') }}" required>
                     <span class="help-block"> Country is unique </span>
                 </div>
             </div> --}}
             <!--/span-->
             <div class="col-md-6">
                 <div class="form-group">
-                    <label class="control-label">{{ trans('general.name') }}</label>
-                    <input type="text" id="name" name="name" class="form-control" value="{{ old('name') }}" placeholder="{{ trans('general.name') }}" required>
+                    <label class="control-label">{{ trans('general.name_en') }}</label>
+                    <input type="text" id="name_en" name="name_en" class="form-control" value="{{ old('name_en') }}" placeholder="{{ trans('general.name_en') }}" required>
                     {{--<span class="help-block"> This field has error. </span>--}}
                 </div>
             </div>
             <!--/span-->
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label class="control-label">{{ trans('general.slug_ar') }}</label>
-                    <input type="text" id="slug_ar" name="slug_ar" class="form-control" value="{{ old('slug_ar') }}" placeholder="slug_ar" required>
-                    {{--<span class="help-block"> This field has error. </span>--}}
-                </div>
-            </div>
+
     </div>
     <!--/row-->
     <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="control-label">{{ trans('general.slug_ar') }}</label>
+                <input type="text" id="slug_ar" name="slug_ar" class="form-control" value="{{ old('slug_ar') }}" placeholder="{{ trans('general.slug_ar') }}" required>
+                {{--<span class="help-block"> This field has error. </span>--}}
+            </div>
+        </div>
         <div class="col-md-6">
             <div class="form-group">
                 <label class="control-label">{{ trans('general.flag_image') }} </label>
@@ -62,7 +62,7 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label class="control-label">{{ trans('general.calling_code') }}*</label>
-                <input type="number" id="calling_code" name="calling_code" class="form-control" value="{{ old('calling_code') }}" placeholder="country calling_code" required>
+                <input type="number" id="calling_code" name="calling_code" class="form-control" value="{{ old('calling_code') }}" placeholder="{{ trans('general.calling_code') }}" required>
                 <span class="help-block"> ex. 00965 </span>
             </div>
         </div>
@@ -70,7 +70,7 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label class="control-label">{{ trans('general.currency_symbol_ar') }}*</label>
-                <input type="text" id="currency_symbol_ar" name="currency_symbol_ar" class="form-control" value="{{ old('currency_symbol_ar') }}" placeholder="currency_symbol_ar" required>
+                <input type="text" id="currency_symbol_ar" name="currency_symbol_ar" class="form-control" value="{{ old('currency_symbol_ar') }}" placeholder="{{ trans('general.currency_symbol_ar') }}" required>
 
             </div>
         </div>
@@ -81,14 +81,14 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label class="control-label">{{ trans('general.currency_symbol_en') }}*</label>
-                <input type="text" id="currency_symbol_en" name="currency_symbol_en" class="form-control" value="{{ old('currency_symbol_en') }}" placeholder="currency_symbol_en" required>
+                <input type="text" id="currency_symbol_en" name="currency_symbol_en" class="form-control" value="{{ old('currency_symbol_en') }}" placeholder="{{ trans('general.currency_symbol_en') }}" required>
 
             </div>
         </div>
         <div class="col-md-6">
             <div class="form-group">
                 <label class="control-label">{{ trans('general.country_code') }}</label>
-                <input type="text" id="country_code" name="country_code" class="form-control" placeholder="country_code" value="{{ old('country_code') }}" required>
+                <input type="text" id="country_code" name="country_code" class="form-control" placeholder="{{ trans('general.country_code') }}" value="{{ old('country_code') }}" required>
                 <span class="help-block"> country_code ex. KWT </span>
             </div>
 
@@ -97,35 +97,35 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label class="control-label">{{ trans('general.order') }}</label>
-                <input type="text" id="order" name="order" class="form-control" placeholder="order" value="{{ old('order') }}" required>
+                <input type="text" id="order" name="order" class="form-control" placeholder="{{ trans('general.order') }}" value="{{ old('order') }}" required>
                 <span class="help-block"> ex. 1 (order is the sequence of the countries that shall appear on app List of Countries in Home Interface)</span>
             </div>
         </div>
         <div class="col-md-6">
             <div class="form-group">
                 <label class="control-label">{{ trans('general.minimum_shipment_charge') }}*</label>
-                <input type="number" id="minimum_shipment_charge" name="minimum_shipment_charge" class="form-control" value="{{ old('minimum_shipment_charge') }}" placeholder="minimum_shipment_charge" required>
+                <input type="number" id="minimum_shipment_charge" name="minimum_shipment_charge" class="form-control" value="{{ old('minimum_shipment_charge') }}" placeholder="{{ trans('general.minimum_shipment_charge') }}" required>
 
             </div>
         </div>
         <div class="col-md-6">
             <div class="form-group">
                 <label class="control-label">{{ trans('general.fixed_shipment_charge') }}*</label>
-                <input type="number" id="fixed_shipment_charge" name="fixed_shipment_charge" class="form-control" value="{{ old('fixed_shipment_charge') }}" placeholder="fixed_shipment_charge" required>
+                <input type="number" id="fixed_shipment_charge" name="fixed_shipment_charge" class="form-control" value="{{ old('fixed_shipment_charge') }}" placeholder="{{ trans('general.fixed_shipment_charge') }}" required>
 
             </div>
         </div>
         <div class="col-md-6">
             <div class="form-group">
                 <label class="control-label">{{ trans('general.longitude') }}</label>
-                <input type="number" id="longitude" name="longitude" class="form-control" value="{{ old('longitude') }}" placeholder="longitude">
+                <input type="number" id="longitude" name="longitude" class="form-control" value="{{ old('longitude') }}" placeholder="{{ trans('general.longitude') }}">
 
             </div>
         </div>
         <div class="col-md-6">
             <div class="form-group">
                 <label class="control-label">{{ trans('general.latitude') }}</label>
-                <input type="number" id="latitude" name="latitude" class="form-control" value="{{ old('latitude') }}" placeholder="latitude">
+                <input type="number" id="latitude" name="latitude" class="form-control" value="{{ old('latitude') }}" placeholder="{{ trans('general.latitude') }}">
 
             </div>
         </div>

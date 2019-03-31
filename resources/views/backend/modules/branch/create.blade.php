@@ -14,7 +14,7 @@
                         <div class="form-group{{ $errors->has('name_ar') ? ' has-error' : '' }}">
                             <label for="name_ar" class="col-md-4 control-label">{{ trans('general.name_ar') }}*</label>
 
-                            <input id="name_ar" type="text" class="form-control" name="name_ar" value="{{ old('name_ar') }}" placeholder="name_ar" required autofocus>
+                            <input id="name_ar" type="text" class="form-control" name="name_ar" value="{{ old('name_ar') }}" placeholder="{{ trans('general.name_ar') }}" required autofocus>
                             @if ($errors->has('name_ar'))
                             <span class="help-block">
                                 <strong>
@@ -28,7 +28,7 @@
                         <div class="form-group{{ $errors->has('name_en') ? ' has-error' : '' }}">
                             <label for="name_en" class="col-md-4 control-label">{{ trans('general.name_en') }}*</label>
 
-                            <input id="name_en" type="text" class="form-control" name="name_en" value="{{ old('name_en') }}" placeholder="name_en" required autofocus>
+                            <input id="name_en" type="text" class="form-control" name="name_en" value="{{ old('name_en') }}" placeholder="{{ trans('general.name_en') }}" required autofocus>
                             @if ($errors->has('name_en'))
                             <span class="help-block">
                                 <strong>
@@ -42,7 +42,7 @@
                         <div class="form-group{{ $errors->has('address_ar') ? ' has-error' : '' }}">
                             <label for="address_ar" class="col-md-4 control-label">{{ trans('general.address_ar') }}* </label>
 
-                            <input id="address_ar" type="text" class="form-control" name="address_ar" value="{{ old('address_ar') }}" placeholder="address_ar" required autofocus>
+                            <input id="address_ar" type="text" class="form-control" name="address_ar" value="{{ old('address_ar') }}" placeholder="{{ trans('general.address_ar') }}" required autofocus>
                             @if ($errors->has('address_ar'))
                             <span class="help-block">
                                 <strong>
@@ -56,7 +56,7 @@
                         <div class="form-group{{ $errors->has('address_en') ? ' has-error' : '' }}">
                             <label for="address_en" class="col-md-4 control-label">{{ trans('general.address_en') }}* </label>
 
-                            <input id="address_en" type="text" class="form-control" name="address_en" value="{{ old('address_en') }}" placeholder="address_en" required autofocus>
+                            <input id="address_en" type="text" class="form-control" name="address_en" value="{{ old('address_en') }}" placeholder="{{ trans('general.address_en') }}" required autofocus>
                             @if ($errors->has('address_en'))
                             <span class="help-block">
                                 <strong>
@@ -72,7 +72,7 @@
                         <div class="form-group{{ $errors->has('description_ar') ? ' has-error' : '' }}">
                             <label for="description_ar" class="col-md-4 control-label">{{ trans('general.description_ar') }}* </label>
 
-                            <input id="description_ar" type="text" class="form-control" name="description_ar" value="{{ old('description_ar') }}" placeholder="description_ar" required autofocus>
+                            <input id="description_ar" type="text" class="form-control" name="description_ar" value="{{ old('description_ar') }}" placeholder="{{ trans('general.description_ar') }}" required autofocus>
                             @if ($errors->has('description_ar'))
                             <span class="help-block">
                                 <strong>
@@ -86,7 +86,7 @@
                         <div class="form-group{{ $errors->has('description_en') ? ' has-error' : '' }}">
                             <label for="description_en" class="col-md-4 control-label">{{ trans('general.description_en') }}* </label>
 
-                            <input id="description_en" type="text" class="form-control" name="description_en" value="{{ old('description_en') }}" placeholder="description_ar" required autofocus>
+                            <input id="description_en" type="text" class="form-control" name="description_en" value="{{ old('description_en') }}" placeholder="{{ trans('general.description_en') }}" required autofocus>
                             @if ($errors->has('description_en'))
                             <span class="help-block">
                                 <strong>
@@ -99,9 +99,9 @@
 
                     <div class="col-lg-4">
                         <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
-                            <label for="phone" class="col-md-4 control-label">{{ trans('general.phone') }} *</label>
+                            <label for="phone" class="col-md-4 control-label">{{ trans('general.phone') }}*</label>
 
-                            <input id="phone" type="text" class="form-control" name="phone" value="{{ old('phone') }}" placeholder="phone" required autofocus>
+                            <input id="phone" type="text" class="form-control" name="phone" value="{{ old('phone') }}" placeholder="{{ trans('general.phone') }} " required autofocus>
                             @if ($errors->has('phone'))
                             <span class="help-block">
                                 <strong>
@@ -113,9 +113,9 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="form-group{{ $errors->has('mobile') ? ' has-error' : '' }}">
-                            <label for="mobile" class="col-md-4 control-label">{{ trans('general.mobile') }} *</label>
+                            <label for="mobile" class="col-md-4 control-label">{{ trans('general.mobile') }}*</label>
 
-                            <input id="mobile" type="text" class="form-control" name="mobile" value="{{ old('mobile') }}" placeholder="mobile" required autofocus>
+                            <input id="mobile" type="text" class="form-control" name="mobile" value="{{ old('mobile') }}" placeholder="{{ trans('general.mobile') }}" required autofocus>
                             @if ($errors->has('mobile'))
                             <span class="help-block">
                                 <strong>
@@ -127,9 +127,9 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="form-group{{ $errors->has('longitude') ? ' has-error' : '' }}">
-                            <label for="longitude" class="col-md-4 control-label">{{ trans('general.longitude') }} *</label>
+                            <label for="longitude" class="col-md-4 control-label">{{ trans('general.longitude') }}*</label>
 
-                            <input id="longitude" type="text" class="form-control" name="longitude" value="{{ old('longitude') }}" placeholder="longitude" autofocus>
+                            <input id="longitude" type="text" class="form-control" name="longitude" value="{{ old('longitude') }}" placeholder="{{ trans('general.longitude') }}" autofocus>
                             @if ($errors->has('longitude'))
                             <span class="help-block">
                                 <strong>
@@ -141,9 +141,9 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="form-group{{ $errors->has('latitude') ? ' has-error' : '' }}">
-                            <label for="latitude" class="col-md-4 control-label">{{ trans('general.latitude') }} *</label>
+                            <label for="latitude" class="col-md-4 control-label">{{ trans('general.latitude') }}*</label>
 
-                            <input id="latitude" type="text" class="form-control" name="latitude" value="{{ old('latitude') }}" placeholder="latitude" autofocus>
+                            <input id="latitude" type="text" class="form-control" name="latitude" value="{{ old('latitude') }}" placeholder="{{ trans('general.latitude') }}" autofocus>
                             @if ($errors->has('latitude'))
                             <span class="help-block">
                                 <strong>
@@ -155,7 +155,7 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="form-group">
-                            <label for="area_id">Area</label>
+                            <label for="area_id">{{ trans('general.area') }}</label>
                             <select name="area_id" id="area_id" class="form-control">
                                 @foreach($areas as $area)
                                 <option value="{{ $area->id }}">{{ $area->name }}</option>
@@ -166,7 +166,7 @@
 
                     <div class="col-lg-4">
                         <div class="form-group">
-                            <label for="user_id">User</label>
+                            <label for="user_id">{{ trans('general.user') }}</label>
                             <select name="user_id" id="user_id" class="form-control">
                                 @foreach($users as $user)
                                 <option value="{{ $user->id }}">{{ $user->name }}</option>

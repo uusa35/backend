@@ -26,7 +26,7 @@ class QuestionnaireController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.modules.questionnaire.create');
     }
 
     /**
@@ -48,8 +48,8 @@ class QuestionnaireController extends Controller
      */
     public function show($id)
     {
-        $element = Questionnaire::whereId($id)->with('results.question', 'results.answer')->first();
-        return view('backend.modules.questionnaire.show', compact('element'));
+        $element = Questionnaire::whereId($id)->with(' results . question ', ' results . answer ')->first();
+        return view(' backend . modules . questionnaire . show ', compact(' element'));
     }
 
     /**
@@ -86,3 +86,5 @@ class QuestionnaireController extends Controller
         //
     }
 }
+
+ 

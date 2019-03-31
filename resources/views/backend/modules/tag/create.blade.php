@@ -12,7 +12,7 @@
                     <div class="col-md-4">
                         <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
                             <label for="name" class="control-label">{{ trans('general.name') }}*</label>
-                            <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="name" required autofocus>
+                            <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="{{ trans('general.name') }}" required autofocus>
                             @if ($errors->has('name'))
                             <span class="help-block">
                                 <strong>
@@ -25,7 +25,7 @@
                     <div class="col-md-4">
                         <div class="form-group {{ $errors->has('slug_ar') ? ' has-error' : '' }}">
                             <label for="slug_ar" class="control-label">{{ trans('general.slug_ar') }}*</label>
-                            <input id="slug_ar" type="text" class="form-control" name="slug_ar" value="{{ old('slug_ar') }}" placeholder="name in arabic" required autofocus>
+                            <input id="slug_ar" type="text" class="form-control" name="slug_ar" value="{{ old('slug_ar') }}" placeholder="{{ trans('general.slug_ar') }}" required autofocus>
                             @if ($errors->has('slug_ar'))
                             <span class="help-block">
                                 <strong>
@@ -52,7 +52,7 @@
                     <div class="col-md-4">
                         <div class="form-group{{ $errors->has('order') ? ' has-error' : '' }}">
                             <label for="order" class="control-label">{{ trans('general.order') }} *</label>
-                            <input id="order" type="number" class="form-control" name="order" value="{{ old('order') }}" placeholder="order" maxlength="2" autofocus>
+                            <input id="order" type="number" class="form-control" name="order" value="{{ old('order') }}" placeholder="{{ trans('general.order') }}" maxlength="2" autofocus>
                             @if ($errors->has('order'))
                             <span class="help-block">
                                 <strong>

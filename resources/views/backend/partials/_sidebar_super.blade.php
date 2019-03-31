@@ -50,6 +50,16 @@
         <span class="selected"></span>
         <span class="arrow open"></span>
     </a>
+    <ul class="sub-menu">
+
+        <li class="nav-item ">
+            <a href="{{ route('backend.admin.user.create') }}" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-paint-brush"></i>
+                <span class="title">Create New User</span>
+                <span class="arrow"></span>
+            </a>
+        </li>
+    </ul>
 </li>
 
 
@@ -504,7 +514,16 @@
         <span class="title">Newsletter</span>
         <span class="arrow"></span>
     </a>
+    <ul class="sub-menu">
 
+        <li class="nav-item ">
+            <a href="{{ route('backend.admin.newsletter.create') }}" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-paint-brush"></i>
+                <span class="title">Create New Newsletter</span>
+                <span class="arrow"></span>
+            </a>
+        </li>
+    </ul>
 </li>
 
 
@@ -532,7 +551,16 @@
         <span class="title">Commercials</span>
         <span class="arrow"></span>
     </a>
+    <ul class="sub-menu">
 
+        <li class="nav-item ">
+            <a href="{{ route('backend.admin.commercial.create') }}" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-paint-brush"></i>
+                <span class="title">Create New Commercial</span>
+                <span class="arrow"></span>
+            </a>
+        </li>
+    </ul>
 </li>
 
 <li class="nav-item {{ activeItem('notification') }}">
@@ -578,7 +606,16 @@
         <span class="title">Answers</span>
         <span class="arrow"></span>
     </a>
+    <ul class="sub-menu">
 
+        <li class="nav-item ">
+            <a href="{{ route('backend.admin.answer.create') }}" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-paint-brush"></i>
+                <span class="title">Create New Answer</span>
+                <span class="arrow"></span>
+            </a>
+        </li>
+    </ul>
 </li>
 
 <li class="nav-item {{ activeItem('role') }}">
@@ -587,7 +624,16 @@
         <span class="title">Roles</span>
         <span class="arrow"></span>
     </a>
+    <ul class="sub-menu">
 
+        <li class="nav-item ">
+            <a href="{{ route('backend.admin.role.create') }}" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-paint-brush"></i>
+                <span class="title">Create New Role</span>
+                <span class="arrow"></span>
+            </a>
+        </li>
+    </ul>
 </li>
 <li class="nav-item {{ activeItem('term') }}">
     <a href="{{ route('backend.admin.term.index') }}" class="nav-link nav-toggle">
@@ -595,5 +641,14 @@
         <span class="title">Terms</span>
         <span class="arrow"></span>
     </a>
+    <ul class="sub-menu">
 
+        <li class="nav-item ">
+            <a href="{{ route('backend.admin.term.create') }}" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-paint-brush"></i>
+                <span class="title">Create New Term</span>
+                <span class="arrow"></span>
+            </a>
+        </li>
+    </ul>
 </li> 

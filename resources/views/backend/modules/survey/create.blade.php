@@ -7,13 +7,13 @@
         <form class="horizontal-form" role="form" method="POST" action="{{ route('backend.admin.survey.store') }}" enctype="multipart/form-data">
             @csrf
             <div class="form-body">
-                <h3 class="form-section">Create Survey</h3>
+                <h3 class="form-section">{{ trans('general.create_survey') }}</h3>
                 {{--name arabic / name english --}}
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="control-label">name *</label>
-                            <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="name in arabic" required autofocus>
+                            <label for="name" class="control-label">{{ trans('general.name') }} *</label>
+                            <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="{{ trans('general.name') }}" required autofocus>
                             @if ($errors->has('name'))
                             <span class="help-block">
                                 <strong>
@@ -25,8 +25,8 @@
                     </div>
                     <div class="col-md-4">
                         <div class="form-group {{ $errors->has('slug_ar') ? ' has-error' : '' }}">
-                            <label for="slug_ar" class="control-label">Slug Arabic*</label>
-                            <input id="slug_ar" type="text" class="form-control" name="slug_ar" value="{{ old('slug_ar') }}" placeholder="name in arabic" required autofocus>
+                            <label for="slug_ar" class="control-label">{{ trans('general.slug_ar') }}*</label>
+                            <input id="slug_ar" type="text" class="form-control" name="slug_ar" value="{{ old('slug_ar') }}" placeholder="{{ trans('general.slug_ar') }}" required autofocus>
                             @if ($errors->has('slug_ar'))
                             <span class="help-block">
                                 <strong>
@@ -38,8 +38,8 @@
                     </div>
                     <div class="col-md-4">
                         <div class="form-group{{ $errors->has('slug_en') ? ' has-error' : '' }}">
-                            <label for="slug_en" class="control-label">Slug English*</label>
-                            <input id="slug_en" type="text" class="form-control" name="slug_en" value="{{ old('slug_en') }}" placeholder="name in english" required autofocus>
+                            <label for="slug_en" class="control-label">{{ trans('general.slug_en') }}*</label>
+                            <input id="slug_en" type="text" class="form-control" name="slug_en" value="{{ old('slug_en') }}" placeholder="{{ trans('general.slug_en') }}" required autofocus>
                             @if ($errors->has('slug_en'))
                             <span class="help-block">
                                 <strong>
@@ -56,8 +56,8 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group{{ $errors->has('order') ? ' has-error' : '' }}">
-                            <label for="order" class="control-label">order *</label>
-                            <input id="order" type="text" class="form-control" name="order" value="{{ old('order') }}" placeholder="order" maxlength="2" autofocus>
+                            <label for="order" class="control-label">{{ trans('general.order') }} *</label>
+                            <input id="order" type="text" class="form-control" name="order" value="{{ old('order') }}" placeholder="{{ trans('general.order') }}" maxlength="2" autofocus>
                             @if ($errors->has('order'))
                             <span class="help-block">
                                 <strong>
@@ -73,13 +73,13 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="description" class="control-label">description arabic</label>
+                            <label for="description" class="control-label">{{ trans('general.description_ar') }}</label>
                             <textarea type="text" class="form-control" id="description_ar" name="description_ar" aria-multiline="true" maxlength="500" {{ old('description_ar') }}></textarea>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="description" class="control-label">description english</label>
+                            <label for="description" class="control-label">{{ trans('general.description_en') }}</label>
                             <textarea type="text" class="form-control" id="description_en" name="description_en" aria-multiline="true" maxlength="500">{{ old('description_en') }}</textarea>
                         </div>
                     </div>
@@ -91,7 +91,7 @@
                     @if($questions->isNotEmpty())
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label class="control-label">Questions List*</label>
+                            <label class="control-label">{{ trans('general.questions_list') }}*</label>
                             <select multiple="multiple" class="multi-select" id="my_multi_select1" name="questions[]">
                                 @foreach($questions->where('active', true) as $question)
                                 <option value="#" disabled="disabled">Question</option>
@@ -115,38 +115,38 @@
                     <hr>
                     <div class="col-md-3">
                         <div class="form-group">
-                            <label class="control-label sbold">active</label></br>
+                            <label class="control-label sbold">{{ trans('general.active') }}</label></br>
                             <label class="radio-inline">
-                                <input type="radio" name="active" id="optionsRadios3" checked value="1"> active</label>
+                                <input type="radio" name="active" id="optionsRadios3" value="1"> {{ trans('general.active') }}</label>
                             <label class="radio-inline">
-                                <input type="radio" name="active" id="optionsRadios4" value="0">not active</label>
+                                <input type="radio" name="active" id="optionsRadios4" checked value="0"> {{ trans('general.not_active') }}</label>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
-                            <label class="control-label sbold">is_home</label></br>
+                            <label class="control-label sbold"> {{ trans('general.is_home') }}</label></br>
                             <label class="radio-inline">
-                                <input type="radio" name="is_home" id="optionsRadios3" value="1"> is_home</label>
+                                <input type="radio" name="is_home" id="optionsRadios3" value="1"> {{ trans('general.is_home') }}</label>
                             <label class="radio-inline">
-                                <input type="radio" name="is_home" id="optionsRadios4" checked value="0">not is_home</label>
+                                <input type="radio" name="is_home" id="optionsRadios4" checked value="0"> {{ trans('general.not_is_home') }}</label>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
-                            <label class="control-label sbold">is_desktop</label></br>
+                            <label class="control-label sbold"> {{ trans('general.is_desktop') }}</label></br>
                             <label class="radio-inline">
-                                <input type="radio" name="is_desktop" id="optionsRadios3" value="1"> is_desktop</label>
+                                <input type="radio" name="is_desktop" id="optionsRadios3" value="1"> {{ trans('general.is_desktop') }}</label>
                             <label class="radio-inline">
-                                <input type="radio" name="is_desktop" id="optionsRadios4" checked value="0">not is_desktop</label>
+                                <input type="radio" name="is_desktop" id="optionsRadios4" checked value="0">{{ trans('general.not_is_desktop') }}</label>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
-                            <label class="control-label sbold">is_footer</label></br>
+                            <label class="control-label sbold">{{ trans('general.is_footer') }}</label></br>
                             <label class="radio-inline">
-                                <input type="radio" name="is_footer" id="optionsRadios7" checked value="1"> is_footer</label>
+                                <input type="radio" name="is_footer" id="optionsRadios7" checked value="1"> {{ trans('general.is_footer') }}</label>
                             <label class="radio-inline">
-                                <input type="radio" name="is_footer" id="optionsRadios8" value="0">not is_footer</label>
+                                <input type="radio" name="is_footer" id="optionsRadios8" value="0">{{ trans('general.not_is_footer') }}</label>
                         </div>
                     </div>
                 </div>
