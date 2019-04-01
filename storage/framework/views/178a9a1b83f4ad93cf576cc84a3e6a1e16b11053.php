@@ -42,41 +42,26 @@
                             <i class="fa fa-gift"></i> <?php echo e(trans('general.product_main_details')); ?>
 
                         </div>
-                        <div class="portlet-body form">
-                            <div class="form-body">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="form-group <?php echo e($errors->has('sku') ? ' has-error' : ''); ?>">
-                                            <label for="sku" class="control-label"><?php echo e(trans('general.sku')); ?>
+                    </div>
+                    <div class="portlet-body form">
+                        <div class="form-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group <?php echo e($errors->has('sku') ? ' has-error' : ''); ?>">
+                                        <label for="sku" class="control-label"><?php echo e(trans('general.sku')); ?>
 
-                                                *</label>
-                                            <input id="sku" type="text" class="form-control" name="sku" value="<?php echo e(old('sku')); ?>" placeholder="<?php echo e(trans('general.sku')); ?>" required autofocus>
-                                            <?php if($errors->has('sku')): ?>
-                                            <span class="help-block">
-                                                <strong>
-                                                    <?php echo e($errors->first('sku')); ?>
+                                            *</label>
+                                        <input id="sku" type="text" class="form-control" name="sku" value="<?php echo e(old('sku')); ?>" placeholder="<?php echo e(trans('general.sku')); ?>" required autofocus>
+                                        <?php if($errors->has('sku')): ?>
+                                        <span class="help-block">
+                                            <strong>
+                                                <?php echo e($errors->first('sku')); ?>
 
-                                                </strong>
-                                            </span>
-                                            <?php endif; ?>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group <?php echo e($errors->has('name_ar') ? ' has-error' : ''); ?>">
-                                            <label for="name_ar" class="control-label"><?php echo e(trans('general.name_arabic')); ?>*</label>
-                                            <input id="name_ar" type="text" class="form-control" name="name_ar" value="<?php echo e(old('name_ar')); ?>" placeholder="<?php echo e(trans('general.name_arabic')); ?>" required autofocus>
-                                            <?php if($errors->has('name_ar')): ?>
-                                            <span class="help-block">
-                                                <strong>
-                                                    <?php echo e($errors->first('name_ar')); ?>
-
-                                                </strong>
-                                            </span>
-                                            <?php endif; ?>
-                                        </div>
+                                            </strong>
+                                        </span>
+                                        <?php endif; ?>
                                     </div>
                                 </div>
-                                <?php endif; ?>
                                 <div class="col-md-4">
                                     <div class="form-group <?php echo e($errors->has('name_ar') ? ' has-error' : ''); ?>">
                                         <label for="name_ar" class="control-label"><?php echo e(trans('general.name_arabic')); ?>*</label>
@@ -187,7 +172,7 @@
                                     <div class="form-group<?php echo e($errors->has('start_sale') ? ' has-error' : ''); ?>">
                                         <label for="start_sale" class="control-label"><?php echo e(trans('general.start_sale_date')); ?></label>
                                         <div class="input-group date form_datetime">
-                                            <input type="text" size="16" readonly class="form-control" name="start_sale" value="" required>
+                                            <input type="text" size="16" readonly class="form-control" name="start_sale" value="<?php echo e(old('start_sale') ? old('start_sale') : '01 January 2019 - 07:55'); ?>" required>
                                             <span class="input-group-btn"><button class="btn default date-set" type="button"><i class="fa fa-calendar"></i></button></span>
                                         </div>
                                     </div>
@@ -196,7 +181,7 @@
                                     <div class="form-group">
                                         <label class="control-label"><?php echo e(trans('general.end_sale_date')); ?></label>
                                         <div class="input-group date form_datetime">
-                                            <input type="text" size="16" readonly class="form-control" name="end_sale" value="" required>
+                                            <input type="text" size="16" readonly class="form-control" name="end_sale" value="<?php echo e(old('end_sale') ? old('end_sale') : '01 January 2019 - 07:55'); ?>" required>
                                             <span class="input-group-btn"><button class="btn default date-set" type="button"><i class="fa fa-calendar"></i></button></span>
                                         </div>
                                     </div>

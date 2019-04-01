@@ -1,8 +1,13 @@
+<?php $__env->startSection('breadcrumbs'); ?>
+<?php echo e(Breadcrumbs::render('backend.slide.create')); ?>
+
+<?php $__env->stopSection(); ?>
+
 <?php $__env->startSection('content'); ?>
 <div class="portlet box blue">
     <?php echo $__env->make('backend.partials.forms.form_title', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
     <div class="portlet-body form">
-        <form class="horizontal-form" role="form" method="POST" action="<?php echo e(route('backend.admin.slide.store')); ?>" enctype="multipart/form-data">
+        <form class="horizontal-form" role="form" method="POST" action="<?php echo e(route('backend.admin.page.store')); ?>" enctype="multipart/form-data">
             <?php echo csrf_field(); ?>
             <div class="form-body">
                 <div class="row">
@@ -102,6 +107,7 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
                 <?php echo $__env->make('backend.partials.forms._btn-group', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
         </form>
