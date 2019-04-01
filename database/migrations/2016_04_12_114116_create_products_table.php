@@ -47,7 +47,7 @@ class CreateProductsTable extends Migration
 
             $table->integer('qty')->unsigned()->nullable();
             $table->integer('user_id')->unsigned()->index();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade'); // company that own this product ? !!
 
             $table->integer('brand_id')->unsigned()->index()->nullable();
             $table->foreign('brand_id')->references('id')->on('brands');

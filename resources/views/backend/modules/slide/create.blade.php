@@ -1,4 +1,9 @@
 @extends('backend.layouts.app')
+
+@section('breadcrumbs')
+    {{ Breadcrumbs::render('backend.slide.create') }}
+@endsection
+
 @section('content')
 <div class="clearfix"></div>
 <div class="portlet-body form">

@@ -247,9 +247,14 @@ Breadcrumbs::for('backend.coupon.index', function ($trail) {
     $trail->push('coupon', route('backend.coupon.index'));
 });
 
-Breadcrumbs::for('backend.slider.index', function ($trail) {
+Breadcrumbs::for('backend.slide.index', function ($trail) {
     $trail->parent('backend.home');
-    $trail->push('slider', route('backend.slider.index'));
+    $trail->push(trans('general.slides'), route('backend.slide.index'));
+});
+
+Breadcrumbs::for('backend.slide.create', function ($trail) {
+    $trail->parent('backend.home');
+    $trail->push(trans("general.create_slide"), route('backend.slide.create'));
 });
 
 

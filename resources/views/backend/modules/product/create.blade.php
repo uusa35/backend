@@ -1,5 +1,9 @@
 @extends('backend.layouts.app')
 
+@section('breadcrumbs')
+    {{ Breadcrumbs::render('backend.product.create') }}
+@endsection
+
 @section('content')
     <div class="portlet box blue">
         @include('backend.partials.forms.form_title')
@@ -43,7 +47,6 @@
                         <div class="portlet-body form">
                             <div class="form-body">
                                 <div class="row">
-                                    @can('product.create')
                                         <div class="col-md-4">
                                             <div class="form-group {{ $errors->has('sku') ? ' has-error' : '' }}">
                                                 <label for="sku" class="control-label">{{ trans('general.sku') }}
@@ -60,7 +63,6 @@
                                                 @endif
                                             </div>
                                         </div>
-                                    @endcan
                                     <div class="col-md-4">
                                         <div class="form-group {{ $errors->has('name_ar') ? ' has-error' : '' }}">
                                             <label for="name_ar"
