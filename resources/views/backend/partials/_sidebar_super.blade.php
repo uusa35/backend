@@ -50,16 +50,7 @@
         <span class="selected"></span>
         <span class="arrow open"></span>
     </a>
-    <ul class="sub-menu">
 
-        <li class="nav-item ">
-            <a href="{{ route('backend.admin.user.create') }}" class="nav-link nav-toggle">
-                <i class="fa fa-fw fa-paint-brush"></i>
-                <span class="title">Create New User</span>
-                <span class="arrow"></span>
-            </a>
-        </li>
-    </ul>
 </li>
 
 
@@ -77,13 +68,7 @@
                 <span class="arrow"></span>
             </a>
         </li>
-        <li class="nav-item ">
-            <a href="{{ route('backend.admin.category.create',['parent_id' => 0]) }}" class="nav-link ">
-                <i class="fa fa-fw fa-plus-square"></i>
-                <span class="title">Create Category</span>
-                <span class="arrow"></span>
-            </a>
-        </li>
+
     </ul>
 </li>
 
@@ -109,12 +94,7 @@
             {{--@endforeach--}}
             {{--</ul>--}}
         </li>
-        <li class="nav-item ">
-            <a href="{{ route('backend.admin.country.create') }}" class="nav-link ">
-                <i class="fa fa-fw fa-plus-circle"></i>
-                <span class="title">Add New Country</span>
-            </a>
-        </li>
+
     </ul>
 </li>
 
@@ -132,13 +112,7 @@
                 <span class="arrow"></span>
             </a>
         </li>
-        <li class="nav-item ">
-            <a href="{{ route('backend.admin.currency.create') }}" class="nav-link nav-toggle">
-                <i class="fa fa-fw fa-plus-circle"></i>
-                <span class="title">Create New Currency</span>
-                <span class="arrow"></span>
-            </a>
-        </li>
+
     </ul>
 </li>
 
@@ -156,13 +130,7 @@
                 <span class="arrow"></span>
             </a>
         </li>
-        <li class="nav-item ">
-            <a href="{{ route('backend.coupon.create') }}" class="nav-link nav-toggle">
-                <i class="fa fa-fw fa-plus-circle"></i>
-                <span class="title">Create New Coupon</span>
-                <span class="arrow"></span>
-            </a>
-        </li>
+
     </ul>
 </li>
 {{--Settings--}}
@@ -235,12 +203,7 @@
                         <span class="arrow nav-toggle"></span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="{{ route('backend.admin.page.create') }}" class="nav-link">
-                        <i class="icon-plus"></i> Create New Page
-                        <span class="arrow nav-toggle"></span>
-                    </a>
-                </li>
+
             </ul>
         </li>
         {{--<li class="nav-item ">--}}
@@ -323,13 +286,7 @@
                 <span class="arrow"></span>
             </a>
         </li>
-        <li class="nav-item ">
-            <a href="{{ route('backend.tag.create') }}" class="nav-link nav-toggle">
-                <i class="fa fa-fw fa-plus-square-o"></i>
-                <span class="title">Create New Tag</span>
-                <span class="arrow"></span>
-            </a>
-        </li>
+
     </ul>
 </li>
 </li>
@@ -348,13 +305,7 @@
                 <span class="arrow"></span>
             </a>
         </li>
-        <li class="nav-item ">
-            <a href="{{ route('backend.admin.brand.create') }}" class="nav-link nav-toggle">
-                <i class="fa fa-fw fa-plus-square-o"></i>
-                <span class="title">New Brand</span>
-                <span class="arrow"></span>
-            </a>
-        </li>
+
     </ul>
 </li>
 <li class="nav-item {{ activeItem('color') }}">
@@ -371,13 +322,7 @@
                 <span class="arrow"></span>
             </a>
         </li>
-        <li class="nav-item ">
-            <a href="{{ route('backend.admin.color.create') }}" class="nav-link nav-toggle">
-                <i class="fa fa-fw fa-paint-brush"></i>
-                <span class="title">Create New Color</span>
-                <span class="arrow"></span>
-            </a>
-        </li>
+
     </ul>
 </li>
 <li class="nav-item {{ activeItem('order') }}">
@@ -424,13 +369,7 @@
                 <span class="arrow"></span>
             </a>
         </li>
-        <li class="nav-item ">
-            <a href="{{ route('backend.admin.size.create') }}" class="nav-link nav-toggle">
-                <i class="fa fa-fw fa-pie-chart"></i>
-                <span class="title">Create New Size</span>
-                <span class="arrow"></span>
-            </a>
-        </li>
+
     </ul>
 </li>
 <li class="nav-item {{ activeItem('question',['survey','answer']) }}">
@@ -461,13 +400,7 @@
                 <span class="arrow"></span>
             </a>
         </li>
-        <li class="nav-item ">
-            <a href="{{ route('backend.admin.survey.create') }}" class="nav-link nav-toggle">
-                <i class="fa fa-fw fa-plus-circle"></i>
-                <span class="title">Create New Survey</span>
-                <span class="arrow"></span>
-            </a>
-        </li>
+
         {{--<li class="nav-item ">--}}
         {{--<a href="{{ route('backend.admin.survey.create') }}" class="nav-link nav-toggle">--}}
         {{--<i class="fa fa-fw fa-question-circle-o"></i>--}}
@@ -498,13 +431,7 @@
                 <span class="arrow"></span>
             </a>
         </li>
-        <li class="nav-item ">
-            <a href="{{ route('backend.admin.questionnaire.create') }}" class="nav-link nav-toggle">
-                <i class="fa fa-fw fa-pie-chart"></i>
-                <span class="title">Create New Questionnaire</span>
-                <span class="arrow"></span>
-            </a>
-        </li>
+
     </ul>
 </li>
 
@@ -514,16 +441,7 @@
         <span class="title">Newsletter</span>
         <span class="arrow"></span>
     </a>
-    <ul class="sub-menu">
 
-        <li class="nav-item ">
-            <a href="{{ route('backend.admin.newsletter.create') }}" class="nav-link nav-toggle">
-                <i class="fa fa-fw fa-paint-brush"></i>
-                <span class="title">Create New Newsletter</span>
-                <span class="arrow"></span>
-            </a>
-        </li>
-    </ul>
 </li>
 
 
@@ -533,16 +451,8 @@
         <span class="title">FAQ</span>
         <span class="arrow"></span>
     </a>
-    <ul class="sub-menu">
 
-        <li class="nav-item ">
-            <a href="{{ route('backend.admin.faq.create') }}" class="nav-link nav-toggle">
-                <i class="fa fa-fw fa-paint-brush"></i>
-                <span class="title">Create New FAQ</span>
-                <span class="arrow"></span>
-            </a>
-        </li>
-    </ul>
+
 </li>
 
 <li class="nav-item {{ activeItem('commercial') }}">
@@ -551,16 +461,7 @@
         <span class="title">Commercials</span>
         <span class="arrow"></span>
     </a>
-    <ul class="sub-menu">
 
-        <li class="nav-item ">
-            <a href="{{ route('backend.admin.commercial.create') }}" class="nav-link nav-toggle">
-                <i class="fa fa-fw fa-paint-brush"></i>
-                <span class="title">Create New Commercial</span>
-                <span class="arrow"></span>
-            </a>
-        </li>
-    </ul>
 </li>
 
 <li class="nav-item {{ activeItem('notification') }}">
@@ -569,16 +470,7 @@
         <span class="title">Notifications</span>
         <span class="arrow"></span>
     </a>
-    <ul class="sub-menu">
 
-        <li class="nav-item ">
-            <a href="{{ route('backend.admin.notification.create') }}" class="nav-link nav-toggle">
-                <i class="fa fa-fw fa-paint-brush"></i>
-                <span class="title">Create New Notification</span>
-                <span class="arrow"></span>
-            </a>
-        </li>
-    </ul>
 </li>
 
 <li class="nav-item {{ activeItem('policy') }}">
@@ -587,16 +479,7 @@
         <span class="title">Policies</span>
         <span class="arrow"></span>
     </a>
-    <ul class="sub-menu">
 
-        <li class="nav-item ">
-            <a href="{{ route('backend.admin.policy.create') }}" class="nav-link nav-toggle">
-                <i class="fa fa-fw fa-paint-brush"></i>
-                <span class="title">Create New Policy</span>
-                <span class="arrow"></span>
-            </a>
-        </li>
-    </ul>
 </li>
 
 
@@ -606,16 +489,7 @@
         <span class="title">Answers</span>
         <span class="arrow"></span>
     </a>
-    <ul class="sub-menu">
 
-        <li class="nav-item ">
-            <a href="{{ route('backend.admin.answer.create') }}" class="nav-link nav-toggle">
-                <i class="fa fa-fw fa-paint-brush"></i>
-                <span class="title">Create New Answer</span>
-                <span class="arrow"></span>
-            </a>
-        </li>
-    </ul>
 </li>
 
 <li class="nav-item {{ activeItem('role') }}">
@@ -624,16 +498,7 @@
         <span class="title">Roles</span>
         <span class="arrow"></span>
     </a>
-    <ul class="sub-menu">
 
-        <li class="nav-item ">
-            <a href="{{ route('backend.admin.role.create') }}" class="nav-link nav-toggle">
-                <i class="fa fa-fw fa-paint-brush"></i>
-                <span class="title">Create New Role</span>
-                <span class="arrow"></span>
-            </a>
-        </li>
-    </ul>
 </li>
 <li class="nav-item {{ activeItem('term') }}">
     <a href="{{ route('backend.admin.term.index') }}" class="nav-link nav-toggle">
@@ -641,14 +506,5 @@
         <span class="title">Terms</span>
         <span class="arrow"></span>
     </a>
-    <ul class="sub-menu">
 
-        <li class="nav-item ">
-            <a href="{{ route('backend.admin.term.create') }}" class="nav-link nav-toggle">
-                <i class="fa fa-fw fa-paint-brush"></i>
-                <span class="title">Create New Term</span>
-                <span class="arrow"></span>
-            </a>
-        </li>
-    </ul>
 </li> 
