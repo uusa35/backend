@@ -8,7 +8,7 @@
         {{-- Choose Date & Time --}}
         @include('frontend.wokiee.four.partials._service_show_service_choose_date')
         {{-- Add To Cart FORM Btn + Form --}}
-        <div class="tt-wrapper service_alert d-none">
+        <div class="tt-wrapper service_alert d-none" id="service_form">
             <div class="tt-row-custom-01">
                 <div class="col-12">
                     <div class="card text-center">
@@ -26,9 +26,9 @@
                                               data-tooltip="{{ trans('message.cart_notes') }}"
                                               id="textareaMessage"></textarea>
                                     </div>
+                                    @include('frontend.wokiee.four.partials._select_element_timing_id')
                                     <input type="hidden" name="service_id" id="service_id"
                                            value="{{ $element->id }}">
-                                    <input type="hidden" name="timing_id" id="timing_id" value="">
                                     <input type="hidden" name="user_id" value="{{ $element->user_id }}">
                                     <input type="hidden" name="day_selected" id="day_selected" value="">
                                     <input type="hidden" name="day_selected_format" id="day_selected_format"
