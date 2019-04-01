@@ -35,7 +35,7 @@ class CartController extends Controller
 
     public function addService(Request $request)
     {
-
+        dd(request()->all());
         // Note that Month/Day/Year that's the default
         $validator = validator($request->all(),
             [
