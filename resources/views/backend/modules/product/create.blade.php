@@ -161,7 +161,7 @@
                                     <div class="form-group{{ $errors->has('start_sale') ? ' has-error' : '' }}">
                                         <label for="start_sale" class="control-label">{{ trans('general.start_sale_date') }}</label>
                                         <div class="input-group date form_datetime">
-                                            <input type="text" size="16" readonly class="form-control" name="start_sale" value="{{ old('start_sale') ? old('start_sale') : '01 January 2019 - 07:55' }}" required>
+                                            <input type="text" readonly style="direction: ltr !important;" class="form-control" name="start_sale" value="{{ old('start_sale') ? old('start_sale') : '01 January 2019 - 07:55' }}" required>
                                             <span class="input-group-btn"><button class="btn default date-set" type="button"><i class="fa fa-calendar"></i></button></span>
                                         </div>
                                     </div>
@@ -170,7 +170,7 @@
                                     <div class="form-group">
                                         <label class="control-label">{{ trans('general.end_sale_date') }}</label>
                                         <div class="input-group date form_datetime">
-                                            <input type="text" size="16" readonly class="form-control" name="end_sale" value="{{ old('end_sale') ? old('end_sale') : '01 January 2019 - 07:55' }}" required>
+                                            <input type="text" class="form-control" readonly style="direction: ltr !important;" name="end_sale" value="{{ old('end_sale') ? old('end_sale') : '01 January 2019 - 07:55' }}" required>
                                             <span class="input-group-btn"><button class="btn default date-set" type="button"><i class="fa fa-calendar"></i></button></span>
                                         </div>
                                     </div>
