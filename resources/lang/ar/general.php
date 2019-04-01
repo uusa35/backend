@@ -355,7 +355,8 @@ return array(
     'find_us_on_stores' => 'حمل تطبيقنا على الاستور',
     'service_start_time' => 'وقت بداية الخدمة',
     "loading" => "جاري تحميل البيانات ..",
-    "services_count" => "عدد الخدمات المتاحة"
+    "services_count" => "عدد الخدمات المتاحة",
+    "timings_available_for_chosen_date_and_service" => "الأوقات المتاحة في هذا اليوم للخدمة"
 
 
 );

@@ -61,6 +61,7 @@
         hide: function(e) {
         },
         pick: function(e) {
+            $('#service_form').find('option:first').attr('selected', 'selected');
             console.log('from the service Element Picker');
             dayNo = e.date.getDay();
             day_selected_format = moment(e.date).format('MM/DD/YYYY');
@@ -69,8 +70,14 @@
             // set Day No + Day Format Value
             $('input[id^="day_selected"]').attr('value', dayNo);
             $('input[id^="day_selected_format"]').attr('value', day_selected_format);
+
+
+            // Modal Case
+            $(`div[id^="service_form"]`).removeClass('d-none');
             $(`*[class^="timing-element-"]`).addClass('d-none');
             $(`*[class^="timing-element-${dayNo}"]`).removeClass('d-none');
+
+            // only In Modal Case
             $('#chooseTimeModal').modal('show');
         },
         update: function(e) {
