@@ -12,8 +12,8 @@ const mix = require('laravel-mix');
  */
 mix.js('resources/assets/js/app.js', 'public/js').version()
     .sass('resources/assets/sass/app.scss', 'public/css').version()
-    .sass('../wokiee-ecommerce-html/html/css/my-theme.scss','public/css/wokiee-theme-sass.css').version()
-    .sass('../wokiee-ecommerce-html/html/css/rtl.scss','public/css/wokiee-theme-sass-rtl.css').version();
+    .sass('../wokiee-ecommerce-html/html/css/my-theme.scss', 'public/css/wokiee-theme-sass.css').version()
+    .sass('../wokiee-ecommerce-html/html/css/rtl.scss', 'public/css/wokiee-theme-sass-rtl.css').version();
 mix.styles(['resources/assets/css/frontend-custom-ar.css'], 'public/css/frontend-custom-ar.css').version();
 mix.styles(['resources/assets/css/frontend-custom-en.css'], 'public/css/frontend-custom-en.css').version();
 // frontend
@@ -92,6 +92,7 @@ mix.styles([
     '../metronic_v4.5.6/theme/assets/layouts/layout2/css/themes/light.min.css',
     // '../metronic_v4.5.6/theme/assets/layouts/layout2/css/themes/grey.min.css',
     '../metronic_v4.5.6/theme/assets/layouts/layout2/css/custom.min.css',
+    './resources/assets/css/bootstrap-datetimepicker.min.css',
     './resources/assets/css/backend-custom.css'
 
 ], 'public/css/backend.css').version();
@@ -136,6 +137,7 @@ mix.styles([
     // '../metronic_v4.5.6/theme_rtl/assets/layouts/layout2/css/themes/light-rtl.min.css',
     // '../metronic_v4.5.6/theme_rtl/assets/layouts/layout2/css/themes/grey.min.css',
     '../metronic_v4.5.6/theme_rtl/assets/layouts/layout2/css/custom-rtl.min.css',
+    './resources/assets/css/bootstrap-datetimepicker.min.css',
     './resources/assets/css/backend-custom.css',
     'resources/assets/css/backend-custom-ar.css',
 ], 'public/css/backend-rtl.css').version();
@@ -174,6 +176,9 @@ mix.scripts([
         '../metronic_v4.5.6/theme/assets/layouts/layout2/scripts/layout.min.js',
         '../metronic_v4.5.6/theme/assets/layouts/layout2/scripts/demo.min.js',
         '../metronic_v4.5.6/theme/assets/layouts/global/scripts/quick-sidebar.min.js',
+        'resources/assets/js/bootstrap-datetimepicker.min.js',
+        'resources/assets/js/components-date-time-pickers.min.js',
+
     ],
     'public/js/backend.js').version();
 

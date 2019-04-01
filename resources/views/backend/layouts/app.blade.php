@@ -20,7 +20,6 @@
     @show
     <link rel="shortcut icon" href="{{ asset('images/logo.ico') }}" />
     <link href="{{ asset('images/logo.png') }}" rel="shortcut icon" type="image/png">
-    <link href="{{ asset('css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet">
 
 </head>
 
