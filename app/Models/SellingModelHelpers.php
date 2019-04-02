@@ -35,8 +35,7 @@ trait SellingModelHelpers
                 ])
                 ->whereDate('service_date', '=', Carbon::parse($daySelectedFormat))->whereHas('order', function($q) {
                     return $q->where('paid', true);
-            })
-                ->get();
+            })->get();
             if ($this->multi_booking) {
                 return $orderMetasWithSameService->count() < $this->booking_limit;
             }

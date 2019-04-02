@@ -356,7 +356,16 @@ return array(
     'service_start_time' => 'وقت بداية الخدمة',
     "loading" => "جاري تحميل البيانات ..",
     "services_count" => "عدد الخدمات المتاحة",
-    "timings_available_for_chosen_date_and_service" => "الأوقات المتاحة في هذا اليوم للخدمة"
+    "timings_available_for_chosen_date_and_service" => "الأوقات المتاحة في هذا اليوم للخدمة",
+    "edit_env_file"  => "تعديل ملف الـ env",
+    "export_translations" => "حفظ الترجمة",
+    "translation_manager" => "قسم الترجمة",
+    "reset_password" => "تغير كلمة المرور",
+    "my_profile" => "الملف الشخصي",
+    "role" => "دور",
+    "app_settings" => "تحكم الموقع",
+    "switch_lang" => "تغير اللغة",
+
 
 
 );

@@ -429,7 +429,7 @@
                                 </a>
                             </li>
                             <li class="divider"></li>
-                            @can('onlySuper')
+                            @can('isSuper')
                                 <li>
                                     <a href="{{ route('backend.admin.setting.index') }}">
                                         <i class="icon-settings"></i> {{ trans('general.app_settings') }} </a>
@@ -442,6 +442,11 @@
                                 <li>
                                     <a href="{{ route('backend.admin.export.translation') }}">
                                         <i class="icon-envelope-letter"></i> {{ trans('general.export_translations') }}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ url('admin/env') }}">
+                                        <i class="fa fa-fw fa-bug"></i> {{ trans('general.edit_env_file') }}
                                     </a>
                                 </li>
                                 <li>
@@ -490,4 +495,4 @@
         <!-- END PAGE TOP -->
     </div>
     <!-- END HEADER INNER -->
-</div> 
+</div>

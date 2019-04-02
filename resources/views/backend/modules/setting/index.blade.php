@@ -1,5 +1,9 @@
 @extends('backend.layouts.app')
 
+@section('breadcrumbs')
+    {{ Breadcrumbs::render('backend.admin.setting.index') }}
+@endsection
+
 @section('content')
     <div class="portlet light ">
         @include('backend.partials.forms.form_title')
