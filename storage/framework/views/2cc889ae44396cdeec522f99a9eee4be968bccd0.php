@@ -59,7 +59,7 @@
                                 <td><?php echo e($element->phone); ?></td>
                                 <td><?php echo e($element->address); ?></td>
                                 <td><?php echo e($element->area); ?></td>
-                                <td><?php echo e($element->country); ?></td>
+                                <td><?php echo e($element->country->name); ?></td>
                                 <td>
                                     <span class="label <?php echo e(activeLabel($element->active)); ?>"><?php echo e(activeText($element->active)); ?></span>
                                 </td>

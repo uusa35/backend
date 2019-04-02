@@ -60,7 +60,7 @@
                                 <td>{{ $element->phone }}</td>
                                 <td>{{ $element->address }}</td>
                                 <td>{{ $element->area }}</td>
-                                <td>{{ $element->country }}</td>
+                                <td>{{ $element->country->name }}</td>
                                 <td>
                                     <span class="label {{ activeLabel($element->active) }}">{{ activeText($element->active) }}</span>
                                 </td>
