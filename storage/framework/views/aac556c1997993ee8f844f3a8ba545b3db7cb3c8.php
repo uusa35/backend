@@ -429,17 +429,14 @@
                                         <div class="form-group">
                                             <label for="single"
                                                    class="control-label"><?php echo e(trans('general.shipment_package')); ?></label>
-                                            <select id="" name="shipment_id" class="form-control select2">
+                                            <select id="" name="shipment_id" class="form-control select2" required>
                                                 <option value=""><?php echo e(trans('choose_product_package_grade')); ?></option>
                                                 <?php $__currentLoopData = $shipment_packages; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $shipment_package): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                     <option value="<?php echo e($shipment_package->slug_en); ?>"><?php echo e($shipment_package->slug_en); ?></option>
                                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                             </select>
                                             <span class="help-block">
-                                                                <strong>
-                                                                <?php echo e(trans('message.shipment_instructions')); ?>
-
-                                                                </strong>
+                                                <strong><?php echo e(trans('message.shipment_instructions')); ?></strong>
                                             </span>
                                         </div>
                                     </div>
@@ -452,8 +449,6 @@
                                                 <?php $__currentLoopData = $brands; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $brand): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                     <option value="<?php echo e($brand->id); ?>"><?php echo e($brand->slug); ?></option>
                                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-
-
                                             </select>
                                         </div>
                                     </div>
