@@ -23,9 +23,9 @@ class UserController extends Controller
     public function index()
     {
         if (request()->has('role_id')) {
-            $elements = User::where('role_id', request('role_id'))->get();
+            $elements = User::where('role_id', request('role_id'))->with('country')->get();
         } else {
-            $elements = User::all();
+            $elements = User::with('country')->get();
         }
 
         return view('backend.modules.user.index', compact('elements'));
