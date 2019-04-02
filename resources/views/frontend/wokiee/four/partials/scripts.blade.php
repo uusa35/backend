@@ -61,7 +61,8 @@
         hide: function(e) {
         },
         pick: function(e) {
-            $('#service_form').find('option:first').attr('selected', 'selected');
+            $("#timing_select option[selected]").removeAttr("selected");
+            $('#timing_select').find('option:first').attr('selected', 'selected');
             console.log('from the service Element Picker');
             dayNo = e.date.getDay();
             day_selected_format = moment(e.date).format('MM/DD/YYYY');
