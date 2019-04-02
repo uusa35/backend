@@ -1,5 +1,6 @@
 <?php $__env->startSection('breadcrumbs'); ?>
-    
+    <?php echo e(Breadcrumbs::render('backend.admin.user.index')); ?>
+
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
     <div class="row">

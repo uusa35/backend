@@ -63,7 +63,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
     });
     // Backend :: companies
     Route::get('/', 'HomeController@index')->name('index');
-    Route::get('backend/home', 'HomeController@index')->name('home');
+    Route::get('home', 'HomeController@index')->name('home');
     Route::get('activate', 'HomeController@toggleActivate')->name('activate');
     Route::get('language/{locale}', 'HomeController@changeLanguage')->name('language.change');
     Route::get('reset/password', 'UserController@getResetPassword')->name('reset.password');

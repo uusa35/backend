@@ -181,14 +181,14 @@ Breadcrumbs::for('backend.gallery.index', function ($trail) {
     $trail->push('gallery', route('backend.gallery.index'));
 });
 
-Breadcrumbs::for('backend.role.index', function ($trail) {
+Breadcrumbs::for('backend.admin.role.index', function ($trail) {
     $trail->parent('backend.home');
-    $trail->push('role', route('backend.role.index'));
+    $trail->push('role', route('backend.admin.role.index'));
 });
 
 Breadcrumbs::for('backend.admin.setting.index', function ($trail) {
     $trail->parent('backend.home');
-    $trail->push(trans('general.setting'), route('backend.admin.setting.index'));
+    $trail->push(trans('general.settings'), route('backend.admin.setting.index'));
 });
 
 Breadcrumbs::for('backend.order.index', function ($trail) {
@@ -416,14 +416,20 @@ Breadcrumbs::for('backend.gallery.edit', function ($trail, $element) {
 
 });
 
-Breadcrumbs::for('backend.category.create', function ($trail) {
-    $trail->parent('backend.category.index');
-    $trail->push('create category', route('backend.category.create'));
+Breadcrumbs::for('backend.admin.category.index', function ($trail) {
+    $trail->parent('backend.home');
+    $trail->push(trans('general.categories'), route('backend.admin.category.index'));
 });
 
-Breadcrumbs::for('backend.category.edit', function ($trail, $element) {
-    $trail->parent('backend.category.index');
-    $trail->push('edit category', route('backend.category.edit', $element->id));
+
+Breadcrumbs::for('backend.admin.category.create', function ($trail) {
+    $trail->parent('backend.admin.category.index');
+    $trail->push(trans('general.create_category'), route('backend.admin.category.create'));
+});
+
+Breadcrumbs::for('backend.admin.category.edit', function ($trail, $element) {
+    $trail->parent('backend.admin.category.index');
+    $trail->push('general.edit_category', route('backend.admin.category.edit', $element->id));
 });
 
 Breadcrumbs::for('backend.aboutus.create', function ($trail) {

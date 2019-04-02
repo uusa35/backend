@@ -1,5 +1,6 @@
 <?php
 
+use Brotzka\DotenvEditor\DotenvEditorServiceProvider;
 use DaveJamesMiller\Breadcrumbs\BreadcrumbsServiceProvider;
 use Usama\Tap\TapServiceProvider;
 
@@ -181,6 +182,7 @@ return [
         TapServiceProvider::class,
         Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
         Riverskies\Laravel\MobileDetect\MobileDetectServiceProvider::class,
+        DotenvEditorServiceProvider::class
 
 
     ],
@@ -231,6 +233,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'DotenvEditor' => Brotzka\DotenvEditor\DotenvEditorFacade::class,
 
     ],
 
