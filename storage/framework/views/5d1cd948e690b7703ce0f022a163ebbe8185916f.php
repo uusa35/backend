@@ -37,7 +37,7 @@
                             <th><?php echo e(trans('general.image')); ?></th>
                             <th><?php echo e(trans('general.end_sale')); ?></th>
                             <th><?php echo e(trans('general.active')); ?></th>
-                            <th><?php echo e(trans('general.attributes x/clr/qty')); ?></th>
+                            <th><?php echo e(trans('general.attribute')); ?> x/clr/qty</th>
                             <th><?php echo e(trans('general.actions')); ?></th>
                         </tr>
                         </tfoot>
@@ -46,7 +46,7 @@
                             <tr>
                                 <td><?php echo e($element->id); ?></td>
                                 <td><?php echo e($element->sku); ?></td>
-                                <td><?php echo e($element->name_ar); ?></td>
+                                <td><?php echo e($element->name); ?></td>
                                 
                                 
                                 

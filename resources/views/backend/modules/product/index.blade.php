@@ -17,7 +17,7 @@
                         <tr>
                             <th>{{ trans('general.id') }}</th>
                             <th>{{ trans('general.sku') }}</th>
-                            <th>{{ trans('general.name_ar') }}</th>
+                            <th>{{ trans('general.name') }}</th>
                             <th>{{ trans('general.price') }}</th>
                             <th>{{ trans('general.sale_price') }}</th>
                             <th>{{ trans('general.weight') }}</th>
@@ -32,7 +32,7 @@
                         <tr>
                             <th>{{ trans('general.id') }}</th>
                             <th>{{ trans('general.sku') }}</th>
-                            <th>{{ trans('general.name_ar') }}</th>
+                            <th>{{ trans('general.name') }}</th>
                             <th>{{ trans('general.price') }}</th>
                             <th>{{ trans('general.sale_price') }}</th>
                             <th>{{ trans('general.weight') }}</th>
@@ -48,7 +48,7 @@
                             <tr>
                                 <td>{{ $element->id }}</td>
                                 <td>{{ $element->sku }}</td>
-                                <td>{{ $element->name_ar }}</td>
+                                <td>{{ $element->name }}</td>
                                 {{--<td>--}}
                                 {{--<span class="label {{ activeLabel($element->home_delivery_availability) }}">{{ activeText($element->home_delivery_availability,'Yes') }}</span>--}}
                                 {{--</td>--}}
