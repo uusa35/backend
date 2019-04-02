@@ -280,10 +280,10 @@
                                                                autofocus>
                                                         @if ($errors->has('notes_en'))
                                                             <span class="help-block">
-                                            <strong>
-                                                {{ $errors->first('notes_en') }}
-                                            </strong>
-                                        </span>
+                                                                <strong>
+                                                                {{ $errors->first('notes_en') }}
+                                                                </strong>
+                                                            </span>
                                                         @endif
                                                     </div>
                                                 </div>
@@ -390,28 +390,15 @@
                                             </div>
                                         </div>
                                     @endif
-                                    @if(!$brands->isEmpty())
-                                        <div class="col-lg-4">
-                                            <div class="form-group">
-                                                <label class="control-label">{{ trans('general.brands') }}</label>
-                                                <select multiple="multiple" class="multi-select" id="my_multi_select3"
-                                                        name="brands[]">
-                                                    @foreach($brands as $brand)
-                                                        <option value="{{ $brand->id }}">{{ $brand->name }}</option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-                                        </div>
-                                    @endif
                                 </div>
 
 
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="single"
                                                    class="control-label">{{ trans('general.owner') }}</label>
-                                            <select id="single" class="form-control select2">
+                                            <select id="" class="form-control select2">
                                                 <option value="">{{ trans('general.choose_user') }}</option>
                                                 @foreach($users as $user)
                                                     <option value="{{ $user->slug_en }}">{{ $user->slug_en }}</option>
@@ -421,18 +408,30 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="single"
                                                    class="control-label">{{ trans('general.shipment_package') }}</label>
-                                            <select id="single" class="form-control select2">
-                                                <option></option>
-
+                                            <select id="" name="shipment_id" class="form-control select2" required>
+                                                <option value="">{{ trans('choose_product_package_grade') }}</option>
                                                 @foreach($shipment_packages as $shipment_package)
                                                     <option value="{{ $shipment_package->slug_en }}">{{ $shipment_package->slug_en }}</option>
                                                 @endforeach
-
-
+                                            </select>
+                                            <span class="help-block">
+                                                <strong>{{ trans('message.shipment_instructions') }}</strong>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="brand_id"
+                                                   class="control-label">{{ trans('general.brand') }}</label>
+                                            <select id="" name="brand_id" class="form-control select2">
+                                                <option value="">{{ trans('general.choose_brand') }}</option>
+                                                @foreach($brands as $brand)
+                                                    <option value="{{ $brand->id }}">{{ $brand->slug }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>

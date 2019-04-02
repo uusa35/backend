@@ -294,11 +294,11 @@
                                                                autofocus>
                                                         <?php if($errors->has('notes_en')): ?>
                                                             <span class="help-block">
-                                            <strong>
-                                                <?php echo e($errors->first('notes_en')); ?>
+                                                                <strong>
+                                                                <?php echo e($errors->first('notes_en')); ?>
 
-                                            </strong>
-                                        </span>
+                                                                </strong>
+                                                            </span>
                                                         <?php endif; ?>
                                                     </div>
                                                 </div>
@@ -407,28 +407,15 @@
                                             </div>
                                         </div>
                                     <?php endif; ?>
-                                    <?php if(!$brands->isEmpty()): ?>
-                                        <div class="col-lg-4">
-                                            <div class="form-group">
-                                                <label class="control-label"><?php echo e(trans('general.brands')); ?></label>
-                                                <select multiple="multiple" class="multi-select" id="my_multi_select3"
-                                                        name="brands[]">
-                                                    <?php $__currentLoopData = $brands; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $brand): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                        <option value="<?php echo e($brand->id); ?>"><?php echo e($brand->name); ?></option>
-                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    <?php endif; ?>
                                 </div>
 
 
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="single"
                                                    class="control-label"><?php echo e(trans('general.owner')); ?></label>
-                                            <select id="single" class="form-control select2">
+                                            <select id="" class="form-control select2">
                                                 <option value=""><?php echo e(trans('general.choose_user')); ?></option>
                                                 <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                     <option value="<?php echo e($user->slug_en); ?>"><?php echo e($user->slug_en); ?></option>
@@ -438,15 +425,32 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="single"
                                                    class="control-label"><?php echo e(trans('general.shipment_package')); ?></label>
-                                            <select id="single" class="form-control select2">
-                                                <option></option>
-
+                                            <select id="" name="shipment_id" class="form-control select2">
+                                                <option value=""><?php echo e(trans('choose_product_package_grade')); ?></option>
                                                 <?php $__currentLoopData = $shipment_packages; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $shipment_package): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                     <option value="<?php echo e($shipment_package->slug_en); ?>"><?php echo e($shipment_package->slug_en); ?></option>
+                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                            </select>
+                                            <span class="help-block">
+                                                                <strong>
+                                                                <?php echo e(trans('message.shipment_instructions')); ?>
+
+                                                                </strong>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="brand_id"
+                                                   class="control-label"><?php echo e(trans('general.brand')); ?></label>
+                                            <select id="" name="brand_id" class="form-control select2">
+                                                <option value=""><?php echo e(trans('general.choose_brand')); ?></option>
+                                                <?php $__currentLoopData = $brands; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $brand): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                    <option value="<?php echo e($brand->id); ?>"><?php echo e($brand->slug); ?></option>
                                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 
