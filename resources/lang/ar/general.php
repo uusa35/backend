@@ -184,7 +184,7 @@ return array(
     'products_search_results' => 'المنتجات',
     'related_products' => 'منتجات متعلقة',
     'notes' => 'ملاحظات',
-    'id' => 'رقم الهوية شخصية',
+    'id' => 'م',
     'status' => 'الحالة',
     'net_price' => 'السعر الصافي',
     'more_information' => 'معلومات اضافية',

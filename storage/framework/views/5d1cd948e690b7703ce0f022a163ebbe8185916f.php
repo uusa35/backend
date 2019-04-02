@@ -15,7 +15,7 @@
                         <tr>
                             <th><?php echo e(trans('general.id')); ?></th>
                             <th><?php echo e(trans('general.sku')); ?></th>
-                            <th><?php echo e(trans('general.name_ar')); ?></th>
+                            <th><?php echo e(trans('general.name')); ?></th>
                             <th><?php echo e(trans('general.price')); ?></th>
                             <th><?php echo e(trans('general.sale_price')); ?></th>
                             <th><?php echo e(trans('general.weight')); ?></th>
@@ -30,7 +30,7 @@
                         <tr>
                             <th><?php echo e(trans('general.id')); ?></th>
                             <th><?php echo e(trans('general.sku')); ?></th>
-                            <th><?php echo e(trans('general.name_ar')); ?></th>
+                            <th><?php echo e(trans('general.name')); ?></th>
                             <th><?php echo e(trans('general.price')); ?></th>
                             <th><?php echo e(trans('general.sale_price')); ?></th>
                             <th><?php echo e(trans('general.weight')); ?></th>
