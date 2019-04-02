@@ -13,32 +13,32 @@
                     <table id="dataTable" class="table table-striped table-bordered table-hover" cellspacing="0">
                         <thead>
                         <tr>
-                            <th>id</th>
-                            <th>sku</th>
-                            <th>name_ar</th>
-                            <th>price</th>
-                            <th>sale_price</th>
-                            <th>weight</th>
-                            <th>image</th>
-                            <th>end_sale</th>
-                            <th>active</th>
-                            <th>attributes x/clr/qty</th>
-                            <th>actions</th>
+                            <th><?php echo e(trans('general.id')); ?></th>
+                            <th><?php echo e(trans('general.sku')); ?></th>
+                            <th><?php echo e(trans('general.name_ar')); ?></th>
+                            <th><?php echo e(trans('general.price')); ?></th>
+                            <th><?php echo e(trans('general.sale_price')); ?></th>
+                            <th><?php echo e(trans('general.weight')); ?></th>
+                            <th><?php echo e(trans('general.image')); ?></th>
+                            <th><?php echo e(trans('general.end_sale')); ?></th>
+                            <th><?php echo e(trans('general.active')); ?></th>
+                            <th><?php echo e(trans('general.attributes x/clr/qty')); ?></th>
+                            <th><?php echo e(trans('general.actions')); ?></th>
                         </tr>
                         </thead>
                         <tfoot>
                         <tr>
-                            <th>id</th>
-                            <th>sku</th>
-                            <th>name_ar</th>
-                            <th>price</th>
-                            <th>sale_price</th>
-                            <th>weight</th>
-                            <th>image</th>
-                            <th>end_sale</th>
-                            <th>active</th>
-                            <th>attributes</th>
-                            <th>actions</th>
+                            <th><?php echo e(trans('general.id')); ?></th>
+                            <th><?php echo e(trans('general.sku')); ?></th>
+                            <th><?php echo e(trans('general.name_ar')); ?></th>
+                            <th><?php echo e(trans('general.price')); ?></th>
+                            <th><?php echo e(trans('general.sale_price')); ?></th>
+                            <th><?php echo e(trans('general.weight')); ?></th>
+                            <th><?php echo e(trans('general.image')); ?></th>
+                            <th><?php echo e(trans('general.end_sale')); ?></th>
+                            <th><?php echo e(trans('general.active')); ?></th>
+                            <th><?php echo e(trans('general.attributes x/clr/qty')); ?></th>
+                            <th><?php echo e(trans('general.actions')); ?></th>
                         </tr>
                         </tfoot>
                         <tbody>
@@ -73,7 +73,7 @@
                                 </td>
                                 <td>
                                     <img class="img-xs"
-                                         src="<?php echo e(asset('storage/uploads/images/thumbnail/'.$element->image)); ?>" alt="">
+                                         src="<?php echo e($element->imageThumbLink); ?>" alt="">
                                 </td>
                                 <td><?php echo e(!is_null($element->end_sale) ? $element->end_sale->format('Y-m-d') : null); ?></td>
                                 <td>

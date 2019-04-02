@@ -15,32 +15,32 @@
                     <table id="dataTable" class="table table-striped table-bordered table-hover" cellspacing="0">
                         <thead>
                         <tr>
-                            <th>id</th>
-                            <th>sku</th>
-                            <th>name_ar</th>
-                            <th>price</th>
-                            <th>sale_price</th>
-                            <th>weight</th>
-                            <th>image</th>
-                            <th>end_sale</th>
-                            <th>active</th>
-                            <th>attributes x/clr/qty</th>
-                            <th>actions</th>
+                            <th>{{ trans('general.id') }}</th>
+                            <th>{{ trans('general.sku') }}</th>
+                            <th>{{ trans('general.name_ar') }}</th>
+                            <th>{{ trans('general.price') }}</th>
+                            <th>{{ trans('general.sale_price') }}</th>
+                            <th>{{ trans('general.weight') }}</th>
+                            <th>{{ trans('general.image') }}</th>
+                            <th>{{ trans('general.end_sale') }}</th>
+                            <th>{{ trans('general.active') }}</th>
+                            <th>{{ trans('general.attributes x/clr/qty') }}</th>
+                            <th>{{ trans('general.actions') }}</th>
                         </tr>
                         </thead>
                         <tfoot>
                         <tr>
-                            <th>id</th>
-                            <th>sku</th>
-                            <th>name_ar</th>
-                            <th>price</th>
-                            <th>sale_price</th>
-                            <th>weight</th>
-                            <th>image</th>
-                            <th>end_sale</th>
-                            <th>active</th>
-                            <th>attributes</th>
-                            <th>actions</th>
+                            <th>{{ trans('general.id') }}</th>
+                            <th>{{ trans('general.sku') }}</th>
+                            <th>{{ trans('general.name_ar') }}</th>
+                            <th>{{ trans('general.price') }}</th>
+                            <th>{{ trans('general.sale_price') }}</th>
+                            <th>{{ trans('general.weight') }}</th>
+                            <th>{{ trans('general.image') }}</th>
+                            <th>{{ trans('general.end_sale') }}</th>
+                            <th>{{ trans('general.active') }}</th>
+                            <th>{{ trans('general.attribute') }} x/clr/qty</th>
+                            <th>{{ trans('general.actions') }}</th>
                         </tr>
                         </tfoot>
                         <tbody>
@@ -72,7 +72,7 @@
                                 </td>
                                 <td>
                                     <img class="img-xs"
-                                         src="{{ asset('storage/uploads/images/thumbnail/'.$element->image) }}" alt="">
+                                         src="{{ $element->imageThumbLink }}" alt="">
                                 </td>
                                 <td>{{ !is_null($element->end_sale) ? $element->end_sale->format('Y-m-d') : null }}</td>
                                 <td>
