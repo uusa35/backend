@@ -13,9 +13,6 @@
                     
                     <div class="col-md-4 col-lg-3 col-xl-3 leftColumn aside">
                         <?php echo $__env->make('frontend.wokiee.four.partials._search_side_bar', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-                        <?php if(!request()->has('service_category_id')): ?>
-                            <?php echo $__env->make('frontend.wokiee.four.partials._search_modal_categories', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-                        <?php endif; ?>
                     </div>
                     <div class="col-md-9">
                         <div class="content-indent">
@@ -41,5 +38,8 @@
         
         
     </div>
+    <?php if(!request()->has('service_category_id')): ?>
+        <?php echo $__env->make('frontend.wokiee.four.partials._search_modal_categories', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php endif; ?>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('frontend.wokiee.four.layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

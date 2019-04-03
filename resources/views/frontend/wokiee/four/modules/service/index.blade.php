@@ -14,9 +14,6 @@
                     {{--<div class="col-md-4 col-lg-3 col-xl-3 leftColumn aside desctop-no-sidebar">--}}
                     <div class="col-md-4 col-lg-3 col-xl-3 leftColumn aside">
                         @include('frontend.wokiee.four.partials._search_side_bar')
-                        @if(!request()->has('service_category_id'))
-                            @include('frontend.wokiee.four.partials._search_modal_categories')
-                        @endif
                     </div>
                     <div class="col-md-9">
                         <div class="content-indent">
@@ -42,4 +39,7 @@
         {{--</div>--}}
         {{--</div>--}}
     </div>
+    @if(!request()->has('service_category_id'))
+        @include('frontend.wokiee.four.partials._search_modal_categories')
+    @endif
 @endsection
