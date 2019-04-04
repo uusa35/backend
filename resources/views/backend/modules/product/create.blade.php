@@ -318,266 +318,292 @@
                                 </div>
                             </div>
 
-                            <div class="row">
-                                <hr>
-                                @if(!$categories->isEmpty())
-                                <div class="col-lg-4">
-                                    <div class="form-group">
-                                        <label class="control-label">{{ trans('general.categories') }}</label>
-                                        <select multiple="multiple" class="multi-select" id="my_multi_select1" name="categories[]">
-                                            @foreach($categories as $category)
-                                            <option value="{{ $category->id }}" style="background-color: {{ $category->isParent ? 'lightblue' : null  }}">{{ $category->name }}</option>
-                                            @if(!$category->children->isEmpty())
-                                            @foreach($category->children as $child)
-                                            <option value="{{ $child->id }}" style="padding-left: 15px">{{ $child->name }}</option>
-                                            @if(!$child->children->isEmpty())
-                                            @foreach($child->children as $subChild)
-                                            <option value="{{ $subChild->id }}" style="padding-left: 35px">{{ $subChild->name }}</option>
-                                            @endforeach
+
+
+
+
+
+                            <div class="portlet box blue ">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="fa fa-gift"></i> {{ trans('general.more_details') }}
+                                    </div>
+                                </div>
+                                <div class="portlet-body form">
+                                    <div class="form-body">
+                                        <div class="row">
+                                            <hr>
+                                            @if(!$categories->isEmpty())
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                    <label class="control-label">{{ trans('general.categories') }}</label>
+                                                    <select multiple="multiple" class="multi-select" id="my_multi_select1" name="categories[]">
+                                                        @foreach($categories as $category)
+                                                        <option value="{{ $category->id }}" style="background-color: {{ $category->isParent ? 'lightblue' : null  }}">{{ $category->name }}</option>
+                                                        @if(!$category->children->isEmpty())
+                                                        @foreach($category->children as $child)
+                                                        <option value="{{ $child->id }}" style="padding-left: 15px">{{ $child->name }}</option>
+                                                        @if(!$child->children->isEmpty())
+                                                        @foreach($child->children as $subChild)
+                                                        <option value="{{ $subChild->id }}" style="padding-left: 35px">{{ $subChild->name }}</option>
+                                                        @endforeach
+                                                        @endif
+                                                        @endforeach
+                                                        @endif
+                                                        @endforeach
+                                                    </select>
+                                                    <span class="help-block">
+                                                        <strong>{{ trans('message.categories_instructions') }}</strong>
+                                                    </span>
+                                                </div>
+                                            </div>
                                             @endif
-                                            @endforeach
+                                            @if(!$tags->isEmpty())
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                    <label class="control-label">{{ trans('general.tags') }}</label>
+                                                    <select multiple="multiple" class="multi-select" id="my_multi_select2" name="tags[]">
+                                                        @foreach($tags as $tag)
+                                                        <option value="{{ $tag->id }}">{{ $tag->name }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                    <span class="help-block">
+                                                        <strong>{{ trans('message.tags_instructions') }}</strong>
+                                                    </span>
+                                                </div>
+                                            </div>
                                             @endif
-                                            @endforeach
-                                        </select>
-                                        <span class="help-block">
-                                            <strong>{{ trans('message.categories_instructions') }}</strong>
-                                        </span>
-                                    </div>
-                                </div>
-                                @endif
-                                @if(!$tags->isEmpty())
-                                <div class="col-lg-4">
-                                    <div class="form-group">
-                                        <label class="control-label">{{ trans('general.tags') }}</label>
-                                        <select multiple="multiple" class="multi-select" id="my_multi_select2" name="tags[]">
-                                            @foreach($tags as $tag)
-                                            <option value="{{ $tag->id }}">{{ $tag->name }}</option>
-                                            @endforeach
-                                        </select>
-                                        <span class="help-block">
-                                            <strong>{{ trans('message.tags_instructions') }}</strong>
-                                        </span>
-                                    </div>
-                                </div>
-                                @endif
-                            </div>
+                                        </div>
 
 
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="single" class="control-label">{{ trans('general.owner') }}</label>
-                                        <select id="" class="form-control select2">
-                                            <option value="">{{ trans('general.choose_user') }}</option>
-                                            @foreach($users as $user)
-                                            <option value="{{ $user->slug_en }}">{{ $user->slug_en }}</option>
-                                            @endforeach
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="single" class="control-label">{{ trans('general.owner') }}</label>
+                                                    <select id="" class="form-control select2">
+                                                        <option value="">{{ trans('general.choose_user') }}</option>
+                                                        @foreach($users as $user)
+                                                        <option value="{{ $user->slug_en }}">{{ $user->slug_en }}</option>
+                                                        @endforeach
 
 
-                                        </select>
-                                        <span class="help-block">
-                                            <strong>{{ trans('message.owner_instructions') }}</strong>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="single" class="control-label">{{ trans('general.shipment_package') }}</label>
-                                        <select id="" name="shipment_id" class="form-control select2" required>
-                                            <option value="">{{ trans('choose_product_package_grade') }}</option>
-                                            @foreach($shipment_packages as $shipment_package)
-                                            <option value="{{ $shipment_package->slug_en }}">{{ $shipment_package->slug_en }}</option>
-                                            @endforeach
-                                        </select>
-                                        <span class="help-block">
-                                            <strong>{{ trans('message.shipment_instructions') }}</strong>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="brand_id" class="control-label">{{ trans('general.brand') }}</label>
-                                        <select id="" name="brand_id" class="form-control select2">
-                                            <option value="">{{ trans('general.choose_brand') }}</option>
-                                            @foreach($brands as $brand)
-                                            <option value="{{ $brand->id }}">{{ $brand->slug }}</option>
-                                            @endforeach
-                                        </select>
-                                        <span class="help-block">
-                                            <strong>{{ trans('message.brand_instructions') }}</strong>
-                                        </span>
+                                                    </select>
+                                                    <span class="help-block">
+                                                        <strong>{{ trans('message.owner_instructions') }}</strong>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="single" class="control-label">{{ trans('general.shipment_package') }}</label>
+                                                    <select id="" name="shipment_id" class="form-control select2" required>
+                                                        <option value="">{{ trans('choose_product_package_grade') }}</option>
+                                                        @foreach($shipment_packages as $shipment_package)
+                                                        <option value="{{ $shipment_package->slug_en }}">{{ $shipment_package->slug_en }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                    <span class="help-block">
+                                                        <strong>{{ trans('message.shipment_instructions') }}</strong>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="brand_id" class="control-label">{{ trans('general.brand') }}</label>
+                                                    <select id="" name="brand_id" class="form-control select2">
+                                                        <option value="">{{ trans('general.choose_brand') }}</option>
+                                                        @foreach($brands as $brand)
+                                                        <option value="{{ $brand->id }}">{{ $brand->slug }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                    <span class="help-block">
+                                                        <strong>{{ trans('message.brand_instructions') }}</strong>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
+                            <div class="portlet box blue ">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="fa fa-gift"></i> {{ trans('general.more_details') }}
+                                    </div>
+                                </div>
+                                <div class="portlet-body form">
+                                    <div class="form-body">
+                                        <div class="row">
+                                            <hr>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="control-label sbold">{{ trans('general.active') }}</label></br>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="active" id="optionsRadios3" value="1">
+                                                        active</label>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="active" id="optionsRadios4" checked value="0">not
+                                                        active</label>
+                                                </div>
+                                                <span class="help-block">
+                                                    <strong>{{ trans('message.active_instructions') }}</strong>
+                                                </span>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="control-label sbold">{{ trans('general.home_delivery_available') }}</label></br>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="home_delivery_available" id="optionsRadios3" value="1">
+                                                        home_delivery_available</label>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="home_delivery_available" id="optionsRadios4" checked value="0">not
+                                                        home_delivery_available</label>
+                                                </div>
+                                                <span class="help-block">
+                                                    <strong>{{ trans('message.home_delivery_instructions') }}</strong>
+                                                </span>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="control-label sbold">{{ trans('general.shipment_available') }}</label></br>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="shipment_available" id="optionsRadios3" value="1">
+                                                        shipment_available</label>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="shipment_available" id="optionsRadios4" checked value="0">not
+                                                        shipment_available</label>
+                                                </div>
+                                                <span class="help-block">
+                                                    <strong>{{ trans('message.shipment_available_instructions') }}</strong>
+                                                </span>
+                                            </div>
 
-                            <div class="row">
-                                <hr>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="control-label sbold">{{ trans('general.active') }}</label></br>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="active" id="optionsRadios3" value="1">
-                                            active</label>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="active" id="optionsRadios4" checked value="0">not
-                                            active</label>
-                                    </div>
-                                    <span class="help-block">
-                                        <strong>{{ trans('message.active_instructions') }}</strong>
-                                    </span>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="control-label sbold">{{ trans('general.home_delivery_available') }}</label></br>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="home_delivery_available" id="optionsRadios3" value="1">
-                                            home_delivery_available</label>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="home_delivery_available" id="optionsRadios4" checked value="0">not
-                                            home_delivery_available</label>
-                                    </div>
-                                    <span class="help-block">
-                                        <strong>{{ trans('message.home_delivery_instructions') }}</strong>
-                                    </span>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="control-label sbold">{{ trans('general.shipment_available') }}</label></br>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="shipment_available" id="optionsRadios3" value="1">
-                                            shipment_available</label>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="shipment_available" id="optionsRadios4" checked value="0">not
-                                            shipment_available</label>
-                                    </div>
-                                    <span class="help-block">
-                                        <strong>{{ trans('message.shipment_available_instructions') }}</strong>
-                                    </span>
-                                </div>
+                                        </div>
 
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="control-label sbold">{{ trans('general.exclusive') }}</label></br>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="exclusive" id="optionsRadios3" value="1">
-                                            exclusive</label>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="exclusive" id="optionsRadios4" checked value="0">not
-                                            exclusive</label>
-                                    </div>
-                                    <span class="help-block">
-                                        <strong>{{ trans('message.exclusive_instructions') }}</strong>
-                                    </span>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="control-label sbold">{{ trans('general.on_sale_on_homepage') }}</label></br>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="on_sale_on_homepage" id="optionsRadios3" value="1">
-                                            on_sale_on_homepage</label>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="on_sale_on_homepage" id="optionsRadios4" checked value="0">not on_sale_on_homepage</label>
-                                    </div>
-                                    <span class="help-block">
-                                        <strong>{{ trans('message.on_sale_homepage_instructions') }}</strong>
-                                    </span>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="control-label sbold">{{ trans('general.on_homepage') }}</label></br>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="on_homepage" id="optionsRadios3" value="1">
-                                            on_homepage</label>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="on_homepage" id="optionsRadios4" checked value="0">not
-                                            on_homepage</label>
-                                    </div>
-                                    <span class="help-block">
-                                        <strong>{{ trans('message.on_homepage_instructions') }}</strong>
-                                    </span>
-                                </div>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="control-label sbold">{{ trans('general.exclusive') }}</label></br>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="exclusive" id="optionsRadios3" value="1">
+                                                        exclusive</label>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="exclusive" id="optionsRadios4" checked value="0">not
+                                                        exclusive</label>
+                                                </div>
+                                                <span class="help-block">
+                                                    <strong>{{ trans('message.exclusive_instructions') }}</strong>
+                                                </span>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="control-label sbold">{{ trans('general.on_sale_on_homepage') }}</label></br>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="on_sale_on_homepage" id="optionsRadios3" value="1">
+                                                        on_sale_on_homepage</label>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="on_sale_on_homepage" id="optionsRadios4" checked value="0">not on_sale_on_homepage</label>
+                                                </div>
+                                                <span class="help-block">
+                                                    <strong>{{ trans('message.on_sale_homepage_instructions') }}</strong>
+                                                </span>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="control-label sbold">{{ trans('general.on_homepage') }}</label></br>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="on_homepage" id="optionsRadios3" value="1">
+                                                        on_homepage</label>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="on_homepage" id="optionsRadios4" checked value="0">not
+                                                        on_homepage</label>
+                                                </div>
+                                                <span class="help-block">
+                                                    <strong>{{ trans('message.on_homepage_instructions') }}</strong>
+                                                </span>
+                                            </div>
 
 
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="control-label sbold">{{ trans('general.is_available') }}</label></br>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="is_available" id="optionsRadios3" value="1">
-                                            is_available</label>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="is_available" id="optionsRadios4" checked value="0">not
-                                            is_available</label>
-                                    </div>
-                                    <span class="help-block">
-                                        <strong>{{ trans('message.is_available_instructions') }}</strong>
-                                    </span>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="control-label sbold">{{ trans('general.is_hot_deal') }}</label></br>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="is_hot_deal" id="optionsRadios7" value="1">
-                                            is_hot_deal</label>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="is_hot_deal" id="optionsRadios8" checked value="0">not
-                                            is_hot_deal</label>
-                                    </div>
-                                    <span class="help-block">
-                                        <strong>{{ trans('message.hot_deal_instructions') }}</strong>
-                                    </span>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="control-label sbold">{{ trans('general.on_sale') }}</label></br>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="on_sale" id="optionsRadios3" value="1">
-                                            on_sale</label>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="on_sale" id="optionsRadios4" checked value="0">not
-                                            on_sale</label>
-                                    </div>
-                                    <span class="help-block">
-                                        <strong>{{ trans('message.on_sale_instructions') }}</strong>
-                                    </span>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="control-label sbold">{{ trans('general.on_new') }}</label></br>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="on_new" id="optionsRadios3" value="1">
-                                            on_new</label>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="on_new" id="optionsRadios4" checked value="0">not
-                                            on_new</label>
-                                    </div>
-                                    <span class="help-block">
-                                        <strong>{{ trans('message.on_new_instructions') }}</strong>
-                                    </span>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="control-label sbold">
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="control-label sbold">{{ trans('general.is_available') }}</label></br>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="is_available" id="optionsRadios3" value="1">
+                                                        is_available</label>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="is_available" id="optionsRadios4" checked value="0">not
+                                                        is_available</label>
+                                                </div>
+                                                <span class="help-block">
+                                                    <strong>{{ trans('message.is_available_instructions') }}</strong>
+                                                </span>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="control-label sbold">{{ trans('general.is_hot_deal') }}</label></br>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="is_hot_deal" id="optionsRadios7" value="1">
+                                                        is_hot_deal</label>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="is_hot_deal" id="optionsRadios8" checked value="0">not
+                                                        is_hot_deal</label>
+                                                </div>
+                                                <span class="help-block">
+                                                    <strong>{{ trans('message.hot_deal_instructions') }}</strong>
+                                                </span>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="control-label sbold">{{ trans('general.on_sale') }}</label></br>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="on_sale" id="optionsRadios3" value="1">
+                                                        on_sale</label>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="on_sale" id="optionsRadios4" checked value="0">not
+                                                        on_sale</label>
+                                                </div>
+                                                <span class="help-block">
+                                                    <strong>{{ trans('message.on_sale_instructions') }}</strong>
+                                                </span>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="control-label sbold">{{ trans('general.on_new') }}</label></br>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="on_new" id="optionsRadios3" value="1">
+                                                        on_new</label>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="on_new" id="optionsRadios4" checked value="0">not
+                                                        on_new</label>
+                                                </div>
+                                                <span class="help-block">
+                                                    <strong>{{ trans('message.on_new_instructions') }}</strong>
+                                                </span>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="control-label sbold">
 
-                                            {{ trans('general.check_stock') }}</label></br>
-                                        <label class="radio-inline" data-toggle="tooltip" data-placement="bottom" data-html="true" title=" If Not whenever a successful order is made. qty will not be decreased
+                                                        {{ trans('general.check_stock') }}</label></br>
+                                                    <label class="radio-inline" data-toggle="tooltip" data-placement="bottom" data-html="true" title=" If Not whenever a successful order is made. qty will not be decreased
                                         accordingly.">
-                                            <input type="radio" data-toggle="tooltip" data-placement="bottom" title="hello" name="check_stock" id="optionsRadios5" value="1">
-                                            check_stock</label>
-                                        <label class="radio-inline" data-toggle="tooltip" data-placement="bottom" data-html="true" title=" if Not Product will be added to cart without checking the current quantity.">
-                                            <input type="radio" name="check_stock" id="optionsRadios6" checked value="0">not
-                                            in
-                                            check_stock</label>
+                                                        <input type="radio" data-toggle="tooltip" data-placement="bottom" title="hello" name="check_stock" id="optionsRadios5" value="1">
+                                                        check_stock</label>
+                                                    <label class="radio-inline" data-toggle="tooltip" data-placement="bottom" data-html="true" title=" if Not Product will be added to cart without checking the current quantity.">
+                                                        <input type="radio" name="check_stock" id="optionsRadios6" checked value="0">not
+                                                        in
+                                                        check_stock</label>
 
+                                                </div>
+                                                <span class="help-block">
+                                                    <strong>{{ trans('message.check_stock_instructions') }}</strong>
+                                                </span>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <span class="help-block">
-                                        <strong>{{ trans('message.check_stock_instructions') }}</strong>
-                                    </span>
                                 </div>
                             </div>
                         </div>
