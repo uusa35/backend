@@ -312,12 +312,12 @@ Breadcrumbs::for('backend.coupon.edit', function ($trail, $element) {
 
 Breadcrumbs::for('backend.product.create', function ($trail) {
     $trail->parent('backend.product.index');
-    $trail->push('create product', route('backend.product.create'));
+    $trail->push(trans("general.create_product"), route('backend.product.create'));
 });
 
 Breadcrumbs::for('backend.product.edit', function ($trail, $element) {
     $trail->parent('backend.product.index');
-    $trail->push('edit product', route('backend.product.edit', $element->id));
+    $trail->push(trans('general.edit_product'), route('backend.product.edit', $element->id));
 });
 
 Breadcrumbs::for('backend.admin.setting.edit', function ($trail, $element) {

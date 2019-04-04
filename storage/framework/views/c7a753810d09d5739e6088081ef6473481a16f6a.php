@@ -2,7 +2,7 @@
 <div class="modal  fade" id="Modalnewsletter" tabindex="-1" role="dialog" aria-label="myModalLabel" aria-hidden="true"
      data-pause=2000>
     <div class="modal-dialog modal-lg">
-        <div class="modal-content ">
+        <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span
                             class="icon icon-clear"></span></button>
