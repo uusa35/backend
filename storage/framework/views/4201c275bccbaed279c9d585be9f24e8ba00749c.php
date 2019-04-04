@@ -430,7 +430,7 @@
                                 </a>
                             </li>
                             <li class="divider"></li>
-                            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('onlySuper')): ?>
+                            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('isSuper')): ?>
                                 <li>
                                     <a href="<?php echo e(route('backend.admin.setting.index')); ?>">
                                         <i class="icon-settings"></i> <?php echo e(trans('general.app_settings')); ?> </a>
@@ -444,6 +444,12 @@
                                 <li>
                                     <a href="<?php echo e(route('backend.admin.export.translation')); ?>">
                                         <i class="icon-envelope-letter"></i> <?php echo e(trans('general.export_translations')); ?>
+
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo e(url('admin/env')); ?>">
+                                        <i class="fa fa-fw fa-bug"></i> <?php echo e(trans('general.edit_env_file')); ?>
 
                                     </a>
                                 </li>
@@ -493,4 +499,4 @@
         <!-- END PAGE TOP -->
     </div>
     <!-- END HEADER INNER -->
-</div> 
+</div>
