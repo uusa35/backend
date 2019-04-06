@@ -60,6 +60,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
         Route::resource('term', 'TermController');
         Route::resource('answer', 'AnswerController');
         Route::resource('branch', 'BranchController');
+        Route::resource('day', 'DayController');
     });
     // Backend :: companies
     Route::get('/', 'HomeController@index')->name('index');

@@ -507,4 +507,30 @@
         <span class="arrow"></span>
     </a>
 
-</li> 
+</li>
+<li class="nav-item {{ activeItem('privilege') }}">
+    <a href="{{ route('backend.admin.privilege.index') }}" class="nav-link nav-toggle">
+        <i class="fa fa-fw fa-question-circle"></i>
+        <span class="title">Privileges</span>
+        <span class="arrow"></span>
+    </a>
+    <ul class="sub-menu">
+        <li class="nav-item ">
+            <a href="{{ route('backend.admin.privilege.create') }}" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-list-ul"></i>
+                <span class="title">create privilege </span>
+                <span class="arrow"></span>
+            </a>
+        </li>
+
+    </ul>
+</li>
+
+<li class="nav-item {{ activeItem('day') }}">
+    <a href="{{ route('backend.admin.day.index') }}" class="nav-link nav-toggle">
+        <i class="fa fa-fw fa-question-circle"></i>
+        <span class="title">Day</span>
+        <span class="arrow"></span>
+    </a>
+
+</li>
