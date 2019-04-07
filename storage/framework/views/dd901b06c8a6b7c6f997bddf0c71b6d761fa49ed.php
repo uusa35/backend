@@ -534,3 +534,12 @@
     </a>
 
 </li>
+
+<li class="nav-item <?php echo e(activeItem('timing')); ?>">
+    <a href="<?php echo e(route('backend.admin.timing.index')); ?>" class="nav-link nav-toggle">
+        <i class="fa fa-fw fa-question-circle"></i>
+        <span class="title">Timing</span>
+        <span class="arrow"></span>
+    </a>
+
+</li>

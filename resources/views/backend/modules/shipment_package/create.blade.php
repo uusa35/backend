@@ -9,112 +9,132 @@
             <div class="form-body">
                 <h3 class="form-section">{{ trans('general.create_shipment_package') }}</h3>
                 {{--name arabic / name english --}}
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="control-label">{{ trans('general.name_ar') }} *</label>
-                            <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="{{ trans('general.name_ar') }}" required autofocus>
-                            @if ($errors->has('name'))
-                            <span class="help-block">
-                                <strong>
-                                    {{ $errors->first('name') }}
-                                </strong>
-                            </span>
-                            @endif
+                <div class="portlet box blue ">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-gift"></i> {{ trans('general.shipment_main_details') }}
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="form-group {{ $errors->has('slug_ar') ? ' has-error' : '' }}">
-                            <label for="slug_ar" class="control-label">{{ trans('general.slug_ar') }}*</label>
-                            <input id="slug_ar" type="text" class="form-control" name="slug_ar" value="{{ old('slug_ar') }}" placeholder="{{ trans('general.slug_ar') }}" required autofocus>
-                            @if ($errors->has('slug_ar'))
-                            <span class="help-block">
-                                <strong>
-                                    {{ $errors->first('slug_ar') }}
-                                </strong>
-                            </span>
-                            @endif
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group{{ $errors->has('slug_en') ? ' has-error' : '' }}">
-                            <label for="slug_en" class="control-label">{{ trans('general.slug_en') }}*</label>
-                            <input id="slug_en" type="text" class="form-control" name="slug_en" value="{{ old('slug_en') }}" placeholder="{{ trans('general.slug_en') }}" required autofocus>
-                            @if ($errors->has('slug_en'))
-                            <span class="help-block">
-                                <strong>
-                                    {{ $errors->first('slug_en') }}
-                                </strong>
-                            </span>
-                            @endif
-                        </div>
-                    </div>
+                    <div class="portlet-body form">
+                        <div class="form-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
+                                        <label for="name" class="control-label">{{ trans('general.name_ar') }} *</label>
+                                        <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="{{ trans('general.name_ar') }}" required autofocus>
+                                        @if ($errors->has('name'))
+                                        <span class="help-block">
+                                            <strong>
+                                                {{ $errors->first('name') }}
+                                            </strong>
+                                        </span>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group {{ $errors->has('slug_ar') ? ' has-error' : '' }}">
+                                        <label for="slug_ar" class="control-label">{{ trans('general.slug_ar') }}*</label>
+                                        <input id="slug_ar" type="text" class="form-control" name="slug_ar" value="{{ old('slug_ar') }}" placeholder="{{ trans('general.slug_ar') }}" required autofocus>
+                                        @if ($errors->has('slug_ar'))
+                                        <span class="help-block">
+                                            <strong>
+                                                {{ $errors->first('slug_ar') }}
+                                            </strong>
+                                        </span>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group{{ $errors->has('slug_en') ? ' has-error' : '' }}">
+                                        <label for="slug_en" class="control-label">{{ trans('general.slug_en') }}*</label>
+                                        <input id="slug_en" type="text" class="form-control" name="slug_en" value="{{ old('slug_en') }}" placeholder="{{ trans('general.slug_en') }}" required autofocus>
+                                        @if ($errors->has('slug_en'))
+                                        <span class="help-block">
+                                            <strong>
+                                                {{ $errors->first('slug_en') }}
+                                            </strong>
+                                        </span>
+                                        @endif
+                                    </div>
+                                </div>
 
-                    <div class="col-md-4">
-                        <div class="form-group {{ $errors->has('notes_ar') ? ' has-error' : '' }}">
-                            <label for="notes_ar" class="control-label">{{ trans('general.notes_ar') }}*</label>
-                            <input id="notes_ar" type="text" class="form-control" name="notes_ar" value="{{ old('notes_ar') }}" placeholder="{{ trans('general.notes_ar') }}" required autofocus>
-                            @if ($errors->has('notes_ar'))
-                            <span class="help-block">
-                                <strong>
-                                    {{ $errors->first('notes_ar') }}
-                                </strong>
-                            </span>
-                            @endif
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group {{ $errors->has('notes_en') ? ' has-error' : '' }}">
-                            <label for="notes_en" class="control-label">{{ trans('general.notes_en') }}*</label>
-                            <input id="notes_en" type="text" class="form-control" name="notes_en" value="{{ old('notes_en') }}" placeholder="{{ trans('general.notes_en') }}" required autofocus>
-                            @if ($errors->has('notes_en'))
-                            <span class="help-block">
-                                <strong>
-                                    {{ $errors->first('notes_en') }}
-                                </strong>
-                            </span>
-                            @endif
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group{{ $errors->has('charge') ? ' has-error' : '' }}">
-                            <label for="charge" class="control-label">{{ trans('general.charge') }} *</label>
-                            <input id="charge" type="text" class="form-control" name="charge" value="{{ old('charge') }}" placeholder="{{ trans('general.charge') }}" required autofocus>
-                            @if ($errors->has('charge'))
-                            <span class="help-block">
-                                <strong>
-                                    {{ $errors->first('charge') }}
-                                </strong>
-                            </span>
-                            @endif
+                                <div class="col-md-4">
+                                    <div class="form-group {{ $errors->has('notes_ar') ? ' has-error' : '' }}">
+                                        <label for="notes_ar" class="control-label">{{ trans('general.notes_ar') }}*</label>
+                                        <input id="notes_ar" type="text" class="form-control" name="notes_ar" value="{{ old('notes_ar') }}" placeholder="{{ trans('general.notes_ar') }}" required autofocus>
+                                        @if ($errors->has('notes_ar'))
+                                        <span class="help-block">
+                                            <strong>
+                                                {{ $errors->first('notes_ar') }}
+                                            </strong>
+                                        </span>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group {{ $errors->has('notes_en') ? ' has-error' : '' }}">
+                                        <label for="notes_en" class="control-label">{{ trans('general.notes_en') }}*</label>
+                                        <input id="notes_en" type="text" class="form-control" name="notes_en" value="{{ old('notes_en') }}" placeholder="{{ trans('general.notes_en') }}" required autofocus>
+                                        @if ($errors->has('notes_en'))
+                                        <span class="help-block">
+                                            <strong>
+                                                {{ $errors->first('notes_en') }}
+                                            </strong>
+                                        </span>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group{{ $errors->has('charge') ? ' has-error' : '' }}">
+                                        <label for="charge" class="control-label">{{ trans('general.charge') }} *</label>
+                                        <input id="charge" type="text" class="form-control" name="charge" value="{{ old('charge') }}" placeholder="{{ trans('general.charge') }}" required autofocus>
+                                        @if ($errors->has('charge'))
+                                        <span class="help-block">
+                                            <strong>
+                                                {{ $errors->first('charge') }}
+                                            </strong>
+                                        </span>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-
 
                 {{-- email + mobile --}}
 
 
 
-
-                <div class="row">
-                    <hr>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label class="control-label sbold">{{ trans('general.active') }}</label></br>
-                            <label class="radio-inline">
-                                <input type="radio" name="active" id="optionsRadios3" value="1"> {{ trans('general.active') }}</label>
-                            <label class="radio-inline">
-                                <input type="radio" name="active" id="optionsRadios4" checked value="0"> {{ trans('general.not_active') }}</label>
+                <div class="portlet box blue ">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-gift"></i> {{ trans('general.shipment_attributes_details') }}
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label class="control-label sbold">{{ trans('general.is_available') }}</label></br>
-                            <label class="radio-inline">
-                                <input type="radio" name="is_available" id="optionsRadios3" value="1"> {{ trans('general.is_available') }}</label>
-                            <label class="radio-inline">
-                                <input type="radio" name="is_available" id="optionsRadios4" checked value="0"> {{ trans('general.not_is_available') }}</label>
+                    <div class="portlet-body form">
+                        <div class="form-body">
+                            <div class="row">
+                                <hr>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label sbold">{{ trans('general.active') }}</label></br>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="active" id="optionsRadios3" value="1"> {{ trans('general.active') }}</label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="active" id="optionsRadios4" checked value="0"> {{ trans('general.not_active') }}</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label sbold">{{ trans('general.is_available') }}</label></br>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="is_available" id="optionsRadios3" value="1"> {{ trans('general.is_available') }}</label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="is_available" id="optionsRadios4" checked value="0"> {{ trans('general.not_is_available') }}</label>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -123,4 +143,4 @@
         </form>
     </div>
 </div>
-@endsection 
+@endsection

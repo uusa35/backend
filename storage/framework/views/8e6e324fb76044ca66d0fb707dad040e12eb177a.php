@@ -6,7 +6,21 @@
             <?php echo csrf_field(); ?>
             <div class="form-body">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
+                        <div class="form-group <?php echo e($errors->has('name') ? ' has-error' : ''); ?>">
+                            <label for="name" class="control-label"><?php echo e(trans('general.name')); ?>*</label>
+                            <input id="name" type="text" class="form-control" name="name" value="<?php echo e(old('name')); ?>" placeholder="<?php echo e(trans('general.name')); ?>" required autofocus>
+                            <?php if($errors->has('name')): ?>
+                            <span class="help-block">
+                                <strong>
+                                    <?php echo e($errors->first('name')); ?>
+
+                                </strong>
+                            </span>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
                         <div class="form-group <?php echo e($errors->has('slug_ar') ? ' has-error' : ''); ?>">
                             <label for="slug_ar" class="control-label"><?php echo e(trans('general.slug_ar')); ?>*</label>
                             <input id="slug_ar" type="text" class="form-control" name="slug_ar" value="<?php echo e(old('slug_ar')); ?>" placeholder="<?php echo e(trans('general.slug_ar')); ?>" required autofocus>
@@ -20,7 +34,7 @@
                             <?php endif; ?>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="form-group<?php echo e($errors->has('slug_en') ? ' has-error' : ''); ?>">
                             <label for="slug_en" class="control-label"><?php echo e(trans('general.slug_en')); ?>*</label>
                             <input id="slug_en" type="text" class="form-control" name="slug_en" value="<?php echo e(old('slug_en')); ?>" placeholder="<?php echo e(trans('general.slug_en')); ?>" required autofocus>
