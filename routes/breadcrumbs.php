@@ -394,7 +394,6 @@ Breadcrumbs::for('backend.user.edit', function ($trail, $element) {
     $trail->push('edit user', route('backend.user.edit', $element->id));
 });
 
-
 Breadcrumbs::for('backend.slider.create', function ($trail) {
     $trail->parent('backend.slider.index');
     $trail->push('create slider', route('backend.slider.create'));

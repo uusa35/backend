@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Models\Aboutus;
+use App\Models\Service;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -15,7 +15,7 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $elements = Aboutus::all();
+        $elements = Service::all();
         return view('backend.modules.aboutus.index', compact('elements'));
     }
 
@@ -37,7 +37,7 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        $element = Aboutus::create($request->all());
+        $element = Service::create($request->all());
         if ($element) {
             return redirect()->route('backend.aboutus.index')->with('success', 'Aboutus added');
         }
