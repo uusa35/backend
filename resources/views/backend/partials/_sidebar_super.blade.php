@@ -545,7 +545,7 @@
 </li>
 
 <li class="nav-item {{ activeItem('service') }}">
-    <a href="" class="nav-link nav-toggle">
+    <a href="{{ route('backend.admin.service.index') }}" class="nav-link nav-toggle">
         <i class="fa fa-fw fa-clock-o"></i>
         <span class="title">Service</span>
         <span class="arrow"></span>

@@ -19,35 +19,35 @@
                     <thead>
                         <tr>
                             <th>id</th>
-                            <th>day</th>
-                            <th>start</th>
-                            <th>end</th>
-                            <th>type</th>
+                            <th>sku</th>
+                            <th>name_ar</th>
+                            <th>name_en</th>
+                            <th>price</th>
+                            <th>active</th>
                             <th>action</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
                             <th>id</th>
-                            <th>day</th>
-                            <th>start</th>
-                            <th>end</th>
-                            <th>type</th>
+                            <th>sku</th>
+                            <th>name_ar</th>
+                            <th>name_en</th>
+                            <th>price</th>
+                            <th>active</th>
                             <th>action</th>
                         </tr>
-
                     </tfoot>
                     <tbody>
                         <?php $__currentLoopData = $elements; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $element): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr>
                             <td> <?php echo e($element->id); ?></td>
-                            <td> <?php echo e($element->day); ?> </td>
+                            <td> <?php echo e($element->sku); ?> </td>
+                            <td> <?php echo e($element->name_ar); ?> </td>
+                            <td> <?php echo e($element->name_en); ?> </td>
+                            <td> <?php echo e($element->price); ?> </td>
+                            <td> <?php echo e($element->active); ?> </td>
 
-                            <td> <?php echo e($element->start); ?> </td>
-                            <td> <?php echo e($element->end); ?> </td>
-                            <td> <?php echo e($element->is_off); ?> </td>
-
-                            <td> <?php echo e($element->type); ?> </td>
 
                             <td>
                                 <div class="btn-group">

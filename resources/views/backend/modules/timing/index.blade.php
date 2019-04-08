@@ -22,21 +22,9 @@
                         <tr>
                             <th>id</th>
                             <th>day</th>
-                            <th>day_name_ar</th>
-                            <th>day_name_en</th>
                             <th>start</th>
                             <th>end</th>
-                            <th>is_off</th>
-                            <th>is_available</th>
-                            <th>allow_multi_select</th>
                             <th>type</th>
-                            <th>notes_ar</th>
-                            <th>notes_en</th>
-                            <th>week_start</th>
-                            <th>day_no</th>
-                            <th>user_id</th>
-                            <th>service_id</th>
-                            <th>day_id</th>
                             <th>action</th>
                         </tr>
                     </thead>
@@ -44,44 +32,24 @@
                         <tr>
                             <th>id</th>
                             <th>day</th>
-                            <th>day_name_ar</th>
-                            <th>day_name_en</th>
                             <th>start</th>
                             <th>end</th>
-                            <th>is_off</th>
-                            <th>is_available</th>
-                            <th>allow_multi_select</th>
                             <th>type</th>
-                            <th>notes_ar</th>
-                            <th>notes_en</th>
-                            <th>week_start</th>
-                            <th>day_no</th>
-                            <th>user_id</th>
-                            <th>service_id</th>
-                            <th>day_id</th>
                             <th>action</th>
                         </tr>
+
                     </tfoot>
                     <tbody>
                         @foreach($elements as $element)
                         <tr>
                             <td> {{$element->id}}</td>
                             <td> {{$element->day }} </td>
-                            <td> {{$element->day_name_ar }} </td>
-                            <td> {{$element->day_name_en }} </td>
+
                             <td> {{$element->start }} </td>
                             <td> {{$element->end }} </td>
                             <td> {{$element->is_off }} </td>
-                            <td> {{$element->is_available }} </td>
-                            <td> {{$element->allow_multi_select }} </td>
+
                             <td> {{$element->type }} </td>
-                            <td> {{$element->notes_ar }} </td>
-                            <td> {{$element->notes_en }} </td>
-                            <td> {{$element->week_start }} </td>
-                            <td> {{$element->day_no }} </td>
-                            <td> {{$element->user_id }} </td>
-                            <td> {{$element->day_id }} </td>
-                            <td> {{$element->service_id }} </td>
 
                             <td>
                                 <div class="btn-group">

@@ -165,20 +165,86 @@
                                                     </span>
                                                 </div>
                                             </div>
-                                            <div class="col-md-2">
-                                                <div class="form-group<?php echo e($errors->has('sale_price') ? ' has-error' : ''); ?>">
-                                                    <label for="sale_price" class="control-label"><?php echo e(trans('general.sale_price')); ?></label>
-                                                    <input id="sale_price" type="text" class="form-control" name="sale_price" maxlength="5" value="<?php echo e(old('sale_price')); ?>" placeholder="<?php echo e(trans('general.sale_price')); ?>" autofocus>
-                                                    <?php if($errors->has('sale_price')): ?>
-                                                    <span class="help-block">
-                                                        <strong>
-                                                            <?php echo e($errors->first('sale_price')); ?>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="file" class="control-label"><?php echo e(trans('general.main_image')); ?>*</label>
 
-                                                        </strong>
-                                                    </span>
-                                                    <?php endif; ?>
+                                                    <input class="form-control tooltip-message" name="images[]" placeholder="images" type="file" multiple />
+                                                    <div class="help-block text-left">
+                                                        W * H - Best fit ['1080', '1440'] pixels
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <hr>
+                                                <?php if(!$categories->isEmpty()): ?>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label"><?php echo e(trans('general.categories')); ?>*</label>
+                                                        <select multiple="multiple" class="multi-select" id="my_multi_select1" name="categories[]">
+                                                            <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                            <option value="<?php echo e($category->id); ?>" style="background-color: <?php echo e($category->isParent ? 'lightblue' : null); ?>"><?php echo e($category->name); ?></option>
+                                                            <?php if(!$category->children->isEmpty()): ?>
+                                                            <?php $__currentLoopData = $category->children; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $child): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                            <option value="<?php echo e($child->id); ?>" style="padding-left: 15px"><?php echo e($child->name); ?></option>
+                                                            <?php if(!$child->children->isEmpty()): ?>
+                                                            <?php $__currentLoopData = $child->children; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $subChild): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                            <option value="<?php echo e($subChild->id); ?>" style="padding-left: 35px"><?php echo e($subChild->name); ?></option>
+                                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                            <?php endif; ?>
+                                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                            <?php endif; ?>
+                                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                        </select>
+                                                        <span class="help-block">
+                                                            <strong><?php echo e(trans('message.categories_instructions')); ?></strong>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <?php endif; ?>
+
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="single" class="control-label"><?php echo e(trans('general.owner')); ?>*</label>
+                                                    <select id="" class="form-control select2">
+                                                        <option value=""><?php echo e(trans('general.choose_user')); ?></option>
+                                                        <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                        <option value="<?php echo e($user->slug_en); ?>"><?php echo e($user->slug_en); ?></option>
+                                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+
+                                                    </select>
                                                     <span class="help-block">
-                                                        <strong><?php echo e(trans('message.sale_price')); ?></strong>
+                                                        <strong><?php echo e(trans('message.owner_instructions')); ?></strong>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="single" class="control-label"><?php echo e(trans('general.shipment_package')); ?>*</label>
+                                                    <select id="" name="shipment_id" class="form-control select2" required>
+                                                        <option value=""><?php echo e(trans('choose_product_package_grade')); ?></option>
+                                                        <?php $__currentLoopData = $shipment_packages; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $shipment_package): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                        <option value="<?php echo e($shipment_package->slug_en); ?>"><?php echo e($shipment_package->slug_en); ?></option>
+                                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                    </select>
+                                                    <span class="help-block">
+                                                        <strong><?php echo e(trans('message.shipment_instructions')); ?></strong>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="brand_id" class="control-label"><?php echo e(trans('general.brand')); ?>*</label>
+                                                    <select id="" name="brand_id" class="form-control select2">
+                                                        <option value=""><?php echo e(trans('general.choose_brand')); ?></option>
+                                                        <?php $__currentLoopData = $brands; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $brand): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                        <option value="<?php echo e($brand->id); ?>"><?php echo e($brand->slug); ?></option>
+                                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                    </select>
+                                                    <span class="help-block">
+                                                        <strong><?php echo e(trans('message.brand_instructions')); ?></strong>
                                                     </span>
                                                 </div>
                                             </div>
@@ -197,10 +263,10 @@
                                 </div>
                                 <div class="portlet-body form">
                                     <div class="form-body">
+
                                         <div class="row">
 
-
-                                            <div class="col-md-3">
+                                            <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="form_control_1"><?php echo e(trans('general.image_chart')); ?></label>
                                                     <input type="file" class="form-control" name="size_chart_image" placeholder="<?php echo e(trans('general.image_chart')); ?>">
@@ -209,8 +275,24 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="row">
+
+                                            <div class="col-md-6">
+                                                <div class="form-group<?php echo e($errors->has('sale_price') ? ' has-error' : ''); ?>">
+                                                    <label for="sale_price" class="control-label"><?php echo e(trans('general.sale_price')); ?></label>
+                                                    <input id="sale_price" type="text" class="form-control" name="sale_price" maxlength="5" value="<?php echo e(old('sale_price')); ?>" placeholder="<?php echo e(trans('general.sale_price')); ?>" autofocus>
+                                                    <?php if($errors->has('sale_price')): ?>
+                                                    <span class="help-block">
+                                                        <strong>
+                                                            <?php echo e($errors->first('sale_price')); ?>
+
+                                                        </strong>
+                                                    </span>
+                                                    <?php endif; ?>
+                                                    <span class="help-block">
+                                                        <strong><?php echo e(trans('message.sale_price')); ?></strong>
+                                                    </span>
+                                                </div>
+                                            </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="description" class="control-label"><?php echo e(trans('general.description_arabic')); ?></label>
@@ -279,15 +361,7 @@
                                                     </span>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="form_control_1"><?php echo e(trans('general.main_image')); ?></label>
-                                                    <input type="file" class="form-control" name="image" placeholder="<?php echo e(trans('general.main_image')); ?>" required>
-                                                    <div class="help-block text-left">
-                                                        W * H - Best fit ['1080', '1440'] pixels
-                                                    </div>
-                                                </div>
-                                            </div>
+
                                             <div class="col-md-6">
                                                 <div class="form-group<?php echo e($errors->has('video_url_one') ? ' has-error' : ''); ?>">
                                                     <label for="video_url_one" class="control-label"><?php echo e(trans('general.video_url_one')); ?></label>
@@ -364,56 +438,9 @@
                                                 </div>
                                             </div>
                                         </div>
-
-
-
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-
-
-
-                            <div class="portlet box blue ">
-                                <div class="portlet-title">
-                                    <div class="caption">
-                                        <i class="fa fa-gift"></i> <?php echo e(trans('general.more_details')); ?>
-
-                                    </div>
-                                </div>
-                                <div class="portlet-body form">
-                                    <div class="form-body">
                                         <div class="row">
-                                            <hr>
-                                            <?php if(!$categories->isEmpty()): ?>
-                                            <div class="col-lg-4">
-                                                <div class="form-group">
-                                                    <label class="control-label"><?php echo e(trans('general.categories')); ?></label>
-                                                    <select multiple="multiple" class="multi-select" id="my_multi_select1" name="categories[]">
-                                                        <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                        <option value="<?php echo e($category->id); ?>" style="background-color: <?php echo e($category->isParent ? 'lightblue' : null); ?>"><?php echo e($category->name); ?></option>
-                                                        <?php if(!$category->children->isEmpty()): ?>
-                                                        <?php $__currentLoopData = $category->children; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $child): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                        <option value="<?php echo e($child->id); ?>" style="padding-left: 15px"><?php echo e($child->name); ?></option>
-                                                        <?php if(!$child->children->isEmpty()): ?>
-                                                        <?php $__currentLoopData = $child->children; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $subChild): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                        <option value="<?php echo e($subChild->id); ?>" style="padding-left: 35px"><?php echo e($subChild->name); ?></option>
-                                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                                        <?php endif; ?>
-                                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                                        <?php endif; ?>
-                                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                                    </select>
-                                                    <span class="help-block">
-                                                        <strong><?php echo e(trans('message.categories_instructions')); ?></strong>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <?php endif; ?>
                                             <?php if(!$tags->isEmpty()): ?>
-                                            <div class="col-lg-4">
+                                            <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="control-label"><?php echo e(trans('general.tags')); ?></label>
                                                     <select multiple="multiple" class="multi-select" id="my_multi_select2" name="tags[]">
@@ -430,55 +457,20 @@
                                         </div>
 
 
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label for="single" class="control-label"><?php echo e(trans('general.owner')); ?></label>
-                                                    <select id="" class="form-control select2">
-                                                        <option value=""><?php echo e(trans('general.choose_user')); ?></option>
-                                                        <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                        <option value="<?php echo e($user->slug_en); ?>"><?php echo e($user->slug_en); ?></option>
-                                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 
-                                                    </select>
-                                                    <span class="help-block">
-                                                        <strong><?php echo e(trans('message.owner_instructions')); ?></strong>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label for="single" class="control-label"><?php echo e(trans('general.shipment_package')); ?></label>
-                                                    <select id="" name="shipment_id" class="form-control select2" required>
-                                                        <option value=""><?php echo e(trans('choose_product_package_grade')); ?></option>
-                                                        <?php $__currentLoopData = $shipment_packages; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $shipment_package): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                        <option value="<?php echo e($shipment_package->slug_en); ?>"><?php echo e($shipment_package->slug_en); ?></option>
-                                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                                    </select>
-                                                    <span class="help-block">
-                                                        <strong><?php echo e(trans('message.shipment_instructions')); ?></strong>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label for="brand_id" class="control-label"><?php echo e(trans('general.brand')); ?></label>
-                                                    <select id="" name="brand_id" class="form-control select2">
-                                                        <option value=""><?php echo e(trans('general.choose_brand')); ?></option>
-                                                        <?php $__currentLoopData = $brands; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $brand): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                        <option value="<?php echo e($brand->id); ?>"><?php echo e($brand->slug); ?></option>
-                                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                                    </select>
-                                                    <span class="help-block">
-                                                        <strong><?php echo e(trans('message.brand_instructions')); ?></strong>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
+
+
                                     </div>
                                 </div>
                             </div>
+
+
+
+
+
+
+
 
                             <div class="portlet box blue ">
                                 <div class="portlet-title">

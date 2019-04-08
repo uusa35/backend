@@ -1,9 +1,11 @@
-<?php $__env->startSection('content'); ?>
+@extends('backend.layouts.app')
+
+@section('content')
 <div class="row">
     <div class="col-md-12">
         <!-- BEGIN EXAMPLE TABLE PORTLET-->
         <div class="portlet light ">
-            <?php echo $__env->make('backend.partials.forms.form_title', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            @include('backend.partials.forms.form_title')
             <div class="portlet-body">
                 <div class="m-heading-1 border-green m-bordered">
                     <h3>Important Information</h3>
@@ -19,35 +21,35 @@
                     <thead>
                         <tr>
                             <th>id</th>
-                            <th>day</th>
-                            <th>start</th>
-                            <th>end</th>
-                            <th>type</th>
+                            <th>sku</th>
+                            <th>name_ar</th>
+                            <th>name_en</th>
+                            <th>price</th>
+                            <th>active</th>
                             <th>action</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
                             <th>id</th>
-                            <th>day</th>
-                            <th>start</th>
-                            <th>end</th>
-                            <th>type</th>
+                            <th>sku</th>
+                            <th>name_ar</th>
+                            <th>name_en</th>
+                            <th>price</th>
+                            <th>active</th>
                             <th>action</th>
                         </tr>
-
                     </tfoot>
                     <tbody>
-                        <?php $__currentLoopData = $elements; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $element): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        @foreach($elements as $element)
                         <tr>
-                            <td> <?php echo e($element->id); ?></td>
-                            <td> <?php echo e($element->day); ?> </td>
+                            <td> {{$element->id}}</td>
+                            <td> {{$element->sku }} </td>
+                            <td> {{$element->name_ar }} </td>
+                            <td> {{$element->name_en }} </td>
+                            <td> {{$element->price }} </td>
+                            <td> {{$element->active }} </td>
 
-                            <td> <?php echo e($element->start); ?> </td>
-                            <td> <?php echo e($element->end); ?> </td>
-                            <td> <?php echo e($element->is_off); ?> </td>
-
-                            <td> <?php echo e($element->type); ?> </td>
 
                             <td>
                                 <div class="btn-group">
@@ -56,18 +58,18 @@
                                     </button>
                                     <ul class="dropdown-menu pull-right" role="menu">
                                         <li>
-                                            <a href="<?php echo e(route('backend.admin.day.edit',$element->id)); ?>">
+                                            <a href="{{ route('backend.admin.day.edit',$element->id) }}">
                                                 <i class="fa fa-fw fa-edit"></i> Edit</a>
                                         </li>
                                         <li>
-                                            <a href="<?php echo e(route('backend.activate',['model' => 'day','id' => $element->id])); ?>">
+                                            <a href="{{ route('backend.activate',['model' => 'day','id' => $element->id]) }}">
                                                 <i class="fa fa-fw fa-check-circle"></i> toggle active</a>
                                         </li>
                                         <li>
-                                            <a data-toggle="modal" href="#" data-target="#basic" data-title="Delete" data-content="Are you sure you want to delete day <?php echo e($element->name); ?>? " data-form_id="delete-<?php echo e($element->id); ?>">
+                                            <a data-toggle="modal" href="#" data-target="#basic" data-title="Delete" data-content="Are you sure you want to delete day {{ $element->name }}? " data-form_id="delete-{{ $element->id }}">
                                                 <i class="fa fa-fw fa-recycle"></i> delete</a>
-                                            <form method="post" id="delete-<?php echo e($element->id); ?>" action="<?php echo e(route('backend.admin.day.destroy',$element->id)); ?>">
-                                                <?php echo csrf_field(); ?>
+                                            <form method="post" id="delete-{{ $element->id }}" action="{{ route('backend.admin.day.destroy',$element->id) }}">
+                                                @csrf
                                                 <input type="hidden" name="_method" value="delete" />
                                                 <button type="submit" class="btn btn-del hidden">
                                                     <i class="fa fa-fw fa-times-circle"></i> delete
@@ -78,12 +80,11 @@
                                 </div>
                             </td>
                         </tr>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
 </div>
-<?php $__env->stopSection(); ?>
-<?php echo $__env->make('backend.layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+@endsection

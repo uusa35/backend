@@ -153,19 +153,86 @@
                                                     </span>
                                                 </div>
                                             </div>
-                                            <div class="col-md-2">
-                                                <div class="form-group{{ $errors->has('sale_price') ? ' has-error' : '' }}">
-                                                    <label for="sale_price" class="control-label">{{ trans('general.sale_price') }}</label>
-                                                    <input id="sale_price" type="text" class="form-control" name="sale_price" maxlength="5" value="{{ old('sale_price') }}" placeholder="{{ trans('general.sale_price') }}" autofocus>
-                                                    @if ($errors->has('sale_price'))
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="file" class="control-label">{{ trans('general.main_image') }}*</label>
+
+                                                    <input class="form-control tooltip-message" name="images[]" placeholder="images" type="file" multiple />
+                                                    <div class="help-block text-left">
+                                                        W * H - Best fit ['1080', '1440'] pixels
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <hr>
+                                                @if(!$categories->isEmpty())
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label">{{ trans('general.categories') }}*</label>
+                                                        <select multiple="multiple" class="multi-select" id="my_multi_select1" name="categories[]">
+                                                            @foreach($categories as $category)
+                                                            <option value="{{ $category->id }}" style="background-color: {{ $category->isParent ? 'lightblue' : null  }}">{{ $category->name }}</option>
+                                                            @if(!$category->children->isEmpty())
+                                                            @foreach($category->children as $child)
+                                                            <option value="{{ $child->id }}" style="padding-left: 15px">{{ $child->name }}</option>
+                                                            @if(!$child->children->isEmpty())
+                                                            @foreach($child->children as $subChild)
+                                                            <option value="{{ $subChild->id }}" style="padding-left: 35px">{{ $subChild->name }}</option>
+                                                            @endforeach
+                                                            @endif
+                                                            @endforeach
+                                                            @endif
+                                                            @endforeach
+                                                        </select>
+                                                        <span class="help-block">
+                                                            <strong>{{ trans('message.categories_instructions') }}</strong>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                @endif
+
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="single" class="control-label">{{ trans('general.owner') }}*</label>
+                                                    <select id="" class="form-control select2">
+                                                        <option value="">{{ trans('general.choose_user') }}</option>
+                                                        @foreach($users as $user)
+                                                        <option value="{{ $user->slug_en }}">{{ $user->slug_en }}</option>
+                                                        @endforeach
+
+
+                                                    </select>
                                                     <span class="help-block">
-                                                        <strong>
-                                                            {{ $errors->first('sale_price') }}
-                                                        </strong>
+                                                        <strong>{{ trans('message.owner_instructions') }}</strong>
                                                     </span>
-                                                    @endif
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="single" class="control-label">{{ trans('general.shipment_package') }}*</label>
+                                                    <select id="" name="shipment_id" class="form-control select2" required>
+                                                        <option value="">{{ trans('choose_product_package_grade') }}</option>
+                                                        @foreach($shipment_packages as $shipment_package)
+                                                        <option value="{{ $shipment_package->slug_en }}">{{ $shipment_package->slug_en }}</option>
+                                                        @endforeach
+                                                    </select>
                                                     <span class="help-block">
-                                                        <strong>{{ trans('message.sale_price') }}</strong>
+                                                        <strong>{{ trans('message.shipment_instructions') }}</strong>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="brand_id" class="control-label">{{ trans('general.brand') }}*</label>
+                                                    <select id="" name="brand_id" class="form-control select2">
+                                                        <option value="">{{ trans('general.choose_brand') }}</option>
+                                                        @foreach($brands as $brand)
+                                                        <option value="{{ $brand->id }}">{{ $brand->slug }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                    <span class="help-block">
+                                                        <strong>{{ trans('message.brand_instructions') }}</strong>
                                                     </span>
                                                 </div>
                                             </div>
@@ -183,10 +250,10 @@
                                 </div>
                                 <div class="portlet-body form">
                                     <div class="form-body">
+
                                         <div class="row">
 
-
-                                            <div class="col-md-3">
+                                            <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="form_control_1">{{ trans('general.image_chart') }}</label>
                                                     <input type="file" class="form-control" name="size_chart_image" placeholder="{{ trans('general.image_chart') }}">
@@ -195,8 +262,23 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="row">
+
+                                            <div class="col-md-6">
+                                                <div class="form-group{{ $errors->has('sale_price') ? ' has-error' : '' }}">
+                                                    <label for="sale_price" class="control-label">{{ trans('general.sale_price') }}</label>
+                                                    <input id="sale_price" type="text" class="form-control" name="sale_price" maxlength="5" value="{{ old('sale_price') }}" placeholder="{{ trans('general.sale_price') }}" autofocus>
+                                                    @if ($errors->has('sale_price'))
+                                                    <span class="help-block">
+                                                        <strong>
+                                                            {{ $errors->first('sale_price') }}
+                                                        </strong>
+                                                    </span>
+                                                    @endif
+                                                    <span class="help-block">
+                                                        <strong>{{ trans('message.sale_price') }}</strong>
+                                                    </span>
+                                                </div>
+                                            </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="description" class="control-label">{{ trans('general.description_arabic') }}</label>
@@ -262,15 +344,7 @@
                                                     </span>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="form_control_1">{{ trans('general.main_image') }}</label>
-                                                    <input type="file" class="form-control" name="image" placeholder="{{ trans('general.main_image') }}" required>
-                                                    <div class="help-block text-left">
-                                                        W * H - Best fit ['1080', '1440'] pixels
-                                                    </div>
-                                                </div>
-                                            </div>
+
                                             <div class="col-md-6">
                                                 <div class="form-group{{ $errors->has('video_url_one') ? ' has-error' : '' }}">
                                                     <label for="video_url_one" class="control-label">{{ trans('general.video_url_one') }}</label>
@@ -344,55 +418,9 @@
                                                 </div>
                                             </div>
                                         </div>
-
-
-
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-
-
-
-                            <div class="portlet box blue ">
-                                <div class="portlet-title">
-                                    <div class="caption">
-                                        <i class="fa fa-gift"></i> {{ trans('general.more_details') }}
-                                    </div>
-                                </div>
-                                <div class="portlet-body form">
-                                    <div class="form-body">
                                         <div class="row">
-                                            <hr>
-                                            @if(!$categories->isEmpty())
-                                            <div class="col-lg-4">
-                                                <div class="form-group">
-                                                    <label class="control-label">{{ trans('general.categories') }}</label>
-                                                    <select multiple="multiple" class="multi-select" id="my_multi_select1" name="categories[]">
-                                                        @foreach($categories as $category)
-                                                        <option value="{{ $category->id }}" style="background-color: {{ $category->isParent ? 'lightblue' : null  }}">{{ $category->name }}</option>
-                                                        @if(!$category->children->isEmpty())
-                                                        @foreach($category->children as $child)
-                                                        <option value="{{ $child->id }}" style="padding-left: 15px">{{ $child->name }}</option>
-                                                        @if(!$child->children->isEmpty())
-                                                        @foreach($child->children as $subChild)
-                                                        <option value="{{ $subChild->id }}" style="padding-left: 35px">{{ $subChild->name }}</option>
-                                                        @endforeach
-                                                        @endif
-                                                        @endforeach
-                                                        @endif
-                                                        @endforeach
-                                                    </select>
-                                                    <span class="help-block">
-                                                        <strong>{{ trans('message.categories_instructions') }}</strong>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            @endif
                                             @if(!$tags->isEmpty())
-                                            <div class="col-lg-4">
+                                            <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="control-label">{{ trans('general.tags') }}</label>
                                                     <select multiple="multiple" class="multi-select" id="my_multi_select2" name="tags[]">
@@ -409,55 +437,20 @@
                                         </div>
 
 
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label for="single" class="control-label">{{ trans('general.owner') }}</label>
-                                                    <select id="" class="form-control select2">
-                                                        <option value="">{{ trans('general.choose_user') }}</option>
-                                                        @foreach($users as $user)
-                                                        <option value="{{ $user->slug_en }}">{{ $user->slug_en }}</option>
-                                                        @endforeach
 
 
-                                                    </select>
-                                                    <span class="help-block">
-                                                        <strong>{{ trans('message.owner_instructions') }}</strong>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label for="single" class="control-label">{{ trans('general.shipment_package') }}</label>
-                                                    <select id="" name="shipment_id" class="form-control select2" required>
-                                                        <option value="">{{ trans('choose_product_package_grade') }}</option>
-                                                        @foreach($shipment_packages as $shipment_package)
-                                                        <option value="{{ $shipment_package->slug_en }}">{{ $shipment_package->slug_en }}</option>
-                                                        @endforeach
-                                                    </select>
-                                                    <span class="help-block">
-                                                        <strong>{{ trans('message.shipment_instructions') }}</strong>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label for="brand_id" class="control-label">{{ trans('general.brand') }}</label>
-                                                    <select id="" name="brand_id" class="form-control select2">
-                                                        <option value="">{{ trans('general.choose_brand') }}</option>
-                                                        @foreach($brands as $brand)
-                                                        <option value="{{ $brand->id }}">{{ $brand->slug }}</option>
-                                                        @endforeach
-                                                    </select>
-                                                    <span class="help-block">
-                                                        <strong>{{ trans('message.brand_instructions') }}</strong>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
+
+
                                     </div>
                                 </div>
                             </div>
+
+
+
+
+
+
+
 
                             <div class="portlet box blue ">
                                 <div class="portlet-title">

@@ -1,10 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Backend\ِAdmin;
+namespace App\Http\Controllers\Backend\Admin;
 
 use App\Models\Aboutus;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Service;
+use App\Models\User;
+
 
 class ServiceController extends Controller
 {
@@ -15,8 +18,8 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $elements = Aboutus::all();
-        return view('backend.modules.aboutus.index', compact('elements'));
+        $elements = Service::all();
+        return view('backend.modules.service.index', compact('elements'));
     }
 
     /**
@@ -26,7 +29,9 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        return view('backend.modules.aboutus.create');
+        //   return view('backend.modules.aboutus.create');
+        $users = User::all();
+        return view('backend.modules.service.create', compact('users'));
     }
 
     /**
