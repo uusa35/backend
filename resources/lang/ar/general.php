@@ -365,7 +365,4 @@ return array(
     "role" => "دور",
     "app_settings" => "تحكم الموقع",
     "switch_lang" => "تغير اللغة",
-
-
-
 );
