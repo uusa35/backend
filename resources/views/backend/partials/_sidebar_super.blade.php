@@ -419,7 +419,7 @@
 </li>
 <li class="nav-item {{ activeItem('questionnaire') }}">
     <a href="{{ route('backend.admin.questionnaire.index') }}" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-question-circle"></i>
+        <i class="fa fa-fw fa-file-text-o"></i>
         <span class="title">Questionnaires</span>
         <span class="arrow"></span>
     </a>
@@ -437,7 +437,7 @@
 
 <li class="nav-item {{ activeItem('newsletter') }}">
     <a href="{{ route('backend.admin.newsletter.index') }}" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-question-circle"></i>
+        <i class="fa fa-fw fa-newspaper-o"></i>
         <span class="title">Newsletter</span>
         <span class="arrow"></span>
     </a>
@@ -457,7 +457,7 @@
 
 <li class="nav-item {{ activeItem('commercial') }}">
     <a href="{{ route('backend.admin.commercial.index') }}" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-question-circle"></i>
+        <i class="fa fa-fw fa-address-card-o "></i>
         <span class="title">Commercials</span>
         <span class="arrow"></span>
     </a>
@@ -466,7 +466,7 @@
 
 <li class="nav-item {{ activeItem('notification') }}">
     <a href="{{ route('backend.admin.notification.index') }}" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-question-circle"></i>
+        <i class="fa fa-fw fa-bell"></i>
         <span class="title">Notifications</span>
         <span class="arrow"></span>
     </a>
@@ -475,7 +475,7 @@
 
 <li class="nav-item {{ activeItem('policy') }}">
     <a href="{{ route('backend.admin.policy.index') }}" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-question-circle"></i>
+        <i class="fa fa-fw fa-certificate"></i>
         <span class="title">Policies</span>
         <span class="arrow"></span>
     </a>
@@ -485,7 +485,7 @@
 
 <li class="nav-item {{ activeItem('answer') }}">
     <a href="{{ route('backend.admin.answer.index') }}" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-question-circle"></i>
+        <i class="fa fa-fw fa-pencil-square-o"></i>
         <span class="title">Answers</span>
         <span class="arrow"></span>
     </a>
@@ -494,7 +494,7 @@
 
 <li class="nav-item {{ activeItem('role') }}">
     <a href="{{ route('backend.admin.role.index') }}" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-question-circle"></i>
+        <i class="fa fa-fw fa-users"></i>
         <span class="title">Roles</span>
         <span class="arrow"></span>
     </a>
@@ -502,7 +502,7 @@
 </li>
 <li class="nav-item {{ activeItem('term') }}">
     <a href="{{ route('backend.admin.term.index') }}" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-question-circle"></i>
+        <i class="fa fa-fw fa-info-circle"></i>
         <span class="title">Terms</span>
         <span class="arrow"></span>
     </a>
@@ -510,7 +510,7 @@
 </li>
 <li class="nav-item {{ activeItem('privilege') }}">
     <a href="{{ route('backend.admin.privilege.index') }}" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-question-circle"></i>
+        <i class="fa fa-fw fa-lock"></i>
         <span class="title">Privileges</span>
         <span class="arrow"></span>
     </a>
@@ -528,8 +528,26 @@
 
 <li class="nav-item {{ activeItem('day') }}">
     <a href="{{ route('backend.admin.day.index') }}" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-question-circle"></i>
+        <i class="fa fa-fw fa-calendar"></i>
         <span class="title">Day</span>
+        <span class="arrow"></span>
+    </a>
+
+</li>
+
+<li class="nav-item {{ activeItem('timing') }}">
+    <a href="{{ route('backend.admin.timing.index') }}" class="nav-link nav-toggle">
+        <i class="fa fa-fw fa-clock-o"></i>
+        <span class="title">Timing</span>
+        <span class="arrow"></span>
+    </a>
+
+</li>
+
+<li class="nav-item {{ activeItem('service') }}">
+    <a href="" class="nav-link nav-toggle">
+        <i class="fa fa-fw fa-clock-o"></i>
+        <span class="title">Service</span>
         <span class="arrow"></span>
     </a>
 

@@ -1,17 +1,14 @@
-<?php $__env->startSection('breadcrumbs'); ?>
-
-<?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
 <div class="portlet box blue">
     <?php echo $__env->make('backend.partials.forms.form_title', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
     <div class="portlet-body form">
-        <form class="horizontal-form" role="form" method="POST" action="<?php echo e(route('backend.admin.color.store')); ?>" enctype="multipart/form-data">
+        <form class="horizontal-form" role="form" method="POST" action="<?php echo e(route('backend.admin.answer.store')); ?>" enctype="multipart/form-data">
             <?php echo csrf_field(); ?>
             <div class="form-body">
                 <div class="portlet box blue ">
                     <div class="portlet-title">
                         <div class="caption">
-                            <i class="fa fa-gift"></i> <?php echo e(trans('general.user_main_details')); ?>
+                            <i class="fa fa-gift"></i> <?php echo e(trans('general.answer_main_details')); ?>
 
                         </div>
                     </div>
@@ -46,56 +43,91 @@
                                         <?php endif; ?>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="row">
                                 <div class="col-md-6">
-                                    <div class="form-group <?php echo e($errors->has('code') ? ' has-error' : ''); ?>">
-                                        <label for="code" class="control-label"><?php echo e(trans('general.code')); ?>*</label>
-                                        <input type="text" id="hue-demo" class="form-control demo" data-control="hue" name="code" value="#ff6161">
-                                        <?php if($errors->has('code')): ?>
+                                    <div class="form-group <?php echo e($errors->has('value') ? ' has-error' : ''); ?>">
+                                        <label for="value" class="control-label"><?php echo e(trans('general.value')); ?>*</label>
+                                        <input id="value" type="text" class="form-control" name="value" value="<?php echo e(old('value')); ?>" placeholder="<?php echo e(trans('general.value')); ?>" required autofocus>
+                                        <?php if($errors->has('value')): ?>
                                         <span class="help-block">
                                             <strong>
-                                                <?php echo e($errors->first('code')); ?>
+                                                <?php echo e($errors->first('value')); ?>
 
                                             </strong>
                                         </span>
                                         <?php endif; ?>
                                     </div>
                                 </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label"><?php echo e(trans('general.icon')); ?></label>
+                                        <select class="form-control" name="icon" required>
+                                            <?php $__currentLoopData = $icons; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $k => $v): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                            <option value="<?php echo e($v); ?>"><?php echo e($v); ?></option>
+                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                        </select>
+                                        <span class="help-block"> <a target="_blank" href="https://fontawesome.com/cheatsheet" class="">Check Visual Icons </a></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group<?php echo e($errors->has('order') ? ' has-error' : ''); ?>">
+                                        <label for="order" class="control-label"><?php echo e(trans('general.order')); ?>*</label>
+                                        <input id="order" type="number" class="form-control" name="order" value="<?php echo e(old('order')); ?>" placeholder="<?php echo e(trans('general.order')); ?>" required autofocus>
+                                        <?php if($errors->has('order')): ?>
+                                        <span class="help-block">
+                                            <strong>
+                                                <?php echo e($errors->first('order')); ?>
+
+                                            </strong>
+                                        </span>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
-                </div>
 
+                </div>
                 <div class="portlet box blue ">
                     <div class="portlet-title">
                         <div class="caption">
-                            <i class="fa fa-gift"></i> <?php echo e(trans('general.user_main_details')); ?>
+                            <i class="fa fa-gift"></i> <?php echo e(trans('general.answer_main_details')); ?>
 
                         </div>
                     </div>
                     <div class="portlet-body form">
                         <div class="form-body">
                             <div class="row">
-
-                                <div class="col-md-6">
+                                <hr>
+                                <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label sbold"><?php echo e(trans('general.active')); ?></label></br>
                                         <label class="radio-inline">
-                                            <input type="radio" name="active" id="optionsRadios3" checked value="1"> <?php echo e(trans('general.active')); ?></label>
+                                            <input type="radio" name="active" id="optionsRadios3" value="1"> <?php echo e(trans('general.active')); ?></label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="active" id="optionsRadios4" value="0"> <?php echo e(trans('general.not_active')); ?></label>
+                                            <input type="radio" name="active" id="optionsRadios4" checked value="0"> <?php echo e(trans('general.not_active')); ?></label>
                                     </div>
                                 </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label sbold"><?php echo e(trans('general.is_multi')); ?></label></br>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="is_multi" id="optionsRadios3" value="1"> <?php echo e(trans('general.is_multi')); ?></label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="is_multi" id="optionsRadios4" checked value="0"><?php echo e(trans('general.not_is_multi')); ?></label>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
-                </div>
 
+                </div>
                 <?php echo $__env->make('backend.partials.forms._btn-group', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-            </div>
+        </form>
     </div>
-</div>
-</form>
-</div>
 </div>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('backend.layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

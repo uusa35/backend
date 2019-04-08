@@ -1,81 +1,79 @@
-@extends('backend.layouts.app')
-
-{{--
-@section('breadcrumbs')
-{{ Breadcrumbs::render('backend.category.create') }}
-@endsection
---}}
-@section('content')
+<?php $__env->startSection('content'); ?>
 <div class="portlet box blue">
-    @include('backend.partials.forms.form_title')
+    <?php echo $__env->make('backend.partials.forms.form_title', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
     <div class="portlet-body form">
-        <form class="horizontal-form" role="form" method="POST" action="{{ route('backend.admin.category.store') }}" enctype="multipart/form-data">
-            @csrf
-            {{-- <input type="hidden" name="parent_id" value="{{ request()->parent_id }}"> --}}
+        <form class="horizontal-form" role="form" method="POST" action="<?php echo e(route('backend.admin.category.store')); ?>" enctype="multipart/form-data">
+            <?php echo csrf_field(); ?>
+            
             <div class="form-body">
-                <h3 class="form-section">{{ trans('general.create_category') }}</h3>
+                <h3 class="form-section"><?php echo e(trans('general.create_category')); ?></h3>
                 <div class="portlet box blue ">
                     <div class="portlet-title">
                         <div class="caption">
-                            <i class="fa fa-gift"></i> {{ trans('general.category_main_details') }}
+                            <i class="fa fa-gift"></i> <?php echo e(trans('general.category_main_details')); ?>
+
                         </div>
                     </div>
                     <div class="portlet-body form">
                         <div class="form-body">
-                            {{--name arabic / name english --}}
+                            
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="form-group {{ $errors->has('name_ar') ? ' has-error' : '' }}">
-                                        <label for="name_ar" class="control-label">{{ trans('general.name_ar') }}*</label>
-                                        <input id="name_ar" type="text" class="form-control" name="name_ar" value="{{ old('name_ar') }}" placeholder="{{ trans('general.name_ar') }}" required autofocus>
-                                        @if ($errors->has('name_ar'))
+                                    <div class="form-group <?php echo e($errors->has('name_ar') ? ' has-error' : ''); ?>">
+                                        <label for="name_ar" class="control-label"><?php echo e(trans('general.name_ar')); ?>*</label>
+                                        <input id="name_ar" type="text" class="form-control" name="name_ar" value="<?php echo e(old('name_ar')); ?>" placeholder="<?php echo e(trans('general.name_ar')); ?>" required autofocus>
+                                        <?php if($errors->has('name_ar')): ?>
                                         <span class="help-block">
                                             <strong>
-                                                {{ $errors->first('name_ar') }}
+                                                <?php echo e($errors->first('name_ar')); ?>
+
                                             </strong>
                                         </span>
-                                        @endif
+                                        <?php endif; ?>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group{{ $errors->has('name_en') ? ' has-error' : '' }}">
-                                        <label for="name_en" class="control-label">{{ trans('general.name_en') }}*</label>
-                                        <input id="name_en" type="text" class="form-control" name="name_en" value="{{ old('name_en') }}" placeholder="{{ trans('general.name_en') }}" required autofocus>
-                                        @if ($errors->has('name_en'))
+                                    <div class="form-group<?php echo e($errors->has('name_en') ? ' has-error' : ''); ?>">
+                                        <label for="name_en" class="control-label"><?php echo e(trans('general.name_en')); ?>*</label>
+                                        <input id="name_en" type="text" class="form-control" name="name_en" value="<?php echo e(old('name_en')); ?>" placeholder="<?php echo e(trans('general.name_en')); ?>" required autofocus>
+                                        <?php if($errors->has('name_en')): ?>
                                         <span class="help-block">
                                             <strong>
-                                                {{ $errors->first('name_en') }}
+                                                <?php echo e($errors->first('name_en')); ?>
+
                                             </strong>
                                         </span>
-                                        @endif
+                                        <?php endif; ?>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="form-group {{ $errors->has('caption_ar') ? ' has-error' : '' }}">
-                                        <label for="caption_ar" class="control-label">{{ trans('general.caption_ar') }}*</label>
-                                        <input id="caption_ar" type="text" class="form-control" name="caption_ar" value="{{ old('caption_ar') }}" placeholder="{{ trans('general.caption_ar') }}" required autofocus>
-                                        @if ($errors->has('caption_ar'))
+                                    <div class="form-group <?php echo e($errors->has('caption_ar') ? ' has-error' : ''); ?>">
+                                        <label for="caption_ar" class="control-label"><?php echo e(trans('general.caption_ar')); ?>*</label>
+                                        <input id="caption_ar" type="text" class="form-control" name="caption_ar" value="<?php echo e(old('caption_ar')); ?>" placeholder="<?php echo e(trans('general.caption_ar')); ?>" required autofocus>
+                                        <?php if($errors->has('caption_ar')): ?>
                                         <span class="help-block">
                                             <strong>
-                                                {{ $errors->first('caption_ar') }}
+                                                <?php echo e($errors->first('caption_ar')); ?>
+
                                             </strong>
                                         </span>
-                                        @endif
+                                        <?php endif; ?>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group{{ $errors->has('caption_en') ? ' has-error' : '' }}">
-                                        <label for="caption_en" class="control-label">{{ trans('general.caption_en') }}*</label>
-                                        <input id="caption_en" type="text" class="form-control" name="caption_en" value="{{ old('caption_en') }}" placeholder="{{ trans('general.caption_en') }}" required autofocus>
-                                        @if ($errors->has('caption_en'))
+                                    <div class="form-group<?php echo e($errors->has('caption_en') ? ' has-error' : ''); ?>">
+                                        <label for="caption_en" class="control-label"><?php echo e(trans('general.caption_en')); ?>*</label>
+                                        <input id="caption_en" type="text" class="form-control" name="caption_en" value="<?php echo e(old('caption_en')); ?>" placeholder="<?php echo e(trans('general.caption_en')); ?>" required autofocus>
+                                        <?php if($errors->has('caption_en')): ?>
                                         <span class="help-block">
                                             <strong>
-                                                {{ $errors->first('caption_en') }}
+                                                <?php echo e($errors->first('caption_en')); ?>
+
                                             </strong>
                                         </span>
-                                        @endif
+                                        <?php endif; ?>
                                     </div>
                                 </div>
                             </div>
@@ -83,14 +81,14 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="description" class="control-label">{{ trans('general.description_ar') }}</label>
-                                        <textarea type="text" class="form-control" id="description_ar" name="description_ar" aria-multiline="true" maxlength="500">{{ old('description_ar') }}</textarea>
+                                        <label for="description" class="control-label"><?php echo e(trans('general.description_ar')); ?></label>
+                                        <textarea type="text" class="form-control" id="description_ar" name="description_ar" aria-multiline="true" maxlength="500"><?php echo e(old('description_ar')); ?></textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="description" class="control-label">{{ trans('general.description_en') }}</label>
-                                        <textarea type="text" class="form-control" id="description_en" name="description_en" aria-multiline="true" maxlength="500">{{ old('description_en') }}</textarea>
+                                        <label for="description" class="control-label"><?php echo e(trans('general.description_en')); ?></label>
+                                        <textarea type="text" class="form-control" id="description_en" name="description_en" aria-multiline="true" maxlength="500"><?php echo e(old('description_en')); ?></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -98,7 +96,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <input type="file" class="form-control" name="image" placeholder="image">
-                                    <label for="form_control_1">{{ trans('general.main_image') }}</label>
+                                    <label for="form_control_1"><?php echo e(trans('general.main_image')); ?></label>
                                     <div class="help-block text-left">
                                         W * H - Best fit ['2313', '1125'] pixels
                                     </div>
@@ -106,16 +104,17 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="form-group{{ $errors->has('order') ? ' has-error' : '' }}">
-                                        <label for="order" class="control-label">{{ trans('general.order') }} *</label>
-                                        <input id="order" type="number" class="form-control" name="order" value="{{ old('order') }}" placeholder="{{ trans('general.order') }}" maxlength="2" autofocus>
-                                        @if ($errors->has('order'))
+                                    <div class="form-group<?php echo e($errors->has('order') ? ' has-error' : ''); ?>">
+                                        <label for="order" class="control-label"><?php echo e(trans('general.order')); ?> *</label>
+                                        <input id="order" type="number" class="form-control" name="order" value="<?php echo e(old('order')); ?>" placeholder="<?php echo e(trans('general.order')); ?>" maxlength="2" autofocus>
+                                        <?php if($errors->has('order')): ?>
                                         <span class="help-block">
                                             <strong>
-                                                {{ $errors->first('order') }}
+                                                <?php echo e($errors->first('order')); ?>
+
                                             </strong>
                                         </span>
-                                        @endif
+                                        <?php endif; ?>
                                     </div>
                                 </div>
 
@@ -127,7 +126,8 @@
                 <div class="portlet box blue ">
                     <div class="portlet-title">
                         <div class="caption">
-                            <i class="fa fa-gift"></i> {{ trans('general.category_attributes_details') }}
+                            <i class="fa fa-gift"></i> <?php echo e(trans('general.category_attributes_details')); ?>
+
                         </div>
                     </div>
                     <div class="portlet-body form">
@@ -136,7 +136,7 @@
                                 <hr>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="control-label sbold">{{ trans('general.active') }}</label></br>
+                                        <label class="control-label sbold"><?php echo e(trans('general.active')); ?></label></br>
                                         <label class="radio-inline">
                                             <input type="radio" name="active" id="optionsRadios3" value="1"> active</label>
                                         <label class="radio-inline">
@@ -145,27 +145,27 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="control-label sbold">{{ trans('general.is_featured') }}</label></br>
+                                        <label class="control-label sbold"><?php echo e(trans('general.is_featured')); ?></label></br>
                                         <label class="radio-inline">
                                             <input type="radio" name="is_featured" id="optionsRadios3" value="1"> is_featured</label>
                                         <label class="radio-inline">
                                             <input type="radio" name="is_featured" id="optionsRadios4" checked value="0">not is_featured</label>
                                     </div>
                                 </div>
-                                {{--<div class="col-md-3">--}}
-                                {{--<div class="form-group">--}}
-                                {{--<label class="control-label sbold">limited</label></br>--}}
-                                {{--<label class="radio-inline">--}}
-                                {{--<input type="radio" name="limited" id="optionsRadios3"--}}
-                                {{--value="1"> limited</label>--}}
-                                {{--<label class="radio-inline">--}}
-                                {{--<input type="radio" name="limited" id="optionsRadios4" checked--}}
-                                {{--value="0">not limited</label>--}}
-                                {{--</div>--}}
-                                {{--</div>--}}
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="control-label sbold">{{ trans('general.is_home') }}</label></br>
+                                        <label class="control-label sbold"><?php echo e(trans('general.is_home')); ?></label></br>
                                         <label class="radio-inline">
                                             <input type="radio" name="is_home" id="optionsRadios3" value="1"> is_home</label>
                                         <label class="radio-inline">
@@ -180,7 +180,7 @@
                                 <hr>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="control-label sbold">{{ trans('general.on_new') }}</label></br>
+                                        <label class="control-label sbold"><?php echo e(trans('general.on_new')); ?></label></br>
                                         <label class="radio-inline">
                                             <input type="radio" name="on_new" id="optionsRadios3" value="1"> on_new</label>
                                         <label class="radio-inline">
@@ -189,27 +189,27 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="control-label sbold">{{ trans('general.is_service') }}</label></br>
+                                        <label class="control-label sbold"><?php echo e(trans('general.is_service')); ?></label></br>
                                         <label class="radio-inline">
                                             <input type="radio" name="is_service" id="optionsRadios3" value="1"> is_service</label>
                                         <label class="radio-inline">
                                             <input type="radio" name="is_service" id="optionsRadios4" checked value="0">not is_service</label>
                                     </div>
                                 </div>
-                                {{--<div class="col-md-3">--}}
-                                {{--<div class="form-group">--}}
-                                {{--<label class="control-label sbold">limited</label></br>--}}
-                                {{--<label class="radio-inline">--}}
-                                {{--<input type="radio" name="limited" id="optionsRadios3"--}}
-                                {{--value="1"> limited</label>--}}
-                                {{--<label class="radio-inline">--}}
-                                {{--<input type="radio" name="limited" id="optionsRadios4" checked--}}
-                                {{--value="0">not limited</label>--}}
-                                {{--</div>--}}
-                                {{--</div>--}}
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="control-label sbold">{{ trans('general.is_product') }}</label></br>
+                                        <label class="control-label sbold"><?php echo e(trans('general.is_product')); ?></label></br>
                                         <label class="radio-inline">
                                             <input type="radio" name="is_product" id="optionsRadios3" value="1"> is_product</label>
                                         <label class="radio-inline">
@@ -221,9 +221,10 @@
                         </div>
                     </div>
                 </div>
-                @include('backend.partials.forms._btn-group')
+                <?php echo $__env->make('backend.partials.forms._btn-group', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
             </div>
         </form>
     </div>
 </div>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('backend.layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
