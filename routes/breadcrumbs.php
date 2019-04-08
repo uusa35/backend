@@ -88,7 +88,7 @@ Breadcrumbs::for('password.email', function ($trail) {
 
 // backend
 
-
+// Admin
 Breadcrumbs::for('backend.home', function ($trail) {
     $trail->push(trans('general.home'), route('backend.home'));
 });
@@ -380,9 +380,13 @@ Breadcrumbs::for('backend.reset.password', function ($trail) {
     $trail->parent('backend.user.index');
 });
 
-Breadcrumbs::for('backend.user.create', function ($trail) {
-    $trail->parent('backend.user.index');
-    $trail->push('create user', route('backend.user.create'));
+Breadcrumbs::for('backend.admin.user.create', function ($trail) {
+    $trail->parent('backend.admin.user.index');
+    $trail->push(trans('general.create_user'), route('backend.admin.user.create'));
+});
+Breadcrumbs::for('backend.admin.user.edit', function ($trail, $element) {
+    $trail->parent('backend.admin.user.index');
+    $trail->push(trans('general.edit_user'), route('backend.admin.user.edit', $element->id));
 });
 
 Breadcrumbs::for('backend.user.edit', function ($trail, $element) {
