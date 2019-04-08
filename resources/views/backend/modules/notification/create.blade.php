@@ -58,15 +58,7 @@
                                         @endif
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="form_control_1">{{ trans('general.main_image') }}</label>
-                                        <input type="file" class="form-control" name="image" placeholder="image">
-                                        <div class="help-block text-left">
-                                            W * H - Best fit ['500', '500'] pixels
-                                        </div>
-                                    </div>
-                                </div>
+
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="form_control_1">{{ trans('general.image_path') }}</label>
@@ -82,6 +74,15 @@
                                         <input type="text" class="form-control" name="url" placeholder="{{ trans('general.url') }}">
                                         <div class="help-block text-left">
 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="form_control_1">{{ trans('general.main_image') }}</label>
+                                        <input type="file" class="form-control" name="image" placeholder="image">
+                                        <div class="help-block text-left">
+                                            W * H - Best fit ['500', '500'] pixels
                                         </div>
                                     </div>
                                 </div>

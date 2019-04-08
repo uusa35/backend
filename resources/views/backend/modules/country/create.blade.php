@@ -28,6 +28,12 @@
                             </div>
                         </div> --}}
                         <!--/span-->
+
+                        <!--/span-->
+
+                    </div>
+                    <!--/row-->
+                    <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="control-label">{{ trans('general.name_en') }}</label>
@@ -35,11 +41,6 @@
                                 {{--<span class="help-block"> This field has error. </span>--}}
                             </div>
                         </div>
-                        <!--/span-->
-
-                    </div>
-                    <!--/row-->
-                    <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="control-label">{{ trans('general.slug_ar') }}</label>
@@ -49,10 +50,27 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label class="control-label">{{ trans('general.flag_image') }} </label>
-                                <input id="flag" type="file" class="form-control" name="flag">
-                                <span class="help-block"> flag size is 400 X 400 </span>
+                                <label class="control-label">{{ trans('general.slug_en') }}</label>
+                                <input type="text" id="slug_en" name="slug_en" class="form-control" value="{{ old('slug_en') }}" placeholder="{{ trans('general.slug_en') }}" required>
+                                {{--<span class="help-block"> This field has error. </span>--}}
                             </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label">{{ trans('general.calling_code') }}*</label>
+                                <input type="number" id="calling_code" name="calling_code" class="form-control" value="{{ old('calling_code') }}" placeholder="{{ trans('general.calling_code') }}" required>
+                                <span class="help-block"> ex. 00965 </span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label">{{ trans('general.country_code') }}</label>
+                                <input type="text" id="country_code" name="country_code" class="form-control" placeholder="{{ trans('general.country_code') }}" value="{{ old('country_code') }}" required>
+                                <span class="help-block"> country_code ex. KWT </span>
+                            </div>
+
                         </div>
                         {{--<div class="col-md-6">--}}
                         {{--<div class="form-group">--}}
@@ -79,41 +97,17 @@
                 <div class="row">
 
                     <!--/span-->
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="control-label">{{ trans('general.calling_code') }}*</label>
-                            <input type="number" id="calling_code" name="calling_code" class="form-control" value="{{ old('calling_code') }}" placeholder="{{ trans('general.calling_code') }}" required>
-                            <span class="help-block"> ex. 00965 </span>
-                        </div>
-                    </div>
+
                     <!--/span-->
+
+
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label class="control-label">{{ trans('general.currency_symbol_ar') }}*</label>
-                            <input type="text" id="currency_symbol_ar" name="currency_symbol_ar" class="form-control" value="{{ old('currency_symbol_ar') }}" placeholder="{{ trans('general.currency_symbol_ar') }}" required>
-
+                            <label class="control-label">{{ trans('general.flag_image') }} </label>
+                            <input id="flag" type="file" class="form-control" name="flag">
+                            <span class="help-block"> flag size is 400 X 400 </span>
                         </div>
                     </div>
-                </div>
-                <!--/row-->
-
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="control-label">{{ trans('general.currency_symbol_en') }}*</label>
-                            <input type="text" id="currency_symbol_en" name="currency_symbol_en" class="form-control" value="{{ old('currency_symbol_en') }}" placeholder="{{ trans('general.currency_symbol_en') }}" required>
-
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="control-label">{{ trans('general.country_code') }}</label>
-                            <input type="text" id="country_code" name="country_code" class="form-control" placeholder="{{ trans('general.country_code') }}" value="{{ old('country_code') }}" required>
-                            <span class="help-block"> country_code ex. KWT </span>
-                        </div>
-
-                    </div>
-                    <!--/span-->
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="control-label">{{ trans('general.order') }}</label>
@@ -121,6 +115,28 @@
                             <span class="help-block"> ex. 1 (order is the sequence of the countries that shall appear on app List of Countries in Home Interface)</span>
                         </div>
                     </div>
+
+                </div>
+                <!--/row-->
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="control-label">{{ trans('general.currency_symbol_ar') }}*</label>
+                            <input type="text" id="currency_symbol_ar" name="currency_symbol_ar" class="form-control" value="{{ old('currency_symbol_ar') }}" placeholder="{{ trans('general.currency_symbol_ar') }}" required>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="control-label">{{ trans('general.currency_symbol_en') }}*</label>
+                            <input type="text" id="currency_symbol_en" name="currency_symbol_en" class="form-control" value="{{ old('currency_symbol_en') }}" placeholder="{{ trans('general.currency_symbol_en') }}" required>
+
+                        </div>
+                    </div>
+
+                    <!--/span-->
+
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="control-label">{{ trans('general.minimum_shipment_charge') }}*</label>

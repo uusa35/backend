@@ -22,6 +22,12 @@
                             <div class="row">
                                 
                         <!--/span-->
+
+                        <!--/span-->
+
+                    </div>
+                    <!--/row-->
+                    <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="control-label"><?php echo e(trans('general.name_en')); ?></label>
@@ -29,11 +35,6 @@
                                 
                             </div>
                         </div>
-                        <!--/span-->
-
-                    </div>
-                    <!--/row-->
-                    <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="control-label"><?php echo e(trans('general.slug_ar')); ?></label>
@@ -43,10 +44,27 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label class="control-label"><?php echo e(trans('general.flag_image')); ?> </label>
-                                <input id="flag" type="file" class="form-control" name="flag">
-                                <span class="help-block"> flag size is 400 X 400 </span>
+                                <label class="control-label"><?php echo e(trans('general.slug_en')); ?></label>
+                                <input type="text" id="slug_en" name="slug_en" class="form-control" value="<?php echo e(old('slug_en')); ?>" placeholder="<?php echo e(trans('general.slug_en')); ?>" required>
+                                
                             </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label"><?php echo e(trans('general.calling_code')); ?>*</label>
+                                <input type="number" id="calling_code" name="calling_code" class="form-control" value="<?php echo e(old('calling_code')); ?>" placeholder="<?php echo e(trans('general.calling_code')); ?>" required>
+                                <span class="help-block"> ex. 00965 </span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label"><?php echo e(trans('general.country_code')); ?></label>
+                                <input type="text" id="country_code" name="country_code" class="form-control" placeholder="<?php echo e(trans('general.country_code')); ?>" value="<?php echo e(old('country_code')); ?>" required>
+                                <span class="help-block"> country_code ex. KWT </span>
+                            </div>
+
                         </div>
                         
                         
@@ -74,41 +92,17 @@
                 <div class="row">
 
                     <!--/span-->
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="control-label"><?php echo e(trans('general.calling_code')); ?>*</label>
-                            <input type="number" id="calling_code" name="calling_code" class="form-control" value="<?php echo e(old('calling_code')); ?>" placeholder="<?php echo e(trans('general.calling_code')); ?>" required>
-                            <span class="help-block"> ex. 00965 </span>
-                        </div>
-                    </div>
+
                     <!--/span-->
+
+
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label class="control-label"><?php echo e(trans('general.currency_symbol_ar')); ?>*</label>
-                            <input type="text" id="currency_symbol_ar" name="currency_symbol_ar" class="form-control" value="<?php echo e(old('currency_symbol_ar')); ?>" placeholder="<?php echo e(trans('general.currency_symbol_ar')); ?>" required>
-
+                            <label class="control-label"><?php echo e(trans('general.flag_image')); ?> </label>
+                            <input id="flag" type="file" class="form-control" name="flag">
+                            <span class="help-block"> flag size is 400 X 400 </span>
                         </div>
                     </div>
-                </div>
-                <!--/row-->
-
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="control-label"><?php echo e(trans('general.currency_symbol_en')); ?>*</label>
-                            <input type="text" id="currency_symbol_en" name="currency_symbol_en" class="form-control" value="<?php echo e(old('currency_symbol_en')); ?>" placeholder="<?php echo e(trans('general.currency_symbol_en')); ?>" required>
-
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="control-label"><?php echo e(trans('general.country_code')); ?></label>
-                            <input type="text" id="country_code" name="country_code" class="form-control" placeholder="<?php echo e(trans('general.country_code')); ?>" value="<?php echo e(old('country_code')); ?>" required>
-                            <span class="help-block"> country_code ex. KWT </span>
-                        </div>
-
-                    </div>
-                    <!--/span-->
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="control-label"><?php echo e(trans('general.order')); ?></label>
@@ -116,6 +110,28 @@
                             <span class="help-block"> ex. 1 (order is the sequence of the countries that shall appear on app List of Countries in Home Interface)</span>
                         </div>
                     </div>
+
+                </div>
+                <!--/row-->
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="control-label"><?php echo e(trans('general.currency_symbol_ar')); ?>*</label>
+                            <input type="text" id="currency_symbol_ar" name="currency_symbol_ar" class="form-control" value="<?php echo e(old('currency_symbol_ar')); ?>" placeholder="<?php echo e(trans('general.currency_symbol_ar')); ?>" required>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="control-label"><?php echo e(trans('general.currency_symbol_en')); ?>*</label>
+                            <input type="text" id="currency_symbol_en" name="currency_symbol_en" class="form-control" value="<?php echo e(old('currency_symbol_en')); ?>" placeholder="<?php echo e(trans('general.currency_symbol_en')); ?>" required>
+
+                        </div>
+                    </div>
+
+                    <!--/span-->
+
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="control-label"><?php echo e(trans('general.minimum_shipment_charge')); ?>*</label>

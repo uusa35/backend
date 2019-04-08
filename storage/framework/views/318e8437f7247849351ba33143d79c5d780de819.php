@@ -63,22 +63,8 @@
 
 
                             
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group<?php echo e($errors->has('order') ? ' has-error' : ''); ?>">
-                                        <label for="order" class="control-label"><?php echo e(trans('general.order')); ?> *</label>
-                                        <input id="order" type="text" class="form-control" name="order" value="<?php echo e(old('order')); ?>" placeholder="<?php echo e(trans('general.order')); ?>" maxlength="2" autofocus>
-                                        <?php if($errors->has('order')): ?>
-                                        <span class="help-block">
-                                            <strong>
-                                                <?php echo e($errors->first('order')); ?>
 
-                                            </strong>
-                                        </span>
-                                        <?php endif; ?>
-                                    </div>
-                                </div>
-                            </div>
+
 
 
                             <div class="row">
@@ -92,6 +78,20 @@
                                     <div class="form-group">
                                         <label for="description" class="control-label"><?php echo e(trans('general.description_en')); ?></label>
                                         <textarea type="text" class="form-control" id="description_en" name="description_en" aria-multiline="true" maxlength="500"><?php echo e(old('description_en')); ?></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group<?php echo e($errors->has('order') ? ' has-error' : ''); ?>">
+                                        <label for="order" class="control-label"><?php echo e(trans('general.order')); ?> *</label>
+                                        <input id="order" type="text" class="form-control" name="order" value="<?php echo e(old('order')); ?>" placeholder="<?php echo e(trans('general.order')); ?>" maxlength="2" autofocus>
+                                        <?php if($errors->has('order')): ?>
+                                        <span class="help-block">
+                                            <strong>
+                                                <?php echo e($errors->first('order')); ?>
+
+                                            </strong>
+                                        </span>
+                                        <?php endif; ?>
                                     </div>
                                 </div>
                             </div>

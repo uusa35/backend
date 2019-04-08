@@ -57,30 +57,16 @@
                                         @endif
                                     </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="form-group {{ $errors->has('description_en') ? ' has-error' : '' }}">
-                                        <label for="description_en" class="control-label">{{ trans('general.description_en') }}*</label>
-                                        <input id="description_en" type="text" class="form-control" name="description_en" value="{{ old('description_en') }}" placeholder="{{ trans('general.description_en') }}" required autofocus>
-                                        @if ($errors->has('description_en'))
-                                        <span class="help-block">
-                                            <strong>
-                                                {{ $errors->first('description_en') }}
-                                            </strong>
-                                        </span>
-                                        @endif
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="description" class="control-label">{{ trans('general.description_arabic') }}</label>
+                                        <textarea type="text" class="form-control" id="description_ar" name="description_ar" aria-multiline="true" maxlength="500" {{ old('description_ar') }}></textarea>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="form-group {{ $errors->has('description_ar') ? ' has-error' : '' }}">
-                                        <label for="description_ar" class="control-label">{{ trans('general.description_ar') }}*</label>
-                                        <input id="description_ar" type="text" class="form-control" name="description_ar" value="{{ old('description_ar') }}" placeholder="{{ trans('general.description_ar') }}" required autofocus>
-                                        @if ($errors->has('description_ar'))
-                                        <span class="help-block">
-                                            <strong>
-                                                {{ $errors->first('description_ar') }}
-                                            </strong>
-                                        </span>
-                                        @endif
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="description" class="control-label">{{ trans('general.description_english') }}</label>
+                                        <textarea type="text" class="form-control" id="description_en" name="description_en" aria-multiline="true" maxlength="500">{{ old('description_en') }}</textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-4">

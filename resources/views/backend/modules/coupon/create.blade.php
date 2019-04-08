@@ -31,19 +31,6 @@
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="form-group{{ $errors->has('minimum_charge') ? ' has-error' : '' }}">
-                                        <label for="minimum_charge" class="control-label">{{ trans('general.minimum_charge') }}*</label>
-                                        <input id="minimum_charge" type="number" class="form-control" name="minimum_charge" value="{{ old('minimum_charge') }}" placeholder="{{ trans('general.minimum_charge') }}" maxlength="3" max="999" required autofocus>
-                                        @if ($errors->has('minimum_charge'))
-                                        <span class="help-block">
-                                            <strong>
-                                                {{ $errors->first('minimum_charge') }}
-                                            </strong>
-                                        </span>
-                                        @endif
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
                                     <div class="form-group{{ $errors->has('code') ? ' has-error' : '' }}">
                                         <label for="code" class="control-label">{{ trans('general.code') }}*</label>
                                         <input id="code" type="text" class="form-control" name="code" value="{{ old('code') }}" placeholder="{{ trans('general.code') }}" required autofocus>
@@ -56,6 +43,20 @@
                                         @endif
                                     </div>
                                 </div>
+                                <div class="col-md-4">
+                                    <div class="form-group{{ $errors->has('minimum_charge') ? ' has-error' : '' }}">
+                                        <label for="minimum_charge" class="control-label">{{ trans('general.minimum_charge') }}*</label>
+                                        <input id="minimum_charge" type="number" class="form-control" name="minimum_charge" value="{{ old('minimum_charge') }}" placeholder="{{ trans('general.minimum_charge') }}" maxlength="3" max="999" required autofocus>
+                                        @if ($errors->has('minimum_charge'))
+                                        <span class="help-block">
+                                            <strong>
+                                                {{ $errors->first('minimum_charge') }}
+                                            </strong>
+                                        </span>
+                                        @endif
+                                    </div>
+                                </div>
+
                                 <div class="col-md-6">
                                     <div class="form-group{{ $errors->has('due_date') ? ' has-error' : '' }}">
                                         <label for="due_date" class="control-label">{{ trans('general.due_date') }}*</label>

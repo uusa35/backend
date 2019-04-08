@@ -8,7 +8,7 @@
                 <div class="portlet box blue ">
                     <div class="portlet-title">
                         <div class="caption">
-                            <i class="fa fa-gift"></i> <?php echo e(trans('general.user_main_details')); ?>
+                            <i class="fa fa-gift"></i> <?php echo e(trans('general.size_main_details')); ?>
 
                         </div>
                     </div>
@@ -50,7 +50,7 @@
                 <div class="portlet box blue ">
                     <div class="portlet-title">
                         <div class="caption">
-                            <i class="fa fa-gift"></i> <?php echo e(trans('general.user_main_details')); ?>
+                            <i class="fa fa-gift"></i> <?php echo e(trans('general.size_attributes_details')); ?>
 
                         </div>
                     </div>

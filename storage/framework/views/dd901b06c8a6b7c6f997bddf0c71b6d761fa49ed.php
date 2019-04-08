@@ -543,3 +543,12 @@
     </a>
 
 </li>
+
+<li class="nav-item <?php echo e(activeItem('service')); ?>">
+    <a href="" class="nav-link nav-toggle">
+        <i class="fa fa-fw fa-clock-o"></i>
+        <span class="title">Service</span>
+        <span class="arrow"></span>
+    </a>
+
+</li>

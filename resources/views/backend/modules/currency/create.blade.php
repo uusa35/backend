@@ -43,19 +43,7 @@
                                         @endif
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group{{ $errors->has('exchange_rate') ? ' has-error' : '' }}">
-                                        <label for="exchange_rate" class="control-label">{{ trans('general.exchange_rate') }}*</label>
-                                        <input id="exchange_rate" type="text" class="form-control" name="exchange_rate" value="{{ old('exchange_rate') }}" placeholder="{{ trans('general.exchange_rate') }}" required autofocus>
-                                        @if ($errors->has('exchange_rate'))
-                                        <span class="help-block">
-                                            <strong>
-                                                {{ $errors->first('exchange_rate') }}
-                                            </strong>
-                                        </span>
-                                        @endif
-                                    </div>
-                                </div>
+
                                 <div class="col-md-6">
                                     <div class="form-group{{ $errors->has('currency_symbol_ar') ? ' has-error' : '' }}">
                                         <label for="currency_symbol_ar" class="control-label">{{ trans('general.currency_symbol_ar') }}*</label>
@@ -77,6 +65,19 @@
                                         <span class="help-block">
                                             <strong>
                                                 {{ $errors->first('currency_symbol_en') }}
+                                            </strong>
+                                        </span>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group{{ $errors->has('exchange_rate') ? ' has-error' : '' }}">
+                                        <label for="exchange_rate" class="control-label">{{ trans('general.exchange_rate') }}*</label>
+                                        <input id="exchange_rate" type="text" class="form-control" name="exchange_rate" value="{{ old('exchange_rate') }}" placeholder="{{ trans('general.exchange_rate') }}" required autofocus>
+                                        @if ($errors->has('exchange_rate'))
+                                        <span class="help-block">
+                                            <strong>
+                                                {{ $errors->first('exchange_rate') }}
                                             </strong>
                                         </span>
                                         @endif

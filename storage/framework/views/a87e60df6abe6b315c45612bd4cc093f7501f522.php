@@ -59,7 +59,20 @@
                                         <?php endif; ?>
                                     </div>
                                 </div>
+                                <div class="col-md-4">
+                                    <div class="form-group<?php echo e($errors->has('charge') ? ' has-error' : ''); ?>">
+                                        <label for="charge" class="control-label"><?php echo e(trans('general.charge')); ?> *</label>
+                                        <input id="charge" type="text" class="form-control" name="charge" value="<?php echo e(old('charge')); ?>" placeholder="<?php echo e(trans('general.charge')); ?>" required autofocus>
+                                        <?php if($errors->has('charge')): ?>
+                                        <span class="help-block">
+                                            <strong>
+                                                <?php echo e($errors->first('charge')); ?>
 
+                                            </strong>
+                                        </span>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
                                 <div class="col-md-4">
                                     <div class="form-group <?php echo e($errors->has('notes_ar') ? ' has-error' : ''); ?>">
                                         <label for="notes_ar" class="control-label"><?php echo e(trans('general.notes_ar')); ?>*</label>
@@ -88,20 +101,7 @@
                                         <?php endif; ?>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="form-group<?php echo e($errors->has('charge') ? ' has-error' : ''); ?>">
-                                        <label for="charge" class="control-label"><?php echo e(trans('general.charge')); ?> *</label>
-                                        <input id="charge" type="text" class="form-control" name="charge" value="<?php echo e(old('charge')); ?>" placeholder="<?php echo e(trans('general.charge')); ?>" required autofocus>
-                                        <?php if($errors->has('charge')): ?>
-                                        <span class="help-block">
-                                            <strong>
-                                                <?php echo e($errors->first('charge')); ?>
 
-                                            </strong>
-                                        </span>
-                                        <?php endif; ?>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>

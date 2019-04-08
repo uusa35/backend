@@ -61,21 +61,8 @@
 
 
                             {{-- email + mobile --}}
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group{{ $errors->has('order') ? ' has-error' : '' }}">
-                                        <label for="order" class="control-label">{{ trans('general.order') }} *</label>
-                                        <input id="order" type="text" class="form-control" name="order" value="{{ old('order') }}" placeholder="{{ trans('general.order') }}" maxlength="2" autofocus>
-                                        @if ($errors->has('order'))
-                                        <span class="help-block">
-                                            <strong>
-                                                {{ $errors->first('order') }}
-                                            </strong>
-                                        </span>
-                                        @endif
-                                    </div>
-                                </div>
-                            </div>
+
+
 
 
                             <div class="row">
@@ -89,6 +76,19 @@
                                     <div class="form-group">
                                         <label for="description" class="control-label">{{ trans('general.description_en') }}</label>
                                         <textarea type="text" class="form-control" id="description_en" name="description_en" aria-multiline="true" maxlength="500">{{ old('description_en') }}</textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group{{ $errors->has('order') ? ' has-error' : '' }}">
+                                        <label for="order" class="control-label">{{ trans('general.order') }} *</label>
+                                        <input id="order" type="text" class="form-control" name="order" value="{{ old('order') }}" placeholder="{{ trans('general.order') }}" maxlength="2" autofocus>
+                                        @if ($errors->has('order'))
+                                        <span class="help-block">
+                                            <strong>
+                                                {{ $errors->first('order') }}
+                                            </strong>
+                                        </span>
+                                        @endif
                                     </div>
                                 </div>
                             </div>

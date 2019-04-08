@@ -60,32 +60,16 @@
                                         <?php endif; ?>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="form-group <?php echo e($errors->has('description_en') ? ' has-error' : ''); ?>">
-                                        <label for="description_en" class="control-label"><?php echo e(trans('general.description_en')); ?>*</label>
-                                        <input id="description_en" type="text" class="form-control" name="description_en" value="<?php echo e(old('description_en')); ?>" placeholder="<?php echo e(trans('general.description_en')); ?>" required autofocus>
-                                        <?php if($errors->has('description_en')): ?>
-                                        <span class="help-block">
-                                            <strong>
-                                                <?php echo e($errors->first('description_en')); ?>
-
-                                            </strong>
-                                        </span>
-                                        <?php endif; ?>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="description" class="control-label"><?php echo e(trans('general.description_arabic')); ?></label>
+                                        <textarea type="text" class="form-control" id="description_ar" name="description_ar" aria-multiline="true" maxlength="500" <?php echo e(old('description_ar')); ?>></textarea>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="form-group <?php echo e($errors->has('description_ar') ? ' has-error' : ''); ?>">
-                                        <label for="description_ar" class="control-label"><?php echo e(trans('general.description_ar')); ?>*</label>
-                                        <input id="description_ar" type="text" class="form-control" name="description_ar" value="<?php echo e(old('description_ar')); ?>" placeholder="<?php echo e(trans('general.description_ar')); ?>" required autofocus>
-                                        <?php if($errors->has('description_ar')): ?>
-                                        <span class="help-block">
-                                            <strong>
-                                                <?php echo e($errors->first('description_ar')); ?>
-
-                                            </strong>
-                                        </span>
-                                        <?php endif; ?>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="description" class="control-label"><?php echo e(trans('general.description_english')); ?></label>
+                                        <textarea type="text" class="form-control" id="description_en" name="description_en" aria-multiline="true" maxlength="500"><?php echo e(old('description_en')); ?></textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-4">

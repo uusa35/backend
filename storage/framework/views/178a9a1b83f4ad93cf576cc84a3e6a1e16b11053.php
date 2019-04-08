@@ -108,8 +108,25 @@
                                                     </span>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group<?php echo e($errors->has('delivery_time') ? ' has-error' : ''); ?>">
+                                                    <label for="delivery_time" class="control-label"><?php echo e(trans('general.delivery_time')); ?>
+
+                                                        *</label>
+                                                    <input id="delivery_time" type="text" class="form-control" name="delivery_time" value="<?php echo e(old('delivery_time')); ?>" placeholder="<?php echo e(trans('general.delivery_time')); ?>" required autofocus>
+                                                    <?php if($errors->has('delivery_time')): ?>
+                                                    <span class="help-block">
+                                                        <strong>
+                                                            <?php echo e($errors->first('delivery_time')); ?>
+
+                                                        </strong>
+                                                    </span>
+                                                    <?php endif; ?>
+                                                    <span class="help-block">
+                                                        <strong><?php echo e(trans('message.delivery_time')); ?></strong>
+                                                    </span>
+                                                </div>
+                                            </div>
                                             <div class="col-md-4">
                                                 <div class="form-group<?php echo e($errors->has('price') ? ' has-error' : ''); ?>">
                                                     <label for="price" class="control-label"><?php echo e(trans('general.price')); ?>
@@ -126,6 +143,25 @@
                                                     <?php endif; ?>
                                                     <span class="help-block">
                                                         <strong><?php echo e(trans('message.price')); ?></strong>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group<?php echo e($errors->has('weight') ? ' has-error' : ''); ?>">
+                                                    <label for="weight" class="control-label"><?php echo e(trans('general.weight')); ?>
+
+                                                        *</label>
+                                                    <input id="weight" type="text" class="form-control" name="weight" value="<?php echo e(old('weight')); ?>" placeholder="<?php echo e(trans('general.weight')); ?>" required autofocus>
+                                                    <?php if($errors->has('weight')): ?>
+                                                    <span class="help-block">
+                                                        <strong>
+                                                            <?php echo e($errors->first('weight')); ?>
+
+                                                        </strong>
+                                                    </span>
+                                                    <?php endif; ?>
+                                                    <span class="help-block">
+                                                        <strong><?php echo e(trans('message.weight')); ?></strong>
                                                     </span>
                                                 </div>
                                             </div>
@@ -146,44 +182,8 @@
                                                     </span>
                                                 </div>
                                             </div>
-                                            <div class="col-md-2">
-                                                <div class="form-group<?php echo e($errors->has('quantity') ? ' has-error' : ''); ?>">
-                                                    <label for="quantity" class="control-label"><?php echo e(trans('general.quantity')); ?></label>
-                                                    <input id="quantity" type="text" class="form-control" name="quantity" maxlength="5" value="<?php echo e(old('quantity')); ?>" placeholder="<?php echo e(trans('general.quantity')); ?>" autofocus>
-                                                    <?php if($errors->has('quantity')): ?>
-                                                    <span class="help-block">
-                                                        <strong>
-                                                            <?php echo e($errors->first('quantity')); ?>
-
-                                                        </strong>
-                                                    </span>
-                                                    <?php endif; ?>
-                                                    <span class="help-block">
-                                                        <strong><?php echo e(trans('message.quantity')); ?></strong>
-                                                    </span>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-4">
-                                                <div class="form-group<?php echo e($errors->has('weight') ? ' has-error' : ''); ?>">
-                                                    <label for="weight" class="control-label"><?php echo e(trans('general.weight')); ?>
-
-                                                        *</label>
-                                                    <input id="weight" type="text" class="form-control" name="weight" value="<?php echo e(old('weight')); ?>" placeholder="<?php echo e(trans('general.weight')); ?>" required autofocus>
-                                                    <?php if($errors->has('weight')): ?>
-                                                    <span class="help-block">
-                                                        <strong>
-                                                            <?php echo e($errors->first('weight')); ?>
-
-                                                        </strong>
-                                                    </span>
-                                                    <?php endif; ?>
-                                                    <span class="help-block">
-                                                        <strong><?php echo e(trans('message.weight')); ?></strong>
-                                                    </span>
-                                                </div>
-                                            </div>
                                         </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -198,39 +198,8 @@
                                 <div class="portlet-body form">
                                     <div class="form-body">
                                         <div class="row">
-                                            <div class="col-md-3">
-                                                <div class="form-group<?php echo e($errors->has('start_sale') ? ' has-error' : ''); ?>">
-                                                    <label for="start_sale" class="control-label"><?php echo e(trans('general.start_sale_date')); ?></label>
-                                                    <div class="input-group date form_datetime">
-                                                        <input type="text" readonly style="direction: ltr !important;" class="form-control" name="start_sale" value="<?php echo e(old('start_sale') ? old('start_sale') : '01 January 2019 - 07:55'); ?>" required>
-                                                        <span class="input-group-btn"><button class="btn default date-set" type="button"><i class="fa fa-calendar"></i></button></span>
-                                                    </div>
-                                                    <span class="help-block">
-                                                        <strong><?php echo e(trans('message.start_sale_date')); ?></strong>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3">
-                                                <div class="form-group">
-                                                    <label class="control-label"><?php echo e(trans('general.end_sale_date')); ?></label>
-                                                    <div class="input-group date form_datetime">
-                                                        <input type="text" class="form-control" readonly style="direction: ltr !important;" name="end_sale" value="<?php echo e(old('end_sale') ? old('end_sale') : '01 January 2019 - 07:55'); ?>" required>
-                                                        <span class="input-group-btn"><button class="btn default date-set" type="button"><i class="fa fa-calendar"></i></button></span>
-                                                    </div>
-                                                    <span class="help-block">
-                                                        <strong><?php echo e(trans('message.end_sale_date')); ?></strong>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label for="form_control_1"><?php echo e(trans('general.main_image')); ?></label>
-                                                    <input type="file" class="form-control" name="image" placeholder="<?php echo e(trans('general.main_image')); ?>" required>
-                                                    <div class="help-block text-left">
-                                                        W * H - Best fit ['1080', '1440'] pixels
-                                                    </div>
-                                                </div>
-                                            </div>
+
+
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label for="form_control_1"><?php echo e(trans('general.image_chart')); ?></label>
@@ -238,6 +207,20 @@
                                                     <div class="help-block text-left">
                                                         W * H - Best fit 500 x 500 pixels
                                                     </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="description" class="control-label"><?php echo e(trans('general.description_arabic')); ?></label>
+                                                    <textarea type="text" class="form-control" id="description_ar" name="description_ar" aria-multiline="true" maxlength="500" <?php echo e(old('description_ar')); ?>></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="description" class="control-label"><?php echo e(trans('general.description_english')); ?></label>
+                                                    <textarea type="text" class="form-control" id="description_en" name="description_en" aria-multiline="true" maxlength="500"><?php echo e(old('description_en')); ?></textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -280,6 +263,32 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
+                                                <div class="form-group<?php echo e($errors->has('keywords') ? ' has-error' : ''); ?>">
+                                                    <label for="keywords" class="control-label"><?php echo e(trans('general.keywords')); ?></label>
+                                                    <input id="keywords" type="text" class="form-control" name="keywords" value="<?php echo e(old('keywords')); ?>" placeholder="<?php echo e(trans('general.keywords')); ?>" autofocus>
+                                                    <?php if($errors->has('keywords')): ?>
+                                                    <span class="help-block">
+                                                        <strong>
+                                                            <?php echo e($errors->first('keywords')); ?>
+
+                                                        </strong>
+                                                    </span>
+                                                    <?php endif; ?>
+                                                    <span class="help-block">
+                                                        <strong><?php echo e(trans('message.notes_en')); ?></strong>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="form_control_1"><?php echo e(trans('general.main_image')); ?></label>
+                                                    <input type="file" class="form-control" name="image" placeholder="<?php echo e(trans('general.main_image')); ?>" required>
+                                                    <div class="help-block text-left">
+                                                        W * H - Best fit ['1080', '1440'] pixels
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
                                                 <div class="form-group<?php echo e($errors->has('video_url_one') ? ' has-error' : ''); ?>">
                                                     <label for="video_url_one" class="control-label"><?php echo e(trans('general.video_url_one')); ?></label>
                                                     <input id="video_url_one" type="text" class="form-control" name="video_url_one" value="<?php echo e(old('video_url_one')); ?>" placeholder="<?php echo e(trans('general.video_url_one')); ?>" autofocus>
@@ -313,23 +322,50 @@
                                                     </span>
                                                 </div>
                                             </div>
-                                        </div>
-
-
-                                        <div class="row">
                                             <div class="col-md-6">
+                                                <div class="form-group<?php echo e($errors->has('start_sale') ? ' has-error' : ''); ?>">
+                                                    <label for="start_sale" class="control-label"><?php echo e(trans('general.start_sale_date')); ?></label>
+                                                    <div class="input-group date form_datetime">
+                                                        <input type="text" readonly style="direction: ltr !important;" class="form-control" name="start_sale" value="<?php echo e(old('start_sale') ? old('start_sale') : '01 January 2019 - 07:55'); ?>" required>
+                                                        <span class="input-group-btn"><button class="btn default date-set" type="button"><i class="fa fa-calendar"></i></button></span>
+                                                    </div>
+                                                    <span class="help-block">
+                                                        <strong><?php echo e(trans('message.start_sale_date')); ?></strong>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
                                                 <div class="form-group">
-                                                    <label for="description" class="control-label"><?php echo e(trans('general.description_arabic')); ?></label>
-                                                    <textarea type="text" class="form-control" id="description_ar" name="description_ar" aria-multiline="true" maxlength="500" <?php echo e(old('description_ar')); ?>></textarea>
+                                                    <label class="control-label"><?php echo e(trans('general.end_sale_date')); ?></label>
+                                                    <div class="input-group date form_datetime">
+                                                        <input type="text" class="form-control" readonly style="direction: ltr !important;" name="end_sale" value="<?php echo e(old('end_sale') ? old('end_sale') : '01 January 2019 - 07:55'); ?>" required>
+                                                        <span class="input-group-btn"><button class="btn default date-set" type="button"><i class="fa fa-calendar"></i></button></span>
+                                                    </div>
+                                                    <span class="help-block">
+                                                        <strong><?php echo e(trans('message.end_sale_date')); ?></strong>
+                                                    </span>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="description" class="control-label"><?php echo e(trans('general.description_english')); ?></label>
-                                                    <textarea type="text" class="form-control" id="description_en" name="description_en" aria-multiline="true" maxlength="500"><?php echo e(old('description_en')); ?></textarea>
+                                                <div class="form-group<?php echo e($errors->has('quantity') ? ' has-error' : ''); ?>">
+                                                    <label for="quantity" class="control-label"><?php echo e(trans('general.quantity')); ?></label>
+                                                    <input id="quantity" type="text" class="form-control" name="quantity" maxlength="5" value="<?php echo e(old('quantity')); ?>" placeholder="<?php echo e(trans('general.quantity')); ?>" autofocus>
+                                                    <?php if($errors->has('quantity')): ?>
+                                                    <span class="help-block">
+                                                        <strong>
+                                                            <?php echo e($errors->first('quantity')); ?>
+
+                                                        </strong>
+                                                    </span>
+                                                    <?php endif; ?>
+                                                    <span class="help-block">
+                                                        <strong><?php echo e(trans('message.quantity')); ?></strong>
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
+
+
 
                                     </div>
                                 </div>

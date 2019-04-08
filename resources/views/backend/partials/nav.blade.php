@@ -4,15 +4,14 @@
         <!-- BEGIN LOGO -->
         <div class="page-logo" style="display: flex; justify-content: center; align-items: center;">
             <a href="{{ route('backend.home') }}">
-                <img src="{{ asset(env('THUMBNAIL').$settings->logo) }}" alt="logo" class="img-logo logo-default"/> </a>
+                <img src="{{ asset(env('THUMBNAIL').$settings->logo) }}" alt="logo" class="img-logo logo-default" /> </a>
             <div class="menu-toggler sidebar-toggler">
                 <!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
             </div>
         </div>
         <!-- END LOGO -->
         <!-- BEGIN RESPONSIVE MENU TOGGLER -->
-        <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse"
-           data-target=".navbar-collapse">
+        <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
         </a>
         <!-- END RESPONSIVE MENU TOGGLER -->
         <!-- BEGIN PAGE ACTIONS -->
@@ -26,94 +25,118 @@
                 </button>
                 <ul class="dropdown-menu" role="menu">
                     @can('isSuper')
-                        <li>
-                            <a href="{{ route('backend.admin.product.create') }}">
-                                <i class="icon-plus"></i> {{ trans('general.new_product') }}</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('backend.admin.user.create') }}">
-                                <i class="icon-plus"></i> {{ trans('general.new_user') }}</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('backend.admin.country.create') }}">
-                                <i class="icon-plus"></i> {{ trans('general.new_country') }}</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('backend.admin.currency.create') }}">
-                                <i class="icon-plus"></i> {{ trans('general.new_currency') }}</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('backend.admin.coupon.create') }}">
-                                <i class="icon-plus"></i> {{ trans('general.new_coupon') }}</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('backend.admin.tag.create') }}">
-                                <i class="icon-plus"></i> {{ trans('general.new_tag') }}</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('backend.admin.brand.create') }}">
-                                <i class="icon-plus"></i> {{ trans('general.new_brand') }}</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('backend.admin.color.create') }}">
-                                <i class="icon-plus"></i> {{ trans('general.new_color') }}</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('backend.admin.size.create') }}">
-                                <i class="icon-plus"></i> {{ trans('general.new_size') }}</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('backend.admin.survey.create') }}">
-                                <i class="icon-plus"></i> {{ trans('general.new_survey') }}</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('backend.admin.faq.create') }}">
-                                <i class="icon-plus"></i> {{ trans('general.new_faq') }}</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('backend.admin.notification.create') }}">
-                                <i class="icon-plus"></i> {{ trans('general.new_notification') }}</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('backend.admin.policy.create') }}">
-                                <i class="icon-plus"></i> {{ trans('general.new_policy') }}</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('backend.admin.term.create') }}">
-                                <i class="icon-plus"></i> {{ trans('general.new_term') }}</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('backend.admin.package.create') }}">
-                                <i class="icon-plus"></i> {{ trans('general.new_package') }}</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('backend.admin.page.create') }}">
-                                <i class="icon-plus"></i> {{ trans('general.new_page') }}</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="{{ route('backend.admin.slide.create') }}">
-                                <i class="icon-plus"></i> {{ trans('general.new_slider') }}</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li class="divider"></li>
-                        {{-- <li>
+                    <li>
+                        <a href="{{ route('backend.admin.product.create') }}">
+                            <i class="icon-plus"></i> {{ trans('general.new_product') }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('backend.admin.user.create') }}">
+                            <i class="icon-plus"></i> {{ trans('general.new_user') }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('backend.admin.category.create') }}">
+                            <i class="icon-plus"></i> {{ trans('general.new_category') }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('backend.admin.country.create') }}">
+                            <i class="icon-plus"></i> {{ trans('general.new_country') }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('backend.admin.currency.create') }}">
+                            <i class="icon-plus"></i> {{ trans('general.new_currency') }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('backend.admin.coupon.create') }}">
+                            <i class="icon-plus"></i> {{ trans('general.new_coupon') }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('backend.admin.tag.create') }}">
+                            <i class="icon-plus"></i> {{ trans('general.new_tag') }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('backend.admin.brand.create') }}">
+                            <i class="icon-plus"></i> {{ trans('general.new_brand') }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('backend.admin.color.create') }}">
+                            <i class="icon-plus"></i> {{ trans('general.new_color') }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('backend.admin.size.create') }}">
+                            <i class="icon-plus"></i> {{ trans('general.new_size') }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('backend.admin.survey.create') }}">
+                            <i class="icon-plus"></i> {{ trans('general.new_survey') }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('backend.admin.questionnaire.create') }}">
+                            <i class="icon-plus"></i> {{ trans('general.new_questionnaire') }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('backend.admin.newsletter.create') }}">
+                            <i class="icon-plus"></i> {{ trans('general.new_newsletter') }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('backend.admin.faq.create') }}">
+                            <i class="icon-plus"></i> {{ trans('general.new_faq') }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('backend.admin.commercial.create') }}">
+                            <i class="icon-plus"></i> {{ trans('general.new_commercial') }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('backend.admin.notification.create') }}">
+                            <i class="icon-plus"></i> {{ trans('general.new_notification') }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('backend.admin.policy.create') }}">
+                            <i class="icon-plus"></i> {{ trans('general.new_policy') }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('backend.admin.answer.create') }}">
+                            <i class="icon-plus"></i> {{ trans('general.new_answer') }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('backend.admin.role.create') }}">
+                            <i class="icon-plus"></i> {{ trans('general.role_answer') }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('backend.admin.term.create') }}">
+                            <i class="icon-plus"></i> {{ trans('general.new_term') }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('backend.admin.package.create') }}">
+                            <i class="icon-plus"></i> {{ trans('general.new_package') }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('backend.admin.page.create') }}">
+                            <i class="icon-plus"></i> {{ trans('general.new_page') }}</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="{{ route('backend.admin.slide.create') }}">
+                            <i class="icon-plus"></i> {{ trans('general.new_slider') }}</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="divider"></li>
+                    {{-- <li>
                                 <a href="{{ route('backend.admin.service.create') }}">
-                        <i class="icon-handbag"></i> {{ trans('general.create_service') }}</a>
-                        </li> --}}
-                        <li class="divider"></li>
-                        <li>
-                            <a href="{{ route('backend.admin.category.create') }}">
-                                <i class="icon-layers"></i> {{ trans('general.create_category') }}</a>
-                        </li>
-                        <li class="divider"></li>
+                    <i class="icon-handbag"></i> {{ trans('general.create_service') }}</a>
+                    </li> --}}
+                    <li class="divider"></li>
+                    <li>
+                        <a href="{{ route('backend.admin.category.create') }}">
+                            <i class="icon-layers"></i> {{ trans('general.create_category') }}</a>
+                    </li>
+                    <li class="divider"></li>
                     @elsecan('isCompany')
-                        @can('product.create')
-                            <li>
-                                <a href="{{ route('backend.admin.product.create') }}">
-                                    <i class="icon-plus"></i> {{ trans('general.new_product') }}</a>
-                            </li>
-                        @endcan
+                    @can('product.create')
+                    <li>
+                        <a href="{{ route('backend.admin.product.create') }}">
+                            <i class="icon-plus"></i> {{ trans('general.new_product') }}</a>
+                    </li>
+                    @endcan
                     @endcan
                 </ul>
             </div>
@@ -123,55 +146,55 @@
         <div class="page-top">
             <!-- BEGIN HEADER SEARCH BOX -->
             <!-- DOC: Apply "search-form-expanded" right after the "search-form" class to have half expanded search box -->
-        {{--<form class="search-form search-form-expanded" action="page_general_search_3.html" method="GET">--}}
-        {{--<div class="input-group">--}}
-        {{--<input type="text" class="form-control" placeholder="Search..." name="query">--}}
-        {{--<span class="input-group-btn">--}}
-        {{--<a href="javascript:;" class="btn submit">--}}
-        {{--<i class="icon-magnifier"></i>--}}
-        {{--</a>--}}
-        {{--</span>--}}
-        {{--</div>--}}
-        {{--</form>--}}
-        <!-- END HEADER SEARCH BOX -->
+            {{--<form class="search-form search-form-expanded" action="page_general_search_3.html" method="GET">--}}
+            {{--<div class="input-group">--}}
+            {{--<input type="text" class="form-control" placeholder="Search..." name="query">--}}
+            {{--<span class="input-group-btn">--}}
+            {{--<a href="javascript:;" class="btn submit">--}}
+            {{--<i class="icon-magnifier"></i>--}}
+            {{--</a>--}}
+            {{--</span>--}}
+            {{--</div>--}}
+            {{--</form>--}}
+            <!-- END HEADER SEARCH BOX -->
             <!-- BEGIN TOP NAVIGATION MENU -->
             <div class="top-menu">
                 <ul class="nav navbar-nav pull-right">
                     <!-- BEGIN NOTIFICATION DROPDOWN -->
                     <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-                {{--<li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">--}}
-                {{--<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"--}}
-                {{--data-close-others="true">--}}
-                {{--<i class="icon-bell"></i>--}}
-                {{--<span class="badge badge-default"> {{ $totalActiveClientOnProgressOrders->count() }} </span>--}}
-                {{--</a>--}}
-                {{--<ul class="dropdown-menu">--}}
-                {{--<li class="external">--}}
-                {{--<h3>--}}
-                {{--<a href="{{ route('backend.admin.order.index',['is_complete' => false]) }}">{{ trans('general.active_paid_on_progress_orders') }}</a>--}}
-                {{--</h3>--}}
-                {{--</li>--}}
-                {{--<li>--}}
-                {{--<ul class="dropdown-menu-list scroller" style="height: 250px;"--}}
-                {{--data-handle-color="#637283">--}}
-                {{--@foreach($totalActiveClientOnProgressOrders as $element)--}}
-                {{--<li>--}}
-                {{--<a href="{{ route('backend.order.show', $element->id) }}">--}}
-                {{--<span class="time">{{ $element->created_at->diffForHumans() }}</span>--}}
-                {{--<span class="details">--}}
-                {{--<span class="label label-sm label-icon label-success">--}}
-                {{--</span> {{ $element->title }} </span>--}}
-                {{--</a>--}}
-                {{--</li>--}}
-                {{--@endforeach--}}
-                {{--</ul>--}}
-                {{--</li>--}}
-                {{--</ul>--}}
-                {{--</li>--}}
-                {{--<!-- END NOTIFICATION DROPDOWN -->--}}
-                {{--<!-- BEGIN INBOX DROPDOWN -->--}}
-                {{--<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->--}}
-                <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                    {{--<li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">--}}
+                    {{--<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"--}}
+                    {{--data-close-others="true">--}}
+                    {{--<i class="icon-bell"></i>--}}
+                    {{--<span class="badge badge-default"> {{ $totalActiveClientOnProgressOrders->count() }} </span>--}}
+                    {{--</a>--}}
+                    {{--<ul class="dropdown-menu">--}}
+                    {{--<li class="external">--}}
+                    {{--<h3>--}}
+                    {{--<a href="{{ route('backend.admin.order.index',['is_complete' => false]) }}">{{ trans('general.active_paid_on_progress_orders') }}</a>--}}
+                    {{--</h3>--}}
+                    {{--</li>--}}
+                    {{--<li>--}}
+                    {{--<ul class="dropdown-menu-list scroller" style="height: 250px;"--}}
+                    {{--data-handle-color="#637283">--}}
+                    {{--@foreach($totalActiveClientOnProgressOrders as $element)--}}
+                    {{--<li>--}}
+                    {{--<a href="{{ route('backend.order.show', $element->id) }}">--}}
+                    {{--<span class="time">{{ $element->created_at->diffForHumans() }}</span>--}}
+                    {{--<span class="details">--}}
+                    {{--<span class="label label-sm label-icon label-success">--}}
+                    {{--</span> {{ $element->title }} </span>--}}
+                    {{--</a>--}}
+                    {{--</li>--}}
+                    {{--@endforeach--}}
+                    {{--</ul>--}}
+                    {{--</li>--}}
+                    {{--</ul>--}}
+                    {{--</li>--}}
+                    {{--<!-- END NOTIFICATION DROPDOWN -->--}}
+                    {{--<!-- BEGIN INBOX DROPDOWN -->--}}
+                    {{--<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->--}}
+                    <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
                     {{--<li class="dropdown dropdown-language">--}}
                     {{--<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"--}}
                     {{--data-close-others="true">--}}
@@ -193,18 +216,14 @@
                     {{--</li>--}}
                     {{--</ul>--}}
                     {{--</li>--}}
-                    <li class="dropdown dropdown-language"
-                        style="background-color: {{ app()->isLocale('ar') ? 'white' : 'transparent' }}; padding-right: 20px; padding-left: 20px; ">
-                        <a href="{{ route('backend.language.change','ar') }}" class="dropdown-toggle"
-                           data-close-others="true">
+                    <li class="dropdown dropdown-language" style="background-color: {{ app()->isLocale('ar') ? 'white' : 'transparent' }}; padding-right: 20px; padding-left: 20px; ">
+                        <a href="{{ route('backend.language.change','ar') }}" class="dropdown-toggle" data-close-others="true">
                             {{--<img alt="" src="{{ asset('img/flags/ar.png') }}">--}}
                             <span class="langname"><i class="fa fa-fw fa-language"></i>&nbsp; {{ trans('general.arabic') }} </span>
                         </a>
                     </li>
-                    <li class="dropdown dropdown-language"
-                        style="background-color: {{ app()->isLocale('en') ? 'white' : 'transparent' }}; padding-right: 20px; padding-left: 20px; ">
-                        <a href="{{ route('backend.language.change','en') }}" class="dropdown-toggle"
-                           data-close-others="true">
+                    <li class="dropdown dropdown-language" style="background-color: {{ app()->isLocale('en') ? 'white' : 'transparent' }}; padding-right: 20px; padding-left: 20px; ">
+                        <a href="{{ route('backend.language.change','en') }}" class="dropdown-toggle" data-close-others="true">
                             {{--<img alt="" src="{{ asset('img/flags/en.png') }}">--}}
                             <span class="langname"><i class="fa fa-fw fa-language"></i>&nbsp; {{ trans('general.english') }} </span>
                         </a>
@@ -212,43 +231,39 @@
 
                     <!-- END LANGUAGE BAR -->
                     @can('onlyAdmin')
-                        <li class="dropdown dropdown-extended dropdown-inbox" id="header_inbox_bar">
-                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
-                               data-close-others="true">
-                                <i class="icon-bell"></i>
-                                <span class="badge badge-default"> {{ $totalActiveClientOnProgressOrders->count() }} </span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="external">
-                                    <a href="{{ route('backend.admin.order.index',['is_complete' => false]) }}">{{ trans('general.active_paid_on_progress_orders') }}</a>
-                                </li>
-                                <li>
-                                    <ul class="dropdown-menu-list scroller" style="height: 275px;"
-                                        data-handle-color="#637283">
-                                        @foreach($totalActiveClientOnProgressOrders as $element)
-                                            <li>
-                                                <a href="{{ route('backend.order.show',$element->id) }}">
+                    <li class="dropdown dropdown-extended dropdown-inbox" id="header_inbox_bar">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                            <i class="icon-bell"></i>
+                            <span class="badge badge-default"> {{ $totalActiveClientOnProgressOrders->count() }} </span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="external">
+                                <a href="{{ route('backend.admin.order.index',['is_complete' => false]) }}">{{ trans('general.active_paid_on_progress_orders') }}</a>
+                            </li>
+                            <li>
+                                <ul class="dropdown-menu-list scroller" style="height: 275px;" data-handle-color="#637283">
+                                    @foreach($totalActiveClientOnProgressOrders as $element)
+                                    <li>
+                                        <a href="{{ route('backend.order.show',$element->id) }}">
                                             <span class="photo">
                                                 @if($element->images->isNotEmpty())
-                                                    <img src="{{ asset(env('THUMBNAIL').$element->images->first()->image) }}"
-                                                         class="img-circle" alt="">
+                                                <img src="{{ asset(env('THUMBNAIL').$element->images->first()->image) }}" class="img-circle" alt="">
                                                 @else
-                                                    <img src="{{ asset(env('THUMBNAIL').$settings->logo) }}"
-                                                         class="img-circle" alt="">
+                                                <img src="{{ asset(env('THUMBNAIL').$settings->logo) }}" class="img-circle" alt="">
                                                 @endif
                                             </span>
-                                                    <span class="subject">
+                                            <span class="subject">
                                                 <span class="from"> {{ str_limit($element->title,30) }} </span>
                                                 <span class="time">{{ $element->created_at->diffForHumans() }} </span>
                                             </span>
-                                                    <span class="message"> {{ str_limit($element->name,20) }} </span>
-                                                </a>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
+                                            <span class="message"> {{ str_limit($element->name,20) }} </span>
+                                        </a>
+                                    </li>
+                                    @endforeach
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
                     @endcan
                     {{--<!-- END INBOX DROPDOWN -->--}}
                     {{--<!-- BEGIN TODO DROPDOWN -->--}}
@@ -376,43 +391,39 @@
                     {{--</li>--}}
                     {{--</ul>--}}
                     {{--</li>--}}
-                <!-- END TODO DROPDOWN -->
+                    <!-- END TODO DROPDOWN -->
                     <!-- BEGIN USER LOGIN DROPDOWN -->
                     <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
                     @if(auth()->user()->isClientOrAbove)
-                        <li class="dropdown dropdown-user"
-                            style="background-color: white; padding-left: 10px; padding-right: 10px;">
-                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
-                               data-close-others="true">
+                    <li class="dropdown dropdown-user" style="background-color: white; padding-left: 10px; padding-right: 10px;">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                             <span class="username username-hide-on-mobile"> {{ trans('general.balance') }}
                                 : {{ auth()->user()->balance->points}} {{ trans('general.points') }}</span>
-                            </a>
-                        </li>
+                        </a>
+                    </li>
                     @endif
                     <li class="dropdown dropdown-user">
-                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
-                           data-close-others="true">
-                            <img alt="" class="img-xs" src="{{ auth()->user()->imageThumbLink }}"/>
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                            <img alt="" class="img-xs" src="{{ auth()->user()->imageThumbLink }}" />
                             <i class="fa fa-angle-down"></i>
                             <span class="username username-hide-on-mobile"> {{ str_limit(auth()->user()->name,30) }}</span><br>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-default">
                             <li>
                                 <a href="#">
-                                    <span class="username username-hide-on-mobile"><i
-                                                class="fa fa-fw fa-university"></i>{{ trans('general.role') }}
+                                    <span class="username username-hide-on-mobile"><i class="fa fa-fw fa-university"></i>{{ trans('general.role') }}
                                         : {{ auth()->user()->role->name }} : </span>
                                     <span class="username username-hide-on-mobile"> {{ str_limit(auth()->user()->name,5) }}</span><br>
                                 </a>
                             </li>
                             @if(auth()->user()->balance && auth()->user()->isClientOrAbove)
-                                <li>
-                                    <a href="#">
+                            <li>
+                                <a href="#">
                                     <span class="username username-hide-on-mobile"> <i class="fa fa-fw fa-list-ol"></i>{{ trans('general.balance') }}
                                         : {{ auth()->user()->balance->points}} {{ trans('general.points') }}</span>
-                                    </a>
-                                </li>
-                                <li class="divider"></li>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
                             @endif
                             <li>
                                 <a href="{{ route('frontend.home') }}">
@@ -430,46 +441,45 @@
                             </li>
                             <li class="divider"></li>
                             @can('isSuper')
-                                <li>
-                                    <a href="{{ route('backend.admin.setting.index') }}">
-                                        <i class="icon-settings"></i> {{ trans('general.app_settings') }} </a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('backend/admin/translations') }}">
-                                        <i class="fa fa-fw fa-language"></i> {{ trans('general.translation_manager') }}
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('backend.admin.export.translation') }}">
-                                        <i class="icon-envelope-letter"></i> {{ trans('general.export_translations') }}
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('admin/env') }}">
-                                        <i class="fa fa-fw fa-bug"></i> {{ trans('general.edit_env_file') }}
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('backend/admin/telescope') }}">
-                                        <i class="fa fa-fw fa-bug"></i> Telescope Debug Mode
-                                    </a>
-                                </li>
-                                <li class="divider"></li>
+                            <li>
+                                <a href="{{ route('backend.admin.setting.index') }}">
+                                    <i class="icon-settings"></i> {{ trans('general.app_settings') }} </a>
+                            </li>
+                            <li>
+                                <a href="{{ url('backend/admin/translations') }}">
+                                    <i class="fa fa-fw fa-language"></i> {{ trans('general.translation_manager') }}
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('backend.admin.export.translation') }}">
+                                    <i class="icon-envelope-letter"></i> {{ trans('general.export_translations') }}
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ url('admin/env') }}">
+                                    <i class="fa fa-fw fa-bug"></i> {{ trans('general.edit_env_file') }}
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ url('backend/admin/telescope') }}">
+                                    <i class="fa fa-fw fa-bug"></i> Telescope Debug Mode
+                                </a>
+                            </li>
+                            <li class="divider"></li>
                             @endcan
                             @if(auth()->user())
-                                <li>
-                                    <a href="{{ route('backend.reset.password',['email' => auth()->user()->email]) }}">
-                                        <i class="fa fa-fw fa-edit"></i> {{ trans('general.reset_password') }}</a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('backend.user.show',auth()->id()) }}">
-                                        <i class="fa fa-fw fa-user-circle"></i> {{ trans('general.my_profile') }}</a>
-                                </li>
+                            <li>
+                                <a href="{{ route('backend.reset.password',['email' => auth()->user()->email]) }}">
+                                    <i class="fa fa-fw fa-edit"></i> {{ trans('general.reset_password') }}</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('backend.user.show',auth()->id()) }}">
+                                    <i class="fa fa-fw fa-user-circle"></i> {{ trans('general.my_profile') }}</a>
+                            </li>
                             @endif
                             <li class="divider"></li>
                             <li>
-                                <a href="{{ url('/logout') }}"
-                                   onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                <a href="{{ url('/logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                                     <i class="icon-key"></i> {{ trans('general.logout') }} </a>
                             </li>
                         </ul>
@@ -482,8 +492,7 @@
                     <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
 
                     <li class="dropdown dropdown-user">
-                        <a href="{{ url('/logout') }}" class="dropdown-toggle"
-                           onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                        <a href="{{ url('/logout') }}" class="dropdown-toggle" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                             <i class="icon-logout"></i>
                         </a>
                     </li>

@@ -57,7 +57,19 @@
                                         @endif
                                     </div>
                                 </div>
-
+                                <div class="col-md-4">
+                                    <div class="form-group{{ $errors->has('charge') ? ' has-error' : '' }}">
+                                        <label for="charge" class="control-label">{{ trans('general.charge') }} *</label>
+                                        <input id="charge" type="text" class="form-control" name="charge" value="{{ old('charge') }}" placeholder="{{ trans('general.charge') }}" required autofocus>
+                                        @if ($errors->has('charge'))
+                                        <span class="help-block">
+                                            <strong>
+                                                {{ $errors->first('charge') }}
+                                            </strong>
+                                        </span>
+                                        @endif
+                                    </div>
+                                </div>
                                 <div class="col-md-4">
                                     <div class="form-group {{ $errors->has('notes_ar') ? ' has-error' : '' }}">
                                         <label for="notes_ar" class="control-label">{{ trans('general.notes_ar') }}*</label>
@@ -84,19 +96,7 @@
                                         @endif
                                     </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="form-group{{ $errors->has('charge') ? ' has-error' : '' }}">
-                                        <label for="charge" class="control-label">{{ trans('general.charge') }} *</label>
-                                        <input id="charge" type="text" class="form-control" name="charge" value="{{ old('charge') }}" placeholder="{{ trans('general.charge') }}" required autofocus>
-                                        @if ($errors->has('charge'))
-                                        <span class="help-block">
-                                            <strong>
-                                                {{ $errors->first('charge') }}
-                                            </strong>
-                                        </span>
-                                        @endif
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
                     </div>

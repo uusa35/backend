@@ -32,10 +32,10 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        $validate = validator(request()->all(), ['parent_id' => 'required|integer']);
-        if ($validate->fails()) {
-            return redirect()->back()->with('error', 'missing Parent ID !!');
-        }
+        // $validate = validator(request()->all(), ['parent_id' => 'required|integer']);
+        // if ($validate->fails()) {
+        //     return redirect()->back()->with('error', 'missing Parent ID !!');
+        // }
         return view('backend.modules.category.create');
     }
 

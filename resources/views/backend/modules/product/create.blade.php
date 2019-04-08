@@ -102,8 +102,23 @@
                                                     </span>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group{{ $errors->has('delivery_time') ? ' has-error' : '' }}">
+                                                    <label for="delivery_time" class="control-label">{{ trans('general.delivery_time') }}
+                                                        *</label>
+                                                    <input id="delivery_time" type="text" class="form-control" name="delivery_time" value="{{ old('delivery_time') }}" placeholder="{{ trans('general.delivery_time') }}" required autofocus>
+                                                    @if ($errors->has('delivery_time'))
+                                                    <span class="help-block">
+                                                        <strong>
+                                                            {{ $errors->first('delivery_time') }}
+                                                        </strong>
+                                                    </span>
+                                                    @endif
+                                                    <span class="help-block">
+                                                        <strong>{{ trans('message.delivery_time') }}</strong>
+                                                    </span>
+                                                </div>
+                                            </div>
                                             <div class="col-md-4">
                                                 <div class="form-group{{ $errors->has('price') ? ' has-error' : '' }}">
                                                     <label for="price" class="control-label">{{ trans('general.price') }}
@@ -118,6 +133,23 @@
                                                     @endif
                                                     <span class="help-block">
                                                         <strong>{{ trans('message.price') }}</strong>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group{{ $errors->has('weight') ? ' has-error' : '' }}">
+                                                    <label for="weight" class="control-label">{{ trans('general.weight') }}
+                                                        *</label>
+                                                    <input id="weight" type="text" class="form-control" name="weight" value="{{ old('weight') }}" placeholder="{{ trans('general.weight') }}" required autofocus>
+                                                    @if ($errors->has('weight'))
+                                                    <span class="help-block">
+                                                        <strong>
+                                                            {{ $errors->first('weight') }}
+                                                        </strong>
+                                                    </span>
+                                                    @endif
+                                                    <span class="help-block">
+                                                        <strong>{{ trans('message.weight') }}</strong>
                                                     </span>
                                                 </div>
                                             </div>
@@ -137,41 +169,8 @@
                                                     </span>
                                                 </div>
                                             </div>
-                                            <div class="col-md-2">
-                                                <div class="form-group{{ $errors->has('quantity') ? ' has-error' : '' }}">
-                                                    <label for="quantity" class="control-label">{{ trans('general.quantity') }}</label>
-                                                    <input id="quantity" type="text" class="form-control" name="quantity" maxlength="5" value="{{ old('quantity') }}" placeholder="{{ trans('general.quantity') }}" autofocus>
-                                                    @if ($errors->has('quantity'))
-                                                    <span class="help-block">
-                                                        <strong>
-                                                            {{ $errors->first('quantity') }}
-                                                        </strong>
-                                                    </span>
-                                                    @endif
-                                                    <span class="help-block">
-                                                        <strong>{{ trans('message.quantity') }}</strong>
-                                                    </span>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-4">
-                                                <div class="form-group{{ $errors->has('weight') ? ' has-error' : '' }}">
-                                                    <label for="weight" class="control-label">{{ trans('general.weight') }}
-                                                        *</label>
-                                                    <input id="weight" type="text" class="form-control" name="weight" value="{{ old('weight') }}" placeholder="{{ trans('general.weight') }}" required autofocus>
-                                                    @if ($errors->has('weight'))
-                                                    <span class="help-block">
-                                                        <strong>
-                                                            {{ $errors->first('weight') }}
-                                                        </strong>
-                                                    </span>
-                                                    @endif
-                                                    <span class="help-block">
-                                                        <strong>{{ trans('message.weight') }}</strong>
-                                                    </span>
-                                                </div>
-                                            </div>
                                         </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -185,39 +184,8 @@
                                 <div class="portlet-body form">
                                     <div class="form-body">
                                         <div class="row">
-                                            <div class="col-md-3">
-                                                <div class="form-group{{ $errors->has('start_sale') ? ' has-error' : '' }}">
-                                                    <label for="start_sale" class="control-label">{{ trans('general.start_sale_date') }}</label>
-                                                    <div class="input-group date form_datetime">
-                                                        <input type="text" readonly style="direction: ltr !important;" class="form-control" name="start_sale" value="{{ old('start_sale') ? old('start_sale') : '01 January 2019 - 07:55' }}" required>
-                                                        <span class="input-group-btn"><button class="btn default date-set" type="button"><i class="fa fa-calendar"></i></button></span>
-                                                    </div>
-                                                    <span class="help-block">
-                                                        <strong>{{ trans('message.start_sale_date') }}</strong>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3">
-                                                <div class="form-group">
-                                                    <label class="control-label">{{ trans('general.end_sale_date') }}</label>
-                                                    <div class="input-group date form_datetime">
-                                                        <input type="text" class="form-control" readonly style="direction: ltr !important;" name="end_sale" value="{{ old('end_sale') ? old('end_sale') : '01 January 2019 - 07:55' }}" required>
-                                                        <span class="input-group-btn"><button class="btn default date-set" type="button"><i class="fa fa-calendar"></i></button></span>
-                                                    </div>
-                                                    <span class="help-block">
-                                                        <strong>{{ trans('message.end_sale_date') }}</strong>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label for="form_control_1">{{ trans('general.main_image') }}</label>
-                                                    <input type="file" class="form-control" name="image" placeholder="{{ trans('general.main_image') }}" required>
-                                                    <div class="help-block text-left">
-                                                        W * H - Best fit ['1080', '1440'] pixels
-                                                    </div>
-                                                </div>
-                                            </div>
+
+
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label for="form_control_1">{{ trans('general.image_chart') }}</label>
@@ -225,6 +193,20 @@
                                                     <div class="help-block text-left">
                                                         W * H - Best fit 500 x 500 pixels
                                                     </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="description" class="control-label">{{ trans('general.description_arabic') }}</label>
+                                                    <textarea type="text" class="form-control" id="description_ar" name="description_ar" aria-multiline="true" maxlength="500" {{ old('description_ar') }}></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="description" class="control-label">{{ trans('general.description_english') }}</label>
+                                                    <textarea type="text" class="form-control" id="description_en" name="description_en" aria-multiline="true" maxlength="500">{{ old('description_en') }}</textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -265,6 +247,31 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
+                                                <div class="form-group{{ $errors->has('keywords') ? ' has-error' : '' }}">
+                                                    <label for="keywords" class="control-label">{{ trans('general.keywords') }}</label>
+                                                    <input id="keywords" type="text" class="form-control" name="keywords" value="{{ old('keywords') }}" placeholder="{{ trans('general.keywords') }}" autofocus>
+                                                    @if ($errors->has('keywords'))
+                                                    <span class="help-block">
+                                                        <strong>
+                                                            {{ $errors->first('keywords') }}
+                                                        </strong>
+                                                    </span>
+                                                    @endif
+                                                    <span class="help-block">
+                                                        <strong>{{ trans('message.notes_en') }}</strong>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="form_control_1">{{ trans('general.main_image') }}</label>
+                                                    <input type="file" class="form-control" name="image" placeholder="{{ trans('general.main_image') }}" required>
+                                                    <div class="help-block text-left">
+                                                        W * H - Best fit ['1080', '1440'] pixels
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
                                                 <div class="form-group{{ $errors->has('video_url_one') ? ' has-error' : '' }}">
                                                     <label for="video_url_one" class="control-label">{{ trans('general.video_url_one') }}</label>
                                                     <input id="video_url_one" type="text" class="form-control" name="video_url_one" value="{{ old('video_url_one') }}" placeholder="{{ trans('general.video_url_one') }}" autofocus>
@@ -296,23 +303,49 @@
                                                     </span>
                                                 </div>
                                             </div>
-                                        </div>
-
-
-                                        <div class="row">
                                             <div class="col-md-6">
+                                                <div class="form-group{{ $errors->has('start_sale') ? ' has-error' : '' }}">
+                                                    <label for="start_sale" class="control-label">{{ trans('general.start_sale_date') }}</label>
+                                                    <div class="input-group date form_datetime">
+                                                        <input type="text" readonly style="direction: ltr !important;" class="form-control" name="start_sale" value="{{ old('start_sale') ? old('start_sale') : '01 January 2019 - 07:55' }}" required>
+                                                        <span class="input-group-btn"><button class="btn default date-set" type="button"><i class="fa fa-calendar"></i></button></span>
+                                                    </div>
+                                                    <span class="help-block">
+                                                        <strong>{{ trans('message.start_sale_date') }}</strong>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
                                                 <div class="form-group">
-                                                    <label for="description" class="control-label">{{ trans('general.description_arabic') }}</label>
-                                                    <textarea type="text" class="form-control" id="description_ar" name="description_ar" aria-multiline="true" maxlength="500" {{ old('description_ar') }}></textarea>
+                                                    <label class="control-label">{{ trans('general.end_sale_date') }}</label>
+                                                    <div class="input-group date form_datetime">
+                                                        <input type="text" class="form-control" readonly style="direction: ltr !important;" name="end_sale" value="{{ old('end_sale') ? old('end_sale') : '01 January 2019 - 07:55' }}" required>
+                                                        <span class="input-group-btn"><button class="btn default date-set" type="button"><i class="fa fa-calendar"></i></button></span>
+                                                    </div>
+                                                    <span class="help-block">
+                                                        <strong>{{ trans('message.end_sale_date') }}</strong>
+                                                    </span>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="description" class="control-label">{{ trans('general.description_english') }}</label>
-                                                    <textarea type="text" class="form-control" id="description_en" name="description_en" aria-multiline="true" maxlength="500">{{ old('description_en') }}</textarea>
+                                                <div class="form-group{{ $errors->has('quantity') ? ' has-error' : '' }}">
+                                                    <label for="quantity" class="control-label">{{ trans('general.quantity') }}</label>
+                                                    <input id="quantity" type="text" class="form-control" name="quantity" maxlength="5" value="{{ old('quantity') }}" placeholder="{{ trans('general.quantity') }}" autofocus>
+                                                    @if ($errors->has('quantity'))
+                                                    <span class="help-block">
+                                                        <strong>
+                                                            {{ $errors->first('quantity') }}
+                                                        </strong>
+                                                    </span>
+                                                    @endif
+                                                    <span class="help-block">
+                                                        <strong>{{ trans('message.quantity') }}</strong>
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
+
+
 
                                     </div>
                                 </div>

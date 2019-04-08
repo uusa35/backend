@@ -56,6 +56,16 @@
                                         @endif
                                     </div>
                                 </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="form_control_1">{{ trans('general.main_image') }}*</label>
+                                        <input type="file" class="form-control" name="image" placeholder="{{ trans('general.main_image') }}" required>
+                                        <div class="help-block text-left">
+                                            W * H - Best fit [1362 × 716] pixels
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="col-md-4">
                                     <div class="form-group{{ $errors->has('order') ? ' has-error' : '' }}">
                                         <label for="order" class="control-label">{{ trans('general.order') }} *</label>
@@ -67,15 +77,6 @@
                                             </strong>
                                         </span>
                                         @endif
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="form_control_1">{{ trans('general.main_image') }}*</label>
-                                        <input type="file" class="form-control" name="image" placeholder="{{ trans('general.main_image') }}" required>
-                                        <div class="help-block text-left">
-                                            W * H - Best fit [1362 × 716] pixels
-                                        </div>
                                     </div>
                                 </div>
                             </div>

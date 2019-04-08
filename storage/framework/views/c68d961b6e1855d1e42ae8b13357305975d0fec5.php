@@ -10,7 +10,7 @@
                 <div class="portlet box blue ">
                     <div class="portlet-title">
                         <div class="caption">
-                            <i class="fa fa-gift"></i> <?php echo e(trans('general.user_main_details')); ?>
+                            <i class="fa fa-gift"></i> <?php echo e(trans('general.notification_main_details')); ?>
 
                         </div>
                     </div>
@@ -59,15 +59,7 @@
                                         <?php endif; ?>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="form_control_1"><?php echo e(trans('general.main_image')); ?></label>
-                                        <input type="file" class="form-control" name="image" placeholder="image">
-                                        <div class="help-block text-left">
-                                            W * H - Best fit ['500', '500'] pixels
-                                        </div>
-                                    </div>
-                                </div>
+
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="form_control_1"><?php echo e(trans('general.image_path')); ?></label>
@@ -83,6 +75,15 @@
                                         <input type="text" class="form-control" name="url" placeholder="<?php echo e(trans('general.url')); ?>">
                                         <div class="help-block text-left">
 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="form_control_1"><?php echo e(trans('general.main_image')); ?></label>
+                                        <input type="file" class="form-control" name="image" placeholder="image">
+                                        <div class="help-block text-left">
+                                            W * H - Best fit ['500', '500'] pixels
                                         </div>
                                     </div>
                                 </div>

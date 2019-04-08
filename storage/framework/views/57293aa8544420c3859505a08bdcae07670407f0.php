@@ -57,6 +57,16 @@
                                         <?php endif; ?>
                                     </div>
                                 </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="form_control_1"><?php echo e(trans('general.main_image')); ?>*</label>
+                                        <input type="file" class="form-control" name="image" placeholder="<?php echo e(trans('general.main_image')); ?>" required>
+                                        <div class="help-block text-left">
+                                            W * H - Best fit [1362 × 716] pixels
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="col-md-4">
                                     <div class="form-group<?php echo e($errors->has('order') ? ' has-error' : ''); ?>">
                                         <label for="order" class="control-label"><?php echo e(trans('general.order')); ?> *</label>
@@ -69,15 +79,6 @@
                                             </strong>
                                         </span>
                                         <?php endif; ?>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="form_control_1"><?php echo e(trans('general.main_image')); ?>*</label>
-                                        <input type="file" class="form-control" name="image" placeholder="<?php echo e(trans('general.main_image')); ?>" required>
-                                        <div class="help-block text-left">
-                                            W * H - Best fit [1362 × 716] pixels
-                                        </div>
                                     </div>
                                 </div>
                             </div>

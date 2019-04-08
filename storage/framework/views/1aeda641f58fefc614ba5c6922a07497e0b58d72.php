@@ -10,7 +10,7 @@
                 <div class="portlet box blue ">
                     <div class="portlet-title">
                         <div class="caption">
-                            <i class="fa fa-gift"></i> <?php echo e(trans('general.user_main_details')); ?>
+                            <i class="fa fa-gift"></i> <?php echo e(trans('general.currency_main_details')); ?>
 
                         </div>
                     </div>
@@ -45,20 +45,7 @@
                                         <?php endif; ?>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group<?php echo e($errors->has('exchange_rate') ? ' has-error' : ''); ?>">
-                                        <label for="exchange_rate" class="control-label"><?php echo e(trans('general.exchange_rate')); ?>*</label>
-                                        <input id="exchange_rate" type="text" class="form-control" name="exchange_rate" value="<?php echo e(old('exchange_rate')); ?>" placeholder="<?php echo e(trans('general.exchange_rate')); ?>" required autofocus>
-                                        <?php if($errors->has('exchange_rate')): ?>
-                                        <span class="help-block">
-                                            <strong>
-                                                <?php echo e($errors->first('exchange_rate')); ?>
 
-                                            </strong>
-                                        </span>
-                                        <?php endif; ?>
-                                    </div>
-                                </div>
                                 <div class="col-md-6">
                                     <div class="form-group<?php echo e($errors->has('currency_symbol_ar') ? ' has-error' : ''); ?>">
                                         <label for="currency_symbol_ar" class="control-label"><?php echo e(trans('general.currency_symbol_ar')); ?>*</label>
@@ -88,6 +75,20 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
+                                    <div class="form-group<?php echo e($errors->has('exchange_rate') ? ' has-error' : ''); ?>">
+                                        <label for="exchange_rate" class="control-label"><?php echo e(trans('general.exchange_rate')); ?>*</label>
+                                        <input id="exchange_rate" type="text" class="form-control" name="exchange_rate" value="<?php echo e(old('exchange_rate')); ?>" placeholder="<?php echo e(trans('general.exchange_rate')); ?>" required autofocus>
+                                        <?php if($errors->has('exchange_rate')): ?>
+                                        <span class="help-block">
+                                            <strong>
+                                                <?php echo e($errors->first('exchange_rate')); ?>
+
+                                            </strong>
+                                        </span>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
                                     <?php if(!$allCountries->isEmpty()): ?>
                                     <div class="form-group">
                                         <label for="duration" class="control-label"><?php echo e(trans('general.country')); ?> *</label>
@@ -108,7 +109,7 @@
                 <div class="portlet box blue ">
                     <div class="portlet-title">
                         <div class="caption">
-                            <i class="fa fa-gift"></i> <?php echo e(trans('general.user_main_details')); ?>
+                            <i class="fa fa-gift"></i> <?php echo e(trans('general.currency_attributes_details')); ?>
 
                         </div>
                     </div>

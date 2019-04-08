@@ -10,7 +10,7 @@
                 <div class="portlet box blue ">
                     <div class="portlet-title">
                         <div class="caption">
-                            <i class="fa fa-gift"></i> <?php echo e(trans('general.user_main_details')); ?>
+                            <i class="fa fa-gift"></i> <?php echo e(trans('general.coupon_main_details')); ?>
 
                         </div>
                     </div>
@@ -32,20 +32,6 @@
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="form-group<?php echo e($errors->has('minimum_charge') ? ' has-error' : ''); ?>">
-                                        <label for="minimum_charge" class="control-label"><?php echo e(trans('general.minimum_charge')); ?>*</label>
-                                        <input id="minimum_charge" type="number" class="form-control" name="minimum_charge" value="<?php echo e(old('minimum_charge')); ?>" placeholder="<?php echo e(trans('general.minimum_charge')); ?>" maxlength="3" max="999" required autofocus>
-                                        <?php if($errors->has('minimum_charge')): ?>
-                                        <span class="help-block">
-                                            <strong>
-                                                <?php echo e($errors->first('minimum_charge')); ?>
-
-                                            </strong>
-                                        </span>
-                                        <?php endif; ?>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
                                     <div class="form-group<?php echo e($errors->has('code') ? ' has-error' : ''); ?>">
                                         <label for="code" class="control-label"><?php echo e(trans('general.code')); ?>*</label>
                                         <input id="code" type="text" class="form-control" name="code" value="<?php echo e(old('code')); ?>" placeholder="<?php echo e(trans('general.code')); ?>" required autofocus>
@@ -59,6 +45,21 @@
                                         <?php endif; ?>
                                     </div>
                                 </div>
+                                <div class="col-md-4">
+                                    <div class="form-group<?php echo e($errors->has('minimum_charge') ? ' has-error' : ''); ?>">
+                                        <label for="minimum_charge" class="control-label"><?php echo e(trans('general.minimum_charge')); ?>*</label>
+                                        <input id="minimum_charge" type="number" class="form-control" name="minimum_charge" value="<?php echo e(old('minimum_charge')); ?>" placeholder="<?php echo e(trans('general.minimum_charge')); ?>" maxlength="3" max="999" required autofocus>
+                                        <?php if($errors->has('minimum_charge')): ?>
+                                        <span class="help-block">
+                                            <strong>
+                                                <?php echo e($errors->first('minimum_charge')); ?>
+
+                                            </strong>
+                                        </span>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+
                                 <div class="col-md-6">
                                     <div class="form-group<?php echo e($errors->has('due_date') ? ' has-error' : ''); ?>">
                                         <label for="due_date" class="control-label"><?php echo e(trans('general.due_date')); ?>*</label>
@@ -92,7 +93,7 @@
                 <div class="portlet box blue ">
                     <div class="portlet-title">
                         <div class="caption">
-                            <i class="fa fa-gift"></i> <?php echo e(trans('general.user_main_details')); ?>
+                            <i class="fa fa-gift"></i> <?php echo e(trans('general.coupon_attributes_details')); ?>
 
                         </div>
                     </div>
