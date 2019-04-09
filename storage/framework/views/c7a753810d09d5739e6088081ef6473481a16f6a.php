@@ -30,12 +30,13 @@
                                                 <div class="col-xs-12 col-md-6 col-lg-4">
                                                     <a href="<?php echo request()->fullUrlWithQuery(['service_category_id' => $category->id]); ?>"
                                                        class="tt-services-block">
-                                                        
-                                                            
-                                                        
+                                                        <div class="badge-light">
+
+                                                            <img class="img-responsive img-xs" src="<?php echo e($category->imageThumbLink); ?>" alt="<?php echo e($category->name); ?>">
+                                                        </div>
                                                         <div class="tt-col-description">
-                                                            <h4 class="tt-title <?php echo e(request('service_category_id') == $category->id ? 'text-warning' : null); ?>"><?php echo e($category->name); ?></h4>
-                                                            <h5><?php echo e(trans('general.services_count')); ?> : <?php echo e($category->services->count()); ?> </h5>
+                                                            <div class="tt-title <?php echo e(request('service_category_id') == $category->id ? 'text-warning' : null); ?>"><?php echo e($category->name); ?></div>
+                                                            <div><?php echo e(trans('general.services_count')); ?> : <?php echo e($category->services->count()); ?> </div>
                                                         </div>
                                                     </a>
                                                 </div>
