@@ -649,6 +649,20 @@
                                                     <strong><?php echo e(trans('message.check_stock_instructions')); ?></strong>
                                                 </span>
                                             </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="control-label sbold"><?php echo e(trans('general.has_attributes')); ?></label></br>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="has_attributes" id="optionsRadios3" value="1">
+                                                        has_attributes</label>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="has_attributes" id="optionsRadios4" checked value="0">not
+                                                        has_attributes</label>
+                                                </div>
+                                                <span class="help-block">
+                                                    <strong><?php echo e(trans('message.on_new_instructions')); ?></strong>
+                                                </span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -660,6 +674,10 @@
                             
                             
                             
+
+                            <button type="submit" class="btn btn-info">
+                                <i class="fa fa-save"></i> Save and Add Attributes
+                            </button>
                             <button type="submit" class="btn btn-info">
                                 <i class="fa fa-save"></i> Next
                             </button>
