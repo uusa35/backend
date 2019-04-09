@@ -55,7 +55,13 @@
                                                 <div class="form-group {{ $errors->has('sku') ? ' has-error' : '' }}">
                                                     <label for="sku" class="control-label">{{ trans('general.sku') }}
                                                         *</label>
-                                                    <input id="sku" type="text" class="form-control" name="sku" value="{{ old('sku') }}" placeholder="{{ trans('general.sku') }}" required autofocus>
+                                                    <input id="sku" type="text"
+                                                           class="form-control tooltips"
+                                                           data-container="body"
+                                                           data-placement="top"
+                                                           data-original-title="{{ trans('message.sku') }}"
+                                                           name="sku"
+                                                           value="{{ old('sku') }}" placeholder="{{ trans('general.sku') }}" required autofocus>
                                                     @if ($errors->has('sku'))
                                                     <span class="help-block">
                                                         <strong>
@@ -72,7 +78,13 @@
                                                 <div class="form-group {{ $errors->has('name_ar') ? ' has-error' : '' }}">
                                                     <label for="name_ar" class="control-label">{{ trans('general.name_arabic') }}
                                                         *</label>
-                                                    <input id="name_ar" type="text" class="form-control" name="name_ar" value="{{ old('name_ar') }}" placeholder="{{ trans('general.name_arabic') }}" required autofocus>
+                                                    <input id="name_ar" type="text"
+                                                           class="form-control tooltips"
+                                                           data-container="body"
+                                                           data-placement="top"
+                                                           data-original-title="{{ trans('message.name_ar') }}"
+                                                           name="name_ar"
+                                                           value="{{ old('name_ar') }}" placeholder="{{ trans('general.name_arabic') }}" required autofocus>
                                                     @if ($errors->has('name_ar'))
                                                     <span class="help-block">
                                                         <strong>
