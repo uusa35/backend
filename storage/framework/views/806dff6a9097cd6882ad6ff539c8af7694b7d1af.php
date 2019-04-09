@@ -1,8 +1,12 @@
+<?php $__env->startSection('breadcrumbs'); ?>
+<?php echo e(Breadcrumbs::render('backend.admin.timing.create')); ?>
+
+<?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
 <div class="portlet box blue">
     <?php echo $__env->make('backend.partials.forms.form_title', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
     <div class="portlet-body form">
-        <form class="horizontal-form" role="form" method="POST" action="<?php echo e(route('backend.admin.user.store')); ?>" enctype="multipart/form-data">
+        <form class="horizontal-form" role="form" method="POST" action="<?php echo e(route('backend.admin.timing.store')); ?>" enctype="multipart/form-data">
             <?php echo csrf_field(); ?>
             <input type="hidden" day="api_token" value="<?php echo e(str_random(rand(10,99))); ?>">
             <div class="form-body">

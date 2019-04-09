@@ -1,5 +1,7 @@
 @extends('backend.layouts.app')
-
+@section('breadcrumbs')
+{{ Breadcrumbs::render('backend.admin.newsletter.create') }}
+@endsection
 
 @section('content')
 <div class="portlet box blue">

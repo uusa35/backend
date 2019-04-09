@@ -2,7 +2,7 @@
 
 
 @section('breadcrumbs')
-{{ Breadcrumbs::render('backend.slide.create') }}
+{{ Breadcrumbs::render('backend.admin.slide.create') }}
 @endsection
 
 @section('content')

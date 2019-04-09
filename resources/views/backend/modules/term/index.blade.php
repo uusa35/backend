@@ -1,5 +1,7 @@
 @extends('backend.layouts.app')
-
+@section('breadcrumbs')
+{{ Breadcrumbs::render('backend.admin.term.index') }}
+@endsection
 @section('content')
 <div class="row">
     <div class="col-md-12">
@@ -72,4 +74,4 @@
         </div>
     </div>
 </div>
-@endsection 
+@endsection

@@ -1,6 +1,9 @@
 @extends('backend.layouts.app')
 
 @section('breadcrumbs')
+{{ Breadcrumbs::render('backend.admin.role.index') }}
+@endsection
+@section('breadcrumbs')
 
 @show
 @section('content')
@@ -111,4 +114,4 @@
         </div>
     </div>
 </div>
-@endsection 
+@endsection

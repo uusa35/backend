@@ -1,3 +1,8 @@
+<?php $__env->startSection('breadcrumbs'); ?>
+<?php echo e(Breadcrumbs::render('backend.admin.tag.create')); ?>
+
+<?php $__env->stopSection(); ?>
+
 <?php $__env->startSection('content'); ?>
 <div class="portlet box blue">
     <?php echo $__env->make('backend.partials.forms.form_title', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
@@ -8,7 +13,7 @@
                 <div class="portlet box blue ">
                     <div class="portlet-title">
                         <div class="caption">
-                            <i class="fa fa-gift"></i> <?php echo e(trans('general.user_main_details')); ?>
+                            <i class="fa fa-gift"></i> <?php echo e(trans('general.tag_main_details')); ?>
 
                         </div>
                     </div>
@@ -79,7 +84,7 @@
                 <div class="portlet box blue ">
                     <div class="portlet-title">
                         <div class="caption">
-                            <i class="fa fa-gift"></i> <?php echo e(trans('general.user_main_details')); ?>
+                            <i class="fa fa-gift"></i> <?php echo e(trans('general.tag_attributes_details')); ?>
 
                         </div>
                     </div>

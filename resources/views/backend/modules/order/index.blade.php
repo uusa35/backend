@@ -1,7 +1,6 @@
 @extends('backend.layouts.app')
-
 @section('breadcrumbs')
-
+{{ Breadcrumbs::render('backend.admin.order.index') }}
 @endsection
 @section('content')
 <div class="portlet-body">
@@ -98,4 +97,4 @@
     </table>
     {{ $elements->render() }}
 </div>
-@endsection 
+@endsection

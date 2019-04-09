@@ -1,3 +1,7 @@
+<?php $__env->startSection('breadcrumbs'); ?>
+<?php echo e(Breadcrumbs::render('backend.admin.day.index')); ?>
+
+<?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
 <div class="row">
     <div class="col-md-12">

@@ -1,4 +1,8 @@
 <?php $__env->startSection('breadcrumbs'); ?>
+<?php echo e(Breadcrumbs::render('backend.admin.role.index')); ?>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('breadcrumbs'); ?>
 
 <?php echo $__env->yieldSection(); ?>
 <?php $__env->startSection('content'); ?>
@@ -106,5 +110,5 @@
         </div>
     </div>
 </div>
-<?php $__env->stopSection(); ?> 
+<?php $__env->stopSection(); ?>
 <?php echo $__env->make('backend.layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

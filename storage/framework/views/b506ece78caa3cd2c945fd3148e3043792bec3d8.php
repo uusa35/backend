@@ -1,5 +1,5 @@
 <?php $__env->startSection('breadcrumbs'); ?>
-<?php echo e(Breadcrumbs::render('backend.slide.create')); ?>
+<?php echo e(Breadcrumbs::render('backend.admin.slide.create')); ?>
 
 <?php $__env->stopSection(); ?>
 

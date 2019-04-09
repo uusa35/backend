@@ -2,7 +2,7 @@
 
 
 @section('breadcrumbs')
-{{--{{ Breadcrumbs::render('backend.color.create') }} --}}
+{{ Breadcrumbs::render('backend.admin.color.create') }}
 @endsection
 @section('content')
 <div class="portlet box blue">

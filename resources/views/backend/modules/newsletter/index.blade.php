@@ -1,6 +1,9 @@
 @extends('backend.layouts.app')
 
+
 @section('breadcrumbs')
+{{ Breadcrumbs::render('backend.admin.newsletter.index') }}
+@endsection
 
 @show
 @section('content')
@@ -53,4 +56,4 @@
         <!-- END EXAMPLE TABLE PORTLET-->
     </div>
 </div>
-@endsection 
+@endsection

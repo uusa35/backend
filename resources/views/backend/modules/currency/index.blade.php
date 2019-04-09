@@ -1,5 +1,7 @@
 @extends('backend.layouts.app')
-
+@section('breadcrumbs')
+{{ Breadcrumbs::render('backend.admin.currency.index') }}
+@endsection
 @section('content')
 <div class="portlet light ">
     @include('backend.partials.forms.form_title')
@@ -83,4 +85,4 @@
         </table>
     </div>
 </div>
-@endsection 
+@endsection

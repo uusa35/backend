@@ -1,3 +1,7 @@
+<?php $__env->startSection('breadcrumbs'); ?>
+<?php echo e(Breadcrumbs::render('backend.admin.answer.create')); ?>
+
+<?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
 <div class="portlet box blue">
     <?php echo $__env->make('backend.partials.forms.form_title', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

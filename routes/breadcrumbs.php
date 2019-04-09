@@ -123,7 +123,7 @@ Breadcrumbs::for('backend.product.restore', function ($trail) {
 
 Breadcrumbs::for('backend.attribute.index', function ($trail) {
     $trail->parent('backend.product.index');
-//    $trail->push('products', route('backend.product.index'));
+    //    $trail->push('products', route('backend.product.index'));
 });
 
 Breadcrumbs::for('backend.category.index', function ($trail) {
@@ -160,10 +160,22 @@ Breadcrumbs::for('backend.brand.index', function ($trail) {
     $trail->parent('backend.home');
     $trail->push('brands', route('backend.brand.index'));
 });
-
-Breadcrumbs::for('backend.color.index', function ($trail) {
+Breadcrumbs::for('backend.admin.color.create', function ($trail) {
+    $trail->parent('backend.admin.color.index');
+    $trail->push(trans('general.create_color'), route('backend.admin.color.create'));
+});
+Breadcrumbs::for('backend.admin.color.index', function ($trail) {
     $trail->parent('backend.home');
-    $trail->push('color', route('backend.color.index'));
+    $trail->push(trans('general.index_color'), route('backend.admin.color.index'));
+});
+
+Breadcrumbs::for('backend.admin.newsletter.create', function ($trail) {
+    $trail->parent('backend.admin.newsletter.index');
+    $trail->push(trans('general.create_newsletter'), route('backend.admin.newsletter.create'));
+});
+Breadcrumbs::for('backend.admin.newsletter.index', function ($trail) {
+    $trail->parent('backend.home');
+    $trail->push(trans('general.index_newsletter'), route('backend.admin.newsletter.index'));
 });
 
 Breadcrumbs::for('backend.size.index', function ($trail) {
@@ -175,6 +187,10 @@ Breadcrumbs::for('backend.admin.country.index', function ($trail) {
     $trail->parent('backend.home');
     $trail->push('country', route('backend.admin.country.index'));
 });
+Breadcrumbs::for('backend.admin.country.create', function ($trail) {
+    $trail->parent('backend.admin.country.index');
+    $trail->push(trans('general.create_country'), route('backend.admin.country.create'));
+});
 
 Breadcrumbs::for('backend.gallery.index', function ($trail) {
     $trail->parent('backend.home');
@@ -183,17 +199,25 @@ Breadcrumbs::for('backend.gallery.index', function ($trail) {
 
 Breadcrumbs::for('backend.admin.role.index', function ($trail) {
     $trail->parent('backend.home');
-    $trail->push('role', route('backend.admin.role.index'));
+    $trail->push(trans('general.index_role'), route('backend.admin.role.index'));
 });
-
+Breadcrumbs::for('backend.admin.role.create', function ($trail) {
+    $trail->parent('backend.admin.role.index');
+    $trail->push(trans('general.create_role'), route('backend.admin.role.create'));
+});
 Breadcrumbs::for('backend.admin.setting.index', function ($trail) {
     $trail->parent('backend.home');
     $trail->push(trans('general.settings'), route('backend.admin.setting.index'));
 });
 
-Breadcrumbs::for('backend.order.index', function ($trail) {
+Breadcrumbs::for('backend.admin.order.index', function ($trail) {
     $trail->parent('backend.home');
-    $trail->push('order', route('backend.order.index'));
+    $trail->push(trans('general.index_order'), route('backend.admin.order.index'));
+});
+
+Breadcrumbs::for('backend.admin.day.index', function ($trail) {
+    $trail->parent('backend.home');
+    $trail->push(trans('general.index_day'), route('backend.admin.day.index'));
 });
 
 Breadcrumbs::for('backend.order.show', function ($trail, $element) {
@@ -206,29 +230,82 @@ Breadcrumbs::for('backend.questionnaire.show', function ($trail, $element) {
     $trail->push('questionnaire details', route('backend.questionnaire.show', $element));
 });
 
+Breadcrumbs::for('backend.admin.questionnaire.index', function ($trail) {
+    $trail->parent('backend.home');
+    $trail->push(trans('general.index_questionnaire'), route('backend.admin.questionnaire.index'));
+});
+
+Breadcrumbs::for('backend.admin.questionnaire.create', function ($trail) {
+    $trail->parent('backend.admin.questionnaire.index');
+    $trail->push(trans('general.create_questionnaire'), route('backend.admin.questionnaire.create'));
+});
+
+Breadcrumbs::for('backend.admin.commercial.index', function ($trail) {
+    $trail->parent('backend.home');
+    $trail->push(trans('general.index_commercial'), route('backend.admin.commercial.index'));
+});
+
+Breadcrumbs::for('backend.admin.commercial.create', function ($trail) {
+    $trail->parent('backend.admin.commercial.index');
+    $trail->push(trans('general.create_commercial'), route('backend.admin.commercial.create'));
+});
+
 Breadcrumbs::for('backend.page.index', function ($trail) {
     $trail->parent('backend.home');
     $trail->push('page', route('backend.page.index'));
 });
 
-Breadcrumbs::for('backend.term.index', function ($trail) {
+Breadcrumbs::for('backend.admin.term.index', function ($trail) {
     $trail->parent('backend.home');
-    $trail->push('term', route('backend.term.index'));
+    $trail->push(trans('general.index_term'), route('backend.admin.term.index'));
+});
+Breadcrumbs::for('backend.admin.term.create', function ($trail) {
+    $trail->parent('backend.admin.term.index');
+    $trail->push(trans('general.create_term'), route('backend.admin.term.create'));
 });
 
-Breadcrumbs::for('backend.faq.index', function ($trail) {
+Breadcrumbs::for('backend.admin.timing.index', function ($trail) {
     $trail->parent('backend.home');
-    $trail->push('faq', route('backend.faq.index'));
+    $trail->push(trans('general.index_timing'), route('backend.admin.timing.index'));
+});
+Breadcrumbs::for('backend.admin.timing.create', function ($trail) {
+    $trail->parent('backend.admin.term.index');
+    $trail->push(trans('general.create_timing'), route('backend.admin.timing.create'));
 });
 
-Breadcrumbs::for('backend.notification.index', function ($trail) {
+Breadcrumbs::for('backend.admin.privilege.index', function ($trail) {
     $trail->parent('backend.home');
-    $trail->push('notification', route('backend.notification.index'));
+    $trail->push(trans('general.index_privilege'), route('backend.admin.privilege.index'));
+});
+Breadcrumbs::for('backend.admin.privilege.create', function ($trail) {
+    $trail->parent('backend.admin.privilege.index');
+    $trail->push(trans('general.create_privilege'), route('backend.admin.privilege.create'));
+});
+Breadcrumbs::for('backend.admin.faq.index', function ($trail) {
+    $trail->parent('backend.home');
+    $trail->push(trans('general.index_faq'), route('backend.admin.faq.index'));
 });
 
-Breadcrumbs::for('backend.policy.index', function ($trail) {
+Breadcrumbs::for('backend.admin.faq.create', function ($trail) {
+    $trail->parent('backend.admin.faq.index');
+    $trail->push(trans('general.create_faq'), route('backend.admin.faq.index'));
+});
+Breadcrumbs::for('backend.admin.notification.index', function ($trail) {
     $trail->parent('backend.home');
-    $trail->push('policy', route('backend.policy.index'));
+    $trail->push(trans('general.index_notification'), route('backend.admin.notification.index'));
+});
+Breadcrumbs::for('backend.admin.notification.create', function ($trail) {
+    $trail->parent('backend.admin.notification.index');
+    $trail->push(trans('general.create_notification'), route('backend.admin.notification.create'));
+});
+
+Breadcrumbs::for('backend.admin.policy.index', function ($trail) {
+    $trail->parent('backend.home');
+    $trail->push(trans('general.index_policy'), route('backend.admin.policy.index'));
+});
+Breadcrumbs::for('backend.admin.policy.create', function ($trail) {
+    $trail->parent('backend.admin.policy.index');
+    $trail->push(trans('general.create_policy'), route('backend.admin.policy.create'));
 });
 
 
@@ -237,30 +314,52 @@ Breadcrumbs::for('backend.aboutus.index', function ($trail) {
     $trail->push('aboutus', route('backend.aboutus.index'));
 });
 
-Breadcrumbs::for('backend.currency.index', function ($trail) {
+Breadcrumbs::for('backend.admin.currency.index', function ($trail) {
     $trail->parent('backend.home');
-    $trail->push('currency', route('backend.currency.index'));
+    $trail->push(trans('general.index_currency'), route('backend.admin.currency.index'));
 });
 
-Breadcrumbs::for('backend.coupon.index', function ($trail) {
-    $trail->parent('backend.home');
-    $trail->push('coupon', route('backend.coupon.index'));
+Breadcrumbs::for('backend.admin.currency.create', function ($trail) {
+    $trail->parent('backend.admin.currency.index');
+    $trail->push(trans('general.create_currency'), route('backend.admin.currency.create'));
 });
 
-Breadcrumbs::for('backend.slide.index', function ($trail) {
+Breadcrumbs::for('backend.admin.coupon.index', function ($trail) {
     $trail->parent('backend.home');
-    $trail->push(trans('general.slides'), route('backend.slide.index'));
+    $trail->push(trans('general.index_coupon'), route('backend.admin.coupon.index'));
+});
+Breadcrumbs::for('backend.admin.coupon.create', function ($trail) {
+    $trail->parent('backend.admin.coupon.index');
+    $trail->push(trans('general.create_coupon'), route('backend.admin.coupon.create'));
 });
 
-Breadcrumbs::for('backend.slide.create', function ($trail) {
+Breadcrumbs::for('backend.admin.service.index', function ($trail) {
     $trail->parent('backend.home');
-    $trail->push(trans("general.create_slide"), route('backend.slide.create'));
+    $trail->push(trans('general.index_service'), route('backend.admin.service.index'));
+});
+Breadcrumbs::for('backend.admin.service.create', function ($trail) {
+    $trail->parent('backend.admin.service.index');
+    $trail->push(trans('general.create_service'), route('backend.admin.service.create'));
 });
 
+Breadcrumbs::for('backend.admin.slide.index', function ($trail) {
+    $trail->parent('backend.home');
+    $trail->push(trans('general.index_slide'), route('backend.admin.slide.index'));
+});
 
-Breadcrumbs::for('backend.survey.create', function ($trail) {
-    $trail->parent('backend.survey.index');
-    $trail->push('create survey', route('backend.survey.create'));
+Breadcrumbs::for('backend.admin.slide.create', function ($trail) {
+    $trail->parent('backend.admin.slide.index');
+    $trail->push(trans("general.create_slide"), route('backend.admin.slide.create'));
+});
+
+Breadcrumbs::for('backend.admin.survey.index', function ($trail) {
+    $trail->parent('backend.home');
+    $trail->push(trans("general.index_survey"), route('backend.admin.survey.index'));
+});
+
+Breadcrumbs::for('backend.admin.survey.create', function ($trail) {
+    $trail->parent('backend.admin.survey.index');
+    $trail->push(trans("general.create_survey"), route('backend.admin.survey.create'));
 });
 
 
@@ -279,9 +378,13 @@ Breadcrumbs::for('backend.question.edit', function ($trail, $element) {
     $trail->push('edit question', route('backend.question.edit', $element->id));
 });
 
-Breadcrumbs::for('backend.answer.create', function ($trail) {
-    $trail->parent('backend.answer.index');
-    $trail->push('create answer', route('backend.answer.create'));
+Breadcrumbs::for('backend.admin.answer.index', function ($trail) {
+    $trail->parent('backend.home');
+    $trail->push(trans("general.index_answer"), route('backend.admin.answer.index'));
+});
+Breadcrumbs::for('backend.admin.answer.create', function ($trail) {
+    $trail->parent('backend.admin.answer.index');
+    $trail->push(trans("general.create_answer"), route('backend.admin.answer.create'));
 });
 
 Breadcrumbs::for('backend.answer.edit', function ($trail, $element) {
@@ -335,10 +438,13 @@ Breadcrumbs::for('backend.color.edit', function ($trail, $element) {
     $trail->push('edit color', route('backend.color.edit', $element->id));
 });
 
-
-Breadcrumbs::for('backend.size.create', function ($trail) {
-    $trail->parent('backend.size.index');
-    $trail->push('create size', route('backend.size.create'));
+Breadcrumbs::for('backend.admin.size.index', function ($trail) {
+    $trail->parent('backend.home');
+    $trail->push(trans('general.index_size'), route('backend.admin.size.index'));
+});
+Breadcrumbs::for('backend.admin.size.create', function ($trail) {
+    $trail->parent('backend.admin.size.index');
+    $trail->push(trans('general.create_size'), route('backend.admin.size.create'));
 });
 
 Breadcrumbs::for('backend.size.edit', function ($trail, $element) {
@@ -355,10 +461,13 @@ Breadcrumbs::for('backend.country.edit', function ($trail, $element) {
     $trail->parent('backend.admin.country.index');
     $trail->push('edit country', route('backend.country.edit', $element->id));
 });
-
-Breadcrumbs::for('backend.tag.create', function ($trail) {
-    $trail->parent('backend.tag.index');
-    $trail->push('create tag', route('backend.tag.create'));
+Breadcrumbs::for('backend.admin.tag.index', function ($trail) {
+    $trail->parent('backend.home');
+    $trail->push(trans('general.index_tag'), route('backend.admin.tag.index'));
+});
+Breadcrumbs::for('backend.admin.tag.create', function ($trail) {
+    $trail->parent('backend.admin.tag.index');
+    $trail->push(trans('general.create_tag'), route('backend.admin.tag.create'));
 });
 
 Breadcrumbs::for('backend.tag.edit', function ($trail, $element) {
@@ -366,9 +475,13 @@ Breadcrumbs::for('backend.tag.edit', function ($trail, $element) {
     $trail->push('edit tag', route('backend.tag.edit', $element->id));
 });
 
-Breadcrumbs::for('backend.brand.create', function ($trail) {
-    $trail->parent('backend.brand.index');
-    $trail->push('create brand', route('backend.brand.create'));
+Breadcrumbs::for('backend.admin.brand.index', function ($trail) {
+    $trail->parent('backend.home');
+    $trail->push(trans('general.index_brand'), route('backend.admin.brand.index'));
+});
+Breadcrumbs::for('backend.admin.brand.create', function ($trail) {
+    $trail->parent('backend.admin.brand.index');
+    $trail->push(trans('general.create_brand'), route('backend.admin.brand.create'));
 });
 
 Breadcrumbs::for('backend.brand.edit', function ($trail, $element) {
@@ -416,7 +529,6 @@ Breadcrumbs::for('backend.gallery.edit', function ($trail, $element) {
     $className = strtolower(class_basename($element->galleryable));
     $trail->push($className, route('backend.' . $className . '.index'));
     return $trail->push('edit gallery', route('backend.gallery.edit', ['id' => $element->id, 'type' => $className, 'element_id' => $element->galleryable->id]));
-
 });
 
 Breadcrumbs::for('backend.admin.category.index', function ($trail) {
@@ -432,7 +544,7 @@ Breadcrumbs::for('backend.admin.category.create', function ($trail) {
 
 Breadcrumbs::for('backend.admin.category.edit', function ($trail, $element) {
     $trail->parent('backend.admin.category.index');
-    $trail->push('general.edit_category', route('backend.admin.category.edit', $element->id));
+    $trail->push(trans('general.edit_category'), route('backend.admin.category.edit', $element->id));
 });
 
 Breadcrumbs::for('backend.aboutus.create', function ($trail) {
@@ -444,10 +556,14 @@ Breadcrumbs::for('backend.aboutus.edit', function ($trail, $element) {
     $trail->parent('backend.aboutus.index');
     $trail->push('edit aboutus', route('backend.aboutus.edit', $element->id));
 });
+Breadcrumbs::for('backend.admin.page.index', function ($trail) {
+    $trail->parent('backend.home');
+    $trail->push(trans('general.index_page'), route('backend.admin.page.index'));
+});
 
-Breadcrumbs::for('backend.page.create', function ($trail) {
-    $trail->parent('backend.page.index');
-    $trail->push('create page', route('backend.page.create'));
+Breadcrumbs::for('backend.admin.page.create', function ($trail) {
+    $trail->parent('backend.admin.page.index');
+    $trail->push(trans('general.create_page'), route('backend.admin.page.create'));
 });
 
 Breadcrumbs::for('backend.page.edit', function ($trail, $element) {
@@ -513,14 +629,14 @@ Breadcrumbs::for('backend.image.edit', function ($trail, $element) {
     return $trail->push('edit image', route('backend.image.edit', $element->id));
 });
 
-Breadcrumbs::for('backend.package.index', function ($trail) {
+Breadcrumbs::for('backend.admin.package.index', function ($trail) {
     $trail->parent('backend.home');
-    return $trail->push('package index', route('backend.package.index'));
+    return $trail->push(trans('general.index_package'), route('backend.admin.package.index'));
 });
 
-Breadcrumbs::for('backend.package.create', function ($trail) {
-    $trail->parent('backend.package.index');
-    return $trail->push('create package', route('backend.package.create'));
+Breadcrumbs::for('backend.admin.package.create', function ($trail) {
+    $trail->parent('backend.admin.package.index');
+    return $trail->push(trans('general.create_package'), route('backend.admin.package.create'));
 });
 
 Breadcrumbs::for('backend.package.edit', function ($trail, $element) {
@@ -528,20 +644,17 @@ Breadcrumbs::for('backend.package.edit', function ($trail, $element) {
     return $trail->push('edit package', route('backend.package.edit', $element->id));
 });
 
-Breadcrumbs::for('backend.branch.index', function ($trail) {
+Breadcrumbs::for('backend.admin.branch.index', function ($trail) {
     $trail->parent('backend.home');
-    return $trail->push('branch index', route('backend.branch.index'));
+    return $trail->push(trans('general.index_branch'), route('backend.admin.branch.index'));
 });
 
-Breadcrumbs::for('backend.branch.create', function ($trail) {
-    $trail->parent('backend.branch.index');
-    return $trail->push('create branch', route('backend.branch.create'));
+Breadcrumbs::for('backend.admin.branch.create', function ($trail) {
+    $trail->parent('backend.admin.branch.index');
+    return $trail->push(trans('general.create_branch'), route('backend.admin.branch.create'));
 });
 
 Breadcrumbs::for('backend.branch.edit', function ($trail, $element) {
     $trail->parent('backend.branch.index');
     return $trail->push('edit branch', route('backend.branch.edit', $element->id));
 });
-
-
-

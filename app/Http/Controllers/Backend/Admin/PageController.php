@@ -55,7 +55,7 @@ class PageController extends Controller
             if ($request->hasFile('image')) {
                 $this->saveMimes($element, $request, ['image'], ['1000', '1000'], false);
             }
-            return redirect()->route('backend.page.index')->with('success', 'page saved.');
+            return redirect()->route('backend.admin.page.index')->with('success', 'page saved.');
         }
         return redirect()->back()->with('error', 'error .. please try again');
     }

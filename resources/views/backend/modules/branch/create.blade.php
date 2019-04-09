@@ -1,6 +1,6 @@
 @extends('backend.layouts.app')
 @section('breadcrumbs')
-{{-- {{ Breadcrumbs::render('backend.color.create') }} --}}
+{{ Breadcrumbs::render('backend.admin.branch.create') }}
 @endsection
 @section('content')
 <div class="portlet box blue">
@@ -189,4 +189,4 @@
         </form>
     </div>
 </div>
-@endsection 
+@endsection

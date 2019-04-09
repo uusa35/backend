@@ -1,7 +1,7 @@
 @extends('backend.layouts.app')
 
 @section('breadcrumbs')
-{{ Breadcrumbs::render('backend.admin.user.create') }}
+{{ Breadcrumbs::render('backend.admin.service.create') }}
 @endsection
 
 @section('content')

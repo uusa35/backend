@@ -1,7 +1,7 @@
 @extends('backend.layouts.app')
 
 @section('breadcrumbs')
-{{--{{ Breadcrumbs::render(Route::currentRouteName()) }} --}}
+{{ Breadcrumbs::render('backend.admin.country.create') }}
 @endsection
 @section('content')
 <div class="portlet box blue">

@@ -1,3 +1,8 @@
+<?php $__env->startSection('breadcrumbs'); ?>
+<?php echo e(Breadcrumbs::render('backend.admin.color.index')); ?>
+
+
+<?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
 <div class="row">
     <div class="col-md-12">
@@ -84,5 +89,5 @@
         </div>
     </div>
 </div>
-<?php $__env->stopSection(); ?> 
+<?php $__env->stopSection(); ?>
 <?php echo $__env->make('backend.layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
