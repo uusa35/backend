@@ -56,7 +56,13 @@
                                                     <label for="sku" class="control-label"><?php echo e(trans('general.sku')); ?>
 
                                                         *</label>
-                                                    <input id="sku" type="text" class="form-control" name="sku" value="<?php echo e(old('sku')); ?>" placeholder="<?php echo e(trans('general.sku')); ?>" required autofocus>
+                                                    <input id="sku" type="text"
+                                                           class="form-control tooltips"
+                                                           data-container="body"
+                                                           data-placement="top"
+                                                           data-original-title="<?php echo e(trans('message.sku')); ?>"
+                                                           name="sku"
+                                                           value="<?php echo e(old('sku')); ?>" placeholder="<?php echo e(trans('general.sku')); ?>" required autofocus>
                                                     <?php if($errors->has('sku')): ?>
                                                     <span class="help-block">
                                                         <strong>
@@ -75,7 +81,13 @@
                                                     <label for="name_ar" class="control-label"><?php echo e(trans('general.name_arabic')); ?>
 
                                                         *</label>
-                                                    <input id="name_ar" type="text" class="form-control" name="name_ar" value="<?php echo e(old('name_ar')); ?>" placeholder="<?php echo e(trans('general.name_arabic')); ?>" required autofocus>
+                                                    <input id="name_ar" type="text"
+                                                           class="form-control tooltips"
+                                                           data-container="body"
+                                                           data-placement="top"
+                                                           data-original-title="<?php echo e(trans('message.name_ar')); ?>"
+                                                           name="name_ar"
+                                                           value="<?php echo e(old('name_ar')); ?>" placeholder="<?php echo e(trans('general.name_arabic')); ?>" required autofocus>
                                                     <?php if($errors->has('name_ar')): ?>
                                                     <span class="help-block">
                                                         <strong>
