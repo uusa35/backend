@@ -1,6 +1,6 @@
 <?php
 
-return array (
+return array(
   'kwd' => 'KWD',
   'mail_sent' => 'Mail Sent',
   'title_en' => 'English Title',
@@ -156,8 +156,8 @@ company company abaia abaya abayat',
   'add_to_favorite' => 'add to favorite',
   'alphabetic' => 'alphabetic',
   'already_registered' => 'already_registered',
-  'general' => 
-  array (
+  'general' =>
+  array(
     'new_arrival' => 'general new arrival',
     'best_sale_products' => 'general best sale products',
     'on_sale_products' => 'general on sale products',
@@ -233,4 +233,37 @@ company company abaia abaya abayat',
   'app_keywords' => 'Abayat Abaya Kuwait Hijab Lamaset company',
   'app_author' => 'company',
   'branches' => 'Our Branches',
+  'create_product' => 'create product',
+  'name_arabic' => 'name_arabic',
+  'name_english' => 'name_english',
+  'delivery_time' => 'delivery_time',
+  'weight ' => 'weight ',
+  'main_image' => 'main_image',
+  'owner' => 'owner',
+  'brand' => 'brand',
+  'image_chart' => 'image_chart',
+  'sale_price' => 'sale_price',
+  'description_arabic' => 'description_arabic',
+  'description_english' => 'description_english',
+  'notes_arabic' => 'notes_arabic',
+  'notes_english' => 'notes_english',
+  'keywords' => 'keywords',
+  'video_url_one' => 'video_url_one',
+  'video_url_two' => 'video_url_two',
+  'start_sale_date' => 'start_sale_date',
+  'end_sale_date' => 'end_sale_date',
+  'more_details' => 'more_details',
+  'home_delivery_available' => 'home_delivery_available',
+  'shipment_available' => 'shipment_available',
+  'exclusive' => 'exclusive',
+  'on_homepage' => 'on_homepage',
+  'is_available' => 'is_available',
+  'is_hot_deal' => 'is_hot_deal',
+  'on_new' => 'on_new',
+  'check_stock' => 'check_stock',
+  'has_attributes' => 'has_attributes',
+  'product_main_details' => 'product_main_details',
+  'create_gallery' => 'create_gallery',
+  'create_gallery_for_product' => 'create_gallery_for_product',
+  'add_attribute' => 'add_attribute'
 );
