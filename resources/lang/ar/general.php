@@ -369,7 +369,7 @@ return array(
     'name_arabic' => 'name_arabic',
     'name_english' => 'name_english',
     'delivery_time' => 'delivery_time',
-    'weight ' => 'weight ',
+    'weight' => 'weight',
     'main_image' => 'main_image',
     'owner' => 'owner',
     'brand' => 'brand',
@@ -397,7 +397,11 @@ return array(
     'product_main_details' => 'product_main_details',
     'create_gallery' => 'create_gallery',
     'create_gallery_for_product' => 'create_gallery_for_product',
-    'add_attribute' => 'add_attribute'
+    'add_attribute' => 'add_attribute',
+    'attribute' => 'attribute',
+    'image' => 'image',
+    'end_sale' => 'end_sale',
+    'actions' => 'actions'
 
 
 );
