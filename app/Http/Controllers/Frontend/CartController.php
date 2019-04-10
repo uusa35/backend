@@ -98,6 +98,7 @@ class CartController extends Controller
     public function clearCart()
     {
         $this->cart->destroy();
+        session()->remove('coupon');
         return redirect()->route('frontend.home')->with('success', trans('message.cart_destroyed'));
     }
 
@@ -143,7 +144,7 @@ class CartController extends Controller
             ->where('minimum_charge', '<=', $this->cart->subTotal())
             ->first();
 
-        if ($this->addCouponToCart($request,$coupon,$this->cart)) {
+        if ($coupon && $this->addCouponToCart($request,$coupon,$this->cart)) {
             return redirect()->back()->with('success', trans('message.coupon_shall_be_applied'));
         } else {
             session()->forget('coupon');

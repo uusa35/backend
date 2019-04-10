@@ -33,7 +33,7 @@
                             </div>
                         @endguest
                     @endif
-                    @if(!session()->has('coupon'))
+{{--                    @if(!session()->has('coupon'))--}}
                         <div class="col-md-12 col-lg-12">
                             <div class="tt-shopcart-box">
                                 <h4 class="tt-title">
@@ -52,7 +52,7 @@
                                 </form>
                             </div>
                         </div>
-                    @endif
+                    {{--@endif--}}
                     {{--<div class="col-md-6 col-lg-4">--}}
                     {{--<div class="tt-shopcart-box">--}}
                     {{--<h4 class="tt-title">--}}
