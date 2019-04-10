@@ -27,14 +27,19 @@
                                             @foreach($categoriesList as $category)
                                                 <div class="col-xs-12 col-md-6 col-lg-4">
                                                     <a href="{!! request()->fullUrlWithQuery(['service_category_id' => $category->id]) !!}"
-                                                       class="tt-services-block">
+                                                       class="tt-services-block"
+                                                       style="border: 1px solid lightgrey; border-radius: 5px;">
                                                         <div class="badge-light">
-{{--                                                            <i class="fa fa-fw fa-3x {{ $category->icon }}"></i>--}}
-                                                            <img class="img-responsive img-xs" src="{{ $category->imageThumbLink }}" alt="{{ $category->name }}">
+                                                            {{--                                                            <i class="fa fa-fw fa-3x {{ $category->icon }}"></i>--}}
+                                                            <img class="img-responsive img-rounded"
+                                                                 style="width : 80px; padding: 5px;"
+                                                                 src="{{ $category->imageThumbLink }}"
+                                                                 alt="{{ $category->name }}">
                                                         </div>
                                                         <div class="tt-col-description">
-                                                            <div class="tt-title {{ request('service_category_id') == $category->id ? 'text-warning' : null }}">{{ $category->name }}</div>
-                                                            <div>{{ trans('general.services_count') }} : {{ $category->services->count() }} </div>
+                                                            <div class="tt-title {{ request('service_category_id') == $category->id ? 'text-warning' : null }}">{{ str_limit($category->name,'40') }}</div>
+                                                            <div>{{ trans('general.services_count') }}
+                                                                : {{ $category->services->count() }} </div>
                                                         </div>
                                                     </a>
                                                 </div>
