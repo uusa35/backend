@@ -29,14 +29,20 @@
                                             <?php $__currentLoopData = $categoriesList; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                 <div class="col-xs-12 col-md-6 col-lg-4">
                                                     <a href="<?php echo request()->fullUrlWithQuery(['service_category_id' => $category->id]); ?>"
-                                                       class="tt-services-block" style="border: 1px solid lightgrey; border-radius: 5px;">
+                                                       class="tt-services-block"
+                                                       style="border: 1px solid lightgrey; border-radius: 5px;">
                                                         <div class="badge-light">
-
-                                                            <img class="img-responsive img-rounded" style="width : 80px; padding: 5px;" src="<?php echo e($category->imageThumbLink); ?>" alt="<?php echo e($category->name); ?>">
+                                                            
+                                                            <img class="img-responsive img-rounded"
+                                                                 style="width : 80px; padding: 5px;"
+                                                                 src="<?php echo e($category->imageThumbLink); ?>"
+                                                                 alt="<?php echo e($category->name); ?>">
                                                         </div>
                                                         <div class="tt-col-description">
                                                             <div class="tt-title <?php echo e(request('service_category_id') == $category->id ? 'text-warning' : null); ?>"><?php echo e(str_limit($category->name,'40')); ?></div>
-                                                            <div><?php echo e(trans('general.services_count')); ?> : <?php echo e($category->services->count()); ?> </div>
+                                                            <div><?php echo e(trans('general.services_count')); ?>
+
+                                                                : <?php echo e($category->services->count()); ?> </div>
                                                         </div>
                                                     </a>
                                                 </div>
