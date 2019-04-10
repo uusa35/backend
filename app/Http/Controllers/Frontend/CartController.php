@@ -98,6 +98,7 @@ class CartController extends Controller
     public function clearCart()
     {
         $this->cart->destroy();
+        session()->remove('coupon');
         return redirect()->route('frontend.home')->with('success', trans('message.cart_destroyed'));
     }
 

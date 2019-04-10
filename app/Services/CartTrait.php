@@ -80,14 +80,14 @@ trait CartTrait
 
     public function addCouponToCart(Request $request, Coupon $coupon, $cart) {
         if(session()->has('coupon')) {
+            $coupon = Cart::content()->where('id','coupon')->first();
+//            dd($coupon->rowId);
+            $cart->remove($coupon->rowId);
             session()->remove('coupon');
-//            $cart->remove('coupon');
         }
         session()->put('coupon', $coupon);
         $couponValue = $coupon->is_percentage ? ($this->cart->total() * $coupon->value) / 100 : $coupon->value;
         if($couponValue > 0) {
-            $coupon = Cart::content()->where('id','coupon')->first();
-            $cart->remove($coupon->rowId);
             $cart->add('coupon', 'coupon', 1, (float)-($couponValue), [
                 'type' => 'coupon',
                 'element_id' => $coupon->id,
