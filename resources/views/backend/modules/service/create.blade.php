@@ -69,7 +69,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group {{ $errors->has('duration') ? ' has-error' : '' }}">
                                         <label for="duration" class="control-label">{{ trans('general.duration') }}*</label>
-                                        <input id="duration" type="text" class="form-control" sku="duration" value="{{ old('duration') }}" placeholder="{{ trans('general.duration') }}" required autofocus>
+                                        <input id="duration" type="text" class="form-control" name="duration" value="{{ old('duration') }}" placeholder="{{ trans('general.duration') }}" required autofocus>
                                         @if ($errors->has('duration'))
                                         <span class="help-block">
                                             <strong>
@@ -82,7 +82,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group {{ $errors->has('setup_time') ? ' has-error' : '' }}">
                                         <label for="setup_time" class="control-label">{{ trans('general.setup_time') }}*</label>
-                                        <input id="setup_time" type="text" class="form-control" sku="setup_time" value="{{ old('setup_time') }}" placeholder="{{ trans('general.setup_time') }}" required autofocus>
+                                        <input id="setup_time" type="number" maxlength="1" max="10" class="form-control" name="setup_time" value="{{ old('setup_time') }}" placeholder="{{ trans('general.setup_time') }}" required autofocus>
                                         @if ($errors->has('setup_time'))
                                         <span class="help-block">
                                             <strong>
