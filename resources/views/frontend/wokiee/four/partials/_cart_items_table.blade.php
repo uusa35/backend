@@ -9,90 +9,90 @@
                 <td>{{ trans('general.total_price') }}</td>
                 <td>{{ trans('general.remove') }}</td>
             </tr>
-
             @foreach($elements as $element)
-                <tr>
-                    <td>
-                        <div class="tt-product-img">
-                            <a href="{{ route('frontend.'.$element->options->type.'.show.name',['id' => $element->options->element_id,'name' => $element->options->element->name]) }}">
-                                <img src="{{ asset(env('IMG_LOADER')) }}"
-                                     data-src="{{ $element->options->element->imageThumbLink }}" alt="">
-                            </a>
-                        </div>
-                    </td>
-                    <td>
-                        <h2 class="tt-title">
-                            <a href="{{ route('frontend.'.$element->options->type.'.show.name',['id' => $element->options->element_id,'name' => $element->options->element->name]) }}">
-                                {{ $element->options->element->name }}
-                            </a>
-                        </h2>
-                        <ul class="tt-list-description">
-                            @if($element->options->size)
-                                <li>{{ trans('general.size') }}: {{ $element->options->size->name }}</li>
-                            @endif
-                            @if($element->options->color)
-                                <li>{{ trans('general.color') }}: {{ $element->options->color->name }}</li>
-                            @endif
-                            @if($element->options->country_destination)
-                                <li>{{ trans('general.shipment_destination') }}
-                                    : {{ $element->options->country_destination->slug }} ---
-                                    PackageCharge : {{ $element->options->element->shipment_package->charge }} ----
-                                    ProductWeight : {{ $element->options->element->weight }}
-                                </li>
-                            @endif
-                            @if($element->options->day_selected)
-                                <li>{{ trans('general.day_selected') }}
-                                    : {{ $element->options->day_selected->format('d/m/Y') }}</li>
-                            @endif
-                            @if($element->options->timing)
-                                <li>{{ trans('general.start_time') }}
-                                    : {{ $element->options->timing->start_time }}</li>
-                            @endif
-                            <li>
-                                <div class="tt-price">
-                                    {{ trans('general.final_price') }}  {{ $element->options->element->convertedFinalPrice }} {{ $currency->symbol }}
-                                </div>
-                                @if($element->options->element->shipment_package)
-                                    <div class="tt-price">
-                                        {{ trans('general.package_fee_price') }}  {{ getConvertedPrice($element->options->element->packageFeePrice) }} {{ $currency->symbol }}
-                                    </div>
+                @if($element->options->type !== 'coupon')
+                    <tr>
+                        <td>
+                            <div class="tt-product-img">
+                                <a href="{{ route('frontend.'.$element->options->type.'.show.name',['id' => $element->options->element_id,'name' => $element->options->element->name]) }}">
+                                    <img src="{{ asset(env('IMG_LOADER')) }}"
+                                         data-src="{{ $element->options->element->imageThumbLink }}" alt="">
+                                </a>
+                            </div>
+                        </td>
+                        <td>
+                            <h2 class="tt-title">
+                                <a href="{{ route('frontend.'.$element->options->type.'.show.name',['id' => $element->options->element_id,'name' => $element->options->element->name]) }}">
+                                    {{ $element->options->element->name }}
+                                </a>
+                            </h2>
+                            <ul class="tt-list-description">
+                                @if($element->options->size)
+                                    <li>{{ trans('general.size') }}: {{ $element->options->size->name }}</li>
                                 @endif
-                            </li>
-                            @if($element->options->type === 'product')
+                                @if($element->options->color)
+                                    <li>{{ trans('general.color') }}: {{ $element->options->color->name }}</li>
+                                @endif
+                                @if($element->options->country_destination)
+                                    <li>{{ trans('general.shipment_destination') }}
+                                        : {{ $element->options->country_destination->slug }} ---
+                                        PackageCharge : {{ $element->options->element->shipment_package->charge }} ----
+                                        ProductWeight : {{ $element->options->element->weight }}
+                                    </li>
+                                @endif
+                                @if($element->options->day_selected)
+                                    <li>{{ trans('general.day_selected') }}
+                                        : {{ $element->options->day_selected->format('d/m/Y') }}</li>
+                                @endif
+                                @if($element->options->timing)
+                                    <li>{{ trans('general.start_time') }}
+                                        : {{ $element->options->timing->start_time }}</li>
+                                @endif
                                 <li>
                                     <div class="tt-price">
-                                        {{ trans('general.qty') }} {{ $element->qty }}
+                                        {{ trans('general.final_price') }}  {{ $element->options->element->convertedFinalPrice }} {{ $currency->symbol }}
                                     </div>
+                                    @if($element->options->element->shipment_package)
+                                        <div class="tt-price">
+                                            {{ trans('general.package_fee_price') }}  {{ getConvertedPrice($element->options->element->packageFeePrice) }} {{ $currency->symbol }}
+                                        </div>
+                                    @endif
                                 </li>
-                            @endif
-                        </ul>
-                    </td>
-                    <td>
-                        <div class="detach-quantity-desctope">
-                            <a href="{{ route('frontend.user.show.name',['user_id' => $element->options->element->user_id,'name' => $element->options->company]) }}">
-                                {{ $element->options->company }}
-                            </a>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="tt-price">
-                            {{ getConvertedPrice($element->price) }} {{ $currency->symbol }}
-                        </div>
-                    </td>
-                    <td>
-                        <a href="{{ route('frontend.cart.remove',$element->rowId) }}"
-                           class="icon-h-02"></a>
-                    </td>
-                </tr>
-                @if($element->options->notes)
-                    <td colspan="5">
-                        <div class="title">{{ trans('general.notes') }}</div>
-                        <p>
-                            {!! $element->options->notes !!}
-                        </p>
-                    </td>
+                                @if($element->options->type === 'product')
+                                    <li>
+                                        <div class="tt-price">
+                                            {{ trans('general.qty') }} {{ $element->qty }}
+                                        </div>
+                                    </li>
+                                @endif
+                            </ul>
+                        </td>
+                        <td>
+                            <div class="detach-quantity-desctope">
+                                <a href="{{ route('frontend.user.show.name',['user_id' => $element->options->element->user_id,'name' => $element->options->company]) }}">
+                                    {{ $element->options->company }}
+                                </a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="tt-price">
+                                {{ getConvertedPrice($element->price) }} {{ $currency->symbol }}
+                            </div>
+                        </td>
+                        <td>
+                            <a href="{{ route('frontend.cart.remove',$element->rowId) }}"
+                               class="icon-h-02"></a>
+                        </td>
+                    </tr>
+                    @if($element->options->notes)
+                        <td colspan="5">
+                            <div class="title">{{ trans('general.notes') }}</div>
+                            <p>
+                                {!! $element->options->notes !!}
+                            </p>
+                        </td>
+                    @endif
                 @endif
-
             @endforeach
 
             </tbody>

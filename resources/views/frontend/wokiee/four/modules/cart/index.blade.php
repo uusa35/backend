@@ -32,35 +32,26 @@
                                 </div>
                             </div>
                         @endguest
-                        {{--<div class="col-md-12 col-lg-12">--}}
-                        {{--<div class="tt-shopcart-box">--}}
-                        {{--<h4 class="tt-title">--}}
-                        {{--{{ trans('general.estimated_shipping_cost') }}--}}
-                        {{--</h4>--}}
-                        {{--<p>{{ trans('message.enter_your_destination') }}</p>--}}
-                        {{--<form class="form-default">--}}
-
-                        {{--<div class="form-group">--}}
-                        {{--<label for="address_province">STATE/PROVINCE <sup>*</sup></label>--}}
-                        {{--<select id="address_province" class="form-control">--}}
-                        {{--<option>State/Province</option>--}}
-                        {{--</select>--}}
-                        {{--</div>--}}
-                        {{--<div class="form-group">--}}
-                        {{--<label for="address_zip">ZIP/POSTAL CODE <sup>*</sup></label>--}}
-                        {{--<input type="text" name="name" class="form-control" id="address_zip"--}}
-                        {{--placeholder="Zip/Postal Code">--}}
-                        {{--</div>--}}
-                        {{--<a href="#" class="btn btn-border">CALCULATE SHIPPING</a>--}}
-                        {{--<p>--}}
-                        {{--There is one shipping rate available for Alabama, Tanzania, United Republic Of.--}}
-                        {{--</p>--}}
-                        {{--<ul class="tt-list-dot list-dot-large">--}}
-                        {{--<li><a href="#">International Shipping at $20.00</a></li>--}}
-                        {{--</ul>--}}
-                        {{--</form>--}}
-                        {{--</div>--}}
-                        {{--</div>--}}
+                    @endif
+                    @if(!session()->has('coupon'))
+                        <div class="col-md-12 col-lg-12">
+                            <div class="tt-shopcart-box">
+                                <h4 class="tt-title">
+                                    {{ trans('general.add_your_coupon') }}
+                                </h4>
+                                <p>{{ trans('message.have_a_coupon') }}</p>
+                                <form class="form-default" method="post" action="{{ route('frontend.cart.coupon') }}">
+                                    @csrf
+                                    <div class="form-group">
+                                        <label for="address_zip">{{ trans('general.have_a_coupon') }}<sup></sup></label>
+                                        <input type="text" name="code" class="form-control" id="code"
+                                               placeholder="{{ trans('general.have_a_coupon') }}" required>
+                                    </div>
+                                    <button type="submit"
+                                            class="btn btn-border">{{ trans('general.apply_coupon') }}</button>
+                                </form>
+                            </div>
+                        </div>
                     @endif
                     {{--<div class="col-md-6 col-lg-4">--}}
                     {{--<div class="tt-shopcart-box">--}}

@@ -42,7 +42,7 @@ class CheckCartItems implements ShouldQueue
                 if (!$product->getCanOrderAttribute($item->qty, $item->options->product_attribute_id)) {
                     Cart::remove($rowId);
                 }
-            } else {
+            } elseif($item->options->type === 'service') {
                 $service = Service::whereId($item->options->element_id)->first();
                 if (!$service->getCanBookAttribute($item->options->timing->id, $item->options->day_selected)) {
                     Cart::remove($rowId);

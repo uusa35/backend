@@ -16,6 +16,12 @@
         <?php endif; ?>
         </tbody>
         <tfoot>
+        <?php if(session()->has('coupon')): ?>
+            <tr>
+                <th><?php echo e(trans('general.discount')); ?></th>
+                <td><?php echo e(session()->get('coupon')->value); ?> <?php echo e(trans('general.kd')); ?></td>
+            </tr>
+        <?php endif; ?>
         <tr>
             <th><?php echo e(trans('general.total_price_in_kuwaiti_dinar')); ?></th>
             <td><?php echo e(Cart::total()); ?> <?php echo e(trans('general.kd')); ?></td>
