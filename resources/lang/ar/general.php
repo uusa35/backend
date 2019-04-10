@@ -315,8 +315,8 @@ return array(
     'designers' => 'مصممي العروض والخدمات',
     'mail' => 'البريد',
     'whatsapp' => 'واتس اب',
-    'duty_time'  => 'أوقات الدوام',
-    'history_orders'  => 'الطلبات السابقة',
+    'duty_time' => 'أوقات الدوام',
+    'history_orders' => 'الطلبات السابقة',
     'areas' => 'المناطق',
     'filter_by_areas' => 'أضف المناطق إلى معايير البحث',
     'create_an_account' => 'إنشاء حساب جديد',
@@ -345,9 +345,9 @@ return array(
     'shipping' => 'سياسة الشحن',
     'size_chart' => 'جدول المقاسات',
     'our_selection_from_collections' => 'اختيارات مصممينا',
-    'home_shipping'  => 'رسالة شحن المنتجات',
-    'home_support'  => 'الدعم الفني',
-    'home_return_policy'  => 'سياسة الاسترجاع',
+    'home_shipping' => 'رسالة شحن المنتجات',
+    'home_support' => 'الدعم الفني',
+    'home_return_policy' => 'سياسة الاسترجاع',
     'search_your_occasion' => 'اختر وقت / مكان المناسبة أو الخدمة',
     'sub_title_your_occasion' => 'عمليات البحث تتم من خلال الشركات المشتركة معنا .. يرجى التواصل مباشرة مع الشركة المنفذة للخدمة أو المناسبة',
     'company_country' => 'دولة الشركة',
@@ -357,7 +357,7 @@ return array(
     "loading" => "جاري تحميل البيانات ..",
     "services_count" => "عدد الخدمات المتاحة",
     "timings_available_for_chosen_date_and_service" => "الأوقات المتاحة في هذا اليوم للخدمة",
-    "edit_env_file"  => "تعديل ملف الـ env",
+    "edit_env_file" => "تعديل ملف الـ env",
     "export_translations" => "حفظ الترجمة",
     "translation_manager" => "قسم الترجمة",
     "reset_password" => "تغير كلمة المرور",
@@ -365,10 +365,8 @@ return array(
     "role" => "دور",
     "app_settings" => "تحكم الموقع",
     "switch_lang" => "تغير اللغة",
-<<<<<<< HEAD
     'add_your_coupon' => "أضف كوبون",
-    'have_a_coupon' => "في حالة لديك كوبون .. يرجى أضافه الكود"
-=======
+    'have_a_coupon' => "في حالة لديك كوبون .. يرجى أضافه الكود",
     'create_product' => 'create product ar',
     'name_arabic' => 'name_arabic',
     'name_english' => 'name_english',
@@ -406,7 +404,4 @@ return array(
     'image' => 'image',
     'end_sale' => 'end_sale',
     'actions' => 'actions'
-
-
->>>>>>> a4644b2e57cba4b8a2f4e9397bd235dbdfb90e73
 );

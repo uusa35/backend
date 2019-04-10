@@ -110,6 +110,18 @@
                             <i class="icon-plus"></i> <?php echo e(trans('general.new_package')); ?></a>
                     </li>
                     <li>
+                        <a href="<?php echo e(route('backend.admin.privilege.create')); ?>">
+                            <i class="icon-plus"></i> <?php echo e(trans('general.new_privilege')); ?></a>
+                    </li>
+                    <li>
+                        <a href="<?php echo e(route('backend.admin.day.create')); ?>">
+                            <i class="icon-plus"></i> <?php echo e(trans('general.new_day')); ?></a>
+                    </li>
+                    <li>
+                        <a href="<?php echo e(route('backend.admin.timing.create')); ?>">
+                            <i class="icon-plus"></i> <?php echo e(trans('general.new_timing')); ?></a>
+                    </li>
+                    <li>
                         <a href="<?php echo e(route('backend.admin.page.create')); ?>">
                             <i class="icon-plus"></i> <?php echo e(trans('general.new_page')); ?></a>
                     </li>
@@ -120,7 +132,10 @@
                     </li>
                     <li class="divider"></li>
                     <li class="divider"></li>
-                    
+                    <li>
+                        <a href="<?php echo e(route('backend.admin.service.create')); ?>">
+                            <i class="icon-handbag"></i> <?php echo e(trans('general.create_service')); ?></a>
+                    </li>
                     <li class="divider"></li>
                     <li>
                         <a href="<?php echo e(route('backend.admin.category.create')); ?>">
