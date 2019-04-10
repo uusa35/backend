@@ -9,6 +9,7 @@ use App\Models\Service;
 use App\Models\Size;
 use App\Models\Timing;
 use Carbon\Carbon;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 
 /**
