@@ -32,36 +32,28 @@
                                 </div>
                             </div>
                         <?php endif; ?>
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
                     <?php endif; ?>
+
+                        <div class="col-md-12 col-lg-12">
+                            <div class="tt-shopcart-box">
+                                <h4 class="tt-title">
+                                    <?php echo e(trans('general.add_your_coupon')); ?>
+
+                                </h4>
+                                <p><?php echo e(trans('message.have_a_coupon')); ?></p>
+                                <form class="form-default" method="post" action="<?php echo e(route('frontend.cart.coupon')); ?>">
+                                    <?php echo csrf_field(); ?>
+                                    <div class="form-group">
+                                        <label for="address_zip"><?php echo e(trans('general.have_a_coupon')); ?><sup></sup></label>
+                                        <input type="text" name="code" class="form-control" id="code"
+                                               placeholder="<?php echo e(trans('general.have_a_coupon')); ?>" required>
+                                    </div>
+                                    <button type="submit"
+                                            class="btn btn-border"><?php echo e(trans('general.apply_coupon')); ?></button>
+                                </form>
+                            </div>
+                        </div>
+                    
                     
                     
                     

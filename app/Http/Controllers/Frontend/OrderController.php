@@ -26,7 +26,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $elements = Order::where(['user_id' => auth()->user()->id, 'status' => 'success'])->with('order_metas.product','order_metas.service')->paginate(self::TAKE);
+        $elements = Order::where(['user_id' => auth()->user()->id, 'status' => 'success'])->with('order_metas.product', 'order_metas.service')->paginate(self::TAKE);
 //        $ids = $orders->pluck('order_metas')->flatten()->unique()->pluck('product.id')->toArray();
 //        $elements = Product::whereIn('id', $ids)->paginate(12);
         return view('frontend.wokiee.four.modules.order.index', compact('elements', 'orders'));
@@ -115,25 +115,27 @@ class OrderController extends Controller
             ]);
             if ($order) {
                 $this->cart->content()->each(function ($element) use ($order, $user) {
-                    $order->order_metas()->create([
-                        'order_id' => $order->id,
-                        'product_id' => $element->options->type === 'product' ? $element->options->element_id : null,
-                        'service_id' => $element->options->type === 'service' ? $element->options->element_id : null,
-                        'product_attribute_id' => $element->options->product_attribute_id,
-                        'collection_id' => $element->options->collection_id ? $element->options->collection_id : null,
-                        'item_name' => $element->options->element->name,
-                        'item_type' => $element->options->type,
-                        'qty' => $element->qty,
-                        'price' => $element->price,
-                        'shipment_cost' => $element->options->shipment_cost,
-                        'notes' => $element->options->notes ? $element->options->notes : null,
-                        'product_size' => $element->options->size ? $element->options->size->name : null,
-                        'product_color' => $element->options->color ? $element->options->color->name : null,
-                        'service_date' => $element->options->day_selected,
-                        'service_time' => $element->options->timing ? $element->options->timing->start : null,
-                        'timing_id' => $element->options->timing_id,
-                        'destination_id' => $user->country_id,
-                    ]);
+                    if ($element->options->type !== 'coupon') {
+                        $order->order_metas()->create([
+                            'order_id' => $order->id,
+                            'product_id' => $element->options->type === 'product' ? $element->options->element_id : null,
+                            'service_id' => $element->options->type === 'service' ? $element->options->element_id : null,
+                            'product_attribute_id' => $element->options->product_attribute_id,
+                            'collection_id' => $element->options->collection_id ? $element->options->collection_id : null,
+                            'item_name' => $element->options->element->name,
+                            'item_type' => $element->options->type,
+                            'qty' => $element->qty,
+                            'price' => $element->price,
+                            'shipment_cost' => $element->options->shipment_cost,
+                            'notes' => $element->options->notes ? $element->options->notes : null,
+                            'product_size' => $element->options->size ? $element->options->size->name : null,
+                            'product_color' => $element->options->color ? $element->options->color->name : null,
+                            'service_date' => $element->options->day_selected,
+                            'service_time' => $element->options->timing ? $element->options->timing->start : null,
+                            'timing_id' => $element->options->timing_id,
+                            'destination_id' => $user->country_id,
+                        ]);
+                    }
                 });
                 auth()->login($user);
                 $elements = $this->cart->content();

@@ -15,6 +15,12 @@
         @endif
         </tbody>
         <tfoot>
+        @if(session()->has('coupon'))
+            <tr>
+                <th>{{ trans('general.discount') }}</th>
+                <td>{{ session()->get('coupon')->value }} {{ trans('general.kd') }}</td>
+            </tr>
+        @endif
         <tr>
             <th>{{ trans('general.total_price_in_kuwaiti_dinar') }}</th>
             <td>{{ Cart::total() }} {{ trans('general.kd') }}</td>

@@ -11,6 +11,7 @@ use App\Models\Order;
 use App\Models\OrderAttribute;
 use App\Models\Plan;
 use App\Models\User;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Mail\Markdown;
 use Illuminate\Support\Facades\Mail;
@@ -211,6 +212,20 @@ class TapPaymentController extends Controller
                 'UnitName' => 'Shipping Cost',
                 'UnitPrice' => $order->shipping_cost,
                 'UnitDesc' => 'Shipping Cost',
+                'VndID' => '',
+            ]);
+        }
+        if(session()->has('coupon')) {
+            $coupon = Cart::content()->where('id','coupon')->first();
+            array_push($productsList, [
+                'CurrencyCode' => env('TAP_CURRENCY_CODE'),
+                'ImgUrl' => asset(env('LARGE')) . Setting::first()->logo,
+                'Quantity' => 1,
+                'TotalPrice' => $coupon->price,
+                'UnitID' => $order->id,
+                'UnitName' => 'Coupon',
+                'UnitPrice' => $order->value,
+                'UnitDesc' => 'Coupon (Discount)',
                 'VndID' => '',
             ]);
         }

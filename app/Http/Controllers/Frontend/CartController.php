@@ -138,14 +138,12 @@ class CartController extends Controller
         if ($validate->fails()) {
             return redirect()->back()->with('error', trans('general.coupon_not_correct'));
         }
-
         $coupon = Coupon::active()->where(['code' => $request->code, 'consumed' => false])
             ->whereDate('due_date', '>=', Carbon::now())
             ->where('minimum_charge', '<=', $this->cart->subTotal())
             ->first();
 
-        if ($coupon) {
-            session()->put('coupon', $coupon);
+        if ($this->addCouponToCart($request,$coupon,$this->cart)) {
             return redirect()->back()->with('success', trans('message.coupon_shall_be_applied'));
         } else {
             session()->forget('coupon');

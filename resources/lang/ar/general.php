@@ -365,4 +365,6 @@ return array(
     "role" => "دور",
     "app_settings" => "تحكم الموقع",
     "switch_lang" => "تغير اللغة",
+    'add_your_coupon' => "أضف كوبون",
+    'have_a_coupon' => "في حالة لديك كوبون .. يرجى أضافه الكود"
 );
