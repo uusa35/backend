@@ -81,7 +81,6 @@ trait CartTrait
     public function addCouponToCart(Request $request, Coupon $coupon, $cart) {
         if(session()->has('coupon')) {
             $coupon = Cart::content()->where('id','coupon')->first();
-//            dd($coupon->rowId);
             $cart->remove($coupon->rowId);
             session()->remove('coupon');
         }
