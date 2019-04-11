@@ -116,6 +116,11 @@ function getTimingId()
     return session()->get('timing_id');
 }
 
+function getTimingValue()
+{
+    return session()->get('timing_value');
+}
+
 function get_client_ip()
 {
     $ipaddress = '';

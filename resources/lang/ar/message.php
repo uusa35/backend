@@ -68,5 +68,7 @@ return array(
     'start_sale_date' => 'start_sale_date',
     'end_sale_date' => 'end_sale_date',
     'quantity' => 'quantity',
+    'set_date_and_area' => 'تم حفظ التاريخ والمنطقة',
+    'search_parameters_clear' => 'تم إزالة جميع حقول البحث'
 
 );

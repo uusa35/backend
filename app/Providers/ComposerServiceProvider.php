@@ -32,6 +32,7 @@ class ComposerServiceProvider extends ServiceProvider
         view()->composer([
             'frontend.*.*.*._search_form',
             'frontend.*.*.*._search_menu_services',
+            'frontend.*.*.*._search_modal_categories',
         ], 'App\Services\ViewComposers@getAllTimingsAvailable');
 
         view()->composer([

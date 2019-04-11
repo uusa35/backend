@@ -39,11 +39,7 @@ class ServiceController extends Controller
         $vendors = $elements->pluck('user')->unique('id')->flatten();
         $areas = $elements->pluck('user.areas')->flatten()->unique('id');
         if ($elements->isNotEmpty()) {
-            if (request()->has('save') && request()->save) {
-                session()->put('day_selected_format', request()->day_selected_format);
-                session()->put('day_selected', request()->day_selected);
-                session()->put('area_id', request()->area_id);
-            }
+            $this->saveMainSearchFormElements();
             return view('frontend.wokiee.four.modules.service.index', compact(
                 'elements', 'tags', 'areas',
                 'categoriesList', 'currentCategory', 'vendors'
@@ -69,11 +65,7 @@ class ServiceController extends Controller
         $vendors = $elements->pluck('user')->unique('id')->flatten();
         $areas = $elements->pluck('user.areas')->flatten()->unique('id');
         if ($elements->isNotEmpty()) {
-            if (request()->has('save') && request()->save) {
-                session()->put('day_selected_format', request()->day_selected_format);
-                session()->put('day_selected', request()->day_selected);
-                session()->put('area_id', request()->area_id);
-            }
+            $this->saveMainSearchFormElements();
             return view('frontend.wokiee.four.modules.service.index', compact(
                 'elements', 'tags', 'areas',
                 'categoriesList', 'currentCategory', 'vendors'
@@ -153,13 +145,26 @@ class ServiceController extends Controller
         //
     }
 
-    public function setDateAndArea(Request $request)
+    public function setDateAndArea()
     {
-        if ($request->has('save') && $request->save) {
-            session()->put('day_selected_format', $request->day_selected_format);
-            session()->put('day_selected', $request->day_selected);
-            session()->put('area_id', $request->area_id);
-        }
+        $this->saveMainSearchFormElements();
         return redirect()->back()->with('success', trans('message.set_date_and_area'));
+    }
+
+    public function saveMainSearchFormElements()
+    {
+        if (request()->has('save') && request()->save && !is_null(session()->get('day_selected_format'))) {
+            session()->put('day_selected_format', request()->day_selected_format);
+            session()->put('day_selected', request()->day_selected);
+            session()->put('area_id', request()->area_id);
+            session()->put('timing_value', request()->timing_value);
+        }
+    }
+
+    public function getClearSearch() {
+        session()->remove('day_selected_format');
+        session()->remove('day_selected');
+        session()->remove('timing_value');
+        return redirect()->route('frontend.service.search')->with('warning',trans('message.search_parameters_clear'));
     }
 }
