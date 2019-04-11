@@ -18,7 +18,7 @@
                             {{ trans('message.search_your_occasion') }}
                         </p>
                         <br>
-                        @include('frontend.wokiee.four.partials._search_form')
+                        @include('frontend.wokiee.four.partials._search_form_set_time_and_area')
                     </div>
                 </div>
             </div>

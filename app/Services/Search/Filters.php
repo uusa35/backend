@@ -72,6 +72,13 @@ class Filters extends QueryFilters
         });
     }
 
+    public function categories()
+    {
+        return $this->builder->whereHas('categories', function ($q) {
+            return $q->whereIn('category_id', request()->categories);
+        });
+    }
+
     public function user_id()
     {
         return $this->builder->where(['user_id' => request()->user_id]);

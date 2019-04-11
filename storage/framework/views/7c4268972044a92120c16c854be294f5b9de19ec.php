@@ -20,7 +20,7 @@
 
                         </p>
                         <br>
-                        <?php echo $__env->make('frontend.wokiee.four.partials._search_form', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                        <?php echo $__env->make('frontend.wokiee.four.partials._search_form_set_time_and_area', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
                     </div>
                 </div>
             </div>

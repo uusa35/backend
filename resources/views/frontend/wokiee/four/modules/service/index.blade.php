@@ -39,7 +39,7 @@
         {{--</div>--}}
         {{--</div>--}}
     </div>
-    @if(!request()->has('service_category_id'))
+    @if(!request()->has('categories') || !request()->has('service_category_id'))
         @include('frontend.wokiee.four.partials._search_modal_categories')
     @endif
 @endsection

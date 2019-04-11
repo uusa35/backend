@@ -152,4 +152,14 @@ class ServiceController extends Controller
     {
         //
     }
+
+    public function setDateAndArea(Request $request)
+    {
+        if ($request->has('save') && $request->save) {
+            session()->put('day_selected_format', $request->day_selected_format);
+            session()->put('day_selected', $request->day_selected);
+            session()->put('area_id', $request->area_id);
+        }
+        return redirect()->back()->with('success', trans('message.set_date_and_area'));
+    }
 }
