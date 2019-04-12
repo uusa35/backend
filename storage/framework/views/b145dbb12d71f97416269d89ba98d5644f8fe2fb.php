@@ -155,14 +155,14 @@
                                     <div class="form-body">
                                         <div class="md-radio-inline">
                                             <div class="md-radio">
-                                                <input type="radio" id="radio55" name="is_double" value="1" class="md-radiobtn" checked>
+                                                <input type="radio" id="radio55" name="is_double" value="1" class="md-radiobtn">
                                                 <label for="radio55">
                                                     <span></span>
                                                     <span class="check"></span>
                                                     <span class="box"></span> <?php echo e(trans('general.is_double')); ?></label>
                                             </div>
                                             <div class="md-radio">
-                                                <input type="radio" id="radio56" name="is_double" value="0" class="md-radiobtn">
+                                                <input type="radio" id="radio56" name="is_double" value="0" checked class="md-radiobtn">
                                                 <label for="radio56">
                                                     <span></span>
                                                     <span class="check"></span>
@@ -175,14 +175,14 @@
                                     <div class="form-body">
                                         <div class="md-radio-inline">
                                             <div class="md-radio">
-                                                <input type="radio" id="radio57" name="is_triple" value="1" class="md-radiobtn" checked>
+                                                <input type="radio" id="radio57" name="is_triple" value="1" class="md-radiobtn">
                                                 <label for="radio57">
                                                     <span></span>
                                                     <span class="check"></span>
                                                     <span class="box"></span><?php echo e(trans('general.is_triple')); ?></label>
                                             </div>
                                             <div class="md-radio">
-                                                <input type="radio" id="radio58" name="is_triple" value="0" class="md-radiobtn">
+                                                <input type="radio" id="radio58" name="is_triple" value="0" checked class="md-radiobtn">
                                                 <label for="radio58">
                                                     <span></span>
                                                     <span class="check"></span>

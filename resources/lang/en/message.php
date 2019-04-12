@@ -43,4 +43,5 @@ return array(
   'start_sale_date' => 'start_sale_date',
   'end_sale_date' => 'end_sale_date',
   'quantity' => 'quantity',
+  'message_answers' => 'message_answers',
 );

@@ -306,9 +306,9 @@
                                         <label class="control-label sbold">{{ trans('general.active') }}</label></br>
                                         <label class="radio-inline">
                                             <input type="radio" sku="active" id="optionsRadios1" value="1">
-                                            active </label>
+                                            {{ trans('general.active') }} </label>
                                         <label class="radio-inline">
-                                            <input type="radio" sku="active" id="optionsRadios2" checked value="0"> not_Active</label>
+                                            <input type="radio" sku="active" id="optionsRadios2" checked value="0"> {{ trans('general.not_active') }}</label>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -316,9 +316,9 @@
                                         <label class="control-label sbold">{{ trans('general.on_sale') }}</label></br>
                                         <label class="radio-inline">
                                             <input type="radio" sku="on_sale" id="optionsRadios1" value="1">
-                                            on_sale </label>
+                                            {{ trans('general.on_sale') }} </label>
                                         <label class="radio-inline">
-                                            <input type="radio" sku="on_sale" id="optionsRadios2" checked value="0"> not_on_sale</label>
+                                            <input type="radio" sku="on_sale" id="optionsRadios2" checked value="0"> {{ trans('general.not_on_sale') }}</label>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -326,9 +326,9 @@
                                         <label class="control-label sbold">{{ trans('general.exclusive') }}</label></br>
                                         <label class="radio-inline">
                                             <input type="radio" sku="exclusive" id="optionsRadios1" value="1">
-                                            exclusive </label>
+                                            {{ trans('general.exclusive') }} </label>
                                         <label class="radio-inline">
-                                            <input type="radio" sku="exclusive" id="optionsRadios2" checked value="0"> not_exclusive</label>
+                                            <input type="radio" sku="exclusive" id="optionsRadios2" checked value="0"> {{ trans('general.not_exclusive') }}</label>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -336,9 +336,9 @@
                                         <label class="control-label sbold">{{ trans('general.on_new') }}</label></br>
                                         <label class="radio-inline">
                                             <input type="radio" sku="on_new" id="optionsRadios1" value="1">
-                                            on_new </label>
+                                            {{ trans('general.on_new') }} </label>
                                         <label class="radio-inline">
-                                            <input type="radio" sku="on_new" id="optionsRadios2" checked value="0"> not_on_new</label>
+                                            <input type="radio" sku="on_new" id="optionsRadios2" checked value="0"> {{ trans('general.not_on_new') }}</label>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -346,9 +346,9 @@
                                         <label class="control-label sbold">{{ trans('general.is_available') }}</label></br>
                                         <label class="radio-inline">
                                             <input type="radio" sku="is_available" id="optionsRadios1" value="1">
-                                            is_available </label>
+                                            {{ trans('general.is_available') }} </label>
                                         <label class="radio-inline">
-                                            <input type="radio" sku="is_available" id="optionsRadios2" checked value="0"> not_is_available</label>
+                                            <input type="radio" sku="is_available" id="optionsRadios2" checked value="0"> {{ trans('general.not_is_available') }}</label>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -356,9 +356,9 @@
                                         <label class="control-label sbold">{{ trans('general.is_hot_deal') }}</label></br>
                                         <label class="radio-inline">
                                             <input type="radio" sku="is_hot_deal" id="optionsRadios1" value="1">
-                                            is_hot_deal </label>
+                                            {{ trans('general.is_hot_deal') }} </label>
                                         <label class="radio-inline">
-                                            <input type="radio" sku="is_hot_deal" id="optionsRadios2" checked value="0"> not_is_hot_deal</label>
+                                            <input type="radio" sku="is_hot_deal" id="optionsRadios2" checked value="0"> {{ trans('general.not_is_hot_deal') }}</label>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -366,28 +366,19 @@
                                         <label class="control-label sbold">{{ trans('general.multi_booking') }}</label></br>
                                         <label class="radio-inline">
                                             <input type="radio" sku="multi_booking" id="optionsRadios1" value="1">
-                                            multi_booking </label>
+                                            {{ trans('general.multi_booking') }} </label>
                                         <label class="radio-inline">
-                                            <input type="radio" sku="multi_booking" id="optionsRadios2" checked value="0"> not_multi_booking</label>
+                                            <input type="radio" sku="multi_booking" id="optionsRadios2" checked value="0"> {{ trans('general.not_multi_booking') }}</label>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="control-label sbold">{{ trans('general.multi_booking') }}</label></br>
-                                        <label class="radio-inline">
-                                            <input type="radio" sku="multi_booking" id="optionsRadios1" value="1">
-                                            multi_booking </label>
-                                        <label class="radio-inline">
-                                            <input type="radio" sku="multi_booking" id="optionsRadios2" checked value="0"> not_multi_booking</label>
-                                    </div>
-                                </div>
+
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="control-label sbold">{{ trans('general.on_home') }}</label></br>
                                         <label class="radio-inline">
-                                            <input type="radio" sku="on_home" id="optionsRadios1" value="1"> on_home </label>
+                                            <input type="radio" sku="on_home" id="optionsRadios1" value="1"> {{ trans('general.on_home') }} </label>
                                         <label class="radio-inline">
-                                            <input type="radio" sku="on_home" id="optionsRadios2" checked value="0"> not_on_home</label>
+                                            <input type="radio" sku="on_home" id="optionsRadios2" checked value="0"> {{ trans('general.not_on_home') }}</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">

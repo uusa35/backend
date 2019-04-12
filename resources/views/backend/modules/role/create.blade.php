@@ -13,7 +13,7 @@
                 <div class="portlet box blue ">
                     <div class="portlet-title">
                         <div class="caption">
-                            <i class="fa fa-gift"></i> {{ trans('general.user_main_details') }}
+                            <i class="fa fa-gift"></i> {{ trans('general.role_main_details') }}
                         </div>
                     </div>
                     <div class="portlet-body form">
@@ -90,7 +90,7 @@
                 <div class="portlet box blue ">
                     <div class="portlet-title">
                         <div class="caption">
-                            <i class="fa fa-gift"></i> {{ trans('general.user_main_details') }}
+                            <i class="fa fa-gift"></i> {{ trans('general.role_attributes_details') }}
                         </div>
                     </div>
                     <div class="portlet-body form">

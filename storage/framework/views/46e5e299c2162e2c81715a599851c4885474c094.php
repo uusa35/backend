@@ -75,7 +75,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group <?php echo e($errors->has('duration') ? ' has-error' : ''); ?>">
                                         <label for="duration" class="control-label"><?php echo e(trans('general.duration')); ?>*</label>
-                                        <input id="duration" type="text" class="form-control" sku="duration" value="<?php echo e(old('duration')); ?>" placeholder="<?php echo e(trans('general.duration')); ?>" required autofocus>
+                                        <input id="duration" type="text" class="form-control" name="duration" value="<?php echo e(old('duration')); ?>" placeholder="<?php echo e(trans('general.duration')); ?>" required autofocus>
                                         <?php if($errors->has('duration')): ?>
                                         <span class="help-block">
                                             <strong>
@@ -89,7 +89,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group <?php echo e($errors->has('setup_time') ? ' has-error' : ''); ?>">
                                         <label for="setup_time" class="control-label"><?php echo e(trans('general.setup_time')); ?>*</label>
-                                        <input id="setup_time" type="text" class="form-control" sku="setup_time" value="<?php echo e(old('setup_time')); ?>" placeholder="<?php echo e(trans('general.setup_time')); ?>" required autofocus>
+                                        <input id="setup_time" type="number" maxlength="1" max="10" class="form-control" name="setup_time" value="<?php echo e(old('setup_time')); ?>" placeholder="<?php echo e(trans('general.setup_time')); ?>" required autofocus>
                                         <?php if($errors->has('setup_time')): ?>
                                         <span class="help-block">
                                             <strong>
@@ -327,9 +327,9 @@
                                         <label class="control-label sbold"><?php echo e(trans('general.active')); ?></label></br>
                                         <label class="radio-inline">
                                             <input type="radio" sku="active" id="optionsRadios1" value="1">
-                                            active </label>
+                                            <?php echo e(trans('general.active')); ?> </label>
                                         <label class="radio-inline">
-                                            <input type="radio" sku="active" id="optionsRadios2" checked value="0"> not_Active</label>
+                                            <input type="radio" sku="active" id="optionsRadios2" checked value="0"> <?php echo e(trans('general.not_active')); ?></label>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -337,9 +337,9 @@
                                         <label class="control-label sbold"><?php echo e(trans('general.on_sale')); ?></label></br>
                                         <label class="radio-inline">
                                             <input type="radio" sku="on_sale" id="optionsRadios1" value="1">
-                                            on_sale </label>
+                                            <?php echo e(trans('general.on_sale')); ?> </label>
                                         <label class="radio-inline">
-                                            <input type="radio" sku="on_sale" id="optionsRadios2" checked value="0"> not_on_sale</label>
+                                            <input type="radio" sku="on_sale" id="optionsRadios2" checked value="0"> <?php echo e(trans('general.not_on_sale')); ?></label>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -347,9 +347,9 @@
                                         <label class="control-label sbold"><?php echo e(trans('general.exclusive')); ?></label></br>
                                         <label class="radio-inline">
                                             <input type="radio" sku="exclusive" id="optionsRadios1" value="1">
-                                            exclusive </label>
+                                            <?php echo e(trans('general.exclusive')); ?> </label>
                                         <label class="radio-inline">
-                                            <input type="radio" sku="exclusive" id="optionsRadios2" checked value="0"> not_exclusive</label>
+                                            <input type="radio" sku="exclusive" id="optionsRadios2" checked value="0"> <?php echo e(trans('general.not_exclusive')); ?></label>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -357,9 +357,9 @@
                                         <label class="control-label sbold"><?php echo e(trans('general.on_new')); ?></label></br>
                                         <label class="radio-inline">
                                             <input type="radio" sku="on_new" id="optionsRadios1" value="1">
-                                            on_new </label>
+                                            <?php echo e(trans('general.on_new')); ?> </label>
                                         <label class="radio-inline">
-                                            <input type="radio" sku="on_new" id="optionsRadios2" checked value="0"> not_on_new</label>
+                                            <input type="radio" sku="on_new" id="optionsRadios2" checked value="0"> <?php echo e(trans('general.not_on_new')); ?></label>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -367,9 +367,9 @@
                                         <label class="control-label sbold"><?php echo e(trans('general.is_available')); ?></label></br>
                                         <label class="radio-inline">
                                             <input type="radio" sku="is_available" id="optionsRadios1" value="1">
-                                            is_available </label>
+                                            <?php echo e(trans('general.is_available')); ?> </label>
                                         <label class="radio-inline">
-                                            <input type="radio" sku="is_available" id="optionsRadios2" checked value="0"> not_is_available</label>
+                                            <input type="radio" sku="is_available" id="optionsRadios2" checked value="0"> <?php echo e(trans('general.not_is_available')); ?></label>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -377,9 +377,9 @@
                                         <label class="control-label sbold"><?php echo e(trans('general.is_hot_deal')); ?></label></br>
                                         <label class="radio-inline">
                                             <input type="radio" sku="is_hot_deal" id="optionsRadios1" value="1">
-                                            is_hot_deal </label>
+                                            <?php echo e(trans('general.is_hot_deal')); ?> </label>
                                         <label class="radio-inline">
-                                            <input type="radio" sku="is_hot_deal" id="optionsRadios2" checked value="0"> not_is_hot_deal</label>
+                                            <input type="radio" sku="is_hot_deal" id="optionsRadios2" checked value="0"> <?php echo e(trans('general.not_is_hot_deal')); ?></label>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -387,28 +387,19 @@
                                         <label class="control-label sbold"><?php echo e(trans('general.multi_booking')); ?></label></br>
                                         <label class="radio-inline">
                                             <input type="radio" sku="multi_booking" id="optionsRadios1" value="1">
-                                            multi_booking </label>
+                                            <?php echo e(trans('general.multi_booking')); ?> </label>
                                         <label class="radio-inline">
-                                            <input type="radio" sku="multi_booking" id="optionsRadios2" checked value="0"> not_multi_booking</label>
+                                            <input type="radio" sku="multi_booking" id="optionsRadios2" checked value="0"> <?php echo e(trans('general.not_multi_booking')); ?></label>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="control-label sbold"><?php echo e(trans('general.multi_booking')); ?></label></br>
-                                        <label class="radio-inline">
-                                            <input type="radio" sku="multi_booking" id="optionsRadios1" value="1">
-                                            multi_booking </label>
-                                        <label class="radio-inline">
-                                            <input type="radio" sku="multi_booking" id="optionsRadios2" checked value="0"> not_multi_booking</label>
-                                    </div>
-                                </div>
+
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="control-label sbold"><?php echo e(trans('general.on_home')); ?></label></br>
                                         <label class="radio-inline">
-                                            <input type="radio" sku="on_home" id="optionsRadios1" value="1"> on_home </label>
+                                            <input type="radio" sku="on_home" id="optionsRadios1" value="1"> <?php echo e(trans('general.on_home')); ?> </label>
                                         <label class="radio-inline">
-                                            <input type="radio" sku="on_home" id="optionsRadios2" checked value="0"> not_on_home</label>
+                                            <input type="radio" sku="on_home" id="optionsRadios2" checked value="0"> <?php echo e(trans('general.not_on_home')); ?></label>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">

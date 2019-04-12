@@ -137,18 +137,18 @@
                                     <div class="form-group">
                                         <label class="control-label sbold">{{ trans('general.active') }}</label></br>
                                         <label class="radio-inline">
-                                            <input type="radio" name="active" id="optionsRadios3" value="1"> active</label>
+                                            <input type="radio" name="active" id="optionsRadios3" checked value="1"> {{ trans('general.active') }}</label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="active" id="optionsRadios4" checked value="0">not active</label>
+                                            <input type="radio" name="active" id="optionsRadios4" value="0"> {{ trans('general.not_active') }}</label>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="control-label sbold">{{ trans('general.is_featured') }}</label></br>
                                         <label class="radio-inline">
-                                            <input type="radio" name="is_featured" id="optionsRadios3" value="1"> is_featured</label>
+                                            <input type="radio" name="is_featured" id="optionsRadios3" value="1"> {{ trans('general.is_featured') }}</label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="is_featured" id="optionsRadios4" checked value="0">not is_featured</label>
+                                            <input type="radio" name="is_featured" id="optionsRadios4" checked value="0"> {{ trans('general.not_is_featured') }}</label>
                                     </div>
                                 </div>
                                 {{--<div class="col-md-3">--}}
@@ -166,9 +166,9 @@
                                     <div class="form-group">
                                         <label class="control-label sbold">{{ trans('general.is_home') }}</label></br>
                                         <label class="radio-inline">
-                                            <input type="radio" name="is_home" id="optionsRadios3" value="1"> is_home</label>
+                                            <input type="radio" name="is_home" id="optionsRadios3" value="1"> {{ trans('general.is_home') }}</label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="is_home" id="optionsRadios4" checked value="0">not is_home</label>
+                                            <input type="radio" name="is_home" id="optionsRadios4" checked value="0"> {{ trans('general.not_is_home') }}</label>
                                     </div>
                                 </div>
                             </div>
@@ -181,18 +181,18 @@
                                     <div class="form-group">
                                         <label class="control-label sbold">{{ trans('general.on_new') }}</label></br>
                                         <label class="radio-inline">
-                                            <input type="radio" name="on_new" id="optionsRadios3" value="1"> on_new</label>
+                                            <input type="radio" name="on_new" id="optionsRadios3" value="1"> {{ trans('general.on_new') }}</label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="on_new" id="optionsRadios4" checked value="0">not on_new</label>
+                                            <input type="radio" name="on_new" id="optionsRadios4" checked value="0">{{ trans('general.not_on_new') }}</label>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="control-label sbold">{{ trans('general.is_service') }}</label></br>
                                         <label class="radio-inline">
-                                            <input type="radio" name="is_service" id="optionsRadios3" value="1"> is_service</label>
+                                            <input type="radio" name="is_service" id="optionsRadios3" value="1"> {{ trans('general.is_service') }}</label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="is_service" id="optionsRadios4" checked value="0">not is_service</label>
+                                            <input type="radio" name="is_service" id="optionsRadios4" checked value="0"> {{ trans('general.not_is_service') }}</label>
                                     </div>
                                 </div>
                                 {{--<div class="col-md-3">--}}
@@ -210,9 +210,9 @@
                                     <div class="form-group">
                                         <label class="control-label sbold">{{ trans('general.is_product') }}</label></br>
                                         <label class="radio-inline">
-                                            <input type="radio" name="is_product" id="optionsRadios3" value="1"> is_product</label>
+                                            <input type="radio" name="is_product" id="optionsRadios3" value="1"> {{ trans('general.is_product') }}</label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="is_product" id="optionsRadios4" checked value="0">not is_product</label>
+                                            <input type="radio" name="is_product" id="optionsRadios4" checked value="0"> {{ trans('general.not_is_product') }}</label>
                                     </div>
                                 </div>
                             </div>
