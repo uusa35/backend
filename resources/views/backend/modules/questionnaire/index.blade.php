@@ -23,22 +23,22 @@
                 <table id="dataTable" class="table table-striped table-bordered table-hover" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>id</th>
-                            <th>name</th>
-                            <th>mobile</th>
-                            <th>email</th>
-                            <th>created_at</th>
-                            <th>Action</th>
+                            <th>{{ trans('general.id') }}</th>
+                            <th>{{ trans('general.name') }}</th>
+                            <th>{{ trans('general.mobile') }}</th>
+                            <th>{{ trans('general.address') }}</th>
+                            <th>{{ trans('general.created_at') }}</th>
+                            <th>{{ trans('general.actions') }}</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
-                            <th>id</th>
-                            <th>name</th>
-                            <th>mobile</th>
-                            <th>email</th>
-                            <th>created_at</th>
-                            <th>Action</th>
+                            <th>{{ trans('general.id') }}</th>
+                            <th>{{ trans('general.name') }}</th>
+                            <th>{{ trans('general.mobile') }}</th>
+                            <th>{{ trans('general.address') }}</th>
+                            <th>{{ trans('general.created_at') }}</th>
+                            <th>{{ trans('general.actions') }}</th>
                         </tr>
                     </tfoot>
                     <tbody>
@@ -51,26 +51,26 @@
                             <td>{{ $element->created_at->diffForHumans() }}</td>
                             <td>
                                 <div class="btn-group pull-right">
-                                    <button type="button" class="btn green btn-sm btn-outline dropdown-toggle" data-toggle="dropdown"> Actions
+                                    <button type="button" class="btn green btn-sm btn-outline dropdown-toggle" data-toggle="dropdown"> {{ trans('general.actions') }}
                                         <i class="fa fa-angle-down"></i>
                                     </button>
                                     <ul class="dropdown-menu pull-right" role="menu">
                                         <li>
                                             <a href="{{ route('backend.admin.questionnaire.show',$element->id) }}">
-                                                <i class="fa fa-fw fa-eye"></i>View Questionnaire</a>
+                                                <i class="fa fa-fw fa-eye"></i>{{ trans('general.view_questionnaire') }}</a>
                                         </li>
                                         <li>
                                             <a href="{{ route('backend.admin.questionnaire.edit',$element->id) }}">
-                                                <i class="fa fa-fw fa-edit"></i>edit</a>
+                                                <i class="fa fa-fw fa-edit"></i>{{ trans('general.edit') }}</a>
                                         </li>
                                         <li>
                                             <a data-toggle="modal" href="#" data-target="#basic" data-title="Delete" data-content="Are you sure you want to delete {{ $element->name  }}? " data-form_id="delete-{{ $element->id }}">
-                                                <i class="fa fa-fw fa-recycle"></i> delete</a>
+                                                <i class="fa fa-fw fa-recycle"></i> {{ trans('general.delete') }}</a>
                                             <form method="post" id="delete-{{ $element->id }}" action="{{ route('backend.admin.questionnaire.destroy',$element->id) }}">
                                                 @csrf
                                                 <input type="hidden" name="_method" value="delete" />
                                                 <button type="submit" class="btn btn-del hidden">
-                                                    <i class="fa fa-fw fa-times-circle"></i> delete
+                                                    <i class="fa fa-fw fa-times-circle"></i> {{ trans('general.delete') }}
                                                 </button>
                                             </form>
                                         </li>

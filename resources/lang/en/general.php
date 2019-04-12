@@ -476,6 +476,19 @@ company company abaia abaya abayat',
   'toggle_active' => 'toggle_active',
   'assign_new_attribute' => 'assign_new_attribute',
   'delete' => 'delete',
+  'assign_child' => 'assign_child',
+  'flag' => 'flag',
+  'symbol' => 'symbol',
+  'is_consumed' => 'is_consumed',
+  'product_size_quantity' => 'product_size_quantity',
+  'payment_status' => 'payment_status',
+  'view_order' => 'view_order',
+  'created_at' => 'created_at',
+  'is_desktop' => 'is_desktop',
+  'is_footer' => 'is_footer',
+  'view_survey' => 'view_survey',
+  'view_questionnaire' => 'view_questionnaire'
+
 
 
 
