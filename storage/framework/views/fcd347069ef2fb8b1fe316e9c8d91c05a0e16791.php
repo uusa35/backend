@@ -10,7 +10,7 @@
     </div>
 </div>
 <div class="tt-content-aside">
-    <a href="<?php echo e(request()->url()); ?>" class="tt-promo-03 btn btn-border">
+    <a href="<?php echo e(route('frontend.service.clear')); ?>" class="tt-promo-03 btn btn-border">
         <?php echo e(trans('general.clear_all')); ?>
 
     </a>

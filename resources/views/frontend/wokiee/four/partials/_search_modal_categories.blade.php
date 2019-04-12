@@ -23,8 +23,10 @@
                         @if($countries->where('is_local',true)->first())
                             <form method="get" action="{{ route("frontend.service.search") }}">
                                 <input type="hidden" name="save" value="1">
-                                <input type="hidden" name="day_selected" id="day_selected" value="">
-                                <input type="hidden" name="day_selected_format" id="day_selected_format" value="">
+                                <input type="hidden" name="day_selected_format" id="day_selected_format"
+                                       value="{{ getDaySelected_format() }}">
+                                <input type="hidden" name="day_selected" id="day_selected"
+                                       value="{{ getDaySelected() }}">
                                 <div class="form-row justify-content-center align-items-center">
                                     <input type="hidden" name="country_id"
                                            value="{{ $countries->where('is_local',true)->first()->id }}">
@@ -47,10 +49,10 @@
                                     @if(isset($timings))
                                         <div class="form-group col-lg-3 col-xs-12">
                                             <label for="timings" class="sr-only">{{ trans('general.timing') }}</label>
-                                            <select name="timing_id" class="form-control">
+                                            <select name="timing_value" class="form-control">
                                                 <option value="" selected>{{ trans('general.choose_timing') }}</option>
                                                 @foreach($timings as $k => $v)
-                                                    <option value="{{ Carbon\Carbon::parse($v)->format('h:i a') }}">{{ $v }}</option>
+                                                    <option value="{{ Carbon\Carbon::parse($v)->format('h:i a') }}" {{ getTimingValue() === $v ? 'selected' : null }}>{{ $v }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -58,24 +60,27 @@
                                 </div>
                                 @if(env('APP_CASE') === 'evento')
                                     <div class="row">
-                                            @if($categoriesList->isNotEmpty())
-                                                @foreach($categoriesList as $category)
-                                                    <div class="col-3">
-                                                        <div class="form-check">
-                                                            <input type="checkbox"
-                                                                   name="categories[]"
-                                                                   value="{{ $category->id }}"
-                                                                   class="orm-check-input"/>
-                                                            <label class="form-check-label" for="categories">{{ $category->name }}</label>
-                                                        </div>
+                                        @if($categoriesList->isNotEmpty())
+                                            @foreach($categoriesList as $category)
+                                                <div class="col-4 {{ app()->isLocale('ar') ? 'text-right' : 'text-left' }}"
+                                                     style="margin-top: 10px;">
+                                                    <div class="form-check">
+                                                        <input type="checkbox"
+                                                               name="categories[]"
+                                                               value="{{ $category->id }}"
+                                                               class="orm-check-input"/>
+                                                        &nbsp;&nbsp;
+                                                        <label class="form-check-label"
+                                                               for="categories">{{ str_limit($category->name,60) }}</label>
                                                     </div>
-                                                @endforeach
-                                            @endif
+                                                </div>
+                                            @endforeach
+                                        @endif
                                     </div>
                                 @endif
                                 <div class="form-group col-12 col-xs" style="padding: 20px;">
                                     <button type="submit"
-                                            class="btn btn-primary">{{ trans('general.search') }}</button>
+                                            class="btn btn-primary {{ app()->isLocale('ar') ?  'pull-left' : 'pull-right '}}">{{ trans('general.search') }}</button>
                                 </div>
                             </form>
                         @endif

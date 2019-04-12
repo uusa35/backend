@@ -164,10 +164,17 @@ class Filters extends QueryFilters
 
     }
 
-    public function timing_id()
+    public function timing_value()
     {
         return $this->builder->whereHas('timings', function ($q) {
             return $q->whereDate('start', '>=', Carbon::parse(request('timing_id'))->format('h:i a'));
+        });
+    }
+
+    public function timing_id()
+    {
+        return $this->builder->whereHas('timings', function ($q) {
+            return $q->whereId(request()->timing_id);
         });
     }
 
