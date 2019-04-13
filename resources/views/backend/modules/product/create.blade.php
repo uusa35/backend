@@ -160,58 +160,6 @@
                                     </div>
                                 </div>
 
-
-                                <div class="col-lg-12">
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label for="single" class="control-label">{{ trans('general.owner') }}
-                                                *</label>
-                                            <select name="user_id" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.owner') }}">
-                                                <option value="">{{ trans('general.choose_user') }}</option>
-                                                @foreach($users as $user)
-                                                <option value="{{ $user->id }}">{{ $user->slug_en }}</option>
-                                                @endforeach
-
-
-                                            </select>
-                                            {{-- <span class="help-block">
-                                                                <strong>{{ trans('message.owner_instructions') }}</strong>
-                                            </span> --}}
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label for="single" class="control-label">{{ trans('general.shipment_package') }}
-                                                *</label>
-                                            <select id="" name="shipment_package_id" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.shipment_package') }}" required>
-                                                <option value="">{{ trans('choose_product_package_grade') }}</option>
-                                                @foreach($shipment_packages as $shipment_package)
-                                                <option value="{{ $shipment_package->id }}">{{ $shipment_package->slug_en }}</option>
-                                                @endforeach
-                                            </select>
-                                            {{-- <span class="help-block">
-                                                                <strong>{{ trans('message.shipment_instructions') }}</strong>
-                                            </span> --}}
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label for="brand_id" class="control-label">{{ trans('general.brand') }}
-                                                *</label>
-                                            <select id="" name="brand_id" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.brand') }}">
-                                                <option value="">{{ trans('general.choose_brand') }}</option>
-                                                @foreach($brands as $brand)
-                                                <option value="{{ $brand->id }}">{{ $brand->slug }}</option>
-                                                @endforeach
-                                            </select>
-                                            {{-- <span class="help-block">
-                                                                <strong>{{ trans('message.brand_instructions') }}</strong>
-                                            </span> --}}
-                                        </div>
-                                    </div>
-
-                                </div>
-
                                 <div class="col-lg-12">
                                     @can('isAdminOrAbove')
                                     <div class="col-md-4">
@@ -354,7 +302,7 @@
                                         <select id="color_id" name="color_id" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.color') }}" required>
                                             <option value="">{{ trans('choose_color') }}</option>
                                             @foreach($colors as $color)
-                                            <option value="{{ $color->name }}">{{ $color->name }}</option>
+                                            <option value="{{ $color->id }}">{{ $color->name }}</option>
                                             @endforeach
                                         </select>
                                         {{-- <span class="help-block">
@@ -369,7 +317,7 @@
                                         <select id="size_id" name="size_id" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.size') }}">
                                             <option value="">{{ trans('general.size_id') }}</option>
                                             @foreach($sizes as $size)
-                                            <option value="{{ $size->name }}">{{ $size->name }}</option>
+                                            <option value="{{ $size->id }}">{{ $size->name }}</option>
                                             @endforeach
                                         </select>
                                         {{-- <span class="help-block">

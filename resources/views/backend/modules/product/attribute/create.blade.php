@@ -100,10 +100,6 @@
                         <button type="submit" class="btn blue">
                             <i class="fa fa-check"></i> Save
                         </button>
-                        <a href="{{ route('backend.gallery.create',['type' => 'product' , 'element_id' => request('product_id')]) }}"
-                           class="btn blue">
-                            <i class="fa fa-check"></i> Next
-                        </a>
                     </div>
                 </div>
             </form>
