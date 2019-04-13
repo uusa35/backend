@@ -145,7 +145,7 @@
                                         <div class="form-group{{ $errors->has('weight') ? ' has-error' : '' }}">
                                             <label for="weight" class="control-label">{{ trans('general.weight') }}
                                                 *</label>
-                                            <input id="weight" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.weight') }}" name="weight" value="{{ old('weight') }}" placeholder="{{ trans('general.weight') }}" required autofocus>
+                                            <input id="weight" type="number" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.weight') }}" name="weight" value="{{ old('weight') }}" placeholder="{{ trans('general.weight') }}" required autofocus>
                                             @if ($errors->has('weight'))
                                             <span class="help-block">
                                                 <strong>
@@ -388,7 +388,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group{{ $errors->has('video_url_one') ? ' has-error' : '' }}">
                                         <label for="video_url_one" class="control-label">{{ trans('general.video_url_one') }}</label>
-                                        <input id="video_url_one" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.video_url_one') }}" name="video_url_one" value="{{ old('video_url_one') }}" placeholder="{{ trans('general.video_url_one') }}" autofocus>
+                                        <input id="video_url_one" type="url" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.video_url_one') }}" name="video_url_one" value="{{ old('video_url_one') }}" placeholder="{{ trans('general.video_url_one') }}" autofocus>
                                         @if ($errors->has('video_url_one'))
                                         <span class="help-block">
                                             <strong>
@@ -404,7 +404,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group{{ $errors->has('video_url_two') ? ' has-error' : '' }}">
                                         <label for="video_url_two" class="control-label">{{ trans('general.video_url_two') }}</label>
-                                        <input id="video_url_two" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.video_url_two') }}" name="video_url_two" value="{{ old('video_url_two') }}" placeholder="{{ trans('general.video_url_two') }}" autofocus>
+                                        <input id="video_url_two" type="url" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.video_url_two') }}" name="video_url_two" value="{{ old('video_url_two') }}" placeholder="{{ trans('general.video_url_two') }}" autofocus>
                                         @if ($errors->has('video_url_two'))
                                         <span class="help-block">
                                             <strong>

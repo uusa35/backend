@@ -144,7 +144,7 @@
                                             <label for="weight" class="control-label"><?php echo e(trans('general.weight')); ?>
 
                                                 *</label>
-                                            <input id="weight" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.weight')); ?>" name="weight" value="<?php echo e(old('weight')); ?>" placeholder="<?php echo e(trans('general.weight')); ?>" required autofocus>
+                                            <input id="weight" type="number" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.weight')); ?>" name="weight" value="<?php echo e(old('weight')); ?>" placeholder="<?php echo e(trans('general.weight')); ?>" required autofocus>
                                             <?php if($errors->has('weight')): ?>
                                             <span class="help-block">
                                                 <strong>
@@ -168,7 +168,7 @@
                                             <select name="user_id" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.owner')); ?>">
                                                 <option value=""><?php echo e(trans('general.choose_user')); ?></option>
                                                 <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                <option value="<?php echo e($user->slug_en); ?>"><?php echo e($user->slug_en); ?></option>
+                                                <option value="<?php echo e($user->id); ?>"><?php echo e($user->slug_en); ?></option>
                                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 
@@ -184,7 +184,7 @@
                                             <select id="" name="shipment_id" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.shipment_package')); ?>" required>
                                                 <option value=""><?php echo e(trans('choose_product_package_grade')); ?></option>
                                                 <?php $__currentLoopData = $shipment_packages; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $shipment_package): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                <option value="<?php echo e($shipment_package->slug_en); ?>"><?php echo e($shipment_package->slug_en); ?></option>
+                                                <option value="<?php echo e($shipment_package->id); ?>"><?php echo e($shipment_package->slug_en); ?></option>
                                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                             </select>
                                             
@@ -380,7 +380,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group<?php echo e($errors->has('video_url_one') ? ' has-error' : ''); ?>">
                                         <label for="video_url_one" class="control-label"><?php echo e(trans('general.video_url_one')); ?></label>
-                                        <input id="video_url_one" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.video_url_one')); ?>" name="video_url_one" value="<?php echo e(old('video_url_one')); ?>" placeholder="<?php echo e(trans('general.video_url_one')); ?>" autofocus>
+                                        <input id="video_url_one" type="url" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.video_url_one')); ?>" name="video_url_one" value="<?php echo e(old('video_url_one')); ?>" placeholder="<?php echo e(trans('general.video_url_one')); ?>" autofocus>
                                         <?php if($errors->has('video_url_one')): ?>
                                         <span class="help-block">
                                             <strong>
@@ -395,7 +395,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group<?php echo e($errors->has('video_url_two') ? ' has-error' : ''); ?>">
                                         <label for="video_url_two" class="control-label"><?php echo e(trans('general.video_url_two')); ?></label>
-                                        <input id="video_url_two" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.video_url_two')); ?>" name="video_url_two" value="<?php echo e(old('video_url_two')); ?>" placeholder="<?php echo e(trans('general.video_url_two')); ?>" autofocus>
+                                        <input id="video_url_two" type="url" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.video_url_two')); ?>" name="video_url_two" value="<?php echo e(old('video_url_two')); ?>" placeholder="<?php echo e(trans('general.video_url_two')); ?>" autofocus>
                                         <?php if($errors->has('video_url_two')): ?>
                                         <span class="help-block">
                                             <strong>

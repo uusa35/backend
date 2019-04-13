@@ -30,7 +30,7 @@ class ProductStore extends FormRequest
             'has_attributes' => 'required|boolean',
             'user_id' => 'required|exists:users,id',
             'shipment_id' => 'required|exists:shipment_packages,id',
-            'brand' => 'required|exists:brands,id',
+            'brand_id' => 'required|exists:brands,id',
             'image' => 'required|image',
             'categories' => 'required|array',
             'price' => 'required|numeric|min:0.5|max:999',
