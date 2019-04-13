@@ -23,7 +23,6 @@ class ProductStore extends FormRequest
      */
     public function rules()
     {
-//        dd(request()->all());
         return [
             'sku' => 'required|min:2',
             'name_ar' => 'required:min:3|max:200',

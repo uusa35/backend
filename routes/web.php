@@ -13,6 +13,7 @@
 
 use App\Models\User;
 
+
 Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.', 'middleware' => ['auth', 'onlyActiveUsers', 'country']], function () {
     // Route may be same But
     // 1- Date will be displayed are different (therefore made many controllers for the same exact Model)
