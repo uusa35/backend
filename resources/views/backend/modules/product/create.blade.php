@@ -169,7 +169,7 @@
                                             <select name="user_id" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.owner') }}">
                                                 <option value="">{{ trans('general.choose_user') }}</option>
                                                 @foreach($users as $user)
-                                                <option value="{{ $user->slug_en }}">{{ $user->slug_en }}</option>
+                                                <option value="{{ $user->id }}">{{ $user->slug_en }}</option>
                                                 @endforeach
 
 
@@ -186,7 +186,7 @@
                                             <select id="" name="shipment_id" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.shipment_package') }}" required>
                                                 <option value="">{{ trans('choose_product_package_grade') }}</option>
                                                 @foreach($shipment_packages as $shipment_package)
-                                                <option value="{{ $shipment_package->slug_en }}">{{ $shipment_package->slug_en }}</option>
+                                                <option value="{{ $shipment_package->id }}">{{ $shipment_package->slug_en }}</option>
                                                 @endforeach
                                             </select>
                                             {{-- <span class="help-block">
