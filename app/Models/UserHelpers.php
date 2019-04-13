@@ -12,7 +12,7 @@ trait UserHelpers
 
     public function getIsAdminOrAboveAttribute()
     {
-        return $this->role->is_super ? $this->role->is_super : $this->role->is_dmin;
+        return $this->role->is_super ? $this->role->is_super : $this->role->is_admin;
     }
 
     public function getIsAdminAttribute()

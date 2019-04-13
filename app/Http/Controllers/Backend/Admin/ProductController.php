@@ -46,14 +46,14 @@ class ProductController extends Controller
      */
     public function create()
     {
+        $this->authorize('product.create');
         $categories = Category::active()->onlyParent()->with('children.children')->get();
         $tags = Tag::active()->get();
         $brands = Brand::active()->get();
         $users = User::active()->get();
         $colors = Color::active()->get();
         $sizes = Size::active()->get();
-        $shipment_packages = ShipmentPackage::all();
-        //dd($shipment_package);
+        $shipment_packages = ShipmentPackage::active()->get();
         return view('backend.modules.product.create', compact('categories', 'tags', 'brands', 'users', 'shipment_packages', 'colors', 'sizes'));
     }
 

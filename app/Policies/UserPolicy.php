@@ -3,7 +3,6 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class UserPolicy
@@ -19,7 +18,7 @@ class UserPolicy
      */
     public function view(User $user, User $model)
     {
-        //
+        return $user->role->privileges->where('name','user')->first()->pivot->view;
     }
 
     /**

@@ -22,6 +22,7 @@ class UserController extends Controller
      */
     public function index()
     {
+        $this->authorize('user.view', auth()->user());
         if (request()->has('role_id')) {
             $elements = User::where('role_id', request('role_id'))->with('country')->get();
         } else {

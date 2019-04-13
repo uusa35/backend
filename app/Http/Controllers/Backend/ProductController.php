@@ -7,9 +7,13 @@ use App\Http\Requests\Backend\ProductStore;
 use App\Http\Requests\Backend\ProductUpdate;
 use App\Models\Brand;
 use App\Models\Category;
+use App\Models\Color;
 use App\Models\Product;
+use App\Models\ShipmentPackage;
+use App\Models\Size;
 use App\Models\Tag;
 
+use App\Models\User;
 use Carbon\Carbon;
 
 class ProductController extends Controller
@@ -42,11 +46,15 @@ class ProductController extends Controller
      */
     public function create()
     {
-
+        $this->authorize('product.create');
         $categories = Category::active()->onlyParent()->with('children.children')->get();
         $tags = Tag::active()->get();
         $brands = Brand::active()->get();
-        return view('backend.modules.product.create', compact('categories', 'tags', 'brands'));
+        $users = User::active()->get();
+        $colors = Color::active()->get();
+        $sizes = Size::active()->get();
+        $shipment_packages = ShipmentPackage::active()->get();
+        return view('backend.modules.product.create', compact('categories', 'tags', 'brands', 'users', 'shipment_packages', 'colors', 'sizes'));
     }
 
 
