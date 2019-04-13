@@ -22,26 +22,26 @@
                 <table id="dataTable" class="table table-striped table-bordered table-hover" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>id</th>
-                            <th>name</th>
-                            <th>slug_ar</th>
-                            <th>slug_en</th>
-                            <th>charge</th>
-                            <th>active</th>
-                            <th>is_local</th>
-                            <th>actions</th>
+                            <th>{{ trans('general.id') }}</th>
+                            <th>{{ trans('general.name') }}</th>
+                            <th>{{ trans('general.slug_ar') }}</th>
+                            <th>{{ trans('general.slug_en') }}</th>
+                            <th>{{ trans('general.charge') }}</th>
+                            <th>{{ trans('general.active') }}</th>
+                            <th>{{ trans('general.is_local') }}</th>
+                            <th>{{ trans('general.actions') }}</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
-                            <th>id</th>
-                            <th>name</th>
-                            <th>slug_ar</th>
-                            <th>slug_en</th>
-                            <th>charge</th>
-                            <th>active</th>
-                            <th>is_local</th>
-                            <th>actions</th>
+                            <th>{{ trans('general.id') }}</th>
+                            <th>{{ trans('general.name') }}</th>
+                            <th>{{ trans('general.slug_ar') }}</th>
+                            <th>{{ trans('general.slug_en') }}</th>
+                            <th>{{ trans('general.charge') }}</th>
+                            <th>{{ trans('general.active') }}</th>
+                            <th>{{ trans('general.is_local') }}</th>
+                            <th>{{ trans('general.actions') }}</th>
                         </tr>
                     </tfoot>
                     <tbody>
@@ -62,13 +62,13 @@
                             </td>
                             <td>
                                 <div class="btn-group">
-                                    <button type="button" class="btn green btn-xs btn-outline dropdown-toggle" data-toggle="dropdown"> Actions
+                                    <button type="button" class="btn green btn-xs btn-outline dropdown-toggle" data-toggle="dropdown"> {{ trans('general.actions') }}
                                         <i class="fa fa-angle-down"></i>
                                     </button>
                                     <ul class="dropdown-menu pull-right" role="menu">
                                         <li>
                                             <a href="{{ route('backend.package.edit',$element->id) }}">
-                                                <i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                <i class="fa fa-fw fa-edit"></i> {{ trans('general.edit') }}</a>
                                         </li>
                                         <li>
                                             <a data-toggle="modal" href="#" data-target="#basic" data-title="Delete" data-content="Are you sure you want to delete {{ $element->name  }}? " data-form_id="delete-{{ $element->id }}">
@@ -77,7 +77,7 @@
                                                 @csrf
                                                 <input type="hidden" name="_method" value="delete" />
                                                 <button type="submit" class="btn btn-del hidden">
-                                                    <i class="fa fa-fw fa-times-circle"></i> delete
+                                                    <i class="fa fa-fw fa-times-circle"></i> {{ trans('general.delete') }}
                                                 </button>
                                             </form>
                                         </li>

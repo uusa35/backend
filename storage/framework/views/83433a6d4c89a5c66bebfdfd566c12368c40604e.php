@@ -22,26 +22,26 @@
                 <table id="dataTable" class="table table-striped table-bordered table-hover" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>Id</th>
-                            <th>url</th>
-                            <th>order</th>
-                            <th>image</th>
-                            <th>active</th>
-                            <th>Created At</th>
-                            <th>file path</th>
-                            <th>Action</th>
+                            <th><?php echo e(trans('general.id')); ?></th>
+                            <th><?php echo e(trans('general.url')); ?></th>
+                            <th><?php echo e(trans('general.order')); ?></th>
+                            <th><?php echo e(trans('general.image')); ?></th>
+                            <th><?php echo e(trans('general.active')); ?></th>
+                            <th><?php echo e(trans('general.created_at')); ?></th>
+                            <th><?php echo e(trans('general.file_path')); ?></th>
+                            <th><?php echo e(trans('general.actions')); ?></th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
-                            <th>Id</th>
-                            <th>url</th>
-                            <th>order</th>
-                            <th>active</th>
-                            <th>image</th>
-                            <th>Created At</th>
-                            <th>file path</th>
-                            <th>Action</th>
+                            <th><?php echo e(trans('general.id')); ?></th>
+                            <th><?php echo e(trans('general.url')); ?></th>
+                            <th><?php echo e(trans('general.order')); ?></th>
+                            <th><?php echo e(trans('general.image')); ?></th>
+                            <th><?php echo e(trans('general.active')); ?></th>
+                            <th><?php echo e(trans('general.created_at')); ?></th>
+                            <th><?php echo e(trans('general.file_path')); ?></th>
+                            <th><?php echo e(trans('general.actions')); ?></th>
                         </tr>
                     </tfoot>
                     <tbody>
@@ -69,17 +69,18 @@
                             </td>
                             <td>
                                 <div class="btn-group pull-right">
-                                    <button type="button" class="btn green btn-sm btn-outline dropdown-toggle" data-toggle="dropdown"> Actions
+                                    <button type="button" class="btn green btn-sm btn-outline dropdown-toggle" data-toggle="dropdown"> <?php echo e(trans('general.actions')); ?>
+
                                         <i class="fa fa-angle-down"></i>
                                     </button>
                                     <ul class="dropdown-menu pull-right" role="menu">
                                         <li>
                                             <a href="<?php echo e(route('backend.admin.slide.edit',$element->id)); ?>">
-                                                <i class="fa fa-fw fa-user"></i>edit</a>
+                                                <i class="fa fa-fw fa-user"></i><?php echo e(trans('general.edit')); ?></a>
                                         </li>
                                         <li>
                                             <a href="<?php echo e(route('backend.activate',['model' => 'slide','id' => $element->id])); ?>">
-                                                <i class="fa fa-fw fa-check-circle"></i> toggle active</a>
+                                                <i class="fa fa-fw fa-check-circle"></i> <?php echo e(trans('general.toggle_active')); ?></a>
                                         </li>
                                         <li>
                                             <form method="post" action="<?php echo e(route('backend.admin.slide.destroy',$element->id)); ?>">
@@ -87,7 +88,8 @@
 
                                                 <input type="hidden" name="_method" value="delete" />
                                                 <button type="submit" class="btn btn-outline btn-sm red">
-                                                    <i class="fa fa-remove"></i>delete slide
+                                                    <i class="fa fa-remove"></i><?php echo e(trans('general.delete')); ?>
+
                                                 </button>
                                             </form>
                                         </li>

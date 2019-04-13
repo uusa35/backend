@@ -629,7 +629,19 @@ return array(
     'show_on_individual' => 'show_on_individual',
     'splash' => 'splash',
     'caption' => 'caption',
-    'visible' => 'visible'
+    'visible' => 'visible',
+    'day' => 'day',
+    'day_name_ar' => 'day_name_ar',
+    'day_name_en' => 'day_name_en',
+    'day_no' => 'day_no',
+    'index_timing' => 'index_timing',
+    'index_day ' => 'index_day',
+    'start' => 'start',
+    'end' => 'end',
+    'is_off' => 'is_off',
+    'file_path' => 'file_path',
+    'settings' => 'settings'
+
 
 
 

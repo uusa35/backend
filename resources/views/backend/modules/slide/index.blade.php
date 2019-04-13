@@ -22,26 +22,26 @@
                 <table id="dataTable" class="table table-striped table-bordered table-hover" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>Id</th>
-                            <th>url</th>
-                            <th>order</th>
-                            <th>image</th>
-                            <th>active</th>
-                            <th>Created At</th>
-                            <th>file path</th>
-                            <th>Action</th>
+                            <th>{{ trans('general.id') }}</th>
+                            <th>{{ trans('general.url') }}</th>
+                            <th>{{ trans('general.order') }}</th>
+                            <th>{{ trans('general.image') }}</th>
+                            <th>{{ trans('general.active') }}</th>
+                            <th>{{ trans('general.created_at') }}</th>
+                            <th>{{ trans('general.file_path') }}</th>
+                            <th>{{ trans('general.actions') }}</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
-                            <th>Id</th>
-                            <th>url</th>
-                            <th>order</th>
-                            <th>active</th>
-                            <th>image</th>
-                            <th>Created At</th>
-                            <th>file path</th>
-                            <th>Action</th>
+                            <th>{{ trans('general.id') }}</th>
+                            <th>{{ trans('general.url') }}</th>
+                            <th>{{ trans('general.order') }}</th>
+                            <th>{{ trans('general.image') }}</th>
+                            <th>{{ trans('general.active') }}</th>
+                            <th>{{ trans('general.created_at') }}</th>
+                            <th>{{ trans('general.file_path') }}</th>
+                            <th>{{ trans('general.actions') }}</th>
                         </tr>
                     </tfoot>
                     <tbody>
@@ -68,24 +68,24 @@
                             </td>
                             <td>
                                 <div class="btn-group pull-right">
-                                    <button type="button" class="btn green btn-sm btn-outline dropdown-toggle" data-toggle="dropdown"> Actions
+                                    <button type="button" class="btn green btn-sm btn-outline dropdown-toggle" data-toggle="dropdown"> {{ trans('general.actions') }}
                                         <i class="fa fa-angle-down"></i>
                                     </button>
                                     <ul class="dropdown-menu pull-right" role="menu">
                                         <li>
                                             <a href="{{ route('backend.admin.slide.edit',$element->id) }}">
-                                                <i class="fa fa-fw fa-user"></i>edit</a>
+                                                <i class="fa fa-fw fa-user"></i>{{ trans('general.edit') }}</a>
                                         </li>
                                         <li>
                                             <a href="{{ route('backend.activate',['model' => 'slide','id' => $element->id]) }}">
-                                                <i class="fa fa-fw fa-check-circle"></i> toggle active</a>
+                                                <i class="fa fa-fw fa-check-circle"></i> {{ trans('general.toggle_active') }}</a>
                                         </li>
                                         <li>
                                             <form method="post" action="{{ route('backend.admin.slide.destroy',$element->id) }}">
                                                 {{ csrf_field() }}
                                                 <input type="hidden" name="_method" value="delete" />
                                                 <button type="submit" class="btn btn-outline btn-sm red">
-                                                    <i class="fa fa-remove"></i>delete slide
+                                                    <i class="fa fa-remove"></i>{{ trans('general.delete') }}
                                                 </button>
                                             </form>
                                         </li>
