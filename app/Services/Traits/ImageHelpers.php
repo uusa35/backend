@@ -167,13 +167,13 @@ trait ImageHelpers
                     foreach ($request[$inputName] as $image) {
                         $imagePath = $this->saveImageForGallery($image, $dimensions, $ratio, $sizes, $model);
                         $model->images()->create([
-                            'path' => $imagePath,
+                            'image' => $imagePath,
                         ]);
                     }
                 } else {
                     $imagePath = $this->saveImageForGallery($request->images[0], $dimensions, $ratio, $sizes, $model);
                     return $model->images()->create([
-                        'path' => $imagePath,
+                        'image' => $imagePath,
                     ]);
                 }
             } else {
@@ -192,21 +192,39 @@ trait ImageHelpers
         $img->save(storage_path('app/public/uploads/images/' . $sizeType . '/' . $imagePath));
     }
 
-    public function saveImageForGallery($image, $dimensions, $ration, $sizes, $model)
+    public function saveImageForGallery($image, $dimensions, $ratio, $sizes, $model)
     {
         $imagePath = $image->store('public/uploads/images');
         $imagePath = str_replace('public/uploads/images/', '', $imagePath);
         $img = Image::make(public_path('storage/uploads/images/' . $imagePath));
         foreach ($sizes as $key => $value) {
             if ($value === 'large') {
-                $img->resize($dimensions[0], $dimensions[1]);
-                $img->save(public_path('storage/uploads/images/' . $value . '/' . $imagePath));
+                if ($ratio) {
+                    $img->resize($dimensions[0], null, function ($constraint) {
+                        $constraint->aspectRatio();
+                    });
+                } else {
+                    $img->resize($dimensions[0], $dimensions[1]);
+                }
+                $img->save(storage_path('app/public/uploads/images/' . $value . '/' . $imagePath));
             } elseif ($value === 'medium') {
-                $img->resize($dimensions[0] / 2, $dimensions[1] / 2);
-                $img->save(public_path('storage/uploads/images/' . $value . '/' . $imagePath));
+                if ($ratio) {
+                    $img->resize($dimensions[0], null, function ($constraint) {
+                        $constraint->aspectRatio();
+                    });
+                } else {
+                    $img->resize($dimensions[0] / 2, $dimensions[0] / 2);
+                }
+                $img->save(storage_path('app/public/uploads/images/' . $value . '/' . $imagePath));
             } elseif ($value === 'thumbnail') {
-                $img->resize('292', '347');
-                $img->save(public_path('storage/uploads/images/' . $value . '/' . $imagePath));
+                if ($ratio) {
+                    $img->resize('300', null, function ($constraint) {
+                        $constraint->aspectRatio();
+                    });
+                } else {
+                    $img->resize($dimensions[0] / 3, $dimensions[0] / 3);
+                }
+                $img->save(storage_path('app/public/uploads/images/' . $value . '/' . $imagePath));
             }
         }
         Storage::delete(public_path('storage/uploads/images/' . $imagePath));

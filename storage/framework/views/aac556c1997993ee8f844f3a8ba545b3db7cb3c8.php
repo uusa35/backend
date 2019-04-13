@@ -144,7 +144,7 @@
                                             <label for="weight" class="control-label"><?php echo e(trans('general.weight')); ?>
 
                                                 *</label>
-                                            <input id="weight" type="number" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.weight')); ?>" name="weight" value="<?php echo e(old('weight')); ?>" placeholder="<?php echo e(trans('general.weight')); ?>" required autofocus>
+                                            <input id="weight" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.weight')); ?>" name="weight" value="<?php echo e(old('weight')); ?>" placeholder="<?php echo e(trans('general.weight')); ?>" required autofocus>
                                             <?php if($errors->has('weight')): ?>
                                             <span class="help-block">
                                                 <strong>
