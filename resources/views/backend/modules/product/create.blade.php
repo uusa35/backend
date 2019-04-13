@@ -145,7 +145,7 @@
                                         <div class="form-group{{ $errors->has('weight') ? ' has-error' : '' }}">
                                             <label for="weight" class="control-label">{{ trans('general.weight') }}
                                                 *</label>
-                                            <input id="weight" type="number" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.weight') }}" name="weight" value="{{ old('weight') }}" placeholder="{{ trans('general.weight') }}" required autofocus>
+                                            <input id="weight" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.weight') }}" name="weight" value="{{ old('weight') }}" placeholder="{{ trans('general.weight') }}" required autofocus>
                                             @if ($errors->has('weight'))
                                             <span class="help-block">
                                                 <strong>
