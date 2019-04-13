@@ -61,9 +61,8 @@ class ProductController extends Controller
             $date = str_replace('-', '', $request->end_sale);
             $date = Carbon::parse($date)->toDateTimeString();
         }
-        $element = Product::create($request->except(['_token', 'image', 'categories', 'tags', 'end_sale','start_sale']));
+        $element = Product::create($request->except(['_token', 'image', 'categories', 'tags', 'end_sale', 'start_sale']));
         if ($element) {
-            dd($element);
             if ($date) {
                 $element->update(['end_sale' => $date]);
             }
@@ -75,7 +74,11 @@ class ProductController extends Controller
             if ($request->hasFile('size_chart_image')) {
                 $this->saveMimes($element, $request, ['size_chart_image'], ['500', '500'], false);
             }
-            return redirect()->route('backend.attribute.create', ['product_id' => $element->id, 'type' => 'product'])->with('success', 'product saved.');
+            if ($element->has_attributes) {
+                return redirect()->route('backend.attribute.create', ['product_id' => $element->id, 'type' => 'product'])->with('success', 'product saved.');
+            }
+            return reidrect()->route('backend.product.index')->with('success',trans('message.product_created_successfully'));
+
         }
         return redirect()->back()->with('error', 'unknown error');
     }
