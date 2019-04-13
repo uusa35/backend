@@ -61,13 +61,13 @@ class ProductController extends Controller
             $date = str_replace('-', '', $request->end_sale);
             $date = Carbon::parse($date)->toDateTimeString();
         }
-        $element = Product::create($request->except(['_token', 'image', 'categories', 'tags', 'brands', 'end_sale']));
+        $element = Product::create($request->except(['_token', 'image', 'categories', 'tags', 'end_sale','start_sale']));
         if ($element) {
+            dd($element);
             if ($date) {
                 $element->update(['end_sale' => $date]);
             }
             $element->tags()->sync($request->tags);
-            $element->brands()->sync($request->brands);
             $element->categories()->sync($request->categories);
             if ($request->hasFile('image')) {
                 $this->saveMimes($element, $request, ['image'], ['1080', '1440'], true);

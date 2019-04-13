@@ -111,7 +111,7 @@
                                         <div class="form-group{{ $errors->has('delivery_time') ? ' has-error' : '' }}">
                                             <label for="delivery_time" class="control-label">{{ trans('general.delivery_time') }}
                                                 *</label>
-                                            <input id="delivery_time" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.delivery_time') }}" name="delivery_time" value="{{ old('delivery_time') }}" placeholder="{{ trans('general.delivery_time') }}" required autofocus>
+                                            <input id="delivery_time" type="number" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.delivery_time') }}" name="delivery_time" value="{{ old('delivery_time') }}" placeholder="{{ trans('general.delivery_time') }}" required autofocus>
                                             @if ($errors->has('delivery_time'))
                                             <span class="help-block">
                                                 <strong>
@@ -145,7 +145,7 @@
                                         <div class="form-group{{ $errors->has('weight') ? ' has-error' : '' }}">
                                             <label for="weight" class="control-label">{{ trans('general.weight') }}
                                                 *</label>
-                                            <input id="weight" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.weight') }}" name="weight" value="{{ old('weight') }}" placeholder="{{ trans('general.weight') }}" required autofocus>
+                                            <input id="weight" type="number" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.weight') }}" name="weight" value="{{ old('weight') }}" placeholder="{{ trans('general.weight') }}" required autofocus>
                                             @if ($errors->has('weight'))
                                             <span class="help-block">
                                                 <strong>
@@ -166,10 +166,14 @@
                                         <div class="form-group">
                                             <label for="single" class="control-label">{{ trans('general.owner') }}
                                                 *</label>
+<<<<<<< HEAD
                                             <select id="" name="user_id" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.owner') }}">
+=======
+                                            <select name="user_id" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.owner') }}">
+>>>>>>> master
                                                 <option value="">{{ trans('general.choose_user') }}</option>
                                                 @foreach($users as $user)
-                                                <option value="{{ $user->slug_en }}">{{ $user->slug_en }}</option>
+                                                <option value="{{ $user->id }}">{{ $user->slug_en }}</option>
                                                 @endforeach
 
 
@@ -183,10 +187,10 @@
                                         <div class="form-group">
                                             <label for="single" class="control-label">{{ trans('general.shipment_package') }}
                                                 *</label>
-                                            <select id="" name="shipment_id" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.shipment_package') }}" required>
+                                            <select id="" name="shipment_package_id" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.shipment_package') }}" required>
                                                 <option value="">{{ trans('choose_product_package_grade') }}</option>
                                                 @foreach($shipment_packages as $shipment_package)
-                                                <option value="{{ $shipment_package->slug_en }}">{{ $shipment_package->slug_en }}</option>
+                                                <option value="{{ $shipment_package->id }}">{{ $shipment_package->slug_en }}</option>
                                                 @endforeach
                                             </select>
                                             {{-- <span class="help-block">
@@ -418,7 +422,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group{{ $errors->has('video_url_one') ? ' has-error' : '' }}">
                                         <label for="video_url_one" class="control-label">{{ trans('general.video_url_one') }}</label>
-                                        <input id="video_url_one" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.video_url_one') }}" name="video_url_one" value="{{ old('video_url_one') }}" placeholder="{{ trans('general.video_url_one') }}" autofocus>
+                                        <input id="video_url_one" type="url" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.video_url_one') }}" name="video_url_one" value="{{ old('video_url_one') }}" placeholder="{{ trans('general.video_url_one') }}" autofocus>
                                         @if ($errors->has('video_url_one'))
                                         <span class="help-block">
                                             <strong>
@@ -434,7 +438,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group{{ $errors->has('video_url_two') ? ' has-error' : '' }}">
                                         <label for="video_url_two" class="control-label">{{ trans('general.video_url_two') }}</label>
-                                        <input id="video_url_two" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.video_url_two') }}" name="video_url_two" value="{{ old('video_url_two') }}" placeholder="{{ trans('general.video_url_two') }}" autofocus>
+                                        <input id="video_url_two" type="url" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.video_url_two') }}" name="video_url_two" value="{{ old('video_url_two') }}" placeholder="{{ trans('general.video_url_two') }}" autofocus>
                                         @if ($errors->has('video_url_two'))
                                         <span class="help-block">
                                             <strong>
@@ -474,7 +478,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group{{ $errors->has('quantity') ? ' has-error' : '' }}">
                                         <label for="quantity" class="control-label">{{ trans('general.quantity') }}</label>
-                                        <input id="quantity" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.quantity') }}" name="quantity" maxlength="5" value="{{ old('quantity') }}" placeholder="{{ trans('general.quantity') }}" autofocus>
+                                        <input id="quantity" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.quantity') }}" name="qty" maxlength="5" value="{{ old('quantity') }}" placeholder="{{ trans('general.quantity') }}" autofocus>
                                         @if ($errors->has('quantity'))
                                         <span class="help-block">
                                             <strong>
@@ -540,10 +544,10 @@
                                     <div class="form-group">
                                         <label class="control-label sbold">{{ trans('general.home_delivery_available') }}</label></br>
                                         <label class="radio-inline">
-                                            <input type="radio" name="home_delivery_available" id="optionsRadios3" value="1">
+                                            <input type="radio" name="home_delivery_availability" id="optionsRadios3" value="1">
                                             {{ trans('general.home_delivery_available') }}</label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="home_delivery_available" id="optionsRadios4" checked value="0">
+                                            <input type="radio" name="home_delivery_availability" id="optionsRadios4" checked value="0">
                                             {{ trans('general.not_home_delivery_available') }}</label>
                                     </div>
                                     <span class="help-block">
@@ -554,10 +558,10 @@
                                     <div class="form-group">
                                         <label class="control-label sbold">{{ trans('general.shipment_available') }}</label></br>
                                         <label class="radio-inline">
-                                            <input type="radio" name="shipment_available" id="optionsRadios3" value="1">
+                                            <input type="radio" name="shipment_availability" id="optionsRadios3" value="1">
                                             {{ trans('general.shipment_available') }}</label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="shipment_available" id="optionsRadios4" checked value="0">
+                                            <input type="radio" name="shipment_availability" id="optionsRadios4" checked value="0">
                                             {{ trans('general.not_shipment_available') }}</label>
                                     </div>
                                     <span class="help-block">
@@ -584,13 +588,13 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="control-label sbold">{{ trans('general.on_sale_on_homepage') }}</label></br>
+                                        <label class="control-label sbold">{{ trans('general.on_sale') }}</label></br>
                                         <label class="radio-inline">
-                                            <input type="radio" name="on_sale_on_homepage" id="optionsRadios3" value="1">
+                                            <input type="radio" name="on_sale" id="optionsRadios3" value="1">
                                             {{ trans('general.on_sale_on_homepage') }}</label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="on_sale_on_homepage" id="optionsRadios4" checked value="0">
-                                            {{ trans('general.not_on_sale_on_homepage') }}</label>
+                                            <input type="radio" name="on_sale" id="optionsRadios4" checked value="0">
+                                            {{ trans('general.on_sale') }}</label>
                                     </div>
                                     <span class="help-block">
                                         <strong>{{ trans('message.on_sale_homepage_instructions') }}</strong>
@@ -600,10 +604,10 @@
                                     <div class="form-group">
                                         <label class="control-label sbold">{{ trans('general.on_homepage') }}</label></br>
                                         <label class="radio-inline">
-                                            <input type="radio" name="on_homepage" id="optionsRadios3" value="1">
+                                            <input type="radio" name="on_home" id="optionsRadios3" value="1">
                                             {{ trans('general.on_homepage') }}</label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="on_homepage" id="optionsRadios4" checked value="0">
+                                            <input type="radio" name="on_home" id="optionsRadios4" checked value="0">
                                             {{ trans('general.not_on_homepage') }}</label>
                                     </div>
                                     <span class="help-block">
