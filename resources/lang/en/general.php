@@ -495,7 +495,8 @@ company company abaia abaya abayat',
   'show_on_individual' => 'show_on_individual',
   'splash' => 'splash',
   'caption' => 'caption',
-  'visible' => 'visible'
+  'visible' => 'visible',
+  'day' => 'day'
 
 
 

@@ -110,7 +110,7 @@
                                             <label for="delivery_time" class="control-label"><?php echo e(trans('general.delivery_time')); ?>
 
                                                 *</label>
-                                            <input id="delivery_time" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.delivery_time')); ?>" name="delivery_time" value="<?php echo e(old('delivery_time')); ?>" placeholder="<?php echo e(trans('general.delivery_time')); ?>" required autofocus>
+                                            <input id="delivery_time" type="number" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.delivery_time')); ?>" name="delivery_time" value="<?php echo e(old('delivery_time')); ?>" placeholder="<?php echo e(trans('general.delivery_time')); ?>" required autofocus>
                                             <?php if($errors->has('delivery_time')): ?>
                                             <span class="help-block">
                                                 <strong>
@@ -144,7 +144,7 @@
                                             <label for="weight" class="control-label"><?php echo e(trans('general.weight')); ?>
 
                                                 *</label>
-                                            <input id="weight" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.weight')); ?>" name="weight" value="<?php echo e(old('weight')); ?>" placeholder="<?php echo e(trans('general.weight')); ?>" required autofocus>
+                                            <input id="weight" type="number" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.weight')); ?>" name="weight" value="<?php echo e(old('weight')); ?>" placeholder="<?php echo e(trans('general.weight')); ?>" required autofocus>
                                             <?php if($errors->has('weight')): ?>
                                             <span class="help-block">
                                                 <strong>
@@ -165,10 +165,10 @@
                                             <label for="single" class="control-label"><?php echo e(trans('general.owner')); ?>
 
                                                 *</label>
-                                            <select id="" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.owner')); ?>">
+                                            <select name="user_id" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.owner')); ?>">
                                                 <option value=""><?php echo e(trans('general.choose_user')); ?></option>
                                                 <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                <option value="<?php echo e($user->slug_en); ?>"><?php echo e($user->slug_en); ?></option>
+                                                <option value="<?php echo e($user->id); ?>"><?php echo e($user->slug_en); ?></option>
                                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 
@@ -181,10 +181,10 @@
                                             <label for="single" class="control-label"><?php echo e(trans('general.shipment_package')); ?>
 
                                                 *</label>
-                                            <select id="" name="shipment_id" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.shipment_package')); ?>" required>
+                                            <select id="" name="shipment_package_id" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.shipment_package')); ?>" required>
                                                 <option value=""><?php echo e(trans('choose_product_package_grade')); ?></option>
                                                 <?php $__currentLoopData = $shipment_packages; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $shipment_package): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                <option value="<?php echo e($shipment_package->slug_en); ?>"><?php echo e($shipment_package->slug_en); ?></option>
+                                                <option value="<?php echo e($shipment_package->id); ?>"><?php echo e($shipment_package->slug_en); ?></option>
                                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                             </select>
                                             
@@ -206,6 +206,56 @@
                                     </div>
 
                                 </div>
+
+                                <div class="col-lg-12">
+                                    <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('isAdminOrAbove')): ?>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="single" class="control-label"><?php echo e(trans('general.owner')); ?>
+
+                                                *</label>
+                                            <select name="user_id" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.owner')); ?>">
+                                                <option value=""><?php echo e(trans('general.choose_user')); ?></option>
+                                                <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                <option value="<?php echo e($user->id); ?>"><?php echo e($user->slug_en); ?></option>
+                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+
+                                            </select>
+                                            
+                                        </div>
+                                    </div>
+                                    <?php endif; ?>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="single" class="control-label"><?php echo e(trans('general.shipment_package')); ?>
+
+                                                *</label>
+                                            <select id="" name="shipment_package_id" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.shipment_package')); ?>" required>
+                                                <option value=""><?php echo e(trans('choose_product_package_grade')); ?></option>
+                                                <?php $__currentLoopData = $shipment_packages; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $shipment_package): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                <option value="<?php echo e($shipment_package->id); ?>"><?php echo e($shipment_package->slug_en); ?></option>
+                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                            </select>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="brand_id" class="control-label"><?php echo e(trans('general.brand')); ?>
+
+                                                *</label>
+                                            <select id="" name="brand_id" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.brand')); ?>">
+                                                <option value=""><?php echo e(trans('general.choose_brand')); ?></option>
+                                                <?php $__currentLoopData = $brands; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $brand): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                <option value="<?php echo e($brand->id); ?>"><?php echo e($brand->slug); ?></option>
+                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                            </select>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+
 
 
                                 <div class="col-lg-12">
@@ -297,7 +347,7 @@
                                         <label for="single" class="control-label"><?php echo e(trans('general.color')); ?>
 
                                             *</label>
-                                        <select id="" name="color_id" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.color')); ?>" required>
+                                        <select id="color_id" name="color_id" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.color')); ?>" required>
                                             <option value=""><?php echo e(trans('choose_color')); ?></option>
                                             <?php $__currentLoopData = $colors; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $color): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                             <option value="<?php echo e($color->name); ?>"><?php echo e($color->name); ?></option>
@@ -311,7 +361,7 @@
                                         <label for="size_id" class="control-label"><?php echo e(trans('general.size')); ?>
 
                                             *</label>
-                                        <select id="" name="size_id" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.brand')); ?>">
+                                        <select id="size_id" name="size_id" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.size')); ?>">
                                             <option value=""><?php echo e(trans('general.size_id')); ?></option>
                                             <?php $__currentLoopData = $sizes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $size): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                             <option value="<?php echo e($size->name); ?>"><?php echo e($size->name); ?></option>
@@ -408,7 +458,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group<?php echo e($errors->has('video_url_one') ? ' has-error' : ''); ?>">
                                         <label for="video_url_one" class="control-label"><?php echo e(trans('general.video_url_one')); ?></label>
-                                        <input id="video_url_one" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.video_url_one')); ?>" name="video_url_one" value="<?php echo e(old('video_url_one')); ?>" placeholder="<?php echo e(trans('general.video_url_one')); ?>" autofocus>
+                                        <input id="video_url_one" type="url" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.video_url_one')); ?>" name="video_url_one" value="<?php echo e(old('video_url_one')); ?>" placeholder="<?php echo e(trans('general.video_url_one')); ?>" autofocus>
                                         <?php if($errors->has('video_url_one')): ?>
                                         <span class="help-block">
                                             <strong>
@@ -423,7 +473,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group<?php echo e($errors->has('video_url_two') ? ' has-error' : ''); ?>">
                                         <label for="video_url_two" class="control-label"><?php echo e(trans('general.video_url_two')); ?></label>
-                                        <input id="video_url_two" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.video_url_two')); ?>" name="video_url_two" value="<?php echo e(old('video_url_two')); ?>" placeholder="<?php echo e(trans('general.video_url_two')); ?>" autofocus>
+                                        <input id="video_url_two" type="url" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.video_url_two')); ?>" name="video_url_two" value="<?php echo e(old('video_url_two')); ?>" placeholder="<?php echo e(trans('general.video_url_two')); ?>" autofocus>
                                         <?php if($errors->has('video_url_two')): ?>
                                         <span class="help-block">
                                             <strong>
@@ -458,7 +508,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group<?php echo e($errors->has('quantity') ? ' has-error' : ''); ?>">
                                         <label for="quantity" class="control-label"><?php echo e(trans('general.quantity')); ?></label>
-                                        <input id="quantity" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.quantity')); ?>" name="quantity" maxlength="5" value="<?php echo e(old('quantity')); ?>" placeholder="<?php echo e(trans('general.quantity')); ?>" autofocus>
+                                        <input id="quantity" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.quantity')); ?>" name="qty" maxlength="5" value="<?php echo e(old('quantity')); ?>" placeholder="<?php echo e(trans('general.quantity')); ?>" autofocus>
                                         <?php if($errors->has('quantity')): ?>
                                         <span class="help-block">
                                             <strong>
@@ -523,10 +573,10 @@
                                     <div class="form-group">
                                         <label class="control-label sbold"><?php echo e(trans('general.home_delivery_available')); ?></label></br>
                                         <label class="radio-inline">
-                                            <input type="radio" name="home_delivery_available" id="optionsRadios3" value="1">
+                                            <input type="radio" name="home_delivery_availability" id="optionsRadios3" value="1">
                                             <?php echo e(trans('general.home_delivery_available')); ?></label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="home_delivery_available" id="optionsRadios4" checked value="0">
+                                            <input type="radio" name="home_delivery_availability" id="optionsRadios4" checked value="0">
                                             <?php echo e(trans('general.not_home_delivery_available')); ?></label>
                                     </div>
                                     <span class="help-block">
@@ -537,10 +587,10 @@
                                     <div class="form-group">
                                         <label class="control-label sbold"><?php echo e(trans('general.shipment_available')); ?></label></br>
                                         <label class="radio-inline">
-                                            <input type="radio" name="shipment_available" id="optionsRadios3" value="1">
+                                            <input type="radio" name="shipment_availability" id="optionsRadios3" value="1">
                                             <?php echo e(trans('general.shipment_available')); ?></label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="shipment_available" id="optionsRadios4" checked value="0">
+                                            <input type="radio" name="shipment_availability" id="optionsRadios4" checked value="0">
                                             <?php echo e(trans('general.not_shipment_available')); ?></label>
                                     </div>
                                     <span class="help-block">
@@ -567,13 +617,13 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="control-label sbold"><?php echo e(trans('general.on_sale_on_homepage')); ?></label></br>
+                                        <label class="control-label sbold"><?php echo e(trans('general.on_sale')); ?></label></br>
                                         <label class="radio-inline">
-                                            <input type="radio" name="on_sale_on_homepage" id="optionsRadios3" value="1">
+                                            <input type="radio" name="on_sale" id="optionsRadios3" value="1">
                                             <?php echo e(trans('general.on_sale_on_homepage')); ?></label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="on_sale_on_homepage" id="optionsRadios4" checked value="0">
-                                            <?php echo e(trans('general.not_on_sale_on_homepage')); ?></label>
+                                            <input type="radio" name="on_sale" id="optionsRadios4" checked value="0">
+                                            <?php echo e(trans('general.on_sale')); ?></label>
                                     </div>
                                     <span class="help-block">
                                         <strong><?php echo e(trans('message.on_sale_homepage_instructions')); ?></strong>
@@ -583,10 +633,10 @@
                                     <div class="form-group">
                                         <label class="control-label sbold"><?php echo e(trans('general.on_homepage')); ?></label></br>
                                         <label class="radio-inline">
-                                            <input type="radio" name="on_homepage" id="optionsRadios3" value="1">
+                                            <input type="radio" name="on_home" id="optionsRadios3" value="1">
                                             <?php echo e(trans('general.on_homepage')); ?></label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="on_homepage" id="optionsRadios4" checked value="0">
+                                            <input type="radio" name="on_home" id="optionsRadios4" checked value="0">
                                             <?php echo e(trans('general.not_on_homepage')); ?></label>
                                     </div>
                                     <span class="help-block">
