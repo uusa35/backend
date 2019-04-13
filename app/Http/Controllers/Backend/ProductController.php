@@ -63,21 +63,15 @@ class ProductController extends Controller
         }
         $element = Product::create($request->except(['_token', 'image', 'categories', 'tags', 'end_sale', 'start_sale']));
         if ($element) {
-            if ($date) {
-                $element->update(['end_sale' => $date]);
-            }
+            $date ? $element->update(['end_sale' => $date]) : null;
             $element->tags()->sync($request->tags);
             $element->categories()->sync($request->categories);
-            if ($request->hasFile('image')) {
-                $this->saveMimes($element, $request, ['image'], ['1080', '1440'], true);
-            }
-            if ($request->hasFile('size_chart_image')) {
-                $this->saveMimes($element, $request, ['size_chart_image'], ['500', '500'], false);
-            }
+            $request->hasFile('image') ? $this->saveMimes($element, $request, ['image'], ['1080', '1440'], true) : null;
+            $request->hasFile('size_chart_image') ? $this->saveMimes($element, $request, ['size_chart_image'], ['500', '500'], false) : null;
             if ($element->has_attributes) {
                 return redirect()->route('backend.attribute.create', ['product_id' => $element->id, 'type' => 'product'])->with('success', 'product saved.');
             }
-            return reidrect()->route('backend.product.index')->with('success',trans('message.product_created_successfully'));
+            return redirect()->route('backend.product.index')->with('success', trans('message.product_created_successfully'));
 
         }
         return redirect()->back()->with('error', 'unknown error');
