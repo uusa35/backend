@@ -166,7 +166,7 @@
                                         <div class="form-group">
                                             <label for="single" class="control-label">{{ trans('general.owner') }}
                                                 *</label>
-                                            <select id="" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.owner') }}">
+                                            <select name="user_id" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.owner') }}">
                                                 <option value="">{{ trans('general.choose_user') }}</option>
                                                 @foreach($users as $user)
                                                 <option value="{{ $user->slug_en }}">{{ $user->slug_en }}</option>

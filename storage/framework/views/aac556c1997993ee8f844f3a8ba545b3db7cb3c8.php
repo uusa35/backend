@@ -165,7 +165,7 @@
                                             <label for="single" class="control-label"><?php echo e(trans('general.owner')); ?>
 
                                                 *</label>
-                                            <select id="" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.owner')); ?>">
+                                            <select name="user_id" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.owner')); ?>">
                                                 <option value=""><?php echo e(trans('general.choose_user')); ?></option>
                                                 <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                 <option value="<?php echo e($user->slug_en); ?>"><?php echo e($user->slug_en); ?></option>
