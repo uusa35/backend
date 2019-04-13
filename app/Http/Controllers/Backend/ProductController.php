@@ -57,16 +57,16 @@ class ProductController extends Controller
      */
     public function store(ProductStore $request)
     {
-        if ($request->has('end_sale')) {
-            $date = str_replace('-', '', $request->end_sale);
-            $date = Carbon::parse($date)->toDateTimeString();
-        }
-        $element = Product::create($request->except(['_token', 'image', 'categories', 'tags', 'end_sale', 'start_sale']));
+        $end_sale = $request->has('end_sale') ? Carbon::parse(str_replace('-', '', $request->end_sale))->toDateTimeString() : null;
+        $start_sale = $request->has('start_sale') ? Carbon::parse(str_replace('-', '', $request->start_sale))->toDateTimeString() : null;
+        $element = Product::create($request->except(['_token', 'image', 'categories', 'tags','start_sale','end_sale']));
         if ($element) {
-            $date ? $element->update(['end_sale' => $date]) : null;
+            $start_sale ? $element->update(['start_sale' => $start_sale]) : null;
+            $end_sale ? $element->update(['end_sale' => $end_sale]) : null;
             $element->tags()->sync($request->tags);
             $element->categories()->sync($request->categories);
             $request->hasFile('image') ? $this->saveMimes($element, $request, ['image'], ['1080', '1440'], true) : null;
+            $request->has('images') ? $this->saveGallery($element, $request, ['images'], ['1080', '1440'], true) : null;
             $request->hasFile('size_chart_image') ? $this->saveMimes($element, $request, ['size_chart_image'], ['500', '500'], false) : null;
             if ($element->has_attributes) {
                 return redirect()->route('backend.attribute.create', ['product_id' => $element->id, 'type' => 'product'])->with('success', 'product saved.');
