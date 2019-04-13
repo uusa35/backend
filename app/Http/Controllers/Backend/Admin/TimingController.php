@@ -14,14 +14,14 @@ class TimingController extends Controller
 {
     public function index()
     {
-        $elements = Timing::all();
+        $elements = auth()->user()->isAdminOrAbove ? Timing::all() : Timing::active()->get();
         return view('backend.modules.timing.index', compact('elements'));
     }
 
     public function create()
     {
-        $services = Service::all();
-        $users = User::all();
+        $services = auth()->user()->isAdminOrAbove ? Service::active()->get() : auth()->user()->services()->get();
+        $users = User::active()->get();
         $days = Day::all();
         return view('backend.modules.timing.create', compact('services', 'users', 'days'));
     }
