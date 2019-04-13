@@ -204,6 +204,7 @@
                                             
                                         </div>
                                     </div>
+
                                 </div>
 
 
@@ -291,7 +292,34 @@
                         <div class="form-body">
 
                             <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="single" class="control-label"><?php echo e(trans('general.color')); ?>
 
+                                            *</label>
+                                        <select id="" name="color_id" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.color')); ?>" required>
+                                            <option value=""><?php echo e(trans('choose_color')); ?></option>
+                                            <?php $__currentLoopData = $colors; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $color): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                            <option value="<?php echo e($color->name); ?>"><?php echo e($color->name); ?></option>
+                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                        </select>
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="size_id" class="control-label"><?php echo e(trans('general.size')); ?>
+
+                                            *</label>
+                                        <select id="" name="size_id" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.brand')); ?>">
+                                            <option value=""><?php echo e(trans('general.size_id')); ?></option>
+                                            <?php $__currentLoopData = $sizes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $size): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                            <option value="<?php echo e($size->name); ?>"><?php echo e($size->name); ?></option>
+                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                        </select>
+                                        
+                                    </div>
+                                </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="form_control_1"><?php echo e(trans('general.image_chart')); ?></label>

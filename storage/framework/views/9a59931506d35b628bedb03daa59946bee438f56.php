@@ -22,20 +22,20 @@
                 <table id="dataTable" class="table table-striped table-bordered table-hover" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>id</th>
-                            <th>title</th>
-                            <th>description</th>
-                            <th>sent at</th>
-                            
+                            <th><?php echo e(trans('general.id')); ?></th>
+                            <th><?php echo e(trans('general.title')); ?></th>
+                            <th><?php echo e(trans('general.description')); ?></th>
+                            <th><?php echo e(trans('general.sent_at')); ?></th>
+                            <th><?php echo e(trans('general.actions')); ?></th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
-                            <th>id</th>
-                            <th>title</th>
-                            <th>description</th>
-                            <th>sent at</th>
-                            
+                            <th><?php echo e(trans('general.id')); ?></th>
+                            <th><?php echo e(trans('general.title')); ?></th>
+                            <th><?php echo e(trans('general.description')); ?></th>
+                            <th><?php echo e(trans('general.sent_at')); ?></th>
+                            <th><?php echo e(trans('general.actions')); ?></th>
                         </tr>
                     </tfoot>
                     <tbody>

@@ -13,30 +13,30 @@
                     <table id="dataTable" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%">
                         <thead>
                             <tr>
-                                <th>Id</th>
-                                <th>splash</th>
-                                <th>show in home</th>
-                                <th>show in category</th>
-                                <th>show in company</th>
-                                <th>show in individual</th>
-                                <th>image</th>
-                                <th>active</th>
-                                <th>Created At</th>
-                                <th>Action</th>
+                                <th><?php echo e(trans('general.id')); ?></th>
+                                <th><?php echo e(trans('general.splash')); ?></th>
+                                <th><?php echo e(trans('general.show_on_home')); ?></th>
+                                <th><?php echo e(trans('general.show_on_category')); ?></th>
+                                <th><?php echo e(trans('general.show_on_company')); ?></th>
+                                <th><?php echo e(trans('general.show_on_individual')); ?></th>
+                                <th><?php echo e(trans('general.image')); ?></th>
+                                <th><?php echo e(trans('general.active')); ?></th>
+                                <th><?php echo e(trans('general.created_at')); ?></th>
+                                <th><?php echo e(trans('general.actions')); ?></th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-                                <th>Id</th>
-                                <th>splash</th>
-                                <th>show in home</th>
-                                <th>show in category</th>
-                                <th>show in company</th>
-                                <th>show in individual</th>
-                                <th>image</th>
-                                <th>active</th>
-                                <th>Created At</th>
-                                <th>Action</th>
+                                <th><?php echo e(trans('general.id')); ?></th>
+                                <th><?php echo e(trans('general.splash')); ?></th>
+                                <th><?php echo e(trans('general.show_on_home')); ?></th>
+                                <th><?php echo e(trans('general.show_on_category')); ?></th>
+                                <th><?php echo e(trans('general.show_on_company')); ?></th>
+                                <th><?php echo e(trans('general.show_on_individual')); ?></th>
+                                <th><?php echo e(trans('general.image')); ?></th>
+                                <th><?php echo e(trans('general.active')); ?></th>
+                                <th><?php echo e(trans('general.created_at')); ?></th>
+                                <th><?php echo e(trans('general.actions')); ?></th>
                             </tr>
                         </tfoot>
                         <tbody>
@@ -67,13 +67,14 @@
                                 <td><?php echo e($element->created_at->diffForHumans()); ?></td>
                                 <td>
                                     <div class="btn-group pull-right">
-                                        <button type="button" class="btn green btn-sm btn-outline dropdown-toggle" data-toggle="dropdown"> Actions
+                                        <button type="button" class="btn green btn-sm btn-outline dropdown-toggle" data-toggle="dropdown"> <?php echo e(trans('general.actions')); ?>
+
                                             <i class="fa fa-angle-down"></i>
                                         </button>
                                         <ul class="dropdown-menu pull-right" role="menu">
                                             <li>
                                                 <a href="<?php echo e(route('backend.admin.commercial.edit',$element->id)); ?>">
-                                                    <i class="fa fa-fw fa-user"></i>edit</a>
+                                                    <i class="fa fa-fw fa-user"></i><?php echo e(trans('general.edit')); ?></a>
                                             </li>
                                             
                                             <li>
@@ -82,7 +83,8 @@
 
                                                     <input type="hidden" name="_method" value="delete" />
                                                     <button type="submit" class="btn btn-outline btn-sm red">
-                                                        <i class="fa fa-remove"></i>delete commercial
+                                                        <i class="fa fa-remove"></i><?php echo e(trans('general.delete')); ?>
+
                                                     </button>
                                                 </form>
                                             </li>

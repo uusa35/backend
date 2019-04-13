@@ -24,34 +24,34 @@
                 <table id="dataTable" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%">
                     <thead>
                         <tr>
-                            <th>id</th>
-                            <th>name</th>
-                            <th>slug_ar</th>
-                            <th>slug_en</th>
-                            <th>icon</th>
-                            <th>color</th>
-                            <th>caption</th>
-                            <th>is_admin</th>
-                            <th>active</th>
-                            <th>visible</th>
-                            <th>is_company</th>
-                            <th>Action</th>
+                            <th><?php echo e(trans('general.id')); ?></th>
+                            <th><?php echo e(trans('general.name')); ?></th>
+                            <th><?php echo e(trans('general.slug_ar')); ?></th>
+                            <th><?php echo e(trans('general.slug_en')); ?></th>
+                            <th><?php echo e(trans('general.icon')); ?></th>
+                            <th><?php echo e(trans('general.color')); ?></th>
+                            <th><?php echo e(trans('general.caption')); ?></th>
+                            <th><?php echo e(trans('general.is_admin')); ?></th>
+                            <th><?php echo e(trans('general.active')); ?></th>
+                            <th><?php echo e(trans('general.visible')); ?></th>
+                            <th><?php echo e(trans('general.is_company')); ?></th>
+                            <th><?php echo e(trans('general.actions')); ?></th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
-                            <th>id</th>
-                            <th>name</th>
-                            <th>slug_ar</th>
-                            <th>slug_en</th>
-                            <th>icon</th>
-                            <th>color</th>
-                            <th>caption</th>
-                            <th>is_admin</th>
-                            <th>active</th>
-                            <th>visible</th>
-                            <th>is_company</th>
-                            <th>Action</th>
+                            <th><?php echo e(trans('general.id')); ?></th>
+                            <th><?php echo e(trans('general.name')); ?></th>
+                            <th><?php echo e(trans('general.slug_ar')); ?></th>
+                            <th><?php echo e(trans('general.slug_en')); ?></th>
+                            <th><?php echo e(trans('general.icon')); ?></th>
+                            <th><?php echo e(trans('general.color')); ?></th>
+                            <th><?php echo e(trans('general.caption')); ?></th>
+                            <th><?php echo e(trans('general.is_admin')); ?></th>
+                            <th><?php echo e(trans('general.active')); ?></th>
+                            <th><?php echo e(trans('general.visible')); ?></th>
+                            <th><?php echo e(trans('general.is_company')); ?></th>
+                            <th><?php echo e(trans('general.actions')); ?></th>
                         </tr>
                     </tfoot>
                     <tbody>
@@ -81,13 +81,14 @@
                             </td>
                             <td>
                                 <div class="btn-group pull-right">
-                                    <button type="button" class="btn green btn-sm btn-outline dropdown-toggle" data-toggle="dropdown"> Actions
+                                    <button type="button" class="btn green btn-sm btn-outline dropdown-toggle" data-toggle="dropdown"> <?php echo e(trans('general.actions')); ?>
+
                                         <i class="fa fa-angle-down"></i>
                                     </button>
                                     <ul class="dropdown-menu pull-right" role="menu">
                                         <li>
                                             <a href="<?php echo e(route('backend.admin.role.edit',$element->id)); ?>">
-                                                <i class="fa fa-fw fa-user"></i>edit</a>
+                                                <i class="fa fa-fw fa-user"></i><?php echo e(trans('general.edit')); ?></a>
                                         </li>
                                         
                                         <li>
@@ -95,7 +96,8 @@
                                                 <?php echo csrf_field(); ?>
                                                 <input type="hidden" name="_method" value="delete" />
                                                 <button type="submit" class="btn btn-outline btn-sm red">
-                                                    <i class="fa fa-remove"></i>delete
+                                                    <i class="fa fa-remove"></i><?php echo e(trans('general.delete')); ?>
+
                                                 </button>
                                             </form>
                                         </li>

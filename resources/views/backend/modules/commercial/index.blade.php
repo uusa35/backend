@@ -14,30 +14,30 @@
                     <table id="dataTable" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%">
                         <thead>
                             <tr>
-                                <th>Id</th>
-                                <th>splash</th>
-                                <th>show in home</th>
-                                <th>show in category</th>
-                                <th>show in company</th>
-                                <th>show in individual</th>
-                                <th>image</th>
-                                <th>active</th>
-                                <th>Created At</th>
-                                <th>Action</th>
+                                <th>{{ trans('general.id') }}</th>
+                                <th>{{ trans('general.splash') }}</th>
+                                <th>{{ trans('general.show_on_home') }}</th>
+                                <th>{{ trans('general.show_on_category') }}</th>
+                                <th>{{ trans('general.show_on_company') }}</th>
+                                <th>{{ trans('general.show_on_individual') }}</th>
+                                <th>{{ trans('general.image') }}</th>
+                                <th>{{ trans('general.active') }}</th>
+                                <th>{{ trans('general.created_at') }}</th>
+                                <th>{{ trans('general.actions') }}</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-                                <th>Id</th>
-                                <th>splash</th>
-                                <th>show in home</th>
-                                <th>show in category</th>
-                                <th>show in company</th>
-                                <th>show in individual</th>
-                                <th>image</th>
-                                <th>active</th>
-                                <th>Created At</th>
-                                <th>Action</th>
+                                <th>{{ trans('general.id') }}</th>
+                                <th>{{ trans('general.splash') }}</th>
+                                <th>{{ trans('general.show_on_home') }}</th>
+                                <th>{{ trans('general.show_on_category') }}</th>
+                                <th>{{ trans('general.show_on_company') }}</th>
+                                <th>{{ trans('general.show_on_individual') }}</th>
+                                <th>{{ trans('general.image') }}</th>
+                                <th>{{ trans('general.active') }}</th>
+                                <th>{{ trans('general.created_at') }}</th>
+                                <th>{{ trans('general.actions') }}</th>
                             </tr>
                         </tfoot>
                         <tbody>
@@ -68,24 +68,24 @@
                                 <td>{{ $element->created_at->diffForHumans() }}</td>
                                 <td>
                                     <div class="btn-group pull-right">
-                                        <button type="button" class="btn green btn-sm btn-outline dropdown-toggle" data-toggle="dropdown"> Actions
+                                        <button type="button" class="btn green btn-sm btn-outline dropdown-toggle" data-toggle="dropdown"> {{ trans('general.actions') }}
                                             <i class="fa fa-angle-down"></i>
                                         </button>
                                         <ul class="dropdown-menu pull-right" role="menu">
                                             <li>
                                                 <a href="{{ route('backend.admin.commercial.edit',$element->id) }}">
-                                                    <i class="fa fa-fw fa-user"></i>edit</a>
+                                                    <i class="fa fa-fw fa-user"></i>{{ trans('general.edit') }}</a>
                                             </li>
                                             {{--<li>
                                                 <a href="{{ route('backend.activation',['model' => 'commercial','id' => $element->id]) }}">
-                                            <i class="fa fa-fw fa-check-circle"></i> toggle active</a>
+                                            <i class="fa fa-fw fa-check-circle"></i> {{ trans('general.toggle_active') }}</a>
                                             </li>--}}
                                             <li>
                                                 <form method="post" action="{{ route('backend.admin.commercial.destroy',$element->id) }}">
                                                     {{ csrf_field() }}
                                                     <input type="hidden" name="_method" value="delete" />
                                                     <button type="submit" class="btn btn-outline btn-sm red">
-                                                        <i class="fa fa-remove"></i>delete commercial
+                                                        <i class="fa fa-remove"></i>{{ trans('general.delete') }}
                                                     </button>
                                                 </form>
                                             </li>

@@ -621,7 +621,16 @@ return array(
     'is_desktop' => 'is_desktop',
     'is_footer' => 'is_footer',
     'view_survey' => 'view_survey',
-    'view_questionnaire' => 'view_questionnaire'
+    'view_questionnaire' => 'view_questionnaire',
+    'edit_subscriber' => 'edit_subscriber',
+    'show_on_home' => 'show_on_home',
+    'show_on_category' => 'show_on_category',
+    'show_on_company' => 'show_on_company',
+    'show_on_individual' => 'show_on_individual',
+    'splash' => 'splash',
+    'caption' => 'caption',
+    'visible' => 'visible'
+
 
 
 

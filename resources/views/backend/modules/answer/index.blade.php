@@ -19,28 +19,28 @@
                 <table id="dataTable" class="table table-striped table-bordered table-hover" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>id</th>
-                            <th>name_ar</th>
-                            <th>name_en</th>
-                            <th>value</th>
-                            <th>icon</th>
-                            <th>active</th>
-                            <th>is_multi</th>
-                            <th>order</th>
-                            <th>Action</th>
+                            <th>{{ trans('general.id') }}</th>
+                            <th>{{ trans('general.name_ar') }}</th>
+                            <th>{{ trans('general.name_en') }}</th>
+                            <th>{{ trans('general.value') }}</th>
+                            <th>{{ trans('general.icon') }}</th>
+                            <th>{{ trans('general.active') }}</th>
+                            <th>{{ trans('general.is_multi') }}</th>
+                            <th>{{ trans('general.order') }}</th>
+                            <th>{{ trans('general.actions') }}</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
-                            <th>id</th>
-                            <th>name_ar</th>
-                            <th>name_en</th>
-                            <th>value</th>
-                            <th>icon</th>
-                            <th>active</th>
-                            <th>is_multi</th>
-                            <th>order</th>
-                            <th>Action</th>
+                            <th>{{ trans('general.id') }}</th>
+                            <th>{{ trans('general.name_ar') }}</th>
+                            <th>{{ trans('general.name_en') }}</th>
+                            <th>{{ trans('general.value') }}</th>
+                            <th>{{ trans('general.icon') }}</th>
+                            <th>{{ trans('general.active') }}</th>
+                            <th>{{ trans('general.is_multi') }}</th>
+                            <th>{{ trans('general.order') }}</th>
+                            <th>{{ trans('general.actions') }}</th>
                         </tr>
                     </tfoot>
                     <tbody>
@@ -62,26 +62,26 @@
                             </td>
                             <td>
                                 <div class="btn-group pull-right">
-                                    <button type="button" class="btn green btn-sm btn-outline dropdown-toggle" data-toggle="dropdown"> Actions
+                                    <button type="button" class="btn green btn-sm btn-outline dropdown-toggle" data-toggle="dropdown"> {{ trans('general.actions') }}
                                         <i class="fa fa-angle-down"></i>
                                     </button>
                                     <ul class="dropdown-menu pull-right" role="menu">
                                         <li>
                                             <a href="{{ route('backend.admin.answer.edit',$element->id) }}">
-                                                <i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                <i class="fa fa-fw fa-edit"></i> {{ trans('general.edit') }}</a>
                                         </li>
                                         <li>
                                             <a href="{{ route('backend.activate',['model' => 'answer','id' => $element->id]) }}">
-                                                <i class="fa fa-fw fa-check-circle"></i> toggle active</a>
+                                                <i class="fa fa-fw fa-check-circle"></i> {{ trans('general.toggle_active') }}</a>
                                         </li>
                                         <li>
                                             <a data-toggle="modal" href="#" data-target="#basic" data-title="Delete" data-content="Are you sure you want to delete {{ $element->name  }}? " data-form_id="delete-{{ $element->id }}">
-                                                <i class="fa fa-fw fa-recycle"></i> delete</a>
+                                                <i class="fa fa-fw fa-recycle"></i> {{ trans('general.delete') }}</a>
                                             <form method="post" id="delete-{{ $element->id }}" action="{{ route('backend.admin.answer.destroy',$element->id) }}">
                                                 @csrf
                                                 <input type="hidden" name="_method" value="delete" />
                                                 <button type="submit" class="btn btn-del hidden">
-                                                    <i class="fa fa-fw fa-times-circle"></i> delete
+                                                    <i class="fa fa-fw fa-times-circle"></i> {{ trans('general.delete') }}
                                                 </button>
                                             </form>
                                         </li>

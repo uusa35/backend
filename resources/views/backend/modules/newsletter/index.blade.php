@@ -15,15 +15,27 @@
                 <table id="dataTable" class="table table-striped table-bordered table-hover table-checkable order-column" id="contactusTable">
                     <thead>
                         <tr>
-                            <th>id</th>
-                            <th>name</th>
-                            <th>email</th>
-                            <th>status</th>
-                            <th>created_at</th>
-                            <th>actions</th>
+                            <th>{{ trans('general.id') }}</th>
+                            <th>{{ trans('general.name') }}</th>
+                            <th>{{ trans('general.email') }}</th>
+                            <th>{{ trans('general.status') }}</th>
+                            <th>{{ trans('general.created_at') }}</th>
+                            <th>{{ trans('general.actions') }}</th>
 
                         </tr>
                     </thead>
+                    <tfoot>
+                        <tr>
+                            <th>{{ trans('general.id') }}</th>
+                            <th>{{ trans('general.name') }}</th>
+                            <th>{{ trans('general.email') }}</th>
+                            <th>{{ trans('general.status') }}</th>
+                            <th>{{ trans('general.created_at') }}</th>
+                            <th>{{ trans('general.actions') }}</th>
+
+                        </tr>
+
+                    </tfoot>
                     <tbody>
                         @foreach($subscribers as $element)
                         <tr class="odd gradeX">
@@ -34,13 +46,13 @@
                             <td>{{ $element->created_at->format('Y-m-d') }}</td>
                             <td>
                                 <div class="btn-group">
-                                    <button class="btn btn-xs green dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false"> Actions
+                                    <button class="btn btn-xs green dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false"> {{ trans('general.actions') }}
                                         <i class="fa fa-angle-down"></i>
                                     </button>
                                     <ul class="dropdown-menu" role="menu">
                                         <li>
                                             <a href="{{ route('backend.admin.newsletter.edit',$element->id) }}">
-                                                <i class="fa fa-eye"></i> edit subscirber</a>
+                                                <i class="fa fa-eye"></i>{{ trans('general.edit_subscriber') }}</a>
                                         </li>
 
 

@@ -25,34 +25,34 @@
                 <table id="dataTable" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%">
                     <thead>
                         <tr>
-                            <th>id</th>
-                            <th>name</th>
-                            <th>slug_ar</th>
-                            <th>slug_en</th>
-                            <th>icon</th>
-                            <th>color</th>
-                            <th>caption</th>
-                            <th>is_admin</th>
-                            <th>active</th>
-                            <th>visible</th>
-                            <th>is_company</th>
-                            <th>Action</th>
+                            <th>{{ trans('general.id') }}</th>
+                            <th>{{ trans('general.name') }}</th>
+                            <th>{{ trans('general.slug_ar') }}</th>
+                            <th>{{ trans('general.slug_en') }}</th>
+                            <th>{{ trans('general.icon') }}</th>
+                            <th>{{ trans('general.color') }}</th>
+                            <th>{{ trans('general.caption') }}</th>
+                            <th>{{ trans('general.is_admin') }}</th>
+                            <th>{{ trans('general.active') }}</th>
+                            <th>{{ trans('general.visible') }}</th>
+                            <th>{{ trans('general.is_company') }}</th>
+                            <th>{{ trans('general.actions') }}</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
-                            <th>id</th>
-                            <th>name</th>
-                            <th>slug_ar</th>
-                            <th>slug_en</th>
-                            <th>icon</th>
-                            <th>color</th>
-                            <th>caption</th>
-                            <th>is_admin</th>
-                            <th>active</th>
-                            <th>visible</th>
-                            <th>is_company</th>
-                            <th>Action</th>
+                            <th>{{ trans('general.id') }}</th>
+                            <th>{{ trans('general.name') }}</th>
+                            <th>{{ trans('general.slug_ar') }}</th>
+                            <th>{{ trans('general.slug_en') }}</th>
+                            <th>{{ trans('general.icon') }}</th>
+                            <th>{{ trans('general.color') }}</th>
+                            <th>{{ trans('general.caption') }}</th>
+                            <th>{{ trans('general.is_admin') }}</th>
+                            <th>{{ trans('general.active') }}</th>
+                            <th>{{ trans('general.visible') }}</th>
+                            <th>{{ trans('general.is_company') }}</th>
+                            <th>{{ trans('general.actions') }}</th>
                         </tr>
                     </tfoot>
                     <tbody>
@@ -82,24 +82,24 @@
                             </td>
                             <td>
                                 <div class="btn-group pull-right">
-                                    <button type="button" class="btn green btn-sm btn-outline dropdown-toggle" data-toggle="dropdown"> Actions
+                                    <button type="button" class="btn green btn-sm btn-outline dropdown-toggle" data-toggle="dropdown"> {{ trans('general.actions') }}
                                         <i class="fa fa-angle-down"></i>
                                     </button>
                                     <ul class="dropdown-menu pull-right" role="menu">
                                         <li>
                                             <a href="{{ route('backend.admin.role.edit',$element->id) }}">
-                                                <i class="fa fa-fw fa-user"></i>edit</a>
+                                                <i class="fa fa-fw fa-user"></i>{{ trans('general.edit') }}</a>
                                         </li>
                                         {{-- <li>
                                             <a href="{{ route('backend.activation',['model' => 'role','id' => $element->id]) }}">
-                                        <i class="fa fa-fw fa-check-circle"></i> toggle active</a>
+                                        <i class="fa fa-fw fa-check-circle"></i> {{ trans('general.toggle_active') }}</a>
                                         </li> --}}
                                         <li>
                                             <form method="post" action="{{ route('backend.admin.role.destroy',$element->id) }}">
                                                 @csrf
                                                 <input type="hidden" name="_method" value="delete" />
                                                 <button type="submit" class="btn btn-outline btn-sm red">
-                                                    <i class="fa fa-remove"></i>delete
+                                                    <i class="fa fa-remove"></i>{{ trans('general.delete') }}
                                                 </button>
                                             </form>
                                         </li>

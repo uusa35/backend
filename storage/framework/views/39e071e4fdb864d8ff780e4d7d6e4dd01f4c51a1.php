@@ -13,15 +13,27 @@
                 <table id="dataTable" class="table table-striped table-bordered table-hover table-checkable order-column" id="contactusTable">
                     <thead>
                         <tr>
-                            <th>id</th>
-                            <th>name</th>
-                            <th>email</th>
-                            <th>status</th>
-                            <th>created_at</th>
-                            <th>actions</th>
+                            <th><?php echo e(trans('general.id')); ?></th>
+                            <th><?php echo e(trans('general.name')); ?></th>
+                            <th><?php echo e(trans('general.email')); ?></th>
+                            <th><?php echo e(trans('general.status')); ?></th>
+                            <th><?php echo e(trans('general.created_at')); ?></th>
+                            <th><?php echo e(trans('general.actions')); ?></th>
 
                         </tr>
                     </thead>
+                    <tfoot>
+                        <tr>
+                            <th><?php echo e(trans('general.id')); ?></th>
+                            <th><?php echo e(trans('general.name')); ?></th>
+                            <th><?php echo e(trans('general.email')); ?></th>
+                            <th><?php echo e(trans('general.status')); ?></th>
+                            <th><?php echo e(trans('general.created_at')); ?></th>
+                            <th><?php echo e(trans('general.actions')); ?></th>
+
+                        </tr>
+
+                    </tfoot>
                     <tbody>
                         <?php $__currentLoopData = $subscribers; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $element): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr class="odd gradeX">
@@ -32,13 +44,14 @@
                             <td><?php echo e($element->created_at->format('Y-m-d')); ?></td>
                             <td>
                                 <div class="btn-group">
-                                    <button class="btn btn-xs green dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false"> Actions
+                                    <button class="btn btn-xs green dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false"> <?php echo e(trans('general.actions')); ?>
+
                                         <i class="fa fa-angle-down"></i>
                                     </button>
                                     <ul class="dropdown-menu" role="menu">
                                         <li>
                                             <a href="<?php echo e(route('backend.admin.newsletter.edit',$element->id)); ?>">
-                                                <i class="fa fa-eye"></i> edit subscirber</a>
+                                                <i class="fa fa-eye"></i><?php echo e(trans('general.edit_subscriber')); ?></a>
                                         </li>
 
 
