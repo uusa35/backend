@@ -37,7 +37,11 @@ class PrivilegeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $element = Privilege::create($request->all());
+        if ($element) {
+            return redirect()->route('backend.admin.privilege.index')->with('success', 'privilege saved.');
+        }
+        return redirect()->back()->with('error', 'unknown error');
     }
 
     /**

@@ -27,9 +27,10 @@ class RoleController extends Controller
      */
     public function create()
     {
-        $json = File::get(base_path("icons.json"));
-        $icons = collect(json_decode($json))['icons'];
-        return view('backend.modules.role.create', compact('icons'));
+        // $json = File::get(base_path("icons.json"));
+        //$icons = collect(json_decode($json))['icons'];
+        // return view('backend.modules.role.create', compact('icons'));
+        return view('backend.modules.role.create');
     }
 
     /**
@@ -40,7 +41,11 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $element = Role::create($request->all());
+        if ($element) {
+            return redirect()->route('backend.admin.role.index')->with('success', 'role saved.');
+        }
+        return redirect()->back()->with('error', 'unknown error');
     }
 
     /**
