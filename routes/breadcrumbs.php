@@ -281,6 +281,11 @@ Breadcrumbs::for('backend.admin.privilege.index', function ($trail) {
     $trail->parent('backend.home');
     $trail->push(trans('general.index_privilege'), route('backend.admin.privilege.index'));
 });
+Breadcrumbs::for('backend.admin.privilege.show', function ($trail, $element) {
+    $trail->parent('backend.admin.privilege.index');
+    $trail->push($element->name.' - '.$element->slug, route('backend.admin.privilege.show', $element->id));
+});
+
 Breadcrumbs::for('backend.admin.privilege.create', function ($trail) {
     $trail->parent('backend.admin.privilege.index');
     $trail->push(trans('general.create_privilege'), route('backend.admin.privilege.create'));

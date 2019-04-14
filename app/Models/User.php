@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $guarded = [''];
-//    protected $with = ['role'];
+    protected $with = ['role'];
     protected $localeStrings = ['slug', 'description','service'];
 
     /**

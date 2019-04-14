@@ -1,7 +1,7 @@
 <li class="nav-item {{ activeItem('product') }}">
     <a href="{{ route('backend.product.index')}}" class="nav-link nav-toggle">
         <i class="fa fa-fw fa-product-hunt"></i>
-        <span class="title">Products</span>
+        <span class="title">{{ trans('general.products') }}</span>
         <span class="selected"></span>
         <span class="arrow open"></span>
     </a>
@@ -9,14 +9,14 @@
         <li class="nav-item ">
             <a href="{{ route('backend.admin.product.index') }}" class="nav-link ">
                 <i class="fa fa-fw fa-product-hunt"></i>
-                <span class="title">All Products</span>
+                <span class="title">{{ trans('general.all_products') }}</span>
                 <span class="arrow"></span>
             </a>
         </li>
         <li class="nav-item ">
             <a href="{{ route('backend.admin.product.index',['type' => 'active']) }}" class="nav-link ">
                 <i class="fa fa-fw fa-product-hunt"></i>
-                <span class="title">Active Products</span>
+                <span class="title">{{ trans('general.active_products') }}</span>
                 <span class="arrow"></span>
             </a>
         </li>
@@ -43,10 +43,17 @@
         {{--</li>--}}
     </ul>
 </li>
+<li class="nav-item {{ activeItem('service') }}">
+    <a href="{{ route('backend.admin.service.index') }}" class="nav-link nav-toggle">
+        <i class="fa fa-fw fa-clock-o"></i>
+        <span class="title">{{ trans('general.services') }}</span>
+        <span class="arrow"></span>
+    </a>
+</li>
 <li class="nav-item {{ activeItem('user') }}">
     <a href="{{ route('backend.admin.user.index')}}" class="nav-link nav-toggle">
         <i class="fa fa-fw fa-user"></i>
-        <span class="title">Users</span>
+        <span class="title">{{ trans('general.users') }}</span>
         <span class="selected"></span>
         <span class="arrow open"></span>
     </a>
@@ -539,15 +546,6 @@
     <a href="{{ route('backend.admin.timing.index') }}" class="nav-link nav-toggle">
         <i class="fa fa-fw fa-clock-o"></i>
         <span class="title">Timing</span>
-        <span class="arrow"></span>
-    </a>
-
-</li>
-
-<li class="nav-item {{ activeItem('service') }}">
-    <a href="{{ route('backend.admin.service.index') }}" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-clock-o"></i>
-        <span class="title">Service</span>
         <span class="arrow"></span>
     </a>
 

@@ -29,7 +29,7 @@ class UserPolicy
      */
     public function create(User $user)
     {
-        //
+        return $user->role->privileges->where('name','user')->first()->pivot->create;
     }
 
     /**
@@ -41,7 +41,7 @@ class UserPolicy
      */
     public function update(User $user, User $model)
     {
-        //
+        return $user->role->privileges->where('name','user')->first()->pivot->update;
     }
 
     /**
@@ -53,7 +53,7 @@ class UserPolicy
      */
     public function delete(User $user, User $model)
     {
-        //
+        return $user->role->privileges->where('name','user')->first()->pivot->delete;
     }
 
     /**

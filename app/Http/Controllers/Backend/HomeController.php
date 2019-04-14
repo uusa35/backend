@@ -16,7 +16,6 @@ class HomeController extends Controller
     use NotificationHelper;
     public function index()
     {
-        //dd(auth()->user()->role->name);
         return view('backend.home');
     }
 
