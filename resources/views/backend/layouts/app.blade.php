@@ -20,7 +20,6 @@
     @show
     <link rel="shortcut icon" href="{{ asset('images/logo.ico') }}" />
     <link href="{{ asset('images/logo.png') }}" rel="shortcut icon" type="image/png">
-
 </head>
 
 {{--<body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white page-md">--}}

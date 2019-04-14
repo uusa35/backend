@@ -48,8 +48,9 @@ class PrivilegeController extends Controller
      */
     public function show($id)
     {
-        $element = Privilege::whereId($id)->first();
-        dd($element->roles()->first()->pivot->update);
+        $element = Privilege::whereId($id)->with('roles')->first();
+        $this->authorize('privilege.view', $element);
+        return view('backend.modules.privilege.show', compact('element'));
     }
 
     /**
