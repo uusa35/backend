@@ -26,6 +26,7 @@ class PrivilegeController extends Controller
      */
     public function create()
     {
+        $this->authorize('privilege.create');
         return view('backend.modules.privilege.create');
     }
 
