@@ -61,7 +61,9 @@ class PrivilegeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $element = Privilege::whereId($id)->with('roles')->first();
+        $this->authorize('privilege.update', $element);
+        return view('backend.modules.privilege.edit', compact('element'));
     }
 
     /**
@@ -73,7 +75,8 @@ class PrivilegeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $element = Privilege::whereId($id)->with('roles')->first();
+        $this->authorize('privilege.update', $element);
     }
 
     /**
