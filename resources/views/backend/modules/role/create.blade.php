@@ -22,7 +22,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="control-label">{{ trans('general.name') }}</label>
-                                        <input type="text" id="name" class="form-control" placeholder="{{ trans('general.name') }}" value="{{ old('name_ar') }}" required>
+                                        <input type="text" id="name" class="form-control" placeholder="{{ trans('general.name') }}" value="{{ old('name_ar') }}" name="name" required>
                                         <span class="help-block"> Role Name must be unique </span>
                                     </div>
                                 </div>
@@ -165,9 +165,9 @@
                                             <label class="control-label sbold">{{ trans('general.is_visible') }}</label>
                                             <div class="radio-list">
                                                 <label class="radio-inline">
-                                                    <input type="radio" name="visible" id="optionsRadios5" value="1" checked> {{ trans('general.is_visible') }} </label>
+                                                    <input type="radio" name="is_visible" id="optionsRadios5" value="1" checked> {{ trans('general.is_visible') }} </label>
                                                 <label class="radio-inline">
-                                                    <input type="radio" name="visible" id="optionsRadios6" value="0"> {{ trans('general.not_is_visible') }}</label>
+                                                    <input type="radio" name="is_visible" id="optionsRadios6" value="0"> {{ trans('general.not_is_visible') }}</label>
                                             </div>
                                             <span class="help-block"> Visible Means that this role shall appear on Application (ex. admin is invisible)</span>
                                         </div>

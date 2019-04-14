@@ -640,7 +640,8 @@ return array(
     'end' => 'end',
     'is_off' => 'is_off',
     'file_path' => 'file_path',
-    'settings' => 'settings'
+    'settings' => 'settings',
+    'role_attributes_details' => 'role_attributes_details'
 
 
 

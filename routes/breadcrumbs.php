@@ -205,6 +205,10 @@ Breadcrumbs::for('backend.admin.role.create', function ($trail) {
     $trail->parent('backend.admin.role.index');
     $trail->push(trans('general.create_role'), route('backend.admin.role.create'));
 });
+Breadcrumbs::for('backend.admin.role.edit', function ($trail) {
+    $trail->parent('backend.admin.role.index');
+    $trail->push(trans('general.edit_role'), route('backend.admin.role.edit'));
+});
 Breadcrumbs::for('backend.admin.setting.index', function ($trail) {
     $trail->parent('backend.home');
     $trail->push(trans('general.settings'), route('backend.admin.setting.index'));

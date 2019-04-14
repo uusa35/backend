@@ -62,14 +62,14 @@
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="description_ar" class="control-label">{{ trans('general.description_ar') }}</label>
-                                        <textarea type="text" class="form-control tinymce" id="description_ar" name="description_ar" aria-multiline="true" maxlength="500"></textarea>
+                                        <label for="description" class="control-label">{{ trans('general.description_arabic') }}</label>
+                                        <textarea type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.description_ar') }}" id="description_ar" name="description_ar" aria-multiline="true" maxlength="500" {{ old('description_ar') }}></textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="description_en" class="control-label">{{ trans('general.description_en') }}</label>
-                                        <textarea type="text" class="form-control tinymce" id="description_en" name="description_en" aria-multiline="true" maxlength="500"></textarea>
+                                        <label for="description" class="control-label">{{ trans('general.description_english') }}</label>
+                                        <textarea type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.description_en') }}" id="description_en" name="description_en" aria-multiline="true" maxlength="500">{{ old('description_en') }}</textarea>
                                     </div>
                                 </div>
                             </div>
