@@ -19,7 +19,7 @@ class PrivilegePolicy
      */
     public function view(User $user, Privilege $privilege)
     {
-        return $user->role->privileges->where('name','privilege')->first()->pivot->{__FUNCTION__};
+        return $user->role->privileges->where('name', 'privilege')->first()->pivot->{__FUNCTION__};
     }
 
     /**
@@ -30,7 +30,7 @@ class PrivilegePolicy
      */
     public function create(User $user)
     {
-        return $user->role->privileges->where('name','privilege')->first()->pivot->{__FUNCTION__};
+        return $user->role->privileges->where('name', 'privilege')->first()->pivot->{__FUNCTION__};
     }
 
     /**
@@ -40,9 +40,9 @@ class PrivilegePolicy
      * @param  \App\Privilege  $privilege
      * @return mixed
      */
-    public function update(User $user, Priv $privilege)
+    public function update(User $user, Privilege $privilege)
     {
-        //
+        return $user->role->privileges->where('name', 'privilege')->first()->pivot->{__FUNCTION__};
     }
 
     /**

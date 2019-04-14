@@ -20,7 +20,6 @@
     <?php echo $__env->yieldSection(); ?>
     <link rel="shortcut icon" href="<?php echo e(asset('images/logo.ico')); ?>" />
     <link href="<?php echo e(asset('images/logo.png')); ?>" rel="shortcut icon" type="image/png">
-
 </head>
 
 
