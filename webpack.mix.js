@@ -163,7 +163,13 @@ mix.scripts([
         '../metronic_v4.5.6/theme/assets/global/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js',
         '../metronic_v4.5.6/theme/assets/global/plugins/jquery-minicolors/jquery.minicolors.min.js',
         '../metronic_v4.5.6/theme/assets/global/plugins/cubeportfolio/js/jquery.cubeportfolio.min.js',
+
+
+        '../metronic_v4.5.6/theme/assets/global/plugins/moment.min.js',
+
+
         '../metronic_v4.5.6/theme/assets/global/scripts/app.min.js',
+
 
         '../metronic_v4.5.6/theme/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js',
         '../metronic_v4.5.6/theme/assets/global/plugins/jquery.sparkline.min.js',
@@ -176,12 +182,15 @@ mix.scripts([
         '../metronic_v4.5.6/theme/assets/layouts/layout2/scripts/layout.min.js',
         '../metronic_v4.5.6/theme/assets/layouts/layout2/scripts/demo.min.js',
         '../metronic_v4.5.6/theme/assets/layouts/global/scripts/quick-sidebar.min.js',
-        'resources/assets/js/bootstrap-datetimepicker.min.js',
-        'resources/assets/js/components-date-time-pickers.min.js',
 
     ],
     'public/js/backend.js').version();
 
+
+mix.scripts([
+    '../metronic_v4.5.6/theme/assets/pages/scripts/components-date-time-pickers.min.js',
+    '../metronic_v4.5.6/theme/assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js',
+], 'public/js/datepicker.js').version();
 mix.scripts('./node_modules/tinymce/tinymce.min.js', 'public/js/tinymce.min.js').version();
 mix.scripts('resources/assets/js/backend-custom.js', 'public/js/backend-custom.js');
 mix.copyDirectory('./../porto_ecommerce_html/demo-2/assets/images', 'public/images');

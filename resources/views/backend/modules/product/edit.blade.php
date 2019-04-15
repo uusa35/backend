@@ -261,14 +261,16 @@
                             <div class="form-group">
                                 <label for="description" class="control-label">description arabic</label>
                                 <textarea type="text" class="form-control" id="description_ar" name="description_ar"
-                                          aria-multiline="true" maxlength="500">{{ $element->description_ar }}</textarea>
+                                          aria-multiline="true"
+                                          maxlength="500">{{ $element->description_ar }}</textarea>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="description" class="control-label">description english</label>
                                 <textarea type="text" class="form-control" id="description_en" name="description_en"
-                                          aria-multiline="true" maxlength="500">{{ $element->description_en }}</textarea>
+                                          aria-multiline="true"
+                                          maxlength="500">{{ $element->description_en }}</textarea>
                             </div>
                         </div>
                     </div>
@@ -455,4 +457,10 @@
             </div>
         </div>
     </div>
+@endsection
+
+
+@section('scripts')
+    @parent
+    <script src="{{ mix('js/datepicker.js') }}"></script>
 @endsection

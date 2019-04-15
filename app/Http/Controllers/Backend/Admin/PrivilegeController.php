@@ -95,6 +95,8 @@ class PrivilegeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $element = Privilege::whereId($id)->first();
+        $element->delete();
+        return redirect()->route('backend.admin.privilege.index')->with('success', 'privilege deleted successfully');
     }
 }

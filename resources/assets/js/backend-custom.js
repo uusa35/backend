@@ -3,6 +3,7 @@
  */
 
 $(document).ready(function() {
+    console.log('backend custom js');
     $('#dataTable').DataTable({
         "order": [[0, "desc"]],
         "bPaginate": true,
@@ -38,13 +39,12 @@ $(document).ready(function() {
         "bAutoWidth": true,
         "pageLength": 5
     });
-    $(document).on('show.bs.modal', function(event) {
+    $('#basic').on('show.bs.modal', function(event) {
         var element = $(event.relatedTarget) // Button that triggered the modal
-        console.log('the element', element)
         $('.modal-body').html(element.data('content'));
         $('.modal-title').html(element.data('title'));
         formId = element.data('form_id');
-        console.log('frontId', formId);
+        console.log('fromId', formId);
         $('.modal-save').on('click', function () {
             $('#' + formId).submit();
         });

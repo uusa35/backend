@@ -7,8 +7,8 @@
             </div>
             <div class="modal-body"> </div>
             <div class="modal-footer">
-                <button type="button" class="btn dark btn-outline" data-dismiss="modal">Close</button>
-                <button type="button" class="btn red modal-save">Confirm Delete</button>
+                <button type="button" class="btn dark btn-outline" data-dismiss="modal"><?php echo e(trans('general.close')); ?></button>
+                <button type="button" class="btn red modal-save"><?php echo e(trans('general.confirm_delete')); ?></button>
             </div>
         </div>
         <!-- /.modal-content -->

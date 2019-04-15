@@ -269,14 +269,16 @@
                             <div class="form-group">
                                 <label for="description" class="control-label">description arabic</label>
                                 <textarea type="text" class="form-control" id="description_ar" name="description_ar"
-                                          aria-multiline="true" maxlength="500"><?php echo e($element->description_ar); ?></textarea>
+                                          aria-multiline="true"
+                                          maxlength="500"><?php echo e($element->description_ar); ?></textarea>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="description" class="control-label">description english</label>
                                 <textarea type="text" class="form-control" id="description_en" name="description_en"
-                                          aria-multiline="true" maxlength="500"><?php echo e($element->description_en); ?></textarea>
+                                          aria-multiline="true"
+                                          maxlength="500"><?php echo e($element->description_en); ?></textarea>
                             </div>
                         </div>
                     </div>
@@ -475,6 +477,12 @@
             </div>
         </div>
     </div>
+<?php $__env->stopSection(); ?>
+
+
+<?php $__env->startSection('scripts'); ?>
+    ##parent-placeholder-16728d18790deb58b3b8c1df74f06e536b532695##
+    <script src="<?php echo e(mix('js/datepicker.js')); ?>"></script>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('backend.layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

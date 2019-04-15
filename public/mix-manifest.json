@@ -1,18 +1,19 @@
 {
-    "/js/app.js": "/js/app.js?id=f2ab73766a74546b6f14",
-    "/css/app.css": "/css/app.css?id=0c00d9227ad256f3cf69",
-    "/css/wokiee-theme-sass.css": "/css/wokiee-theme-sass.css?id=2396e92559445b816e91",
-    "/css/wokiee-theme-sass-rtl.css": "/css/wokiee-theme-sass-rtl.css?id=f6b455d6ce9bca2b7e45",
-    "/js/frontend-ar.js": "/js/frontend-ar.js?id=83d366ae405353bf81d0",
-    "/js/frontend-custom.js": "/js/frontend-custom.js?id=627d6fc9a0ba2a6fb6f8",
-    "/js/frontend-en.js": "/js/frontend-en.js?id=f31f0bffa90dee10810a",
+    "/js/app.js": "/js/app.js?id=8a90888dc7680b269453",
+    "/css/app.css": "/css/app.css?id=38f8827bac29200bae67",
+    "/css/wokiee-theme-sass.css": "/css/wokiee-theme-sass.css?id=5626646d894d81d04a0e",
+    "/css/wokiee-theme-sass-rtl.css": "/css/wokiee-theme-sass-rtl.css?id=42c5eeb1269f76e7c924",
+    "/js/frontend-ar.js": "/js/frontend-ar.js?id=49b19312ee9c073768cf",
+    "/js/frontend-custom.js": "/js/frontend-custom.js?id=bc5770bfdeaeb4b1ae54",
+    "/js/frontend-en.js": "/js/frontend-en.js?id=ef87b5d98a5784ed6f5c",
     "/css/frontend-custom-ar.css": "/css/frontend-custom-ar.css?id=a90153f09c86c86b5d37",
     "/css/frontend-custom-en.css": "/css/frontend-custom-en.css?id=d9b5353d3dfc65f26f7b",
     "/css/plugins.css": "/css/plugins.css?id=e47b79b5f909a9c757d2",
     "/js/wokiee.demo.js": "/js/wokiee.demo.js?id=38e9fe4769ea14f8e454",
     "/css/backend.css": "/css/backend.css?id=a0f79719f7cb5f0c1651",
     "/css/backend-rtl.css": "/css/backend-rtl.css?id=734f1e64db89b437bb93",
-    "/js/backend.js": "/js/backend.js?id=cccc149ed603f8eaf99a",
+    "/js/backend.js": "/js/backend.js?id=dd0fc0f6269c7955cc90",
+    "/js/datepicker.js": "/js/datepicker.js?id=d66c200584310a7f9f6b",
     "/js/tinymce.min.js": "/js/tinymce.min.js?id=a2fba61cec3ab36670f8",
-    "/js/backend-custom.js": "/js/backend-custom.js?id=9a1be7401ec67ff33e86"
+    "/js/backend-custom.js": "/js/backend-custom.js?id=87da5d4ee5f3e6d54eb3"
 }
