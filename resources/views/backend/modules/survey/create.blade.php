@@ -5,186 +5,190 @@
 @section('content')
 <div class="portlet box blue">
     @include('backend.partials.forms.form_title')
-    <div class="portlet-body form">
-        <form class="horizontal-form" role="form" method="POST" action="{{ route('backend.admin.survey.store') }}" enctype="multipart/form-data">
-            @csrf
-            <div class="form-body">
-                <h3 class="form-section">{{ trans('general.create_survey') }}</h3>
-                {{--name arabic / name english --}}
-                <div class="portlet box blue ">
-                    <div class="portlet-title">
-                        <div class="caption">
-                            <i class="fa fa-gift"></i> {{ trans('general.survey_main_details') }}
+    <div class="portlet-body">
+        @include('backend.partials._admin_instructions',['title' => trans('general.surveys') ,'message' => trans('message.admin_survey_message')])
+        <div class="portlet-body form">
+            <form class="horizontal-form" role="form" method="POST" action="{{ route('backend.admin.survey.store') }}" enctype="multipart/form-data">
+                @csrf
+                <div class="form-body">
+                    <h3 class="form-section">{{ trans('general.create_survey') }}</h3>
+                    {{--name arabic / name english --}}
+                    <div class="portlet box blue ">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="fa fa-gift"></i> {{ trans('general.survey_main_details') }}
+                            </div>
                         </div>
-                    </div>
-                    <div class="portlet-body form">
-                        <div class="form-body">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
-                                        <label for="name" class="control-label">{{ trans('general.name') }} *</label>
-                                        <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="{{ trans('general.name') }}" required autofocus>
-                                        @if ($errors->has('name'))
-                                        <span class="help-block">
-                                            <strong>
-                                                {{ $errors->first('name') }}
-                                            </strong>
-                                        </span>
-                                        @endif
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group {{ $errors->has('slug_ar') ? ' has-error' : '' }}">
-                                        <label for="slug_ar" class="control-label">{{ trans('general.slug_ar') }}*</label>
-                                        <input id="slug_ar" type="text" class="form-control" name="slug_ar" value="{{ old('slug_ar') }}" placeholder="{{ trans('general.slug_ar') }}" required autofocus>
-                                        @if ($errors->has('slug_ar'))
-                                        <span class="help-block">
-                                            <strong>
-                                                {{ $errors->first('slug_ar') }}
-                                            </strong>
-                                        </span>
-                                        @endif
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group{{ $errors->has('slug_en') ? ' has-error' : '' }}">
-                                        <label for="slug_en" class="control-label">{{ trans('general.slug_en') }}*</label>
-                                        <input id="slug_en" type="text" class="form-control" name="slug_en" value="{{ old('slug_en') }}" placeholder="{{ trans('general.slug_en') }}" required autofocus>
-                                        @if ($errors->has('slug_en'))
-                                        <span class="help-block">
-                                            <strong>
-                                                {{ $errors->first('slug_en') }}
-                                            </strong>
-                                        </span>
-                                        @endif
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            {{-- email + mobile --}}
-
-
-
-
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="description" class="control-label">{{ trans('general.description_ar') }}</label>
-                                        <textarea type="text" class="form-control" id="description_ar" name="description_ar" aria-multiline="true" maxlength="500" {{ old('description_ar') }}></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="description" class="control-label">{{ trans('general.description_en') }}</label>
-                                        <textarea type="text" class="form-control" id="description_en" name="description_en" aria-multiline="true" maxlength="500">{{ old('description_en') }}</textarea>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group{{ $errors->has('order') ? ' has-error' : '' }}">
-                                        <label for="order" class="control-label">{{ trans('general.order') }} *</label>
-                                        <input id="order" type="text" class="form-control" name="order" value="{{ old('order') }}" placeholder="{{ trans('general.order') }}" maxlength="2" autofocus>
-                                        @if ($errors->has('order'))
-                                        <span class="help-block">
-                                            <strong>
-                                                {{ $errors->first('order') }}
-                                            </strong>
-                                        </span>
-                                        @endif
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="row">
-                                <hr>
-                                @if($questions->isNotEmpty())
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label class="control-label">{{ trans('general.questions_list') }}*</label>
-                                        <select multiple="multiple" class="multi-select" id="my_multi_select1" name="questions[]">
-                                            @foreach($questions->where('active', true) as $question)
-                                            <option value="#" disabled="disabled">Question</option>
-                                            <option value="{{ $question->id }}">{{ $question->name_ar }}</option>
-                                            @if($question->answers->isNotEmpty())
-                                            <option value="#" disabled="disabled"><strong>Answers</strong></option>
-                                            <option value="#" disabled="disabled" style="background-color: #0d638f">
-                                                @foreach($question->answers as $a)
-                                                {{ $a->name }},
-                                                @endforeach
-                                            </option>
+                        <div class="portlet-body form">
+                            <div class="form-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
+                                            <label for="name" class="control-label">{{ trans('general.name') }} *</label>
+                                            <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="{{ trans('general.name') }}" required autofocus>
+                                            @if ($errors->has('name'))
+                                            <span class="help-block">
+                                                <strong>
+                                                    {{ $errors->first('name') }}
+                                                </strong>
+                                            </span>
                                             @endif
-                                            @endforeach
-                                        </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group {{ $errors->has('slug_ar') ? ' has-error' : '' }}">
+                                            <label for="slug_ar" class="control-label">{{ trans('general.slug_ar') }}*</label>
+                                            <input id="slug_ar" type="text" class="form-control" name="slug_ar" value="{{ old('slug_ar') }}" placeholder="{{ trans('general.slug_ar') }}" required autofocus>
+                                            @if ($errors->has('slug_ar'))
+                                            <span class="help-block">
+                                                <strong>
+                                                    {{ $errors->first('slug_ar') }}
+                                                </strong>
+                                            </span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group{{ $errors->has('slug_en') ? ' has-error' : '' }}">
+                                            <label for="slug_en" class="control-label">{{ trans('general.slug_en') }}*</label>
+                                            <input id="slug_en" type="text" class="form-control" name="slug_en" value="{{ old('slug_en') }}" placeholder="{{ trans('general.slug_en') }}" required autofocus>
+                                            @if ($errors->has('slug_en'))
+                                            <span class="help-block">
+                                                <strong>
+                                                    {{ $errors->first('slug_en') }}
+                                                </strong>
+                                            </span>
+                                            @endif
+                                        </div>
                                     </div>
                                 </div>
-                                @endif
+
+
+                                {{-- email + mobile --}}
+
+
+
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="description" class="control-label">{{ trans('general.description_ar') }}</label>
+                                            <textarea type="text" class="form-control" id="description_ar" name="description_ar" aria-multiline="true" maxlength="500" {{ old('description_ar') }}></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="description" class="control-label">{{ trans('general.description_en') }}</label>
+                                            <textarea type="text" class="form-control" id="description_en" name="description_en" aria-multiline="true" maxlength="500">{{ old('description_en') }}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group{{ $errors->has('order') ? ' has-error' : '' }}">
+                                            <label for="order" class="control-label">{{ trans('general.order') }} *</label>
+                                            <input id="order" type="text" class="form-control" name="order" value="{{ old('order') }}" placeholder="{{ trans('general.order') }}" maxlength="2" autofocus>
+                                            @if ($errors->has('order'))
+                                            <span class="help-block">
+                                                <strong>
+                                                    {{ $errors->first('order') }}
+                                                </strong>
+                                            </span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                    <hr>
+                                    @if($questions->isNotEmpty())
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label class="control-label">{{ trans('general.questions_list') }}*</label>
+                                            <select multiple="multiple" class="multi-select" id="my_multi_select1" name="questions[]">
+                                                @foreach($questions->where('active', true) as $question)
+                                                <option value="#" disabled="disabled">Question</option>
+                                                <option value="{{ $question->id }}">{{ $question->name_ar }}</option>
+                                                @if($question->answers->isNotEmpty())
+                                                <option value="#" disabled="disabled"><strong>Answers</strong></option>
+                                                <option value="#" disabled="disabled" style="background-color: #0d638f">
+                                                    @foreach($question->answers as $a)
+                                                    {{ $a->name }},
+                                                    @endforeach
+                                                </option>
+                                                @endif
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portlet box blue ">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="fa fa-gift"></i> {{ trans('general.survey_attributes_details') }}
+                            </div>
+                        </div>
+                        <div class="portlet-body form">
+                            <div class="form-body">
+                                <div class="row">
+                                    <hr>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label class="control-label sbold">{{ trans('general.active') }}</label></br>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="active" id="optionsRadios3" value="1"> {{ trans('general.active') }}</label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="active" id="optionsRadios4" checked value="0"> {{ trans('general.not_active') }}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label class="control-label sbold"> {{ trans('general.is_home') }}</label></br>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="is_home" id="optionsRadios3" value="1"> {{ trans('general.is_home') }}</label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="is_home" id="optionsRadios4" checked value="0"> {{ trans('general.not_is_home') }}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label class="control-label sbold"> {{ trans('general.is_desktop') }}</label></br>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="is_desktop" id="optionsRadios3" value="1"> {{ trans('general.is_desktop') }}</label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="is_desktop" id="optionsRadios4" checked value="0">{{ trans('general.not_is_desktop') }}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label class="control-label sbold">{{ trans('general.is_footer') }}</label></br>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="is_footer" id="optionsRadios7" checked value="1"> {{ trans('general.is_footer') }}</label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="is_footer" id="optionsRadios8" value="0">{{ trans('general.not_is_footer') }}</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-actions right">
+                                    <a class="btn btn-warning" data-toggle="modal" href="#" data-target="#new-question" data-title="New Question/Answer" {{--data-content="Are you sure you want to delete {{ $element->name  }}? "--}}
+                                {{--data-form_id="delete-{{ $element->id }}" --}}>Create New Question/Answer</a>
+                                    {{--<button type="button" class="btn default">Cancel</button>--}}
+                                    <a href="{!! url()->previous() !!}" class="btn default">Cancel</a>
+                                    <button type="submit" class="btn btn-info">
+                                        <i class="fa fa-save"></i> Save Survey
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="portlet box blue ">
-                    <div class="portlet-title">
-                        <div class="caption">
-                            <i class="fa fa-gift"></i> {{ trans('general.survey_attributes_details') }}
-                        </div>
-                    </div>
-                    <div class="portlet-body form">
-                        <div class="form-body">
-                            <div class="row">
-                                <hr>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label class="control-label sbold">{{ trans('general.active') }}</label></br>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="active" id="optionsRadios3" value="1"> {{ trans('general.active') }}</label>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="active" id="optionsRadios4" checked value="0"> {{ trans('general.not_active') }}</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label class="control-label sbold"> {{ trans('general.is_home') }}</label></br>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="is_home" id="optionsRadios3" value="1"> {{ trans('general.is_home') }}</label>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="is_home" id="optionsRadios4" checked value="0"> {{ trans('general.not_is_home') }}</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label class="control-label sbold"> {{ trans('general.is_desktop') }}</label></br>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="is_desktop" id="optionsRadios3" value="1"> {{ trans('general.is_desktop') }}</label>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="is_desktop" id="optionsRadios4" checked value="0">{{ trans('general.not_is_desktop') }}</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label class="control-label sbold">{{ trans('general.is_footer') }}</label></br>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="is_footer" id="optionsRadios7" checked value="1"> {{ trans('general.is_footer') }}</label>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="is_footer" id="optionsRadios8" value="0">{{ trans('general.not_is_footer') }}</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-actions right">
-                                <a class="btn btn-warning" data-toggle="modal" href="#" data-target="#new-question" data-title="New Question/Answer" {{--data-content="Are you sure you want to delete {{ $element->name  }}? "--}}
-                                {{--data-form_id="delete-{{ $element->id }}" --}}>Create New Question/Answer</a>
-                                {{--<button type="button" class="btn default">Cancel</button>--}}
-                                <a href="{!! url()->previous() !!}" class="btn default">Cancel</a>
-                                <button type="submit" class="btn btn-info">
-                                    <i class="fa fa-save"></i> Save Survey
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
 </div>
 @include('backend.partials.forms._modal_question_answer_create')
