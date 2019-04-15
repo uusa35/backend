@@ -40,7 +40,7 @@ class PrivilegePolicy
      * @param  \App\Privilege  $privilege
      * @return mixed
      */
-    public function update(User $user, Priv $privilege)
+    public function update(User $user, Privilege $privilege)
     {
         //
     }
