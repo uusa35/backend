@@ -79,6 +79,86 @@
                             </div>
                         </div>
                     </div>
+                    <div class="portlet box blue ">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="fa fa-gift"></i> {{ trans('general.more_details') }}
+                            </div>
+                        </div>
+                        <div class="portlet-body form">
+                            <div class="form-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label sbold">{{ trans('general.view') }}</label></br>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="view" id="optionsRadios3" value="1">
+                                                {{ trans('general.view') }}</label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="view" id="optionsRadios4" checked value="0">
+                                                {{ trans('general.not_view') }}</label>
+                                        </div>
+                                        <span class="help-block">
+                                            <strong>{{ trans('message.view_instructions') }}</strong>
+                                        </span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label sbold">{{ trans('general.create') }}</label></br>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="create" id="optionsRadios3" value="1">
+                                                {{ trans('general.create') }}</label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="create" id="optionsRadios4" checked value="0">
+                                                {{ trans('general.not_create') }}
+                                            </label>
+                                        </div>
+                                        <span class="help-block">
+                                            <strong>{{ trans('message.create_instructions') }}</strong>
+                                        </span>
+                                    </div>
+
+
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label sbold">{{ trans('general.update') }}</label></br>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="update" id="optionsRadios3" value="1">
+                                                {{ trans('general.update') }}</label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="update" id="optionsRadios4" checked value="0">
+                                                {{ trans('general.not_update') }}</label>
+                                        </div>
+                                        <span class="help-block">
+                                            <strong>{{ trans('message.update_instructions') }}</strong>
+                                        </span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label sbold">{{ trans('general.delete') }}</label></br>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="delete" id="optionsRadios3" value="1">
+                                                {{ trans('general.delete') }}</label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="delete" id="optionsRadios4" checked value="0">
+                                                {{ trans('general.not_delete') }}</label>
+                                        </div>
+                                        <span class="help-block">
+                                            <strong>{{ trans('message.delete_instructions') }}</strong>
+                                        </span>
+                                    </div>
+
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 @include('backend.partials.forms._btn-group')
             </form>
