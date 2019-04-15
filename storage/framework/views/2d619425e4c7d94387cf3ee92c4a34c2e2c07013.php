@@ -9,16 +9,7 @@
         <div class="portlet light ">
             <?php echo $__env->make('backend.partials.forms.form_title', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
             <div class="portlet-body">
-                <div class="m-heading-1 border-green m-bordered">
-                    <h3>Important Information</h3>
-                    <p>
-                        Roles are very important for the application.
-                    </p>
-                    <p> Some Information about roles.
-                        <a class="btn red btn-outline" href="http://datatables.net/" target="_blank">the official
-                            documentation</a>
-                    </p>
-                </div>
+                <?php echo $__env->make('backend.partials._admin_instructions',['title' => trans('general.privileges') ,'message' => trans('message.privilege_index')], \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
                 <table id="dataTable" class="table table-striped table-bordered table-hover" cellspacing="0">
                     <thead>
                         <tr>
@@ -60,12 +51,14 @@
                                     </button>
                                     <ul class="dropdown-menu pull-right" role="menu">
                                         <li>
-                                            <a href="<?php echo e(route('backend.admin.day.edit',$element->id)); ?>">
+                                            <a href="<?php echo e(route('backend.admin.privilege.edit',$element->id)); ?>">
                                                 <i class="fa fa-fw fa-edit"></i> <?php echo e(trans('general.edit')); ?></a>
                                         </li>
                                         <li>
                                             <a href="<?php echo e(route('backend.activate',['model' => 'day','id' => $element->id])); ?>">
-                                                <i class="fa fa-fw fa-check-circle"></i> <?php echo e(trans('general.toggle_active')); ?></a>
+                                                <i class="fa fa-fw fa-check-circle"></i> <?php echo e(trans('general.toggle_active')); ?>
+
+                                            </a>
                                         </li>
                                         <li>
                                             <a href="<?php echo e(route('backend.admin.privilege.show',$element->id)); ?>">
@@ -75,7 +68,9 @@
                                         </li>
                                         <li>
                                             <a data-toggle="modal" href="#" data-target="#basic" data-title="Delete" data-content="Are you sure you want to delete day <?php echo e($element->name); ?>? " data-form_id="delete-<?php echo e($element->id); ?>">
-                                                <i class="fa fa-fw fa-recycle"></i> <?php echo e(trans('general.delete')); ?></a>
+                                                <i class="fa fa-fw fa-recycle"></i> <?php echo e(trans('general.delete')); ?>
+
+                                            </a>
                                             <form method="post" id="delete-<?php echo e($element->id); ?>" action="<?php echo e(route('backend.admin.day.destroy',$element->id)); ?>">
                                                 <?php echo csrf_field(); ?>
                                                 <input type="hidden" name="_method" value="delete" />

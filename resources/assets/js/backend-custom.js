@@ -44,6 +44,7 @@ $(document).ready(function() {
         $('.modal-body').html(element.data('content'));
         $('.modal-title').html(element.data('title'));
         formId = element.data('form_id');
+        console.log('frontId', formId);
         $('.modal-save').on('click', function () {
             $('#' + formId).submit();
         });
