@@ -15,8 +15,8 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $elements = Service::all();
-        return view('backend.modules.aboutus.index', compact('elements'));
+        $elements = Service::myItems()->get();
+        return view('backend.modules.service.index', compact('elements'));
     }
 
     /**

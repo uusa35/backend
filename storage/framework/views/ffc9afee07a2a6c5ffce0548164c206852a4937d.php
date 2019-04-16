@@ -45,3 +45,12 @@
         </ul>
     </li>
 <?php endif; ?>
+<?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('service.index')): ?>
+    <li class="nav-item <?php echo e(activeItem('service')); ?>">
+        <a href="<?php echo e(route('backend.service.index')); ?>" class="nav-link nav-toggle">
+            <i class="fa fa-fw fa-clock-o"></i>
+            <span class="title"><?php echo e(trans('general.services')); ?></span>
+            <span class="arrow"></span>
+        </a>
+    </li>
+<?php endif; ?>

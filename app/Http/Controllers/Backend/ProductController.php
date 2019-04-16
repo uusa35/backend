@@ -26,9 +26,9 @@ class ProductController extends Controller
     public function index()
     {
         if (request()->has('type')) {
-            $elements = Product::where([request('type') => true, 'user_id' => auth()->id()])->with('images', 'product_attributes.size', 'product_attributes.color')->orderBy('id', 'desc')->get();
+            $elements = Product::myItems()->where([request('type') => true])->with('images', 'product_attributes.size', 'product_attributes.color')->orderBy('id', 'desc')->get();
         } else {
-            $elements = Product::where(['user_id' => auth()->id()])->with('images', 'product_attributes.size', 'product_attributes.color')->orderBy('id', 'desc')->get();
+            $elements = Product::myItems()->with('images', 'product_attributes.size', 'product_attributes.color')->orderBy('id', 'desc')->get();
         }
         return view('backend.modules.product.index', compact('elements'));
     }

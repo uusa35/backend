@@ -19,7 +19,7 @@ class Role extends PrimaryModel
 
     public function privileges()
     {
-        return $this->belongsToMany(Privilege::class)->withPivot('view', 'create','update','delete');
+        return $this->belongsToMany(Privilege::class)->withPivot('index','view', 'create','update','delete');
     }
 
     public function users()

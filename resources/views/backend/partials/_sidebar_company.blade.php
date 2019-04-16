@@ -45,3 +45,12 @@
         </ul>
     </li>
 @endcan
+@can('service.index')
+    <li class="nav-item {{ activeItem('service') }}">
+        <a href="{{ route('backend.service.index') }}" class="nav-link nav-toggle">
+            <i class="fa fa-fw fa-clock-o"></i>
+            <span class="title">{{ trans('general.services') }}</span>
+            <span class="arrow"></span>
+        </a>
+    </li>
+@endcan

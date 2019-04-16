@@ -33,9 +33,9 @@ trait SellingModelHelpers
                     'service_id' => $this->id,
                     'timing_id' => $timingId
                 ])
-                ->whereDate('service_date', '=', Carbon::parse($daySelectedFormat))->whereHas('order', function($q) {
+                ->whereDate('service_date', '=', Carbon::parse($daySelectedFormat))->whereHas('order', function ($q) {
                     return $q->where('paid', true);
-            })->get();
+                })->get();
             if ($this->multi_booking) {
                 return $orderMetasWithSameService->count() < $this->booking_limit;
             }
@@ -120,6 +120,11 @@ trait SellingModelHelpers
     public function getIsFavoritedAttribute()
     {
         return auth()->check() ? in_array(auth()->user()->id, $this->favorites->pluck('id')->toArray()) : false;
+    }
+
+    public function scopeMyItems($q)
+    {
+        return $q->where(['user_id' => auth()->id()]);
     }
 
     /**

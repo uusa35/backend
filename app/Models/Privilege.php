@@ -9,6 +9,6 @@ class Privilege extends PrimaryModel
     protected $guarded = [''];
     public function roles()
     {
-        return $this->belongsToMany(Role::class)->withPivot('view', 'create', 'update', 'delete');
+        return $this->belongsToMany(Role::class)->withPivot('index','view', 'create', 'update', 'delete');
     }
 }
