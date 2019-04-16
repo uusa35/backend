@@ -16,8 +16,11 @@
             @can('isSuper')
                 @include('backend.partials._sidebar_super')
             @elsecan('isAdmin')
+                @include('backend.partials._sidebar_admin')
             @elsecan('isCompany')
+                @include('backend.partials._sidebar_company')
             @elseCan('isDesigner')
+                @include('backend.partials._sidebar_designer')
             @endcan
 
             {{--<li class="nav-item">--}}

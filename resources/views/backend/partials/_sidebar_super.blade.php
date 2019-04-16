@@ -1,3 +1,4 @@
+@can('product.index')
 <li class="nav-item {{ activeItem('product') }}">
     <a href="{{ route('backend.product.index')}}" class="nav-link nav-toggle">
         <i class="fa fa-fw fa-product-hunt"></i>
@@ -43,6 +44,7 @@
         {{--</li>--}}
     </ul>
 </li>
+@endcan
 <li class="nav-item {{ activeItem('service') }}">
     <a href="{{ route('backend.admin.service.index') }}" class="nav-link nav-toggle">
         <i class="fa fa-fw fa-clock-o"></i>

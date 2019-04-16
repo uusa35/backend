@@ -26,9 +26,9 @@ class ProductController extends Controller
     public function index()
     {
         if (request()->has('type')) {
-            $elements = Product::where(request('type'), true)->with('images', 'product_attributes.size', 'product_attributes.color')->orderBy('id', 'desc')->get();
+            $elements = Product::where([request('type') => true, 'user_id' => auth()->id()])->with('images', 'product_attributes.size', 'product_attributes.color')->orderBy('id', 'desc')->get();
         } else {
-            $elements = Product::with('images', 'product_attributes.size', 'product_attributes.color')->orderBy('id', 'desc')->get();
+            $elements = Product::where(['user_id' => auth()->id()])->with('images', 'product_attributes.size', 'product_attributes.color')->orderBy('id', 'desc')->get();
         }
         return view('backend.modules.product.index', compact('elements'));
     }
@@ -67,7 +67,7 @@ class ProductController extends Controller
     {
         $end_sale = $request->has('end_sale') ? Carbon::parse(str_replace('-', '', $request->end_sale))->toDateTimeString() : null;
         $start_sale = $request->has('start_sale') ? Carbon::parse(str_replace('-', '', $request->start_sale))->toDateTimeString() : null;
-        $element = Product::create($request->except(['_token', 'image','images', 'categories', 'tags','start_sale','end_sale']));
+        $element = Product::create($request->except(['_token', 'image', 'images', 'categories', 'tags', 'start_sale', 'end_sale']));
         if ($element) {
             $start_sale ? $element->update(['start_sale' => $start_sale]) : null;
             $end_sale ? $element->update(['end_sale' => $end_sale]) : null;

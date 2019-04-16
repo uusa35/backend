@@ -1,3 +1,4 @@
+<?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('product.index')): ?>
 <li class="nav-item <?php echo e(activeItem('product')); ?>">
     <a href="<?php echo e(route('backend.product.index')); ?>" class="nav-link nav-toggle">
         <i class="fa fa-fw fa-product-hunt"></i>
@@ -43,6 +44,7 @@
         
     </ul>
 </li>
+<?php endif; ?>
 <li class="nav-item <?php echo e(activeItem('service')); ?>">
     <a href="<?php echo e(route('backend.admin.service.index')); ?>" class="nav-link nav-toggle">
         <i class="fa fa-fw fa-clock-o"></i>
