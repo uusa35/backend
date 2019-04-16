@@ -17,6 +17,7 @@ class CreatePrivilegeRolePivotTable extends Migration
             $table->foreign('privilege_id')->references('id')->on('privileges')->onDelete('cascade');
             $table->integer('role_id')->unsigned()->index();
             $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
+            $table->boolean('index')->default(0);
             $table->boolean('view')->default(0);
             $table->boolean('create')->default(0);
             $table->boolean('update')->default(0);

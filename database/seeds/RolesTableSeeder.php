@@ -15,7 +15,7 @@ class RolesTableSeeder extends Seeder
     {
         $roles = ['super', 'admin', 'designer', 'company'];
         $designerPrivileges = ['collection', 'slider', 'gallery', 'order', 'coupon', 'size', 'color'];
-        $companyPrivileges = ['product', 'slider', 'gallery', 'order', 'coupon', 'size', 'color','service','timing'];
+        $companyPrivileges = ['product', 'slider', 'gallery', 'order', 'coupon', 'size', 'color', 'service', 'timing'];
         $privileges = Privilege::all();
         foreach ($roles as $k => $v) {
             $role = factory(Role::class)->create(['name' => $v]);
@@ -24,14 +24,14 @@ class RolesTableSeeder extends Seeder
                 $role->privileges()->saveMany($privileges);
                 $rolePrivileges = $role->privileges()->get();
                 foreach ($rolePrivileges as $privilege) {
-                    $privilege->roles()->updateExistingPivot($role->id, ['view' => true, 'create' => true, 'update' => true, 'delete' => true]);
+                    $privilege->roles()->updateExistingPivot($role->id, ['index' => true, 'view' => true, 'create' => true, 'update' => true, 'delete' => true]);
                 }
             } else if ($role->name === 'admin') {
                 $role->update(['is_admin' => $v === 'admin' ? 1 : 0, 'is_admin' => true]);
                 $role->privileges()->saveMany($privileges);
                 $rolePrivileges = $role->privileges()->get();
                 foreach ($rolePrivileges as $privilege) {
-                    $privilege->roles()->updateExistingPivot($role->id, ['view' => true, 'create' => true, 'update' => true, 'delete' => true]);
+                    $privilege->roles()->updateExistingPivot($role->id, ['index' => true, 'view' => true, 'create' => true, 'update' => true, 'delete' => true]);
                 }
             } else if ($role->name === 'designer') {
                 $role->update(['is_admin' => $v === 'admin' ? 1 : 0, 'is_visible' => true, 'is_designer' => true]);
@@ -39,15 +39,15 @@ class RolesTableSeeder extends Seeder
                 $role->privileges()->saveMany($privileges);
                 $rolePrivileges = $role->privileges()->get();
                 foreach ($rolePrivileges as $privilege) {
-                    $privilege->roles()->updateExistingPivot($role->id, ['view' => true, 'create' => true, 'update' => true, 'delete' => true]);
+                    $privilege->roles()->updateExistingPivot($role->id, ['index' => true, 'view' => true, 'create' => true, 'update' => true, 'delete' => true]);
                 }
             } else if ($role->name === 'company') {
-                $role->update(['is_admin' => $v === 'admin' ? 1 : 0, 'is_visible' => true, 'is_company' => true ]);
+                $role->update(['is_admin' => $v === 'admin' ? 1 : 0, 'is_visible' => true, 'is_company' => true]);
                 $privileges = Privilege::whereIn('name', $companyPrivileges)->get();
                 $role->privileges()->saveMany($privileges);
                 $rolePrivileges = $role->privileges()->get();
                 foreach ($rolePrivileges as $privilege) {
-                    $privilege->roles()->updateExistingPivot($role->id, ['view' => true, 'create' => true, 'update' => true, 'delete' => true]);
+                    $privilege->roles()->updateExistingPivot($role->id, ['index' => true, 'view' => true, 'create' => true, 'update' => true, 'delete' => true]);
                 }
             }
         }

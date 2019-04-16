@@ -90,11 +90,11 @@ class AuthServiceProvider extends ServiceProvider
         });
 
         Gate::define('product.index', function ($user) {
-            return $user->role->privileges->where('name', 'product')->first()->pivot->view;
+            return $user->role->privileges->where('name', 'product')->first()->pivot->index;
         });
 
         Gate::define('service.index', function ($user) {
-            return $user->role->privileges->where('name', 'service')->first()->pivot->view;
+            return $user->role->privileges->where('name', 'service')->first()->pivot->index;
         });
     }
 }
