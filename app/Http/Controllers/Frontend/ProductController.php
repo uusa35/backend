@@ -129,4 +129,9 @@ class ProductController extends Controller
         dd($colorList);
     }
 
+    public function getClearSearch()
+    {
+        return redirect()->route('frontend.product.search')->with('warning', trans('message.search_parameters_clear'));
+    }
+
 }

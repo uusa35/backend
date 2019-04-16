@@ -119,6 +119,7 @@ Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => ['
     Route::get('search/product', 'ProductController@search')->name('product.search');
     Route::get('search/set', 'ServiceController@setDateAndArea')->name('service.set');
     Route::get('search/clear', 'ServiceController@getClearSearch')->name('service.clear');
+    Route::get('search/clear', 'ProductController@getClearSearch')->name('product.clear');
     Route::get('search/service', 'ServiceController@search')->name('service.search');
     Route::get('currency/{currency}', 'HomeController@changeCurrency')->name('currency.change');
     Route::get('language/{locale}', 'HomeController@changeLanguage')->name('language.change');
