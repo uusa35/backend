@@ -9,11 +9,19 @@
         </div>
     </div>
 </div>
-<div class="tt-content-aside">
-    <a href="{{ route('frontend.service.clear') }}" class="tt-promo-03 btn btn-border">
-        {{ trans('general.clear_all') }}
-    </a>
-</div>
+@if(env('APP_CASE') === 'mallr')
+    <div class="tt-content-aside">
+        <a href="{{ route('frontend.product.clear') }}" class="tt-promo-03 btn btn-border">
+            {{ trans('general.clear_all') }}
+        </a>
+    </div>
+@else
+    <div class="tt-content-aside">
+        <a href="{{ route('frontend.service.clear') }}" class="tt-promo-03 btn btn-border">
+            {{ trans('general.clear_all') }}
+        </a>
+    </div>
+@endif
 @include('frontend.wokiee.four.partials._search_side_bar_prices')
 @include('frontend.wokiee.four.partials._search_side_bar_vendors')
 @include('frontend.wokiee.four.partials._search_side_bar_areas')
