@@ -102,16 +102,21 @@
                             </h4>
                             <div class="tt-collapse-content">
                                 <address>
-                                    <p><span>{{ trans('general.address') }}:</span> {{ $settings->address }}</p>
-                                    <p><span>{{ trans('general.phone') }}:</span> {{ $settings->phone }}</p>
-                                    <p><span>{{ trans('general.mobile') }}:</span> {{ $settings->mobile }}</p>
-                                    <p><span>{{ trans('general.mobile') }}:</span> {{ $settings->mobile }}</p>
-                                    <p><span>{{ trans('general.whatsapp') }}:</span> {{ $settings->whatsapp }}</p>
+                                    <p><i class="fa fa-fw fa-map-marker"></i> {{ $settings->address }}</p>
+                                    <p><i class="fa fa-fw fa-phone"></i> {{ $settings->phone }}</p>
+                                    <p><i class="fa fa-fw fa-mobile"></i> {{ $settings->mobile }}</p>
+                                    <p><i class="fa fa-fw fa-whatsapp"></i> <a
+                                                href="https://api.whatsapp.com/send?phone={{ $settings->whatsapp  }}">{{ $settings->whatsapp }}</a>
+                                    </p>
+                                    <p><i class="fa fa-fw fa-location-arrow"></i> <a
+                                                href="https://www.google.com/maps/search/?api=1&query={{ $settings->latitude  }},{{ $settings->longitude }}">
+                                            {{ trans('general.location') }}
+                                        </a></p>
+                                    <p><span>{{ trans('general.mail') }}:</span> <a
+                                                href="mailto:{{ $settings->email }}">{{ $settings->email }}</a></p>
                                     <p>
                                         <span>{{ trans('general.duty_time') }}:</span> {{ trans('message.duty_time_message') }}
                                     </p>
-                                    <p><span>{{ trans('general.mail') }}:</span> <a
-                                                href="mailto:{{ $settings->email }}">{{ $settings->email }}</a></p>
                                 </address>
                             </div>
                         </div>

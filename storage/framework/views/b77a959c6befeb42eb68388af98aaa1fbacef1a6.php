@@ -107,11 +107,14 @@
                             </h4>
                             <div class="tt-collapse-content">
                                 <address>
-                                    <p><span><?php echo e(trans('general.address')); ?>:</span> <?php echo e($settings->address); ?></p>
-                                    <p><span><?php echo e(trans('general.phone')); ?>:</span> <?php echo e($settings->phone); ?></p>
-                                    <p><span><?php echo e(trans('general.mobile')); ?>:</span> <?php echo e($settings->mobile); ?></p>
-                                    <p><span><?php echo e(trans('general.mobile')); ?>:</span> <?php echo e($settings->mobile); ?></p>
-                                    <p><span><?php echo e(trans('general.whatsapp')); ?>:</span> <?php echo e($settings->whatsapp); ?></p>
+                                    <p><i class="fa fa-fw fa-map-marker"></i> <?php echo e($settings->address); ?></p>
+                                    <p><i class="fa fa-fw fa-phone"></i> <?php echo e($settings->phone); ?></p>
+                                    <p><i class="fa fa-fw fa-mobile"></i> <?php echo e($settings->mobile); ?></p>
+                                    <p><i class="fa fa-fw fa-whatsapp"></i> <a href="https://api.whatsapp.com/send?phone=<?php echo e($settings->whatsapp); ?>"><?php echo e($settings->whatsapp); ?></a></p>
+                                    <p><i class="fa fa-fw fa-location-arrow"></i> <a href="https://www.google.com/maps/search/?api=1&query=<?php echo e($settings->latitude); ?>,<?php echo e($settings->longitude); ?>">
+                                            <?php echo e(trans('general.location')); ?>
+
+                                        </a></p>
                                     <p>
                                         <span><?php echo e(trans('general.duty_time')); ?>:</span> <?php echo e(trans('message.duty_time_message')); ?>
 
