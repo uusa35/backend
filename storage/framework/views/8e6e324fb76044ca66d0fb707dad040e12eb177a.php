@@ -95,6 +95,20 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
+                                            <label class="control-label sbold"><?php echo e(trans('general.index')); ?></label></br>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="index" id="optionsRadios3" value="1">
+                                                <?php echo e(trans('general.index')); ?></label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="index" id="optionsRadios4" checked value="0">
+                                                <?php echo e(trans('general.not_index')); ?></label>
+                                        </div>
+                                        <span class="help-block">
+                                            <strong><?php echo e(trans('message.index_instructions')); ?></strong>
+                                        </span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
                                             <label class="control-label sbold"><?php echo e(trans('general.view')); ?></label></br>
                                             <label class="radio-inline">
                                                 <input type="radio" name="view" id="optionsRadios3" value="1">

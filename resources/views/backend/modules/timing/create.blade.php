@@ -62,11 +62,23 @@
                                             @endif
                                         </div>
                                     </div>
+
+
+
                                     <div class="col-md-4">
                                         <div class="form-group {{ $errors->has('start') ? ' has-error' : '' }}">
                                             <label for="start" class="control-label">{{ trans('general.start') }}
                                                 *</label>
-                                            <input id="start" type="text" class="form-control" day="start" value="{{ old('start') }}" placeholder="{{ trans('general.start') }}" required autofocus>
+                                            <div class="col">
+                                                <div class="input-group">
+                                                    <input id="start" type="text" class="form-control timepicker timepicker-24" name="start" value="{{ old('start') }}" placeholder="{{ trans('general.start') }}" required autofocus>
+                                                    <span class="input-group-btn">
+                                                        <button class="btn default" type="button">
+                                                            <i class="fa fa-clock-o"></i>
+                                                        </button>
+                                                    </span>
+                                                </div>
+                                            </div>
                                             @if ($errors->has('start'))
                                             <span class="help-block">
                                                 <strong>
@@ -78,8 +90,18 @@
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group {{ $errors->has('end') ? ' has-error' : '' }}">
-                                            <label for="end" class="control-label">{{ trans('general.end') }}*</label>
-                                            <input id="end" type="text" class="form-control" day="end" value="{{ old('end') }}" placeholder="{{ trans('general.end') }}" required autofocus>
+                                            <label for="end" class="control-label">{{ trans('general.end') }}
+                                                *</label>
+                                            <div class="col">
+                                                <div class="input-group">
+                                                    <input id="end" type="text" class="form-control timepicker timepicker-24" name="end" value="{{ old('end') }}" placeholder="{{ trans('general.end') }}" required autofocus>
+                                                    <span class="input-group-btn">
+                                                        <button class="btn default" type="button">
+                                                            <i class="fa fa-clock-o"></i>
+                                                        </button>
+                                                    </span>
+                                                </div>
+                                            </div>
                                             @if ($errors->has('end'))
                                             <span class="help-block">
                                                 <strong>
@@ -89,6 +111,7 @@
                                             @endif
                                         </div>
                                     </div>
+
                                     <div class="col-md-4">
                                         <div class="form-group {{ $errors->has('type') ? ' has-error' : '' }}">
                                             <label for="type" class="control-label">{{ trans('general.type') }}*</label>
@@ -102,6 +125,8 @@
                                             @endif
                                         </div>
                                     </div>
+                                </div>
+                                <div class="row">
                                     <div class="col-md-4">
                                         <div class="form-group {{ $errors->has('notes_ar') ? ' has-error' : '' }}">
                                             <label for="notes_ar" class="control-label">{{ trans('general.notes_ar') }}
@@ -278,4 +303,12 @@
             </form>
         </div>
     </div>
+    @endsection
+
+
+    @section('scripts')
+    @parent
+    <script src="{{ mix('js/datepicker.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/bootstrap-timepicker.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/clockface.js') }}"></script>
     @endsection

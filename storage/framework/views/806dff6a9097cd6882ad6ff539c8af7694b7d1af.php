@@ -66,12 +66,24 @@
                                             <?php endif; ?>
                                         </div>
                                     </div>
+
+
+
                                     <div class="col-md-4">
                                         <div class="form-group <?php echo e($errors->has('start') ? ' has-error' : ''); ?>">
                                             <label for="start" class="control-label"><?php echo e(trans('general.start')); ?>
 
                                                 *</label>
-                                            <input id="start" type="text" class="form-control" day="start" value="<?php echo e(old('start')); ?>" placeholder="<?php echo e(trans('general.start')); ?>" required autofocus>
+                                            <div class="col">
+                                                <div class="input-group">
+                                                    <input id="start" type="text" class="form-control timepicker timepicker-24" name="start" value="<?php echo e(old('start')); ?>" placeholder="<?php echo e(trans('general.start')); ?>" required autofocus>
+                                                    <span class="input-group-btn">
+                                                        <button class="btn default" type="button">
+                                                            <i class="fa fa-clock-o"></i>
+                                                        </button>
+                                                    </span>
+                                                </div>
+                                            </div>
                                             <?php if($errors->has('start')): ?>
                                             <span class="help-block">
                                                 <strong>
@@ -84,8 +96,19 @@
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group <?php echo e($errors->has('end') ? ' has-error' : ''); ?>">
-                                            <label for="end" class="control-label"><?php echo e(trans('general.end')); ?>*</label>
-                                            <input id="end" type="text" class="form-control" day="end" value="<?php echo e(old('end')); ?>" placeholder="<?php echo e(trans('general.end')); ?>" required autofocus>
+                                            <label for="end" class="control-label"><?php echo e(trans('general.end')); ?>
+
+                                                *</label>
+                                            <div class="col">
+                                                <div class="input-group">
+                                                    <input id="end" type="text" class="form-control timepicker timepicker-24" name="end" value="<?php echo e(old('end')); ?>" placeholder="<?php echo e(trans('general.end')); ?>" required autofocus>
+                                                    <span class="input-group-btn">
+                                                        <button class="btn default" type="button">
+                                                            <i class="fa fa-clock-o"></i>
+                                                        </button>
+                                                    </span>
+                                                </div>
+                                            </div>
                                             <?php if($errors->has('end')): ?>
                                             <span class="help-block">
                                                 <strong>
@@ -96,6 +119,7 @@
                                             <?php endif; ?>
                                         </div>
                                     </div>
+
                                     <div class="col-md-4">
                                         <div class="form-group <?php echo e($errors->has('type') ? ' has-error' : ''); ?>">
                                             <label for="type" class="control-label"><?php echo e(trans('general.type')); ?>*</label>
@@ -110,6 +134,8 @@
                                             <?php endif; ?>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="row">
                                     <div class="col-md-4">
                                         <div class="form-group <?php echo e($errors->has('notes_ar') ? ' has-error' : ''); ?>">
                                             <label for="notes_ar" class="control-label"><?php echo e(trans('general.notes_ar')); ?>
@@ -295,5 +321,14 @@
             </form>
         </div>
     </div>
+    <?php $__env->stopSection(); ?>
+
+
+    <?php $__env->startSection('scripts'); ?>
+    ##parent-placeholder-16728d18790deb58b3b8c1df74f06e536b532695##
+    <script src="<?php echo e(mix('js/datepicker.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(asset('js/bootstrap-timepicker.min.js')); ?>"></script>
+
+    <script type="text/javascript" src="<?php echo e(asset('js/clockface.js')); ?>"></script>
     <?php $__env->stopSection(); ?>
 <?php echo $__env->make('backend.layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
