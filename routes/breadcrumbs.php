@@ -273,7 +273,7 @@ Breadcrumbs::for('backend.admin.timing.index', function ($trail) {
     $trail->push(trans('general.index_timing'), route('backend.admin.timing.index'));
 });
 Breadcrumbs::for('backend.admin.timing.create', function ($trail) {
-    $trail->parent('backend.admin.term.index');
+    $trail->parent('backend.admin.timing.index');
     $trail->push(trans('general.create_timing'), route('backend.admin.timing.create'));
 });
 

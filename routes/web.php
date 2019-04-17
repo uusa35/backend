@@ -20,7 +20,8 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
     // 2- Action Also is different therefore ModelPolicy applied for each Model Action
 
     // Backend :: super only
-    Route::group(['namespace' => 'Admin', 'as' => 'super.', 'prefix' => 'super', 'middleware' => ['super']], function () { });
+    Route::group(['namespace' => 'Admin', 'as' => 'super.', 'prefix' => 'super', 'middleware' => ['super']], function () {
+    });
     // Backend :: super + admin
     Route::group(['namespace' => 'Admin', 'as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['admin']], function () {
         Route::resource('role', 'RoleController');
@@ -33,7 +34,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
         Route::resource('category', 'CategoryController');
         Route::resource('user', 'UserController');
         Route::resource('product', 'ProductController');
-        //        Route::resource('service', 'ServiceController');
+        Route::resource('service', 'ServiceController');
         Route::resource('color', 'ColorController');
         Route::resource('size', 'SizeController');
         Route::resource('slide', 'SlideController');
@@ -63,7 +64,6 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
         Route::resource('branch', 'BranchController');
         Route::resource('day', 'DayController');
         Route::resource('timing', 'TimingController');
-        Route::resource('service', 'ServiceController');
     });
     // Backend :: companies
     Route::get('/', 'HomeController@index')->name('index');
@@ -76,6 +76,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
     Route::resource('product', 'ProductController');
     Route::resource('attribute', 'ProductAttributeController');
     Route::resource('service', 'ServiceController');
+    Route::resource('timing', 'TimingController');
     Route::resource('slide', 'SlideController');
     Route::resource('branch', 'BranchController');
     Route::resource('order', 'OrderController')->except(['destroy', 'show']);
@@ -118,8 +119,8 @@ Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => ['
     Route::get('search/all', 'HomeController@search')->name('search');
     Route::get('search/product', 'ProductController@search')->name('product.search');
     Route::get('search/set', 'ServiceController@setDateAndArea')->name('service.set');
-    Route::get('search/clear', 'ServiceController@getClearSearch')->name('service.clear');
-    Route::get('search/clear', 'ProductController@getClearSearch')->name('product.clear');
+    Route::get('search/service/clear', 'ServiceController@getClearSearch')->name('service.clear');
+    Route::get('search/product/clear', 'ProductController@getClearSearch')->name('product.clear');
     Route::get('search/service', 'ServiceController@search')->name('service.search');
     Route::get('currency/{currency}', 'HomeController@changeCurrency')->name('currency.change');
     Route::get('language/{locale}', 'HomeController@changeLanguage')->name('language.change');

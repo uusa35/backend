@@ -31,7 +31,7 @@
                     <select name="timing_value" class="form-control">
                         <option value="" selected><?php echo e(trans('general.choose_timing')); ?></option>
                         <?php $__currentLoopData = $timings; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $k => $v): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <option value="<?php echo e(Carbon\Carbon::parse($v)->format('h:i a')); ?>" <?php echo e(getTimingValue() === $v ? 'selected' : null); ?>><?php echo e($v); ?></option>
+                            <option value="<?php echo e(Carbon\Carbon::parse($v)->format('H:i a')); ?>" <?php echo e(getTimingValue() === $v ? 'selected' : null); ?>><?php echo e($v); ?></option>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </select>
                 </div>

@@ -9,12 +9,21 @@
         </div>
     </div>
 </div>
-<div class="tt-content-aside">
-    <a href="<?php echo e(route('frontend.service.clear')); ?>" class="tt-promo-03 btn btn-border">
-        <?php echo e(trans('general.clear_all')); ?>
+<?php if(env('APP_CASE') === 'mallr'): ?>
+    <div class="tt-content-aside">
+        <a href="<?php echo e(route('frontend.product.clear')); ?>" class="tt-promo-03 btn btn-border">
+            <?php echo e(trans('general.clear_all')); ?>
 
-    </a>
-</div>
+        </a>
+    </div>
+<?php else: ?>
+    <div class="tt-content-aside">
+        <a href="<?php echo e(route('frontend.service.clear')); ?>" class="tt-promo-03 btn btn-border">
+            <?php echo e(trans('general.clear_all')); ?>
+
+        </a>
+    </div>
+<?php endif; ?>
 <?php echo $__env->make('frontend.wokiee.four.partials._search_side_bar_prices', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <?php echo $__env->make('frontend.wokiee.four.partials._search_side_bar_vendors', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <?php echo $__env->make('frontend.wokiee.four.partials._search_side_bar_areas', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,5 +1,5 @@
 <?php $__env->startSection('breadcrumbs'); ?>
-<?php echo e(Breadcrumbs::render('backend.admin.timing.index')); ?>
+<?php echo e(Breadcrumbs::render('backend.admin.day.index')); ?>
 
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
@@ -22,38 +22,32 @@
                 <table id="dataTable" class="table table-striped table-bordered table-hover" cellspacing="0">
                     <thead>
                         <tr>
-                            <th><?php echo e(trans('general.id')); ?></th>
+                            <th> <?php echo e(trans('general.id')); ?></th>
                             <th><?php echo e(trans('general.day')); ?></th>
-                            <th><?php echo e(trans('general.start')); ?></th>
-                            <th><?php echo e(trans('general.end')); ?></th>
-                            <th><?php echo e(trans('general.type')); ?></th>
-                            <th><?php echo e(trans('general.is_off')); ?></th>
+                            <th><?php echo e(trans('general.day_name_ar')); ?></th>
+                            <th><?php echo e(trans('general.day_name_en')); ?></th>
+                            <th><?php echo e(trans('general.day_no')); ?></th>
                             <th><?php echo e(trans('general.actions')); ?></th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
-                            <th><?php echo e(trans('general.id')); ?></th>
+                            <th> <?php echo e(trans('general.id')); ?></th>
                             <th><?php echo e(trans('general.day')); ?></th>
-                            <th><?php echo e(trans('general.start')); ?></th>
-                            <th><?php echo e(trans('general.end')); ?></th>
-                            <th><?php echo e(trans('general.type')); ?></th>
-                            <th><?php echo e(trans('general.is_off')); ?></th>
+                            <th><?php echo e(trans('general.day_name_ar')); ?></th>
+                            <th><?php echo e(trans('general.day_name_en')); ?></th>
+                            <th><?php echo e(trans('general.day_no')); ?></th>
                             <th><?php echo e(trans('general.actions')); ?></th>
                         </tr>
-
                     </tfoot>
                     <tbody>
                         <?php $__currentLoopData = $elements; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $element): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr>
                             <td> <?php echo e($element->id); ?></td>
                             <td> <?php echo e($element->day); ?> </td>
-
-                            <td> <?php echo e($element->start); ?> </td>
-                            <td> <?php echo e($element->end); ?> </td>
-                            <td> <?php echo e($element->is_off); ?> </td>
-
-                            <td> <?php echo e($element->type); ?> </td>
+                            <td> <?php echo e($element->day_name_ar); ?> </td>
+                            <td> <?php echo e($element->day_name_en); ?> </td>
+                            <td> <?php echo e($element->day_no); ?> </td>
 
                             <td>
                                 <div class="btn-group">

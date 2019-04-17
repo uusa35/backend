@@ -83,6 +83,102 @@
                             </div>
                         </div>
                     </div>
+                    <div class="portlet box blue ">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="fa fa-gift"></i> <?php echo e(trans('general.more_details')); ?>
+
+                            </div>
+                        </div>
+                        <div class="portlet-body form">
+                            <div class="form-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label sbold"><?php echo e(trans('general.index')); ?></label></br>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="index" id="optionsRadios3" value="1">
+                                                <?php echo e(trans('general.index')); ?></label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="index" id="optionsRadios4" checked value="0">
+                                                <?php echo e(trans('general.not_index')); ?></label>
+                                        </div>
+                                        <span class="help-block">
+                                            <strong><?php echo e(trans('message.index_instructions')); ?></strong>
+                                        </span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label sbold"><?php echo e(trans('general.view')); ?></label></br>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="view" id="optionsRadios3" value="1">
+                                                <?php echo e(trans('general.view')); ?></label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="view" id="optionsRadios4" checked value="0">
+                                                <?php echo e(trans('general.not_view')); ?></label>
+                                        </div>
+                                        <span class="help-block">
+                                            <strong><?php echo e(trans('message.view_instructions')); ?></strong>
+                                        </span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label sbold"><?php echo e(trans('general.create')); ?></label></br>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="create" id="optionsRadios3" value="1">
+                                                <?php echo e(trans('general.create')); ?></label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="create" id="optionsRadios4" checked value="0">
+                                                <?php echo e(trans('general.not_create')); ?>
+
+                                            </label>
+                                        </div>
+                                        <span class="help-block">
+                                            <strong><?php echo e(trans('message.create_instructions')); ?></strong>
+                                        </span>
+                                    </div>
+
+
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label sbold"><?php echo e(trans('general.update')); ?></label></br>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="update" id="optionsRadios3" value="1">
+                                                <?php echo e(trans('general.update')); ?></label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="update" id="optionsRadios4" checked value="0">
+                                                <?php echo e(trans('general.not_update')); ?></label>
+                                        </div>
+                                        <span class="help-block">
+                                            <strong><?php echo e(trans('message.update_instructions')); ?></strong>
+                                        </span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label sbold"><?php echo e(trans('general.delete')); ?></label></br>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="delete" id="optionsRadios3" value="1">
+                                                <?php echo e(trans('general.delete')); ?></label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="delete" id="optionsRadios4" checked value="0">
+                                                <?php echo e(trans('general.not_delete')); ?></label>
+                                        </div>
+                                        <span class="help-block">
+                                            <strong><?php echo e(trans('message.delete_instructions')); ?></strong>
+                                        </span>
+                                    </div>
+
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <?php echo $__env->make('backend.partials.forms._btn-group', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
             </form>

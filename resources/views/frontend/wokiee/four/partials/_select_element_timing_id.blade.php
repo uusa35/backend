@@ -6,7 +6,7 @@
         @foreach($element->timings as $timing)
             <option
                     class="timing-element-{{ $timing->day_no }} d-none"
-                    value="{{ $timing->id }}">{{ \Carbon\Carbon::parse($timing->start)->format('h:m A') }}</option>
+                    value="{{ $timing->id }}">{{ \Carbon\Carbon::parse($timing->start)->format('H:i A') }}</option>
         @endforeach
     </select>
 </div>
