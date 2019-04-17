@@ -1,4 +1,3 @@
-@can('product.index')
 <li class="nav-item {{ activeItem('product') }}">
     <a href="{{ route('backend.product.index')}}" class="nav-link nav-toggle">
         <i class="fa fa-fw fa-product-hunt"></i>
@@ -44,13 +43,37 @@
         {{--</li>--}}
     </ul>
 </li>
-@endcan
 <li class="nav-item {{ activeItem('service') }}">
     <a href="{{ route('backend.admin.service.index') }}" class="nav-link nav-toggle">
         <i class="fa fa-fw fa-clock-o"></i>
         <span class="title">{{ trans('general.services') }}</span>
         <span class="arrow"></span>
     </a>
+</li>
+<li class="nav-item {{ activeItem('timing',['day']) }}">
+    <a href="#" class="nav-link nav-toggle">
+        <i class="fa fa-fw fa-clock-o"></i>
+        <span class="title">{{ trans('general.timings') }}</span>
+        <span class="arrow"></span>
+    </a>
+    <ul class="sub-menu">
+        <li class="nav-item {{ activeItem('timing') }}">
+            <a href="{{ route('backend.admin.timing.index') }}" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-clock-o"></i>
+                <span class="title">{{ trans('general.service_timings') }}</span>
+                <span class="arrow"></span>
+            </a>
+        </li>
+        <li class="nav-item {{ activeItem('day') }}">
+            <a href="{{ route('backend.admin.day.index') }}" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-calendar"></i>
+                <span class="title">{{ trans('general.days') }}</span>
+                <span class="arrow"></span>
+            </a>
+
+        </li>
+
+    </ul>
 </li>
 <li class="nav-item {{ activeItem('user') }}">
     <a href="{{ route('backend.admin.user.index')}}" class="nav-link nav-toggle">
@@ -62,109 +85,85 @@
 
 </li>
 
-
-<li class="nav-item {{ activeItem('category') }}">
-    <a href="{{ route('backend.admin.category.index') }}" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-list-ol"></i>
-        <span class="title">{{ trans('general.categories') }}</span>
-        <span class="arrow"></span>
-    </a>
-    <ul class="sub-menu">
-        <li class="nav-item ">
-            <a href="{{ route('backend.admin.category.index') }}" class="nav-link ">
-                <i class="fa fa-fw fa-list-ul"></i>
-                <span class="title">{{ trans('general.categories') }}</span>
-                <span class="arrow"></span>
-            </a>
-        </li>
-
-    </ul>
-</li>
-
-<li class="nav-item {{ activeItem('country') }}">
-    <a href="{{ route('backend.admin.country.index') }}" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-globe"></i>
-        <span class="title">{{ trans('general.countries') }}</span>
-        <span class="arrow"></span>
-    </a>
-    <ul class="sub-menu">
-        <li class="nav-item ">
-            <a href="{{ route('backend.admin.country.index') }}" class="nav-link nav-toggle">
-                <i class="fa fa-fw fa-globe"></i>
-                <span class="title">{{ trans('general.countries_control') }}</span>
-                <span class="arrow"></span>
-            </a>
-            {{--<ul class="sub-menu always-open"> --}}
-            {{--@foreach($countries as $country)--}}
-            {{--<li class="nav-item">--}}
-            {{--<a href="{{ route('backend.country.show',$country->id) }}" class="nav-link ">--}}
-            {{--{{ $country->name }}</a>--}}
-            {{--</li>--}}
-            {{--@endforeach--}}
-            {{--</ul>--}}
-        </li>
-
-    </ul>
-</li>
-
-<li class="nav-item {{ activeItem('currency') }}">
-    <a href="{{ route('backend.admin.currency.index') }}" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-dollar"></i>
-        <span class="title">{{ trans('general.currencies') }}</span>
-        <span class="arrow"></span>
-    </a>
-    <ul class="sub-menu">
-        <li class="nav-item ">
-            <a href="{{ route('backend.admin.currency.index') }}" class="nav-link nav-toggle">
-                <i class="fa fa-fw fa-euro"></i>
-                <span class="title"> {{ trans('general.currencies') }}</span>
-                <span class="arrow"></span>
-            </a>
-        </li>
-
-    </ul>
-</li>
-
-<li class="nav-item {{ activeItem('coupon') }}">
-    <a href="{{ route('backend.admin.coupon.index') }}" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-credit-card"></i>
-        <span class="title">{{ trans('general.coupons') }}</span>
-        <span class="arrow"></span>
-    </a>
-    <ul class="sub-menu">
-        <li class="nav-item ">
-            <a href="{{ route('backend.coupon.index') }}" class="nav-link nav-toggle">
-                <i class="fa fa-fw fa-cc-discover"></i>
-                <span class="title">{{ trans('general.coupons') }}</span>
-                <span class="arrow"></span>
-            </a>
-        </li>
-
-    </ul>
-</li>
 {{--Settings--}}
-<li class="nav-item {{ activeItem('setting', ['policy','term','faq','page','contactus', 'aboutus','gallery','image']) }}">
+<li class="nav-item {{ activeItem('setting', ['policy','term','faq','page','contactus', 'aboutus','gallery','image','color','size','tag','day','role','privilege']) }}">
     <a href="{{ route('backend.admin.setting.index') }}" class="nav-link nav-toggle">
         <i class="fa fa-fw fa-cogs"></i>
         <span class="title">{{ trans('general.app_settings') }}</span>
         <span class="arrow"></span>
     </a>
     <ul class="sub-menu">
-        <li class="nav-item ">
+        <li class="nav-item {{ activeItem('policy') }}">
+            <a href="{{ route('backend.admin.policy.index') }}" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-certificate"></i>
+                <span class="title">{{ trans('general.polices') }}</span>
+                <span class="arrow"></span>
+            </a>
+
+        </li>
+        <li class="nav-item {{ activeItem('role') }}">
+            <a href="{{ route('backend.admin.role.index') }}" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-users"></i>
+                <span class="title">{{ trans('general.roles') }}</span>
+                <span class="arrow"></span>
+            </a>
+
+        </li>
+        <li class="nav-item {{ activeItem('term') }}">
+            <a href="{{ route('backend.admin.term.index') }}" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-info-circle"></i>
+                <span class="title">{{ trans('general.terms') }}</span>
+                <span class="arrow"></span>
+            </a>
+
+        </li>
+        <li class="nav-item {{ activeItem('privilege') }}">
+            <a href="{{ route('backend.admin.privilege.index') }}" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-lock"></i>
+                <span class="title">{{ trans('general.privileges') }}</span>
+                <span class="arrow"></span>
+            </a>
+            <ul class="sub-menu">
+                <li class="nav-item ">
+                    <a href="{{ route('backend.admin.privilege.create') }}" class="nav-link nav-toggle">
+                        <i class="fa fa-fw fa-list-ul"></i>
+                        <span class="title">{{ trans('general.create_privilege') }} </span>
+                        <span class="arrow"></span>
+                    </a>
+                </li>
+
+            </ul>
+        </li>
+
+        <li class="nav-item {{ activeItem('tag') }}">
+            <a href="{{ route('backend.tag.index') }}" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-tags"></i>
+                <span class="title">{{ trans('general.tags') }}</span>
+                <span class="arrow"></span>
+            </a>
+        </li>
+        <li class="nav-item {{ activeItem('color') }}">
+            <a href="{{ route('backend.admin.color.index') }}" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-list-alt"></i>
+                <span class="title">{{ trans('general.colors') }}</span>
+                <span class="arrow"></span>
+            </a>
+        </li>
+        <li class="nav-item {{ activeItem('size') }}">
+            <a href="{{ route('backend.admin.size.index') }}" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-list-ul"></i>
+                <span class="title">{{ trans('general.sizes') }}</span>
+                <span class="arrow"></span>
+            </a>
+        </li>
+        <li class="nav-item {{ activeItem('setting') }}">
             <a href="{{ route('backend.admin.setting.index') }}" class="nav-link ">
                 <i class="fa fa-fw fa-edit"></i>
                 <span class="title">{{ trans('general.edit_app_settings') }}</span>
                 <span class="arrow"></span>
             </a>
         </li>
-        <li class="nav-item ">
-            <a href="{{ route('backend.branch.index') }}" class="nav-link ">
-                <i class="fa fa-fw fa-file-image-o"></i>
-                <span class="title">{{ trans('general.branches') }}</span>
-                <span class="arrow"></span>
-            </a>
-        </li>
-        <li class="nav-item ">
+        <li class="nav-item {{ activeItem('slide') }}">
             <a href="{{ route('backend.slide.index') }}" class="nav-link ">
                 <i class="fa fa-fw fa-file-image-o"></i>
                 <span class="title">{{ trans('general.slides') }}</span>
@@ -178,6 +177,44 @@
                 <span class="arrow"></span>
             </a>
         </li>
+        <li class="nav-item {{ activeItem('newsletter') }}">
+            <a href="{{ route('backend.admin.newsletter.index') }}" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-newspaper-o"></i>
+                <span class="title">{{ trans('general.newsletters') }}</span>
+                <span class="arrow"></span>
+            </a>
+
+        </li>
+
+
+        <li class="nav-item {{ activeItem('faq') }}">
+            <a href="{{ route('backend.admin.faq.index') }}" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-question-circle"></i>
+                <span class="title">{{ trans('general.faq') }}</span>
+                <span class="arrow"></span>
+            </a>
+
+
+        </li>
+
+        <li class="nav-item {{ activeItem('commercial') }}">
+            <a href="{{ route('backend.admin.commercial.index') }}" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-address-card-o "></i>
+                <span class="title">{{ trans('general.commercials') }}</span>
+                <span class="arrow"></span>
+            </a>
+
+        </li>
+
+        <li class="nav-item {{ activeItem('notification') }}">
+            <a href="{{ route('backend.admin.notification.index') }}" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-bell"></i>
+                <span class="title">{{ trans('general.notifications') }}</span>
+                <span class="arrow"></span>
+            </a>
+
+        </li>
+
         {{--<li class="nav-item ">--}}
         {{--<a href="{{ route('backend.aboutus.index') }}" class="nav-link ">--}}
         {{--<i class="fa fa-fw fa-plus-square-o"></i>--}}
@@ -280,25 +317,105 @@
         {{--</li>--}}
     </ul>
 </li>
-{{--tags--}}
-<li class="nav-item {{ activeItem('tag') }}">
-    <a href="{{ route('backend.tag.index') }}" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-tag"></i>
-        <span class="title">{{ trans('general.tags') }}</span>
+
+<li class="nav-item {{ activeItem('category') }}">
+    <a href="{{ route('backend.admin.category.index') }}" class="nav-link nav-toggle">
+        <i class="fa fa-fw fa-list-ol"></i>
+        <span class="title">{{ trans('general.categories') }}</span>
         <span class="arrow"></span>
     </a>
     <ul class="sub-menu">
         <li class="nav-item ">
-            <a href="{{ route('backend.tag.index') }}" class="nav-link nav-toggle">
-                <i class="fa fa-fw fa-tags"></i>
-                <span class="title">{{ trans('general.tags') }}</span>
+            <a href="{{ route('backend.admin.category.index') }}" class="nav-link ">
+                <i class="fa fa-fw fa-list-ul"></i>
+                <span class="title">{{ trans('general.categories') }}</span>
                 <span class="arrow"></span>
             </a>
         </li>
 
     </ul>
 </li>
+
+<li class="nav-item {{ activeItem('country') }}">
+    <a href="{{ route('backend.admin.country.index') }}" class="nav-link nav-toggle">
+        <i class="fa fa-fw fa-globe"></i>
+        <span class="title">{{ trans('general.countries') }}</span>
+        <span class="arrow"></span>
+    </a>
+    <ul class="sub-menu">
+        <li class="nav-item ">
+            <a href="{{ route('backend.admin.country.index') }}" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-globe"></i>
+                <span class="title">{{ trans('general.countries_control') }}</span>
+                <span class="arrow"></span>
+            </a>
+            {{--<ul class="sub-menu always-open"> --}}
+            {{--@foreach($countries as $country)--}}
+            {{--<li class="nav-item">--}}
+            {{--<a href="{{ route('backend.country.show',$country->id) }}" class="nav-link ">--}}
+            {{--{{ $country->name }}</a>--}}
+            {{--</li>--}}
+            {{--@endforeach--}}
+            {{--</ul>--}}
+        </li>
+
+    </ul>
 </li>
+
+<li class="nav-item {{ activeItem('currency') }}">
+    <a href="{{ route('backend.admin.currency.index') }}" class="nav-link nav-toggle">
+        <i class="fa fa-fw fa-dollar"></i>
+        <span class="title">{{ trans('general.currencies') }}</span>
+        <span class="arrow"></span>
+    </a>
+    <ul class="sub-menu">
+        <li class="nav-item ">
+            <a href="{{ route('backend.admin.currency.index') }}" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-euro"></i>
+                <span class="title"> {{ trans('general.currencies') }}</span>
+                <span class="arrow"></span>
+            </a>
+        </li>
+
+    </ul>
+</li>
+
+<li class="nav-item {{ activeItem('coupon') }}">
+    <a href="{{ route('backend.admin.coupon.index') }}" class="nav-link nav-toggle">
+        <i class="fa fa-fw fa-credit-card"></i>
+        <span class="title">{{ trans('general.coupons') }}</span>
+        <span class="arrow"></span>
+    </a>
+    <ul class="sub-menu">
+        <li class="nav-item ">
+            <a href="{{ route('backend.coupon.index') }}" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-cc-discover"></i>
+                <span class="title">{{ trans('general.coupons') }}</span>
+                <span class="arrow"></span>
+            </a>
+        </li>
+
+    </ul>
+</li>
+
+<li class="nav-item {{ activeItem('branch') }}">
+    <a href="{{ route('backend.admin.branch.index') }}" class="nav-link nav-toggle">
+        <i class="fa fa-fw fa-building-o"></i>
+        <span class="title">{{ trans('general.branches') }}</span>
+        <span class="arrow"></span>
+    </a>
+    <ul class="sub-menu">
+        <li class="nav-item ">
+            <a href="{{ route('backend.branch.index') }}" class="nav-link ">
+                <i class="fa fa-fw fa-building-o"></i>
+                <span class="title">{{ trans('general.branches') }}</span>
+                <span class="arrow"></span>
+            </a>
+        </li>
+
+    </ul>
+</li>
+
 {{--brands--}}
 <li class="nav-item {{ activeItem('brand') }}">
     <a href="{{ route('backend.admin.brand.index') }}" class="nav-link nav-toggle">
@@ -311,23 +428,6 @@
             <a href="{{ route('backend.admin.brand.index') }}" class="nav-link nav-toggle">
                 <i class="fa fa-fw fa-shopping-bag"></i>
                 <span class="title">{{ trans('general.brands') }}</span>
-                <span class="arrow"></span>
-            </a>
-        </li>
-
-    </ul>
-</li>
-<li class="nav-item {{ activeItem('color') }}">
-    <a href="{{ route('backend.admin.color.index') }}" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-paint-brush"></i>
-        <span class="title">{{ trans('general.colors') }}</span>
-        <span class="arrow"></span>
-    </a>
-    <ul class="sub-menu">
-        <li class="nav-item ">
-            <a href="{{ route('backend.admin.color.index') }}" class="nav-link nav-toggle">
-                <i class="fa fa-fw fa-list-alt"></i>
-                <span class="title">{{ trans('general.colors') }}</span>
                 <span class="arrow"></span>
             </a>
         </li>
@@ -362,23 +462,6 @@
                 <span class="arrow"></span>
             </a>
         </li>
-    </ul>
-</li>
-<li class="nav-item {{ activeItem('size') }}">
-    <a href="{{ route('backend.admin.size.index') }}" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-tags"></i>
-        <span class="title">{{ trans('general.sizes') }}</span>
-        <span class="arrow"></span>
-    </a>
-    <ul class="sub-menu">
-        <li class="nav-item ">
-            <a href="{{ route('backend.admin.size.index') }}" class="nav-link nav-toggle">
-                <i class="fa fa-fw fa-list-ul"></i>
-                <span class="title">{{ trans('general.sizes') }}</span>
-                <span class="arrow"></span>
-            </a>
-        </li>
-
     </ul>
 </li>
 <li class="nav-item {{ activeItem('question',['survey','answer']) }}">
@@ -444,53 +527,6 @@
     </ul>
 </li>
 
-<li class="nav-item {{ activeItem('newsletter') }}">
-    <a href="{{ route('backend.admin.newsletter.index') }}" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-newspaper-o"></i>
-        <span class="title">{{ trans('general.newsletters') }}</span>
-        <span class="arrow"></span>
-    </a>
-
-</li>
-
-
-<li class="nav-item {{ activeItem('faq') }}">
-    <a href="{{ route('backend.admin.faq.index') }}" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-question-circle"></i>
-        <span class="title">{{ trans('general.faq') }}</span>
-        <span class="arrow"></span>
-    </a>
-
-
-</li>
-
-<li class="nav-item {{ activeItem('commercial') }}">
-    <a href="{{ route('backend.admin.commercial.index') }}" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-address-card-o "></i>
-        <span class="title">{{ trans('general.commercials') }}</span>
-        <span class="arrow"></span>
-    </a>
-
-</li>
-
-<li class="nav-item {{ activeItem('notification') }}">
-    <a href="{{ route('backend.admin.notification.index') }}" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-bell"></i>
-        <span class="title">{{ trans('general.notifications') }}</span>
-        <span class="arrow"></span>
-    </a>
-
-</li>
-
-<li class="nav-item {{ activeItem('policy') }}">
-    <a href="{{ route('backend.admin.policy.index') }}" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-certificate"></i>
-        <span class="title">{{ trans('general.polices') }}</span>
-        <span class="arrow"></span>
-    </a>
-
-</li>
-
 
 <li class="nav-item {{ activeItem('answer') }}">
     <a href="{{ route('backend.admin.answer.index') }}" class="nav-link nav-toggle">
@@ -501,54 +537,3 @@
 
 </li>
 
-<li class="nav-item {{ activeItem('role') }}">
-    <a href="{{ route('backend.admin.role.index') }}" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-users"></i>
-        <span class="title">{{ trans('general.roles') }}</span>
-        <span class="arrow"></span>
-    </a>
-
-</li>
-<li class="nav-item {{ activeItem('term') }}">
-    <a href="{{ route('backend.admin.term.index') }}" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-info-circle"></i>
-        <span class="title">{{ trans('general.terms') }}</span>
-        <span class="arrow"></span>
-    </a>
-
-</li>
-<li class="nav-item {{ activeItem('privilege') }}">
-    <a href="{{ route('backend.admin.privilege.index') }}" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-lock"></i>
-        <span class="title">{{ trans('general.privileges') }}</span>
-        <span class="arrow"></span>
-    </a>
-    <ul class="sub-menu">
-        <li class="nav-item ">
-            <a href="{{ route('backend.admin.privilege.create') }}" class="nav-link nav-toggle">
-                <i class="fa fa-fw fa-list-ul"></i>
-                <span class="title">{{ trans('general.create_privilege') }} </span>
-                <span class="arrow"></span>
-            </a>
-        </li>
-
-    </ul>
-</li>
-
-<li class="nav-item {{ activeItem('day') }}">
-    <a href="{{ route('backend.admin.day.index') }}" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-calendar"></i>
-        <span class="title">{{ trans('general.days') }}</span>
-        <span class="arrow"></span>
-    </a>
-
-</li>
-
-<li class="nav-item {{ activeItem('timing') }}">
-    <a href="{{ route('backend.admin.timing.index') }}" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-clock-o"></i>
-        <span class="title">{{ trans('general.timings') }}</span>
-        <span class="arrow"></span>
-    </a>
-
-</li>

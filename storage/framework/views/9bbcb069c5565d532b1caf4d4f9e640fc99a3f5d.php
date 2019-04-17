@@ -1,4 +1,3 @@
-<?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('product.index')): ?>
 <li class="nav-item <?php echo e(activeItem('product')); ?>">
     <a href="<?php echo e(route('backend.product.index')); ?>" class="nav-link nav-toggle">
         <i class="fa fa-fw fa-product-hunt"></i>
@@ -44,13 +43,37 @@
         
     </ul>
 </li>
-<?php endif; ?>
 <li class="nav-item <?php echo e(activeItem('service')); ?>">
     <a href="<?php echo e(route('backend.admin.service.index')); ?>" class="nav-link nav-toggle">
         <i class="fa fa-fw fa-clock-o"></i>
         <span class="title"><?php echo e(trans('general.services')); ?></span>
         <span class="arrow"></span>
     </a>
+</li>
+<li class="nav-item <?php echo e(activeItem('timing',['day'])); ?>">
+    <a href="#" class="nav-link nav-toggle">
+        <i class="fa fa-fw fa-clock-o"></i>
+        <span class="title"><?php echo e(trans('general.timings')); ?></span>
+        <span class="arrow"></span>
+    </a>
+    <ul class="sub-menu">
+        <li class="nav-item <?php echo e(activeItem('timing')); ?>">
+            <a href="<?php echo e(route('backend.admin.timing.index')); ?>" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-clock-o"></i>
+                <span class="title"><?php echo e(trans('general.service_timings')); ?></span>
+                <span class="arrow"></span>
+            </a>
+        </li>
+        <li class="nav-item <?php echo e(activeItem('day')); ?>">
+            <a href="<?php echo e(route('backend.admin.day.index')); ?>" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-calendar"></i>
+                <span class="title"><?php echo e(trans('general.days')); ?></span>
+                <span class="arrow"></span>
+            </a>
+
+        </li>
+
+    </ul>
 </li>
 <li class="nav-item <?php echo e(activeItem('user')); ?>">
     <a href="<?php echo e(route('backend.admin.user.index')); ?>" class="nav-link nav-toggle">
@@ -63,108 +86,84 @@
 </li>
 
 
-<li class="nav-item <?php echo e(activeItem('category')); ?>">
-    <a href="<?php echo e(route('backend.admin.category.index')); ?>" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-list-ol"></i>
-        <span class="title"><?php echo e(trans('general.categories')); ?></span>
-        <span class="arrow"></span>
-    </a>
-    <ul class="sub-menu">
-        <li class="nav-item ">
-            <a href="<?php echo e(route('backend.admin.category.index')); ?>" class="nav-link ">
-                <i class="fa fa-fw fa-list-ul"></i>
-                <span class="title"><?php echo e(trans('general.categories')); ?></span>
-                <span class="arrow"></span>
-            </a>
-        </li>
-
-    </ul>
-</li>
-
-<li class="nav-item <?php echo e(activeItem('country')); ?>">
-    <a href="<?php echo e(route('backend.admin.country.index')); ?>" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-globe"></i>
-        <span class="title"><?php echo e(trans('general.countries')); ?></span>
-        <span class="arrow"></span>
-    </a>
-    <ul class="sub-menu">
-        <li class="nav-item ">
-            <a href="<?php echo e(route('backend.admin.country.index')); ?>" class="nav-link nav-toggle">
-                <i class="fa fa-fw fa-globe"></i>
-                <span class="title"><?php echo e(trans('general.countries_control')); ?></span>
-                <span class="arrow"></span>
-            </a>
-            
-            
-            
-            
-            
-            
-            
-            
-        </li>
-
-    </ul>
-</li>
-
-<li class="nav-item <?php echo e(activeItem('currency')); ?>">
-    <a href="<?php echo e(route('backend.admin.currency.index')); ?>" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-dollar"></i>
-        <span class="title"><?php echo e(trans('general.currencies')); ?></span>
-        <span class="arrow"></span>
-    </a>
-    <ul class="sub-menu">
-        <li class="nav-item ">
-            <a href="<?php echo e(route('backend.admin.currency.index')); ?>" class="nav-link nav-toggle">
-                <i class="fa fa-fw fa-euro"></i>
-                <span class="title"> <?php echo e(trans('general.currencies')); ?></span>
-                <span class="arrow"></span>
-            </a>
-        </li>
-
-    </ul>
-</li>
-
-<li class="nav-item <?php echo e(activeItem('coupon')); ?>">
-    <a href="<?php echo e(route('backend.admin.coupon.index')); ?>" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-credit-card"></i>
-        <span class="title"><?php echo e(trans('general.coupons')); ?></span>
-        <span class="arrow"></span>
-    </a>
-    <ul class="sub-menu">
-        <li class="nav-item ">
-            <a href="<?php echo e(route('backend.coupon.index')); ?>" class="nav-link nav-toggle">
-                <i class="fa fa-fw fa-cc-discover"></i>
-                <span class="title"><?php echo e(trans('general.coupons')); ?></span>
-                <span class="arrow"></span>
-            </a>
-        </li>
-
-    </ul>
-</li>
-
-<li class="nav-item <?php echo e(activeItem('setting', ['policy','term','faq','page','contactus', 'aboutus','gallery','image'])); ?>">
+<li class="nav-item <?php echo e(activeItem('setting', ['policy','term','faq','page','contactus', 'aboutus','gallery','image','color','size','tag','day','role','privilege'])); ?>">
     <a href="<?php echo e(route('backend.admin.setting.index')); ?>" class="nav-link nav-toggle">
         <i class="fa fa-fw fa-cogs"></i>
         <span class="title"><?php echo e(trans('general.app_settings')); ?></span>
         <span class="arrow"></span>
     </a>
     <ul class="sub-menu">
-        <li class="nav-item ">
+        <li class="nav-item <?php echo e(activeItem('policy')); ?>">
+            <a href="<?php echo e(route('backend.admin.policy.index')); ?>" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-certificate"></i>
+                <span class="title"><?php echo e(trans('general.polices')); ?></span>
+                <span class="arrow"></span>
+            </a>
+
+        </li>
+        <li class="nav-item <?php echo e(activeItem('role')); ?>">
+            <a href="<?php echo e(route('backend.admin.role.index')); ?>" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-users"></i>
+                <span class="title"><?php echo e(trans('general.roles')); ?></span>
+                <span class="arrow"></span>
+            </a>
+
+        </li>
+        <li class="nav-item <?php echo e(activeItem('term')); ?>">
+            <a href="<?php echo e(route('backend.admin.term.index')); ?>" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-info-circle"></i>
+                <span class="title"><?php echo e(trans('general.terms')); ?></span>
+                <span class="arrow"></span>
+            </a>
+
+        </li>
+        <li class="nav-item <?php echo e(activeItem('privilege')); ?>">
+            <a href="<?php echo e(route('backend.admin.privilege.index')); ?>" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-lock"></i>
+                <span class="title"><?php echo e(trans('general.privileges')); ?></span>
+                <span class="arrow"></span>
+            </a>
+            <ul class="sub-menu">
+                <li class="nav-item ">
+                    <a href="<?php echo e(route('backend.admin.privilege.create')); ?>" class="nav-link nav-toggle">
+                        <i class="fa fa-fw fa-list-ul"></i>
+                        <span class="title"><?php echo e(trans('general.create_privilege')); ?> </span>
+                        <span class="arrow"></span>
+                    </a>
+                </li>
+
+            </ul>
+        </li>
+
+        <li class="nav-item <?php echo e(activeItem('tag')); ?>">
+            <a href="<?php echo e(route('backend.tag.index')); ?>" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-tags"></i>
+                <span class="title"><?php echo e(trans('general.tags')); ?></span>
+                <span class="arrow"></span>
+            </a>
+        </li>
+        <li class="nav-item <?php echo e(activeItem('color')); ?>">
+            <a href="<?php echo e(route('backend.admin.color.index')); ?>" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-list-alt"></i>
+                <span class="title"><?php echo e(trans('general.colors')); ?></span>
+                <span class="arrow"></span>
+            </a>
+        </li>
+        <li class="nav-item <?php echo e(activeItem('size')); ?>">
+            <a href="<?php echo e(route('backend.admin.size.index')); ?>" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-list-ul"></i>
+                <span class="title"><?php echo e(trans('general.sizes')); ?></span>
+                <span class="arrow"></span>
+            </a>
+        </li>
+        <li class="nav-item <?php echo e(activeItem('setting')); ?>">
             <a href="<?php echo e(route('backend.admin.setting.index')); ?>" class="nav-link ">
                 <i class="fa fa-fw fa-edit"></i>
                 <span class="title"><?php echo e(trans('general.edit_app_settings')); ?></span>
                 <span class="arrow"></span>
             </a>
         </li>
-        <li class="nav-item ">
-            <a href="<?php echo e(route('backend.branch.index')); ?>" class="nav-link ">
-                <i class="fa fa-fw fa-file-image-o"></i>
-                <span class="title"><?php echo e(trans('general.branches')); ?></span>
-                <span class="arrow"></span>
-            </a>
-        </li>
-        <li class="nav-item ">
+        <li class="nav-item <?php echo e(activeItem('slide')); ?>">
             <a href="<?php echo e(route('backend.slide.index')); ?>" class="nav-link ">
                 <i class="fa fa-fw fa-file-image-o"></i>
                 <span class="title"><?php echo e(trans('general.slides')); ?></span>
@@ -178,6 +177,44 @@
                 <span class="arrow"></span>
             </a>
         </li>
+        <li class="nav-item <?php echo e(activeItem('newsletter')); ?>">
+            <a href="<?php echo e(route('backend.admin.newsletter.index')); ?>" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-newspaper-o"></i>
+                <span class="title"><?php echo e(trans('general.newsletters')); ?></span>
+                <span class="arrow"></span>
+            </a>
+
+        </li>
+
+
+        <li class="nav-item <?php echo e(activeItem('faq')); ?>">
+            <a href="<?php echo e(route('backend.admin.faq.index')); ?>" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-question-circle"></i>
+                <span class="title"><?php echo e(trans('general.faq')); ?></span>
+                <span class="arrow"></span>
+            </a>
+
+
+        </li>
+
+        <li class="nav-item <?php echo e(activeItem('commercial')); ?>">
+            <a href="<?php echo e(route('backend.admin.commercial.index')); ?>" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-address-card-o "></i>
+                <span class="title"><?php echo e(trans('general.commercials')); ?></span>
+                <span class="arrow"></span>
+            </a>
+
+        </li>
+
+        <li class="nav-item <?php echo e(activeItem('notification')); ?>">
+            <a href="<?php echo e(route('backend.admin.notification.index')); ?>" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-bell"></i>
+                <span class="title"><?php echo e(trans('general.notifications')); ?></span>
+                <span class="arrow"></span>
+            </a>
+
+        </li>
+
         
         
         
@@ -282,24 +319,104 @@
     </ul>
 </li>
 
-<li class="nav-item <?php echo e(activeItem('tag')); ?>">
-    <a href="<?php echo e(route('backend.tag.index')); ?>" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-tag"></i>
-        <span class="title"><?php echo e(trans('general.tags')); ?></span>
+<li class="nav-item <?php echo e(activeItem('category')); ?>">
+    <a href="<?php echo e(route('backend.admin.category.index')); ?>" class="nav-link nav-toggle">
+        <i class="fa fa-fw fa-list-ol"></i>
+        <span class="title"><?php echo e(trans('general.categories')); ?></span>
         <span class="arrow"></span>
     </a>
     <ul class="sub-menu">
         <li class="nav-item ">
-            <a href="<?php echo e(route('backend.tag.index')); ?>" class="nav-link nav-toggle">
-                <i class="fa fa-fw fa-tags"></i>
-                <span class="title"><?php echo e(trans('general.tags')); ?></span>
+            <a href="<?php echo e(route('backend.admin.category.index')); ?>" class="nav-link ">
+                <i class="fa fa-fw fa-list-ul"></i>
+                <span class="title"><?php echo e(trans('general.categories')); ?></span>
                 <span class="arrow"></span>
             </a>
         </li>
 
     </ul>
 </li>
+
+<li class="nav-item <?php echo e(activeItem('country')); ?>">
+    <a href="<?php echo e(route('backend.admin.country.index')); ?>" class="nav-link nav-toggle">
+        <i class="fa fa-fw fa-globe"></i>
+        <span class="title"><?php echo e(trans('general.countries')); ?></span>
+        <span class="arrow"></span>
+    </a>
+    <ul class="sub-menu">
+        <li class="nav-item ">
+            <a href="<?php echo e(route('backend.admin.country.index')); ?>" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-globe"></i>
+                <span class="title"><?php echo e(trans('general.countries_control')); ?></span>
+                <span class="arrow"></span>
+            </a>
+            
+            
+            
+            
+            
+            
+            
+            
+        </li>
+
+    </ul>
 </li>
+
+<li class="nav-item <?php echo e(activeItem('currency')); ?>">
+    <a href="<?php echo e(route('backend.admin.currency.index')); ?>" class="nav-link nav-toggle">
+        <i class="fa fa-fw fa-dollar"></i>
+        <span class="title"><?php echo e(trans('general.currencies')); ?></span>
+        <span class="arrow"></span>
+    </a>
+    <ul class="sub-menu">
+        <li class="nav-item ">
+            <a href="<?php echo e(route('backend.admin.currency.index')); ?>" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-euro"></i>
+                <span class="title"> <?php echo e(trans('general.currencies')); ?></span>
+                <span class="arrow"></span>
+            </a>
+        </li>
+
+    </ul>
+</li>
+
+<li class="nav-item <?php echo e(activeItem('coupon')); ?>">
+    <a href="<?php echo e(route('backend.admin.coupon.index')); ?>" class="nav-link nav-toggle">
+        <i class="fa fa-fw fa-credit-card"></i>
+        <span class="title"><?php echo e(trans('general.coupons')); ?></span>
+        <span class="arrow"></span>
+    </a>
+    <ul class="sub-menu">
+        <li class="nav-item ">
+            <a href="<?php echo e(route('backend.coupon.index')); ?>" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-cc-discover"></i>
+                <span class="title"><?php echo e(trans('general.coupons')); ?></span>
+                <span class="arrow"></span>
+            </a>
+        </li>
+
+    </ul>
+</li>
+
+<li class="nav-item <?php echo e(activeItem('branch')); ?>">
+    <a href="<?php echo e(route('backend.admin.branch.index')); ?>" class="nav-link nav-toggle">
+        <i class="fa fa-fw fa-building-o"></i>
+        <span class="title"><?php echo e(trans('general.branches')); ?></span>
+        <span class="arrow"></span>
+    </a>
+    <ul class="sub-menu">
+        <li class="nav-item ">
+            <a href="<?php echo e(route('backend.branch.index')); ?>" class="nav-link ">
+                <i class="fa fa-fw fa-building-o"></i>
+                <span class="title"><?php echo e(trans('general.branches')); ?></span>
+                <span class="arrow"></span>
+            </a>
+        </li>
+
+    </ul>
+</li>
+
 
 <li class="nav-item <?php echo e(activeItem('brand')); ?>">
     <a href="<?php echo e(route('backend.admin.brand.index')); ?>" class="nav-link nav-toggle">
@@ -312,23 +429,6 @@
             <a href="<?php echo e(route('backend.admin.brand.index')); ?>" class="nav-link nav-toggle">
                 <i class="fa fa-fw fa-shopping-bag"></i>
                 <span class="title"><?php echo e(trans('general.brands')); ?></span>
-                <span class="arrow"></span>
-            </a>
-        </li>
-
-    </ul>
-</li>
-<li class="nav-item <?php echo e(activeItem('color')); ?>">
-    <a href="<?php echo e(route('backend.admin.color.index')); ?>" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-paint-brush"></i>
-        <span class="title"><?php echo e(trans('general.colors')); ?></span>
-        <span class="arrow"></span>
-    </a>
-    <ul class="sub-menu">
-        <li class="nav-item ">
-            <a href="<?php echo e(route('backend.admin.color.index')); ?>" class="nav-link nav-toggle">
-                <i class="fa fa-fw fa-list-alt"></i>
-                <span class="title"><?php echo e(trans('general.colors')); ?></span>
                 <span class="arrow"></span>
             </a>
         </li>
@@ -363,23 +463,6 @@
                 <span class="arrow"></span>
             </a>
         </li>
-    </ul>
-</li>
-<li class="nav-item <?php echo e(activeItem('size')); ?>">
-    <a href="<?php echo e(route('backend.admin.size.index')); ?>" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-tags"></i>
-        <span class="title"><?php echo e(trans('general.sizes')); ?></span>
-        <span class="arrow"></span>
-    </a>
-    <ul class="sub-menu">
-        <li class="nav-item ">
-            <a href="<?php echo e(route('backend.admin.size.index')); ?>" class="nav-link nav-toggle">
-                <i class="fa fa-fw fa-list-ul"></i>
-                <span class="title"><?php echo e(trans('general.sizes')); ?></span>
-                <span class="arrow"></span>
-            </a>
-        </li>
-
     </ul>
 </li>
 <li class="nav-item <?php echo e(activeItem('question',['survey','answer'])); ?>">
@@ -445,53 +528,6 @@
     </ul>
 </li>
 
-<li class="nav-item <?php echo e(activeItem('newsletter')); ?>">
-    <a href="<?php echo e(route('backend.admin.newsletter.index')); ?>" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-newspaper-o"></i>
-        <span class="title"><?php echo e(trans('general.newsletters')); ?></span>
-        <span class="arrow"></span>
-    </a>
-
-</li>
-
-
-<li class="nav-item <?php echo e(activeItem('faq')); ?>">
-    <a href="<?php echo e(route('backend.admin.faq.index')); ?>" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-question-circle"></i>
-        <span class="title"><?php echo e(trans('general.faq')); ?></span>
-        <span class="arrow"></span>
-    </a>
-
-
-</li>
-
-<li class="nav-item <?php echo e(activeItem('commercial')); ?>">
-    <a href="<?php echo e(route('backend.admin.commercial.index')); ?>" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-address-card-o "></i>
-        <span class="title"><?php echo e(trans('general.commercials')); ?></span>
-        <span class="arrow"></span>
-    </a>
-
-</li>
-
-<li class="nav-item <?php echo e(activeItem('notification')); ?>">
-    <a href="<?php echo e(route('backend.admin.notification.index')); ?>" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-bell"></i>
-        <span class="title"><?php echo e(trans('general.notifications')); ?></span>
-        <span class="arrow"></span>
-    </a>
-
-</li>
-
-<li class="nav-item <?php echo e(activeItem('policy')); ?>">
-    <a href="<?php echo e(route('backend.admin.policy.index')); ?>" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-certificate"></i>
-        <span class="title"><?php echo e(trans('general.polices')); ?></span>
-        <span class="arrow"></span>
-    </a>
-
-</li>
-
 
 <li class="nav-item <?php echo e(activeItem('answer')); ?>">
     <a href="<?php echo e(route('backend.admin.answer.index')); ?>" class="nav-link nav-toggle">
@@ -502,54 +538,3 @@
 
 </li>
 
-<li class="nav-item <?php echo e(activeItem('role')); ?>">
-    <a href="<?php echo e(route('backend.admin.role.index')); ?>" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-users"></i>
-        <span class="title"><?php echo e(trans('general.roles')); ?></span>
-        <span class="arrow"></span>
-    </a>
-
-</li>
-<li class="nav-item <?php echo e(activeItem('term')); ?>">
-    <a href="<?php echo e(route('backend.admin.term.index')); ?>" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-info-circle"></i>
-        <span class="title"><?php echo e(trans('general.terms')); ?></span>
-        <span class="arrow"></span>
-    </a>
-
-</li>
-<li class="nav-item <?php echo e(activeItem('privilege')); ?>">
-    <a href="<?php echo e(route('backend.admin.privilege.index')); ?>" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-lock"></i>
-        <span class="title"><?php echo e(trans('general.privileges')); ?></span>
-        <span class="arrow"></span>
-    </a>
-    <ul class="sub-menu">
-        <li class="nav-item ">
-            <a href="<?php echo e(route('backend.admin.privilege.create')); ?>" class="nav-link nav-toggle">
-                <i class="fa fa-fw fa-list-ul"></i>
-                <span class="title"><?php echo e(trans('general.create_privilege')); ?> </span>
-                <span class="arrow"></span>
-            </a>
-        </li>
-
-    </ul>
-</li>
-
-<li class="nav-item <?php echo e(activeItem('day')); ?>">
-    <a href="<?php echo e(route('backend.admin.day.index')); ?>" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-calendar"></i>
-        <span class="title"><?php echo e(trans('general.days')); ?></span>
-        <span class="arrow"></span>
-    </a>
-
-</li>
-
-<li class="nav-item <?php echo e(activeItem('timing')); ?>">
-    <a href="<?php echo e(route('backend.admin.timing.index')); ?>" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-clock-o"></i>
-        <span class="title"><?php echo e(trans('general.timings')); ?></span>
-        <span class="arrow"></span>
-    </a>
-
-</li>
