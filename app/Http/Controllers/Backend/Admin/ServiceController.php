@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Service;
 use App\Models\User;
-
+use App\Models\Category;
 
 class ServiceController extends Controller
 {
@@ -30,8 +30,9 @@ class ServiceController extends Controller
     public function create()
     {
         //   return view('backend.modules.aboutus.create');
+        $categories = Category::active()->onlyParent()->with('children.children')->get();
         $users = User::all();
-        return view('backend.modules.service.create', compact('users'));
+        return view('backend.modules.service.create', compact('users', 'categories'));
     }
 
     /**

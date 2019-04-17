@@ -16,8 +16,11 @@
             <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('isSuper')): ?>
                 <?php echo $__env->make('backend.partials._sidebar_super', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
             <?php elseif (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('isAdmin')): ?>
+                <?php echo $__env->make('backend.partials._sidebar_admin', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
             <?php elseif (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('isCompany')): ?>
+                <?php echo $__env->make('backend.partials._sidebar_company', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
             <?php elseif (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('isDesigner')): ?>
+                <?php echo $__env->make('backend.partials._sidebar_designer', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
             <?php endif; ?>
 
             

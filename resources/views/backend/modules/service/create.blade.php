@@ -178,6 +178,38 @@
                                 </div>
                                 {{-- individuals + confirm individuals --}}
 
+
+                                @if(!$categories->isEmpty())
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="control-label">{{ trans('general.categories') }}
+                                            *</label>
+                                        <select multiple="multiple" class="multi-select" id="my_multi_select1" name="categories[]">
+                                            @foreach($categories as $category)
+                                            <option value="{{ $category->id }}" style="background-color: {{ $category->isParent ? 'lightblue' : null  }}">
+                                                {{ $category->name }}</option>
+                                            @if(!$category->children->isEmpty())
+                                            @foreach($category->children as $child)
+                                            <option value="{{ $child->id }}" style="padding-left: 15px">
+                                                {{ $child->name }}</option>
+                                            @if(!$child->children->isEmpty())
+                                            @foreach($child->children as $subChild)
+                                            <option value="{{ $subChild->id }}" style="padding-left: 35px">
+                                                {{ $subChild->name }}</option>
+                                            @endforeach
+                                            @endif
+                                            @endforeach
+                                            @endif
+                                            @endforeach
+                                        </select>
+                                        {{-- <span class="help-block">
+                                                                                                            <strong>{{ trans('message.categories_instructions') }}</strong>
+                                        </span> --}}
+                                    </div>
+                                </div>
+                                @endif
+
+
                                 <div class="col-md-4">
                                     <div class="form-group{{ $errors->has('keywords') ? ' has-error' : '' }}">
                                         <label for="keywords" class="control-label">{{ trans('general.keywords') }}</label>
@@ -397,6 +429,6 @@
 @endsection
 
 @section('scripts')
-    @parent
-    <script src="{{ mix('js/datepicker.js') }}"></script>
+@parent
+<script src="{{ mix('js/datepicker.js') }}"></script>
 @endsection

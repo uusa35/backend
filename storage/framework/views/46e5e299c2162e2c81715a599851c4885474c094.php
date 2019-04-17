@@ -194,6 +194,37 @@
                                 </div>
                                 
 
+
+                                <?php if(!$categories->isEmpty()): ?>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="control-label"><?php echo e(trans('general.categories')); ?>
+
+                                            *</label>
+                                        <select multiple="multiple" class="multi-select" id="my_multi_select1" name="categories[]">
+                                            <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                            <option value="<?php echo e($category->id); ?>" style="background-color: <?php echo e($category->isParent ? 'lightblue' : null); ?>">
+                                                <?php echo e($category->name); ?></option>
+                                            <?php if(!$category->children->isEmpty()): ?>
+                                            <?php $__currentLoopData = $category->children; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $child): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                            <option value="<?php echo e($child->id); ?>" style="padding-left: 15px">
+                                                <?php echo e($child->name); ?></option>
+                                            <?php if(!$child->children->isEmpty()): ?>
+                                            <?php $__currentLoopData = $child->children; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $subChild): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                            <option value="<?php echo e($subChild->id); ?>" style="padding-left: 35px">
+                                                <?php echo e($subChild->name); ?></option>
+                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                            <?php endif; ?>
+                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                            <?php endif; ?>
+                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                        </select>
+                                        
+                                    </div>
+                                </div>
+                                <?php endif; ?>
+
+
                                 <div class="col-md-4">
                                     <div class="form-group<?php echo e($errors->has('keywords') ? ' has-error' : ''); ?>">
                                         <label for="keywords" class="control-label"><?php echo e(trans('general.keywords')); ?></label>
@@ -415,5 +446,10 @@
         </form>
     </div>
 </div>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('scripts'); ?>
+##parent-placeholder-16728d18790deb58b3b8c1df74f06e536b532695##
+<script src="<?php echo e(mix('js/datepicker.js')); ?>"></script>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('backend.layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
