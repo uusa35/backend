@@ -9,6 +9,7 @@ use Illuminate\Auth\Access\HandlesAuthorization;
 class ProductPolicy
 {
     use HandlesAuthorization;
+    const MODAL = 'product';
 
     /**
      * Determine whether the user can view the product.
@@ -19,7 +20,7 @@ class ProductPolicy
      */
     public function view(User $user, Product $product)
     {
-        $user->isAdminOrAbove ? $user->role->privileges->where('name', 'product')->first()->pivot->view : $user->id === $product->user_id;
+        $user->isAdminOrAbove ? $user->role->privileges->where('name', self::MODAL)->first()->pivot->view : $user->id === $product->user_id;
     }
 
     /**
@@ -30,7 +31,7 @@ class ProductPolicy
      */
     public function create(User $user)
     {
-        return $user->role->privileges->where('name', 'product')->first()->pivot->create;
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->create;
     }
 
     /**
@@ -42,7 +43,7 @@ class ProductPolicy
      */
     public function update(User $user, Product $product)
     {
-        $user->isAdminOrAbove ? $user->role->privileges->where('name', 'product')->first()->pivot->update : $user->id === $product->user_id;
+        $user->isAdminOrAbove ? $user->role->privileges->where('name', self::MODAL)->first()->pivot->update : $user->id === $product->user_id;
     }
 
     /**
@@ -54,7 +55,7 @@ class ProductPolicy
      */
     public function delete(User $user, Product $product)
     {
-        $user->isAdminOrAbove ? $user->role->privileges->where('name', 'product')->first()->pivot->delete : $user->id === $product->user_id;
+        $user->isAdminOrAbove ? $user->role->privileges->where('name', self::MODAL)->first()->pivot->delete : $user->id === $product->user_id;
     }
 
     /**

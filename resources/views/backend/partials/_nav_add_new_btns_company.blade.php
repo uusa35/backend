@@ -10,3 +10,9 @@
             <i class="icon-plus"></i> {{ trans('general.new_service') }}</a>
     </li>
 @endcan
+{{--@can('timing.create')--}}
+    <li>
+        <a href="{{ route('backend.timing.create') }}">
+            <i class="icon-plus"></i> {{ trans('general.new_timing') }}</a>
+    </li>
+{{--@endcan--}}

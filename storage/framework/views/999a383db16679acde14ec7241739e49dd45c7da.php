@@ -10,3 +10,8 @@
             <i class="icon-plus"></i> <?php echo e(trans('general.new_service')); ?></a>
     </li>
 <?php endif; ?>
+
+    <li>
+        <a href="<?php echo e(route('backend.timing.create')); ?>">
+            <i class="icon-plus"></i> <?php echo e(trans('general.new_timing')); ?></a>
+    </li>
