@@ -51,9 +51,10 @@
 
                             <td> <?php echo e($element->start); ?> </td>
                             <td> <?php echo e($element->end); ?> </td>
+                            <td> <?php echo e($element->type); ?> </td>
                             <td> <?php echo e($element->is_off); ?> </td>
 
-                            <td> <?php echo e($element->type); ?> </td>
+
 
                             <td>
                                 <div class="btn-group">

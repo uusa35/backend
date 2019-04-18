@@ -51,9 +51,10 @@
 
                             <td> {{$element->start }} </td>
                             <td> {{$element->end }} </td>
+                            <td> {{$element->type }} </td>
                             <td> {{$element->is_off }} </td>
 
-                            <td> {{$element->type }} </td>
+
 
                             <td>
                                 <div class="btn-group">

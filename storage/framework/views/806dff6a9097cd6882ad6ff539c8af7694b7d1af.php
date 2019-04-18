@@ -27,7 +27,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group <?php echo e($errors->has('day') ? ' has-error' : ''); ?>">
                                             <label for="day" class="control-label"><?php echo e(trans('general.day')); ?>*</label>
-                                            <input id="day" type="text" class="form-control" day="day" value="<?php echo e(old('day')); ?>" placeholder="<?php echo e(trans('general.day')); ?>" required autofocus>
+                                            <input id="day" type="text" class="form-control" name="day" value="<?php echo e(old('day')); ?>" placeholder="<?php echo e(trans('general.day')); ?>" required autofocus>
                                             <?php if($errors->has('day')): ?>
                                             <span class="help-block">
                                                 <strong>
@@ -41,7 +41,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group <?php echo e($errors->has('day_name_ar') ? ' has-error' : ''); ?>">
                                             <label for="day_name_ar" class="control-label"><?php echo e(trans('general.day_name_ar')); ?>*</label>
-                                            <input id="day_name_ar" type="text" class="form-control" day="day_name_ar" value="<?php echo e(old('day_name_ar')); ?>" placeholder="<?php echo e(trans('general.day_name_ar')); ?>" required autofocus>
+                                            <input id="day_name_ar" type="text" class="form-control" name="day_name_ar" value="<?php echo e(old('day_name_ar')); ?>" placeholder="<?php echo e(trans('general.day_name_ar')); ?>" required autofocus>
                                             <?php if($errors->has('day_name_ar')): ?>
                                             <span class="help-block">
                                                 <strong>
@@ -55,7 +55,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group <?php echo e($errors->has('day_name_en') ? ' has-error' : ''); ?>">
                                             <label for="day_name_en" class="control-label"><?php echo e(trans('general.day_name_en')); ?>*</label>
-                                            <input id="day_name_en" type="text" class="form-control" day="day_name_en" value="<?php echo e(old('day_name_en')); ?>" placeholder="<?php echo e(trans('general.day_name_en')); ?>" required autofocus>
+                                            <input id="day_name_en" type="text" class="form-control" name="day_name_en" value="<?php echo e(old('day_name_en')); ?>" placeholder="<?php echo e(trans('general.day_name_en')); ?>" required autofocus>
                                             <?php if($errors->has('day_name_en')): ?>
                                             <span class="help-block">
                                                 <strong>
@@ -123,7 +123,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group <?php echo e($errors->has('type') ? ' has-error' : ''); ?>">
                                             <label for="type" class="control-label"><?php echo e(trans('general.type')); ?>*</label>
-                                            <input id="type" type="text" class="form-control" day="type" value="<?php echo e(old('type')); ?>" placeholder="<?php echo e(trans('general.type')); ?>" required autofocus>
+                                            <input id="type" type="number" class="form-control" name="type" value="<?php echo e(old('type')); ?>" placeholder="<?php echo e(trans('general.type')); ?>" required autofocus>
                                             <?php if($errors->has('type')): ?>
                                             <span class="help-block">
                                                 <strong>
@@ -171,7 +171,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group <?php echo e($errors->has('week_start') ? ' has-error' : ''); ?>">
                                             <label for="week_start" class="control-label"><?php echo e(trans('general.week_start')); ?>*</label>
-                                            <input id="week_start" type="text" class="form-control" day="week_start" value="<?php echo e(old('week_start')); ?>" placeholder="<?php echo e(trans('general.week_start')); ?>" required autofocus>
+                                            <input id="week_start" type="number" class="form-control" name="week_start" value="<?php echo e(old('week_start')); ?>" placeholder="<?php echo e(trans('general.week_start')); ?>" required autofocus>
                                             <?php if($errors->has('week_start')): ?>
                                             <span class="help-block">
                                                 <strong>
@@ -187,7 +187,7 @@
                                             <label for="day_no" class="control-label"><?php echo e(trans('general.day_no')); ?>
 
                                                 *</label>
-                                            <input id="day_no" type="day_no" class="form-control" day="day_no" value="" placeholder="<?php echo e(trans('general.day_no')); ?>" required autofocus>
+                                            <input id="day_no" type="number" class="form-control" name="day_no" value="" placeholder="<?php echo e(trans('general.day_no')); ?>" required autofocus>
                                             <?php if($errors->has('day_no')): ?>
                                             <span class="help-block">
                                                 <strong>
@@ -223,7 +223,7 @@
                                             <select id="single" class="form-control select2" name="user_id">
                                                 <option value=""><?php echo e(trans('general.choose_company')); ?></option>
                                                 <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                <option value="<?php echo e($user->name); ?>"><?php echo e($user->name); ?></option>
+                                                <option value="<?php echo e($user->id); ?>"><?php echo e($user->name); ?></option>
                                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 
@@ -240,7 +240,7 @@
                                                 <option value=""><?php echo e(trans('general.choose_service')); ?></option>
 
                                                 <?php $__currentLoopData = $services; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $service): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                <option value="<?php echo e($service->name_ar); ?>"><?php echo e($service->name_ar); ?></option>
+                                                <option value="<?php echo e($service->id); ?>"><?php echo e($service->name_ar); ?></option>
                                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 
@@ -253,7 +253,7 @@
                                             <select id="single" class="form-control select2" name="day_id">
                                                 <option value=""><?php echo e(trans('general.choose_day_of_service')); ?></option>
                                                 <?php $__currentLoopData = $days; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $day): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                <option value="<?php echo e($day->day); ?>"><?php echo e($day->day); ?></option>
+                                                <option value="<?php echo e($day->id); ?>"><?php echo e($day->day); ?></option>
                                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 
@@ -282,10 +282,10 @@
                                         <div class="form-group">
                                             <label class="control-label sbold"><?php echo e(trans('general.is_off')); ?></label></br>
                                             <label class="radio-inline">
-                                                <input type="radio" day="is_off" id="optionsRadios1" value="1"> is_off
+                                                <input type="radio" name="is_off" id="optionsRadios1" value="1"> is_off
                                             </label>
                                             <label class="radio-inline">
-                                                <input type="radio" day="is_off" id="optionsRadios2" checked value="0">
+                                                <input type="radio" name="is_off" id="optionsRadios2" checked value="0">
                                                 not_is_off</label>
                                         </div>
                                     </div>
@@ -293,19 +293,19 @@
                                         <div class="form-group">
                                             <label class="control-label sbold"><?php echo e(trans('general.allow_multiselect')); ?></label></br>
                                             <label class="radio-inline">
-                                                <input type="radio" day="allow_multiselect" id="optionsRadios1" value="1"> allow_multiselect </label>
+                                                <input type="radio" name="allow_multi_select" id="optionsRadios1" value="1"> allow_multiselect </label>
                                             <label class="radio-inline">
-                                                <input type="radio" day="allow_multiselect" id="optionsRadios2" checked value="0"> not_allow_multiselect</label>
+                                                <input type="radio" name="allow_multi_select" id="optionsRadios2" checked value="0"> not_allow_multiselect</label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="control-label sbold"><?php echo e(trans('general.is_available')); ?></label></br>
                                             <label class="radio-inline">
-                                                <input type="radio" day="is_available" id="optionsRadios1" value="1">
+                                                <input type="radio" name="is_available" id="optionsRadios1" value="1">
                                                 is_available </label>
                                             <label class="radio-inline">
-                                                <input type="radio" day="is_available" id="optionsRadios2" checked value="0"> not_is_available</label>
+                                                <input type="radio" name="is_available" id="optionsRadios2" checked value="0"> not_is_available</label>
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
@@ -328,7 +328,6 @@
     ##parent-placeholder-16728d18790deb58b3b8c1df74f06e536b532695##
     <script src="<?php echo e(mix('js/datepicker.js')); ?>"></script>
     <script type="text/javascript" src="<?php echo e(asset('js/bootstrap-timepicker.min.js')); ?>"></script>
-
     <script type="text/javascript" src="<?php echo e(asset('js/clockface.js')); ?>"></script>
     <?php $__env->stopSection(); ?>
 <?php echo $__env->make('backend.layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
