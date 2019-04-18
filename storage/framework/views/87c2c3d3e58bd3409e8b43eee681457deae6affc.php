@@ -63,8 +63,6 @@
                                         
                                         
                                         
-
-
                                         <div class="col-md-4">
                                             <div class="form-group <?php echo e($errors->has('start') ? ' has-error' : ''); ?>">
                                                 <label for="start" class="control-label"><?php echo e(trans('general.start')); ?>
@@ -123,7 +121,6 @@
                                                 <?php endif; ?>
                                             </div>
                                         </div>
-
                                         
                                         
                                         
@@ -276,80 +273,72 @@
                                                 </select>
                                             </div>
                                         </div>
-
-
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-
-                        <div class="portlet box blue ">
-                            <div class="portlet-title">
-                                <div class="caption">
-                                    <i class="fa fa-gift"></i> <?php echo e(trans('general.product_main_details')); ?>
-
-                                </div>
-                            </div>
-                            <div class="portlet-body form">
-                                <div class="form-body">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label class="control-label sbold"><?php echo e(trans('general.is_off')); ?></label></br>
-                                                <label class="radio-inline">
-                                                    <input type="radio" day="is_off" id="optionsRadios1" value="1">
-                                                    is_off
-                                                </label>
-                                                <label class="radio-inline">
-                                                    <input type="radio" day="is_off" id="optionsRadios2" checked
-                                                           value="0">
-                                                    not_is_off</label>
-                                            </div>
+                        <div class="portlet-body form">
+                            <div class="form-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label sbold"><?php echo e(trans('general.is_off')); ?></label></br>
+                                            <label class="radio-inline">
+                                                <input type="radio" day="is_off"
+                                                       id="optionsRadios1" value="1">
+                                                is_off
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" day="is_off"
+                                                       id="optionsRadios2" checked
+                                                       value="0">
+                                                not_is_off</label>
                                         </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label class="control-label sbold"><?php echo e(trans('general.allow_multiselect')); ?></label></br>
-                                                <label class="radio-inline">
-                                                    <input type="radio" day="allow_multiselect" id="optionsRadios1"
-                                                           value="1"> allow_multiselect </label>
-                                                <label class="radio-inline">
-                                                    <input type="radio" day="allow_multiselect" id="optionsRadios2"
-                                                           checked value="0"> not_allow_multiselect</label>
-                                            </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label sbold"><?php echo e(trans('general.allow_multiselect')); ?></label></br>
+                                            <label class="radio-inline">
+                                                <input type="radio" day="allow_multiselect"
+                                                       id="optionsRadios1"
+                                                       value="1"> allow_multiselect </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" day="allow_multiselect"
+                                                       id="optionsRadios2"
+                                                       checked value="0"> not_allow_multiselect</label>
                                         </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label class="control-label sbold"><?php echo e(trans('general.is_available')); ?></label></br>
-                                                <label class="radio-inline">
-                                                    <input type="radio" day="is_available" id="optionsRadios1"
-                                                           value="1">
-                                                    is_available </label>
-                                                <label class="radio-inline">
-                                                    <input type="radio" day="is_available" id="optionsRadios2" checked
-                                                           value="0"> not_is_available</label>
-                                            </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label sbold"><?php echo e(trans('general.is_available')); ?></label></br>
+                                            <label class="radio-inline">
+                                                <input type="radio" day="is_available"
+                                                       id="optionsRadios1"
+                                                       value="1">
+                                                is_available </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" day="is_available"
+                                                       id="optionsRadios2" checked
+                                                       value="0"> not_is_available</label>
                                         </div>
-                                        <div class="col-lg-12">
-                                            <?php echo $__env->make('backend.partials.forms._btn-group', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <?php echo $__env->make('backend.partials.forms._btn-group', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
                 </form>
             </div>
         </div>
-        <?php $__env->stopSection(); ?>
-
-
-        <?php $__env->startSection('scripts'); ?>
-            ##parent-placeholder-16728d18790deb58b3b8c1df74f06e536b532695##
-            <script src="<?php echo e(mix('js/datepicker.js')); ?>"></script>
-            <script type="text/javascript" src="<?php echo e(asset('js/bootstrap-timepicker.min.js')); ?>"></script>
-            <script type="text/javascript" src="<?php echo e(asset('js/clockface.js')); ?>"></script>
+    </div>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('scripts'); ?>
+    ##parent-placeholder-16728d18790deb58b3b8c1df74f06e536b532695##
+    <script src="<?php echo e(mix('js/datepicker.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(asset('js/bootstrap-timepicker.min.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(asset('js/clockface.js')); ?>"></script>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('backend.layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
