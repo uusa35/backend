@@ -302,7 +302,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group<?php echo e($errors->has('booking_limit') ? ' has-error' : ''); ?>">
                                         <label for="booking_limit" class="control-label"><?php echo e(trans('general.booking_limit')); ?></label>
-                                        <input id="booking_limit" type="text" class="form-control" sku="booking_limit" placeholder="<?php echo e(trans('general.booking_limit')); ?>" value="<?php echo e(old('booking_limit')); ?>" autofocus>
+                                        <input id="booking_limit" type="number" class="form-control" sku="booking_limit" placeholder="<?php echo e(trans('general.booking_limit')); ?>" value="<?php echo e(old('booking_limit')); ?>" autofocus>
                                         <?php if($errors->has('booking_limit')): ?>
                                         <span class="help-block">
                                             <strong>

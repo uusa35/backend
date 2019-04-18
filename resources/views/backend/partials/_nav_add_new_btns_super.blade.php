@@ -1,5 +1,5 @@
 <li>
-    <a href="{{ route('backend.admin.product.create') }}">
+    <a href="{{ route('backend.product.create') }}">
         <i class="icon-plus"></i> {{ trans('general.new_product') }}</a>
 </li>
 <li>
@@ -79,7 +79,7 @@
         <i class="icon-plus"></i> {{ trans('general.new_term') }}</a>
 </li>
 <li>
-    <a href="{{ route('backend.admin.package.create') }}">
+    <a href="{{ route('backend.package.create') }}">
         <i class="icon-plus"></i> {{ trans('general.new_package') }}</a>
 </li>
 <li>
@@ -91,7 +91,7 @@
         <i class="icon-plus"></i> {{ trans('general.new_day') }}</a>
 </li>
 <li>
-    <a href="{{ route('backend.admin.timing.create') }}">
+    <a href="{{ route('backend.timing.create') }}">
         <i class="icon-plus"></i> {{ trans('general.new_timing') }}</a>
 </li>
 <li>
@@ -106,7 +106,7 @@
 <li class="divider"></li>
 <li class="divider"></li>
 <li>
-    <a href="{{ route('backend.admin.service.create') }}">
+    <a href="{{ route('backend.service.create') }}">
         <i class="icon-handbag"></i> {{ trans('general.create_service') }}</a>
 </li>
 <li class="divider"></li>
