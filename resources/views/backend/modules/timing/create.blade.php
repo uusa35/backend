@@ -26,7 +26,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group {{ $errors->has('day') ? ' has-error' : '' }}">
                                             <label for="day" class="control-label">{{ trans('general.day') }}*</label>
-                                            <input id="day" type="text" class="form-control" day="day" value="{{ old('day') }}" placeholder="{{ trans('general.day') }}" required autofocus>
+                                            <input id="day" type="text" class="form-control" name="day" value="{{ old('day') }}" placeholder="{{ trans('general.day') }}" required autofocus>
                                             @if ($errors->has('day'))
                                             <span class="help-block">
                                                 <strong>
@@ -39,7 +39,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group {{ $errors->has('day_name_ar') ? ' has-error' : '' }}">
                                             <label for="day_name_ar" class="control-label">{{ trans('general.day_name_ar') }}*</label>
-                                            <input id="day_name_ar" type="text" class="form-control" day="day_name_ar" value="{{ old('day_name_ar') }}" placeholder="{{ trans('general.day_name_ar') }}" required autofocus>
+                                            <input id="day_name_ar" type="text" class="form-control" name="day_name_ar" value="{{ old('day_name_ar') }}" placeholder="{{ trans('general.day_name_ar') }}" required autofocus>
                                             @if ($errors->has('day_name_ar'))
                                             <span class="help-block">
                                                 <strong>
@@ -52,7 +52,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group {{ $errors->has('day_name_en') ? ' has-error' : '' }}">
                                             <label for="day_name_en" class="control-label">{{ trans('general.day_name_en') }}*</label>
-                                            <input id="day_name_en" type="text" class="form-control" day="day_name_en" value="{{ old('day_name_en') }}" placeholder="{{ trans('general.day_name_en') }}" required autofocus>
+                                            <input id="day_name_en" type="text" class="form-control" name="day_name_en" value="{{ old('day_name_en') }}" placeholder="{{ trans('general.day_name_en') }}" required autofocus>
                                             @if ($errors->has('day_name_en'))
                                             <span class="help-block">
                                                 <strong>
@@ -115,7 +115,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group {{ $errors->has('type') ? ' has-error' : '' }}">
                                             <label for="type" class="control-label">{{ trans('general.type') }}*</label>
-                                            <input id="type" type="text" class="form-control" day="type" value="{{ old('type') }}" placeholder="{{ trans('general.type') }}" required autofocus>
+                                            <input id="type" type="number" class="form-control" name="type" value="{{ old('type') }}" placeholder="{{ trans('general.type') }}" required autofocus>
                                             @if ($errors->has('type'))
                                             <span class="help-block">
                                                 <strong>
@@ -158,7 +158,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group {{ $errors->has('week_start') ? ' has-error' : '' }}">
                                             <label for="week_start" class="control-label">{{ trans('general.week_start') }}*</label>
-                                            <input id="week_start" type="text" class="form-control" day="week_start" value="{{ old('week_start') }}" placeholder="{{ trans('general.week_start') }}" required autofocus>
+                                            <input id="week_start" type="number" class="form-control" name="week_start" value="{{ old('week_start') }}" placeholder="{{ trans('general.week_start') }}" required autofocus>
                                             @if ($errors->has('week_start'))
                                             <span class="help-block">
                                                 <strong>
@@ -172,7 +172,7 @@
                                         <div class="form-group {{ $errors->has('day_no') ? ' has-error' : '' }}">
                                             <label for="day_no" class="control-label">{{ trans('general.day_no') }}
                                                 *</label>
-                                            <input id="day_no" type="day_no" class="form-control" day="day_no" value="" placeholder="{{ trans('general.day_no') }}" required autofocus>
+                                            <input id="day_no" type="number" class="form-control" name="day_no" value="" placeholder="{{ trans('general.day_no') }}" required autofocus>
                                             @if ($errors->has('day_no'))
                                             <span class="help-block">
                                                 <strong>
@@ -206,7 +206,7 @@
                                             <select id="single" class="form-control select2" name="user_id">
                                                 <option value="">{{ trans('general.choose_company') }}</option>
                                                 @foreach($users as $user)
-                                                <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                <option value="{{ $user->id }}">{{ $user->name }}</option>
                                                 @endforeach
 
 
@@ -223,7 +223,7 @@
                                                 <option value="">{{ trans('general.choose_service') }}</option>
 
                                                 @foreach($services as $service)
-                                                <option value="{{ $service->name_ar }}">{{ $service->name_ar }}</option>
+                                                <option value="{{ $service->id }}">{{ $service->name_ar }}</option>
                                                 @endforeach
 
 
@@ -236,7 +236,7 @@
                                             <select id="single" class="form-control select2" name="day_id">
                                                 <option value="">{{ trans('general.choose_day_of_service') }}</option>
                                                 @foreach($days as $day)
-                                                <option value="{{ $day->day }}">{{ $day->day }}</option>
+                                                <option value="{{ $day->id }}">{{ $day->day }}</option>
                                                 @endforeach
 
 
@@ -264,10 +264,10 @@
                                         <div class="form-group">
                                             <label class="control-label sbold">{{ trans('general.is_off') }}</label></br>
                                             <label class="radio-inline">
-                                                <input type="radio" day="is_off" id="optionsRadios1" value="1"> is_off
+                                                <input type="radio" name="is_off" id="optionsRadios1" value="1"> is_off
                                             </label>
                                             <label class="radio-inline">
-                                                <input type="radio" day="is_off" id="optionsRadios2" checked value="0">
+                                                <input type="radio" name="is_off" id="optionsRadios2" checked value="0">
                                                 not_is_off</label>
                                         </div>
                                     </div>
@@ -275,19 +275,19 @@
                                         <div class="form-group">
                                             <label class="control-label sbold">{{ trans('general.allow_multiselect') }}</label></br>
                                             <label class="radio-inline">
-                                                <input type="radio" day="allow_multiselect" id="optionsRadios1" value="1"> allow_multiselect </label>
+                                                <input type="radio" name="allow_multi_select" id="optionsRadios1" value="1"> allow_multiselect </label>
                                             <label class="radio-inline">
-                                                <input type="radio" day="allow_multiselect" id="optionsRadios2" checked value="0"> not_allow_multiselect</label>
+                                                <input type="radio" name="allow_multi_select" id="optionsRadios2" checked value="0"> not_allow_multiselect</label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="control-label sbold">{{ trans('general.is_available') }}</label></br>
                                             <label class="radio-inline">
-                                                <input type="radio" day="is_available" id="optionsRadios1" value="1">
+                                                <input type="radio" name="is_available" id="optionsRadios1" value="1">
                                                 is_available </label>
                                             <label class="radio-inline">
-                                                <input type="radio" day="is_available" id="optionsRadios2" checked value="0"> not_is_available</label>
+                                                <input type="radio" name="is_available" id="optionsRadios2" checked value="0"> not_is_available</label>
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
