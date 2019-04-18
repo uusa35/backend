@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Http\Requests\Backend\TimingStore;
 use App\Models\Day;
 use App\Models\Service;
 use App\Models\Timing;
@@ -18,6 +19,7 @@ class TimingController extends Controller
      */
     public function index()
     {
+        $this->authorize('timing.index');
         $elements = Timing::whereHas('service', function ($q) {
             !request()->has('timing_id') ? $q->where('user_id', auth()->id()) : $q->where(['user_id' => auth()->id(), 'id' => request('id')]);
         })->get();
@@ -31,6 +33,7 @@ class TimingController extends Controller
      */
     public function create()
     {
+        $this->authorize('timing.create');
         $services = auth()->user()->isAdminOrAbove ? Service::active()->get() : auth()->user()->services()->get();
         $users = User::active()->get();
         $days = Day::all();
@@ -43,7 +46,7 @@ class TimingController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TimingStore $request)
     {
         //
     }

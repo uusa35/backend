@@ -31,7 +31,6 @@ class TimingPolicy
      */
     public function create(User $user)
     {
-        dd($user->role->privileges->where('name', self::MODAL)->first()->pivot->create);
         return $user->role->privileges->where('name', self::MODAL)->first()->pivot->create;
     }
 

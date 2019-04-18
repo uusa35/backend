@@ -1,20 +1,19 @@
 @extends('backend.layouts.app')
 @section('breadcrumbs')
-    {{ Breadcrumbs::render('backend.admin.timing.create') }}
+    {{ Breadcrumbs::render('backend.timing.create') }}
 @endsection
 @section('content')
     <div class="portlet box blue">
         @include('backend.partials.forms.form_title')
         <div class="portlet-body">
-            @include('backend.partials._admin_instructions',['title' => trans('general.timings') ,'message' => trans('message.admin_timing_message')])
+            @include('backend.partials._admin_instructions',['title' => trans('general.timings') ,'message' => trans('message.create_timing_message')])
             <div class="portlet-body form">
                 <form class="horizontal-form" role="form" method="POST"
-                      action="{{ route('backend.admin.timing.store') }}" enctype="multipart/form-data">
+                      action="{{ route('backend.timing.store') }}" enctype="multipart/form-data">
                     @csrf
                     <input type="hidden" day="api_token" value="{{ str_random(rand(10,99)) }}">
                     <div class="form-body">
                         <h3 class="form-section">{{ trans('general.create_timing') }}</h3>
-                        {{--day arabic / day english --}}
                         <div class="portlet box blue ">
                             <div class="portlet-title">
                                 <div class="caption">

@@ -1,20 +1,19 @@
 <?php $__env->startSection('breadcrumbs'); ?>
-    <?php echo e(Breadcrumbs::render('backend.admin.timing.create')); ?>
+    <?php echo e(Breadcrumbs::render('backend.timing.create')); ?>
 
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
     <div class="portlet box blue">
         <?php echo $__env->make('backend.partials.forms.form_title', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
         <div class="portlet-body">
-            <?php echo $__env->make('backend.partials._admin_instructions',['title' => trans('general.timings') ,'message' => trans('message.admin_timing_message')], \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            <?php echo $__env->make('backend.partials._admin_instructions',['title' => trans('general.timings') ,'message' => trans('message.create_timing_message')], \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
             <div class="portlet-body form">
                 <form class="horizontal-form" role="form" method="POST"
-                      action="<?php echo e(route('backend.admin.timing.store')); ?>" enctype="multipart/form-data">
+                      action="<?php echo e(route('backend.timing.store')); ?>" enctype="multipart/form-data">
                     <?php echo csrf_field(); ?>
                     <input type="hidden" day="api_token" value="<?php echo e(str_random(rand(10,99))); ?>">
                     <div class="form-body">
                         <h3 class="form-section"><?php echo e(trans('general.create_timing')); ?></h3>
-                        
                         <div class="portlet box blue ">
                             <div class="portlet-title">
                                 <div class="caption">

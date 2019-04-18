@@ -268,13 +268,13 @@ Breadcrumbs::for('backend.admin.term.create', function ($trail) {
     $trail->push(trans('general.create_term'), route('backend.admin.term.create'));
 });
 
-Breadcrumbs::for('backend.admin.timing.index', function ($trail) {
+Breadcrumbs::for('backend.timing.index', function ($trail) {
     $trail->parent('backend.home');
-    $trail->push(trans('general.index_timing'), route('backend.admin.timing.index'));
+    $trail->push(trans('general.index_timing'), route('backend.timing.index'));
 });
-Breadcrumbs::for('backend.admin.timing.create', function ($trail) {
-    $trail->parent('backend.admin.timing.index');
-    $trail->push(trans('general.create_timing'), route('backend.admin.timing.create'));
+Breadcrumbs::for('backend.timing.create', function ($trail) {
+    $trail->parent('backend.timing.index');
+    $trail->push(trans('general.create_timing'), route('backend.timing.create'));
 });
 
 Breadcrumbs::for('backend.admin.privilege.index', function ($trail) {
