@@ -226,7 +226,7 @@
                                                     <select id="single" class="form-control select2" name="user_id">
                                                         <option value=""><?php echo e(trans('general.choose_company')); ?></option>
                                                         <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                            <option value="<?php echo e($user->name); ?>"><?php echo e($user->name); ?></option>
+                                                            <option value="<?php echo e($user->id); ?>"><?php echo e($user->name); ?></option>
                                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                     </select>
                                                 </div>
@@ -237,9 +237,8 @@
                                                            class="control-label"><?php echo e(trans('general.service')); ?></label>
                                                     <select id="single" class="form-control select2" name="service_id">
                                                         <option value=""><?php echo e(trans('general.choose_service')); ?></option>
-
                                                         <?php $__currentLoopData = $services; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $service): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                            <option value="<?php echo e($service->name_ar); ?>"><?php echo e($service->name_ar); ?></option>
+                                                            <option value="<?php echo e($service->id); ?>"><?php echo e($service->name_ar); ?></option>
                                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                     </select>
                                                 </div>
@@ -254,7 +253,7 @@
                                                         <option value=""><?php echo e(trans('general.choose_service')); ?></option>
 
                                                         <?php $__currentLoopData = $services->where('user_id', auth()->id()); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $service): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                            <option value="<?php echo e($service->name_ar); ?>"><?php echo e($service->name_ar); ?></option>
+                                                            <option value="<?php echo e($service->id); ?>"><?php echo e($service->name_ar); ?></option>
                                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                     </select>
                                                 </div>
@@ -267,7 +266,7 @@
                                                 <select id="single" class="form-control select2" name="day_id">
                                                     <option value=""><?php echo e(trans('general.choose_day_of_service')); ?></option>
                                                     <?php $__currentLoopData = $days; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $day): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                        <option value="<?php echo e($day->day); ?>"><?php echo e($day->day); ?></option>
+                                                        <option value="<?php echo e($day->id); ?>"><?php echo e($day->day); ?></option>
                                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                 </select>
                                             </div>

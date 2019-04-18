@@ -23,13 +23,13 @@ class TimingStore extends FormRequest
      */
     public function rules()
     {
-        dd(request()->all());
         return [
             'start' => 'required',
             'end' => 'required',
             'user_id' => 'required|exists:users,id',
             'service_id' => 'required|exists:services,id',
             'multi_booking' => 'required|boolean',
+            'is_available' => 'required|boolean'
         ];
     }
 }
