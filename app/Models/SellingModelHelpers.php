@@ -124,6 +124,9 @@ trait SellingModelHelpers
 
     public function scopeMyItems($q)
     {
+        if(auth()->user()->isAdminOrAbove) {
+            return $q;
+        }
         return $q->where(['user_id' => auth()->id()]);
     }
 

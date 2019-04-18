@@ -7,28 +7,28 @@
     </a>
     <ul class="sub-menu">
         <li class="nav-item ">
-            <a href="{{ route('backend.admin.product.index') }}" class="nav-link ">
+            <a href="{{ route('backend.product.index') }}" class="nav-link ">
                 <i class="fa fa-fw fa-product-hunt"></i>
                 <span class="title">{{ trans('general.all_products') }}</span>
                 <span class="arrow"></span>
             </a>
         </li>
         <li class="nav-item ">
-            <a href="{{ route('backend.admin.product.index',['type' => 'active']) }}" class="nav-link ">
+            <a href="{{ route('backend.product.index',['type' => 'active']) }}" class="nav-link ">
                 <i class="fa fa-fw fa-product-hunt"></i>
                 <span class="title">{{ trans('general.active_products') }}</span>
                 <span class="arrow"></span>
             </a>
         </li>
         <li class="nav-item ">
-            <a href="{{ route('backend.admin.product.index',['type' => 'on_sale']) }}" class="nav-link ">
+            <a href="{{ route('backend.product.index',['type' => 'on_sale']) }}" class="nav-link ">
                 <i class="fa fa-fw fa-percent"></i>
                 <span class="title">{{ trans('general.on_sale_products') }}</span>
                 <span class="arrow"></span>
             </a>
         </li>
         <li class="nav-item ">
-            <a href="{{ route('backend.admin.product.create') }}" class="nav-link ">
+            <a href="{{ route('backend.product.create') }}" class="nav-link ">
                 <i class="fa fa-fw fa-plus-square"></i>
                 <span class="title">{{ trans('general.create_product') }}</span>
                 <span class="arrow"></span>
@@ -44,7 +44,7 @@
     </ul>
 </li>
 <li class="nav-item {{ activeItem('service') }}">
-    <a href="{{ route('backend.admin.service.index') }}" class="nav-link nav-toggle">
+    <a href="{{ route('backend.service.index') }}" class="nav-link nav-toggle">
         <i class="fa fa-fw fa-clock-o"></i>
         <span class="title">{{ trans('general.services') }}</span>
         <span class="arrow"></span>
@@ -58,7 +58,7 @@
     </a>
     <ul class="sub-menu">
         <li class="nav-item {{ activeItem('timing') }}">
-            <a href="{{ route('backend.admin.timing.index') }}" class="nav-link nav-toggle">
+            <a href="{{ route('backend.timing.index') }}" class="nav-link nav-toggle">
                 <i class="fa fa-fw fa-clock-o"></i>
                 <span class="title">{{ trans('general.service_timings') }}</span>
                 <span class="arrow"></span>

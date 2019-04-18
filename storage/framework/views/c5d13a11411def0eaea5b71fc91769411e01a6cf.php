@@ -1,5 +1,5 @@
 <?php $__env->startSection('breadcrumbs'); ?>
-<?php echo e(Breadcrumbs::render('backend.timing.index')); ?>
+<?php echo e(Breadcrumbs::render('backend.admin.questionnaire.index')); ?>
 
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
@@ -23,58 +23,50 @@
                     <thead>
                         <tr>
                             <th><?php echo e(trans('general.id')); ?></th>
-                            <th><?php echo e(trans('general.day')); ?></th>
-                            <th><?php echo e(trans('general.start')); ?></th>
-                            <th><?php echo e(trans('general.end')); ?></th>
-                            <th><?php echo e(trans('general.type')); ?></th>
-                            <th><?php echo e(trans('general.is_off')); ?></th>
+                            <th><?php echo e(trans('general.name')); ?></th>
+                            <th><?php echo e(trans('general.mobile')); ?></th>
+                            <th><?php echo e(trans('general.address')); ?></th>
+                            <th><?php echo e(trans('general.created_at')); ?></th>
                             <th><?php echo e(trans('general.actions')); ?></th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
                             <th><?php echo e(trans('general.id')); ?></th>
-                            <th><?php echo e(trans('general.day')); ?></th>
-                            <th><?php echo e(trans('general.start')); ?></th>
-                            <th><?php echo e(trans('general.end')); ?></th>
-                            <th><?php echo e(trans('general.type')); ?></th>
-                            <th><?php echo e(trans('general.is_off')); ?></th>
+                            <th><?php echo e(trans('general.name')); ?></th>
+                            <th><?php echo e(trans('general.mobile')); ?></th>
+                            <th><?php echo e(trans('general.address')); ?></th>
+                            <th><?php echo e(trans('general.created_at')); ?></th>
                             <th><?php echo e(trans('general.actions')); ?></th>
                         </tr>
-
                     </tfoot>
                     <tbody>
                         <?php $__currentLoopData = $elements; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $element): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr>
-                            <td> <?php echo e($element->id); ?></td>
-                            <td> <?php echo e($element->day); ?> </td>
-
-                            <td> <?php echo e($element->start); ?> </td>
-                            <td> <?php echo e($element->end); ?> </td>
-                            <td> <?php echo e($element->type); ?> </td>
-                            <td> <?php echo e($element->is_off); ?> </td>
-
-
-
+                            <td><?php echo e($element->id); ?></td>
+                            <td><?php echo e($element->name); ?></td>
+                            <td><?php echo e($element->mobile); ?></td>
+                            <td><?php echo e($element->email); ?></td>
+                            <td><?php echo e($element->created_at->diffForHumans()); ?></td>
                             <td>
-                                <div class="btn-group">
-                                    <button type="button" class="btn green btn-xs btn-outline dropdown-toggle" data-toggle="dropdown"> <?php echo e(trans('general.actions')); ?>
+                                <div class="btn-group pull-right">
+                                    <button type="button" class="btn green btn-sm btn-outline dropdown-toggle" data-toggle="dropdown"> <?php echo e(trans('general.actions')); ?>
 
                                         <i class="fa fa-angle-down"></i>
                                     </button>
                                     <ul class="dropdown-menu pull-right" role="menu">
                                         <li>
-                                            <a href="<?php echo e(route('backend.admin.day.edit',$element->id)); ?>">
-                                                <i class="fa fa-fw fa-edit"></i> <?php echo e(trans('general.edit')); ?></a>
+                                            <a href="<?php echo e(route('backend.admin.questionnaire.show',$element->id)); ?>">
+                                                <i class="fa fa-fw fa-eye"></i><?php echo e(trans('general.view_questionnaire')); ?></a>
                                         </li>
                                         <li>
-                                            <a href="<?php echo e(route('backend.activate',['model' => 'day','id' => $element->id])); ?>">
-                                                <i class="fa fa-fw fa-check-circle"></i> <?php echo e(trans('general.toggle_active')); ?></a>
+                                            <a href="<?php echo e(route('backend.admin.questionnaire.edit',$element->id)); ?>">
+                                                <i class="fa fa-fw fa-edit"></i><?php echo e(trans('general.edit')); ?></a>
                                         </li>
                                         <li>
-                                            <a data-toggle="modal" href="#" data-target="#basic" data-title="Delete" data-content="Are you sure you want to delete day <?php echo e($element->name); ?>? " data-form_id="delete-<?php echo e($element->id); ?>">
+                                            <a data-toggle="modal" href="#" data-target="#basic" data-title="Delete" data-content="Are you sure you want to delete <?php echo e($element->name); ?>? " data-form_id="delete-<?php echo e($element->id); ?>">
                                                 <i class="fa fa-fw fa-recycle"></i> <?php echo e(trans('general.delete')); ?></a>
-                                            <form method="post" id="delete-<?php echo e($element->id); ?>" action="<?php echo e(route('backend.admin.day.destroy',$element->id)); ?>">
+                                            <form method="post" id="delete-<?php echo e($element->id); ?>" action="<?php echo e(route('backend.admin.questionnaire.destroy',$element->id)); ?>">
                                                 <?php echo csrf_field(); ?>
                                                 <input type="hidden" name="_method" value="delete" />
                                                 <button type="submit" class="btn btn-del hidden">
@@ -90,6 +82,10 @@
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </tbody>
                 </table>
+                <?php if($elements->render()): ?>
+                <?php echo e($elements->render()); ?>
+
+                <?php endif; ?>
             </div>
         </div>
     </div>

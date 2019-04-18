@@ -89,12 +89,8 @@ class AuthServiceProvider extends ServiceProvider
             return auth()->user()->role->is_designer;
         });
 
-        Gate::define('product.index', function ($user) {
-            return $user->role->privileges->where('name', 'product')->first()->pivot->index;
-        });
-
-        Gate::define('service.index', function ($user) {
-            return $user->role->privileges->where('name', 'service')->first()->pivot->index;
+        Gate::define('index', function ($user, $index) {
+            return $user->role->privileges->where('name', $index)->first()->pivot->index;
         });
     }
 }
