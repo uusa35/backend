@@ -48,7 +48,7 @@ class TimingController extends Controller
      */
     public function store(TimingStore $request)
     {
-        //
+        dd('here');
     }
 
     /**

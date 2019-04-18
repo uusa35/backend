@@ -13,7 +13,7 @@ class TimingStore extends FormRequest
      */
     public function authorize()
     {
-        return $this->authorize('timing.create');
+        return true;
     }
 
     /**
@@ -25,12 +25,11 @@ class TimingStore extends FormRequest
     {
         dd(request()->all());
         return [
-            'start' => 'required|',
+            'start' => 'required',
             'end' => 'required',
             'user_id' => 'required|exists:users,id',
             'service_id' => 'required|exists:services,id',
             'multi_booking' => 'required|boolean',
-
         ];
     }
 }

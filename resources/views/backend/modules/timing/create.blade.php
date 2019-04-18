@@ -11,7 +11,6 @@
                 <form class="horizontal-form" role="form" method="POST"
                       action="{{ route('backend.timing.store') }}" enctype="multipart/form-data">
                     @csrf
-                    <input type="hidden" day="api_token" value="{{ str_random(rand(10,99)) }}">
                     <div class="form-body">
                         <h3 class="form-section">{{ trans('general.create_timing') }}</h3>
                         <div class="portlet box blue ">
@@ -217,7 +216,7 @@
                                                     <select id="single" class="form-control select2" name="user_id">
                                                         <option value="">{{ trans('general.choose_company') }}</option>
                                                         @foreach($users as $user)
-                                                            <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                            <option value="{{ $user->id }}">{{ $user->name }}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
@@ -226,11 +225,10 @@
                                                 <div class="form-group">
                                                     <label for="single"
                                                            class="control-label">{{ trans('general.service') }}</label>
-                                                    <select id="single" class="form-control select2">
+                                                    <select id="single" class="form-control select2" name="service_id">
                                                         <option value="">{{ trans('general.choose_service') }}</option>
-
                                                         @foreach($services as $service)
-                                                            <option value="{{ $service->name_ar }}">{{ $service->name_ar }}</option>
+                                                            <option value="{{ $service->id }}">{{ $service->name_ar }}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
@@ -241,11 +239,11 @@
                                                 <div class="form-group">
                                                     <label for="single"
                                                            class="control-label">{{ trans('general.service') }}</label>
-                                                    <select id="single" class="form-control select2">
+                                                    <select id="single" class="form-control select2" name="service_id">
                                                         <option value="">{{ trans('general.choose_service') }}</option>
 
                                                         @foreach($services->where('user_id', auth()->id()) as $service)
-                                                            <option value="{{ $service->name_ar }}">{{ $service->name_ar }}</option>
+                                                            <option value="{{ $service->id }}">{{ $service->name_ar }}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
@@ -258,7 +256,7 @@
                                                 <select id="single" class="form-control select2" name="day_id">
                                                     <option value="">{{ trans('general.choose_day_of_service') }}</option>
                                                     @foreach($days as $day)
-                                                        <option value="{{ $day->day }}">{{ $day->day }}</option>
+                                                        <option value="{{ $day->id }}">{{ $day->day }}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
@@ -275,12 +273,12 @@
                                         <div class="form-group">
                                             <label class="control-label sbold">{{ trans('general.is_off') }}</label></br>
                                             <label class="radio-inline">
-                                                <input type="radio" day="is_off"
+                                                <input type="radio" name="is_off"
                                                        id="optionsRadios1" value="1">
                                                 is_off
                                             </label>
                                             <label class="radio-inline">
-                                                <input type="radio" day="is_off"
+                                                <input type="radio" name="is_off"
                                                        id="optionsRadios2" checked
                                                        value="0">
                                                 not_is_off</label>
@@ -288,13 +286,13 @@
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label class="control-label sbold">{{ trans('general.allow_multiselect') }}</label></br>
+                                            <label class="control-label sbold">{{ trans('general.allow_multi_select') }}</label></br>
                                             <label class="radio-inline">
-                                                <input type="radio" day="allow_multiselect"
+                                                <input type="radio" name="allow_multiselect"
                                                        id="optionsRadios1"
                                                        value="1"> allow_multiselect </label>
                                             <label class="radio-inline">
-                                                <input type="radio" day="allow_multiselect"
+                                                <input type="radio" name="allow_multiselect"
                                                        id="optionsRadios2"
                                                        checked value="0"> not_allow_multiselect</label>
                                         </div>
@@ -303,12 +301,12 @@
                                         <div class="form-group">
                                             <label class="control-label sbold">{{ trans('general.is_available') }}</label></br>
                                             <label class="radio-inline">
-                                                <input type="radio" day="is_available"
+                                                <input type="radio" name="is_available"
                                                        id="optionsRadios1"
                                                        value="1">
                                                 is_available </label>
                                             <label class="radio-inline">
-                                                <input type="radio" day="is_available"
+                                                <input type="radio" name="is_available"
                                                        id="optionsRadios2" checked
                                                        value="0"> not_is_available</label>
                                         </div>
