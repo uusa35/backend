@@ -28,7 +28,7 @@ class TimingStore extends FormRequest
             'end' => 'required',
             'user_id' => 'required|exists:users,id',
             'service_id' => 'required|exists:services,id',
-            'multi_booking' => 'required|boolean',
+            'allow_multi_select' => 'required|boolean',
             'is_available' => 'required|boolean'
         ];
     }

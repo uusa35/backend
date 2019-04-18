@@ -48,7 +48,11 @@ class TimingController extends Controller
      */
     public function store(TimingStore $request)
     {
-        dd('here');
+        $timing = Timing::create($request->all());
+        if ($timing) {
+            return redirect()->back()->with('success', trans('message.create_timing_success'));
+        }
+        return redirect()->back()->with('error', trans('message.create_timing_failure'));
     }
 
     /**

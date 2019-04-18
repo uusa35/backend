@@ -14,9 +14,9 @@ class CreateTimingsTable extends Migration
     {
         Schema::create('timings', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('day');
-            $table->string('day_name_ar');
-            $table->string('day_name_en');
+            $table->string('day')->nullable();
+            $table->string('day_name_ar')->nullable();
+            $table->string('day_name_en')->nullable();
             $table->time('start');
             $table->time('end')->nullable();
             $table->boolean('is_off')->default(0);
@@ -26,8 +26,8 @@ class CreateTimingsTable extends Migration
             $table->string('notes_ar')->nullable();
             $table->string('notes_en')->nullable();
 
-            $table->smallInteger('week_start');
-            $table->smallInteger('day_no');
+            $table->smallInteger('week_start')->nullable();
+            $table->smallInteger('day_no')->nullable();
 
             $table->integer('user_id')->unsigned()->index();
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');

@@ -298,11 +298,11 @@
                                         <div class="form-group">
                                             <label class="control-label sbold"><?php echo e(trans('general.allow_multi_select')); ?></label></br>
                                             <label class="radio-inline">
-                                                <input type="radio" name="allow_multiselect"
+                                                <input type="radio" name="allow_multi_select"
                                                        id="optionsRadios1"
                                                        value="1"> allow_multiselect </label>
                                             <label class="radio-inline">
-                                                <input type="radio" name="allow_multiselect"
+                                                <input type="radio" name="allow_multi_select"
                                                        id="optionsRadios2"
                                                        checked value="0"> not_allow_multiselect</label>
                                         </div>
