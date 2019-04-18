@@ -284,7 +284,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group{{ $errors->has('booking_limit') ? ' has-error' : '' }}">
                                         <label for="booking_limit" class="control-label">{{ trans('general.booking_limit') }}</label>
-                                        <input id="booking_limit" type="text" class="form-control" sku="booking_limit" placeholder="{{ trans('general.booking_limit') }}" value="{{ old('booking_limit') }}" autofocus>
+                                        <input id="booking_limit" type="number" class="form-control" sku="booking_limit" placeholder="{{ trans('general.booking_limit') }}" value="{{ old('booking_limit') }}" autofocus>
                                         @if ($errors->has('booking_limit'))
                                         <span class="help-block">
                                             <strong>
