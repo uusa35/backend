@@ -342,13 +342,13 @@ Breadcrumbs::for('backend.admin.coupon.create', function ($trail) {
     $trail->push(trans('general.create_coupon'), route('backend.admin.coupon.create'));
 });
 
-Breadcrumbs::for('backend.admin.service.index', function ($trail) {
+Breadcrumbs::for('backend.service.index', function ($trail) {
     $trail->parent('backend.home');
-    $trail->push(trans('general.index_service'), route('backend.admin.service.index'));
+    $trail->push(trans('general.index_service'), route('backend.service.index'));
 });
-Breadcrumbs::for('backend.admin.service.create', function ($trail) {
-    $trail->parent('backend.admin.service.index');
-    $trail->push(trans('general.create_service'), route('backend.admin.service.create'));
+Breadcrumbs::for('backend.service.create', function ($trail) {
+    $trail->parent('backend.service.index');
+    $trail->push(trans('general.create_service'), route('backend.service.create'));
 });
 
 Breadcrumbs::for('backend.admin.slide.index', function ($trail) {

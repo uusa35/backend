@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Models\Brand;
+use App\Models\Category;
 use App\Models\Service;
+use App\Models\Tag;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -26,7 +30,12 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        return view('backend.modules.aboutus.create');
+        $this->authorize('service.create');
+        $categories = Category::active()->onlyParent()->with('children.children')->get();
+        $tags = Tag::active()->get();
+        $brands = Brand::active()->get();
+        $users = User::active()->get();
+        return view('backend.modules.service.create', compact('categories','tags','brands','users'));
     }
 
     /**
