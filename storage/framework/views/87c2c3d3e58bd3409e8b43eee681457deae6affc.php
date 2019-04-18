@@ -11,7 +11,6 @@
                 <form class="horizontal-form" role="form" method="POST"
                       action="<?php echo e(route('backend.timing.store')); ?>" enctype="multipart/form-data">
                     <?php echo csrf_field(); ?>
-                    <input type="hidden" day="api_token" value="<?php echo e(str_random(rand(10,99))); ?>">
                     <div class="form-body">
                         <h3 class="form-section"><?php echo e(trans('general.create_timing')); ?></h3>
                         <div class="portlet box blue ">
@@ -227,7 +226,7 @@
                                                     <select id="single" class="form-control select2" name="user_id">
                                                         <option value=""><?php echo e(trans('general.choose_company')); ?></option>
                                                         <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                            <option value="<?php echo e($user->name); ?>"><?php echo e($user->name); ?></option>
+                                                            <option value="<?php echo e($user->id); ?>"><?php echo e($user->name); ?></option>
                                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                     </select>
                                                 </div>
@@ -236,11 +235,10 @@
                                                 <div class="form-group">
                                                     <label for="single"
                                                            class="control-label"><?php echo e(trans('general.service')); ?></label>
-                                                    <select id="single" class="form-control select2">
+                                                    <select id="single" class="form-control select2" name="service_id">
                                                         <option value=""><?php echo e(trans('general.choose_service')); ?></option>
-
                                                         <?php $__currentLoopData = $services; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $service): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                            <option value="<?php echo e($service->name_ar); ?>"><?php echo e($service->name_ar); ?></option>
+                                                            <option value="<?php echo e($service->id); ?>"><?php echo e($service->name_ar); ?></option>
                                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                     </select>
                                                 </div>
@@ -251,11 +249,11 @@
                                                 <div class="form-group">
                                                     <label for="single"
                                                            class="control-label"><?php echo e(trans('general.service')); ?></label>
-                                                    <select id="single" class="form-control select2">
+                                                    <select id="single" class="form-control select2" name="service_id">
                                                         <option value=""><?php echo e(trans('general.choose_service')); ?></option>
 
                                                         <?php $__currentLoopData = $services->where('user_id', auth()->id()); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $service): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                            <option value="<?php echo e($service->name_ar); ?>"><?php echo e($service->name_ar); ?></option>
+                                                            <option value="<?php echo e($service->id); ?>"><?php echo e($service->name_ar); ?></option>
                                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                     </select>
                                                 </div>
@@ -268,7 +266,7 @@
                                                 <select id="single" class="form-control select2" name="day_id">
                                                     <option value=""><?php echo e(trans('general.choose_day_of_service')); ?></option>
                                                     <?php $__currentLoopData = $days; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $day): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                        <option value="<?php echo e($day->day); ?>"><?php echo e($day->day); ?></option>
+                                                        <option value="<?php echo e($day->id); ?>"><?php echo e($day->day); ?></option>
                                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                 </select>
                                             </div>
@@ -285,12 +283,12 @@
                                         <div class="form-group">
                                             <label class="control-label sbold"><?php echo e(trans('general.is_off')); ?></label></br>
                                             <label class="radio-inline">
-                                                <input type="radio" day="is_off"
+                                                <input type="radio" name="is_off"
                                                        id="optionsRadios1" value="1">
                                                 is_off
                                             </label>
                                             <label class="radio-inline">
-                                                <input type="radio" day="is_off"
+                                                <input type="radio" name="is_off"
                                                        id="optionsRadios2" checked
                                                        value="0">
                                                 not_is_off</label>
@@ -298,13 +296,13 @@
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label class="control-label sbold"><?php echo e(trans('general.allow_multiselect')); ?></label></br>
+                                            <label class="control-label sbold"><?php echo e(trans('general.allow_multi_select')); ?></label></br>
                                             <label class="radio-inline">
-                                                <input type="radio" day="allow_multiselect"
+                                                <input type="radio" name="allow_multi_select"
                                                        id="optionsRadios1"
                                                        value="1"> allow_multiselect </label>
                                             <label class="radio-inline">
-                                                <input type="radio" day="allow_multiselect"
+                                                <input type="radio" name="allow_multi_select"
                                                        id="optionsRadios2"
                                                        checked value="0"> not_allow_multiselect</label>
                                         </div>
@@ -313,12 +311,12 @@
                                         <div class="form-group">
                                             <label class="control-label sbold"><?php echo e(trans('general.is_available')); ?></label></br>
                                             <label class="radio-inline">
-                                                <input type="radio" day="is_available"
+                                                <input type="radio" name="is_available"
                                                        id="optionsRadios1"
                                                        value="1">
                                                 is_available </label>
                                             <label class="radio-inline">
-                                                <input type="radio" day="is_available"
+                                                <input type="radio" name="is_available"
                                                        id="optionsRadios2" checked
                                                        value="0"> not_is_available</label>
                                         </div>

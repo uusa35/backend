@@ -19,7 +19,9 @@ class CouponController extends Controller
      */
     public function index()
     {
+
         $elements = Coupon::with('user')->orderBy('created_at', 'desc')->get();
+
         return view('backend.modules.coupon.index', compact('elements'));
     }
 

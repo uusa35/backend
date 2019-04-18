@@ -48,7 +48,13 @@ class TimingController extends Controller
      */
     public function store(TimingStore $request)
     {
-        //
+        $day = Day::whereId($request->day_id)->first();
+        $request->request->add(['day_no' => $day->day_no, 'day_name_en' => $day->day_name_en, 'day_name_ar' => $day->day_name_ar, 'day' => $day->day]);
+        $timing = Timing::create($request->all());
+        if ($timing) {
+            return redirect()->back()->with('success', trans('message.create_timing_success'));
+        }
+        return redirect()->back()->with('error', trans('message.create_timing_failure'));
     }
 
     /**

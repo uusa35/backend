@@ -36,7 +36,7 @@ class CreateSettingsTable extends Migration
             $table->string('size_chart')->nullable();
             $table->string('longitude')->nullable();
             $table->string('latitude')->nullable();
-            $table->string('main_theme_color')->nullable();
+            $table->string('main_theme_color')->wnullable();
             $table->string('title_theme_color')->nullable();
             $table->string('text_theme_color')->nullable();
             $table->string('header_bg')->nullable();
