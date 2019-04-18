@@ -1,16 +1,15 @@
 @extends('backend.layouts.app')
 
 @section('breadcrumbs')
-{{ Breadcrumbs::render('backend.admin.service.create') }}
+{{ Breadcrumbs::render('backend.service.create') }}
 @endsection
 
 @section('content')
 <div class="portlet box blue">
     @include('backend.partials.forms.form_title')
     <div class="portlet-body form">
-        <form class="horizontal-form" role="form" method="POST" action="{{ route('backend.admin.service.store') }}" enctype="multipart/form-data">
+        <form class="horizontal-form" role="form" method="POST" action="{{ route('backend.service.store') }}" enctype="multipart/form-data">
             @csrf
-            <input type="hidden" sku="api_token" value="{{ str_random(rand(10,99)) }}">
             <div class="form-body">
                 <h3 class="form-section">{{ trans('general.create_service') }}</h3>
                 {{--sku arabic / sku english --}}
