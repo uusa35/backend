@@ -9,6 +9,8 @@ use Illuminate\Auth\Access\HandlesAuthorization;
 class ServicePolicy
 {
     use HandlesAuthorization;
+    const MODAL = 'service';
+
 
     /**
      * Determine whether the user can view the service.
@@ -19,7 +21,7 @@ class ServicePolicy
      */
     public function view(User $user, Service $service)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->create;
     }
 
     /**
@@ -30,7 +32,7 @@ class ServicePolicy
      */
     public function create(User $user)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->create;
     }
 
     /**

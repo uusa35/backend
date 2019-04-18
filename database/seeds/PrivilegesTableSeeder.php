@@ -13,7 +13,7 @@ class PrivilegesTableSeeder extends Seeder
     public function run()
     {
         $privileges = [
-            'category', 'product', 'slider', 'service', 'timings',
+            'category', 'product', 'slider', 'service', 'timing',
             'role', 'user', 'setting', 'currency',
             'country', 'gallery', 'page', 'tag', 'brand',
             'privilege', 'order', 'coupon', 'size', 'color',
