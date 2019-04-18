@@ -26,7 +26,7 @@ class CreateTimingsTable extends Migration
             $table->string('notes_ar')->nullable();
             $table->string('notes_en')->nullable();
 
-            $table->smallInteger('week_start')->nullable();
+            $table->smallInteger('week_start')->default(7)->nullable();
             $table->smallInteger('day_no')->nullable();
 
             $table->integer('user_id')->unsigned()->index();
