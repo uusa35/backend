@@ -19,7 +19,7 @@ class TimingController extends Controller
      */
     public function index()
     {
-        $this->authorize('timing.index');
+        $this->authorize('index', 'timing');
         $elements = Timing::whereHas('service', function ($q) {
             !request()->has('timing_id') ? $q->where('user_id', auth()->id()) : $q->where(['user_id' => auth()->id(), 'id' => request('id')]);
         })->get();
