@@ -55,7 +55,7 @@ class ProductController extends Controller
         $categories = Category::active()->onlyParent()->with('children.children')->get();
         $tags = Tag::active()->get();
         $brands = Brand::active()->get();
-        $users = User::active()->get();
+        $users = User::active()->companies()->get();
         $colors = Color::active()->get();
         $sizes = Size::active()->get();
         $shipment_packages = ShipmentPackage::active()->get();
