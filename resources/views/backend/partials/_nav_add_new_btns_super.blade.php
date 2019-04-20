@@ -12,8 +12,8 @@
 {{--<i class="icon-plus"></i> {{ trans('general.new_survey') }}</a>--}}
 {{--</li>--}}
 <li>
-    <a href="{{ route('backend.service.create') }}" class="tooltips" data-container="body" data-placement="{{ app()->isLocale('ar') ? 'left' : 'right' }}" data-original-title="{{ trans('message.create_service') }}">
-        <i class="icon-handbag"></i> {{ trans('general.create_service') }}</a>
+    <a href="{{ route('backend.service.create') }}" class="tooltips" data-container="body" data-placement="{{ app()->isLocale('ar') ? 'left' : 'right' }}" data-original-title="{{ trans('message.new_service') }}">
+        <i class="icon-handbag"></i> {{ trans('general.new_service') }}</a>
 </li>
 <li>
     <a href="{{ route('backend.timing.create') }}" class="tooltips" data-container="body" data-placement="{{ app()->isLocale('ar') ? 'left' : 'right' }}" data-original-title="{{ trans('message.new_timing') }}">

@@ -6,7 +6,7 @@
     <div class="portlet box blue">
         @include('backend.partials.forms.form_title')
         <div class="portlet-body">
-            @include('backend.partials._admin_instructions',['title' => trans('general.timings') ,'message' => trans('message.create_timing_message')])
+            @include('backend.partials._admin_instructions',['title' => trans('general.timings') ,'message' => trans('message.new_timing')])
             <div class="portlet-body form">
                 <form class="horizontal-form" role="form" method="POST"
                       action="{{ route('backend.timing.store') }}" enctype="multipart/form-data">

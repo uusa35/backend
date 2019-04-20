@@ -12,8 +12,8 @@
 
 
 <li>
-    <a href="<?php echo e(route('backend.service.create')); ?>" class="tooltips" data-container="body" data-placement="<?php echo e(app()->isLocale('ar') ? 'left' : 'right'); ?>" data-original-title="<?php echo e(trans('message.create_service')); ?>">
-        <i class="icon-handbag"></i> <?php echo e(trans('general.create_service')); ?></a>
+    <a href="<?php echo e(route('backend.service.create')); ?>" class="tooltips" data-container="body" data-placement="<?php echo e(app()->isLocale('ar') ? 'left' : 'right'); ?>" data-original-title="<?php echo e(trans('message.new_service')); ?>">
+        <i class="icon-handbag"></i> <?php echo e(trans('general.new_service')); ?></a>
 </li>
 <li>
     <a href="<?php echo e(route('backend.timing.create')); ?>" class="tooltips" data-container="body" data-placement="<?php echo e(app()->isLocale('ar') ? 'left' : 'right'); ?>" data-original-title="<?php echo e(trans('message.new_timing')); ?>">
