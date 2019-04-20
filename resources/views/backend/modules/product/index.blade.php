@@ -11,7 +11,7 @@
             <div class="portlet light ">
                 @include('backend.partials.forms.form_title')
                 <div class="portlet-body">
-                    @include('backend.partials._admin_instructions',['title' => trans('general.products') ,'message' => trans('message.admin_product_message')])
+                    @include('backend.partials._admin_instructions',['title' => trans('general.products') ,'message' => trans('message.index_product')])
                     <table id="dataTable" class="table table-striped table-bordered table-hover" cellspacing="0">
                         <thead>
                         <tr>

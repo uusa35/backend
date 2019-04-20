@@ -9,13 +9,7 @@
         <div class="portlet light ">
             <?php echo $__env->make('backend.partials.forms.form_title', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
             <div class="portlet-body">
-                <div class="m-heading-1 border-green m-bordered">
-                    <h3>Important Information</h3>
-                    <p>
-                        <?php echo e(trans('message.backend_survey_index')); ?>
-
-                    </p>
-                </div>
+                <?php echo $__env->make('backend.partials._admin_instructions',['title' => trans('general.surveys') ,'message' => trans('message.index_survey')], \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
                 <table id="dataTable" class="table table-striped table-bordered table-hover" cellspacing="0">
                     <thead>
                         <tr>
