@@ -8,12 +8,12 @@
         <div class="portlet-body">
             @include('backend.partials._admin_instructions',['title' => trans('general.timings') ,'message' => trans('message.new_timing')])
             <div class="portlet-body form">
-                <form class="horizontal-form" role="form" method="POST"
-                      action="{{ route('backend.timing.store') }}" enctype="multipart/form-data">
+                <form class="horizontal-form" role="form" method="POST" action="{{ route('backend.timing.store') }}"
+                      enctype="multipart/form-data">
                     @csrf
                     <div class="form-body">
                         <h3 class="form-section">{{ trans('general.create_timing') }}</h3>
-                        <div class="portlet box blue ">
+                        <div class="portlet box blue">
                             <div class="portlet-title">
                                 <div class="caption">
                                     <i class="fa fa-gift"></i> {{ trans('general.timing_main_details') }}
