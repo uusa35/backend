@@ -20,7 +20,7 @@
     <div class="page-toolbar">
         <div class="btn-group pull-right">
             <button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown"
-                    data-hover="dropdown" data-delay="1000" data-close-others="true"> Actions
+                    data-hover="dropdown" data-delay="1000" data-close-others="true"> {{ trans('general.actions') }}
                 <i class="fa fa-angle-down"></i>
             </button>
             <ul class="dropdown-menu pull-right" role="menu">
