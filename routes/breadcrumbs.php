@@ -328,6 +328,15 @@ Breadcrumbs::for('backend.admin.currency.index', function ($trail) {
     $trail->push(trans('general.index_currency'), route('backend.admin.currency.index'));
 });
 
+Breadcrumbs::for('backend.admin.area.create', function ($trail) {
+    $trail->parent('backend.admin.area.index');
+    $trail->push(trans('general.create_area'), route('backend.admin.area.create'));
+});
+Breadcrumbs::for('backend.admin.area.index', function ($trail) {
+    $trail->parent('backend.home');
+    $trail->push(trans('general.index_area'), route('backend.admin.area.index'));
+});
+
 Breadcrumbs::for('backend.admin.currency.create', function ($trail) {
     $trail->parent('backend.admin.currency.index');
     $trail->push(trans('general.create_currency'), route('backend.admin.currency.create'));

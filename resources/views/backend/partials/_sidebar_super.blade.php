@@ -365,13 +365,13 @@
         <span class="arrow"></span>
     </a>
 </li>
-{{--<li class="nav-item {{ activeItem('area') }}">
-<a href="{{ route('backend.admin.area.index') }}" class="nav-link nav-toggle">
-    <i class="fa fa-fw fa-shopping-bag"></i>
-    <span class="title">{{ trans('general.areas') }}</span>
-    <span class="arrow"></span>
-</a>
-</li>--}}
+<li class="nav-item {{ activeItem('area') }}">
+    <a href="{{ route('backend.admin.area.index') }}" class="nav-link nav-toggle">
+        <i class="fa fa-fw fa-shopping-bag"></i>
+        <span class="title">{{ trans('general.areas') }}</span>
+        <span class="arrow"></span>
+    </a>
+</li>
 <li class="nav-item {{ activeItem('aboutus') }}">
     <a href="{{ route('backend.admin.aboutus.index') }}" class="nav-link nav-toggle">
         <i class="fa fa-fw fa-shopping-bag"></i>

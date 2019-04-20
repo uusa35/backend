@@ -61,6 +61,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
         Route::resource('branch', 'BranchController');
         Route::resource('day', 'DayController');
         Route::resource('aboutus', 'AboutusController');
+        Route::resource('area', 'AreaController');
     });
     // Backend :: companies
     Route::get('/', 'HomeController@index')->name('index');
