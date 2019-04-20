@@ -9,7 +9,7 @@
             <div class="portlet light ">
                 <?php echo $__env->make('backend.partials.forms.form_title', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
                 <div class="portlet-body">
-                    <?php echo $__env->make('backend.partials._admin_instructions',['title' => trans('general.products') ,'message' => trans('message.admin_product_message')], \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                    <?php echo $__env->make('backend.partials._admin_instructions',['title' => trans('general.products') ,'message' => trans('message.index_product')], \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
                     <table id="dataTable" class="table table-striped table-bordered table-hover" cellspacing="0">
                         <thead>
                         <tr>
