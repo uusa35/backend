@@ -15,12 +15,12 @@
                       enctype="multipart/form-data">
                     @csrf
                     <div class="form-body">
-                        <h3 class="form-section">{{ trans('general.create_service') }}</h3>
+                        <h3 class="form-section">{{ trans('general.new_service') }}</h3>
                         {{--sku arabic / sku english --}}
                         <div class="portlet box blue ">
                             <div class="portlet-title">
                                 <div class="caption">
-                                    <i class="fa fa-gift"></i> {{ trans('general.service_main_details') }}
+                                    <i class="fa fa-gift"></i> {{ trans('general.main_details') }}
                                 </div>
                             </div>
                             <div class="portlet-body form">
@@ -479,7 +479,7 @@
                         <div class="portlet box blue ">
                             <div class="portlet-title">
                                 <div class="caption">
-                                    <i class="fa fa-gift"></i> {{ trans('general.product_main_details') }}
+                                    <i class="fa fa-gift"></i> {{ trans('general.more_details') }}
                                 </div>
                             </div>
                             <div class="portlet-body form">
