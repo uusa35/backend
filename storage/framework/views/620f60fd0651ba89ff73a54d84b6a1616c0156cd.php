@@ -14,12 +14,12 @@
                       enctype="multipart/form-data">
                     <?php echo csrf_field(); ?>
                     <div class="form-body">
-                        <h3 class="form-section"><?php echo e(trans('general.create_service')); ?></h3>
+                        <h3 class="form-section"><?php echo e(trans('general.new_service')); ?></h3>
                         
                         <div class="portlet box blue ">
                             <div class="portlet-title">
                                 <div class="caption">
-                                    <i class="fa fa-gift"></i> <?php echo e(trans('general.service_main_details')); ?>
+                                    <i class="fa fa-gift"></i> <?php echo e(trans('general.main_details')); ?>
 
                                 </div>
                             </div>
@@ -502,7 +502,7 @@
                         <div class="portlet box blue ">
                             <div class="portlet-title">
                                 <div class="caption">
-                                    <i class="fa fa-gift"></i> <?php echo e(trans('general.product_main_details')); ?>
+                                    <i class="fa fa-gift"></i> <?php echo e(trans('general.more_details')); ?>
 
                                 </div>
                             </div>
