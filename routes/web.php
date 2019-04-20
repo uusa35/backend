@@ -32,8 +32,6 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
         Route::resource('currency', 'CurrencyController');
         Route::resource('category', 'CategoryController');
         Route::resource('user', 'UserController');
-        Route::resource('product', 'ProductController');
-        Route::resource('service', 'ServiceController');
         Route::resource('color', 'ColorController');
         Route::resource('size', 'SizeController');
         Route::resource('slide', 'SlideController');
@@ -62,7 +60,6 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
         Route::resource('answer', 'AnswerController');
         Route::resource('branch', 'BranchController');
         Route::resource('day', 'DayController');
-        Route::resource('timing', 'TimingController');
     });
     // Backend :: companies
     Route::get('/', 'HomeController@index')->name('index');
