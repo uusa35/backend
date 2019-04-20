@@ -51,7 +51,7 @@
     </a>
 </li>
 <li class="nav-item <?php echo e(activeItem('timing',['day'])); ?>">
-    <a href="#" class="nav-link nav-toggle">
+    <a href="<?php echo e(route("backend.timing.index")); ?>" class="nav-link nav-toggle">
         <i class="fa fa-fw fa-clock-o"></i>
         <span class="title"><?php echo e(trans('general.timings')); ?></span>
         <span class="arrow"></span>

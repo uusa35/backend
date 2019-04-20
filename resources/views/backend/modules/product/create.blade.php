@@ -490,9 +490,6 @@
                                             </strong>
                                         </span>
                                         @endif
-                                        {{-- <span class="help-block">
-                                                                                            <strong>{{ trans('message.quantity') }}</strong>
-                                        </span> --}}
                                     </div>
                                 </div>
                             </div>

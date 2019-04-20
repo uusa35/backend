@@ -69,6 +69,7 @@ return array(
     'end_sale_date' => 'end_sale_date',
     'quantity' => 'quantity',
     'set_date_and_area' => 'تم حفظ التاريخ والمنطقة',
-    'search_parameters_clear' => 'تم إزالة جميع حقول البحث'
+    'search_parameters_clear' => 'تم إزالة جميع حقول البحث',
+    'quantity' => 'يرجى وضع كمية المنتج المتاحة مباشرة في الحقل .. وفي حالة وجود اكثر من لون أو حجم للمنتج يجب وضع الكميات في الخاصية المرتبطة للمنتج على حدة.'
 
 );

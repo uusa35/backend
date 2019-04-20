@@ -51,7 +51,7 @@
     </a>
 </li>
 <li class="nav-item {{ activeItem('timing',['day']) }}">
-    <a href="#" class="nav-link nav-toggle">
+    <a href="{{ route("backend.timing.index") }}" class="nav-link nav-toggle">
         <i class="fa fa-fw fa-clock-o"></i>
         <span class="title">{{ trans('general.timings') }}</span>
         <span class="arrow"></span>

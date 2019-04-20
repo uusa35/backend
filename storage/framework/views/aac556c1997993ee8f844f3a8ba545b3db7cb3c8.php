@@ -475,7 +475,6 @@
                                             </strong>
                                         </span>
                                         <?php endif; ?>
-                                        
                                     </div>
                                 </div>
                             </div>
