@@ -10,7 +10,7 @@
                 @include('backend.partials.forms.form_title')
                 <div class="portlet-body">
                     @include('backend.partials._admin_instructions',['title' => trans('general.privileges') ,'message' => trans('message.privilege_index')])
-                    <table id="dataTable" class="table table-striped table-bordered table-hover" cellspacing="0">
+                    <table id="moreDataTable-1" class="table table-striped table-bordered table-hover" cellspacing="0">
                         <thead>
                         <tr>
                             <th> {{ trans('general.id') }}</th>

@@ -74,12 +74,6 @@
                                                     <i class="fa fa-fw fa-edit"></i> <?php echo e(trans('general.edit')); ?></a>
                                             </li>
                                             <li>
-                                                <a href="<?php echo e(route('backend.activate',['model' => 'privilege','id' => $element->id])); ?>">
-                                                    <i class="fa fa-fw fa-check-circle"></i> <?php echo e(trans('general.toggle_active')); ?>
-
-                                                </a>
-                                            </li>
-                                            <li>
                                                 <a href="<?php echo e(route('backend.admin.privilege.show',$element->id)); ?>">
                                                     <i class="fa fa-fw fa-check-circle"></i><?php echo e(trans('general.show_privilege_details')); ?>
 
