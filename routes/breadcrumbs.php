@@ -318,9 +318,9 @@ Breadcrumbs::for('backend.admin.policy.create', function ($trail) {
 });
 
 
-Breadcrumbs::for('backend.aboutus.index', function ($trail) {
+Breadcrumbs::for('backend.admin.aboutus.index', function ($trail) {
     $trail->parent('backend.home');
-    $trail->push('aboutus', route('backend.aboutus.index'));
+    $trail->push(trans('general.create_aboutus'), route('backend.admin.aboutus.index'));
 });
 
 Breadcrumbs::for('backend.admin.currency.index', function ($trail) {

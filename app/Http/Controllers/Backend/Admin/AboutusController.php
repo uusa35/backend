@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend\ِAdmin;
+namespace App\Http\Controllers\Backend\Admin;
 
 use App\Models\Aboutus;
 use Illuminate\Http\Request;
