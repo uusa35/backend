@@ -115,7 +115,7 @@
                                         <div class="form-group{{ $errors->has('delivery_time') ? ' has-error' : '' }}">
                                             <label for="delivery_time" class="control-label">{{ trans('general.delivery_time') }}
                                                 *</label>
-                                            <input id="delivery_time" type="number" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.delivery_time') }}" name="delivery_time" value="{{ old('delivery_time') }}" placeholder="{{ trans('general.delivery_time') }}" required autofocus>
+                                            <input id="delivery_time" type="number" max="99" maxlength="2" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.delivery_time') }}" name="delivery_time" value="{{ old('delivery_time') }}" placeholder="{{ trans('general.delivery_time') }}" required autofocus>
                                             @if ($errors->has('delivery_time'))
                                             <span class="help-block">
                                                 <strong>
@@ -149,7 +149,7 @@
                                         <div class="form-group{{ $errors->has('weight') ? ' has-error' : '' }}">
                                             <label for="weight" class="control-label">{{ trans('general.weight') }}
                                                 *</label>
-                                            <input id="weight" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.weight') }}" name="weight" value="{{ old('weight') }}" placeholder="{{ trans('general.weight') }}" required autofocus>
+                                            <input id="weight" type="number" maxlength="1" max="10" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.weight') }}" name="weight" value="{{ old('weight') }}" placeholder="{{ trans('general.weight') }}" required autofocus>
                                             @if ($errors->has('weight'))
                                             <span class="help-block">
                                                 <strong>

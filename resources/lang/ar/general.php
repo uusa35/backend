@@ -673,7 +673,9 @@ return array(
     'answers_list' => 'قائمة الاجابات',
     'successful_orders' => 'طلبات ناجحة',
     'failed_orders' => 'طلبات غير ناجحة',
-    'countries_control' => 'التحكم بالدول'
+    'countries_control' => 'التحكم بالدول',
+    'questionnaires_answers' => 'إجابات العملاء على الاستبيانات',
+    'company_branches' => 'فروع الشركات'
 
 
 
