@@ -23,7 +23,7 @@
                         <div class="portlet-body form">
                             <div class="form-body">
                                 <div class="row">
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="form-group <?php echo e($errors->has('name') ? ' has-error' : ''); ?>">
                                             <label for="name" class="control-label"><?php echo e(trans('general.name')); ?>*</label>
                                             <input id="name" type="text" class="form-control" name="name" value="<?php echo e(old('name')); ?>" placeholder="<?php echo e(trans('general.name')); ?>" required autofocus>
@@ -37,7 +37,25 @@
                                             <?php endif; ?>
                                         </div>
                                     </div>
+
                                     <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="single"
+                                                   class="control-label"><?php echo e(trans('general.roles')); ?>
+
+                                                *</label>
+                                            <select name="role_id" class="form-control tooltips"
+                                                    data-container="body" data-placement="top"
+                                                    data-original-title="<?php echo e(trans('message.owner')); ?>">
+                                                <option value=""><?php echo e(trans('general.choose_role')); ?></option>
+                                                <?php $__currentLoopData = $roles; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $role): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                    <option value="<?php echo e($role->id); ?>"><?php echo e($role->slug); ?></option>
+                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
                                         <div class="form-group <?php echo e($errors->has('slug_ar') ? ' has-error' : ''); ?>">
                                             <label for="slug_ar" class="control-label"><?php echo e(trans('general.slug_ar')); ?>*</label>
                                             <input id="slug_ar" type="text" class="form-control" name="slug_ar" value="<?php echo e(old('slug_ar')); ?>" placeholder="<?php echo e(trans('general.slug_ar')); ?>" required autofocus>
@@ -51,7 +69,7 @@
                                             <?php endif; ?>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="form-group<?php echo e($errors->has('slug_en') ? ' has-error' : ''); ?>">
                                             <label for="slug_en" class="control-label"><?php echo e(trans('general.slug_en')); ?>*</label>
                                             <input id="slug_en" type="text" class="form-control" name="slug_en" value="<?php echo e(old('slug_en')); ?>" placeholder="<?php echo e(trans('general.slug_en')); ?>" required autofocus>
@@ -137,7 +155,6 @@
                                             <strong><?php echo e(trans('message.create_instructions')); ?></strong>
                                         </span>
                                     </div>
-
 
 
                                 </div>

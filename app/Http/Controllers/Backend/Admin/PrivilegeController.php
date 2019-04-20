@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend\Admin;
 
 use App\Models\Privilege;
+use App\Models\Role;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -27,7 +28,8 @@ class PrivilegeController extends Controller
     public function create()
     {
         $this->authorize('privilege.create');
-        return view('backend.modules.privilege.create');
+        $roles = Role::doesntHave('privileges')->get();
+        return view('backend.modules.privilege.create', compact('roles'));
     }
 
     /**
@@ -66,9 +68,14 @@ class PrivilegeController extends Controller
      */
     public function edit($id)
     {
+        $validate = validator(request()->all(), ['role_id' => 'required|exists:roles,id']);
+        if ($validate->fails()) {
+            return redirect()->back()->withErrors($validate->errors());
+        }
         $element = Privilege::whereId($id)->with('roles')->first();
+        $role = $element->roles->where('id', request('role_id'))->first();
         $this->authorize('privilege.update', $element);
-        return view('backend.modules.privilege.edit', compact('element'));
+        return view('backend.modules.privilege.edit', compact('element', 'role'));
     }
 
     /**
@@ -82,9 +89,19 @@ class PrivilegeController extends Controller
     {
 
         $element = Privilege::whereId($id)->with('roles')->first();
+        $currentRole = $element->roles->where('id', request('role_id'))->first();
+        $element->roles()->updateExistingPivot($currentRole, [
+            'index' => $request->index,
+            'view' => $request->view,
+            'create' => $request->create,
+            'update' => $request->update,
+            'update' => $request->update,
+            'delete' => $request->delete,
+        ]);
         $this->authorize('privilege.update', $element);
-        $element->update($request->all());
-        return redirect()->route('backend.admin.privilege.index')->with('success', 'privilege updated');
+        $element->update($request->except('role_id', 'index', 'view', 'create', 'update', 'delete'));
+
+        return redirect()->route('backend.admin.privilege.show', ['id' => $element->id, 'role_id' => $currentRole->id])->with('success', 'privilege updated');
     }
 
     /**
