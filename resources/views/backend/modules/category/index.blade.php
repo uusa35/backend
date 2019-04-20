@@ -11,12 +11,7 @@
         <div class="portlet light ">
             @include('backend.partials.forms.form_title')
             <div class="portlet-body">
-                <div class="m-heading-1 border-green m-bordered">
-                    <h3>Important Information</h3>
-                    <p>
-                        {{ trans('backend.admin.category.index') }}
-                    </p>
-                </div>
+                @include('backend.partials._admin_instructions',['title' => trans('general.categories') ,'message' => trans('message.index_category')])
                 <table id="dataTable" class="table table-striped table-bordered table-hover" cellspacing="0">
                     <thead>
                         <tr>

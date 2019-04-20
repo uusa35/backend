@@ -10,16 +10,7 @@
         <div class="portlet light ">
             @include('backend.partials.forms.form_title')
             <div class="portlet-body">
-                <div class="m-heading-1 border-green m-bordered">
-                    <h3>Important Information</h3>
-                    <p>
-                        Roles are very important for the application.
-                    </p>
-                    <p> Some Information about roles.
-                        <a class="btn red btn-outline" href="http://datatables.net/" target="_blank">the official
-                            documentation</a>
-                    </p>
-                </div>
+                @include('backend.partials._admin_instructions',['title' => trans('general.countries') ,'message' => trans('message.index_country')])
                 <table id="dataTable" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%">
                     <thead>
                         <tr>

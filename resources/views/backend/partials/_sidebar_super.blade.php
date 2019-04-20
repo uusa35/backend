@@ -30,7 +30,7 @@
         <li class="nav-item ">
             <a href="{{ route('backend.product.create') }}" class="nav-link ">
                 <i class="fa fa-fw fa-plus-square"></i>
-                <span class="title">{{ trans('general.create_product') }}</span>
+                <span class="title">{{ trans('general.new_product') }}</span>
                 <span class="arrow"></span>
             </a>
         </li>

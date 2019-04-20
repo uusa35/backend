@@ -180,21 +180,16 @@ Breadcrumbs::for('backend.admin.newsletter.index', function ($trail) {
 
 Breadcrumbs::for('backend.size.index', function ($trail) {
     $trail->parent('backend.home');
-    $trail->push('size', route('backend.size.index'));
+    $trail->push(trans('general.sizes'), route('backend.size.index'));
 });
 
 Breadcrumbs::for('backend.admin.country.index', function ($trail) {
     $trail->parent('backend.home');
-    $trail->push('country', route('backend.admin.country.index'));
+    $trail->push(trans('general.countries'), route('backend.admin.country.index'));
 });
 Breadcrumbs::for('backend.admin.country.create', function ($trail) {
     $trail->parent('backend.admin.country.index');
     $trail->push(trans('general.create_country'), route('backend.admin.country.create'));
-});
-
-Breadcrumbs::for('backend.gallery.index', function ($trail) {
-    $trail->parent('backend.home');
-    $trail->push('gallery', route('backend.gallery.index'));
 });
 
 Breadcrumbs::for('backend.admin.role.index', function ($trail) {

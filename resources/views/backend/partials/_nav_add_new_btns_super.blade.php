@@ -1,6 +1,6 @@
-<li>
-    <a href="#" class="tooltips" data-container="body" data-placement="{{ app()->isLocale('ar') ? 'left' : 'right' }}" data-original-title="{{ trans('message.create_your_new_items_list') }}">
-        <i class="icon-plus"></i> {{ trans('general.create_your_new_items_list') }}</a>
+<li class="disabled">
+    <a href="#" disabled="true" class="tooltips disabled" data-container="body" data-placement="{{ app()->isLocale('ar') ? 'left' : 'right' }}" data-original-title="{{ trans('message.create_your_new_items_list') }}">
+        <i class="icon-note"></i> {{ trans('general.create_your_new_items_list') }}</a>
 </li>
 <li class="divider"></li>
 <li>
