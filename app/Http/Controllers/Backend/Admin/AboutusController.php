@@ -39,9 +39,9 @@ class AboutusController extends Controller
     {
         $element = Aboutus::create($request->all());
         if ($element) {
-            return redirect()->route('backend.aboutus.index')->with('success', 'Aboutus added');
+            return redirect()->route('backend.admin.aboutus.index')->with('success', trans('general.aboutus_added'));
         }
-        return redirect()->back()->with('error', 'Aboutus is not saved.');
+        return redirect()->back()->with('error', trans('general.aboutus_not_added'));
     }
 
     /**
