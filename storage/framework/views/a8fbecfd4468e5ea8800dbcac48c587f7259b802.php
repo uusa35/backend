@@ -10,7 +10,7 @@
                 <?php echo $__env->make('backend.partials.forms.form_title', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
                 <div class="portlet-body">
                     <?php echo $__env->make('backend.partials._admin_instructions',['title' => trans('general.privileges') ,'message' => trans('message.privilege_index')], \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-                    <table id="moreDataTable-1" class="table table-striped table-bordered table-hover" cellspacing="0">
+                    <table id="dataTable" class="table table-striped table-bordered table-hover" cellspacing="0">
                         <thead>
                         <tr>
                             <th> <?php echo e(trans('general.id')); ?></th>

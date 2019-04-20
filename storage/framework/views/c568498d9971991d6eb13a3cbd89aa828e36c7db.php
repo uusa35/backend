@@ -117,10 +117,12 @@
                                         <div class="form-group">
                                             <label class="control-label sbold"><?php echo e(trans('general.index')); ?></label></br>
                                             <label class="radio-inline">
-                                                <input type="radio" name="index" id="optionsRadios3" value="1" <?php echo e($role->pivot->index ? 'checked' : null); ?>>
+                                                <input type="radio" name="index" id="optionsRadios3"
+                                                       value="1" <?php echo e($role->pivot->index ? 'checked' : null); ?>>
                                                 <?php echo e(trans('general.index')); ?></label>
                                             <label class="radio-inline">
-                                                <input type="radio" name="index" id="optionsRadios4" value="0" <?php echo e(!$role->pivot->index ? 'checked' : null); ?>>
+                                                <input type="radio" name="index" id="optionsRadios4"
+                                                       value="0" <?php echo e(!$role->pivot->index ? 'checked' : null); ?>>
                                                 <?php echo e(trans('general.not_index')); ?></label>
                                         </div>
                                         <span class="help-block">
@@ -131,10 +133,12 @@
                                         <div class="form-group">
                                             <label class="control-label sbold"><?php echo e(trans('general.view')); ?></label></br>
                                             <label class="radio-inline">
-                                                <input type="radio" name="view" id="optionsRadios3" value="1" <?php echo e($role->pivot->view ? 'checked' : null); ?>>
+                                                <input type="radio" name="view" id="optionsRadios3"
+                                                       value="1" <?php echo e($role->pivot->view ? 'checked' : null); ?>>
                                                 <?php echo e(trans('general.view')); ?></label>
                                             <label class="radio-inline">
-                                                <input type="radio" name="view" id="optionsRadios4" value="0" <?php echo e(!$role->pivot->view ? 'checked' : null); ?>>
+                                                <input type="radio" name="view" id="optionsRadios4"
+                                                       value="0" <?php echo e(!$role->pivot->view ? 'checked' : null); ?>>
                                                 <?php echo e(trans('general.not_view')); ?></label>
                                         </div>
                                         <span class="help-block">
@@ -145,10 +149,12 @@
                                         <div class="form-group">
                                             <label class="control-label sbold"><?php echo e(trans('general.create')); ?></label></br>
                                             <label class="radio-inline">
-                                                <input type="radio" name="create" id="optionsRadios3" value="1" <?php echo e($role->pivot->create ? 'checked' : null); ?>>
+                                                <input type="radio" name="create" id="optionsRadios3"
+                                                       value="1" <?php echo e($role->pivot->create ? 'checked' : null); ?>>
                                                 <?php echo e(trans('general.create')); ?></label>
                                             <label class="radio-inline">
-                                                <input type="radio" name="create" id="optionsRadios4" value="0" <?php echo e(!$role->pivot->create ? 'checked' : null); ?>>
+                                                <input type="radio" name="create" id="optionsRadios4"
+                                                       value="0" <?php echo e(!$role->pivot->create ? 'checked' : null); ?>>
                                                 <?php echo e(trans('general.not_create')); ?>
 
                                             </label>
@@ -166,10 +172,12 @@
                                         <div class="form-group">
                                             <label class="control-label sbold"><?php echo e(trans('general.update')); ?></label></br>
                                             <label class="radio-inline">
-                                                <input type="radio" name="update" id="optionsRadios3" value="1" <?php echo e($role->pivot->update ? 'checked' : null); ?>>
+                                                <input type="radio" name="update" id="optionsRadios3"
+                                                       value="1" <?php echo e($role->pivot->update ? 'checked' : null); ?>>
                                                 <?php echo e(trans('general.update')); ?></label>
                                             <label class="radio-inline">
-                                                <input type="radio" name="update" id="optionsRadios4" value="0" <?php echo e(!$role->pivot->update ? 'checked' : null); ?>>
+                                                <input type="radio" name="update" id="optionsRadios4"
+                                                       value="0" <?php echo e(!$role->pivot->update ? 'checked' : null); ?>>
                                                 <?php echo e(trans('general.not_update')); ?></label>
                                         </div>
                                         <span class="help-block">
@@ -180,10 +188,12 @@
                                         <div class="form-group">
                                             <label class="control-label sbold"><?php echo e(trans('general.delete')); ?></label></br>
                                             <label class="radio-inline">
-                                                <input type="radio" name="delete" id="optionsRadios3" value="1" <?php echo e($role->pivot->delete ? 'checked' : null); ?>>
+                                                <input type="radio" name="delete" id="optionsRadios3"
+                                                       value="1" <?php echo e($role->pivot->delete ? 'checked' : null); ?>>
                                                 <?php echo e(trans('general.delete')); ?></label>
                                             <label class="radio-inline">
-                                                <input type="radio" name="delete" id="optionsRadios4" value="0" <?php echo e(!$role->pivot->delete ? 'checked' : null); ?>>
+                                                <input type="radio" name="delete" id="optionsRadios4"
+                                                       value="0" <?php echo e(!$role->pivot->delete ? 'checked' : null); ?>>
                                                 <?php echo e(trans('general.not_delete')); ?></label>
                                         </div>
                                         <span class="help-block">
