@@ -741,6 +741,7 @@ return array(
     'save_and_go_back' => 'الحفظ والعودة للصفحة السابقة',
     'save_product_and_add_attributes' => 'حفظ المنتج والذهاب لإضافه المزيد من الخصائص للمنتج' ,
     'image_chart' => 'جدول دليل المقاسات' ,
+    'privilege' => 'الصلاحية'
 
 
 );

@@ -22,7 +22,7 @@
                         <div class="portlet-body form">
                             <div class="form-body">
                                 <div class="row">
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
                                             <label for="name" class="control-label">{{ trans('general.name') }}*</label>
                                             <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="{{ trans('general.name') }}" required autofocus>
@@ -35,7 +35,24 @@
                                             @endif
                                         </div>
                                     </div>
+
                                     <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="single"
+                                                   class="control-label">{{ trans('general.roles') }}
+                                                *</label>
+                                            <select name="role_id" class="form-control tooltips"
+                                                    data-container="body" data-placement="top"
+                                                    data-original-title="{{ trans('message.owner') }}">
+                                                <option value="">{{ trans('general.choose_role') }}</option>
+                                                @foreach($roles as $role)
+                                                    <option value="{{ $role->id }}">{{ $role->slug }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
                                         <div class="form-group {{ $errors->has('slug_ar') ? ' has-error' : '' }}">
                                             <label for="slug_ar" class="control-label">{{ trans('general.slug_ar') }}*</label>
                                             <input id="slug_ar" type="text" class="form-control" name="slug_ar" value="{{ old('slug_ar') }}" placeholder="{{ trans('general.slug_ar') }}" required autofocus>
@@ -48,7 +65,7 @@
                                             @endif
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="form-group{{ $errors->has('slug_en') ? ' has-error' : '' }}">
                                             <label for="slug_en" class="control-label">{{ trans('general.slug_en') }}*</label>
                                             <input id="slug_en" type="text" class="form-control" name="slug_en" value="{{ old('slug_en') }}" placeholder="{{ trans('general.slug_en') }}" required autofocus>
@@ -131,7 +148,6 @@
                                             <strong>{{ trans('message.create_instructions') }}</strong>
                                         </span>
                                     </div>
-
 
 
                                 </div>
