@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend\Admin;
 use App\Models\Area;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Country;
 
 class AreaController extends Controller
 {
@@ -26,7 +27,8 @@ class AreaController extends Controller
      */
     public function create()
     {
-        return view('backend.modules.area.create');
+        $countries = Country::active()->get();
+        return view('backend.modules.area.create', compact('countries'));
     }
 
     /**
@@ -37,7 +39,11 @@ class AreaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $element = Area::create($request->all());
+        if ($element) {
+            return redirect()->route('backend.admin.area.index')->with('success', trans('general.area_added'));
+        }
+        return redirect()->back()->with('error', trans('general.area_not_added'));
     }
 
     /**
