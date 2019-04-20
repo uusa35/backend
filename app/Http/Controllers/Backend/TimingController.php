@@ -20,9 +20,13 @@ class TimingController extends Controller
     public function index()
     {
         $this->authorize('index', 'timing');
-        $elements = Timing::whereHas('service', function ($q) {
-            !request()->has('timing_id') ? $q->where('user_id', auth()->id()) : $q->where(['user_id' => auth()->id(), 'id' => request('id')]);
-        })->get();
+        if (auth()->user()->isAdminOrABove) {
+            $elements = Timing::has('service', '>', 0)->with('service.user')->get();
+        } else {
+            $elements = Timing::active()->whereHas('service.user', function ($q) {
+                !request()->has('timing_id') ? $q->where('user_id', auth()->id()) : $q->where(['user_id' => auth()->id(), 'id' => request('id')]);
+            })->with('service')->get();
+        }
         return view('backend.modules.timing.index', compact('elements'));
     }
 

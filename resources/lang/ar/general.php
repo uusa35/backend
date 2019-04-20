@@ -673,13 +673,36 @@ return array(
     'answers_list' => 'قائمة الاجابات',
     'successful_orders' => 'طلبات ناجحة',
     'failed_orders' => 'طلبات غير ناجحة',
-    'countries_control' => 'التحكم بالدول'
-
-
-
-
-
-
+    'countries_control' => 'التحكم بالدول',
+    'questionnaires_answers' => 'إجابات العملاء على الاستبيانات',
+    'company_branches' => 'فروع الشركات',
+    'new_product' => 'منتج جديد',
+    'new_user' => 'مستخدم جديد',
+    'new_category' => 'تصنيف جديد',
+    'new_country' => 'إنشاء دولة',
+    'new_currency' => 'إنشاء عملة',
+    'new_coupon' => 'إضافه كوبون جديد',
+    'new_tag' => 'كلمة مفتاحية جديدة',
+    'new_brand' => 'إنشاء ماركة جديدة',
+    'new_color' => 'إضافه لون',
+    'new_size' => 'إضافه حجم',
+    'new_survey' => 'إضافه استبيان',
+    'new_questionnaire' => 'إضافه إستبيان جديد',
+    'new_newsletter' => 'إضافه بريد إلكتروني',
+    'new_faq' => 'إضافه سؤال',
+    'new_commercial' => 'إضافه إعلان',
+    'new_notification' => 'إنشاء إشعار',
+    'new_policy' => 'إنشاء بند للسياسات',
+    'new_answer' => 'إضافه إجابة للاستبيان',
+    'new_role' => 'إضافه دور',
+    'new_term' => 'إضافه بند للشروط',
+    'new_package' => 'إضافه طريقة شحن',
+    'new_privilege' => 'إضافه صلاحية',
+    'new_day' => 'إضافه يوم',
+    'new_timing' => 'إضافه توقيت جديد',
+    'new_page' => 'إضافه صفحة جديدة',
+    'new_slider' => 'إضافه سلايدر',
+    'create_service' => 'إنشاء خدمة جديدة',
 
 
 );

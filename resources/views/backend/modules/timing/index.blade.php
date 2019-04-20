@@ -26,7 +26,8 @@
                             <th>{{ trans('general.day') }}</th>
                             <th>{{ trans('general.start') }}</th>
                             <th>{{ trans('general.end') }}</th>
-                            <th>{{ trans('general.type') }}</th>
+                            <th>{{ trans('general.service') }}</th>
+                            <th>{{ trans('general.company') }}</th>
                             <th>{{ trans('general.is_off') }}</th>
                             <th>{{ trans('general.actions') }}</th>
                         </tr>
@@ -37,7 +38,8 @@
                             <th>{{ trans('general.day') }}</th>
                             <th>{{ trans('general.start') }}</th>
                             <th>{{ trans('general.end') }}</th>
-                            <th>{{ trans('general.type') }}</th>
+                            <th>{{ trans('general.service') }}</th>
+                            <th>{{ trans('general.company') }}</th>
                             <th>{{ trans('general.is_off') }}</th>
                             <th>{{ trans('general.actions') }}</th>
                         </tr>
@@ -51,7 +53,8 @@
 
                                 <td> {{$element->start }} </td>
                                 <td> {{$element->end }} </td>
-                                <td> {{$element->type }} </td>
+                                <td> {{$element->service->name }} </td>
+                                <td> {{$element->service->user->name }} </td>
                                 <td> {{$element->is_off }} </td>
 
 
