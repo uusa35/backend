@@ -20,8 +20,8 @@
                             <th><?php echo e(trans('general.calling_code')); ?></th>
                             <th><?php echo e(trans('general.active')); ?></th>
                             <th><?php echo e(trans('general.country_code')); ?></th>
-                            <th><?php echo e(trans('general.order')); ?></th>
-                            <th><?php echo e(trans('general.action')); ?></th>
+                            <th><?php echo e(trans('general.sequence')); ?></th>
+                            <th><?php echo e(trans('general.actions')); ?></th>
                         </tr>
                     </thead>
                     <tfoot>
@@ -33,7 +33,7 @@
                             <th><?php echo e(trans('general.calling_code')); ?></th>
                             <th><?php echo e(trans('general.active')); ?></th>
                             <th><?php echo e(trans('general.country_code')); ?></th>
-                            <th><?php echo e(trans('general.order')); ?></th>
+                            <th><?php echo e(trans('general.sequence')); ?></th>
                             <th><?php echo e(trans('general.actions')); ?></th>
                         </tr>
                     </tfoot>

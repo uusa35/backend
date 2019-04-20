@@ -633,9 +633,9 @@ Breadcrumbs::for('backend.image.edit', function ($trail, $element) {
     return $trail->push('edit image', route('backend.image.edit', $element->id));
 });
 
-Breadcrumbs::for('backend.admin.package.index', function ($trail) {
+Breadcrumbs::for('backend.package.index', function ($trail) {
     $trail->parent('backend.home');
-    return $trail->push(trans('general.index_package'), route('backend.admin.package.index'));
+    return $trail->push(trans('general.index_package'), route('backend.package.index'));
 });
 
 Breadcrumbs::for('backend.admin.package.create', function ($trail) {
