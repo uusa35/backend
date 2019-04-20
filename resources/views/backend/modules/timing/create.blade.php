@@ -12,7 +12,7 @@
                       enctype="multipart/form-data">
                     @csrf
                     <div class="form-body">
-                        <h3 class="form-section">{{ trans('general.create_timing') }}</h3>
+                        <h3 class="form-section">{{ trans('general.new_timing') }}</h3>
                         <div class="portlet box blue">
                             <div class="portlet-title">
                                 <div class="caption">
@@ -202,7 +202,7 @@
                         <div class="portlet box blue ">
                             <div class="portlet-title">
                                 <div class="caption">
-                                    <i class="fa fa-gift"></i> {{ trans('general.user_role_details') }}
+                                    <i class="fa fa-gift"></i> {{ trans('general.timing_details') }}
                                 </div>
                             </div>
                             <div class="portlet-body form">
@@ -290,11 +290,11 @@
                                             <label class="radio-inline">
                                                 <input type="radio" name="allow_multi_select"
                                                        id="optionsRadios1"
-                                                       value="1"> allow_multiselect </label>
+                                                       value="1"> {{ trans('general.yes') }}</label>
                                             <label class="radio-inline">
                                                 <input type="radio" name="allow_multi_select"
                                                        id="optionsRadios2"
-                                                       checked value="0"> not_allow_multiselect</label>
+                                                       checked value="0"> {{ trans('general.no') }}</label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -304,11 +304,11 @@
                                                 <input type="radio" name="is_available"
                                                        id="optionsRadios1"
                                                        value="1">
-                                                is_available </label>
+                                                {{ trans('general.yes') }} </label>
                                             <label class="radio-inline">
                                                 <input type="radio" name="is_available"
                                                        id="optionsRadios2" checked
-                                                       value="0"> not_is_available</label>
+                                                       value="0"> {{ trans('general.no') }}</label>
                                         </div>
                                     </div>
                                     <div class="col-lg-12">

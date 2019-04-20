@@ -8,12 +8,12 @@
         <div class="portlet-body">
             <?php echo $__env->make('backend.partials._admin_instructions',['title' => trans('general.timings') ,'message' => trans('message.new_timing')], \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
             <div class="portlet-body form">
-                <form class="horizontal-form" role="form" method="POST"
-                      action="<?php echo e(route('backend.timing.store')); ?>" enctype="multipart/form-data">
+                <form class="horizontal-form" role="form" method="POST" action="<?php echo e(route('backend.timing.store')); ?>"
+                      enctype="multipart/form-data">
                     <?php echo csrf_field(); ?>
                     <div class="form-body">
-                        <h3 class="form-section"><?php echo e(trans('general.create_timing')); ?></h3>
-                        <div class="portlet box blue ">
+                        <h3 class="form-section"><?php echo e(trans('general.new_timing')); ?></h3>
+                        <div class="portlet box blue">
                             <div class="portlet-title">
                                 <div class="caption">
                                     <i class="fa fa-gift"></i> <?php echo e(trans('general.timing_main_details')); ?>
@@ -211,7 +211,7 @@
                         <div class="portlet box blue ">
                             <div class="portlet-title">
                                 <div class="caption">
-                                    <i class="fa fa-gift"></i> <?php echo e(trans('general.user_role_details')); ?>
+                                    <i class="fa fa-gift"></i> <?php echo e(trans('general.timing_details')); ?>
 
                                 </div>
                             </div>
@@ -300,11 +300,11 @@
                                             <label class="radio-inline">
                                                 <input type="radio" name="allow_multi_select"
                                                        id="optionsRadios1"
-                                                       value="1"> allow_multiselect </label>
+                                                       value="1"> <?php echo e(trans('general.yes')); ?></label>
                                             <label class="radio-inline">
                                                 <input type="radio" name="allow_multi_select"
                                                        id="optionsRadios2"
-                                                       checked value="0"> not_allow_multiselect</label>
+                                                       checked value="0"> <?php echo e(trans('general.no')); ?></label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -314,11 +314,11 @@
                                                 <input type="radio" name="is_available"
                                                        id="optionsRadios1"
                                                        value="1">
-                                                is_available </label>
+                                                <?php echo e(trans('general.yes')); ?> </label>
                                             <label class="radio-inline">
                                                 <input type="radio" name="is_available"
                                                        id="optionsRadios2" checked
-                                                       value="0"> not_is_available</label>
+                                                       value="0"> <?php echo e(trans('general.no')); ?></label>
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
