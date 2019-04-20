@@ -1,5 +1,5 @@
 <?php $__env->startSection('breadcrumbs'); ?>
-<?php echo e(Breadcrumbs::render('backend.admin.service.create')); ?>
+<?php echo e(Breadcrumbs::render('backend.service.create')); ?>
 
 <?php $__env->stopSection(); ?>
 
@@ -7,9 +7,8 @@
 <div class="portlet box blue">
     <?php echo $__env->make('backend.partials.forms.form_title', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
     <div class="portlet-body form">
-        <form class="horizontal-form" role="form" method="POST" action="<?php echo e(route('backend.admin.service.store')); ?>" enctype="multipart/form-data">
+        <form class="horizontal-form" role="form" method="POST" action="<?php echo e(route('backend.service.store')); ?>" enctype="multipart/form-data">
             <?php echo csrf_field(); ?>
-            <input type="hidden" sku="api_token" value="<?php echo e(str_random(rand(10,99))); ?>">
             <div class="form-body">
                 <h3 class="form-section"><?php echo e(trans('general.create_service')); ?></h3>
                 
@@ -303,7 +302,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group<?php echo e($errors->has('booking_limit') ? ' has-error' : ''); ?>">
                                         <label for="booking_limit" class="control-label"><?php echo e(trans('general.booking_limit')); ?></label>
-                                        <input id="booking_limit" type="text" class="form-control" sku="booking_limit" placeholder="<?php echo e(trans('general.booking_limit')); ?>" value="<?php echo e(old('booking_limit')); ?>" autofocus>
+                                        <input id="booking_limit" type="number" class="form-control" sku="booking_limit" placeholder="<?php echo e(trans('general.booking_limit')); ?>" value="<?php echo e(old('booking_limit')); ?>" autofocus>
                                         <?php if($errors->has('booking_limit')): ?>
                                         <span class="help-block">
                                             <strong>

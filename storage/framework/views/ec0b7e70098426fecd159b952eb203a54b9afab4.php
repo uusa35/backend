@@ -1,5 +1,5 @@
 <?php $__env->startSection('breadcrumbs'); ?>
-    <?php echo e(Breadcrumbs::render('backend.admin.service.index')); ?>
+    <?php echo e(Breadcrumbs::render('backend.service.index')); ?>
 
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>

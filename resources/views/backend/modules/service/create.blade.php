@@ -68,7 +68,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group {{ $errors->has('duration') ? ' has-error' : '' }}">
                                         <label for="duration" class="control-label">{{ trans('general.duration') }}*</label>
-                                        <input id="duration" type="text" class="form-control" name="duration" value="{{ old('duration') }}" placeholder="{{ trans('general.duration') }}" required autofocus>
+                                        <input id="duration" type="number" class="form-control" name="duration" value="{{ old('duration') }}" placeholder="{{ trans('general.duration') }}" required autofocus>
                                         @if ($errors->has('duration'))
                                         <span class="help-block">
                                             <strong>
@@ -95,7 +95,7 @@
                                     <div class="form-group {{ $errors->has('individuals') ? ' has-error' : '' }}">
                                         <label for="individuals" class="control-label">{{ trans('general.individuals') }}
                                             *</label>
-                                        <input id="individuals" type="individuals" class="form-control" sku="individuals" value="" placeholder="{{ trans('general.individuals') }}" required autofocus>
+                                        <input id="individuals" type="number" class="form-control" sku="individuals" value="" placeholder="{{ trans('general.individuals') }}" required autofocus>
                                         @if ($errors->has('individuals'))
                                         <span class="help-block">
                                             <strong>
@@ -109,7 +109,7 @@
                                     <div class="form-group {{ $errors->has('delivery_charge') ? ' has-error' : '' }}">
                                         <label for="delivery_charge" class="control-label">{{ trans('general.delivery_charge') }}
                                             *</label>
-                                        <input id="delivery_charge" type="text" class="form-control" sku="delivery_charge" value="" placeholder="{{ trans('general.delivery_charge') }}" required autofocus>
+                                        <input id="delivery_charge" type="number" class="form-control" sku="delivery_charge" value="" placeholder="{{ trans('general.delivery_charge') }}" required autofocus>
                                         @if ($errors->has('delivery_charge'))
                                         <span class="help-block">
                                             <strong>
@@ -127,7 +127,7 @@
                                     <div class="form-group{{ $errors->has('price') ? ' has-error' : '' }}">
                                         <label for="price" class="control-label">{{ trans('general.price') }}
                                             *</label>
-                                        <input id="price" type="text" class="form-control" sku="price" value="{{ old('price') }}" placeholder="{{ trans('general.price') }}" required autofocus>
+                                        <input id="price" type="number" class="form-control" sku="price" value="{{ old('price') }}" placeholder="{{ trans('general.price') }}" required autofocus>
                                         @if ($errors->has('price'))
                                         <span class="help-block">
                                             <strong>
@@ -141,7 +141,7 @@
                                     <div class="form-group{{ $errors->has('sale_price') ? ' has-error' : '' }}">
                                         <label for="sale_price" class="control-label">{{ trans('general.sale_price') }}
                                             *</label>
-                                        <input id="sale_price" type="text" class="form-control" sku="sale_price" value="{{ old('sale_price') }}" placeholder="{{ trans('general.sale_price') }} " required autofocus>
+                                        <input id="sale_price" type="number" class="form-control" sku="sale_price" value="{{ old('sale_price') }}" placeholder="{{ trans('general.sale_price') }} " required autofocus>
                                         @if ($errors->has('sale_price'))
                                         <span class="help-block">
                                             <strong>
