@@ -14,22 +14,19 @@
                     <thead>
                         <tr>
                             <th><?php echo e(trans('general.id')); ?></th>
-                            <th><?php echo e(trans('general.name_ar')); ?></th>
-                            <th><?php echo e(trans('general.name_en')); ?></th>
-                            <th><?php echo e(trans('general.address_ar')); ?></th>
-                            <th><?php echo e(trans('general.address_en')); ?></th>
+                            <th><?php echo e(trans('general.name')); ?></th>
+                            <th><?php echo e(trans('general.address')); ?></th>
                             <th><?php echo e(trans('general.phone')); ?></th>
+                            <th><?php echo e(trans('general.active')); ?></th>
                             <th><?php echo e(trans('general.actions')); ?></th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
                             <th><?php echo e(trans('general.id')); ?></th>
-                            <th><?php echo e(trans('general.name_ar')); ?></th>
-                            <th><?php echo e(trans('general.name_en')); ?></th>
-                            <th><?php echo e(trans('general.address_ar')); ?></th>
-                            <th><?php echo e(trans('general.address_en')); ?></th>
-                            <th><?php echo e(trans('general.phone')); ?></th>
+                            <th><?php echo e(trans('general.name')); ?></th>
+                            <th><?php echo e(trans('general.address')); ?></th>
+                            <th><?php echo e(trans('general.active')); ?></th>
                             <th><?php echo e(trans('general.actions')); ?></th>
                         </tr>
                     </tfoot>
@@ -37,10 +34,8 @@
                         <?php $__currentLoopData = $elements; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $element): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr>
                             <td><?php echo e($element->id); ?></td>
-                            <td><?php echo e($element->name_ar); ?></td>
-                            <td><?php echo e($element->name_en); ?></td>
-                            <td><?php echo e($element->address_ar); ?></td>
-                            <td><?php echo e($element->address_en); ?></td>
+                            <td><?php echo e($element->name); ?></td>
+                            <td><?php echo e($element->address); ?></td>
                             <td><?php echo e($element->phone); ?></td>
                             <td>
                                 <span class="label <?php echo e(activeLabel($element->active)); ?>"><?php echo e(activeText($element->active)); ?></span>

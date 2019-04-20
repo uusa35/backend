@@ -21,8 +21,8 @@
                             <th>{{ trans('general.calling_code') }}</th>
                             <th>{{ trans('general.active') }}</th>
                             <th>{{ trans('general.country_code') }}</th>
-                            <th>{{ trans('general.order') }}</th>
-                            <th>{{ trans('general.action') }}</th>
+                            <th>{{ trans('general.sequence') }}</th>
+                            <th>{{ trans('general.actions') }}</th>
                         </tr>
                     </thead>
                     <tfoot>
@@ -34,7 +34,7 @@
                             <th>{{ trans('general.calling_code') }}</th>
                             <th>{{ trans('general.active') }}</th>
                             <th>{{ trans('general.country_code') }}</th>
-                            <th>{{ trans('general.order') }}</th>
+                            <th>{{ trans('general.sequence') }}</th>
                             <th>{{ trans('general.actions') }}</th>
                         </tr>
                     </tfoot>

@@ -14,22 +14,19 @@
                     <thead>
                         <tr>
                             <th>{{ trans('general.id') }}</th>
-                            <th>{{ trans('general.name_ar') }}</th>
-                            <th>{{ trans('general.name_en') }}</th>
-                            <th>{{ trans('general.address_ar') }}</th>
-                            <th>{{ trans('general.address_en') }}</th>
+                            <th>{{ trans('general.name') }}</th>
+                            <th>{{ trans('general.address') }}</th>
                             <th>{{ trans('general.phone') }}</th>
+                            <th>{{ trans('general.active') }}</th>
                             <th>{{ trans('general.actions') }}</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
                             <th>{{ trans('general.id') }}</th>
-                            <th>{{ trans('general.name_ar') }}</th>
-                            <th>{{ trans('general.name_en') }}</th>
-                            <th>{{ trans('general.address_ar') }}</th>
-                            <th>{{ trans('general.address_en') }}</th>
-                            <th>{{ trans('general.phone') }}</th>
+                            <th>{{ trans('general.name') }}</th>
+                            <th>{{ trans('general.address') }}</th>
+                            <th>{{ trans('general.active') }}</th>
                             <th>{{ trans('general.actions') }}</th>
                         </tr>
                     </tfoot>
@@ -37,10 +34,8 @@
                         @foreach($elements as $element)
                         <tr>
                             <td>{{ $element->id }}</td>
-                            <td>{{ $element->name_ar }}</td>
-                            <td>{{ $element->name_en }}</td>
-                            <td>{{ $element->address_ar }}</td>
-                            <td>{{ $element->address_en }}</td>
+                            <td>{{ $element->name }}</td>
+                            <td>{{ $element->address }}</td>
                             <td>{{ $element->phone }}</td>
                             <td>
                                 <span class="label {{ activeLabel($element->active) }}">{{ activeText($element->active) }}</span>

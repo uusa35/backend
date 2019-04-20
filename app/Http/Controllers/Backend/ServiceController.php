@@ -20,7 +20,16 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $elements = Service::myItems()->get();
+        $this->authorize('index', 'service');
+        if (auth()->user()->isAdminOrABove) {
+            $elements = Service::with('user')->get();
+        } else {
+            if (request()->has('type')) {
+                $elements = Service::active()->myItems()->where([request('type') => true])->with('images')->orderBy('id', 'desc')->get();
+            } else {
+                $elements = Service::active()->myItems()->with('images')->orderBy('id', 'desc')->get();
+            }
+        }
         return view('backend.modules.service.index', compact('elements'));
     }
 
