@@ -467,9 +467,6 @@
                                                         <option value="{{ $user->id }}">{{ $user->slug }}</option>
                                                     @endforeach
                                                 </select>
-                                                <span class="help-block">
-                                                <strong>{{ trans('message.owner_instructions') }}</strong>
-                                            </span>
                                             </div>
                                         </div>
 

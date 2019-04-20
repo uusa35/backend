@@ -490,9 +490,6 @@
                                                         <option value="<?php echo e($user->id); ?>"><?php echo e($user->slug); ?></option>
                                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                 </select>
-                                                <span class="help-block">
-                                                <strong><?php echo e(trans('message.owner_instructions')); ?></strong>
-                                            </span>
                                             </div>
                                         </div>
 
