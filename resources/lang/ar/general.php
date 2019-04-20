@@ -702,7 +702,7 @@ return array(
     'new_timing' => 'إضافه توقيت جديد',
     'new_page' => 'إضافه صفحة جديدة',
     'new_slider' => 'إضافه سلايدر',
-    'create_service' => 'إنشاء خدمة جديدة',
+    'new_service' => 'إنشاء خدمة جديدة',
 
 
 );

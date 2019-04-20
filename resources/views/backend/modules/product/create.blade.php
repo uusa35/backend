@@ -11,7 +11,7 @@
             @include('backend.partials.forms.form_title')
             <div class="portlet-body">
                 @include('backend.partials._admin_instructions',['title' => trans('general.products') ,'message' =>
-                trans('message.admin_product_message')])
+                trans('message.new_product')])
                 <div class="portlet-body form">
                     <form class="horizontal-form" role="form" method="POST" action="{{ route('backend.product.store') }}" enctype="multipart/form-data">
                         @csrf

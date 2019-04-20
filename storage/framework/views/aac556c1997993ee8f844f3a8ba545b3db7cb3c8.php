@@ -10,7 +10,7 @@
             <?php echo $__env->make('backend.partials.forms.form_title', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
             <div class="portlet-body">
                 <?php echo $__env->make('backend.partials._admin_instructions',['title' => trans('general.products') ,'message' =>
-                trans('message.admin_product_message')], \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                trans('message.new_product')], \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
                 <div class="portlet-body form">
                     <form class="horizontal-form" role="form" method="POST" action="<?php echo e(route('backend.product.store')); ?>" enctype="multipart/form-data">
                         <?php echo csrf_field(); ?>
