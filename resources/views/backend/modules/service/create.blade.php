@@ -26,7 +26,7 @@
                                     <div class="form-group {{ $errors->has('sku') ? ' has-error' : '' }}">
                                         <label for="sku" class="control-label">{{ trans('general.sku') }}
                                             *</label>
-                                        <input id="sku" type="text" class="form-control" sku="sku" value="{{ old('sku') }}" placeholder="{{ trans('general.sku') }}" required autofocus>
+                                        <input id="sku" type="text" class="form-control" name="sku" value="{{ old('sku') }}" placeholder="{{ trans('general.sku') }}" required autofocus>
                                         @if ($errors->has('sku'))
                                         <span class="help-block">
                                             <strong>
@@ -40,7 +40,7 @@
                                     <div class="form-group {{ $errors->has('name_ar') ? ' has-error' : '' }}">
                                         <label for="name_ar" class="control-label">{{ trans('general.name_ar') }}
                                             *</label>
-                                        <input id="name_ar" type="text" class="form-control" sku="name_ar" value="{{ old('name_ar') }}" placeholder="{{ trans('general.name_ar') }}" required autofocus>
+                                        <input id="name_ar" type="text" class="form-control" name="name_ar" value="{{ old('name_ar') }}" placeholder="{{ trans('general.name_ar') }}" required autofocus>
                                         @if ($errors->has('name_ar'))
                                         <span class="help-block">
                                             <strong>
@@ -54,7 +54,7 @@
                                     <div class="form-group {{ $errors->has('name_en') ? ' has-error' : '' }}">
                                         <label for="name_en" class="control-label">{{ trans('general.name_en') }}
                                             *</label>
-                                        <input id="name_en" type="text" class="form-control" sku="name_en" value="{{ old('name_en') }}" placeholder="{{ trans('general.name_en') }}" required autofocus>
+                                        <input id="name_en" type="text" class="form-control" name="name_en" value="{{ old('name_en') }}" placeholder="{{ trans('general.name_en') }}" required autofocus>
                                         @if ($errors->has('name_en'))
                                         <span class="help-block">
                                             <strong>
@@ -79,6 +79,19 @@
                                     </div>
                                 </div>
                                 <div class="col-md-4">
+                                    <div class="form-group {{ $errors->has('delivery_time') ? ' has-error' : '' }}">
+                                        <label for="delivery_time" class="control-label">{{ trans('general.delivery_time') }}*</label>
+                                        <input id="delivery_time" type="number" class="form-control" name="delivery_time" value="{{ old('delivery_time') }}" placeholder="{{ trans('general.delivery_time') }}" required autofocus>
+                                        @if ($errors->has('delivery_time'))
+                                        <span class="help-block">
+                                            <strong>
+                                                {{ $errors->first('delivery_time') }}
+                                            </strong>
+                                        </span>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
                                     <div class="form-group {{ $errors->has('setup_time') ? ' has-error' : '' }}">
                                         <label for="setup_time" class="control-label">{{ trans('general.setup_time') }}*</label>
                                         <input id="setup_time" type="number" maxlength="1" max="10" class="form-control" name="setup_time" value="{{ old('setup_time') }}" placeholder="{{ trans('general.setup_time') }}" required autofocus>
@@ -95,7 +108,7 @@
                                     <div class="form-group {{ $errors->has('individuals') ? ' has-error' : '' }}">
                                         <label for="individuals" class="control-label">{{ trans('general.individuals') }}
                                             *</label>
-                                        <input id="individuals" type="number" class="form-control" sku="individuals" value="" placeholder="{{ trans('general.individuals') }}" required autofocus>
+                                        <input id="individuals" maxlength="2" max="99" type="number" class="form-control" name="individuals" value="" placeholder="{{ trans('general.individuals') }}" required autofocus>
                                         @if ($errors->has('individuals'))
                                         <span class="help-block">
                                             <strong>
@@ -109,7 +122,7 @@
                                     <div class="form-group {{ $errors->has('delivery_charge') ? ' has-error' : '' }}">
                                         <label for="delivery_charge" class="control-label">{{ trans('general.delivery_charge') }}
                                             *</label>
-                                        <input id="delivery_charge" type="number" class="form-control" sku="delivery_charge" value="" placeholder="{{ trans('general.delivery_charge') }}" required autofocus>
+                                        <input id="delivery_charge" type="number" class="form-control" name="delivery_charge" value="" placeholder="{{ trans('general.delivery_charge') }}" required autofocus>
                                         @if ($errors->has('delivery_charge'))
                                         <span class="help-block">
                                             <strong>
@@ -127,7 +140,7 @@
                                     <div class="form-group{{ $errors->has('price') ? ' has-error' : '' }}">
                                         <label for="price" class="control-label">{{ trans('general.price') }}
                                             *</label>
-                                        <input id="price" type="number" class="form-control" sku="price" value="{{ old('price') }}" placeholder="{{ trans('general.price') }}" required autofocus>
+                                        <input id="price" type="text" class="form-control" name="price" value="{{ old('price') }}" placeholder="{{ trans('general.price') }}" required autofocus>
                                         @if ($errors->has('price'))
                                         <span class="help-block">
                                             <strong>
@@ -137,11 +150,13 @@
                                         @endif
                                     </div>
                                 </div>
+
+
                                 <div class="col-md-4">
                                     <div class="form-group{{ $errors->has('sale_price') ? ' has-error' : '' }}">
                                         <label for="sale_price" class="control-label">{{ trans('general.sale_price') }}
                                             *</label>
-                                        <input id="sale_price" type="number" class="form-control" sku="sale_price" value="{{ old('sale_price') }}" placeholder="{{ trans('general.sale_price') }} " required autofocus>
+                                        <input id="sale_price" type="text" class="form-control" name="sale_price" value="{{ old('sale_price') }}" placeholder="{{ trans('general.sale_price') }} " required autofocus>
                                         @if ($errors->has('sale_price'))
                                         <span class="help-block">
                                             <strong>
@@ -151,28 +166,30 @@
                                         @endif
                                     </div>
                                 </div>
+                            </div>
+                            <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="description" class="control-label">{{ trans('general.description_arabic') }}</label>
-                                        <textarea type="text" class="form-control" id="description_ar" sku="description_ar" aria-multiline="true" maxlength="500" {{ old('description_ar') }}></textarea>
+                                        <textarea type="text" class="form-control" id="description_ar" name="description_ar" aria-multiline="true" maxlength="500" {{ old('description_ar') }}></textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="description" class="control-label">{{ trans('general.description_english') }}</label>
-                                        <textarea type="text" class="form-control" id="description_en" sku="description_en" aria-multiline="true" maxlength="500">{{ old('description_en') }}</textarea>
+                                        <textarea type="text" class="form-control" id="description_en" name="description_en" aria-multiline="true" maxlength="500">{{ old('description_en') }}</textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="notes_ar" class="control-label">{{ trans('general.notes_ar') }}</label>
-                                        <textarea type="text" class="form-control" id="notes_ar" sku="notes_ar" aria-multiline="true" maxlength="500" {{ old('notes_ar') }}></textarea>
+                                        <textarea type="text" class="form-control" id="notes_ar" name="notes_ar" aria-multiline="true" maxlength="500" {{ old('notes_ar') }}></textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="notes_en" class="control-label">{{ trans('general.notes_en') }}</label>
-                                        <textarea type="text" class="form-control" id="notes_en" sku="notes_en" aria-multiline="true" maxlength="500">{{ old('notes_en') }}</textarea>
+                                        <textarea type="text" class="form-control" id="notes_en" name="notes_en" aria-multiline="true" maxlength="500">{{ old('notes_en') }}</textarea>
                                     </div>
                                 </div>
                                 {{-- individuals + confirm individuals --}}
@@ -212,7 +229,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group{{ $errors->has('keywords') ? ' has-error' : '' }}">
                                         <label for="keywords" class="control-label">{{ trans('general.keywords') }}</label>
-                                        <input id="keywords" type="text" class="form-control" sku="keywords" placeholder="{{ trans('general.keywords') }}" value="{{ old('keywords') }}" autofocus>
+                                        <input id="keywords" type="text" class="form-control" name="keywords" placeholder="{{ trans('general.keywords') }}" value="{{ old('keywords') }}" autofocus>
                                         @if ($errors->has('keywords'))
                                         <span class="help-block">
                                             <strong>
@@ -225,7 +242,18 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="form_control_1">{{ trans('general.main_image') }}</label>
-                                        <input type="file" class="form-control" sku="image" placeholder="{{ trans('general.main_image') }}" required>
+                                        <input type="file" class="form-control" name="image" placeholder="{{ trans('general.main_image') }}" required>
+                                        <div class="help-block text-left">
+                                            W * H - Best fit ['1080', '1440'] pixels
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="file" class="control-label">{{ trans('general.more_images') }}
+                                            *</label>
+
+                                        <input class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.more_images') }}" name="images[]" placeholder="{{ trans('message.more_images') }}" type="file" multiple />
                                         <div class="help-block text-left">
                                             W * H - Best fit ['1080', '1440'] pixels
                                         </div>
@@ -234,7 +262,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group{{ $errors->has('video_url_one') ? ' has-error' : '' }}">
                                         <label for="video_url_one" class="control-label">{{ trans('general.video_url_one') }}</label>
-                                        <input id="video_url_one" type="text" class="form-control" sku="video_url_one" placeholder="{{ trans('general.video_url_one') }}" value="{{ old('video_url_one') }}" autofocus>
+                                        <input id="video_url_one" type="text" class="form-control" name="video_url_one" placeholder="{{ trans('general.video_url_one') }}" value="{{ old('video_url_one') }}" autofocus>
                                         @if ($errors->has('video_url_one'))
                                         <span class="help-block">
                                             <strong>
@@ -247,7 +275,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group{{ $errors->has('video_url_two') ? ' has-error' : '' }}">
                                         <label for="video_url_two" class="control-label">{{ trans('general.video_url_two') }}</label>
-                                        <input id="video_url_two" type="text" class="form-control" sku="video_url_two" placeholder="{{ trans('general.video_url_two') }}" value="{{ old('video_url_two') }}" autofocus>
+                                        <input id="video_url_two" type="text" class="form-control" name="video_url_two" placeholder="{{ trans('general.video_url_two') }}" value="{{ old('video_url_two') }}" autofocus>
                                         @if ($errors->has('video_url_two'))
                                         <span class="help-block">
                                             <strong>
@@ -284,7 +312,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group{{ $errors->has('booking_limit') ? ' has-error' : '' }}">
                                         <label for="booking_limit" class="control-label">{{ trans('general.booking_limit') }}</label>
-                                        <input id="booking_limit" type="number" class="form-control" sku="booking_limit" placeholder="{{ trans('general.booking_limit') }}" value="{{ old('booking_limit') }}" autofocus>
+                                        <input id="booking_limit" type="number" class="form-control" name="booking_limit" placeholder="{{ trans('general.booking_limit') }}" value="{{ old('booking_limit') }}" autofocus>
                                         @if ($errors->has('booking_limit'))
                                         <span class="help-block">
                                             <strong>
@@ -297,10 +325,10 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="single" class="control-label">{{ trans('general.owner') }}*</label>
-                                        <select id="" class="form-control select2">
+                                        <select id="" name="user_id" class="form-control select2">
                                             <option value="">{{ trans('general.choose_user') }}</option>
                                             @foreach($users as $user)
-                                            <option value="{{ $user->slug_en }}">{{ $user->slug_en }}</option>
+                                            <option value="{{ $user->id }}">{{ $user->slug_en }}</option>
                                             @endforeach
 
 

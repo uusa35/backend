@@ -10,7 +10,7 @@
             <?php echo $__env->make('backend.partials.forms.form_title', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
             <div class="portlet-body">
                 <?php echo $__env->make('backend.partials._admin_instructions',['title' => trans('general.products') ,'message' =>
-                trans('message.admin_product_message')], \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                trans('message.new_product')], \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
                 <div class="portlet-body form">
                     <form class="horizontal-form" role="form" method="POST" action="<?php echo e(route('backend.product.store')); ?>" enctype="multipart/form-data">
                         <?php echo csrf_field(); ?>
@@ -114,7 +114,7 @@
                                             <label for="delivery_time" class="control-label"><?php echo e(trans('general.delivery_time')); ?>
 
                                                 *</label>
-                                            <input id="delivery_time" type="number" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.delivery_time')); ?>" name="delivery_time" value="<?php echo e(old('delivery_time')); ?>" placeholder="<?php echo e(trans('general.delivery_time')); ?>" required autofocus>
+                                            <input id="delivery_time" type="number" max="99" maxlength="2" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.delivery_time')); ?>" name="delivery_time" value="<?php echo e(old('delivery_time')); ?>" placeholder="<?php echo e(trans('general.delivery_time')); ?>" required autofocus>
                                             <?php if($errors->has('delivery_time')): ?>
                                             <span class="help-block">
                                                 <strong>
@@ -148,7 +148,7 @@
                                             <label for="weight" class="control-label"><?php echo e(trans('general.weight')); ?>
 
                                                 *</label>
-                                            <input id="weight" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.weight')); ?>" name="weight" value="<?php echo e(old('weight')); ?>" placeholder="<?php echo e(trans('general.weight')); ?>" required autofocus>
+                                            <input id="weight" type="number" maxlength="1" max="10" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.weight')); ?>" name="weight" value="<?php echo e(old('weight')); ?>" placeholder="<?php echo e(trans('general.weight')); ?>" required autofocus>
                                             <?php if($errors->has('weight')): ?>
                                             <span class="help-block">
                                                 <strong>
@@ -475,7 +475,6 @@
                                             </strong>
                                         </span>
                                         <?php endif; ?>
-                                        
                                     </div>
                                 </div>
                             </div>

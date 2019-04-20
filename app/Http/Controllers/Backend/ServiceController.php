@@ -9,6 +9,7 @@ use App\Models\Tag;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 
 class ServiceController extends Controller
 {
@@ -35,7 +36,7 @@ class ServiceController extends Controller
         $tags = Tag::active()->get();
         $brands = Brand::active()->get();
         $users = User::active()->get();
-        return view('backend.modules.service.create', compact('categories','tags','brands','users'));
+        return view('backend.modules.service.create', compact('categories', 'tags', 'brands', 'users'));
     }
 
     /**
@@ -46,11 +47,19 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        $element = Service::create($request->all());
+        $end_sale = $request->has('end_sale') ? Carbon::parse(str_replace('-', '', $request->end_sale))->toDateTimeString() : null;
+        $start_sale = $request->has('start_sale') ? Carbon::parse(str_replace('-', '', $request->start_sale))->toDateTimeString() : null;
+        $element = Service::create($request->except(['_token', 'image', 'images', 'categories', 'start_sale', 'end_sale']));
         if ($element) {
-            return redirect()->route('backend.aboutus.index')->with('success', 'Aboutus added');
+            $start_sale ? $element->update(['start_sale' => $start_sale]) : null;
+            $end_sale ? $element->update(['end_sale' => $end_sale]) : null;
+            $request->has('images') ? $this->saveGallery($element, $request, 'images', ['1080', '1440'], true) : null;
+            $element->categories()->sync($request->categories);
+            $request->hasFile('image') ? $this->saveMimes($element, $request, ['image'], ['1080', '1440'], true) : null;
+
+            return redirect()->route('backend.service.index')->with('success', 'Service added');
         }
-        return redirect()->back()->with('error', 'Aboutus is not saved.');
+        return redirect()->back()->with('error', 'Service is not saved.');
     }
 
     /**
