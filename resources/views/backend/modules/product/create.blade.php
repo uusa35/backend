@@ -16,15 +16,15 @@
                     <form class="horizontal-form" role="form" method="POST" action="{{ route('backend.product.store') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="form-body">
-                            <h3 class="form-section">{{ trans('general.create_product') }}</h3>
+                            <h3 class="form-section">{{ trans('general.new_product') }}</h3>
                             <div class="mt-element-step">
                                 <div class="row step-default">
                                     <div class="col-md-6 bg-success mt-step-col {{ Route::currentRouteName() === 'backend.product.create' ? 'active' : null  }}">
                                         <div class="mt-step-number bg-white font-grey">1</div>
                                         <div class="mt-step-title uppercase font-grey-cascade">
-                                            {{ trans('general.create_product') }}</div>
+                                            {{ trans('general.new_product') }}</div>
                                         <div class="mt-step-content font-grey-cascade">
-                                            {{ trans('message.create_product') }}</div>
+                                            {{ trans('message.new_product') }}</div>
                                     </div>
                                     <div class="col-md-6 bg-grey mt-step-col {{ Route::currentRouteName() === 'backend.attribute.create' ? 'active' : null  }}">
                                         <div class="mt-step-number bg-white font-grey">2</div>
@@ -307,7 +307,7 @@
                                         <label for="single" class="control-label">{{ trans('general.color') }}
                                             *</label>
                                         <select id="color_id" name="color_id" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.color') }}" required>
-                                            <option value="">{{ trans('choose_color') }}</option>
+                                            <option value="">{{ trans('general.choose_color') }}</option>
                                             @foreach($colors as $color)
                                             <option value="{{ $color->id }}">{{ $color->name }}</option>
                                             @endforeach
@@ -322,7 +322,7 @@
                                         <label for="size_id" class="control-label">{{ trans('general.size') }}
                                             *</label>
                                         <select id="size_id" name="size_id" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.size') }}">
-                                            <option value="">{{ trans('general.size_id') }}</option>
+                                            <option value="">{{ trans('general.choose_size') }}</option>
                                             @foreach($sizes as $size)
                                             <option value="{{ $size->id }}">{{ $size->name }}</option>
                                             @endforeach

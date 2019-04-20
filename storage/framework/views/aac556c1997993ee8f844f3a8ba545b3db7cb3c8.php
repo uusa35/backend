@@ -15,15 +15,15 @@
                     <form class="horizontal-form" role="form" method="POST" action="<?php echo e(route('backend.product.store')); ?>" enctype="multipart/form-data">
                         <?php echo csrf_field(); ?>
                         <div class="form-body">
-                            <h3 class="form-section"><?php echo e(trans('general.create_product')); ?></h3>
+                            <h3 class="form-section"><?php echo e(trans('general.new_product')); ?></h3>
                             <div class="mt-element-step">
                                 <div class="row step-default">
                                     <div class="col-md-6 bg-success mt-step-col <?php echo e(Route::currentRouteName() === 'backend.product.create' ? 'active' : null); ?>">
                                         <div class="mt-step-number bg-white font-grey">1</div>
                                         <div class="mt-step-title uppercase font-grey-cascade">
-                                            <?php echo e(trans('general.create_product')); ?></div>
+                                            <?php echo e(trans('general.new_product')); ?></div>
                                         <div class="mt-step-content font-grey-cascade">
-                                            <?php echo e(trans('message.create_product')); ?></div>
+                                            <?php echo e(trans('message.new_product')); ?></div>
                                     </div>
                                     <div class="col-md-6 bg-grey mt-step-col <?php echo e(Route::currentRouteName() === 'backend.attribute.create' ? 'active' : null); ?>">
                                         <div class="mt-step-number bg-white font-grey">2</div>
@@ -306,7 +306,7 @@
 
                                             *</label>
                                         <select id="color_id" name="color_id" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.color')); ?>" required>
-                                            <option value=""><?php echo e(trans('choose_color')); ?></option>
+                                            <option value=""><?php echo e(trans('general.choose_color')); ?></option>
                                             <?php $__currentLoopData = $colors; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $color): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                             <option value="<?php echo e($color->id); ?>"><?php echo e($color->name); ?></option>
                                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -320,7 +320,7 @@
 
                                             *</label>
                                         <select id="size_id" name="size_id" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.size')); ?>">
-                                            <option value=""><?php echo e(trans('general.size_id')); ?></option>
+                                            <option value=""><?php echo e(trans('general.choose_size')); ?></option>
                                             <?php $__currentLoopData = $sizes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $size): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                             <option value="<?php echo e($size->id); ?>"><?php echo e($size->name); ?></option>
                                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
