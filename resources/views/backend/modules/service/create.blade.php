@@ -485,19 +485,24 @@
                             <div class="portlet-body form">
                                 <div class="form-body">
                                     <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label class="control-label sbold tooltips" data-container="body"
-                                                       data-placement="top"
-                                                       data-original-title="{{ trans('message.active') }}">{{ trans('general.active') }}</label></br>
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="active" id="optionsRadios1" value="1">
-                                                    {{ trans('general.active') }} </label>
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="active" id="optionsRadios2" checked
-                                                           value="0"> {{ trans('general.not_active') }}</label>
+                                        @can('isAdminOrAbove')
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="control-label sbold tooltips" data-container="body"
+                                                           data-placement="top"
+                                                           data-original-title="{{ trans('message.active') }}">{{ trans('general.active') }}</label></br>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="active" id="optionsRadios1" value="1"
+                                                               checked>
+                                                        {{ trans('general.active') }} </label>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="active" id="optionsRadios2"
+                                                               value="0"> {{ trans('general.not_active') }}</label>
+                                                </div>
                                             </div>
-                                        </div>
+                                        @else
+                                            <input type="hidden" value="1" name="active">
+                                        @endcan
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label class="control-label sbold tooltips" data-container="body"
