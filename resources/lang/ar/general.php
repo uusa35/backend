@@ -714,7 +714,7 @@ return array(
     'choose_day_of_service' => 'اختيار يوم الخدمة',
     'save' => 'حفظ',
     'cancel' => 'الغاء',
-    '' => '',
+    'create_your_new_items_list' => 'قائمة إنشاء عناصر جديدة بالموقع',
     '' => '',
     '' => '',
 

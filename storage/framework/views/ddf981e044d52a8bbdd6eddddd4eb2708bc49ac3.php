@@ -1,6 +1,6 @@
-<li>
-    <a href="#" class="tooltips" data-container="body" data-placement="<?php echo e(app()->isLocale('ar') ? 'left' : 'right'); ?>" data-original-title="<?php echo e(trans('message.create_your_new_items_list')); ?>">
-        <i class="icon-plus"></i> <?php echo e(trans('general.create_your_new_items_list')); ?></a>
+<li class="disabled">
+    <a href="#" disabled="true" class="tooltips disabled" data-container="body" data-placement="<?php echo e(app()->isLocale('ar') ? 'left' : 'right'); ?>" data-original-title="<?php echo e(trans('message.create_your_new_items_list')); ?>">
+        <i class="icon-note"></i> <?php echo e(trans('general.create_your_new_items_list')); ?></a>
 </li>
 <li class="divider"></li>
 <li>
