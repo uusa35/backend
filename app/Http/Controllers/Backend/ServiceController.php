@@ -44,7 +44,7 @@ class ServiceController extends Controller
         $categories = Category::active()->onlyParent()->with('children.children')->get();
         $tags = Tag::active()->get();
         $brands = Brand::active()->get();
-        $users = User::active()->get();
+        $users = User::active()->companies()->get();
         return view('backend.modules.service.create', compact('categories', 'tags', 'brands', 'users'));
     }
 
