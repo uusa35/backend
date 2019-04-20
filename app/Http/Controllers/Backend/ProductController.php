@@ -27,12 +27,12 @@ class ProductController extends Controller
     {
         $this->authorize('index', 'product');
         if (auth()->user()->isAdminOrABove) {
-            $elements = Product::with('user','images', 'product_attributes.size', 'product_attributes.color')->get();
+            $elements = Product::with('user', 'images', 'product_attributes.size', 'product_attributes.color')->get();
         } else {
             if (request()->has('type')) {
-                $elements = Product::active()->myItems()->where([request('type') => true])->with('user','images', 'product_attributes.size', 'product_attributes.color')->orderBy('id', 'desc')->get();
+                $elements = Product::active()->myItems()->where([request('type') => true])->with('user', 'images', 'product_attributes.size', 'product_attributes.color')->orderBy('id', 'desc')->get();
             } else {
-                $elements = Product::active()->myItems()->with('user','images', 'product_attributes.size', 'product_attributes.color')->orderBy('id', 'desc')->get();
+                $elements = Product::active()->myItems()->with('user', 'images', 'product_attributes.size', 'product_attributes.color')->orderBy('id', 'desc')->get();
             }
         }
         return view('backend.modules.product.index', compact('elements'));
