@@ -1,5 +1,5 @@
 <?php $__env->startSection('breadcrumbs'); ?>
-<?php echo e(Breadcrumbs::render('backend.admin.service.create')); ?>
+<?php echo e(Breadcrumbs::render('backend.service.create')); ?>
 
 <?php $__env->stopSection(); ?>
 
@@ -7,9 +7,8 @@
 <div class="portlet box blue">
     <?php echo $__env->make('backend.partials.forms.form_title', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
     <div class="portlet-body form">
-        <form class="horizontal-form" role="form" method="POST" action="<?php echo e(route('backend.admin.service.store')); ?>" enctype="multipart/form-data">
+        <form class="horizontal-form" role="form" method="POST" action="<?php echo e(route('backend.service.store')); ?>" enctype="multipart/form-data">
             <?php echo csrf_field(); ?>
-            <input type="hidden" sku="api_token" value="<?php echo e(str_random(rand(10,99))); ?>">
             <div class="form-body">
                 <h3 class="form-section"><?php echo e(trans('general.create_service')); ?></h3>
                 
@@ -28,7 +27,7 @@
                                         <label for="sku" class="control-label"><?php echo e(trans('general.sku')); ?>
 
                                             *</label>
-                                        <input id="sku" type="text" class="form-control" sku="sku" value="<?php echo e(old('sku')); ?>" placeholder="<?php echo e(trans('general.sku')); ?>" required autofocus>
+                                        <input id="sku" type="text" class="form-control" name="sku" value="<?php echo e(old('sku')); ?>" placeholder="<?php echo e(trans('general.sku')); ?>" required autofocus>
                                         <?php if($errors->has('sku')): ?>
                                         <span class="help-block">
                                             <strong>
@@ -44,7 +43,7 @@
                                         <label for="name_ar" class="control-label"><?php echo e(trans('general.name_ar')); ?>
 
                                             *</label>
-                                        <input id="name_ar" type="text" class="form-control" sku="name_ar" value="<?php echo e(old('name_ar')); ?>" placeholder="<?php echo e(trans('general.name_ar')); ?>" required autofocus>
+                                        <input id="name_ar" type="text" class="form-control" name="name_ar" value="<?php echo e(old('name_ar')); ?>" placeholder="<?php echo e(trans('general.name_ar')); ?>" required autofocus>
                                         <?php if($errors->has('name_ar')): ?>
                                         <span class="help-block">
                                             <strong>
@@ -60,7 +59,7 @@
                                         <label for="name_en" class="control-label"><?php echo e(trans('general.name_en')); ?>
 
                                             *</label>
-                                        <input id="name_en" type="text" class="form-control" sku="name_en" value="<?php echo e(old('name_en')); ?>" placeholder="<?php echo e(trans('general.name_en')); ?>" required autofocus>
+                                        <input id="name_en" type="text" class="form-control" name="name_en" value="<?php echo e(old('name_en')); ?>" placeholder="<?php echo e(trans('general.name_en')); ?>" required autofocus>
                                         <?php if($errors->has('name_en')): ?>
                                         <span class="help-block">
                                             <strong>
@@ -75,11 +74,25 @@
                                 <div class="col-md-4">
                                     <div class="form-group <?php echo e($errors->has('duration') ? ' has-error' : ''); ?>">
                                         <label for="duration" class="control-label"><?php echo e(trans('general.duration')); ?>*</label>
-                                        <input id="duration" type="text" class="form-control" name="duration" value="<?php echo e(old('duration')); ?>" placeholder="<?php echo e(trans('general.duration')); ?>" required autofocus>
+                                        <input id="duration" type="number" class="form-control" name="duration" value="<?php echo e(old('duration')); ?>" placeholder="<?php echo e(trans('general.duration')); ?>" required autofocus>
                                         <?php if($errors->has('duration')): ?>
                                         <span class="help-block">
                                             <strong>
                                                 <?php echo e($errors->first('duration')); ?>
+
+                                            </strong>
+                                        </span>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group <?php echo e($errors->has('delivery_time') ? ' has-error' : ''); ?>">
+                                        <label for="delivery_time" class="control-label"><?php echo e(trans('general.delivery_time')); ?>*</label>
+                                        <input id="delivery_time" type="number" class="form-control" name="delivery_time" value="<?php echo e(old('delivery_time')); ?>" placeholder="<?php echo e(trans('general.delivery_time')); ?>" required autofocus>
+                                        <?php if($errors->has('delivery_time')): ?>
+                                        <span class="help-block">
+                                            <strong>
+                                                <?php echo e($errors->first('delivery_time')); ?>
 
                                             </strong>
                                         </span>
@@ -105,7 +118,7 @@
                                         <label for="individuals" class="control-label"><?php echo e(trans('general.individuals')); ?>
 
                                             *</label>
-                                        <input id="individuals" type="individuals" class="form-control" sku="individuals" value="" placeholder="<?php echo e(trans('general.individuals')); ?>" required autofocus>
+                                        <input id="individuals" maxlength="2" max="99" type="number" class="form-control" name="individuals" value="" placeholder="<?php echo e(trans('general.individuals')); ?>" required autofocus>
                                         <?php if($errors->has('individuals')): ?>
                                         <span class="help-block">
                                             <strong>
@@ -121,7 +134,7 @@
                                         <label for="delivery_charge" class="control-label"><?php echo e(trans('general.delivery_charge')); ?>
 
                                             *</label>
-                                        <input id="delivery_charge" type="text" class="form-control" sku="delivery_charge" value="" placeholder="<?php echo e(trans('general.delivery_charge')); ?>" required autofocus>
+                                        <input id="delivery_charge" type="number" class="form-control" name="delivery_charge" value="" placeholder="<?php echo e(trans('general.delivery_charge')); ?>" required autofocus>
                                         <?php if($errors->has('delivery_charge')): ?>
                                         <span class="help-block">
                                             <strong>
@@ -141,7 +154,7 @@
                                         <label for="price" class="control-label"><?php echo e(trans('general.price')); ?>
 
                                             *</label>
-                                        <input id="price" type="text" class="form-control" sku="price" value="<?php echo e(old('price')); ?>" placeholder="<?php echo e(trans('general.price')); ?>" required autofocus>
+                                        <input id="price" type="text" class="form-control" name="price" value="<?php echo e(old('price')); ?>" placeholder="<?php echo e(trans('general.price')); ?>" required autofocus>
                                         <?php if($errors->has('price')): ?>
                                         <span class="help-block">
                                             <strong>
@@ -152,12 +165,14 @@
                                         <?php endif; ?>
                                     </div>
                                 </div>
+
+
                                 <div class="col-md-4">
                                     <div class="form-group<?php echo e($errors->has('sale_price') ? ' has-error' : ''); ?>">
                                         <label for="sale_price" class="control-label"><?php echo e(trans('general.sale_price')); ?>
 
                                             *</label>
-                                        <input id="sale_price" type="text" class="form-control" sku="sale_price" value="<?php echo e(old('sale_price')); ?>" placeholder="<?php echo e(trans('general.sale_price')); ?> " required autofocus>
+                                        <input id="sale_price" type="text" class="form-control" name="sale_price" value="<?php echo e(old('sale_price')); ?>" placeholder="<?php echo e(trans('general.sale_price')); ?> " required autofocus>
                                         <?php if($errors->has('sale_price')): ?>
                                         <span class="help-block">
                                             <strong>
@@ -168,28 +183,30 @@
                                         <?php endif; ?>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="description" class="control-label"><?php echo e(trans('general.description_arabic')); ?></label>
-                                        <textarea type="text" class="form-control" id="description_ar" sku="description_ar" aria-multiline="true" maxlength="500" <?php echo e(old('description_ar')); ?>></textarea>
+                                        <textarea type="text" class="form-control" id="description_ar" name="description_ar" aria-multiline="true" maxlength="500" <?php echo e(old('description_ar')); ?>></textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="description" class="control-label"><?php echo e(trans('general.description_english')); ?></label>
-                                        <textarea type="text" class="form-control" id="description_en" sku="description_en" aria-multiline="true" maxlength="500"><?php echo e(old('description_en')); ?></textarea>
+                                        <textarea type="text" class="form-control" id="description_en" name="description_en" aria-multiline="true" maxlength="500"><?php echo e(old('description_en')); ?></textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="notes_ar" class="control-label"><?php echo e(trans('general.notes_ar')); ?></label>
-                                        <textarea type="text" class="form-control" id="notes_ar" sku="notes_ar" aria-multiline="true" maxlength="500" <?php echo e(old('notes_ar')); ?>></textarea>
+                                        <textarea type="text" class="form-control" id="notes_ar" name="notes_ar" aria-multiline="true" maxlength="500" <?php echo e(old('notes_ar')); ?>></textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="notes_en" class="control-label"><?php echo e(trans('general.notes_en')); ?></label>
-                                        <textarea type="text" class="form-control" id="notes_en" sku="notes_en" aria-multiline="true" maxlength="500"><?php echo e(old('notes_en')); ?></textarea>
+                                        <textarea type="text" class="form-control" id="notes_en" name="notes_en" aria-multiline="true" maxlength="500"><?php echo e(old('notes_en')); ?></textarea>
                                     </div>
                                 </div>
                                 
@@ -228,7 +245,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group<?php echo e($errors->has('keywords') ? ' has-error' : ''); ?>">
                                         <label for="keywords" class="control-label"><?php echo e(trans('general.keywords')); ?></label>
-                                        <input id="keywords" type="text" class="form-control" sku="keywords" placeholder="<?php echo e(trans('general.keywords')); ?>" value="<?php echo e(old('keywords')); ?>" autofocus>
+                                        <input id="keywords" type="text" class="form-control" name="keywords" placeholder="<?php echo e(trans('general.keywords')); ?>" value="<?php echo e(old('keywords')); ?>" autofocus>
                                         <?php if($errors->has('keywords')): ?>
                                         <span class="help-block">
                                             <strong>
@@ -242,7 +259,19 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="form_control_1"><?php echo e(trans('general.main_image')); ?></label>
-                                        <input type="file" class="form-control" sku="image" placeholder="<?php echo e(trans('general.main_image')); ?>" required>
+                                        <input type="file" class="form-control" name="image" placeholder="<?php echo e(trans('general.main_image')); ?>" required>
+                                        <div class="help-block text-left">
+                                            W * H - Best fit ['1080', '1440'] pixels
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="file" class="control-label"><?php echo e(trans('general.more_images')); ?>
+
+                                            *</label>
+
+                                        <input class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.more_images')); ?>" name="images[]" placeholder="<?php echo e(trans('message.more_images')); ?>" type="file" multiple />
                                         <div class="help-block text-left">
                                             W * H - Best fit ['1080', '1440'] pixels
                                         </div>
@@ -251,7 +280,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group<?php echo e($errors->has('video_url_one') ? ' has-error' : ''); ?>">
                                         <label for="video_url_one" class="control-label"><?php echo e(trans('general.video_url_one')); ?></label>
-                                        <input id="video_url_one" type="text" class="form-control" sku="video_url_one" placeholder="<?php echo e(trans('general.video_url_one')); ?>" value="<?php echo e(old('video_url_one')); ?>" autofocus>
+                                        <input id="video_url_one" type="text" class="form-control" name="video_url_one" placeholder="<?php echo e(trans('general.video_url_one')); ?>" value="<?php echo e(old('video_url_one')); ?>" autofocus>
                                         <?php if($errors->has('video_url_one')): ?>
                                         <span class="help-block">
                                             <strong>
@@ -265,7 +294,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group<?php echo e($errors->has('video_url_two') ? ' has-error' : ''); ?>">
                                         <label for="video_url_two" class="control-label"><?php echo e(trans('general.video_url_two')); ?></label>
-                                        <input id="video_url_two" type="text" class="form-control" sku="video_url_two" placeholder="<?php echo e(trans('general.video_url_two')); ?>" value="<?php echo e(old('video_url_two')); ?>" autofocus>
+                                        <input id="video_url_two" type="text" class="form-control" name="video_url_two" placeholder="<?php echo e(trans('general.video_url_two')); ?>" value="<?php echo e(old('video_url_two')); ?>" autofocus>
                                         <?php if($errors->has('video_url_two')): ?>
                                         <span class="help-block">
                                             <strong>
@@ -303,7 +332,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group<?php echo e($errors->has('booking_limit') ? ' has-error' : ''); ?>">
                                         <label for="booking_limit" class="control-label"><?php echo e(trans('general.booking_limit')); ?></label>
-                                        <input id="booking_limit" type="text" class="form-control" sku="booking_limit" placeholder="<?php echo e(trans('general.booking_limit')); ?>" value="<?php echo e(old('booking_limit')); ?>" autofocus>
+                                        <input id="booking_limit" type="number" class="form-control" name="booking_limit" placeholder="<?php echo e(trans('general.booking_limit')); ?>" value="<?php echo e(old('booking_limit')); ?>" autofocus>
                                         <?php if($errors->has('booking_limit')): ?>
                                         <span class="help-block">
                                             <strong>
@@ -317,10 +346,10 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="single" class="control-label"><?php echo e(trans('general.owner')); ?>*</label>
-                                        <select id="" class="form-control select2">
+                                        <select id="" name="user_id" class="form-control select2">
                                             <option value=""><?php echo e(trans('general.choose_user')); ?></option>
                                             <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                            <option value="<?php echo e($user->slug_en); ?>"><?php echo e($user->slug_en); ?></option>
+                                            <option value="<?php echo e($user->id); ?>"><?php echo e($user->slug_en); ?></option>
                                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 
@@ -357,70 +386,70 @@
                                     <div class="form-group">
                                         <label class="control-label sbold"><?php echo e(trans('general.active')); ?></label></br>
                                         <label class="radio-inline">
-                                            <input type="radio" sku="active" id="optionsRadios1" value="1">
+                                            <input type="radio" name="active" id="optionsRadios1" value="1">
                                             <?php echo e(trans('general.active')); ?> </label>
                                         <label class="radio-inline">
-                                            <input type="radio" sku="active" id="optionsRadios2" checked value="0"> <?php echo e(trans('general.not_active')); ?></label>
+                                            <input type="radio" name="active" id="optionsRadios2" checked value="0"> <?php echo e(trans('general.not_active')); ?></label>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="control-label sbold"><?php echo e(trans('general.on_sale')); ?></label></br>
                                         <label class="radio-inline">
-                                            <input type="radio" sku="on_sale" id="optionsRadios1" value="1">
+                                            <input type="radio" name="on_sale" id="optionsRadios1" value="1">
                                             <?php echo e(trans('general.on_sale')); ?> </label>
                                         <label class="radio-inline">
-                                            <input type="radio" sku="on_sale" id="optionsRadios2" checked value="0"> <?php echo e(trans('general.not_on_sale')); ?></label>
+                                            <input type="radio" name="on_sale" id="optionsRadios2" checked value="0"> <?php echo e(trans('general.not_on_sale')); ?></label>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="control-label sbold"><?php echo e(trans('general.exclusive')); ?></label></br>
                                         <label class="radio-inline">
-                                            <input type="radio" sku="exclusive" id="optionsRadios1" value="1">
+                                            <input type="radio" name="exclusive" id="optionsRadios1" value="1">
                                             <?php echo e(trans('general.exclusive')); ?> </label>
                                         <label class="radio-inline">
-                                            <input type="radio" sku="exclusive" id="optionsRadios2" checked value="0"> <?php echo e(trans('general.not_exclusive')); ?></label>
+                                            <input type="radio" name="exclusive" id="optionsRadios2" checked value="0"> <?php echo e(trans('general.not_exclusive')); ?></label>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="control-label sbold"><?php echo e(trans('general.on_new')); ?></label></br>
                                         <label class="radio-inline">
-                                            <input type="radio" sku="on_new" id="optionsRadios1" value="1">
+                                            <input type="radio" name="on_new" id="optionsRadios1" value="1">
                                             <?php echo e(trans('general.on_new')); ?> </label>
                                         <label class="radio-inline">
-                                            <input type="radio" sku="on_new" id="optionsRadios2" checked value="0"> <?php echo e(trans('general.not_on_new')); ?></label>
+                                            <input type="radio" name="on_new" id="optionsRadios2" checked value="0"> <?php echo e(trans('general.not_on_new')); ?></label>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="control-label sbold"><?php echo e(trans('general.is_available')); ?></label></br>
                                         <label class="radio-inline">
-                                            <input type="radio" sku="is_available" id="optionsRadios1" value="1">
+                                            <input type="radio" name="is_available" id="optionsRadios1" value="1">
                                             <?php echo e(trans('general.is_available')); ?> </label>
                                         <label class="radio-inline">
-                                            <input type="radio" sku="is_available" id="optionsRadios2" checked value="0"> <?php echo e(trans('general.not_is_available')); ?></label>
+                                            <input type="radio" name="is_available" id="optionsRadios2" checked value="0"> <?php echo e(trans('general.not_is_available')); ?></label>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="control-label sbold"><?php echo e(trans('general.is_hot_deal')); ?></label></br>
                                         <label class="radio-inline">
-                                            <input type="radio" sku="is_hot_deal" id="optionsRadios1" value="1">
+                                            <input type="radio" name="is_hot_deal" id="optionsRadios1" value="1">
                                             <?php echo e(trans('general.is_hot_deal')); ?> </label>
                                         <label class="radio-inline">
-                                            <input type="radio" sku="is_hot_deal" id="optionsRadios2" checked value="0"> <?php echo e(trans('general.not_is_hot_deal')); ?></label>
+                                            <input type="radio" name="is_hot_deal" id="optionsRadios2" checked value="0"> <?php echo e(trans('general.not_is_hot_deal')); ?></label>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="control-label sbold"><?php echo e(trans('general.multi_booking')); ?></label></br>
                                         <label class="radio-inline">
-                                            <input type="radio" sku="multi_booking" id="optionsRadios1" value="1">
+                                            <input type="radio" name="multi_booking" id="optionsRadios1" value="1">
                                             <?php echo e(trans('general.multi_booking')); ?> </label>
                                         <label class="radio-inline">
-                                            <input type="radio" sku="multi_booking" id="optionsRadios2" checked value="0"> <?php echo e(trans('general.not_multi_booking')); ?></label>
+                                            <input type="radio" name="multi_booking" id="optionsRadios2" checked value="0"> <?php echo e(trans('general.not_multi_booking')); ?></label>
                                     </div>
                                 </div>
 
@@ -428,9 +457,9 @@
                                     <div class="form-group">
                                         <label class="control-label sbold"><?php echo e(trans('general.on_home')); ?></label></br>
                                         <label class="radio-inline">
-                                            <input type="radio" sku="on_home" id="optionsRadios1" value="1"> <?php echo e(trans('general.on_home')); ?> </label>
+                                            <input type="radio" name="on_home" id="optionsRadios1" value="1"> <?php echo e(trans('general.on_home')); ?> </label>
                                         <label class="radio-inline">
-                                            <input type="radio" sku="on_home" id="optionsRadios2" checked value="0"> <?php echo e(trans('general.not_on_home')); ?></label>
+                                            <input type="radio" name="on_home" id="optionsRadios2" checked value="0"> <?php echo e(trans('general.not_on_home')); ?></label>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">

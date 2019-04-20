@@ -20,8 +20,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
     // 2- Action Also is different therefore ModelPolicy applied for each Model Action
 
     // Backend :: super only
-    Route::group(['namespace' => 'Admin', 'as' => 'super.', 'prefix' => 'super', 'middleware' => ['super']], function () {
-    });
+    Route::group(['namespace' => 'Admin', 'as' => 'super.', 'prefix' => 'super', 'middleware' => ['super']], function () { });
     // Backend :: super + admin
     Route::group(['namespace' => 'Admin', 'as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['admin']], function () {
         Route::resource('role', 'RoleController');
@@ -33,8 +32,8 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
         Route::resource('currency', 'CurrencyController');
         Route::resource('category', 'CategoryController');
         Route::resource('user', 'UserController');
-//        Route::resource('product', 'ProductController');
-//        Route::resource('service', 'ServiceController');
+        Route::resource('product', 'ProductController');
+        Route::resource('service', 'ServiceController');
         Route::resource('color', 'ColorController');
         Route::resource('size', 'SizeController');
         Route::resource('slide', 'SlideController');
@@ -49,7 +48,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
         Route::resource('term', 'TermController');
         Route::resource('order', 'OrderController');
         Route::resource('collection', 'CollectionController');
-//        Route::resource('package', 'ShipmentPackageController');
+        Route::resource('package', 'ShipmentPackageController');
         Route::resource('tag', 'TagController');
         Route::resource('newsletter', 'NewsletterController');
         Route::resource('faq', 'FaqController');
@@ -63,7 +62,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
         Route::resource('answer', 'AnswerController');
         Route::resource('branch', 'BranchController');
         Route::resource('day', 'DayController');
-//        Route::resource('timing', 'TimingController');
+        Route::resource('timing', 'TimingController');
     });
     // Backend :: companies
     Route::get('/', 'HomeController@index')->name('index');
