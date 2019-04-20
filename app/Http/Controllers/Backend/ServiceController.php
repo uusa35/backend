@@ -63,11 +63,11 @@ class ServiceController extends Controller
             $start_sale ? $element->update(['start_sale' => $start_sale]) : null;
             $end_sale ? $element->update(['end_sale' => $end_sale]) : null;
             $element->categories()->sync($request->categories);
-            $request->hasFile('image') ? $this->saveMimes($element, $request, ['image'], ['1080', '1440'], true) : null;
             $request->has('images') ? $this->saveGallery($element, $request, 'images', ['1080', '1440'], true) : null;
-            return redirect()->route('backend.service.index')->with('success', 'Service added');
+            $request->hasFile('image') ? $this->saveMimes($element, $request, ['image'], ['1080', '1440'], true) : null;
+            return redirect()->route('backend.service.index')->with('success', trans('general.service_saved'));
         }
-        return redirect()->back()->with('error', 'Service is not saved.');
+        return redirect()->back()->with('error', trans('general.service_not_saved'));
     }
 
     /**
