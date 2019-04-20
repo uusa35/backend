@@ -20,7 +20,16 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $elements = Service::myItems()->get();
+        $this->authorize('index', 'service');
+        if (auth()->user()->isAdminOrABove) {
+            $elements = Service::with('user')->get();
+        } else {
+            if (request()->has('type')) {
+                $elements = Service::active()->myItems()->where([request('type') => true])->with('images')->orderBy('id', 'desc')->get();
+            } else {
+                $elements = Service::active()->myItems()->with('images')->orderBy('id', 'desc')->get();
+            }
+        }
         return view('backend.modules.service.index', compact('elements'));
     }
 
@@ -53,10 +62,9 @@ class ServiceController extends Controller
         if ($element) {
             $start_sale ? $element->update(['start_sale' => $start_sale]) : null;
             $end_sale ? $element->update(['end_sale' => $end_sale]) : null;
-            $request->has('images') ? $this->saveGallery($element, $request, 'images', ['1080', '1440'], true) : null;
             $element->categories()->sync($request->categories);
             $request->hasFile('image') ? $this->saveMimes($element, $request, ['image'], ['1080', '1440'], true) : null;
-
+            $request->has('images') ? $this->saveGallery($element, $request, 'images', ['1080', '1440'], true) : null;
             return redirect()->route('backend.service.index')->with('success', 'Service added');
         }
         return redirect()->back()->with('error', 'Service is not saved.');
