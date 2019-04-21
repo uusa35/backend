@@ -743,11 +743,12 @@ return array(
     'image_chart' => 'جدول دليل المقاسات',
     'privilege' => 'الصلاحية',
     'main_details' => 'تفاصيل أساسية',
-    'no' => 'no',
-    'yes' => 'yes',
+    'no' => 'لا',
+    'yes' => 'نعم',
     'main_details' => 'main_details',
     'edit_my_profile' => 'تعديل الملف الشخصي',
-    'merchant_id' => 'رقم التاجر'
+    'merchant_id' => 'رقم التاجر',
+    'on_home' => 'إظهار في الصفحة الرئيسية'
 
 
 );

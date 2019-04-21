@@ -39,10 +39,10 @@ class BrandController extends Controller
     public function store(Request $request)
     {
         $validate = validator($request->all(), [
-            'name' => 'required|alpha|min:3|unique:brands,name',
+            'name' => 'required|min:3|unique:brands,name',
             'slug_ar' => 'required|min:3',
             'slug_en' => 'required|min:3',
-            'is_home' => 'required|boolean',
+            'on_home' => 'required|boolean',
             'image' => 'required|image'
         ]);
         if ($validate->fails()) {
@@ -53,7 +53,7 @@ class BrandController extends Controller
             if ($request->hasFile('image')) {
                 $this->saveMimes($element, $request, ['image'], ['1362', '716'], true);
             }
-            return redirect()->route('backend.brand.index')->with('sucess', 'created successfully!!');
+            return redirect()->route('backend.admin.brand.index')->with('success', trans('message.brand_saved_successfully'));
         }
         return redirect()->back()->with('error', 'not created !!');
     }

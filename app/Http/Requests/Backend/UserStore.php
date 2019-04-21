@@ -31,7 +31,7 @@ class UserStore extends FormRequest
             'description_en' => 'nullable|min:3',
             'service_ar' => '',
             'service_en' => '',
-            'email' => 'required|users:unique,email',
+            'email' => 'required|unique:users,email',
             'mobile' => 'nullable|numeric',
             'phone' => 'nullable|numeric',
             'fax' => 'nullable|numeric',
@@ -67,7 +67,7 @@ class UserStore extends FormRequest
             'active' => 'nullable|boolean',
             'country_id' => 'nullable|numeric|countries:exists,id',
             'role_id' => 'required|numeric|roles:exists,id',
-            'merchant_id' => 'nullable|max:200|min:3',
+            'merchant_id' => 'nullable|max:200|min:3|unique:users,merchant_id',
         ];
     }
 }
