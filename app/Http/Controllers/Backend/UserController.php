@@ -17,7 +17,11 @@ class UserController extends Controller
      */
     public function index()
     {
-        $elements = User::all();
+        if(auth()->user()->isAdminOrAbove) {
+            $elements = User::all();
+        } else {
+            $elements = User::whereId(request("id"))->first();
+        }
         return view("backend.modules.user.index", compact('elements'));
     }
 
@@ -98,7 +102,7 @@ class UserController extends Controller
         }
         $updated = $element->update($request->except('email'));
         if ($updated) {
-            return redirect()->route('backend.user.index')->with('success', 'user updated');
+            return redirect()->route('backend.user.index',['id' => auth()->id()])->with('success', 'user updated');
         }
         return redirect()->route('backend.user.edit', $id)->with('error', 'user not updated');
     }

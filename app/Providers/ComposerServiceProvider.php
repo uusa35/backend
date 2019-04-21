@@ -25,6 +25,8 @@ class ComposerServiceProvider extends ServiceProvider
             'frontend.wokiee.four.modules.*.*',
             'backend.modules.currency.create',
             'backend.modules.currency.edit',
+            'backend.modules.user.create',
+            'backend.modules.user.edit',
             'backend.partials.sidebar',
             'auth.*',
         ], 'App\Services\ViewComposers@getCountries');
