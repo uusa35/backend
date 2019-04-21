@@ -9,14 +9,14 @@
     <div class="portlet-body">
         @include('backend.partials._admin_instructions',['title' => trans('general.branches') ,'message' => trans('message.admin_branch_message')])
         <div class="portlet-body form">
-            <form class="horizontal-form" role="form" method="POST" action="{{ route('backend.admin.branch.store') }}" enctype="multipart/form-data">
+            <form class="horizontal-form" role="form" method="POST" action="{{ route('backend.branch.store') }}" enctype="multipart/form-data">
                 @csrf
                 <div class="form-body">
                     <h3 class="form-section">{{ trans('general.create_branch') }}</h3>
                     <div class="portlet box blue ">
                         <div class="portlet-title">
                             <div class="caption">
-                                <i class="fa fa-gift"></i> {{ trans('general.branch_main_details') }}
+                                <i class="fa fa-gift"></i> {{ trans('general.main_details') }}
                             </div>
                         </div>
                         <div class="portlet-body form">

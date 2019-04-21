@@ -16,7 +16,7 @@
                     <div class="portlet box blue ">
                         <div class="portlet-title">
                             <div class="caption">
-                                <i class="fa fa-gift"></i> <?php echo e(trans('general.branch_main_details')); ?>
+                                <i class="fa fa-gift"></i> <?php echo e(trans('general.main_details')); ?>
 
                             </div>
                         </div>

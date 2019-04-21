@@ -68,7 +68,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
     Route::get('language/{locale}', 'HomeController@changeLanguage')->name('language.change');
     Route::get('reset/password', 'UserController@getResetPassword')->name('reset.password');
     Route::post('reset/password', 'UserController@postResetPassword')->name('reset');
-    Route::resource('user', 'UserController')->only(['edit', 'update', 'show','index']);
+    Route::resource('user', 'UserController')->only(['edit', 'update', 'show', 'index']);
     Route::resource('product', 'ProductController');
     Route::resource('attribute', 'ProductAttributeController');
     Route::resource('service', 'ServiceController');
