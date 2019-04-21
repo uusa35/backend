@@ -27,17 +27,13 @@ class SlideController extends Controller
             if ($validate->fails()) {
                 return redirect()->back()->withErrors($validate->errors());
             }
-            if (request('slideble_type') === 'product') {
-                $products = Product::active()->where(['user_id' => auth()->id()])->whereHas('slides', function ($q) {
-                    return $q->active();
-                })->with('slides')->get();
-                $elements = $products->pluck('slides')->unique()->flatten();
-            } elseif (request('slidable_type' === 'service')) {
-                $services = Service::active()->where(['user_id' => auth()->id()])->whereHas('slides', function ($q) {
-                    return $q->active();
-                })->with('slides')->get();
-                $elements = $services->pluck('slides')->unique()->flatten();
-            }
+
+            $className = '\App\Models\\' . title_case(request()->slidable_type);
+            $item = new $className();
+            $item = $item->withoutGlobalScopes()->whereId(request()->slidable_id)->whereHas('slides', function ($q) {
+                return $q->active();
+            })->with('slides')->get();
+            $elements = $item->pluck('slides')->unique()->flatten();
         }
         return view('backend.modules.slide.index', compact('elements'));
     }
@@ -74,9 +70,9 @@ class SlideController extends Controller
         if ($validate->fails()) {
             return redirect()->back()->withErrors($validate->errors());
         }
-        $className = '\App\Models\\' . title_case($request->slideble_type);
+        $className = '\App\Models\\' . title_case($request->slidable_type);
         $item = new $className();
-        $item = $item->withoutGlobalScopes()->whereId($request->id)->first();
+        $item = $item->withoutGlobalScopes()->whereId($request->slidable_id)->first();
         $element = $item->slides()->create($request->request->all());
         if ($element) {
             if ($request->hasFile('image')) {
@@ -87,7 +83,7 @@ class SlideController extends Controller
                 $path = str_replace('public/uploads/files/', '', $path);
                 $element->update(['path' => $path]);
             }
-            return redirect()->route('backend.slide.index')->with('success', trans('message.store_success'));
+            return redirect()->route('backend.slide.index',['slidable_id' => $element->slidable_id, 'slidable_type' => $element->slidable_type])->with('success', trans('message.store_success'));
         }
         return redirect()->back()->with('error', trans('message.store_error'));
     }

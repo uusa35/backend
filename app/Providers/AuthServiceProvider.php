@@ -81,6 +81,10 @@ class AuthServiceProvider extends ServiceProvider
             return auth()->user()->isSuper;
         });
 
+        Gate::define('isCompanyOrAbove', function () {
+            return auth()->user()->isAdminOrAbove ? auth()->user()->isAdminOrAbove : auth()->user()->role->is_company;
+        });
+
         Gate::define('isCompany', function () {
             return auth()->user()->role->is_company;
         });

@@ -9,59 +9,60 @@ use Illuminate\Auth\Access\HandlesAuthorization;
 class SlidePolicy
 {
     use HandlesAuthorization;
+    const MODAL = 'slide';
 
     /**
      * Determine whether the user can view the slide.
      *
-     * @param  \App\Models\User  $user
-     * @param  \App\Slide  $slide
+     * @param  \App\Models\User $user
+     * @param  \App\Slide $slide
      * @return mixed
      */
     public function view(User $user, Slide $slide)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->view;
     }
 
     /**
      * Determine whether the user can create slides.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\User $user
      * @return mixed
      */
     public function create(User $user)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->create;
     }
 
     /**
      * Determine whether the user can update the slide.
      *
-     * @param  \App\Models\User  $user
-     * @param  \App\Slide  $slide
+     * @param  \App\Models\User $user
+     * @param  \App\Slide $slide
      * @return mixed
      */
     public function update(User $user, Slide $slide)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->update;
     }
 
     /**
      * Determine whether the user can delete the slide.
      *
-     * @param  \App\Models\User  $user
-     * @param  \App\Slide  $slide
+     * @param  \App\Models\User $user
+     * @param  \App\Slide $slide
      * @return mixed
      */
     public function delete(User $user, Slide $slide)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->delete;
     }
 
     /**
      * Determine whether the user can restore the slide.
      *
-     * @param  \App\Models\User  $user
-     * @param  \App\Slide  $slide
+     * @param  \App\Models\User $user
+     * @param  \App\Slide $slide
      * @return mixed
      */
     public function restore(User $user, Slide $slide)
@@ -72,8 +73,8 @@ class SlidePolicy
     /**
      * Determine whether the user can permanently delete the slide.
      *
-     * @param  \App\Models\User  $user
-     * @param  \App\Slide  $slide
+     * @param  \App\Models\User $user
+     * @param  \App\Slide $slide
      * @return mixed
      */
     public function forceDelete(User $user, Slide $slide)

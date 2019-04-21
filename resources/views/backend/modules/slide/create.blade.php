@@ -13,6 +13,8 @@
         <div class="portlet-body form">
             <form class="horizontal-form" role="form" method="POST" action="{{ route('backend.slide.store') }}" enctype="multipart/form-data">
                 @csrf
+                <input type="hidden" name="slidable_id" value="{{ request()->slidable_id }}">
+                <input type="hidden" name="slidable_type" value="{{ request()->slidable_type }}">
                 <div class="form-body">
                     <h3 class="form-section">{{ trans('general.new_slide') }}</h3>
                     <div class="portlet box blue ">
