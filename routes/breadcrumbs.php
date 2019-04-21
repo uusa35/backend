@@ -360,14 +360,14 @@ Breadcrumbs::for('backend.service.create', function ($trail) {
     $trail->push(trans('general.create_service'), route('backend.service.create'));
 });
 
-Breadcrumbs::for('backend.admin.slide.index', function ($trail) {
+Breadcrumbs::for('backend.slide.index', function ($trail) {
     $trail->parent('backend.home');
-    $trail->push(trans('general.index_slide'), route('backend.admin.slide.index'));
+    $trail->push(trans('general.index_slide'), route('backend.slide.index'));
 });
 
-Breadcrumbs::for('backend.admin.slide.create', function ($trail) {
-    $trail->parent('backend.admin.slide.index');
-    $trail->push(trans("general.create_slide"), route('backend.admin.slide.create'));
+Breadcrumbs::for('backend.slide.create', function ($trail) {
+    $trail->parent('backend.slide.index');
+    $trail->push(trans("general.create_slide"), route('backend.slide.create'));
 });
 
 Breadcrumbs::for('backend.admin.survey.index', function ($trail) {

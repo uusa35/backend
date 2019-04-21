@@ -15,7 +15,7 @@
                     <th>{{ trans('general.slug_ar') }}</th>
                     <th>{{ trans('general.slug_en') }}</th>
                     <th>{{ trans('general.active') }}</th>
-                    <th>{{ trans('general.is_home') }}</th>
+                    <th>{{ trans('general.image') }}</th>
                     <th>{{ trans('general.actions') }}</th>
                 </tr>
             </thead>
@@ -26,7 +26,7 @@
                     <th>{{ trans('general.slug_ar') }}</th>
                     <th>{{ trans('general.slug_en') }}</th>
                     <th>{{ trans('general.active') }}</th>
-                    <th>{{ trans('general.is_home') }}</th>
+                    <th>{{ trans('general.image') }}</th>
                     <th>{{ trans('general.actions') }}</th>
                 </tr>
             </tfoot>
@@ -41,7 +41,7 @@
                         <span class="label {{ activeLabel($element->active) }}">{{ activeText($element->active) }}</span>
                     </td>
                     <td>
-                        <span class="label {{ activeLabel($element->is_home) }}">{{ activeText($element->is_home) }}</span>
+                        <img src="{{ asset(env('THUMBNAIL').$element->image) }}" alt="" class="img-sm img-responsive">
                     </td>
                     <td>
                         <div class="btn-group">

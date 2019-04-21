@@ -15,7 +15,7 @@
                     <th><?php echo e(trans('general.slug_ar')); ?></th>
                     <th><?php echo e(trans('general.slug_en')); ?></th>
                     <th><?php echo e(trans('general.active')); ?></th>
-                    <th><?php echo e(trans('general.is_home')); ?></th>
+                    <th><?php echo e(trans('general.image')); ?></th>
                     <th><?php echo e(trans('general.actions')); ?></th>
                 </tr>
             </thead>
@@ -26,7 +26,7 @@
                     <th><?php echo e(trans('general.slug_ar')); ?></th>
                     <th><?php echo e(trans('general.slug_en')); ?></th>
                     <th><?php echo e(trans('general.active')); ?></th>
-                    <th><?php echo e(trans('general.is_home')); ?></th>
+                    <th><?php echo e(trans('general.image')); ?></th>
                     <th><?php echo e(trans('general.actions')); ?></th>
                 </tr>
             </tfoot>
@@ -41,7 +41,7 @@
                         <span class="label <?php echo e(activeLabel($element->active)); ?>"><?php echo e(activeText($element->active)); ?></span>
                     </td>
                     <td>
-                        <span class="label <?php echo e(activeLabel($element->is_home)); ?>"><?php echo e(activeText($element->is_home)); ?></span>
+                        <img src="<?php echo e(asset(env('THUMBNAIL').$element->image)); ?>" alt="" class="img-sm img-responsive">
                     </td>
                     <td>
                         <div class="btn-group">

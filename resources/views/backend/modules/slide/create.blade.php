@@ -2,7 +2,7 @@
 
 
 @section('breadcrumbs')
-{{ Breadcrumbs::render('backend.admin.slide.create') }}
+{{ Breadcrumbs::render('backend.slide.create') }}
 @endsection
 
 @section('content')
@@ -11,10 +11,10 @@
     <div class="portlet-body">
         @include('backend.partials._admin_instructions',['title' => trans('general.sildes') ,'message' => trans('message.admin_slide_message')])
         <div class="portlet-body form">
-            <form class="horizontal-form" role="form" method="POST" action="{{ route('backend.admin.page.store') }}" enctype="multipart/form-data">
+            <form class="horizontal-form" role="form" method="POST" action="{{ route('backend.slide.store') }}" enctype="multipart/form-data">
                 @csrf
                 <div class="form-body">
-                    <h3 class="form-section">{{ trans('general.create_slide') }}</h3>
+                    <h3 class="form-section">{{ trans('general.new_slide') }}</h3>
                     <div class="portlet box blue ">
                         <div class="portlet-title">
                             <div class="caption">
@@ -54,7 +54,7 @@
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group form-md-line-input">
-                                            <input type="text" class="form-control" name="order" placeholder="{{ trans('general.order') }}">
+                                            <input type="number" max="99" maxlength="2" class="form-control" name="order" placeholder="{{ trans('general.sequence') }}">
                                             <label for="form_control_1">{{ trans('general.order') }}*</label>
                                             <span class="help-block">slide Order is a number</span>
                                         </div>
@@ -112,7 +112,7 @@
                                                 <label for="radio54">
                                                     <span></span>
                                                     <span class="check"></span>
-                                                    <span class="box"></span> {{ trans('general.not_active') }}</label>
+                                                    <span class="box"></span> {{ trans('general.no') }}</label>
                                             </div>
                                         </div>
                                     </div>
@@ -121,17 +121,17 @@
                                         <div class="md-radio-inline">
                                             <div class="md-radio">
                                                 <input type="radio" id="radio53" name="on_home" value="1" class="md-radiobtn">
-                                                <label for="radio53">
+                                                <label for="radio55">
                                                     <span></span>
                                                     <span class="check"></span>
                                                     <span class="box"></span> {{ trans('general.on_home') }}</label>
                                             </div>
                                             <div class="md-radio">
                                                 <input type="radio" id="radio54" name="on_home" value="0" class="md-radiobtn" checked>
-                                                <label for="radio54">
+                                                <label for="radio56">
                                                     <span></span>
                                                     <span class="check"></span>
-                                                    <span class="box"></span> {{ trans('general.not_on_home') }}</label>
+                                                    <span class="box"></span> {{ trans('general.no') }}</label>
                                             </div>
                                         </div>
                                     </div>
