@@ -739,10 +739,13 @@ return array(
     'weight' => 'الوزن',
     'more_images' => 'المزيد من الصور',
     'save_and_go_back' => 'الحفظ والعودة للصفحة السابقة',
-    'save_product_and_add_attributes' => 'حفظ المنتج والذهاب لإضافه المزيد من الخصائص للمنتج' ,
-    'image_chart' => 'جدول دليل المقاسات' ,
+    'save_product_and_add_attributes' => 'حفظ المنتج والذهاب لإضافه المزيد من الخصائص للمنتج',
+    'image_chart' => 'جدول دليل المقاسات',
     'privilege' => 'الصلاحية',
-    'main_details' => 'تفاصيل أساسية'
+    'main_details' => 'تفاصيل أساسية',
+    'no' => 'no',
+    'yes' => 'yes',
+    'main_details' => 'main_details'
 
 
 );

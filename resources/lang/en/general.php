@@ -507,7 +507,10 @@ company company abaia abaya abayat',
   'is_off' => 'is_off',
   'file_path' => 'file_path',
   'settings' => 'settings',
-  'role_attributes_details' => 'role_attributes_details'
+  'role_attributes_details' => 'role_attributes_details',
+  'no' => 'no',
+  'yes' => 'yes',
+  'main_details' => 'main_details'
 
 
 
