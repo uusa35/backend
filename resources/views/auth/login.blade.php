@@ -47,7 +47,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="password">{{ trans('general.password') }} *</label>
-                                            <input type="text" name="passowrd" class="form-control" id="password"
+                                            <input type="password" name="password" class="form-control" id="password"
                                                    placeholder="{{ trans('general.enter_your_password') }}">
                                             @if ($errors->has('password'))
                                                 <span class="invalid-feedback"
