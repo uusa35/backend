@@ -6,6 +6,8 @@ use App\Models\Branch;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Country;
+use App\Models\Area;
+use App\Models\User;
 
 class BranchController extends Controller
 {
@@ -28,8 +30,10 @@ class BranchController extends Controller
      */
     public function create()
     {
-        $countries = Country::all();
-        return view('backend.modules.branch.create', compact('countries'));
+        $countries = Country::active()->get();
+        $areas = Area::active()->get();
+        $users = User::active()->get();
+        return view('backend.modules.branch.create', compact('countries', 'areas', 'users'));
     }
 
     /**
@@ -52,9 +56,9 @@ class BranchController extends Controller
         }
         $element = Branch::create($request->all());
         if ($element) {
-            return redirect()->route('backend.branch.index')->with('success', 'branch created');
+            return redirect()->route('backend.branch.index')->with('success', trans('general.branch_added'));
         }
-        return redirect()->route('backend.branch.index')->with('error', 'branch not created');
+        return redirect()->route('backend.branch.index')->with('error', trans('general.branch_not_added'));
     }
 
     /**

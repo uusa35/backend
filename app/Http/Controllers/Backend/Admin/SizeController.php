@@ -39,8 +39,11 @@ class SizeController extends Controller
      */
     public function store(Request $request)
     {
-        Size::create($request->request->all());
-        return redirect()->route('backend.size.index')->with('success', 'size created');
+        $element = Size::create($request->request->all());
+        if ($element) {
+            return redirect()->route('backend.admin.size.index')->with('success', trans('general.size_added'));
+        }
+        return redirect()->back()->with('error', trans('general.size_not_added'));
     }
 
     /**
