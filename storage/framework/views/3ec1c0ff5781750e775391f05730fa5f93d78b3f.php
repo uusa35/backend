@@ -11,6 +11,8 @@
         <div class="portlet-body form">
             <form class="horizontal-form" role="form" method="POST" action="<?php echo e(route('backend.slide.store')); ?>" enctype="multipart/form-data">
                 <?php echo csrf_field(); ?>
+                <input type="hidden" name="slidable_id" value="<?php echo e(request()->slidable_id); ?>">
+                <input type="hidden" name="slidable_type" value="<?php echo e(request()->slidable_type); ?>">
                 <div class="form-body">
                     <h3 class="form-section"><?php echo e(trans('general.new_slide')); ?></h3>
                     <div class="portlet box blue ">

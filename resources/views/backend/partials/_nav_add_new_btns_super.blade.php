@@ -2,22 +2,6 @@
     <a href="#" disabled="true" class="tooltips disabled" data-container="body" data-placement="{{ app()->isLocale('ar') ? 'left' : 'right' }}" data-original-title="{{ trans('message.create_your_new_items_list') }}">
         <i class="icon-note"></i> {{ trans('general.create_your_new_items_list') }}</a>
 </li>
-<li>
-    <a href="{{ route('backend.product.create') }}" class="tooltips" data-container="body" data-placement="{{ app()->isLocale('ar') ? 'left' : 'right' }}" data-original-title="{{ trans('message.new_product') }}">
-        <i class="icon-plus"></i> {{ trans('general.new_product') }}</a>
-</li>
-{{--<li>--}}
-{{--<a href="{{ route('backend.admin.survey.create') }}">--}}
-{{--<i class="icon-plus"></i> {{ trans('general.new_survey') }}</a>--}}
-{{--</li>--}}
-<li>
-    <a href="{{ route('backend.service.create') }}" class="tooltips" data-container="body" data-placement="{{ app()->isLocale('ar') ? 'left' : 'right' }}" data-original-title="{{ trans('message.new_service') }}">
-        <i class="icon-handbag"></i> {{ trans('general.new_service') }}</a>
-</li>
-<li>
-    <a href="{{ route('backend.timing.create') }}" class="tooltips" data-container="body" data-placement="{{ app()->isLocale('ar') ? 'left' : 'right' }}" data-original-title="{{ trans('message.new_timing') }}">
-        <i class="icon-plus"></i> {{ trans('general.new_timing') }}</a>
-</li>
 @can('isAdminOrAbove')
 <li>
     <a href="{{ route('backend.admin.user.create') }}" class="tooltips" data-container="body" data-placement="{{ app()->isLocale('ar') ? 'left' : 'right' }}" data-original-title="{{ trans('message.new_user') }}">
@@ -75,7 +59,6 @@
     <a href="{{ route('backend.admin.policy.create') }}" class="tooltips" data-container="body" data-placement="{{ app()->isLocale('ar') ? 'left' : 'right' }}" data-original-title="{{ trans('message.new_policy') }}">
         <i class="icon-plus"></i> {{ trans('general.new_policy') }}</a>
 </li>
-<li class="divider"></li>
 <li>
     <a href="{{ route('backend.admin.role.create') }}" class="tooltips" data-container="body" data-placement="{{ app()->isLocale('ar') ? 'left' : 'right' }}" data-original-title="{{ trans('message.new_role') }}">
         <i class="icon-plus"></i> {{ trans('general.new_role') }}</a>
