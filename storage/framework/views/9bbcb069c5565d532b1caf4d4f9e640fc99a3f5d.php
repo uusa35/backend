@@ -94,7 +94,7 @@
     </a>
     <ul class="sub-menu">
         <li class="nav-item ">
-            <a href="<?php echo e(route('backend.coupon.index')); ?>" class="nav-link nav-toggle">
+            <a href="<?php echo e(route('backend.admin.coupon.index')); ?>" class="nav-link nav-toggle">
                 <i class="fa fa-fw fa-cc-discover"></i>
                 <span class="title"><?php echo e(trans('general.coupons')); ?></span>
                 <span class="arrow"></span>

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend;
+namespace App\Http\Controllers\Backend\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Coupon;
@@ -59,7 +59,7 @@ class CouponController extends Controller
 
         $coupon = Coupon::create($request->request->all());
         if ($coupon) {
-            return redirect()->route('backend.coupon.index')->with('success', 'coupon saved');
+            return redirect()->route('backend.admin.coupon.index')->with('success', 'coupon saved');
         }
         return view('backend.modules.coupon.create')->with('error', 'not saved');
     }
@@ -107,12 +107,12 @@ class CouponController extends Controller
         ]);
 
         if ($validate->fails()) {
-            return redirect()->route('backend.coupon.edit', $id)->withErrors($validate);
+            return redirect()->route('backend.admin.coupon.edit', $id)->withErrors($validate);
         }
 
         $updated = Coupon::whereId($id)->first()->update($request->all());
         if ($updated) {
-            return redirect()->route('backend.coupon.index')->with('success', 'coupon updated');
+            return redirect()->route('backend.admin.coupon.index')->with('success', 'coupon updated');
         }
         return view('backend.modules.coupon.create')->with('error', 'not not updated');
     }
@@ -128,7 +128,7 @@ class CouponController extends Controller
         $element = Coupon::whereId($id)->first();
 
         if ($element->forceDelete()) {
-            return redirect()->route('backend.coupon.index')->with('success', 'coupon deleted');
+            return redirect()->route('backend.admin.coupon.index')->with('success', 'coupon deleted');
         }
         return redirect()->back()->with('error', 'coupon not deleted');
     }

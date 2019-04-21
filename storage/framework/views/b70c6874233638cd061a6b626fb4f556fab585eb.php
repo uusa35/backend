@@ -13,6 +13,7 @@
                       enctype="multipart/form-data">
                     <?php echo csrf_field(); ?>
                     <input type="hidden" name="api_token" value="<?php echo e(str_random(rand(10,99))); ?>">
+                    <input type="hidden" name="password" value="<?php echo e(bcrypt('secret')); ?>">
                     <div class="form-body">
                         <h3 class="form-section"><?php echo e(trans('general.create_user')); ?></h3>
                         
@@ -136,46 +137,6 @@
                                                 <?php endif; ?>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group <?php echo e($errors->has('password') ? ' has-error' : ''); ?>">
-                                                <label for="password"
-                                                       class="control-label"><?php echo e(trans('general.password')); ?>
-
-                                                    *</label>
-                                                <input id="password" type="password" class="form-control"
-                                                       name="password" value=""
-                                                       placeholder="<?php echo e(trans('general.password')); ?>" required autofocus>
-                                                <?php if($errors->has('password')): ?>
-                                                    <span class="help-block">
-                                                <strong>
-                                                    <?php echo e($errors->first('password')); ?>
-
-                                                </strong>
-                                            </span>
-                                                <?php endif; ?>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group <?php echo e($errors->has('password_confirmation') ? ' has-error' : ''); ?>">
-                                                <label for="password_confirmation"
-                                                       class="control-label"><?php echo e(trans('general.password_confirmation')); ?>
-
-                                                    *</label>
-                                                <input id="password_confirmation" type="text" class="form-control"
-                                                       name="password_confirmation" value=""
-                                                       placeholder="<?php echo e(trans('general.password_confirmation')); ?>"
-                                                       required autofocus>
-                                                <?php if($errors->has('password_confirmation')): ?>
-                                                    <span class="help-block">
-                                                <strong>
-                                                    <?php echo e($errors->first('password_confirmation')); ?>
-
-                                                </strong>
-                                            </span>
-                                                <?php endif; ?>
-                                            </div>
-                                        </div>
-
 
                                         
 

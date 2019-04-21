@@ -8,7 +8,7 @@
     <div class="portlet-body">
         @include('backend.partials._admin_instructions',['title' => trans('general.coupons') ,'message' => trans('message.admin_coupons_message')])
         <div class="portlet-body form">
-            <form class="horizontal-form" role="form" method="POST" action="{{ route('backend.coupon.store') }}" enctype="multipart/form-data">
+            <form class="horizontal-form" role="form" method="POST" action="{{ route('backend.admin.coupon.store') }}" enctype="multipart/form-data">
                 @csrf
                 <div class="form-body">
                     <h3 class="form-section">{{ trans('general.create_coupon') }}</h3>

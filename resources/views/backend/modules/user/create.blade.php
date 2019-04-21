@@ -129,24 +129,6 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group {{ $errors->has('password') ? ' has-error' : '' }}">
-                                                <label for="password"
-                                                       class="control-label">{{ trans('general.password') }}
-                                                    *</label>
-                                                <input id="password" type="password" class="form-control"
-                                                       name="password" value=""
-                                                       placeholder="{{ trans('general.password') }}" required autofocus>
-                                                @if ($errors->has('password'))
-                                                    <span class="help-block">
-                                                <strong>
-                                                    {{ $errors->first('password') }}
-                                                </strong>
-                                            </span>
-                                                @endif
-                                            </div>
-                                        </div>
-
 
                                         {{-- email + mobile --}}
 
