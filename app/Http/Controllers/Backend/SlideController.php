@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Models\Product;
+use App\Models\Service;
 use App\Models\Slide;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -26,10 +27,17 @@ class SlideController extends Controller
             if ($validate->fails()) {
                 return redirect()->back()->withErrors($validate->errors());
             }
-            $products = Product::active()->where(['user_id' => auth()->id()])->whereHas('slides', function ($q) {
-                return $q->active();
-            })->with('slides')->get();
-            $elements = $products->slides->get();
+            if (request('slideble_type') === 'product') {
+                $products = Product::active()->where(['user_id' => auth()->id()])->whereHas('slides', function ($q) {
+                    return $q->active();
+                })->with('slides')->get();
+                $elements = $products->pluck('slides')->unique()->flatten();
+            } elseif (request('slidable_type' === 'service')) {
+                $services = Service::active()->where(['user_id' => auth()->id()])->whereHas('slides', function ($q) {
+                    return $q->active();
+                })->with('slides')->get();
+                $elements = $services->pluck('slides')->unique()->flatten();
+            }
         }
         return view('backend.modules.slide.index', compact('elements'));
     }
@@ -41,6 +49,13 @@ class SlideController extends Controller
      */
     public function create()
     {
+        $validate = validator(request()->all(), [
+            'slidable_id' => 'required|numeric',
+            'slidable_type' => 'required|alpha'
+        ]);
+        if ($validate->fails()) {
+            return redirect()->back()->withErrors($validate->errors());
+        }
         return view('backend.modules.slide.create');
     }
 

@@ -454,7 +454,6 @@
         {{--</li>--}}
     </ul>
 </li>
-
 <li class="nav-item {{ activeItem('slide') }}">
     <a href="{{ route('backend.slide.index') }}" class="nav-link ">
         <i class="fa fa-fw fa-file-image-o"></i>

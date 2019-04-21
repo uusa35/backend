@@ -455,7 +455,6 @@
         
     </ul>
 </li>
-
 <li class="nav-item <?php echo e(activeItem('slide')); ?>">
     <a href="<?php echo e(route('backend.slide.index')); ?>" class="nav-link ">
         <i class="fa fa-fw fa-file-image-o"></i>
