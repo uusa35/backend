@@ -4,7 +4,7 @@
         <div class="portlet-body form">
             <form role="form" method="post"
                   class="horizontal-form"
-                  action="<?php echo e(route('backend.setting.update',$element->id)); ?>" enctype="multipart/form-data">
+                  action="<?php echo e(route('backend.admin.setting.update',$element->id)); ?>" enctype="multipart/form-data">
                 <?php echo e(csrf_field()); ?>
 
                 <input type="hidden" name="_method" value="patch">

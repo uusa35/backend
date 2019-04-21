@@ -5,8 +5,8 @@
         <div class="portlet-body form">
             <form role="form" method="post"
                   class="horizontal-form"
-                  action="{{ route('backend.setting.update',$element->id) }}" enctype="multipart/form-data">
-                {{ csrf_field() }}
+                  action="{{ route('backend.admin.setting.update',$element->id) }}" enctype="multipart/form-data">
+                @csrf
                 <input type="hidden" name="_method" value="patch">
                 <div class="form-body">
                     <div class="row">
