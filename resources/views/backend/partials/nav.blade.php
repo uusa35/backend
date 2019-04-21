@@ -125,46 +125,6 @@
                         </a>
                     </li>
 
-                    <!-- END LANGUAGE BAR -->
-                    @can('onlyAdmin')
-                        <li class="dropdown dropdown-extended dropdown-inbox" id="header_inbox_bar">
-                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
-                               data-close-others="true">
-                                <i class="icon-bell"></i>
-                                <span class="badge badge-default"> {{ $totalActiveClientOnProgressOrders->count() }} </span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="external">
-                                    <a href="{{ route('backend.admin.order.index',['is_complete' => false]) }}">{{ trans('general.active_paid_on_progress_orders') }}</a>
-                                </li>
-                                <li>
-                                    <ul class="dropdown-menu-list scroller" style="height: 275px;"
-                                        data-handle-color="#637283">
-                                        @foreach($totalActiveClientOnProgressOrders as $element)
-                                            <li>
-                                                <a href="{{ route('backend.order.show',$element->id) }}">
-                                            <span class="photo">
-                                                @if($element->images->isNotEmpty())
-                                                    <img src="{{ asset(env('THUMBNAIL').$element->images->first()->image) }}"
-                                                         class="img-circle" alt="">
-                                                @else
-                                                    <img src="{{ asset(env('THUMBNAIL').$settings->logo) }}"
-                                                         class="img-circle" alt="">
-                                                @endif
-                                            </span>
-                                                    <span class="subject">
-                                                <span class="from"> {{ str_limit($element->title,30) }} </span>
-                                                <span class="time">{{ $element->created_at->diffForHumans() }} </span>
-                                            </span>
-                                                    <span class="message"> {{ str_limit($element->name,20) }} </span>
-                                                </a>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                    @endcan
                     {{--<!-- END INBOX DROPDOWN -->--}}
                     {{--<!-- BEGIN TODO DROPDOWN -->--}}
                     {{--<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->--}}
@@ -294,16 +254,6 @@
                 <!-- END TODO DROPDOWN -->
                     <!-- BEGIN USER LOGIN DROPDOWN -->
                     <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-                    @if(auth()->user()->isClientOrAbove)
-                        <li class="dropdown dropdown-user"
-                            style="background-color: white; padding-left: 10px; padding-right: 10px;">
-                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
-                               data-close-others="true">
-                            <span class="username username-hide-on-mobile"> {{ trans('general.balance') }}
-                                : {{ auth()->user()->balance->points}} {{ trans('general.points') }}</span>
-                            </a>
-                        </li>
-                    @endif
                     <li class="dropdown dropdown-user">
                         <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
                            data-close-others="true">
@@ -320,15 +270,6 @@
                                     <span class="username username-hide-on-mobile"> {{ str_limit(auth()->user()->name,5) }}</span><br>
                                 </a>
                             </li>
-                            @if(auth()->user()->balance && auth()->user()->isClientOrAbove)
-                                <li>
-                                    <a href="#">
-                                    <span class="username username-hide-on-mobile"> <i class="fa fa-fw fa-list-ol"></i>{{ trans('general.balance') }}
-                                        : {{ auth()->user()->balance->points}} {{ trans('general.points') }}</span>
-                                    </a>
-                                </li>
-                                <li class="divider"></li>
-                            @endif
                             <li>
                                 <a href="{{ route('frontend.home') }}">
                                     <i class="icon-home"></i>{{ trans('general.home') }}</a>
@@ -375,6 +316,10 @@
                                 <li>
                                     <a href="{{ route('backend.reset.password',['email' => auth()->user()->email]) }}">
                                         <i class="fa fa-fw fa-edit"></i> {{ trans('general.reset_password') }}</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('backend.user.edit',auth()->id()) }}">
+                                        <i class="fa fa-fw fa-user-circle"></i> {{ trans('general.edit_my_profile') }}</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('backend.user.show',auth()->id()) }}">

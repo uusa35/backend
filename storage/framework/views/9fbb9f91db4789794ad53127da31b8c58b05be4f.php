@@ -6,7 +6,6 @@
                   action="<?php echo e(route('backend.user.update', $element->id)); ?>" enctype="multipart/form-data">
                 <?php echo csrf_field(); ?>
                 <input type="hidden" name="_method" value="put">
-                <input type="hidden" name="api_token" value="<?php echo e(str_random(rand(10,99))); ?>">
                 <div class="form-body">
                     <h3 class="form-section">Create User</h3>
                     
