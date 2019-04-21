@@ -78,7 +78,6 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
     Route::resource('image', 'ImageController');
     Route::resource('tag', 'TagController');
     Route::resource('product', 'ProductController');
-    Route::resource('coupon', 'CouponController');
     Route::resource('package', 'ShipmentPackageController');
     Route::resource('collection', 'CollectionController');
     Route::get('trashed', 'ProductController@trashed')->name('product.trashed');

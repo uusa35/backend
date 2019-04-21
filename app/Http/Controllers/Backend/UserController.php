@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Backend\UserStore;
 use App\Models\User;
 use Illuminate\Http\Request;
-use App\Http\Requests;
 use Illuminate\Support\Facades\Input;
 
 class UserController extends Controller
@@ -17,7 +17,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $this->authorize('index','user');
+        $this->authorize('index', 'user');
         if (auth()->user()->isAdminOrAbove) {
             $elements = User::all();
         } else {
@@ -42,20 +42,14 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserStore $request)
     {
-        $validator = validator($request->request->all(), [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
-            'mobile' => 'required',
-            'country' => 'required|alpha',
-        ]);
-        if ($validator->fails()) {
-            return redirect()->back()->withInput(Input::all())->withErrors($validator);
-        }
-        $element = User::create($request->except('password_confirmation'));
+        $element = User::create($request->except('password_confirmation', 'image', 'bg', 'banner', 'path'));
         if ($element) {
+            $request->hasFile('image') ? $this->saveMimes($element, $request, ['image'], ['1080', '1440'], true) : null;
+            $request->hasFile('bg') ? $this->saveMimes($element, $request, ['bg'], ['1080', '1440'], true) : null;
+            $request->hasFile('banner') ? $this->saveMimes($element, $request, ['banner'], ['1080', '1440'], true) : null;
+            $request->hasFile('path') ? $this->saveFile($request, $element) : null;
             return redirect()->route('backend.user.index')->with('success', 'user created');
         }
         return redirect()->route('backend.user.create')->with('error', 'user not created');

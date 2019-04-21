@@ -745,7 +745,9 @@ return array(
     'main_details' => 'تفاصيل أساسية',
     'no' => 'no',
     'yes' => 'yes',
-    'main_details' => 'main_details'
+    'main_details' => 'main_details',
+    'edit_my_profile' => 'تعديل الملف الشخصي',
+    'merchant_id' => 'رقم التاجر'
 
 
 );

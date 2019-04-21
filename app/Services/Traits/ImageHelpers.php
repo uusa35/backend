@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Services\Traits;
 
 /**
@@ -264,8 +265,7 @@ trait ImageHelpers
                                 $img->resize($dimensions[0], $dimensions[1]);
                             }
                             $img->save(storage_path('app/public/uploads/images/' . $value . '/' . $imagePath));
-                        }
-                        elseif ($value === 'medium') {
+                        } elseif ($value === 'medium') {
                             if ($ratio) {
                                 $img->resize($dimensions[0], null, function ($constraint) {
                                     $constraint->aspectRatio();
@@ -286,11 +286,24 @@ trait ImageHelpers
                             $img->save(storage_path('app/public/uploads/images/' . $value . '/' . $imagePath));
                         }
                     }
-                    $newImage = \App\Models\Image::create(['user_id' => $model->id,'name' => $imagePath]);
+                    $newImage = \App\Models\Image::create(['user_id' => $model->id, 'name' => $imagePath]);
                     $newImage ? Storage::delete('public/uploads/images/' . $imagePath) : null;
                 }
             } else {
-                 return new \Excption('no values [] !!');
+                return new \Excption('no values [] !!');
+            }
+        } catch (\Exception $e) {
+            return $e->getMessage();
+        }
+    }
+
+    public function saveFile(Request $request, $element)
+    {
+        try {
+            if ($request->hasFile('path')) {
+                $path = $request->file('path')->store('public/uploads/files');
+                $path = str_replace('public/uploads/files/', '', $path);
+                $element->update(['path' => $path]);
             }
         } catch (\Exception $e) {
             return $e->getMessage();
