@@ -77,15 +77,6 @@
 </li>
 <li class="divider"></li>
 <li>
-    <a href="<?php echo e(route('backend.admin.questionnaire.create')); ?>" class="tooltips" data-container="body" data-placement="<?php echo e(app()->isLocale('ar') ? 'left' : 'right'); ?>" data-original-title="<?php echo e(trans('message.new_questionnaire')); ?>">
-        <i class="icon-plus"></i> <?php echo e(trans('general.new_questionnaire')); ?></a>
-</li>
-<li>
-    <a href="<?php echo e(route('backend.admin.answer.create')); ?>" class="tooltips" data-container="body" data-placement="<?php echo e(app()->isLocale('ar') ? 'left' : 'right'); ?>" data-original-title="<?php echo e(trans('message.new_answer')); ?>">
-        <i class="icon-plus"></i> <?php echo e(trans('general.new_answer')); ?></a>
-</li>
-<li class="divider"></li>
-<li>
     <a href="<?php echo e(route('backend.admin.role.create')); ?>" class="tooltips" data-container="body" data-placement="<?php echo e(app()->isLocale('ar') ? 'left' : 'right'); ?>" data-original-title="<?php echo e(trans('message.new_role')); ?>">
         <i class="icon-plus"></i> <?php echo e(trans('general.new_role')); ?></a>
 </li>
@@ -110,15 +101,7 @@
         <i class="icon-plus"></i> <?php echo e(trans('general.new_page')); ?></a>
 </li>
 <li>
-    <a href="<?php echo e(route('backend.admin.slide.create')); ?>" class="tooltips" data-container="body" data-placement="<?php echo e(app()->isLocale('ar') ? 'left' : 'right'); ?>" data-original-title="<?php echo e(trans('message.new_slider')); ?>">
-        <i class="icon-plus"></i> <?php echo e(trans('general.new_slider')); ?></a>
-</li>
-<li>
-    <a href="<?php echo e(route('backend.admin.area.create')); ?>" class="tooltips" data-container="body" data-placement="<?php echo e(app()->isLocale('ar') ? 'left' : 'right'); ?>" data-original-title="<?php echo e(trans('message.new_slider')); ?>">
-        <i class="icon-plus"></i> <?php echo e(trans('general.new_area')); ?></a>
-</li>
-<li>
-    <a href="<?php echo e(route('backend.admin.aboutus.create')); ?>" class="tooltips" data-container="body" data-placement="<?php echo e(app()->isLocale('ar') ? 'left' : 'right'); ?>" data-original-title="<?php echo e(trans('message.new_slider')); ?>">
-        <i class="icon-plus"></i> <?php echo e(trans('general.new_aboutus')); ?></a>
+    <a href="<?php echo e(route('backend.slide.create',['slidable_id' => 1, 'slidable_type' => 'user'])); ?>" class="tooltips" data-container="body" data-placement="<?php echo e(app()->isLocale('ar') ? 'left' : 'right'); ?>" data-original-title="<?php echo e(trans('message.new_slider')); ?>">
+        <i class="icon-plus"></i> <?php echo e(trans('general.new_slide_for_home_page')); ?></a>
 </li>
 <?php endif; ?>

@@ -170,13 +170,6 @@
                 <span class="arrow"></span>
             </a>
         </li>
-        <li class="nav-item <?php echo e(activeItem('slide')); ?>">
-            <a href="<?php echo e(route('backend.slide.index')); ?>" class="nav-link ">
-                <i class="fa fa-fw fa-file-image-o"></i>
-                <span class="title"><?php echo e(trans('general.slides')); ?></span>
-                <span class="arrow"></span>
-            </a>
-        </li>
         <li class="nav-item ">
             <a href="<?php echo e(route('backend.package.index')); ?>" class="nav-link ">
                 <i class="fa fa-fw fa-file-image-o"></i>
@@ -467,4 +460,11 @@
         
         
     </ul>
+</li>
+<li class="nav-item <?php echo e(activeItem('slide')); ?>">
+    <a href="<?php echo e(route('backend.slide.index')); ?>" class="nav-link ">
+        <i class="fa fa-fw fa-file-image-o"></i>
+        <span class="title"><?php echo e(trans('general.slides')); ?></span>
+        <span class="arrow"></span>
+    </a>
 </li>

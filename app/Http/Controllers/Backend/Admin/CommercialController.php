@@ -66,9 +66,9 @@ class CommercialController extends Controller
                 'caption_ar' => $request->caption_ar,
                 'order' => $request->order,
             ]);
-            return redirect()->back()->with('success', 'commercial saved');
+            return redirect()->back()->with('success',  trans('general.commercial_added'));
         }
-        return redirect()->back()->with('error', 'commercial not saved')->withInputs();
+        return redirect()->back()->with('error',  trans('general.commercial_not_added'))->withInputs();
     }
 
     /**
