@@ -58,9 +58,9 @@ class QuestionController extends Controller
         }
         $element = Question::create($request->all());
         if ($element) {
-            return redirect()->back()->with('success', 'question created successfully');
+            return redirect()->back()->with('success', trans('general.question_added'));
         }
-        return redirect()->back()->with('error', 'question is not created');
+        return redirect()->back()->with('error', trans('general.question_not_added'));
     }
 
     /**

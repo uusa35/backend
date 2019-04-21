@@ -64,10 +64,10 @@ class AnswerController extends Controller
                 if ($request->has('questions')) {
                     $element->questions()->sync($request->questions);
                 }
-                return redirect()->back()->with('success', 'answered created successfully');
+                return redirect()->back()->with('success', trans('general.answer_added'));
             }
         }
-        return redirect()->back()->with('error', 'answered is not created');
+        return redirect()->back()->with('error', trans('general.answer_not_added'));
     }
 
     /**

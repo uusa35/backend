@@ -94,7 +94,7 @@
     </a>
     <ul class="sub-menu">
         <li class="nav-item ">
-            <a href="<?php echo e(route('backend.coupon.index')); ?>" class="nav-link nav-toggle">
+            <a href="<?php echo e(route('backend.admin.coupon.index')); ?>" class="nav-link nav-toggle">
                 <i class="fa fa-fw fa-cc-discover"></i>
                 <span class="title"><?php echo e(trans('general.coupons')); ?></span>
                 <span class="arrow"></span>
@@ -323,7 +323,15 @@
         
         
         
+        <li class="nav-item <?php echo e(activeItem('aboutus')); ?>">
+            <a href="<?php echo e(route('backend.admin.aboutus.index')); ?>" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-shopping-bag"></i>
+                <span class="title"><?php echo e(trans('general.aboutus')); ?></span>
+                <span class="arrow"></span>
+            </a>
+        </li>
     </ul>
+
 </li>
 
 <li class="nav-item <?php echo e(activeItem('category')); ?>">
@@ -340,6 +348,16 @@
         <span class="title"><?php echo e(trans('general.countries')); ?></span>
         <span class="arrow"></span>
     </a>
+    <ul class="sub-menu">
+        <li class="nav-item <?php echo e(activeItem('area')); ?>">
+            <a href="<?php echo e(route('backend.admin.area.index')); ?>" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-shopping-bag"></i>
+                <span class="title"><?php echo e(trans('general.areas')); ?></span>
+                <span class="arrow"></span>
+            </a>
+        </li>
+
+    </ul>
 </li>
 
 <li class="nav-item <?php echo e(activeItem('currency')); ?>">
@@ -366,20 +384,8 @@
         <span class="arrow"></span>
     </a>
 </li>
-<li class="nav-item <?php echo e(activeItem('area')); ?>">
-    <a href="<?php echo e(route('backend.admin.area.index')); ?>" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-shopping-bag"></i>
-        <span class="title"><?php echo e(trans('general.areas')); ?></span>
-        <span class="arrow"></span>
-    </a>
-</li>
-<li class="nav-item <?php echo e(activeItem('aboutus')); ?>">
-    <a href="<?php echo e(route('backend.admin.aboutus.index')); ?>" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-shopping-bag"></i>
-        <span class="title"><?php echo e(trans('general.aboutus')); ?></span>
-        <span class="arrow"></span>
-    </a>
-</li>
+
+
 <li class="nav-item <?php echo e(activeItem('order')); ?>">
     <a href="<?php echo e(route('backend.admin.order.index')); ?>" class="nav-link nav-toggle">
         <i class="fa fa-fw fa-money"></i>

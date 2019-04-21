@@ -16,7 +16,7 @@
                     <div class="portlet box blue ">
                         <div class="portlet-title">
                             <div class="caption">
-                                <i class="fa fa-gift"></i> {{ trans('general.survey_main_details') }}
+                                <i class="fa fa-gift"></i> {{ trans('general.main_details') }}
                             </div>
                         </div>
                         <div class="portlet-body form">
@@ -25,7 +25,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
                                             <label for="name" class="control-label">{{ trans('general.name') }} *</label>
-                                            <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="{{ trans('general.name') }}" required autofocus>
+                                            <input id="name" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.name') }}" name="name" value="{{ old('name') }}" placeholder="{{ trans('general.name') }}" required autofocus>
                                             @if ($errors->has('name'))
                                             <span class="help-block">
                                                 <strong>
@@ -38,7 +38,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group {{ $errors->has('slug_ar') ? ' has-error' : '' }}">
                                             <label for="slug_ar" class="control-label">{{ trans('general.slug_ar') }}*</label>
-                                            <input id="slug_ar" type="text" class="form-control" name="slug_ar" value="{{ old('slug_ar') }}" placeholder="{{ trans('general.slug_ar') }}" required autofocus>
+                                            <input id="slug_ar" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.slug_ar') }}" name="slug_ar" value="{{ old('slug_ar') }}" placeholder="{{ trans('general.slug_ar') }}" required autofocus>
                                             @if ($errors->has('slug_ar'))
                                             <span class="help-block">
                                                 <strong>
@@ -51,7 +51,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group{{ $errors->has('slug_en') ? ' has-error' : '' }}">
                                             <label for="slug_en" class="control-label">{{ trans('general.slug_en') }}*</label>
-                                            <input id="slug_en" type="text" class="form-control" name="slug_en" value="{{ old('slug_en') }}" placeholder="{{ trans('general.slug_en') }}" required autofocus>
+                                            <input id="slug_en" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.slug_en') }}" name="slug_en" value="{{ old('slug_en') }}" placeholder="{{ trans('general.slug_en') }}" required autofocus>
                                             @if ($errors->has('slug_en'))
                                             <span class="help-block">
                                                 <strong>
@@ -73,19 +73,19 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="description" class="control-label">{{ trans('general.description_ar') }}</label>
-                                            <textarea type="text" class="form-control" id="description_ar" name="description_ar" aria-multiline="true" maxlength="500" {{ old('description_ar') }}></textarea>
+                                            <textarea type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.description_ar') }}" id="description_ar" name="description_ar" aria-multiline="true" maxlength="500" {{ old('description_ar') }}></textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="description" class="control-label">{{ trans('general.description_en') }}</label>
-                                            <textarea type="text" class="form-control" id="description_en" name="description_en" aria-multiline="true" maxlength="500">{{ old('description_en') }}</textarea>
+                                            <textarea type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.description_en') }}" id="description_en" name="description_en" aria-multiline="true" maxlength="500">{{ old('description_en') }}</textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group{{ $errors->has('order') ? ' has-error' : '' }}">
                                             <label for="order" class="control-label">{{ trans('general.order') }} *</label>
-                                            <input id="order" type="text" class="form-control" name="order" value="{{ old('order') }}" placeholder="{{ trans('general.order') }}" maxlength="2" autofocus>
+                                            <input id="order" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.order') }}" name="order" value="{{ old('order') }}" placeholder="{{ trans('general.order') }}" maxlength="2" autofocus>
                                             @if ($errors->has('order'))
                                             <span class="help-block">
                                                 <strong>
@@ -104,7 +104,7 @@
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label class="control-label">{{ trans('general.questions_list') }}*</label>
-                                            <select multiple="multiple" class="multi-select" id="my_multi_select1" name="questions[]">
+                                            <select multiple="multiple" class="multi-select tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.questions') }}" id="my_multi_select1" name="questions[]">
                                                 @foreach($questions->where('active', true) as $question)
                                                 <option value="#" disabled="disabled">Question</option>
                                                 <option value="{{ $question->id }}">{{ $question->name_ar }}</option>
@@ -129,7 +129,7 @@
                     <div class="portlet box blue ">
                         <div class="portlet-title">
                             <div class="caption">
-                                <i class="fa fa-gift"></i> {{ trans('general.survey_attributes_details') }}
+                                <i class="fa fa-gift"></i> {{ trans('general.more_details') }}
                             </div>
                         </div>
                         <div class="portlet-body form">
@@ -138,48 +138,48 @@
                                     <hr>
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label class="control-label sbold">{{ trans('general.active') }}</label></br>
+                                            <label class="control-label sbold tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.active') }}">{{ trans('general.active') }}</label></br>
                                             <label class="radio-inline">
-                                                <input type="radio" name="active" id="optionsRadios3" value="1"> {{ trans('general.active') }}</label>
+                                                <input type="radio" name="active" id="optionsRadios3" value="1"> {{ trans('general.yes') }}</label>
                                             <label class="radio-inline">
-                                                <input type="radio" name="active" id="optionsRadios4" checked value="0"> {{ trans('general.not_active') }}</label>
+                                                <input type="radio" name="active" id="optionsRadios4" checked value="0"> {{ trans('general.no') }}</label>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label class="control-label sbold"> {{ trans('general.is_home') }}</label></br>
+                                            <label class="control-label sbold tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.is_home') }}"> {{ trans('general.is_home') }}</label></br>
                                             <label class="radio-inline">
-                                                <input type="radio" name="is_home" id="optionsRadios3" value="1"> {{ trans('general.is_home') }}</label>
+                                                <input type="radio" name="is_home" id="optionsRadios3" value="1"> {{ trans('general.yes') }}</label>
                                             <label class="radio-inline">
-                                                <input type="radio" name="is_home" id="optionsRadios4" checked value="0"> {{ trans('general.not_is_home') }}</label>
+                                                <input type="radio" name="is_home" id="optionsRadios4" checked value="0"> {{ trans('general.no') }}</label>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label class="control-label sbold"> {{ trans('general.is_desktop') }}</label></br>
+                                            <label class="control-label sbold tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.is_desktop') }}"> {{ trans('general.is_desktop') }}</label></br>
                                             <label class="radio-inline">
-                                                <input type="radio" name="is_desktop" id="optionsRadios3" value="1"> {{ trans('general.is_desktop') }}</label>
+                                                <input type="radio" name="is_desktop" id="optionsRadios3" value="1"> {{ trans('general.yes') }}</label>
                                             <label class="radio-inline">
-                                                <input type="radio" name="is_desktop" id="optionsRadios4" checked value="0">{{ trans('general.not_is_desktop') }}</label>
+                                                <input type="radio" name="is_desktop" id="optionsRadios4" checked value="0">{{ trans('general.no') }}</label>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label class="control-label sbold">{{ trans('general.is_footer') }}</label></br>
+                                            <label class="control-label sbold tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.is_footer') }}">{{ trans('general.is_footer') }}</label></br>
                                             <label class="radio-inline">
-                                                <input type="radio" name="is_footer" id="optionsRadios7" checked value="1"> {{ trans('general.is_footer') }}</label>
+                                                <input type="radio" name="is_footer" id="optionsRadios7" checked value="1"> {{ trans('general.yes') }}</label>
                                             <label class="radio-inline">
-                                                <input type="radio" name="is_footer" id="optionsRadios8" value="0">{{ trans('general.not_is_footer') }}</label>
+                                                <input type="radio" name="is_footer" id="optionsRadios8" value="0">{{ trans('general.no') }}</label>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-actions right">
                                     <a class="btn btn-warning" data-toggle="modal" href="#" data-target="#new-question" data-title="New Question/Answer" {{--data-content="Are you sure you want to delete {{ $element->name  }}? "--}}
-                                {{--data-form_id="delete-{{ $element->id }}" --}}>Create New Question/Answer</a>
-                                    {{--<button type="button" class="btn default">Cancel</button>--}}
-                                    <a href="{!! url()->previous() !!}" class="btn default">Cancel</a>
+                                {{--data-form_id="delete-{{ $element->id }}" --}}> {{ trans('general.new_question') }}</a>
+                                    {{--<button type="button" class="btn default"> {{ trans('general.cancel') }}</button>--}}
+                                    <a href="{!! url()->previous() !!}" class="btn default"> {{ trans('general.cancel') }}</a>
                                     <button type="submit" class="btn btn-info">
-                                        <i class="fa fa-save"></i> Save Survey
+                                        <i class="fa fa-save"></i> {{ trans('general.save_survey') }}
                                     </button>
                                 </div>
                             </div>

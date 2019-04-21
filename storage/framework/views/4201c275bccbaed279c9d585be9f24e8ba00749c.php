@@ -125,46 +125,6 @@
                         </a>
                     </li>
 
-                    <!-- END LANGUAGE BAR -->
-                    <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('onlyAdmin')): ?>
-                        <li class="dropdown dropdown-extended dropdown-inbox" id="header_inbox_bar">
-                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
-                               data-close-others="true">
-                                <i class="icon-bell"></i>
-                                <span class="badge badge-default"> <?php echo e($totalActiveClientOnProgressOrders->count()); ?> </span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="external">
-                                    <a href="<?php echo e(route('backend.admin.order.index',['is_complete' => false])); ?>"><?php echo e(trans('general.active_paid_on_progress_orders')); ?></a>
-                                </li>
-                                <li>
-                                    <ul class="dropdown-menu-list scroller" style="height: 275px;"
-                                        data-handle-color="#637283">
-                                        <?php $__currentLoopData = $totalActiveClientOnProgressOrders; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $element): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                            <li>
-                                                <a href="<?php echo e(route('backend.order.show',$element->id)); ?>">
-                                            <span class="photo">
-                                                <?php if($element->images->isNotEmpty()): ?>
-                                                    <img src="<?php echo e(asset(env('THUMBNAIL').$element->images->first()->image)); ?>"
-                                                         class="img-circle" alt="">
-                                                <?php else: ?>
-                                                    <img src="<?php echo e(asset(env('THUMBNAIL').$settings->logo)); ?>"
-                                                         class="img-circle" alt="">
-                                                <?php endif; ?>
-                                            </span>
-                                                    <span class="subject">
-                                                <span class="from"> <?php echo e(str_limit($element->title,30)); ?> </span>
-                                                <span class="time"><?php echo e($element->created_at->diffForHumans()); ?> </span>
-                                            </span>
-                                                    <span class="message"> <?php echo e(str_limit($element->name,20)); ?> </span>
-                                                </a>
-                                            </li>
-                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                    <?php endif; ?>
                     
                     
                     
@@ -294,17 +254,6 @@
                 <!-- END TODO DROPDOWN -->
                     <!-- BEGIN USER LOGIN DROPDOWN -->
                     <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-                    <?php if(auth()->user()->isClientOrAbove): ?>
-                        <li class="dropdown dropdown-user"
-                            style="background-color: white; padding-left: 10px; padding-right: 10px;">
-                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
-                               data-close-others="true">
-                            <span class="username username-hide-on-mobile"> <?php echo e(trans('general.balance')); ?>
-
-                                : <?php echo e(auth()->user()->balance->points); ?> <?php echo e(trans('general.points')); ?></span>
-                            </a>
-                        </li>
-                    <?php endif; ?>
                     <li class="dropdown dropdown-user">
                         <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
                            data-close-others="true">
@@ -322,16 +271,6 @@
                                     <span class="username username-hide-on-mobile"> <?php echo e(str_limit(auth()->user()->name,5)); ?></span><br>
                                 </a>
                             </li>
-                            <?php if(auth()->user()->balance && auth()->user()->isClientOrAbove): ?>
-                                <li>
-                                    <a href="#">
-                                    <span class="username username-hide-on-mobile"> <i class="fa fa-fw fa-list-ol"></i><?php echo e(trans('general.balance')); ?>
-
-                                        : <?php echo e(auth()->user()->balance->points); ?> <?php echo e(trans('general.points')); ?></span>
-                                    </a>
-                                </li>
-                                <li class="divider"></li>
-                            <?php endif; ?>
                             <li>
                                 <a href="<?php echo e(route('frontend.home')); ?>">
                                     <i class="icon-home"></i><?php echo e(trans('general.home')); ?></a>
@@ -382,6 +321,10 @@
                                 <li>
                                     <a href="<?php echo e(route('backend.reset.password',['email' => auth()->user()->email])); ?>">
                                         <i class="fa fa-fw fa-edit"></i> <?php echo e(trans('general.reset_password')); ?></a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo e(route('backend.user.edit',auth()->id())); ?>">
+                                        <i class="fa fa-fw fa-user-circle"></i> <?php echo e(trans('general.edit_my_profile')); ?></a>
                                 </li>
                                 <li>
                                     <a href="<?php echo e(route('backend.user.show',auth()->id())); ?>">

@@ -15,7 +15,7 @@
                     <div class="portlet box blue ">
                         <div class="portlet-title">
                             <div class="caption">
-                                <i class="fa fa-gift"></i> <?php echo e(trans('general.questionnaire_main_details')); ?>
+                                <i class="fa fa-gift"></i> <?php echo e(trans('general.main_details')); ?>
 
                             </div>
                         </div>
@@ -25,7 +25,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group <?php echo e($errors->has('name') ? ' has-error' : ''); ?>">
                                             <label for="name" class="control-label"><?php echo e(trans('general.name')); ?>*</label>
-                                            <input id="name" type="text" class="form-control" name="name" value="<?php echo e(old('name')); ?>" placeholder="<?php echo e(trans('general.name')); ?>" required autofocus>
+                                            <input id="name" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.name')); ?>" name="name" value="<?php echo e(old('name')); ?>" placeholder="<?php echo e(trans('general.name')); ?>" required autofocus>
                                             <?php if($errors->has('name')): ?>
                                             <span class="help-block">
                                                 <strong>
@@ -39,7 +39,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group<?php echo e($errors->has('mobile') ? ' has-error' : ''); ?>">
                                             <label for="mobile" class="control-label"><?php echo e(trans('general.mobile')); ?>*</label>
-                                            <input id="mobile" type="number" class="form-control" name="mobile" value="<?php echo e(old('mobile')); ?>" placeholder="<?php echo e(trans('general.mobile')); ?>" required autofocus>
+                                            <input id="mobile" type="number" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.mobile')); ?>" name="mobile" value="<?php echo e(old('mobile')); ?>" placeholder="<?php echo e(trans('general.mobile')); ?>" required autofocus>
                                             <?php if($errors->has('mobile')): ?>
                                             <span class="help-block">
                                                 <strong>
@@ -55,7 +55,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group <?php echo e($errors->has('email') ? ' has-error' : ''); ?>">
                                             <label for="email" class="control-label"><?php echo e(trans('general.email')); ?>*</label>
-                                            <input id="email" type="text" class="form-control" name="email" value="<?php echo e(old('email')); ?>" placeholder="<?php echo e(trans('general.email')); ?>" required autofocus>
+                                            <input id="email" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.email')); ?>" name="email" value="<?php echo e(old('email')); ?>" placeholder="<?php echo e(trans('general.email')); ?>" required autofocus>
                                             <?php if($errors->has('email')): ?>
                                             <span class="help-block">
                                                 <strong>
@@ -66,15 +66,9 @@
                                             <?php endif; ?>
                                         </div>
                                     </div>
-
-
-
                                 </div>
                             </div>
                         </div>
-
-
-
                     </div>
                 </div>
                 <?php echo $__env->make('backend.partials.forms._btn-group', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

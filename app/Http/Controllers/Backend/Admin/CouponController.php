@@ -59,9 +59,9 @@ class CouponController extends Controller
 
         $coupon = Coupon::create($request->request->all());
         if ($coupon) {
-            return redirect()->route('backend.admin.coupon.index')->with('success', 'coupon saved');
+            return redirect()->route('backend.admin.coupon.index')->with('success', trans('general.coupon_added'));
         }
-        return view('backend.modules.coupon.create')->with('error', 'not saved');
+        return view('backend.modules.coupon.create')->with('error', trans('general.coupon_not_added'));
     }
 
     /**

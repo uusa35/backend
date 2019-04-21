@@ -322,7 +322,15 @@
         {{--</li>--}}
         {{--</ul>--}}
         {{--</li>--}}
+        <li class="nav-item {{ activeItem('aboutus') }}">
+            <a href="{{ route('backend.admin.aboutus.index') }}" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-shopping-bag"></i>
+                <span class="title">{{ trans('general.aboutus') }}</span>
+                <span class="arrow"></span>
+            </a>
+        </li>
     </ul>
+
 </li>
 
 <li class="nav-item {{ activeItem('category') }}">
@@ -339,6 +347,16 @@
         <span class="title">{{ trans('general.countries') }}</span>
         <span class="arrow"></span>
     </a>
+    <ul class="sub-menu">
+        <li class="nav-item {{ activeItem('area') }}">
+            <a href="{{ route('backend.admin.area.index') }}" class="nav-link nav-toggle">
+                <i class="fa fa-fw fa-shopping-bag"></i>
+                <span class="title">{{ trans('general.areas') }}</span>
+                <span class="arrow"></span>
+            </a>
+        </li>
+
+    </ul>
 </li>
 
 <li class="nav-item {{ activeItem('currency') }}">
@@ -365,20 +383,8 @@
         <span class="arrow"></span>
     </a>
 </li>
-<li class="nav-item {{ activeItem('area') }}">
-    <a href="{{ route('backend.admin.area.index') }}" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-shopping-bag"></i>
-        <span class="title">{{ trans('general.areas') }}</span>
-        <span class="arrow"></span>
-    </a>
-</li>
-<li class="nav-item {{ activeItem('aboutus') }}">
-    <a href="{{ route('backend.admin.aboutus.index') }}" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-shopping-bag"></i>
-        <span class="title">{{ trans('general.aboutus') }}</span>
-        <span class="arrow"></span>
-    </a>
-</li>
+
+
 <li class="nav-item {{ activeItem('order') }}">
     <a href="{{ route('backend.admin.order.index') }}" class="nav-link nav-toggle">
         <i class="fa fa-fw fa-money"></i>

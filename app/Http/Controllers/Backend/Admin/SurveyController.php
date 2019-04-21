@@ -59,9 +59,9 @@ class SurveyController extends Controller
         $element = Survey::create($request->except('questions'));
         if ($element) {
             $element->questions()->attach($request->questions);
-            return redirect()->route('backend.survey.index')->with('success', 'survey created successfully');
+            return redirect()->route('backend.admin.survey.index')->with('success', trans('general.survey_added'));
         }
-        return redirect()->back()->with('error', 'survey is not created');
+        return redirect()->back()->with('error', trans('general.survey_not_added'));
     }
 
     /**

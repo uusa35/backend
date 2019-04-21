@@ -16,7 +16,7 @@
                     <div class="portlet box blue ">
                         <div class="portlet-title">
                             <div class="caption">
-                                <i class="fa fa-gift"></i> <?php echo e(trans('general.survey_main_details')); ?>
+                                <i class="fa fa-gift"></i> <?php echo e(trans('general.main_details')); ?>
 
                             </div>
                         </div>
@@ -26,7 +26,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group <?php echo e($errors->has('name') ? ' has-error' : ''); ?>">
                                             <label for="name" class="control-label"><?php echo e(trans('general.name')); ?> *</label>
-                                            <input id="name" type="text" class="form-control" name="name" value="<?php echo e(old('name')); ?>" placeholder="<?php echo e(trans('general.name')); ?>" required autofocus>
+                                            <input id="name" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.name')); ?>" name="name" value="<?php echo e(old('name')); ?>" placeholder="<?php echo e(trans('general.name')); ?>" required autofocus>
                                             <?php if($errors->has('name')): ?>
                                             <span class="help-block">
                                                 <strong>
@@ -40,7 +40,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group <?php echo e($errors->has('slug_ar') ? ' has-error' : ''); ?>">
                                             <label for="slug_ar" class="control-label"><?php echo e(trans('general.slug_ar')); ?>*</label>
-                                            <input id="slug_ar" type="text" class="form-control" name="slug_ar" value="<?php echo e(old('slug_ar')); ?>" placeholder="<?php echo e(trans('general.slug_ar')); ?>" required autofocus>
+                                            <input id="slug_ar" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.slug_ar')); ?>" name="slug_ar" value="<?php echo e(old('slug_ar')); ?>" placeholder="<?php echo e(trans('general.slug_ar')); ?>" required autofocus>
                                             <?php if($errors->has('slug_ar')): ?>
                                             <span class="help-block">
                                                 <strong>
@@ -54,7 +54,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group<?php echo e($errors->has('slug_en') ? ' has-error' : ''); ?>">
                                             <label for="slug_en" class="control-label"><?php echo e(trans('general.slug_en')); ?>*</label>
-                                            <input id="slug_en" type="text" class="form-control" name="slug_en" value="<?php echo e(old('slug_en')); ?>" placeholder="<?php echo e(trans('general.slug_en')); ?>" required autofocus>
+                                            <input id="slug_en" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.slug_en')); ?>" name="slug_en" value="<?php echo e(old('slug_en')); ?>" placeholder="<?php echo e(trans('general.slug_en')); ?>" required autofocus>
                                             <?php if($errors->has('slug_en')): ?>
                                             <span class="help-block">
                                                 <strong>
@@ -77,19 +77,19 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="description" class="control-label"><?php echo e(trans('general.description_ar')); ?></label>
-                                            <textarea type="text" class="form-control" id="description_ar" name="description_ar" aria-multiline="true" maxlength="500" <?php echo e(old('description_ar')); ?>></textarea>
+                                            <textarea type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.description_ar')); ?>" id="description_ar" name="description_ar" aria-multiline="true" maxlength="500" <?php echo e(old('description_ar')); ?>></textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="description" class="control-label"><?php echo e(trans('general.description_en')); ?></label>
-                                            <textarea type="text" class="form-control" id="description_en" name="description_en" aria-multiline="true" maxlength="500"><?php echo e(old('description_en')); ?></textarea>
+                                            <textarea type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.description_en')); ?>" id="description_en" name="description_en" aria-multiline="true" maxlength="500"><?php echo e(old('description_en')); ?></textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group<?php echo e($errors->has('order') ? ' has-error' : ''); ?>">
                                             <label for="order" class="control-label"><?php echo e(trans('general.order')); ?> *</label>
-                                            <input id="order" type="text" class="form-control" name="order" value="<?php echo e(old('order')); ?>" placeholder="<?php echo e(trans('general.order')); ?>" maxlength="2" autofocus>
+                                            <input id="order" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.order')); ?>" name="order" value="<?php echo e(old('order')); ?>" placeholder="<?php echo e(trans('general.order')); ?>" maxlength="2" autofocus>
                                             <?php if($errors->has('order')): ?>
                                             <span class="help-block">
                                                 <strong>
@@ -109,7 +109,7 @@
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label class="control-label"><?php echo e(trans('general.questions_list')); ?>*</label>
-                                            <select multiple="multiple" class="multi-select" id="my_multi_select1" name="questions[]">
+                                            <select multiple="multiple" class="multi-select tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.questions')); ?>" id="my_multi_select1" name="questions[]">
                                                 <?php $__currentLoopData = $questions->where('active', true); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $question): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                 <option value="#" disabled="disabled">Question</option>
                                                 <option value="<?php echo e($question->id); ?>"><?php echo e($question->name_ar); ?></option>
@@ -134,7 +134,7 @@
                     <div class="portlet box blue ">
                         <div class="portlet-title">
                             <div class="caption">
-                                <i class="fa fa-gift"></i> <?php echo e(trans('general.survey_attributes_details')); ?>
+                                <i class="fa fa-gift"></i> <?php echo e(trans('general.more_details')); ?>
 
                             </div>
                         </div>
@@ -144,48 +144,49 @@
                                     <hr>
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label class="control-label sbold"><?php echo e(trans('general.active')); ?></label></br>
+                                            <label class="control-label sbold tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.active')); ?>"><?php echo e(trans('general.active')); ?></label></br>
                                             <label class="radio-inline">
-                                                <input type="radio" name="active" id="optionsRadios3" value="1"> <?php echo e(trans('general.active')); ?></label>
+                                                <input type="radio" name="active" id="optionsRadios3" value="1"> <?php echo e(trans('general.yes')); ?></label>
                                             <label class="radio-inline">
-                                                <input type="radio" name="active" id="optionsRadios4" checked value="0"> <?php echo e(trans('general.not_active')); ?></label>
+                                                <input type="radio" name="active" id="optionsRadios4" checked value="0"> <?php echo e(trans('general.no')); ?></label>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label class="control-label sbold"> <?php echo e(trans('general.is_home')); ?></label></br>
+                                            <label class="control-label sbold tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.is_home')); ?>"> <?php echo e(trans('general.is_home')); ?></label></br>
                                             <label class="radio-inline">
-                                                <input type="radio" name="is_home" id="optionsRadios3" value="1"> <?php echo e(trans('general.is_home')); ?></label>
+                                                <input type="radio" name="is_home" id="optionsRadios3" value="1"> <?php echo e(trans('general.yes')); ?></label>
                                             <label class="radio-inline">
-                                                <input type="radio" name="is_home" id="optionsRadios4" checked value="0"> <?php echo e(trans('general.not_is_home')); ?></label>
+                                                <input type="radio" name="is_home" id="optionsRadios4" checked value="0"> <?php echo e(trans('general.no')); ?></label>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label class="control-label sbold"> <?php echo e(trans('general.is_desktop')); ?></label></br>
+                                            <label class="control-label sbold tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.is_desktop')); ?>"> <?php echo e(trans('general.is_desktop')); ?></label></br>
                                             <label class="radio-inline">
-                                                <input type="radio" name="is_desktop" id="optionsRadios3" value="1"> <?php echo e(trans('general.is_desktop')); ?></label>
+                                                <input type="radio" name="is_desktop" id="optionsRadios3" value="1"> <?php echo e(trans('general.yes')); ?></label>
                                             <label class="radio-inline">
-                                                <input type="radio" name="is_desktop" id="optionsRadios4" checked value="0"><?php echo e(trans('general.not_is_desktop')); ?></label>
+                                                <input type="radio" name="is_desktop" id="optionsRadios4" checked value="0"><?php echo e(trans('general.no')); ?></label>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label class="control-label sbold"><?php echo e(trans('general.is_footer')); ?></label></br>
+                                            <label class="control-label sbold tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.is_footer')); ?>"><?php echo e(trans('general.is_footer')); ?></label></br>
                                             <label class="radio-inline">
-                                                <input type="radio" name="is_footer" id="optionsRadios7" checked value="1"> <?php echo e(trans('general.is_footer')); ?></label>
+                                                <input type="radio" name="is_footer" id="optionsRadios7" checked value="1"> <?php echo e(trans('general.yes')); ?></label>
                                             <label class="radio-inline">
-                                                <input type="radio" name="is_footer" id="optionsRadios8" value="0"><?php echo e(trans('general.not_is_footer')); ?></label>
+                                                <input type="radio" name="is_footer" id="optionsRadios8" value="0"><?php echo e(trans('general.no')); ?></label>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-actions right">
                                     <a class="btn btn-warning" data-toggle="modal" href="#" data-target="#new-question" data-title="New Question/Answer" 
-                                >Create New Question/Answer</a>
+                                > <?php echo e(trans('general.new_question')); ?></a>
                                     
-                                    <a href="<?php echo url()->previous(); ?>" class="btn default">Cancel</a>
+                                    <a href="<?php echo url()->previous(); ?>" class="btn default"> <?php echo e(trans('general.cancel')); ?></a>
                                     <button type="submit" class="btn btn-info">
-                                        <i class="fa fa-save"></i> Save Survey
+                                        <i class="fa fa-save"></i> <?php echo e(trans('general.save_survey')); ?>
+
                                     </button>
                                 </div>
                             </div>

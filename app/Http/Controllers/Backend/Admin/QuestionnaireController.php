@@ -37,7 +37,11 @@ class QuestionnaireController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $element = Questionnaire::create($request->all());
+        if ($element) {
+            return redirect()->route('backend.admin.questionnaire.index')->with('success', trans('general.questionnaire_added'));
+        }
+        return redirect()->back()->with('error', trans('general.questionnaire_not_added'));
     }
 
     /**
@@ -86,5 +90,3 @@ class QuestionnaireController extends Controller
         //
     }
 }
-
- 

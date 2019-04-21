@@ -16,7 +16,7 @@
                     <div class="portlet box blue ">
                         <div class="portlet-title">
                             <div class="caption">
-                                <i class="fa fa-gift"></i> {{ trans('general.questionnaire_main_details') }}
+                                <i class="fa fa-gift"></i> {{ trans('general.main_details') }}
                             </div>
                         </div>
                         <div class="portlet-body form">
@@ -25,7 +25,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
                                             <label for="name" class="control-label">{{ trans('general.name') }}*</label>
-                                            <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="{{ trans('general.name') }}" required autofocus>
+                                            <input id="name" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.name') }}" name="name" value="{{ old('name') }}" placeholder="{{ trans('general.name') }}" required autofocus>
                                             @if ($errors->has('name'))
                                             <span class="help-block">
                                                 <strong>
@@ -38,7 +38,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group{{ $errors->has('mobile') ? ' has-error' : '' }}">
                                             <label for="mobile" class="control-label">{{ trans('general.mobile') }}*</label>
-                                            <input id="mobile" type="number" class="form-control" name="mobile" value="{{ old('mobile') }}" placeholder="{{ trans('general.mobile') }}" required autofocus>
+                                            <input id="mobile" type="number" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.mobile') }}" name="mobile" value="{{ old('mobile') }}" placeholder="{{ trans('general.mobile') }}" required autofocus>
                                             @if ($errors->has('mobile'))
                                             <span class="help-block">
                                                 <strong>
@@ -53,7 +53,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group {{ $errors->has('email') ? ' has-error' : '' }}">
                                             <label for="email" class="control-label">{{ trans('general.email') }}*</label>
-                                            <input id="email" type="text" class="form-control" name="email" value="{{ old('email') }}" placeholder="{{ trans('general.email') }}" required autofocus>
+                                            <input id="email" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.email') }}" name="email" value="{{ old('email') }}" placeholder="{{ trans('general.email') }}" required autofocus>
                                             @if ($errors->has('email'))
                                             <span class="help-block">
                                                 <strong>
