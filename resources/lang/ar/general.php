@@ -748,7 +748,8 @@ return array(
     'main_details' => 'main_details',
     'edit_my_profile' => 'تعديل الملف الشخصي',
     'merchant_id' => 'رقم التاجر',
-    'on_home' => 'إظهار في الصفحة الرئيسية'
+    'on_home' => 'إظهار في الصفحة الرئيسية',
+    'new_slide_for_home_page' => 'إضافة سلايدر للصفحة الرئيسية '
 
 
 );

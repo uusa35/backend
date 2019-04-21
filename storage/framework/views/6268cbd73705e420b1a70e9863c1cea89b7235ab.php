@@ -1,5 +1,5 @@
 <?php $__env->startSection('breadcrumbs'); ?>
-<?php echo e(Breadcrumbs::render('backend.admin.slide.index')); ?>
+<?php echo e(Breadcrumbs::render('backend.slide.index')); ?>
 
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
@@ -75,7 +75,7 @@
                                     </button>
                                     <ul class="dropdown-menu pull-right" role="menu">
                                         <li>
-                                            <a href="<?php echo e(route('backend.admin.slide.edit',$element->id)); ?>">
+                                            <a href="<?php echo e(route('backend.slide.edit',$element->id)); ?>">
                                                 <i class="fa fa-fw fa-user"></i><?php echo e(trans('general.edit')); ?></a>
                                         </li>
                                         <li>
@@ -83,9 +83,8 @@
                                                 <i class="fa fa-fw fa-check-circle"></i> <?php echo e(trans('general.toggle_active')); ?></a>
                                         </li>
                                         <li>
-                                            <form method="post" action="<?php echo e(route('backend.admin.slide.destroy',$element->id)); ?>">
-                                                <?php echo e(csrf_field()); ?>
-
+                                            <form method="post" action="<?php echo e(route('backend.slide.destroy',$element->id)); ?>">
+                                                <?php echo csrf_field(); ?>
                                                 <input type="hidden" name="_method" value="delete" />
                                                 <button type="submit" class="btn btn-outline btn-sm red">
                                                     <i class="fa fa-remove"></i><?php echo e(trans('general.delete')); ?>

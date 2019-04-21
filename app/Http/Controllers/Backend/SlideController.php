@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Models\Product;
 use App\Models\Slide;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -15,7 +16,21 @@ class SlideController extends Controller
      */
     public function index()
     {
-        $elements = Slide::all();
+        if (auth()->user()->isAdminOrAbove) {
+            $elements = Slide::all();
+        } else {
+            $validate = validator(request()->all(), [
+                'slidable_id' => 'required|numeric',
+                'slidable_type' => 'required|alpha'
+            ]);
+            if ($validate->fails()) {
+                return redirect()->back()->withErrors($validate->errors());
+            }
+            $products = Product::active()->where(['user_id' => auth()->id()])->whereHas('slides', function ($q) {
+                return $q->active();
+            })->with('slides')->get();
+            $elements = $products->slides->get();
+        }
         return view('backend.modules.slide.index', compact('elements'));
     }
 
@@ -37,7 +52,17 @@ class SlideController extends Controller
      */
     public function store(Request $request)
     {
-        $element = Slide::create($request->request->all());
+        $validate = validator($request->all(), [
+            'slidable_id' => 'required|numeric',
+            'slidable_type' => 'required|alpha'
+        ]);
+        if ($validate->fails()) {
+            return redirect()->back()->withErrors($validate->errors());
+        }
+        $className = '\App\Models\\' . title_case($request->slideble_type);
+        $item = new $className();
+        $item = $item->withoutGlobalScopes()->whereId($request->id)->first();
+        $element = $item->slides()->create($request->request->all());
         if ($element) {
             if ($request->hasFile('image')) {
                 $this->saveMimes($element, $request, ['image'], ['1905', '750'], true);
@@ -47,7 +72,7 @@ class SlideController extends Controller
                 $path = str_replace('public/uploads/files/', '', $path);
                 $element->update(['path' => $path]);
             }
-            return redirect()->route('backend.slider.index')->with('success', trans('message.store_success'));
+            return redirect()->route('backend.slide.index')->with('success', trans('message.store_success'));
         }
         return redirect()->back()->with('error', trans('message.store_error'));
     }

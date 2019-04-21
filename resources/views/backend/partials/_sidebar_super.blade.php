@@ -170,13 +170,6 @@
                 <span class="arrow"></span>
             </a>
         </li>
-        <li class="nav-item {{ activeItem('slide') }}">
-            <a href="{{ route('backend.slide.index') }}" class="nav-link ">
-                <i class="fa fa-fw fa-file-image-o"></i>
-                <span class="title">{{ trans('general.slides') }}</span>
-                <span class="arrow"></span>
-            </a>
-        </li>
         <li class="nav-item ">
             <a href="{{ route('backend.package.index') }}" class="nav-link ">
                 <i class="fa fa-fw fa-file-image-o"></i>
@@ -460,4 +453,12 @@
         {{--</a>--}}
         {{--</li>--}}
     </ul>
+</li>
+
+<li class="nav-item {{ activeItem('slide') }}">
+    <a href="{{ route('backend.slide.index') }}" class="nav-link ">
+        <i class="fa fa-fw fa-file-image-o"></i>
+        <span class="title">{{ trans('general.slides') }}</span>
+        <span class="arrow"></span>
+    </a>
 </li>

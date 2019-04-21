@@ -34,7 +34,6 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
         Route::resource('user', 'UserController');
         Route::resource('color', 'ColorController');
         Route::resource('size', 'SizeController');
-        Route::resource('slide', 'SlideController');
         Route::resource('coupon', 'CouponController');
         Route::resource('survey', 'SurveyController');
         Route::resource('questionnaire', 'QuestionnaireController');

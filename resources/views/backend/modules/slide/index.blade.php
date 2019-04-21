@@ -1,6 +1,6 @@
 @extends('backend.layouts.app')
 @section('breadcrumbs')
-{{ Breadcrumbs::render('backend.admin.slide.index') }}
+{{ Breadcrumbs::render('backend.slide.index') }}
 @endsection
 @section('content')
 <div class="row">
@@ -73,7 +73,7 @@
                                     </button>
                                     <ul class="dropdown-menu pull-right" role="menu">
                                         <li>
-                                            <a href="{{ route('backend.admin.slide.edit',$element->id) }}">
+                                            <a href="{{ route('backend.slide.edit',$element->id) }}">
                                                 <i class="fa fa-fw fa-user"></i>{{ trans('general.edit') }}</a>
                                         </li>
                                         <li>
@@ -81,8 +81,8 @@
                                                 <i class="fa fa-fw fa-check-circle"></i> {{ trans('general.toggle_active') }}</a>
                                         </li>
                                         <li>
-                                            <form method="post" action="{{ route('backend.admin.slide.destroy',$element->id) }}">
-                                                {{ csrf_field() }}
+                                            <form method="post" action="{{ route('backend.slide.destroy',$element->id) }}">
+                                                @csrf
                                                 <input type="hidden" name="_method" value="delete" />
                                                 <button type="submit" class="btn btn-outline btn-sm red">
                                                     <i class="fa fa-remove"></i>{{ trans('general.delete') }}
