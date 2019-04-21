@@ -1,6 +1,6 @@
 @extends('backend.layouts.app')
 @section('breadcrumbs')
-{{ Breadcrumbs::render('backend.admin.package.create') }}
+{{ Breadcrumbs::render('backend.package.create') }}
 @endsection
 @section('content')
 <div class="portlet box blue">

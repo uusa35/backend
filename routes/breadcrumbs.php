@@ -643,9 +643,9 @@ Breadcrumbs::for('backend.package.index', function ($trail) {
     return $trail->push(trans('general.index_package'), route('backend.package.index'));
 });
 
-Breadcrumbs::for('backend.admin.package.create', function ($trail) {
-    $trail->parent('backend.admin.package.index');
-    return $trail->push(trans('general.create_package'), route('backend.admin.package.create'));
+Breadcrumbs::for('backend.package.create', function ($trail) {
+    $trail->parent('backend.package.index');
+    return $trail->push(trans('general.create_package'), route('backend.package.create'));
 });
 
 Breadcrumbs::for('backend.package.edit', function ($trail, $element) {

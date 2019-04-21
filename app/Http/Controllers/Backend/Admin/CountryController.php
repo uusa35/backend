@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend\Admin;
 
+use App\Http\Requests\Backend\CountryStore;
 use App\Models\Country;
 use App\Services\Traits\ImageHelpers;
 use Illuminate\Http\Request;
@@ -40,26 +41,16 @@ class CountryController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CountryStore $request)
     {
-        $validate = validator($request->all(), [
-            'name_ar' => 'required|unique:countries,name_ar',
-            'name_en' => 'required|unique:countries,name_en',
-            'calling_code' => 'required|unique:countries,calling_code',
-            'country_code' => 'required|alpha|unique:countries,country_code',
-            'order' => 'required|numeric|max:99|min:1',
-        ]);
-        if ($validate->fails()) {
-            return redirect()->back()->withInput(Input::all())->withErrors($validate);
-        }
         $element = Country::create($request->request->all());
         if ($element) {
             if ($request->has('flag')) {
                 $this->saveMimes($element, $request, ['flag'], ['400', '400'], false);
             }
-            return redirect()->route('backend.country.index')->with('success', 'country saved');
+            return redirect()->route('backend.admin.country.index')->with('success', trans('general.country_saved'));
         }
-        return redirect()->route('backend.country.index')->with('error', 'country not saved .. unknown error');
+        return redirect()->route('backend.admin.country.index')->with('error', 'country not saved .. unknown error');
     }
 
     /**

@@ -63,15 +63,9 @@
                                             @endif
                                         </div>
                                     </div>
-
-
-
                                 </div>
                             </div>
                         </div>
-
-
-
                     </div>
                 </div>
                 @include('backend.partials.forms._btn-group')

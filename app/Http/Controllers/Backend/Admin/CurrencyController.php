@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend\Admin;
 
+use App\Http\Requests\Backend\CurrencyStore;
 use App\Models\Country;
 use App\Models\Currency;
 use Illuminate\Http\Request;
@@ -38,24 +39,13 @@ class CurrencyController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CurrencyStore $request)
     {
-        $validate = validator($request->all(), [
-            'name_ar' => 'required|unique:currencies,name_ar',
-            'name_en' => 'required|unique:currencies,name_en',
-            'currency_symbol_ar' => 'required|unique:currencies,currency_symbol_ar',
-            'currency_symbol_en' => 'required|unique:currencies,currency_symbol_en',
-            'exchange_rate' => 'required|numeric',
-            'country_id' => 'required|unique:currencies,country_id|exists:countries,id',
-        ]);
-        if ($validate->fails()) {
-            return redirect()->back()->with(Input::all())->withErrors($validate);
-        }
         $element = Currency::create($request->all());
         if ($element) {
-            return redirect()->route('backend.currency.index')->with('success', 'currency saved');
+            return redirect()->route('backend.admin.currency.index')->with('success', 'currency saved');
         }
-        return redirect()->route('backend.currency.index')->with('error', 'currency not saved');
+        return redirect()->route('backend.admin.currency.index')->with('error', 'currency not saved');
     }
 
     /**

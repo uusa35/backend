@@ -39,10 +39,10 @@ class PageController extends Controller
     public function store(Request $request)
     {
         $validate = validator($request->request->all(), [
-            'title_ar' => 'required|alpha_dash',
-            'title_en' => 'required|alpha_dash',
-            'slug_ar' => 'required',
-            'slug_en' => 'required',
+            'title_ar' => 'required|min:3:max:100',
+            'title_en' => 'required|min:3:max:100',
+            'slug_ar' => 'required|min:3:max:100',
+            'slug_en' => 'required|min:3:max:100',
             'url' => 'required|url',
             'content_ar' => 'required|min:100',
             'content_en' => 'required|min:100',

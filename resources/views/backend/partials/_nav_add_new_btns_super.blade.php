@@ -2,7 +2,6 @@
     <a href="#" disabled="true" class="tooltips disabled" data-container="body" data-placement="{{ app()->isLocale('ar') ? 'left' : 'right' }}" data-original-title="{{ trans('message.create_your_new_items_list') }}">
         <i class="icon-note"></i> {{ trans('general.create_your_new_items_list') }}</a>
 </li>
-<li class="divider"></li>
 <li>
     <a href="{{ route('backend.product.create') }}" class="tooltips" data-container="body" data-placement="{{ app()->isLocale('ar') ? 'left' : 'right' }}" data-original-title="{{ trans('message.new_product') }}">
         <i class="icon-plus"></i> {{ trans('general.new_product') }}</a>
@@ -19,7 +18,6 @@
     <a href="{{ route('backend.timing.create') }}" class="tooltips" data-container="body" data-placement="{{ app()->isLocale('ar') ? 'left' : 'right' }}" data-original-title="{{ trans('message.new_timing') }}">
         <i class="icon-plus"></i> {{ trans('general.new_timing') }}</a>
 </li>
-<li class="divider"></li>
 @can('isAdminOrAbove')
     <li>
         <a href="{{ route('backend.admin.user.create') }}" class="tooltips" data-container="body" data-placement="{{ app()->isLocale('ar') ? 'left' : 'right' }}" data-original-title="{{ trans('message.new_user') }}">
@@ -33,7 +31,6 @@
         <a href="{{ route('backend.admin.currency.create') }}" class="tooltips" data-container="body" data-placement="{{ app()->isLocale('ar') ? 'left' : 'right' }}" data-original-title="{{ trans('message.new_currency') }}">
             <i class="icon-plus"></i> {{ trans('general.new_currency') }}</a>
     </li>
-    <li class="divider"></li>
     <li>
         <a href="{{ route('backend.admin.category.create') }}" class="tooltips" data-container="body" data-placement="{{ app()->isLocale('ar') ? 'left' : 'right' }}" data-original-title="{{ trans('message.new_category') }}">
             <i class="icon-plus"></i> {{ trans('general.new_category') }}</a>
@@ -96,7 +93,6 @@
         <a href="{{ route('backend.admin.privilege.create') }}" class="tooltips" data-container="body" data-placement="{{ app()->isLocale('ar') ? 'left' : 'right' }}" data-original-title="{{ trans('message.new_privilege') }}">
             <i class="icon-plus"></i> {{ trans('general.new_privilege') }}</a>
     </li>
-    <li class="divider"></li>
     <li>
         <a href="{{ route('backend.admin.term.create') }}" class="tooltips" data-container="body" data-placement="{{ app()->isLocale('ar') ? 'left' : 'right' }}" data-original-title="{{ trans('message.new_term') }}">
             <i class="icon-plus"></i> {{ trans('general.new_term') }}</a>
@@ -113,7 +109,6 @@
         <a href="{{ route('backend.admin.page.create') }}" class="tooltips" data-container="body" data-placement="{{ app()->isLocale('ar') ? 'left' : 'right' }}" data-original-title="{{ trans('message.new_page') }}">
             <i class="icon-plus"></i> {{ trans('general.new_page') }}</a>
     </li>
-    <li class="divider"></li>
     <li>
         <a href="{{ route('backend.admin.slide.create') }}" class="tooltips" data-container="body" data-placement="{{ app()->isLocale('ar') ? 'left' : 'right' }}" data-original-title="{{ trans('message.new_slider') }}">
             <i class="icon-plus"></i> {{ trans('general.new_slider') }}</a>

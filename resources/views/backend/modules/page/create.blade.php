@@ -1,6 +1,6 @@
 @extends('backend.layouts.app')
 @section('breadcrumbs')
-{{ Breadcrumbs::render('backend.admin.page.create') }}
+{{ Breadcrumbs::render('backend.page.create') }}
 @endsection
 
 @section('content')
@@ -81,7 +81,7 @@
                                     <div class="col-md-3">
                                         <div class="form-group{{ $errors->has('url') ? ' has-error' : '' }}">
                                             <label for="url" class="control-label">{{ trans('general.url') }} *</label>
-                                            <input id="url" type="text" class="form-control" name="url" value="{{ old('url') }}" placeholder="{{ trans('general.url') }}" autofocus>
+                                            <input id="url" type="url" class="form-control" name="url" value="{{ old('url') }}" placeholder="{{ trans('general.url') }}" autofocus>
                                             @if ($errors->has('url'))
                                             <span class="help-block">
                                                 <strong>

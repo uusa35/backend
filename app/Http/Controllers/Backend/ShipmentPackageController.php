@@ -42,8 +42,6 @@ class ShipmentPackageController extends Controller
             'slug_ar' => 'required',
             'slug_en' => 'required',
             'charge' => 'required|between:1,20',
-            'active' => 'required|boolean',
-            'is_local' => 'required|boolean'
         ]);
         if ($validate->fails()) {
             return redirect()->back()->withErrors($validate);

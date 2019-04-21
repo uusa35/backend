@@ -45,8 +45,6 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
         Route::resource('page', 'PageController');
         Route::resource('term', 'TermController');
         Route::resource('order', 'OrderController');
-        Route::resource('collection', 'CollectionController');
-        Route::resource('package', 'ShipmentPackageController');
         Route::resource('tag', 'TagController');
         Route::resource('newsletter', 'NewsletterController');
         Route::resource('faq', 'FaqController');
@@ -81,10 +79,10 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
     Route::resource('product', 'ProductController');
     Route::resource('coupon', 'CouponController');
     Route::resource('package', 'ShipmentPackageController');
+    Route::resource('collection', 'CollectionController');
     Route::get('trashed', 'ProductController@trashed')->name('product.trashed');
     Route::get('restore/{id}', 'ProductController@restore')->name('product.restore');
     // designers
-    Route::resource('collection', 'CollectionController');
 });
 
 Route::group(['namespace' => 'Frontend', 'as' => 'frontend.', 'middleware' => ['country']], function () {

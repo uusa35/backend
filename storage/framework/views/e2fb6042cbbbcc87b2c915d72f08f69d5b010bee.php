@@ -44,7 +44,7 @@
                             <td><?php echo e($element->slug_ar); ?></td>
                             <td><?php echo e($element->slug_en); ?></td>
                             <td>
-                                <img class="img-xs img-rounded" src="<?php echo e(asset('storage/uploads/images/thumbnail/'.$element->flag)); ?>" alt="">
+                                <img class="img-xs img-rounded" src="<?php echo e(asset(env('THUMBNAIL').$element->image)); ?>" alt="">
                             </td>
                             <td><?php echo e($element->calling_code); ?></td>
                             <td>
