@@ -318,14 +318,23 @@ Breadcrumbs::for('backend.admin.policy.create', function ($trail) {
 });
 
 
-Breadcrumbs::for('backend.aboutus.index', function ($trail) {
+Breadcrumbs::for('backend.admin.aboutus.index', function ($trail) {
     $trail->parent('backend.home');
-    $trail->push('aboutus', route('backend.aboutus.index'));
+    $trail->push(trans('general.index_aboutus'), route('backend.admin.aboutus.index'));
 });
 
 Breadcrumbs::for('backend.admin.currency.index', function ($trail) {
     $trail->parent('backend.home');
     $trail->push(trans('general.index_currency'), route('backend.admin.currency.index'));
+});
+
+Breadcrumbs::for('backend.admin.area.create', function ($trail) {
+    $trail->parent('backend.admin.area.index');
+    $trail->push(trans('general.create_area'), route('backend.admin.area.create'));
+});
+Breadcrumbs::for('backend.admin.area.index', function ($trail) {
+    $trail->parent('backend.home');
+    $trail->push(trans('general.index_area'), route('backend.admin.area.index'));
 });
 
 Breadcrumbs::for('backend.admin.currency.create', function ($trail) {
@@ -556,9 +565,9 @@ Breadcrumbs::for('backend.admin.category.edit', function ($trail, $element) {
     $trail->push(trans('general.edit_category'), route('backend.admin.category.edit', $element->id));
 });
 
-Breadcrumbs::for('backend.aboutus.create', function ($trail) {
-    $trail->parent('backend.aboutus.index');
-    $trail->push('create aboutus', route('backend.aboutus.create'));
+Breadcrumbs::for('backend.admin.aboutus.create', function ($trail) {
+    $trail->parent('backend.admin.aboutus.index');
+    $trail->push(trans('general.create_aboutus'), route('backend.admin.aboutus.create'));
 });
 
 Breadcrumbs::for('backend.aboutus.edit', function ($trail, $element) {

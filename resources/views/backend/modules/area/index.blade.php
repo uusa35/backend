@@ -1,6 +1,6 @@
 @extends('backend.layouts.app')
 @section('breadcrumbs')
-{{ Breadcrumbs::render('backend.admin.aboutus.index') }}
+{{ Breadcrumbs::render('backend.admin.area.index') }}
 @endsection
 @section('content')
 <div class="row">
@@ -9,21 +9,21 @@
         <div class="portlet light ">
             @include('backend.partials.forms.form_title')
             <div class="portlet-body">
-                @include('backend.partials._admin_instructions',['title' => trans('general.aboutus') ,'message' => trans('message.index_aboutus')])
+                @include('backend.partials._admin_instructions',['title' => trans('general.areas') ,'message' => trans('message.index_area')])
                 <table id="dataTable" class="table table-striped table-bordered table-hover" cellspacing="0">
                     <thead>
                         <tr>
                             <th>{{trans('general.id')}}</th>
-                            <th>{{trans('general.title_ar')}}</th>
-                            <th>{{trans('general.title_en')}}</th>
+                            <th>{{trans('general.name')}}</th>
+                            <th>{{trans('general.order')}}</th>
                             <th>{{trans('general.actions')}}</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
                             <th>{{trans('general.id')}}</th>
-                            <th>{{trans('general.title_ar')}}</th>
-                            <th>{{trans('general.title_en')}}</th>
+                            <th>{{trans('general.name')}}</th>
+                            <th>{{trans('general.order')}}</th>
                             <th>{{trans('general.actions')}}</th>
                         </tr>
                     </tfoot>
@@ -31,8 +31,8 @@
                         @foreach($elements as $element)
                         <tr>
                             <td> {{$element->id}}</td>
-                            <td> {{$element->title_ar}} </td>
-                            <td> {{$element->title_en}} </td>
+                            <td> {{$element->name}} </td>
+                            <td> {{$element->order}} </td>
                             <td>
                                 <div class="btn-group">
                                     <button type="button" class="btn green btn-xs btn-outline dropdown-toggle" data-toggle="dropdown"> {{trans('general.actions')}}
