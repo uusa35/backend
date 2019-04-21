@@ -56,7 +56,6 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
         Route::resource('color', 'ColorController');
         Route::resource('term', 'TermController');
         Route::resource('answer', 'AnswerController');
-        Route::resource('branch', 'BranchController');
         Route::resource('day', 'DayController');
         Route::resource('aboutus', 'AboutusController');
         Route::resource('area', 'AreaController');

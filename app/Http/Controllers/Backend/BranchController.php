@@ -16,6 +16,7 @@ class BranchController extends Controller
      */
     public function index()
     {
+
         $elements = Branch::latest()->get();
         return view('backend.modules.branch.index', compact('elements'));
     }
