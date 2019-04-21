@@ -16,7 +16,7 @@
                     <div class="portlet box blue ">
                         <div class="portlet-title">
                             <div class="caption">
-                                <i class="fa fa-gift"></i> {{ trans('general.term_main_details') }}
+                                <i class="fa fa-gift"></i> {{ trans('general.main_details') }}
                             </div>
                         </div>
                         <div class="portlet-body form">
@@ -25,7 +25,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group {{ $errors->has('title_ar') ? ' has-error' : '' }}">
                                             <label for="title_ar" class="control-label">{{ trans('general.title_ar') }}*</label>
-                                            <input id="title_ar" type="text" class="form-control" name="title_ar" value="{{ old('title_ar') }}" placeholder="{{ trans('general.title_ar') }}" required autofocus>
+                                            <input id="title_ar" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.title_ar') }}" name="title_ar" value="{{ old('title_ar') }}" placeholder="{{ trans('general.title_ar') }}" required autofocus>
                                             @if ($errors->has('title_ar'))
                                             <span class="help-block">
                                                 <strong>
@@ -38,7 +38,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group{{ $errors->has('title_en') ? ' has-error' : '' }}">
                                             <label for="title_en" class="control-label">{{ trans('general.title_en') }}*</label>
-                                            <input id="title_en" type="text" class="form-control" name="title_en" value="{{ old('title_en') }}" placeholder="{{ trans('general.title_en') }}" required autofocus>
+                                            <input id="title_en" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.title_en') }}" name="title_en" value="{{ old('title_en') }}" placeholder="{{ trans('general.title_en') }}" required autofocus>
                                             @if ($errors->has('title_en'))
                                             <span class="help-block">
                                                 <strong>

@@ -662,14 +662,14 @@ Breadcrumbs::for('backend.package.edit', function ($trail, $element) {
     return $trail->push('edit package', route('backend.package.edit', $element->id));
 });
 
-Breadcrumbs::for('backend.admin.branch.index', function ($trail) {
+Breadcrumbs::for('backend.branch.index', function ($trail) {
     $trail->parent('backend.home');
-    return $trail->push(trans('general.index_branch'), route('backend.admin.branch.index'));
+    return $trail->push(trans('general.index_branch'), route('backend.branch.index'));
 });
 
-Breadcrumbs::for('backend.admin.branch.create', function ($trail) {
-    $trail->parent('backend.admin.branch.index');
-    return $trail->push(trans('general.create_branch'), route('backend.admin.branch.create'));
+Breadcrumbs::for('backend.branch.create', function ($trail) {
+    $trail->parent('backend.branch.index');
+    return $trail->push(trans('general.create_branch'), route('backend.branch.create'));
 });
 
 Breadcrumbs::for('backend.branch.edit', function ($trail, $element) {

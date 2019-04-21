@@ -39,9 +39,9 @@ class PolicyController extends Controller
     {
         $element = Policy::create($request->all());
         if ($element) {
-            return redirect()->route('backend.policy.index')->with('success', 'Policy added');
+            return redirect()->route('backend.policy.index')->with('success', trans('general.policy_added'));
         }
-        return redirect()->back()->with('error', 'Policy is not saved.');
+        return redirect()->back()->with('error', trans('general.policy_not_added'));
     }
 
     /**

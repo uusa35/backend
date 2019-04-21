@@ -1,6 +1,6 @@
 @extends('backend.layouts.app')
 @section('breadcrumbs')
-{{ Breadcrumbs::render('backend.admin.branch.index') }}
+{{ Breadcrumbs::render('backend.branch.index') }}
 @endsection
 @section('content')
 <div class="row">

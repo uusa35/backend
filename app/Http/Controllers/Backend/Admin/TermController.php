@@ -40,9 +40,9 @@ class TermController extends Controller
     {
         $element = Term::create($request->all());
         if ($element) {
-            return redirect()->route('backend.term.index')->with('success', 'term added');
+            return redirect()->route('backend.admin.term.index')->with('success', trans('general.term_added'));
         }
-        return redirect()->back()->with('error', 'term is not saved.');
+        return redirect()->back()->with('error', trans('general.term_not_added'));
     }
 
     /**

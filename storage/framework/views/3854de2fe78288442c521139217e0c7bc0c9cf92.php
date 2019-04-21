@@ -1,5 +1,5 @@
 <?php $__env->startSection('breadcrumbs'); ?>
-<?php echo e(Breadcrumbs::render('backend.admin.branch.index')); ?>
+<?php echo e(Breadcrumbs::render('backend.branch.index')); ?>
 
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
@@ -9,36 +9,24 @@
         <div class="portlet light ">
             <?php echo $__env->make('backend.partials.forms.form_title', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
             <div class="portlet-body">
-                <div class="m-heading-1 border-green m-bordered">
-                    <h3>Important Information</h3>
-                    <p>
-                        Roles are very important for the application.
-                    </p>
-                    <p> Some Information about roles.
-                        <a class="btn red btn-outline" href="http://datatables.net/" target="_blank">the official
-                            documentation</a>
-                    </p>
-                </div>
+                <?php echo $__env->make('backend.partials._admin_instructions',['title' => trans('general.branches') ,'message' => trans('message.index_branch')], \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
                 <table id="dataTable" class="table table-striped table-bordered table-hover" cellspacing="0">
                     <thead>
                         <tr>
                             <th><?php echo e(trans('general.id')); ?></th>
-                            <th><?php echo e(trans('general.name_ar')); ?></th>
-                            <th><?php echo e(trans('general.name_en')); ?></th>
-                            <th><?php echo e(trans('general.address_ar')); ?></th>
-                            <th><?php echo e(trans('general.address_en')); ?></th>
+                            <th><?php echo e(trans('general.name')); ?></th>
+                            <th><?php echo e(trans('general.address')); ?></th>
                             <th><?php echo e(trans('general.phone')); ?></th>
+                            <th><?php echo e(trans('general.active')); ?></th>
                             <th><?php echo e(trans('general.actions')); ?></th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
                             <th><?php echo e(trans('general.id')); ?></th>
-                            <th><?php echo e(trans('general.name_ar')); ?></th>
-                            <th><?php echo e(trans('general.name_en')); ?></th>
-                            <th><?php echo e(trans('general.address_ar')); ?></th>
-                            <th><?php echo e(trans('general.address_en')); ?></th>
-                            <th><?php echo e(trans('general.phone')); ?></th>
+                            <th><?php echo e(trans('general.name')); ?></th>
+                            <th><?php echo e(trans('general.address')); ?></th>
+                            <th><?php echo e(trans('general.active')); ?></th>
                             <th><?php echo e(trans('general.actions')); ?></th>
                         </tr>
                     </tfoot>
@@ -46,10 +34,8 @@
                         <?php $__currentLoopData = $elements; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $element): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr>
                             <td><?php echo e($element->id); ?></td>
-                            <td><?php echo e($element->name_ar); ?></td>
-                            <td><?php echo e($element->name_en); ?></td>
-                            <td><?php echo e($element->address_ar); ?></td>
-                            <td><?php echo e($element->address_en); ?></td>
+                            <td><?php echo e($element->name); ?></td>
+                            <td><?php echo e($element->address); ?></td>
                             <td><?php echo e($element->phone); ?></td>
                             <td>
                                 <span class="label <?php echo e(activeLabel($element->active)); ?>"><?php echo e(activeText($element->active)); ?></span>

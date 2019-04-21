@@ -17,7 +17,7 @@ class ColorController extends Controller
     public function index()
     {
         $elements = Color::all();
-        return view('backend.modules.color.index',compact('elements'));
+        return view('backend.modules.color.index', compact('elements'));
     }
 
     /**
@@ -38,8 +38,11 @@ class ColorController extends Controller
      */
     public function store(Request $request)
     {
-        Color::create($request->request->all());
-        return redirect()->route('backend.color.index')->with('success', 'color created');
+        $element = Color::create($request->request->all());
+        if ($element) {
+            return redirect()->route('backend.admin.color.index')->with('success', trans('general.color_added'));
+        }
+        return redirect()->back()->with('error', trans('general.color_not_added'));
     }
 
     /**

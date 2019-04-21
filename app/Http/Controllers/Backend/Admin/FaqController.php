@@ -39,9 +39,9 @@ class FaqController extends Controller
     {
         $element = Faq::create($request->all());
         if ($element) {
-            return redirect()->route('backend.faq.index')->with('success', 'Faq added');
+            return redirect()->route('backend.admin.faq.index')->with('success', trans('general.faq_added'));
         }
-        return redirect()->back()->with('error', 'Faq is not saved.');
+        return redirect()->back()->with('error', trans('general.faq_not_added'));
     }
 
     /**

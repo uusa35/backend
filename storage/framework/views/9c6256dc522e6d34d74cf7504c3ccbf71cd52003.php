@@ -16,7 +16,7 @@
                     <div class="portlet box blue ">
                         <div class="portlet-title">
                             <div class="caption">
-                                <i class="fa fa-gift"></i> <?php echo e(trans('general.policy_main_details')); ?>
+                                <i class="fa fa-gift"></i> <?php echo e(trans('general.main_details')); ?>
 
                             </div>
                         </div>
@@ -26,7 +26,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group <?php echo e($errors->has('title_ar') ? ' has-error' : ''); ?>">
                                             <label for="title_ar" class="control-label"><?php echo e(trans('general.title_ar')); ?>*</label>
-                                            <input id="title_ar" type="text" class="form-control" name="title_ar" value="<?php echo e(old('title_ar')); ?>" placeholder="<?php echo e(trans('general.title_ar')); ?>" required autofocus>
+                                            <input id="title_ar" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.title_ar')); ?>" name="title_ar" value="<?php echo e(old('title_ar')); ?>" placeholder="<?php echo e(trans('general.title_ar')); ?>" required autofocus>
                                             <?php if($errors->has('title_ar')): ?>
                                             <span class="help-block">
                                                 <strong>
@@ -40,7 +40,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group<?php echo e($errors->has('title_en') ? ' has-error' : ''); ?>">
                                             <label for="title_en" class="control-label"><?php echo e(trans('general.title_en')); ?>*</label>
-                                            <input id="title_en" type="text" class="form-control" name="title_en" value="<?php echo e(old('title_en')); ?>" placeholder="<?php echo e(trans('general.title_en')); ?>" required autofocus>
+                                            <input id="title_en" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.title_en')); ?>" name="title_en" value="<?php echo e(old('title_en')); ?>" placeholder="<?php echo e(trans('general.title_en')); ?>" required autofocus>
                                             <?php if($errors->has('title_en')): ?>
                                             <span class="help-block">
                                                 <strong>
