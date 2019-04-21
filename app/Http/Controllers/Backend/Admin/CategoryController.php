@@ -52,9 +52,9 @@ class CategoryController extends Controller
             if ($request->hasFile('image')) {
                 $this->saveMimes($element, $request, ['image'], ['2313', '1125'], true);
             }
-            return redirect()->route('backend.category.index')->with('success', 'category created.');
+            return redirect()->route('backend.admin.category.index')->with('success', 'category created.');
         }
-        return redirect()->route('backend.category.index')->with('error', 'category error.');
+        return redirect()->route('backend.admin.category.index')->with('error', 'category error.');
     }
 
     /**
