@@ -1,8 +1,3 @@
-@font-face {
-    font-family: "Cairo";
-    src: url('../fonts/Cairo-Bold.ttf') format('embedded-opentype'),
-    url('../fonts/Cairo-Bold.ttf') format('truetype')
-}
 
 @font-face {
     font-family: 'Tajawal';
