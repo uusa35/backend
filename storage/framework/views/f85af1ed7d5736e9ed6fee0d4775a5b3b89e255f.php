@@ -1,5 +1,5 @@
 <?php $__env->startSection('breadcrumbs'); ?>
-<?php echo e(Breadcrumbs::render('backend.admin.branch.index')); ?>
+<?php echo e(Breadcrumbs::render('backend.branch.index')); ?>
 
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>

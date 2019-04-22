@@ -45,7 +45,7 @@
 </li>
 <li class="nav-item <?php echo e(activeItem('service')); ?>">
     <a href="<?php echo e(route('backend.service.index')); ?>" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-clock-o"></i>
+        <i class="fa fa-fw fa-table"></i>
         <span class="title"><?php echo e(trans('general.services')); ?></span>
         <span class="arrow"></span>
     </a>

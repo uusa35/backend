@@ -45,7 +45,7 @@
 </li>
 <li class="nav-item {{ activeItem('service') }}">
     <a href="{{ route('backend.service.index') }}" class="nav-link nav-toggle">
-        <i class="fa fa-fw fa-clock-o"></i>
+        <i class="fa fa-fw fa-table"></i>
         <span class="title">{{ trans('general.services') }}</span>
         <span class="arrow"></span>
     </a>
@@ -388,7 +388,7 @@
     </a>
     <ul class="sub-menu">
         <li class="nav-item ">
-            <a href="{{ route('backend.coupon.index') }}" class="nav-link nav-toggle">
+            <a href="{{ route('backend.admin.coupon.index') }}" class="nav-link nav-toggle">
                 <i class="fa fa-fw fa-cc-discover"></i>
                 <span class="title">{{ trans('general.coupons') }}</span>
                 <span class="arrow"></span>
@@ -399,7 +399,7 @@
 </li>
 
 <li class="nav-item {{ activeItem('branch') }}">
-    <a href="{{ route('backend.admin.branch.index') }}" class="nav-link nav-toggle">
+    <a href="{{ route('backend.branch.index') }}" class="nav-link nav-toggle">
         <i class="fa fa-fw fa-building-o"></i>
         <span class="title">{{ trans('general.branches') }}</span>
         <span class="arrow"></span>

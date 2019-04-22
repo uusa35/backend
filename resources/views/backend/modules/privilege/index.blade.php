@@ -51,11 +51,6 @@
                                         </button>
                                         <ul class="dropdown-menu pull-right" role="menu">
                                             <li>
-                                                <a href="{{ route('backend.activate',['model' => 'privilege','id' => $element->id]) }}">
-                                                    <i class="fa fa-fw fa-check-circle"></i> {{ trans('general.toggle_active') }}
-                                                </a>
-                                            </li>
-                                            <li>
                                                 <a href="{{ route('backend.admin.privilege.show',$element->id) }}">
                                                     <i class="fa fa-fw fa-check-circle"></i>{{ trans('general.show_privilege_details') }}
                                                 </a>
