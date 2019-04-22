@@ -153,7 +153,7 @@ class ServiceController extends Controller
 
     public function saveMainSearchFormElements()
     {
-        if (request()->has('save') && request()->save && !is_null(session()->get('day_selected_format'))) {
+        if (request()->has('save') && request()->save && !session()->has('day_selected_format')) {
             session()->put('day_selected_format', request()->day_selected_format);
             session()->put('day_selected', request()->day_selected);
             session()->put('area_id', request()->area_id);
