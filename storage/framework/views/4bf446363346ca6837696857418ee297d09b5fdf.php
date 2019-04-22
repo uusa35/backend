@@ -12,7 +12,7 @@
             <form class="horizontal-form" role="form" method="POST" action="<?php echo e(route('backend.admin.privilege.store')); ?>" enctype="multipart/form-data">
                 <?php echo csrf_field(); ?>
                 <div class="form-body">
-                    <h3 class="form-section"><?php echo e(trans('general.create_privilege')); ?></h3>
+                    <h3 class="form-section"><?php echo e(trans('general.new_privilege')); ?></h3>
                     <div class="portlet box blue ">
                         <div class="portlet-title">
                             <div class="caption">

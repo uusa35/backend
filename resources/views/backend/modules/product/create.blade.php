@@ -238,7 +238,7 @@
                                             <label for="file" class="control-label">{{ trans('general.main_image') }}
                                                 *</label>
 
-                                            <input class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.main_image') }}" name="image" placeholder="images" type="file" />
+                                            <input class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.main_image') }}" name="image" placeholder="images" type="file" required />
                                             <div class="help-block text-left">
                                                 W * H - Best fit ['1080', '1440'] pixels
                                             </div>
@@ -559,18 +559,6 @@
                                             {{ trans('general.yes') }}</label>
                                         <label class="radio-inline">
                                             <input type="radio" name="exclusive" id="optionsRadios4" checked value="0">
-                                            {{ trans('general.no') }}</label>
-                                    </div>
-
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="control-label sbold tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.on_sale') }}">{{ trans('general.on_sale') }}</label></br>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="on_sale" id="optionsRadios3" value="1">
-                                            {{ trans('general.yes') }}</label>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="on_sale" id="optionsRadios4" checked value="0">
                                             {{ trans('general.no') }}</label>
                                     </div>
 

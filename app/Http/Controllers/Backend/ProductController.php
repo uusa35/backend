@@ -98,9 +98,7 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        $product = $this->productRepository->getById($id);
-
-        //        var_dump($product);
+        return redirect()->route('frontend.product.show', $id);
     }
 
     /**
@@ -111,11 +109,17 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $element = Product::whereId($id)->with('categories', 'tags')->first();
         $categories = Category::active()->onlyParent()->with('children.children')->get();
         $tags = Tag::active()->get();
         $brands = Brand::active()->get();
-        return view('backend.modules.product.edit', compact('element', 'tags', 'categories', 'brands'));
+        $users = User::active()->companies()->get();
+        $colors = Color::active()->get();
+        $sizes = Size::active()->get();
+        $shipment_packages = ShipmentPackage::active()->get();
+        $element = Product::whereId($id)->with([
+            'categories', 'brand', 'tags', 'user', 'product_attributes'
+        ])->first();
+        return view('backend.modules.product.edit', compact('element', 'categories', 'tags', 'brands', 'colors', 'sizes', 'shipment_packages', 'users'));
     }
 
     /**
@@ -126,28 +130,21 @@ class ProductController extends Controller
      */
     public function update(ProductUpdate $request, $id)
     {
-        if ($request->has('end_sale')) {
-            $date = str_replace('-', '', $request->end_sale);
-            $date = Carbon::parse($date)->toDateTimeString();
-        }
+        $end_sale = $request->has('end_sale') ? Carbon::parse(str_replace('-', '', $request->end_sale))->toDateTimeString() : null;
+        $start_sale = $request->has('start_sale') ? Carbon::parse(str_replace('-', '', $request->start_sale))->toDateTimeString() : null;
         $element = Product::whereId($id)->first();
-        $updated = $element->update($request->except(['_token', 'image', 'tags', 'categories', 'brands', 'end_sale']));
-        if ($date) {
-            $element->update(['end_sale' => $date]);
-        }
-        if ($request->hasFile('image')) {
-            $this->saveMimes($element, $request, ['image'], ['1080', '1440'], true);
-        }
-        if ($request->hasFile('size_chart_image')) {
-            $this->saveMimes($element, $request, ['size_chart_image'], ['600', '600'], false);
-        }
-        if ($updated) {
-            $element->categories()->sync($request->categories);
+        if ($element) {
+            $start_sale ? $element->update(['start_sale' => $start_sale]) : null;
+            $end_sale ? $element->update(['end_sale' => $end_sale]) : null;
             $element->tags()->sync($request->tags);
-            $element->brands()->sync($request->brands);
-            return redirect()->route('backend.product.index')->with('success', 'product saved.');
+            $element->categories()->sync($request->categories);
+            $request->hasFile('image') ? $this->saveMimes($element, $request, ['image'], ['1080', '1440'], true) : null;
+            $request->has('images') ? $this->saveGallery($element, $request, 'images', ['1080', '1440'], true) : null;
+            $request->hasFile('size_chart_image') ? $this->saveMimes($element, $request, ['size_chart_image'], ['500', '500'], false) : null;
+            return redirect()->route('backend.product.index')->with('success', trans('message.product_updated_successfully'));
+
         }
-        return redirect()->route('backend.product.edit', $id)->with('error', 'product not saved.');
+        return redirect()->back()->with('error', 'unknown error');
     }
 
     /**
