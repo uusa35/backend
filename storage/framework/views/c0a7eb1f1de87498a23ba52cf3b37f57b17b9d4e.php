@@ -667,12 +667,14 @@
                                                                    data-container="body" data-placement="top"
                                                                    data-original-title="<?php echo e(trans('message.active')); ?>"><?php echo e(trans('general.active')); ?></label></br>
                                                             <label class="radio-inline">
-                                                                <input type="radio" name="active" id="optionsRadios3" <?php echo e($element->active ? 'checked' : null); ?>
+                                                                <input type="radio" name="active" id="optionsRadios3"
+                                                                       <?php echo e($element->active ? 'checked' : null); ?>
 
                                                                        checked value="1">
                                                                 <?php echo e(trans('general.yes')); ?></label>
                                                             <label class="radio-inline">
-                                                                <input type="radio" name="active" id="optionsRadios4" <?php echo e(!$element->active ? 'checked' : null); ?>
+                                                                <input type="radio" name="active" id="optionsRadios4"
+                                                                       <?php echo e(!$element->active ? 'checked' : null); ?>
 
                                                                        value="0">
                                                                 <?php echo e(trans('general.no')); ?>
@@ -687,12 +689,14 @@
                                                                data-container="body" data-placement="top"
                                                                data-original-title="<?php echo e(trans('message.available')); ?>"><?php echo e(trans('general.home_delivery_available')); ?></label></br>
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="home_delivery_availability" <?php echo e($element->home_delivery_availability ? 'checked' : null); ?>
+                                                            <input type="radio" name="home_delivery_availability"
+                                                                   <?php echo e($element->home_delivery_availability ? 'checked' : null); ?>
 
                                                                    id="optionsRadios3" value="1">
                                                             <?php echo e(trans('general.yes')); ?></label>
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="home_delivery_availability" <?php echo e(!$element->home_delivery_availability ? 'checked' : null); ?>
+                                                            <input type="radio" name="home_delivery_availability"
+                                                                   <?php echo e(!$element->home_delivery_availability ? 'checked' : null); ?>
 
                                                                    id="optionsRadios4" checked value="0">
                                                             <?php echo e(trans('general.no')); ?></label>
@@ -705,12 +709,14 @@
                                                                data-container="body" data-placement="top"
                                                                data-original-title="<?php echo e(trans('message.shipment_available')); ?>"><?php echo e(trans('general.shipment_available')); ?></label></br>
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="shipment_availability" <?php echo e($element->shipment_availability ? 'checked' : null); ?>
+                                                            <input type="radio" name="shipment_availability"
+                                                                   <?php echo e($element->shipment_availability ? 'checked' : null); ?>
 
                                                                    id="optionsRadios3" value="1">
                                                             <?php echo e(trans('general.yes')); ?></label>
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="shipment_availability" <?php echo e(!$element->shipment_availability ? 'checked' : null); ?>
+                                                            <input type="radio" name="shipment_availability"
+                                                                   <?php echo e(!$element->shipment_availability ? 'checked' : null); ?>
 
                                                                    id="optionsRadios4" checked value="0">
                                                             <?php echo e(trans('general.no')); ?></label>
@@ -727,12 +733,14 @@
                                                                data-container="body" data-placement="top"
                                                                data-original-title="<?php echo e(trans('message.exclusive')); ?>"><?php echo e(trans('general.exclusive')); ?></label></br>
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="exclusive" id="optionsRadios3" <?php echo e($element->exclusive ? 'checked' : null); ?>
+                                                            <input type="radio" name="exclusive" id="optionsRadios3"
+                                                                   <?php echo e($element->exclusive ? 'checked' : null); ?>
 
                                                                    value="1">
                                                             <?php echo e(trans('general.yes')); ?></label>
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="exclusive" id="optionsRadios4" <?php echo e($element->exclusive ? 'checked' : null); ?>
+                                                            <input type="radio" name="exclusive" id="optionsRadios4"
+                                                                   <?php echo e($element->exclusive ? 'checked' : null); ?>
 
                                                                    checked value="0">
                                                             <?php echo e(trans('general.no')); ?></label>
@@ -745,12 +753,14 @@
                                                                data-container="body" data-placement="top"
                                                                data-original-title="<?php echo e(trans('message.on_sale')); ?>"><?php echo e(trans('general.on_sale')); ?></label></br>
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="on_sale" id="optionsRadios3" <?php echo e($element->on_sale ? 'checked' : null); ?>
+                                                            <input type="radio" name="on_sale" id="optionsRadios3"
+                                                                   <?php echo e($element->on_sale ? 'checked' : null); ?>
 
                                                                    value="1">
                                                             <?php echo e(trans('general.yes')); ?></label>
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="on_sale" id="optionsRadios4" <?php echo e(!$element->on_sale ? 'checked' : null); ?>
+                                                            <input type="radio" name="on_sale" id="optionsRadios4"
+                                                                   <?php echo e(!$element->on_sale ? 'checked' : null); ?>
 
                                                                    checked value="0">
                                                             <?php echo e(trans('general.no')); ?></label>
@@ -763,12 +773,14 @@
                                                                data-container="body" data-placement="top"
                                                                data-original-title="<?php echo e(trans('message.on_homepage')); ?>"><?php echo e(trans('general.on_homepage')); ?></label></br>
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="on_home" id="optionsRadios3" <?php echo e($element->on_home ? 'checked' : null); ?>
+                                                            <input type="radio" name="on_home" id="optionsRadios3"
+                                                                   <?php echo e($element->on_home ? 'checked' : null); ?>
 
                                                                    value="1">
                                                             <?php echo e(trans('general.yes')); ?></label>
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="on_home" id="optionsRadios4" <?php echo e(!$element->on_home ? 'checked' : null); ?>
+                                                            <input type="radio" name="on_home" id="optionsRadios4"
+                                                                   <?php echo e(!$element->on_home ? 'checked' : null); ?>
 
                                                                    checked value="0">
                                                             <?php echo e(trans('general.no')); ?></label>
@@ -785,12 +797,14 @@
                                                                data-container="body" data-placement="top"
                                                                data-original-title="<?php echo e(trans('message.is_available')); ?>"><?php echo e(trans('general.is_available')); ?></label></br>
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="is_available" id="optionsRadios3" <?php echo e($element->is_available ? 'checked' : null); ?>
+                                                            <input type="radio" name="is_available" id="optionsRadios3"
+                                                                   <?php echo e($element->is_available ? 'checked' : null); ?>
 
                                                                    value="1">
                                                             <?php echo e(trans('general.yes')); ?></label>
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="is_available" id="optionsRadios4" <?php echo e(!$element->is_available ? 'checked' : null); ?>
+                                                            <input type="radio" name="is_available" id="optionsRadios4"
+                                                                   <?php echo e(!$element->is_available ? 'checked' : null); ?>
 
                                                                    checked value="0">
                                                             <?php echo e(trans('general.no')); ?></label>
@@ -803,12 +817,14 @@
                                                                data-container="body" data-placement="top"
                                                                data-original-title="<?php echo e(trans('message.is_hot_deal')); ?>"><?php echo e(trans('general.is_hot_deal')); ?></label></br>
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="is_hot_deal" id="optionsRadios7" <?php echo e($element->is_hot_deal ? 'checked' : null); ?>
+                                                            <input type="radio" name="is_hot_deal" id="optionsRadios7"
+                                                                   <?php echo e($element->is_hot_deal ? 'checked' : null); ?>
 
                                                                    value="1">
                                                             <?php echo e(trans('general.yes')); ?></label>
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="is_hot_deal" id="optionsRadios8" <?php echo e(!$element->is_hot_deal ? 'checked' : null); ?>
+                                                            <input type="radio" name="is_hot_deal" id="optionsRadios8"
+                                                                   <?php echo e(!$element->is_hot_deal ? 'checked' : null); ?>
 
                                                                    checked value="0">
                                                             <?php echo e(trans('general.no')); ?></label>
@@ -821,12 +837,14 @@
                                                                data-container="body" data-placement="top"
                                                                data-original-title="<?php echo e(trans('message.on_new')); ?>"><?php echo e(trans('general.on_new')); ?></label></br>
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="on_new" id="optionsRadios3" <?php echo e($element->on_new ? 'checked' : null); ?>
+                                                            <input type="radio" name="on_new" id="optionsRadios3"
+                                                                   <?php echo e($element->on_new ? 'checked' : null); ?>
 
                                                                    value="1">
                                                             <?php echo e(trans('general.yes')); ?></label>
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="on_new" id="optionsRadios4" <?php echo e(!$element->on_new ? 'checked' : null); ?>
+                                                            <input type="radio" name="on_new" id="optionsRadios4"
+                                                                   <?php echo e(!$element->on_new ? 'checked' : null); ?>
 
                                                                    checked value="0">
                                                             <?php echo e(trans('general.no')); ?></label>
@@ -843,7 +861,8 @@
                                                         <label class="radio-inline" data-toggle="tooltip"
                                                                data-placement="bottom" data-html="true" title=" If Not whenever a successful order is made. qty will not be decreased
                                         accordingly.">
-                                                            <input type="radio" data-toggle="tooltip"  <?php echo e($element->check_stock ? 'checked' : null); ?>
+                                                            <input type="radio" data-toggle="tooltip"
+                                                                   <?php echo e($element->check_stock ? 'checked' : null); ?>
 
                                                                    data-placement="bottom" title="hello"
                                                                    name="check_stock" id="optionsRadios5" value="1">
@@ -851,14 +870,14 @@
                                                         <label class="radio-inline" data-toggle="tooltip"
                                                                data-placement="bottom" data-html="true"
                                                                title=" if Not Product will be added to cart without checking the current quantity.">
-                                                            <input type="radio" name="check_stock" id="optionsRadios6" <?php echo e(!$element->check_stock ? 'checked' : null); ?>
+                                                            <input type="radio" name="check_stock" id="optionsRadios6"
+                                                                   <?php echo e(!$element->check_stock ? 'checked' : null); ?>
 
                                                                    checked value="0">
                                                             in
                                                             <?php echo e(trans('general.no')); ?></label>
 
                                                     </div>
-
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="form-group">
@@ -866,12 +885,14 @@
                                                                data-container="body" data-placement="top"
                                                                data-original-title="<?php echo e(trans('message.has_attributes')); ?>"><?php echo e(trans('general.has_attributes')); ?></label></br>
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="has_attributes" <?php echo e($element->has_attributes ? 'checked' : null); ?>
+                                                            <input type="radio" name="has_attributes"
+                                                                   <?php echo e($element->has_attributes ? 'checked' : null); ?>
 
                                                                    id="optionsRadios3" value="1">
                                                             <?php echo e(trans('general.yes')); ?></label>
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="has_attributes" <?php echo e(!$element->has_attributes ? 'checked' : null); ?>
+                                                            <input type="radio" name="has_attributes"
+                                                                   <?php echo e(!$element->has_attributes ? 'checked' : null); ?>
 
                                                                    id="optionsRadios4" checked value="0">
                                                             <?php echo e(trans('general.no')); ?></label>
@@ -883,6 +904,7 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div class="form-actions right">
                                 
                                 <a href="<?php echo url()->previous(); ?>"
@@ -897,6 +919,8 @@
                                 </button>
                             </div>
                         </form>
+                        <hr>
+                        <?php echo $__env->make('backend.partials._element_images',['images' => $element->images], \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
                     </div>
                 </div>
             </div>

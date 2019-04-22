@@ -39,7 +39,7 @@ class UserStore extends FormRequest
             'banner' => 'nullable|image',
             'bg' => 'nullable|image',
             'address' => 'nullable|min:3',
-            'area' => 'nullable|areas:exists,id',
+            'area' => 'nullable|string',
             'block' => 'nullable|numeric',
             'street' => 'nullable|max:10',
             'building' => 'nullable|max:10',
