@@ -304,11 +304,11 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="single" class="control-label">{{ trans('general.country') }}</label>
-                                            <select id="single" class="form-control select2">
+                                            <select id="single" class="form-control tooltips select2" data-container="body" data-placement="top" data-original-title="{{ trans('message.country_id') }}" name="country_id">
                                                 <option></option>
 
                                                 @foreach($countries as $country)
-                                                <option value="{{ $country->slug_en }}">{{ $country->slug_en }}</option>
+                                                <option value="{{ $country->id }}">{{ $country->slug_en }}</option>
                                                 @endforeach
 
 
@@ -330,7 +330,7 @@
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="single" class="control-label">{{ trans('general.role') }}</label>
-                                                    <select id="single" class="form-control select2">
+                                                    <select id="single" class="form-control tooltips select2" data-container="body" data-placement="top" data-original-title="{{ trans('message.role_id') }}" name="role_id">
                                                         <option></option>
 
                                                         @foreach($roles as $role)
@@ -344,7 +344,7 @@
                                             <div class="col-md-4">
                                                 <div class="form-group{{ $errors->has('policy_ar') ? ' has-error' : '' }}">
                                                     <label for="policy_ar" class="control-label">{{ trans('general.policy_ar') }}</label>
-                                                    <input id="policy_ar" type="text" class="form-control" name="policy_ar" placeholder="{{ trans('general.policy_ar') }}" value="{{ old('policy_ar') }}" autofocus>
+                                                    <input id="policy_ar" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.policy_ar') }}" name="policy_ar" placeholder="{{ trans('general.policy_ar') }}" value="{{ old('policy_ar') }}" autofocus>
                                                     @if ($errors->has('policy_ar'))
                                                     <span class="help-block">
                                                         <strong>
@@ -357,7 +357,7 @@
                                             <div class="col-md-4">
                                                 <div class="form-group{{ $errors->has('policy_en') ? ' has-error' : '' }}">
                                                     <label for="policy_en" class="control-label">{{ trans('general.policy_en') }}</label>
-                                                    <input id="policy_en" type="text" class="form-control" name="policy_en" placeholder="{{ trans('general.policy_en') }}" value="{{ old('policy_en') }}" autofocus>
+                                                    <input id="policy_en" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.policy_en') }}" name="policy_en" placeholder="{{ trans('general.policy_en') }}" value="{{ old('policy_en') }}" autofocus>
                                                     @if ($errors->has('policy_en'))
                                                     <span class="help-block">
                                                         <strong>
@@ -370,7 +370,7 @@
                                             <div class="col-md-4">
                                                 <div class="form-group{{ $errors->has('cancellation_ar') ? ' has-error' : '' }}">
                                                     <label for="cancellation_ar" class="control-label">{{ trans('general.cancellation_ar') }}</label>
-                                                    <input id="cancellation_ar" type="text" class="form-control" name="cancellation_ar" placeholder="{{ trans('general.cancellation_ar') }}" value="{{ old('cancellation_ar') }}" autofocus>
+                                                    <input id="cancellation_ar" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.cancellation_ar') }}" name="cancellation_ar" placeholder="{{ trans('general.cancellation_ar') }}" value="{{ old('cancellation_ar') }}" autofocus>
                                                     @if ($errors->has('cancellation_ar'))
                                                     <span class="help-block">
                                                         <strong>
@@ -383,7 +383,7 @@
                                             <div class="col-md-4">
                                                 <div class="form-group{{ $errors->has('cancellation_en') ? ' has-error' : '' }}">
                                                     <label for="cancellation_en" class="control-label">{{ trans('general.cancellation_en') }}</label>
-                                                    <input id="cancellation_en" type="text" class="form-control" name="cancellation_en" placeholder="{{ trans('general.cancellation_en') }}" value="{{ old('cancellation_en') }}" autofocus>
+                                                    <input id="cancellation_en" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.cancellation_en') }}" name="cancellation_en" placeholder="{{ trans('general.cancellation_en') }}" value="{{ old('cancellation_en') }}" autofocus>
                                                     @if ($errors->has('cancellation_en'))
                                                     <span class="help-block">
                                                         <strong>
@@ -396,7 +396,7 @@
                                             <div class="col-md-4">
                                                 <div class="form-group{{ $errors->has('keywords') ? ' has-error' : '' }}">
                                                     <label for="keywords" class="control-label">{{ trans('general.keywords') }}</label>
-                                                    <input id="keywords" type="text" class="form-control" name="keywords" placeholder="{{ trans('general.keywords') }}" value="{{ old('keywords') }}" autofocus>
+                                                    <input id="keywords" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.keywords') }}" name="keywords" placeholder="{{ trans('general.keywords') }}" value="{{ old('keywords') }}" autofocus>
                                                     @if ($errors->has('keywords'))
                                                     <span class="help-block">
                                                         <strong>
@@ -409,7 +409,7 @@
                                             <div class="col-md-4">
                                                 <div class="form-group{{ $errors->has('path') ? ' has-error' : '' }}">
                                                     <label for="path" class="control-label">{{ trans('general.path') }}</label>
-                                                    <input id="path" type="text" class="form-control" name="path" placeholder="{{ trans('general.path') }}" value="{{ old('path') }}" autofocus>
+                                                    <input id="path" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.path') }}" name="path" placeholder="{{ trans('general.path') }}" value="{{ old('path') }}" autofocus>
                                                     @if ($errors->has('path'))
                                                     <span class="help-block">
                                                         <strong>
@@ -437,7 +437,7 @@
                                             <div class="col-md-4">
                                                 <div class="form-group{{ $errors->has('website') ? ' has-error' : '' }}">
                                                     <label for="website" class="control-label">{{ trans('general.website') }}</label>
-                                                    <input id="website" type="text" class="form-control" name="website" placeholder="{{ trans('general.website') }}" value="{{ old('website') }}" autofocus>
+                                                    <input id="website" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.website') }}" name="website" placeholder="{{ trans('general.website') }}" value="{{ old('website') }}" autofocus>
                                                     @if ($errors->has('website'))
                                                     <span class="help-block">
                                                         <strong>
@@ -450,7 +450,7 @@
                                             <div class="col-md-4">
                                                 <div class="form-group{{ $errors->has('facebook') ? ' has-error' : '' }}">
                                                     <label for="facebook" class="control-label">{{ trans('general.facebook') }}</label>
-                                                    <input id="facebook" type="text" class="form-control" name="facebook" placeholder="{{ trans('general.facebook') }}" value="{{ old('facebook') }}" autofocus>
+                                                    <input id="facebook" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.facebook') }}" name="facebook" placeholder="{{ trans('general.facebook') }}" value="{{ old('facebook') }}" autofocus>
                                                     @if ($errors->has('facebook'))
                                                     <span class="help-block">
                                                         <strong>
@@ -463,7 +463,7 @@
                                             <div class="col-md-4">
                                                 <div class="form-group{{ $errors->has('instagram') ? ' has-error' : '' }}">
                                                     <label for="instagram" class="control-label">{{ trans('general.instagram') }}</label>
-                                                    <input id="instagram" type="text" class="form-control" name="instagram" placeholder="{{ trans('general.instagram') }}" value="{{ old('instagram') }}" autofocus>
+                                                    <input id="instagram" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.instagram') }}" name="instagram" placeholder="{{ trans('general.instagram') }}" value="{{ old('instagram') }}" autofocus>
                                                     @if ($errors->has('instagram'))
                                                     <span class="help-block">
                                                         <strong>
@@ -476,7 +476,7 @@
                                             <div class="col-md-4">
                                                 <div class="form-group{{ $errors->has('youtube') ? ' has-error' : '' }}">
                                                     <label for="youtube" class="control-label">{{ trans('general.youtube') }}</label>
-                                                    <input id="youtube" type="text" class="form-control" name="youtube" placeholder="{{ trans('general.youtube') }}" value="{{ old('youtube') }}" autofocus>
+                                                    <input id="youtube" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.youtube') }}" name="youtube" placeholder="{{ trans('general.youtube') }}" value="{{ old('youtube') }}" autofocus>
                                                     @if ($errors->has('youtube'))
                                                     <span class="help-block">
                                                         <strong>
@@ -489,7 +489,7 @@
                                             <div class="col-md-4">
                                                 <div class="form-group{{ $errors->has('twitter') ? ' has-error' : '' }}">
                                                     <label for="twitter" class="control-label">{{ trans('general.twitter') }}</label>
-                                                    <input id="twitter" type="text" class="form-control" name="twitter" placeholder="{{ trans('general.twitter') }}" value="{{ old('twitter') }}" autofocus>
+                                                    <input id="twitter" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.twitter') }}" name="twitter" placeholder="{{ trans('general.twitter') }}" value="{{ old('twitter') }}" autofocus>
                                                     @if ($errors->has('twitter'))
                                                     <span class="help-block">
                                                         <strong>
@@ -502,7 +502,7 @@
                                             <div class="col-md-4">
                                                 <div class="form-group{{ $errors->has('whatsapp') ? ' has-error' : '' }}">
                                                     <label for="whatsapp" class="control-label">{{ trans('general.whatsapp') }}</label>
-                                                    <input id="whatsapp" type="text" class="form-control" name="whatsapp" placeholder="{{ trans('general.whatsapp') }}" value="{{ old('whatsapp') }}" autofocus>
+                                                    <input id="whatsapp" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.whatsapp') }}" name="whatsapp" placeholder="{{ trans('general.whatsapp') }}" value="{{ old('whatsapp') }}" autofocus>
                                                     @if ($errors->has('whatsapp'))
                                                     <span class="help-block">
                                                         <strong>
@@ -515,7 +515,7 @@
                                             <div class="col-md-4">
                                                 <div class="form-group{{ $errors->has('iphone') ? ' has-error' : '' }}">
                                                     <label for="iphone" class="control-label">{{ trans('general.iphone') }}</label>
-                                                    <input id="iphone" type="text" class="form-control" name="iphone" placeholder="{{ trans('general.iphone') }}" value="{{ old('iphone') }}" autofocus>
+                                                    <input id="iphone" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.iphone') }}" name="iphone" placeholder="{{ trans('general.iphone') }}" value="{{ old('iphone') }}" autofocus>
                                                     @if ($errors->has('iphone'))
                                                     <span class="help-block">
                                                         <strong>
@@ -528,7 +528,7 @@
                                             <div class="col-md-4">
                                                 <div class="form-group{{ $errors->has('android') ? ' has-error' : '' }}">
                                                     <label for="android" class="control-label">{{ trans('general.android') }}</label>
-                                                    <input id="android" type="text" class="form-control" name="android" placeholder="{{ trans('general.android') }}" value="{{ old('android') }}" autofocus>
+                                                    <input id="android" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.android') }}" name="android" placeholder="{{ trans('general.android') }}" value="{{ old('android') }}" autofocus>
                                                     @if ($errors->has('android'))
                                                     <span class="help-block">
                                                         <strong>
@@ -541,7 +541,7 @@
                                             <div class="col-md-4">
                                                 <div class="form-group{{ $errors->has('longitude') ? ' has-error' : '' }}">
                                                     <label for="longitude" class="control-label">{{ trans('general.longitude') }}</label>
-                                                    <input id="longitude" type="text" class="form-control" name="longitude" placeholder="{{ trans('general.longitude') }}" value="{{ old('longitude') }}" autofocus>
+                                                    <input id="longitude" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.longitude') }}" name="longitude" placeholder="{{ trans('general.longitude') }}" value="{{ old('longitude') }}" autofocus>
                                                     @if ($errors->has('longitude'))
                                                     <span class="help-block">
                                                         <strong>
@@ -554,7 +554,7 @@
                                             <div class="col-md-4">
                                                 <div class="form-group{{ $errors->has('latitude') ? ' has-error' : '' }}">
                                                     <label for="latitude" class="control-label">{{ trans('general.latitude') }}</label>
-                                                    <input id="latitude" type="text" class="form-control" name="latitude" placeholder="{{ trans('general.latitude') }}" value="{{ old('latitude') }}" autofocus>
+                                                    <input id="latitude" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.latitude') }}" name="latitude" placeholder="{{ trans('general.latitude') }}" value="{{ old('latitude') }}" autofocus>
                                                     @if ($errors->has('latitude'))
                                                     <span class="help-block">
                                                         <strong>
@@ -568,7 +568,7 @@
                                             <div class="col-md-4">
                                                 <div class="form-group{{ $errors->has('balance') ? ' has-error' : '' }}">
                                                     <label for="balance" class="control-label">{{ trans('general.balance') }}</label>
-                                                    <input id="balance" type="text" class="form-control" name="balance" placeholder="{{ trans('general.balance') }}" value="{{ old('balance') }}" autofocus>
+                                                    <input id="balance" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.balance') }}" name="balance" placeholder="{{ trans('general.balance') }}" value="{{ old('balance') }}" autofocus>
                                                     @if ($errors->has('balance'))
                                                     <span class="help-block">
                                                         <strong>
@@ -582,7 +582,7 @@
                                             <div class="col-md-4">
                                                 <div class="form-group{{ $errors->has('merchant_id') ? ' has-error' : '' }}">
                                                     <label for="merchant_id" class="control-label">{{ trans('general.merchant_id') }}</label>
-                                                    <input id="merchant_id" type="text" class="form-control" name="merchant_id" placeholder="{{ trans('general.merchant_id') }}" value="{{ old('merchant_id') }}" autofocus>
+                                                    <input id="merchant_id" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.merchant_id') }}" name="merchant_id" placeholder="{{ trans('general.merchant_id') }}" value="{{ old('merchant_id') }}" autofocus>
                                                     @if ($errors->has('merchant_id'))
                                                     <span class="help-block">
                                                         <strong>
@@ -609,21 +609,21 @@
                                         <div class="row">
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <label class="control-label sbold">{{ trans('general.active') }}</label></br>
+                                                    <label class="control-label sbold tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.active') }}">{{ trans('general.active') }}</label></br>
                                                     <label class="radio-inline">
                                                         <input type="radio" name="active" id="optionsRadios1" checked value="1">
-                                                        {{ trans('general.active') }} </label>
+                                                        {{ trans('general.yes') }} </label>
                                                     <label class="radio-inline">
-                                                        <input type="radio" name="active" id="optionsRadios2" value="0"> {{ trans('general.not_active') }}</label>
+                                                        <input type="radio" name="active" id="optionsRadios2" value="0"> {{ trans('general.no') }}</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <label class="control-label sbold">{{ trans('general.on_home') }}</label></br>
+                                                    <label class="control-label sbold tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.on_home') }}">{{ trans('general.on_home') }}</label></br>
                                                     <label class="radio-inline">
-                                                        <input type="radio" name="on_home" id="optionsRadios1" value="1"> {{ trans('general.on_home') }} </label>
+                                                        <input type="radio" name="on_home" id="optionsRadios1" value="1"> {{ trans('general.yes') }} </label>
                                                     <label class="radio-inline">
-                                                        <input type="radio" name="on_home" id="optionsRadios2" checked value="0"> {{ trans('general.not_on_home') }}
+                                                        <input type="radio" name="on_home" id="optionsRadios2" checked value="0"> {{ trans('general.no') }}
                                                     </label>
                                                 </div>
                                             </div>
