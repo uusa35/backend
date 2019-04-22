@@ -18,13 +18,13 @@
 @section('header')
     @include('frontend.wokiee.four.partials.header')
 @show
+@section('content')
 @section('breadcrumbs')
 @show
-@section('content')
-    <div id="tt-pageContent">
-        @include('frontend.wokiee.four.partials.notifications')
-        @yield('body')
-    </div>
+<div id="tt-pageContent">
+    @include('frontend.wokiee.four.partials.notifications')
+    @yield('body')
+</div>
 @show
 
 <!--footer start-->

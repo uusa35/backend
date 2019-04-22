@@ -153,7 +153,7 @@
                                                 <i class="fa fa-fw fa-edit"></i> {{ trans('general.assign_child') }}</a>
                                         </li>
                                         <li>
-                                            <a href="{{ route('backend.activate',['model' => 'product','id' => $element->id]) }}">
+                                            <a href="{{ route('backend.activate',['model' => 'category','id' => $element->id]) }}">
                                                 <i class="fa fa-fw fa-check-circle"></i> {{ trans('general.toggle_active') }}</a>
                                         </li>
                                         <li>
