@@ -54,15 +54,15 @@ class UserController extends Controller
      */
     public function store(UserStore $request)
     {
-        $element = User::create($request->except( 'image', 'bg', 'banner', 'path'));
+        $element = User::create($request->except('image', 'bg', 'banner', 'path'));
         if ($element) {
             $request->hasFile('image') ? $this->saveMimes($element, $request, ['image'], ['1080', '1440'], true) : null;
             $request->hasFile('bg') ? $this->saveMimes($element, $request, ['bg'], ['1080', '1440'], true) : null;
             $request->hasFile('banner') ? $this->saveMimes($element, $request, ['banner'], ['1080', '1440'], true) : null;
             $request->hasFile('path') ? $this->savePath($request, $element) : null;
-            return redirect()->route('backend.user.index')->with('success', 'user created');
+            return redirect()->route('backend.user.index')->with('success', trans('general.user_added'));
         }
-        return redirect()->route('backend.user.create')->with('error', 'user not created');
+        return redirect()->route('backend.user.create')->with('error', trans('general.user_not_added'));
     }
 
     /**
