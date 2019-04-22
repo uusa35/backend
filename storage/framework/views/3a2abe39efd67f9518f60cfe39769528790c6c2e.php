@@ -158,7 +158,7 @@
                                                 <i class="fa fa-fw fa-edit"></i> <?php echo e(trans('general.assign_child')); ?></a>
                                         </li>
                                         <li>
-                                            <a href="<?php echo e(route('backend.activate',['model' => 'product','id' => $element->id])); ?>">
+                                            <a href="<?php echo e(route('backend.activate',['model' => 'category','id' => $element->id])); ?>">
                                                 <i class="fa fa-fw fa-check-circle"></i> <?php echo e(trans('general.toggle_active')); ?></a>
                                         </li>
                                         <li>
