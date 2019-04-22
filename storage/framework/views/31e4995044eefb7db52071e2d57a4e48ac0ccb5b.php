@@ -14,7 +14,7 @@
                 <input type="hidden" name="api_token" value="<?php echo e(str_random(rand(10,99))); ?>">
                 <input type="hidden" name="password" value="<?php echo e(bcrypt('secret')); ?>">
                 <div class="form-body">
-                    <h3 class="form-section"><?php echo e(trans('general.create_user')); ?></h3>
+                    <h3 class="form-section"><?php echo e(trans('general.new_user')); ?></h3>
                     
                     <div class="portlet box blue ">
                         <div class="portlet-title">
@@ -202,7 +202,7 @@
                                             <label for="demo" class="control-label"><?php echo e(trans('general.bg')); ?>
 
                                                 *</label>
-                                            <input type="text" id="hue-demo" class="form-control tooltips demo" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.bg')); ?>" data-control="hue" name="bg" value="#ff6161">
+                                            <input type="file" id="hue-demo" class="form-control tooltips demo" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.bg')); ?>" data-control="hue" name="bg" value="#ff6161">
                                             <?php if($errors->has('demo')): ?>
                                             <span class="help-block">
                                                 <strong>
@@ -328,9 +328,8 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="single" class="control-label"><?php echo e(trans('general.country')); ?></label>
-                                            <select id="single" class="form-control tooltips select2" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.country_id')); ?>" name="country_id">
-                                                <option></option>
-
+                                            <select id="single" class="form-control tooltips select2" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.country_id')); ?>" name="country_id" required>
+                                                <option><?php echo e(trans('general.choose_country')); ?></option>
                                                 <?php $__currentLoopData = $countries; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $country): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                 <option value="<?php echo e($country->id); ?>"><?php echo e($country->slug_en); ?></option>
                                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -356,13 +355,10 @@
                                                 <div class="form-group">
                                                     <label for="single" class="control-label"><?php echo e(trans('general.role')); ?></label>
                                                     <select id="single" class="form-control tooltips select2" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.role_id')); ?>" name="role_id">
-                                                        <option></option>
-
+                                                        <option><?php echo e(trans('general.choose_role')); ?></option>
                                                         <?php $__currentLoopData = $roles; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $role): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                        <option value="<?php echo e($country->slug_en); ?>"><?php echo e($role->slug_en); ?></option>
+                                                        <option value="<?php echo e($role->id); ?>"><?php echo e($role->slug_en); ?></option>
                                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-
-
                                                     </select>
                                                 </div>
                                             </div>
@@ -439,7 +435,7 @@
                                             <div class="col-md-4">
                                                 <div class="form-group<?php echo e($errors->has('path') ? ' has-error' : ''); ?>">
                                                     <label for="path" class="control-label"><?php echo e(trans('general.path')); ?></label>
-                                                    <input id="path" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.path')); ?>" name="path" placeholder="<?php echo e(trans('general.path')); ?>" value="<?php echo e(old('path')); ?>" autofocus>
+                                                    <input id="path" type="file" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.path')); ?>" name="path" placeholder="<?php echo e(trans('general.path')); ?>" value="<?php echo e(old('path')); ?>" autofocus>
                                                     <?php if($errors->has('path')): ?>
                                                     <span class="help-block">
                                                         <strong>
@@ -469,7 +465,7 @@
                                             <div class="col-md-4">
                                                 <div class="form-group<?php echo e($errors->has('website') ? ' has-error' : ''); ?>">
                                                     <label for="website" class="control-label"><?php echo e(trans('general.website')); ?></label>
-                                                    <input id="website" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.website')); ?>" name="website" placeholder="<?php echo e(trans('general.website')); ?>" value="<?php echo e(old('website')); ?>" autofocus>
+                                                    <input id="website" type="url" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.website')); ?>" name="website" placeholder="<?php echo e(trans('general.website')); ?>" value="<?php echo e(old('website')); ?>" autofocus>
                                                     <?php if($errors->has('website')): ?>
                                                     <span class="help-block">
                                                         <strong>
@@ -483,7 +479,7 @@
                                             <div class="col-md-4">
                                                 <div class="form-group<?php echo e($errors->has('facebook') ? ' has-error' : ''); ?>">
                                                     <label for="facebook" class="control-label"><?php echo e(trans('general.facebook')); ?></label>
-                                                    <input id="facebook" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.facebook')); ?>" name="facebook" placeholder="<?php echo e(trans('general.facebook')); ?>" value="<?php echo e(old('facebook')); ?>" autofocus>
+                                                    <input id="facebook" type="url" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.facebook')); ?>" name="facebook" placeholder="<?php echo e(trans('general.facebook')); ?>" value="<?php echo e(old('facebook')); ?>" autofocus>
                                                     <?php if($errors->has('facebook')): ?>
                                                     <span class="help-block">
                                                         <strong>
@@ -497,7 +493,7 @@
                                             <div class="col-md-4">
                                                 <div class="form-group<?php echo e($errors->has('instagram') ? ' has-error' : ''); ?>">
                                                     <label for="instagram" class="control-label"><?php echo e(trans('general.instagram')); ?></label>
-                                                    <input id="instagram" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.instagram')); ?>" name="instagram" placeholder="<?php echo e(trans('general.instagram')); ?>" value="<?php echo e(old('instagram')); ?>" autofocus>
+                                                    <input id="instagram" type="url" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.instagram')); ?>" name="instagram" placeholder="<?php echo e(trans('general.instagram')); ?>" value="<?php echo e(old('instagram')); ?>" autofocus>
                                                     <?php if($errors->has('instagram')): ?>
                                                     <span class="help-block">
                                                         <strong>
@@ -511,7 +507,7 @@
                                             <div class="col-md-4">
                                                 <div class="form-group<?php echo e($errors->has('youtube') ? ' has-error' : ''); ?>">
                                                     <label for="youtube" class="control-label"><?php echo e(trans('general.youtube')); ?></label>
-                                                    <input id="youtube" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.youtube')); ?>" name="youtube" placeholder="<?php echo e(trans('general.youtube')); ?>" value="<?php echo e(old('youtube')); ?>" autofocus>
+                                                    <input id="youtube" type="url" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.youtube')); ?>" name="youtube" placeholder="<?php echo e(trans('general.youtube')); ?>" value="<?php echo e(old('youtube')); ?>" autofocus>
                                                     <?php if($errors->has('youtube')): ?>
                                                     <span class="help-block">
                                                         <strong>
@@ -525,7 +521,7 @@
                                             <div class="col-md-4">
                                                 <div class="form-group<?php echo e($errors->has('twitter') ? ' has-error' : ''); ?>">
                                                     <label for="twitter" class="control-label"><?php echo e(trans('general.twitter')); ?></label>
-                                                    <input id="twitter" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.twitter')); ?>" name="twitter" placeholder="<?php echo e(trans('general.twitter')); ?>" value="<?php echo e(old('twitter')); ?>" autofocus>
+                                                    <input id="twitter" type="url" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.twitter')); ?>" name="twitter" placeholder="<?php echo e(trans('general.twitter')); ?>" value="<?php echo e(old('twitter')); ?>" autofocus>
                                                     <?php if($errors->has('twitter')): ?>
                                                     <span class="help-block">
                                                         <strong>
@@ -553,7 +549,7 @@
                                             <div class="col-md-4">
                                                 <div class="form-group<?php echo e($errors->has('iphone') ? ' has-error' : ''); ?>">
                                                     <label for="iphone" class="control-label"><?php echo e(trans('general.iphone')); ?></label>
-                                                    <input id="iphone" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.iphone')); ?>" name="iphone" placeholder="<?php echo e(trans('general.iphone')); ?>" value="<?php echo e(old('iphone')); ?>" autofocus>
+                                                    <input id="iphone" type="url" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.iphone')); ?>" name="iphone" placeholder="<?php echo e(trans('general.iphone')); ?>" value="<?php echo e(old('iphone')); ?>" autofocus>
                                                     <?php if($errors->has('iphone')): ?>
                                                     <span class="help-block">
                                                         <strong>
@@ -567,7 +563,7 @@
                                             <div class="col-md-4">
                                                 <div class="form-group<?php echo e($errors->has('android') ? ' has-error' : ''); ?>">
                                                     <label for="android" class="control-label"><?php echo e(trans('general.android')); ?></label>
-                                                    <input id="android" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.android')); ?>" name="android" placeholder="<?php echo e(trans('general.android')); ?>" value="<?php echo e(old('android')); ?>" autofocus>
+                                                    <input id="android" type="url" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.android')); ?>" name="android" placeholder="<?php echo e(trans('general.android')); ?>" value="<?php echo e(old('android')); ?>" autofocus>
                                                     <?php if($errors->has('android')): ?>
                                                     <span class="help-block">
                                                         <strong>
@@ -610,7 +606,7 @@
                                             <div class="col-md-4">
                                                 <div class="form-group<?php echo e($errors->has('balance') ? ' has-error' : ''); ?>">
                                                     <label for="balance" class="control-label"><?php echo e(trans('general.balance')); ?></label>
-                                                    <input id="balance" type="text" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.balance')); ?>" name="balance" placeholder="<?php echo e(trans('general.balance')); ?>" value="<?php echo e(old('balance')); ?>" autofocus>
+                                                    <input id="balance" type="number" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.balance')); ?>" name="balance" placeholder="<?php echo e(trans('general.balance')); ?>" value="<?php echo e(old('balance')); ?>" autofocus>
                                                     <?php if($errors->has('balance')): ?>
                                                     <span class="help-block">
                                                         <strong>
@@ -640,8 +636,6 @@
                                     </div>
                                 </div>
                             </div>
-
-
                             <div class="portlet box blue ">
                                 <div class="portlet-title">
                                     <div class="caption">
