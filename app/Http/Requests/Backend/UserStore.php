@@ -51,7 +51,7 @@ class UserStore extends FormRequest
             'cancellation_ar' => 'nullable|max:1000',
             'cancellation_en' => 'nullable|max:1000',
             'keywords' => 'nullable|max:500',
-            'path' => 'nullable|mime:pdf',
+            'path' => 'nullable|mimes:pdf',
             'website' => 'nullable|url',
             'facebook' => 'nullable|url',
             'instagram' => 'nullable|url',
@@ -65,7 +65,7 @@ class UserStore extends FormRequest
             'balance' => 'nullable|numeric',
             'on_home' => 'nullable|boolean',
             'active' => 'nullable|boolean',
-            'country_id' => 'nullable|numeric|countries:exists,id',
+            'country_id' => 'nullable|numeric|exists:countries:,id',
             'role_id' => 'required|numeric|roles:exists,id',
             'merchant_id' => 'nullable|max:200|min:3|unique:users,merchant_id',
         ];
