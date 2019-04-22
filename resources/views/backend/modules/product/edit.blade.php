@@ -661,11 +661,13 @@
                                                                    data-container="body" data-placement="top"
                                                                    data-original-title="{{ trans('message.active') }}">{{ trans('general.active') }}</label></br>
                                                             <label class="radio-inline">
-                                                                <input type="radio" name="active" id="optionsRadios3" {{ $element->active ? 'checked' : null  }}
+                                                                <input type="radio" name="active" id="optionsRadios3"
+                                                                       {{ $element->active ? 'checked' : null  }}
                                                                        checked value="1">
                                                                 {{ trans('general.yes') }}</label>
                                                             <label class="radio-inline">
-                                                                <input type="radio" name="active" id="optionsRadios4" {{ !$element->active ? 'checked' : null  }}
+                                                                <input type="radio" name="active" id="optionsRadios4"
+                                                                       {{ !$element->active ? 'checked' : null  }}
                                                                        value="0">
                                                                 {{ trans('general.no') }}
                                                             </label>
@@ -678,11 +680,13 @@
                                                                data-container="body" data-placement="top"
                                                                data-original-title="{{ trans('message.available') }}">{{ trans('general.home_delivery_available') }}</label></br>
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="home_delivery_availability" {{ $element->home_delivery_availability ? 'checked' : null  }}
+                                                            <input type="radio" name="home_delivery_availability"
+                                                                   {{ $element->home_delivery_availability ? 'checked' : null  }}
                                                                    id="optionsRadios3" value="1">
                                                             {{ trans('general.yes') }}</label>
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="home_delivery_availability" {{ !$element->home_delivery_availability ? 'checked' : null  }}
+                                                            <input type="radio" name="home_delivery_availability"
+                                                                   {{ !$element->home_delivery_availability ? 'checked' : null  }}
                                                                    id="optionsRadios4" checked value="0">
                                                             {{ trans('general.no') }}</label>
                                                     </div>
@@ -694,11 +698,13 @@
                                                                data-container="body" data-placement="top"
                                                                data-original-title="{{ trans('message.shipment_available') }}">{{ trans('general.shipment_available') }}</label></br>
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="shipment_availability" {{ $element->shipment_availability ? 'checked' : null  }}
+                                                            <input type="radio" name="shipment_availability"
+                                                                   {{ $element->shipment_availability ? 'checked' : null  }}
                                                                    id="optionsRadios3" value="1">
                                                             {{ trans('general.yes') }}</label>
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="shipment_availability" {{ !$element->shipment_availability ? 'checked' : null  }}
+                                                            <input type="radio" name="shipment_availability"
+                                                                   {{ !$element->shipment_availability ? 'checked' : null  }}
                                                                    id="optionsRadios4" checked value="0">
                                                             {{ trans('general.no') }}</label>
                                                     </div>
@@ -714,11 +720,13 @@
                                                                data-container="body" data-placement="top"
                                                                data-original-title="{{ trans('message.exclusive') }}">{{ trans('general.exclusive') }}</label></br>
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="exclusive" id="optionsRadios3" {{ $element->exclusive ? 'checked' : null  }}
+                                                            <input type="radio" name="exclusive" id="optionsRadios3"
+                                                                   {{ $element->exclusive ? 'checked' : null  }}
                                                                    value="1">
                                                             {{ trans('general.yes') }}</label>
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="exclusive" id="optionsRadios4" {{ $element->exclusive ? 'checked' : null  }}
+                                                            <input type="radio" name="exclusive" id="optionsRadios4"
+                                                                   {{ $element->exclusive ? 'checked' : null  }}
                                                                    checked value="0">
                                                             {{ trans('general.no') }}</label>
                                                     </div>
@@ -730,11 +738,13 @@
                                                                data-container="body" data-placement="top"
                                                                data-original-title="{{ trans('message.on_sale') }}">{{ trans('general.on_sale') }}</label></br>
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="on_sale" id="optionsRadios3" {{ $element->on_sale ? 'checked' : null  }}
+                                                            <input type="radio" name="on_sale" id="optionsRadios3"
+                                                                   {{ $element->on_sale ? 'checked' : null  }}
                                                                    value="1">
                                                             {{ trans('general.yes') }}</label>
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="on_sale" id="optionsRadios4" {{ !$element->on_sale ? 'checked' : null  }}
+                                                            <input type="radio" name="on_sale" id="optionsRadios4"
+                                                                   {{ !$element->on_sale ? 'checked' : null  }}
                                                                    checked value="0">
                                                             {{ trans('general.no') }}</label>
                                                     </div>
@@ -746,11 +756,13 @@
                                                                data-container="body" data-placement="top"
                                                                data-original-title="{{ trans('message.on_homepage') }}">{{ trans('general.on_homepage') }}</label></br>
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="on_home" id="optionsRadios3" {{ $element->on_home ? 'checked' : null  }}
+                                                            <input type="radio" name="on_home" id="optionsRadios3"
+                                                                   {{ $element->on_home ? 'checked' : null  }}
                                                                    value="1">
                                                             {{ trans('general.yes') }}</label>
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="on_home" id="optionsRadios4" {{ !$element->on_home ? 'checked' : null  }}
+                                                            <input type="radio" name="on_home" id="optionsRadios4"
+                                                                   {{ !$element->on_home ? 'checked' : null  }}
                                                                    checked value="0">
                                                             {{ trans('general.no') }}</label>
                                                     </div>
@@ -766,11 +778,13 @@
                                                                data-container="body" data-placement="top"
                                                                data-original-title="{{ trans('message.is_available') }}">{{ trans('general.is_available') }}</label></br>
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="is_available" id="optionsRadios3" {{ $element->is_available ? 'checked' : null  }}
+                                                            <input type="radio" name="is_available" id="optionsRadios3"
+                                                                   {{ $element->is_available ? 'checked' : null  }}
                                                                    value="1">
                                                             {{ trans('general.yes') }}</label>
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="is_available" id="optionsRadios4" {{ !$element->is_available ? 'checked' : null  }}
+                                                            <input type="radio" name="is_available" id="optionsRadios4"
+                                                                   {{ !$element->is_available ? 'checked' : null  }}
                                                                    checked value="0">
                                                             {{ trans('general.no') }}</label>
                                                     </div>
@@ -782,11 +796,13 @@
                                                                data-container="body" data-placement="top"
                                                                data-original-title="{{ trans('message.is_hot_deal') }}">{{ trans('general.is_hot_deal') }}</label></br>
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="is_hot_deal" id="optionsRadios7" {{ $element->is_hot_deal ? 'checked' : null  }}
+                                                            <input type="radio" name="is_hot_deal" id="optionsRadios7"
+                                                                   {{ $element->is_hot_deal ? 'checked' : null  }}
                                                                    value="1">
                                                             {{ trans('general.yes') }}</label>
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="is_hot_deal" id="optionsRadios8" {{ !$element->is_hot_deal ? 'checked' : null  }}
+                                                            <input type="radio" name="is_hot_deal" id="optionsRadios8"
+                                                                   {{ !$element->is_hot_deal ? 'checked' : null  }}
                                                                    checked value="0">
                                                             {{ trans('general.no') }}</label>
                                                     </div>
@@ -798,11 +814,13 @@
                                                                data-container="body" data-placement="top"
                                                                data-original-title="{{ trans('message.on_new') }}">{{ trans('general.on_new') }}</label></br>
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="on_new" id="optionsRadios3" {{ $element->on_new ? 'checked' : null  }}
+                                                            <input type="radio" name="on_new" id="optionsRadios3"
+                                                                   {{ $element->on_new ? 'checked' : null  }}
                                                                    value="1">
                                                             {{ trans('general.yes') }}</label>
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="on_new" id="optionsRadios4" {{ !$element->on_new ? 'checked' : null  }}
+                                                            <input type="radio" name="on_new" id="optionsRadios4"
+                                                                   {{ !$element->on_new ? 'checked' : null  }}
                                                                    checked value="0">
                                                             {{ trans('general.no') }}</label>
                                                     </div>
@@ -818,20 +836,21 @@
                                                         <label class="radio-inline" data-toggle="tooltip"
                                                                data-placement="bottom" data-html="true" title=" If Not whenever a successful order is made. qty will not be decreased
                                         accordingly.">
-                                                            <input type="radio" data-toggle="tooltip"  {{ $element->check_stock ? 'checked' : null  }}
+                                                            <input type="radio" data-toggle="tooltip"
+                                                                   {{ $element->check_stock ? 'checked' : null  }}
                                                                    data-placement="bottom" title="hello"
                                                                    name="check_stock" id="optionsRadios5" value="1">
                                                             {{ trans('general.yes') }}</label>
                                                         <label class="radio-inline" data-toggle="tooltip"
                                                                data-placement="bottom" data-html="true"
                                                                title=" if Not Product will be added to cart without checking the current quantity.">
-                                                            <input type="radio" name="check_stock" id="optionsRadios6" {{ !$element->check_stock ? 'checked' : null  }}
+                                                            <input type="radio" name="check_stock" id="optionsRadios6"
+                                                                   {{ !$element->check_stock ? 'checked' : null  }}
                                                                    checked value="0">
                                                             in
                                                             {{ trans('general.no') }}</label>
 
                                                     </div>
-
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="form-group">
@@ -839,11 +858,13 @@
                                                                data-container="body" data-placement="top"
                                                                data-original-title="{{ trans('message.has_attributes') }}">{{ trans('general.has_attributes') }}</label></br>
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="has_attributes" {{ $element->has_attributes ? 'checked' : null  }}
+                                                            <input type="radio" name="has_attributes"
+                                                                   {{ $element->has_attributes ? 'checked' : null  }}
                                                                    id="optionsRadios3" value="1">
                                                             {{ trans('general.yes') }}</label>
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="has_attributes" {{ !$element->has_attributes ? 'checked' : null  }}
+                                                            <input type="radio" name="has_attributes"
+                                                                   {{ !$element->has_attributes ? 'checked' : null  }}
                                                                    id="optionsRadios4" checked value="0">
                                                             {{ trans('general.no') }}</label>
                                                     </div>
@@ -854,6 +875,7 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div class="form-actions right">
                                 {{--<button type="button" class="btn default">Cancel</button>--}}
                                 <a href="{!! url()->previous() !!}"
@@ -867,6 +889,8 @@
                                 </button>
                             </div>
                         </form>
+                        <hr>
+                        @include('backend.partials._element_images',['images' => $element->images])
                     </div>
                 </div>
             </div>

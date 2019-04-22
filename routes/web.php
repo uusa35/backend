@@ -20,7 +20,8 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
     // 2- Action Also is different therefore ModelPolicy applied for each Model Action
 
     // Backend :: super only
-    Route::group(['namespace' => 'Admin', 'as' => 'super.', 'prefix' => 'super', 'middleware' => ['super']], function () { });
+    Route::group(['namespace' => 'Admin', 'as' => 'super.', 'prefix' => 'super', 'middleware' => ['super']], function () {
+    });
     // Backend :: super + admin
     Route::group(['namespace' => 'Admin', 'as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['admin']], function () {
         Route::resource('role', 'RoleController');
@@ -74,7 +75,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
     Route::resource('slide', 'SlideController');
     Route::resource('branch', 'BranchController');
     Route::resource('order', 'OrderController')->except(['destroy', 'show']);
-    Route::resource('image', 'ImageController');
+    Route::resource('image', 'ImageController')->only(['index','destroy']);
     Route::resource('tag', 'TagController');
     Route::resource('product', 'ProductController');
     Route::resource('package', 'ShipmentPackageController');

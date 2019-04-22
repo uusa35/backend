@@ -132,7 +132,7 @@ class ProductController extends Controller
     {
         $end_sale = $request->has('end_sale') ? Carbon::parse(str_replace('-', '', $request->end_sale))->toDateTimeString() : null;
         $start_sale = $request->has('start_sale') ? Carbon::parse(str_replace('-', '', $request->start_sale))->toDateTimeString() : null;
-        $element = Product::whereId($id)->first();
+        $element = Product::whereId($id)->with('images')->first();
         if ($element) {
             $start_sale ? $element->update(['start_sale' => $start_sale]) : null;
             $end_sale ? $element->update(['end_sale' => $end_sale]) : null;
@@ -155,6 +155,8 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $element = Product::whereId($id)->first();
+        $element->categories()->detach($element->categories->pluck('id')->toArray());
+        $element->tags()->detach($element->categories->pluck('id')->toArray());
         if ($element->delete()) {
             return redirect()->back()->with('success', 'product deleted');
         }
