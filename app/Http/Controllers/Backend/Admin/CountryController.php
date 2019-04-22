@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend\Admin;
 
 use App\Http\Requests\Backend\CountryStore;
 use App\Models\Country;
+use App\Models\ShipmentPackage;
 use App\Services\Traits\ImageHelpers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -20,7 +21,6 @@ class CountryController extends Controller
      */
     public function index()
     {
-        //dd("hello");
         $elements = Country::with('currency')->get();
         return view('backend.modules.country.index', compact('elements'));
     }
@@ -32,7 +32,8 @@ class CountryController extends Controller
      */
     public function create()
     {
-        return view('backend.modules.country.create');
+        $shipmentPackages = ShipmentPackage::active()->get();
+        return view('backend.modules.country.create', compact('shipmentPackages'));
     }
 
     /**
@@ -43,8 +44,9 @@ class CountryController extends Controller
      */
     public function store(CountryStore $request)
     {
-        $element = Country::create($request->request->all());
+        $element = Country::create($request->except('flag', 'packages'));
         if ($element) {
+            $element->shipment_packages()->sync($request->packages);
             if ($request->has('flag')) {
                 $this->saveMimes($element, $request, ['flag'], ['400', '400'], false);
             }
@@ -92,13 +94,15 @@ class CountryController extends Controller
             'calling_code' => 'required|unique:countries,calling_code,' . $id,
             'country_code' => 'required|alpha|unique:countries,country_code,' . $id,
             'order' => 'required|numeric|max:99|min:1',
+            'packages' => 'required|array'
         ]);
         if ($validate->fails()) {
             return redirect()->back()->withInput(Input::all())->withErrors($validate);
         }
         $element = Country::whereId($id)->first();
         if ($element) {
-            $element->update($request->request->all());
+            $element->update($request->except('flag', 'packages'));
+            $element->shipment_packages()->sync($request->packages);
             if ($request->has('flag')) {
                 $this->saveMimes($element, $request, ['flag'], ['400', '400'], false);
             }

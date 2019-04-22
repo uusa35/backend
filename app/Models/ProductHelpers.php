@@ -68,6 +68,9 @@ trait ProductHelpers
 
     public function getPackageFeePriceAttribute()
     {
+        // this is wrong
+//        dd(session()->get('country'));
         return (double)$this->weight * (double)$this->shipment_package->charge;
+        // correct is when a user chooses his country
     }
 }

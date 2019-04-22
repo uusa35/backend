@@ -75,6 +75,19 @@
                                             </div>
 
                                         </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="control-label"><?php echo e(trans('general.shipment_packages')); ?>
+
+                                                    *</label>
+                                                <select name="packages[]" multiple="multiple" class="multi-select tooltips" data-container="body" data-placement="top" data-original-title="<?php echo e(trans('message.shipment_package')); ?>" id="my_multi_select1" required>
+                                                    <option><?php echo e(trans('general.choose_shipment_package')); ?></option>
+                                                    <?php $__currentLoopData = $shipmentPackages; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $package): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                        <option value="<?php echo e($package->id); ?>"><?php echo e($package->slug); ?></option>
+                                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                </select>
+                                            </div>
+                                        </div>
                                     
                                     
                                     

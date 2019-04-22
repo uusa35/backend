@@ -182,7 +182,7 @@
                                             <label for="single" class="control-label">{{ trans('general.shipment_package') }}
                                                 *</label>
                                             <select id="" name="shipment_package_id" class="form-control tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.shipment_package') }}" required>
-                                                <option value="">{{ trans('choose_product_package_grade') }}</option>
+                                                <option value="">{{ trans('general.choose_package') }}</option>
                                                 @foreach($shipment_packages as $shipment_package)
                                                 <option value="{{ $shipment_package->id }}">
                                                     {{ $shipment_package->slug_en }}</option>
