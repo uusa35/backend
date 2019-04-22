@@ -24,7 +24,7 @@
                             <th>{{ trans('general.image') }}</th>
                             <th>{{ trans('general.end_sale') }}</th>
                             <th>{{ trans('general.active') }}</th>
-                            <th>{{ trans('general.attributes x/clr/qty') }}</th>
+                            <th>{{ trans('general.attributes') }} x/clr/qty</th>
                             <th>{{ trans('general.actions') }}</th>
                         </tr>
                         </thead>
@@ -39,7 +39,7 @@
                             <th>{{ trans('general.image') }}</th>
                             <th>{{ trans('general.end_sale') }}</th>
                             <th>{{ trans('general.active') }}</th>
-                            <th>{{ trans('general.attribute') }} x/clr/qty</th>
+                            <th>{{ trans('general.attributes') }} x/clr/qty</th>
                             <th>{{ trans('general.actions') }}</th>
                         </tr>
                         </tfoot>

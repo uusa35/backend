@@ -22,7 +22,7 @@
                             <th><?php echo e(trans('general.image')); ?></th>
                             <th><?php echo e(trans('general.end_sale')); ?></th>
                             <th><?php echo e(trans('general.active')); ?></th>
-                            <th><?php echo e(trans('general.attributes x/clr/qty')); ?></th>
+                            <th><?php echo e(trans('general.attributes')); ?> x/clr/qty</th>
                             <th><?php echo e(trans('general.actions')); ?></th>
                         </tr>
                         </thead>
@@ -37,7 +37,7 @@
                             <th><?php echo e(trans('general.image')); ?></th>
                             <th><?php echo e(trans('general.end_sale')); ?></th>
                             <th><?php echo e(trans('general.active')); ?></th>
-                            <th><?php echo e(trans('general.attribute')); ?> x/clr/qty</th>
+                            <th><?php echo e(trans('general.attributes')); ?> x/clr/qty</th>
                             <th><?php echo e(trans('general.actions')); ?></th>
                         </tr>
                         </tfoot>
