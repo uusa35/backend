@@ -2,22 +2,6 @@
     <a href="#" disabled="true" class="tooltips disabled" data-container="body" data-placement="<?php echo e(app()->isLocale('ar') ? 'left' : 'right'); ?>" data-original-title="<?php echo e(trans('message.create_your_new_items_list')); ?>">
         <i class="icon-note"></i> <?php echo e(trans('general.create_your_new_items_list')); ?></a>
 </li>
-<li>
-    <a href="<?php echo e(route('backend.product.create')); ?>" class="tooltips" data-container="body" data-placement="<?php echo e(app()->isLocale('ar') ? 'left' : 'right'); ?>" data-original-title="<?php echo e(trans('message.new_product')); ?>">
-        <i class="icon-plus"></i> <?php echo e(trans('general.new_product')); ?></a>
-</li>
-
-
-
-
-<li>
-    <a href="<?php echo e(route('backend.service.create')); ?>" class="tooltips" data-container="body" data-placement="<?php echo e(app()->isLocale('ar') ? 'left' : 'right'); ?>" data-original-title="<?php echo e(trans('message.new_service')); ?>">
-        <i class="icon-handbag"></i> <?php echo e(trans('general.new_service')); ?></a>
-</li>
-<li>
-    <a href="<?php echo e(route('backend.timing.create')); ?>" class="tooltips" data-container="body" data-placement="<?php echo e(app()->isLocale('ar') ? 'left' : 'right'); ?>" data-original-title="<?php echo e(trans('message.new_timing')); ?>">
-        <i class="icon-plus"></i> <?php echo e(trans('general.new_timing')); ?></a>
-</li>
 <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('isAdminOrAbove')): ?>
 <li>
     <a href="<?php echo e(route('backend.admin.user.create')); ?>" class="tooltips" data-container="body" data-placement="<?php echo e(app()->isLocale('ar') ? 'left' : 'right'); ?>" data-original-title="<?php echo e(trans('message.new_user')); ?>">
@@ -75,16 +59,6 @@
     <a href="<?php echo e(route('backend.admin.policy.create')); ?>" class="tooltips" data-container="body" data-placement="<?php echo e(app()->isLocale('ar') ? 'left' : 'right'); ?>" data-original-title="<?php echo e(trans('message.new_policy')); ?>">
         <i class="icon-plus"></i> <?php echo e(trans('general.new_policy')); ?></a>
 </li>
-<li class="divider"></li>
-<li>
-    <a href="<?php echo e(route('backend.admin.questionnaire.create')); ?>" class="tooltips" data-container="body" data-placement="<?php echo e(app()->isLocale('ar') ? 'left' : 'right'); ?>" data-original-title="<?php echo e(trans('message.new_questionnaire')); ?>">
-        <i class="icon-plus"></i> <?php echo e(trans('general.new_questionnaire')); ?></a>
-</li>
-<li>
-    <a href="<?php echo e(route('backend.admin.answer.create')); ?>" class="tooltips" data-container="body" data-placement="<?php echo e(app()->isLocale('ar') ? 'left' : 'right'); ?>" data-original-title="<?php echo e(trans('message.new_answer')); ?>">
-        <i class="icon-plus"></i> <?php echo e(trans('general.new_answer')); ?></a>
-</li>
-<li class="divider"></li>
 <li>
     <a href="<?php echo e(route('backend.admin.role.create')); ?>" class="tooltips" data-container="body" data-placement="<?php echo e(app()->isLocale('ar') ? 'left' : 'right'); ?>" data-original-title="<?php echo e(trans('message.new_role')); ?>">
         <i class="icon-plus"></i> <?php echo e(trans('general.new_role')); ?></a>
@@ -110,15 +84,7 @@
         <i class="icon-plus"></i> <?php echo e(trans('general.new_page')); ?></a>
 </li>
 <li>
-    <a href="<?php echo e(route('backend.admin.slide.create')); ?>" class="tooltips" data-container="body" data-placement="<?php echo e(app()->isLocale('ar') ? 'left' : 'right'); ?>" data-original-title="<?php echo e(trans('message.new_slider')); ?>">
-        <i class="icon-plus"></i> <?php echo e(trans('general.new_slider')); ?></a>
-</li>
-<li>
-    <a href="<?php echo e(route('backend.admin.area.create')); ?>" class="tooltips" data-container="body" data-placement="<?php echo e(app()->isLocale('ar') ? 'left' : 'right'); ?>" data-original-title="<?php echo e(trans('message.new_slider')); ?>">
-        <i class="icon-plus"></i> <?php echo e(trans('general.new_area')); ?></a>
-</li>
-<li>
-    <a href="<?php echo e(route('backend.admin.aboutus.create')); ?>" class="tooltips" data-container="body" data-placement="<?php echo e(app()->isLocale('ar') ? 'left' : 'right'); ?>" data-original-title="<?php echo e(trans('message.new_slider')); ?>">
-        <i class="icon-plus"></i> <?php echo e(trans('general.new_aboutus')); ?></a>
+    <a href="<?php echo e(route('backend.slide.create',['slidable_id' => 1, 'slidable_type' => 'user'])); ?>" class="tooltips" data-container="body" data-placement="<?php echo e(app()->isLocale('ar') ? 'left' : 'right'); ?>" data-original-title="<?php echo e(trans('message.new_slider')); ?>">
+        <i class="icon-plus"></i> <?php echo e(trans('general.new_slide_for_home_page')); ?></a>
 </li>
 <?php endif; ?>
