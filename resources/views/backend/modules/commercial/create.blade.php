@@ -128,6 +128,7 @@
                         <div class="portlet-body form">
                             <div class="form-body">
                                 <div class="row">
+                                    @can('isAdminOrAbove')
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="control-label sbold tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.active') }}">{{ trans('general.active') }}</label></br>
@@ -140,14 +141,17 @@
                                             </label>
                                         </div>
                                     </div>
+                                    @else
+                                    <input type="hidden" value="1" name="active">
+                                    @endcan
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="control-label sbold tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.is_double') }}">{{ trans('general.is_double') }}</label></br>
                                             <label class="radio-inline">
-                                                <input type="radio" name="is_double" id="optionsRadios3" checked value="1">
+                                                <input type="radio" name="is_double" id="optionsRadios3" value="1">
                                                 {{ trans('general.yes') }}</label>
                                             <label class="radio-inline">
-                                                <input type="radio" name="is_double" id="optionsRadios4" value="0">
+                                                <input type="radio" name="is_double" id="optionsRadios4" checked value="0">
                                                 {{ trans('general.no') }}
                                             </label>
                                         </div>
@@ -156,10 +160,10 @@
                                         <div class="form-group">
                                             <label class="control-label sbold tooltips" data-container="body" data-placement="top" data-original-title="{{ trans('message.is_triple') }}">{{ trans('general.is_triple') }}</label></br>
                                             <label class="radio-inline">
-                                                <input type="radio" name="is_triple" id="optionsRadios3" checked value="1">
+                                                <input type="radio" name="is_triple" id="optionsRadios3" value="1">
                                                 {{ trans('general.yes') }}</label>
                                             <label class="radio-inline">
-                                                <input type="radio" name="is_triple" id="optionsRadios4" value="0">
+                                                <input type="radio" name="is_triple" id="optionsRadios4" checked value="0">
                                                 {{ trans('general.no') }}
                                             </label>
                                         </div>

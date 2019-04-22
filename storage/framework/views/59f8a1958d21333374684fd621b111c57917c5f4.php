@@ -48,7 +48,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="password"><?php echo e(trans('general.password')); ?> *</label>
-                                            <input type="text" name="passowrd" class="form-control" id="password"
+                                            <input type="password" name="password" class="form-control" id="password"
                                                    placeholder="<?php echo e(trans('general.enter_your_password')); ?>">
                                             <?php if($errors->has('password')): ?>
                                                 <span class="invalid-feedback"

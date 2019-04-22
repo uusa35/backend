@@ -52,23 +52,13 @@ class CommercialController extends Controller
      */
     public function store(Request $request)
     {
-        if ($request->file('image')) {
 
-            $image = $this->image->CreateImage($request->file('image'), ['100', '140'], ['370', '550'], ['370', '550']);
+        $element = Commercial::create($request->except(['image']));
+        if ($element) {
+            $request->hasFile('image') ? $this->saveMimes($element, $request, ['image'], ['100', '140'], ['370', '550'], ['370', '550'], true) : null;
+            return redirect()->route('backend.admin.commercial.index')->with('success', trans('general.commercial_added'));
         }
-
-
-        if ($image) {
-            \DB::table('side_commercials')->insert([
-                'image_path' => $image,
-                'url' => $request->url,
-                'caption_en' => $request->caption_en,
-                'caption_ar' => $request->caption_ar,
-                'order' => $request->order,
-            ]);
-            return redirect()->back()->with('success',  trans('general.commercial_added'));
-        }
-        return redirect()->back()->with('error',  trans('general.commercial_not_added'))->withInputs();
+        return redirect()->back()->with('error', trans('general.commercial_not_added'));
     }
 
     /**

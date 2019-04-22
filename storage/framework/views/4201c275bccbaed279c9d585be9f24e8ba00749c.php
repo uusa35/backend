@@ -17,23 +17,37 @@
         <!-- END RESPONSIVE MENU TOGGLER -->
         <!-- BEGIN PAGE ACTIONS -->
         <!-- DOC: Remove "hide" class to enable the page header actions -->
-        <div class="page-actions">
-            <div class="btn-group">
-                <button type="button" class="btn btn-circle btn-info dropdown-toggle" data-toggle="dropdown">
-                    <i class="fa fa-plus"></i>&nbsp;
-                    <span class="hidden-sm hidden-xs"> <?php echo e(trans("general.new")); ?>&nbsp;</span>&nbsp;
-                    <i class="fa fa-angle-down"></i>
-                </button>
-                <ul class="dropdown-menu" role="menu">
-                    <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('isSuper')): ?>
-                        <?php echo $__env->make('backend.partials._nav_add_new_btns_super', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-                    <?php elseif (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('isCompany')): ?>
+        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('isCompanyOrAbove')): ?>
+            <div class="page-actions">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-circle btn-info dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-plus"></i>&nbsp;
+                        <span class="hidden-sm hidden-xs"> <?php echo e(trans("general.new")); ?>&nbsp;</span>&nbsp;
+                        <i class="fa fa-angle-down"></i>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
                         <?php echo $__env->make('backend.partials._nav_add_new_btns_company', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-                    <?php endif; ?>
-                </ul>
+                    </ul>
+                </div>
             </div>
-        </div>
-        <!-- END PAGE ACTIONS -->
+        <?php endif; ?>
+        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('isAdminOrAbove')): ?>
+            <div class="page-actions">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-circle btn-success dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-plus"></i>&nbsp;
+                        <span class="hidden-sm hidden-xs"> <?php echo e(trans("general.new_items_for_admins")); ?>&nbsp;</span>&nbsp;
+                        <i class="fa fa-angle-down"></i>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('isSuper')): ?>
+                            <?php echo $__env->make('backend.partials._nav_add_new_btns_super', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                        <?php endif; ?>
+                    </ul>
+                </div>
+            </div>
+    <?php endif; ?>
+    <!-- END PAGE ACTIONS -->
         <!-- BEGIN PAGE TOP -->
         <div class="page-top">
             <!-- BEGIN HEADER SEARCH BOX -->
@@ -125,132 +139,132 @@
                         </a>
                     </li>
 
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
                 <!-- END TODO DROPDOWN -->
                     <!-- BEGIN USER LOGIN DROPDOWN -->
                     <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
@@ -324,7 +338,9 @@
                                 </li>
                                 <li>
                                     <a href="<?php echo e(route('backend.user.edit',auth()->id())); ?>">
-                                        <i class="fa fa-fw fa-user-circle"></i> <?php echo e(trans('general.edit_my_profile')); ?></a>
+                                        <i class="fa fa-fw fa-user-circle"></i> <?php echo e(trans('general.edit_my_profile')); ?>
+
+                                    </a>
                                 </li>
                                 <li>
                                     <a href="<?php echo e(route('backend.user.show',auth()->id())); ?>">
