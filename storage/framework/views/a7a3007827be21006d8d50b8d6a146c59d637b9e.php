@@ -15,7 +15,7 @@
                             <form action="<?php echo e(route('backend.image.destroy', $image->id)); ?>" method="post">
                                 <?php echo method_field('delete'); ?>
                                 <?php echo csrf_field(); ?>
-                                <butotn type="submit" class="btn btn-danger"><?php echo e(trans('general.delete')); ?></a>
+                                <button type="submit" class="btn btn-danger"><?php echo e(trans('general.delete')); ?></button>
                             </form>
                         </div>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
