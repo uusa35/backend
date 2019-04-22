@@ -42,6 +42,7 @@ class UserController extends Controller
     {
         $countries = Country::all();
         $roles = Role::all();
+        $this->authorize('user.create');
         return view('backend.modules.user.create', compact('countries', 'roles'));
     }
 
@@ -53,16 +54,15 @@ class UserController extends Controller
      */
     public function store(UserStore $request)
     {
-        $element = User::create($request->except('password_confirmation'));
-
-        if ($request->hasFile('logo')) {
-            $this->saveMimes($element, $request, ['logo'], ['250', '250'], false);
-        }
-
+        $element = User::create($request->except( 'image', 'bg', 'banner', 'path'));
         if ($element) {
-            return redirect()->route('backend.admin.user.index', ['role_id' => $request->role_id])->with('success', trans('general.user_added'));
+            $request->hasFile('image') ? $this->saveMimes($element, $request, ['image'], ['1080', '1440'], true) : null;
+            $request->hasFile('bg') ? $this->saveMimes($element, $request, ['bg'], ['1080', '1440'], true) : null;
+            $request->hasFile('banner') ? $this->saveMimes($element, $request, ['banner'], ['1080', '1440'], true) : null;
+            $request->hasFile('path') ? $this->savePath($request, $element) : null;
+            return redirect()->route('backend.user.index')->with('success', 'user created');
         }
-        return redirect()->route('backend.admin.user.index', ['role_id' => $request->role_id])->with('error', trans('general.user_not_added'));
+        return redirect()->route('backend.user.create')->with('error', 'user not created');
     }
 
     /**
@@ -73,7 +73,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $element = User::active()->whereId($id)->with('role', 'projects')->first();
+        $element = User::active()->whereId($id)->first();
         $this->authorize('user.view', $element);
         return response()->json($element, 200);
     }

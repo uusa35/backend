@@ -100,7 +100,7 @@ Breadcrumbs::for('backend.index', function ($trail) {
 // Home > About
 Breadcrumbs::for('backend.admin.user.index', function ($trail) {
     $trail->parent('backend.home');
-    $trail->push('user', route('backend.admin.user.index'));
+    $trail->push(trans('general.users'), route('backend.admin.user.index'));
 });
 
 
@@ -162,7 +162,7 @@ Breadcrumbs::for('backend.brand.index', function ($trail) {
 });
 Breadcrumbs::for('backend.admin.color.create', function ($trail) {
     $trail->parent('backend.admin.color.index');
-    $trail->push(trans('general.create_color'), route('backend.admin.color.create'));
+    $trail->push(trans('general.new_color'), route('backend.admin.color.create'));
 });
 Breadcrumbs::for('backend.admin.color.index', function ($trail) {
     $trail->parent('backend.home');
@@ -171,7 +171,7 @@ Breadcrumbs::for('backend.admin.color.index', function ($trail) {
 
 Breadcrumbs::for('backend.admin.newsletter.create', function ($trail) {
     $trail->parent('backend.admin.newsletter.index');
-    $trail->push(trans('general.create_newsletter'), route('backend.admin.newsletter.create'));
+    $trail->push(trans('general.new_newsletter'), route('backend.admin.newsletter.create'));
 });
 Breadcrumbs::for('backend.admin.newsletter.index', function ($trail) {
     $trail->parent('backend.home');
@@ -189,7 +189,7 @@ Breadcrumbs::for('backend.admin.country.index', function ($trail) {
 });
 Breadcrumbs::for('backend.admin.country.create', function ($trail) {
     $trail->parent('backend.admin.country.index');
-    $trail->push(trans('general.create_country'), route('backend.admin.country.create'));
+    $trail->push(trans('general.new_country'), route('backend.admin.country.create'));
 });
 
 Breadcrumbs::for('backend.admin.role.index', function ($trail) {
@@ -198,7 +198,7 @@ Breadcrumbs::for('backend.admin.role.index', function ($trail) {
 });
 Breadcrumbs::for('backend.admin.role.create', function ($trail) {
     $trail->parent('backend.admin.role.index');
-    $trail->push(trans('general.create_role'), route('backend.admin.role.create'));
+    $trail->push(trans('general.new_role'), route('backend.admin.role.create'));
 });
 Breadcrumbs::for('backend.admin.role.edit', function ($trail) {
     $trail->parent('backend.admin.role.index');
@@ -236,7 +236,7 @@ Breadcrumbs::for('backend.admin.questionnaire.index', function ($trail) {
 
 Breadcrumbs::for('backend.admin.questionnaire.create', function ($trail) {
     $trail->parent('backend.admin.questionnaire.index');
-    $trail->push(trans('general.create_questionnaire'), route('backend.admin.questionnaire.create'));
+    $trail->push(trans('general.new_questionnaire'), route('backend.admin.questionnaire.create'));
 });
 
 Breadcrumbs::for('backend.admin.commercial.index', function ($trail) {
@@ -246,7 +246,7 @@ Breadcrumbs::for('backend.admin.commercial.index', function ($trail) {
 
 Breadcrumbs::for('backend.admin.commercial.create', function ($trail) {
     $trail->parent('backend.admin.commercial.index');
-    $trail->push(trans('general.create_commercial'), route('backend.admin.commercial.create'));
+    $trail->push(trans('general.new_commercial'), route('backend.admin.commercial.create'));
 });
 
 Breadcrumbs::for('backend.page.index', function ($trail) {
@@ -260,7 +260,7 @@ Breadcrumbs::for('backend.admin.term.index', function ($trail) {
 });
 Breadcrumbs::for('backend.admin.term.create', function ($trail) {
     $trail->parent('backend.admin.term.index');
-    $trail->push(trans('general.create_term'), route('backend.admin.term.create'));
+    $trail->push(trans('general.new_term'), route('backend.admin.term.create'));
 });
 
 Breadcrumbs::for('backend.timing.index', function ($trail) {
@@ -269,7 +269,7 @@ Breadcrumbs::for('backend.timing.index', function ($trail) {
 });
 Breadcrumbs::for('backend.timing.create', function ($trail) {
     $trail->parent('backend.timing.index');
-    $trail->push(trans('general.create_timing'), route('backend.timing.create'));
+    $trail->push(trans('general.new_timing'), route('backend.timing.create'));
 });
 
 Breadcrumbs::for('backend.admin.privilege.index', function ($trail) {
@@ -288,7 +288,7 @@ Breadcrumbs::for('backend.admin.privilege.show', function ($trail, $element) {
 
 Breadcrumbs::for('backend.admin.privilege.create', function ($trail) {
     $trail->parent('backend.admin.privilege.index');
-    $trail->push(trans('general.create_privilege'), route('backend.admin.privilege.create'));
+    $trail->push(trans('general.new_privilege'), route('backend.admin.privilege.create'));
 });
 Breadcrumbs::for('backend.admin.faq.index', function ($trail) {
     $trail->parent('backend.home');
@@ -297,7 +297,7 @@ Breadcrumbs::for('backend.admin.faq.index', function ($trail) {
 
 Breadcrumbs::for('backend.admin.faq.create', function ($trail) {
     $trail->parent('backend.admin.faq.index');
-    $trail->push(trans('general.create_faq'), route('backend.admin.faq.index'));
+    $trail->push(trans('general.new_faq'), route('backend.admin.faq.index'));
 });
 Breadcrumbs::for('backend.admin.notification.index', function ($trail) {
     $trail->parent('backend.home');
@@ -305,7 +305,7 @@ Breadcrumbs::for('backend.admin.notification.index', function ($trail) {
 });
 Breadcrumbs::for('backend.admin.notification.create', function ($trail) {
     $trail->parent('backend.admin.notification.index');
-    $trail->push(trans('general.create_notification'), route('backend.admin.notification.create'));
+    $trail->push(trans('general.new_notification'), route('backend.admin.notification.create'));
 });
 
 Breadcrumbs::for('backend.admin.policy.index', function ($trail) {
@@ -314,7 +314,7 @@ Breadcrumbs::for('backend.admin.policy.index', function ($trail) {
 });
 Breadcrumbs::for('backend.admin.policy.create', function ($trail) {
     $trail->parent('backend.admin.policy.index');
-    $trail->push(trans('general.create_policy'), route('backend.admin.policy.create'));
+    $trail->push(trans('general.new_policy'), route('backend.admin.policy.create'));
 });
 
 
@@ -330,7 +330,7 @@ Breadcrumbs::for('backend.admin.currency.index', function ($trail) {
 
 Breadcrumbs::for('backend.admin.area.create', function ($trail) {
     $trail->parent('backend.admin.area.index');
-    $trail->push(trans('general.create_area'), route('backend.admin.area.create'));
+    $trail->push(trans('general.new_area'), route('backend.admin.area.create'));
 });
 Breadcrumbs::for('backend.admin.area.index', function ($trail) {
     $trail->parent('backend.home');
@@ -339,7 +339,7 @@ Breadcrumbs::for('backend.admin.area.index', function ($trail) {
 
 Breadcrumbs::for('backend.admin.currency.create', function ($trail) {
     $trail->parent('backend.admin.currency.index');
-    $trail->push(trans('general.create_currency'), route('backend.admin.currency.create'));
+    $trail->push(trans('general.new_currency'), route('backend.admin.currency.create'));
 });
 
 Breadcrumbs::for('backend.admin.coupon.index', function ($trail) {
@@ -348,7 +348,7 @@ Breadcrumbs::for('backend.admin.coupon.index', function ($trail) {
 });
 Breadcrumbs::for('backend.admin.coupon.create', function ($trail) {
     $trail->parent('backend.admin.coupon.index');
-    $trail->push(trans('general.create_coupon'), route('backend.admin.coupon.create'));
+    $trail->push(trans('general.new_coupon'), route('backend.admin.coupon.create'));
 });
 
 Breadcrumbs::for('backend.service.index', function ($trail) {
@@ -357,7 +357,7 @@ Breadcrumbs::for('backend.service.index', function ($trail) {
 });
 Breadcrumbs::for('backend.service.create', function ($trail) {
     $trail->parent('backend.service.index');
-    $trail->push(trans('general.create_service'), route('backend.service.create'));
+    $trail->push(trans('general.new_service'), route('backend.service.create'));
 });
 
 Breadcrumbs::for('backend.slide.index', function ($trail) {
@@ -367,7 +367,7 @@ Breadcrumbs::for('backend.slide.index', function ($trail) {
 
 Breadcrumbs::for('backend.slide.create', function ($trail) {
     $trail->parent('backend.slide.index');
-    $trail->push(trans("general.create_slide"), route('backend.slide.create'));
+    $trail->push(trans("general.new_slide"), route('backend.slide.create'));
 });
 
 Breadcrumbs::for('backend.admin.survey.index', function ($trail) {
@@ -377,7 +377,7 @@ Breadcrumbs::for('backend.admin.survey.index', function ($trail) {
 
 Breadcrumbs::for('backend.admin.survey.create', function ($trail) {
     $trail->parent('backend.admin.survey.index');
-    $trail->push(trans("general.create_survey"), route('backend.admin.survey.create'));
+    $trail->push(trans("general.new_survey"), route('backend.admin.survey.create'));
 });
 
 
@@ -402,7 +402,7 @@ Breadcrumbs::for('backend.admin.answer.index', function ($trail) {
 });
 Breadcrumbs::for('backend.admin.answer.create', function ($trail) {
     $trail->parent('backend.admin.answer.index');
-    $trail->push(trans("general.create_answer"), route('backend.admin.answer.create'));
+    $trail->push(trans("general.new_answer"), route('backend.admin.answer.create'));
 });
 
 Breadcrumbs::for('backend.answer.edit', function ($trail, $element) {
@@ -462,7 +462,7 @@ Breadcrumbs::for('backend.admin.size.index', function ($trail) {
 });
 Breadcrumbs::for('backend.admin.size.create', function ($trail) {
     $trail->parent('backend.admin.size.index');
-    $trail->push(trans('general.create_size'), route('backend.admin.size.create'));
+    $trail->push(trans('general.new_size'), route('backend.admin.size.create'));
 });
 
 Breadcrumbs::for('backend.size.edit', function ($trail, $element) {
@@ -485,7 +485,7 @@ Breadcrumbs::for('backend.admin.tag.index', function ($trail) {
 });
 Breadcrumbs::for('backend.admin.tag.create', function ($trail) {
     $trail->parent('backend.admin.tag.index');
-    $trail->push(trans('general.create_tag'), route('backend.admin.tag.create'));
+    $trail->push(trans('general.new_tag'), route('backend.admin.tag.create'));
 });
 
 Breadcrumbs::for('backend.tag.edit', function ($trail, $element) {
@@ -499,7 +499,7 @@ Breadcrumbs::for('backend.admin.brand.index', function ($trail) {
 });
 Breadcrumbs::for('backend.admin.brand.create', function ($trail) {
     $trail->parent('backend.admin.brand.index');
-    $trail->push(trans('general.create_brand'), route('backend.admin.brand.create'));
+    $trail->push(trans('general.new_brand'), route('backend.admin.brand.create'));
 });
 
 Breadcrumbs::for('backend.brand.edit', function ($trail, $element) {
@@ -513,7 +513,7 @@ Breadcrumbs::for('backend.reset.password', function ($trail) {
 
 Breadcrumbs::for('backend.admin.user.create', function ($trail) {
     $trail->parent('backend.admin.user.index');
-    $trail->push(trans('general.create_user'), route('backend.admin.user.create'));
+    $trail->push(trans('general.new_user'), route('backend.admin.user.create'));
 });
 Breadcrumbs::for('backend.admin.user.edit', function ($trail, $element) {
     $trail->parent('backend.admin.user.index');
@@ -557,7 +557,7 @@ Breadcrumbs::for('backend.admin.category.index', function ($trail) {
 
 Breadcrumbs::for('backend.admin.category.create', function ($trail) {
     $trail->parent('backend.admin.category.index');
-    $trail->push(trans('general.create_category'), route('backend.admin.category.create'));
+    $trail->push(trans('general.new_category'), route('backend.admin.category.create'));
 });
 
 Breadcrumbs::for('backend.admin.category.edit', function ($trail, $element) {
@@ -567,7 +567,7 @@ Breadcrumbs::for('backend.admin.category.edit', function ($trail, $element) {
 
 Breadcrumbs::for('backend.admin.aboutus.create', function ($trail) {
     $trail->parent('backend.admin.aboutus.index');
-    $trail->push(trans('general.create_aboutus'), route('backend.admin.aboutus.create'));
+    $trail->push(trans('general.new_aboutus'), route('backend.admin.aboutus.create'));
 });
 
 Breadcrumbs::for('backend.aboutus.edit', function ($trail, $element) {
@@ -581,7 +581,7 @@ Breadcrumbs::for('backend.admin.page.index', function ($trail) {
 
 Breadcrumbs::for('backend.admin.page.create', function ($trail) {
     $trail->parent('backend.admin.page.index');
-    $trail->push(trans('general.create_page'), route('backend.admin.page.create'));
+    $trail->push(trans('general.new_page'), route('backend.admin.page.create'));
 });
 
 Breadcrumbs::for('backend.page.edit', function ($trail, $element) {
@@ -654,7 +654,7 @@ Breadcrumbs::for('backend.package.index', function ($trail) {
 
 Breadcrumbs::for('backend.package.create', function ($trail) {
     $trail->parent('backend.package.index');
-    return $trail->push(trans('general.create_package'), route('backend.package.create'));
+    return $trail->push(trans('general.new_package'), route('backend.package.create'));
 });
 
 Breadcrumbs::for('backend.package.edit', function ($trail, $element) {
@@ -669,7 +669,7 @@ Breadcrumbs::for('backend.branch.index', function ($trail) {
 
 Breadcrumbs::for('backend.branch.create', function ($trail) {
     $trail->parent('backend.branch.index');
-    return $trail->push(trans('general.create_branch'), route('backend.branch.create'));
+    return $trail->push(trans('general.new_branch'), route('backend.branch.create'));
 });
 
 Breadcrumbs::for('backend.branch.edit', function ($trail, $element) {

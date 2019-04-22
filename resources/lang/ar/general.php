@@ -765,7 +765,7 @@ return array(
     'created_by' => 'تم الإنشاء بواسطة',
     'ip_cam_url' => 'كاميرا',
     'attributes' => 'خصائص',
-    '' => '',
+    'choose_country' => 'اختر الدولة',
     '' => '',
     '' => '',
     '' => '',
