@@ -399,7 +399,7 @@
 </li>
 
 <li class="nav-item {{ activeItem('branch') }}">
-    <a href="{{ route('backend.admin.branch.index') }}" class="nav-link nav-toggle">
+    <a href="{{ route('backend.branch.index') }}" class="nav-link nav-toggle">
         <i class="fa fa-fw fa-building-o"></i>
         <span class="title">{{ trans('general.branches') }}</span>
         <span class="arrow"></span>
