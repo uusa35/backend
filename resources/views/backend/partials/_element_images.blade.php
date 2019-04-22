@@ -14,7 +14,7 @@
                             <form action="{{ route('backend.image.destroy', $image->id) }}" method="post">
                                 @method('delete')
                                 @csrf
-                                <butotn type="submit" class="btn btn-danger">{{ trans('general.delete') }}</a>
+                                <button type="submit" class="btn btn-danger">{{ trans('general.delete') }}</button>
                             </form>
                         </div>
                     @endforeach
