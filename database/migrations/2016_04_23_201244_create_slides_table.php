@@ -23,7 +23,7 @@ class CreateSlidesTable extends Migration
             $table->string('image')->nullable();
             $table->string('path')->nullable();
             $table->string('url')->nullable();
-            $table->boolean('on_home')->default(0);
+            $table->boolean('on_home')->default(1);
             $table->morphs('slidable');
 
             $table->timestamps();

@@ -82,7 +82,6 @@
                                     @if(!$element->product_attributes->isEmpty())
                                         @foreach($element->product_attributes as $attribute)
                                             <div class="btn-group">
-
                                                 <button type="button"
                                                         style="background-color: {{ $attribute->color->name_en }}; color : black; font-weight: bolder"
                                                         class="btn green btn-sm btn-outline"
@@ -144,6 +143,22 @@
                                                     </a>
                                                 </li>
                                             @endif
+                                            @can('slide.create')
+                                                <li>
+                                                    <a href="{{ route('backend.slide.create',['slidable_id' => $element->id, 'slidable_type' => 'product']) }}">
+                                                        <i class="fa fa-fw fa-edit"></i> {{ trans('general.new_slide') }}
+                                                    </a>
+                                                </li>
+                                            @endcan
+                                            @can('index','slide')
+                                                @if($element->slides->isNotEmpty())
+                                                    <li>
+                                                        <a href="{{ route('backend.slide.index',['slidable_id' => $element->id, 'slidable_type' => 'product']) }}">
+                                                            <i class="fa fa-fw fa-edit"></i> {{ trans('general.list_of_slides') }}
+                                                        </a>
+                                                    </li>
+                                                @endif
+                                            @endcan
                                             @if(!$element->trashed())
                                                 <li>
                                                     <a data-toggle="modal" href="#" data-target="#basic"

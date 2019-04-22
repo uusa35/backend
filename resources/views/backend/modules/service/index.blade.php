@@ -47,8 +47,6 @@
                                 </td>
                                 <td> {{$element->price }} </td>
                                 <td> {{$element->active }} </td>
-
-
                                 <td>
                                     <div class="btn-group">
                                         <button type="button" class="btn green btn-xs btn-outline dropdown-toggle"
