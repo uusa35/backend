@@ -154,6 +154,7 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
+        $this->authorize('product.delete', $element);
         $element = Product::whereId($id)->first();
         $element->categories()->detach($element->categories->pluck('id')->toArray());
         $element->tags()->detach($element->tags->pluck('id')->toArray());
