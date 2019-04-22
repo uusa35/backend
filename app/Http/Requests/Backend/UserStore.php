@@ -66,7 +66,7 @@ class UserStore extends FormRequest
             'on_home' => 'nullable|boolean',
             'active' => 'nullable|boolean',
             'country_id' => 'nullable|numeric|exists:countries:,id',
-            'role_id' => 'required|numeric|roles:exists,id',
+            'role_id' => 'required|numeric|exists:roles,id',
             'merchant_id' => 'nullable|max:200|min:3|unique:users,merchant_id',
         ];
     }
