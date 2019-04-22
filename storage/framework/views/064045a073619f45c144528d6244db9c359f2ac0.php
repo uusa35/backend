@@ -47,8 +47,6 @@
                                 </td>
                                 <td> <?php echo e($element->price); ?> </td>
                                 <td> <?php echo e($element->active); ?> </td>
-
-
                                 <td>
                                     <div class="btn-group">
                                         <button type="button" class="btn green btn-xs btn-outline dropdown-toggle"

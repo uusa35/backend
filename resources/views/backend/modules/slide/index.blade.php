@@ -9,16 +9,7 @@
         <div class="portlet light ">
             @include('backend.partials.forms.form_title')
             <div class="portlet-body">
-                <div class="m-heading-1 border-green m-bordered">
-                    <h3>Important Information</h3>
-                    <p>
-                        Roles are very important for the application.
-                    </p>
-                    <p> Some Information about roles.
-                        <a class="btn red btn-outline" href="http://datatables.net/" target="_blank">the official
-                            documentation</a>
-                    </p>
-                </div>
+                @include('backend.partials._admin_instructions',['title' => trans('general.slides') ,'message' => trans('message.index_slide')])
                 <table id="dataTable" class="table table-striped table-bordered table-hover" cellspacing="0">
                     <thead>
                         <tr>
@@ -28,7 +19,7 @@
                             <th>{{ trans('general.image') }}</th>
                             <th>{{ trans('general.active') }}</th>
                             <th>{{ trans('general.created_at') }}</th>
-                            <th>{{ trans('general.file_path') }}</th>
+                            <th>{{ trans('general.file') }}</th>
                             <th>{{ trans('general.actions') }}</th>
                         </tr>
                     </thead>
@@ -40,7 +31,7 @@
                             <th>{{ trans('general.image') }}</th>
                             <th>{{ trans('general.active') }}</th>
                             <th>{{ trans('general.created_at') }}</th>
-                            <th>{{ trans('general.file_path') }}</th>
+                            <th>{{ trans('general.file') }}</th>
                             <th>{{ trans('general.actions') }}</th>
                         </tr>
                     </tfoot>
@@ -53,7 +44,7 @@
                             </td>
                             <td>{{ $element->order }}</td>
                             <td>
-                                <img src="{{ asset('storage/uploads/images/thumbnail/'.$element->image) }}" alt="" class="img-responsive" style="max-height: 80px; max-width:100px;">
+                                <img src="{{ asset(env('THUMBNAIL').$element->image) }}" alt="" class="img-responsive img-xs">
                             </td>
                             <td>
                                 <span class="label {{ activeLabel($element->active) }}">{{ activeText($element->active) }}</span>
