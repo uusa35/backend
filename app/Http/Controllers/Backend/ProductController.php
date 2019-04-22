@@ -156,7 +156,7 @@ class ProductController extends Controller
     {
         $element = Product::whereId($id)->first();
         $element->categories()->detach($element->categories->pluck('id')->toArray());
-        $element->tags()->detach($element->categories->pluck('id')->toArray());
+        $element->tags()->detach($element->tags->pluck('id')->toArray());
         if ($element->delete()) {
             return redirect()->back()->with('success', 'product deleted');
         }
