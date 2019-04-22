@@ -60,9 +60,9 @@ class UserController extends Controller
         }
 
         if ($element) {
-            return redirect()->route('backend.admin.user.index', ['role_id' => $request->role_id])->with('success', 'user saved');
+            return redirect()->route('backend.admin.user.index', ['role_id' => $request->role_id])->with('success', trans('general.user_added'));
         }
-        return redirect()->route('backend.admin.user.index', ['role_id' => $request->role_id])->with('error', 'error failure');
+        return redirect()->route('backend.admin.user.index', ['role_id' => $request->role_id])->with('error', trans('general.user_not_added'));
     }
 
     /**
