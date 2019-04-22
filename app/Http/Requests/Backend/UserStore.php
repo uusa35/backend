@@ -51,7 +51,7 @@ class UserStore extends FormRequest
             'cancellation_ar' => 'nullable|max:1000',
             'cancellation_en' => 'nullable|max:1000',
             'keywords' => 'nullable|max:500',
-            'path' => 'nullable|mime:pdf',
+            'path' => 'nullable|mimes:pdf',
             'website' => 'nullable|url',
             'facebook' => 'nullable|url',
             'instagram' => 'nullable|url',
