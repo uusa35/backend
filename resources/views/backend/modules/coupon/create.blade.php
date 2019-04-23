@@ -11,7 +11,7 @@
             <form class="horizontal-form" role="form" method="POST" action="{{ route('backend.admin.coupon.store') }}" enctype="multipart/form-data">
                 @csrf
                 <div class="form-body">
-                    <h3 class="form-section">{{ trans('general.create_coupon') }}</h3>
+                    <h3 class="form-section">{{ trans('general.new_coupon') }}</h3>
                     {{--name arabic / name english --}}
                     <div class="portlet box blue ">
                         <div class="portlet-title">

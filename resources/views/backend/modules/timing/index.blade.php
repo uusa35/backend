@@ -34,21 +34,17 @@
                             <th>{{ trans('general.is_off') }}</th>
                             <th>{{ trans('general.actions') }}</th>
                         </tr>
-
                         </tfoot>
                         <tbody>
                         @foreach($elements as $element)
                             <tr>
                                 <td> {{$element->id}}</td>
                                 <td> {{$element->day }} </td>
-
                                 <td> {{$element->start }} </td>
                                 <td> {{$element->end }} </td>
                                 <td> {{$element->service->name }} </td>
                                 <td> {{$element->service->user->name }} </td>
                                 <td> {{$element->is_off }} </td>
-
-
                                 <td>
                                     <div class="btn-group">
                                         <button type="button" class="btn green btn-xs btn-outline dropdown-toggle"

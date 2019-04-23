@@ -152,15 +152,13 @@
                                                     </a>
                                                 </li>
                                             <?php endif; ?>
-                                            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('slide.create')): ?>
+                                            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('isAdminOrAbove')): ?>
                                                 <li>
                                                     <a href="<?php echo e(route('backend.slide.create',['slidable_id' => $element->id, 'slidable_type' => 'product'])); ?>">
                                                         <i class="fa fa-fw fa-edit"></i> <?php echo e(trans('general.new_slide')); ?>
 
                                                     </a>
                                                 </li>
-                                            <?php endif; ?>
-                                            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('index','slide')): ?>
                                                 <?php if($element->slides->isNotEmpty()): ?>
                                                     <li>
                                                         <a href="<?php echo e(route('backend.slide.index',['slidable_id' => $element->id, 'slidable_type' => 'product'])); ?>">
@@ -168,6 +166,25 @@
 
                                                         </a>
                                                     </li>
+                                                <?php endif; ?>
+                                            <?php else: ?>
+                                                <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('slide.create')): ?>
+                                                    <li>
+                                                        <a href="<?php echo e(route('backend.slide.create',['slidable_id' => $element->id, 'slidable_type' => 'product'])); ?>">
+                                                            <i class="fa fa-fw fa-edit"></i> <?php echo e(trans('general.new_slide')); ?>
+
+                                                        </a>
+                                                    </li>
+                                                <?php endif; ?>
+                                                <?php if($element->slides->isNotEmpty()): ?>
+                                                    <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('index','slide')): ?>
+                                                        <li>
+                                                            <a href="<?php echo e(route('backend.slide.index',['slidable_id' => $element->id, 'slidable_type' => 'product'])); ?>">
+                                                                <i class="fa fa-fw fa-edit"></i> <?php echo e(trans('general.list_of_slides')); ?>
+
+                                                            </a>
+                                                        </li>
+                                                    <?php endif; ?>
                                                 <?php endif; ?>
                                             <?php endif; ?>
                                             <?php if(!$element->trashed()): ?>

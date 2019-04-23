@@ -34,21 +34,17 @@
                             <th><?php echo e(trans('general.is_off')); ?></th>
                             <th><?php echo e(trans('general.actions')); ?></th>
                         </tr>
-
                         </tfoot>
                         <tbody>
                         <?php $__currentLoopData = $elements; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $element): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <tr>
                                 <td> <?php echo e($element->id); ?></td>
                                 <td> <?php echo e($element->day); ?> </td>
-
                                 <td> <?php echo e($element->start); ?> </td>
                                 <td> <?php echo e($element->end); ?> </td>
                                 <td> <?php echo e($element->service->name); ?> </td>
                                 <td> <?php echo e($element->service->user->name); ?> </td>
                                 <td> <?php echo e($element->is_off); ?> </td>
-
-
                                 <td>
                                     <div class="btn-group">
                                         <button type="button" class="btn green btn-xs btn-outline dropdown-toggle"

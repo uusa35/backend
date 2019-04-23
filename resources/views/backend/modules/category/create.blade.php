@@ -17,7 +17,7 @@
                         <input type="hidden" name="parent_id" value="{{ request()->parent_id }}">
                     @endif
                     <div class="form-body">
-                        <h3 class="form-section">{{ trans('general.create_category') }}</h3>
+                        <h3 class="form-section">{{ trans('general.new_category') }}</h3>
                         <div class="portlet box blue ">
                             <div class="portlet-title">
                                 <div class="caption">

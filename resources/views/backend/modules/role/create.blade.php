@@ -12,7 +12,7 @@
             <form class="horizontal-form" role="form" method="POST" action="{{ route('backend.admin.role.store') }}" enctype="multipart/form-data">
                 @csrf
                 <div class="form-body">
-                    <h3 class="form-section">{{ trans('general.create_role') }}</h3>
+                    <h3 class="form-section">{{ trans('general.new_role') }}</h3>
                     <div class="portlet box blue ">
                         <div class="portlet-title">
                             <div class="caption">

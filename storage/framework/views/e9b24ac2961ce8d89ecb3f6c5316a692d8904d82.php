@@ -15,7 +15,7 @@
                         <input type="hidden" name="parent_id" value="<?php echo e(request()->parent_id); ?>">
                     <?php endif; ?>
                     <div class="form-body">
-                        <h3 class="form-section"><?php echo e(trans('general.create_category')); ?></h3>
+                        <h3 class="form-section"><?php echo e(trans('general.new_category')); ?></h3>
                         <div class="portlet box blue ">
                             <div class="portlet-title">
                                 <div class="caption">
