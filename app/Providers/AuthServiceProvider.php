@@ -69,6 +69,10 @@ class AuthServiceProvider extends ServiceProvider
         Gate::resource('page', PagePolicy::class);
         Gate::resource('setting', SettingPolicy::class);
 
+        Gate::define('superOne', function () {
+            return auth()->user()->isSuper && auth()->id() === 1;
+        });
+
         Gate::define('isAdminOrAbove', function () {
             return auth()->user()->isAdminOrAbove; // means if isSuper or isAdmin then go ahead
         });

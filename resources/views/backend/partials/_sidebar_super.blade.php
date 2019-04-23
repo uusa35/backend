@@ -106,42 +106,40 @@
                 <span class="title">{{ trans('general.polices') }}</span>
                 <span class="arrow"></span>
             </a>
-
         </li>
-        <li class="nav-item {{ activeItem('role') }}">
-            <a href="{{ route('backend.admin.role.index') }}" class="nav-link nav-toggle">
-                <i class="fa fa-fw fa-users"></i>
-                <span class="title">{{ trans('general.roles') }}</span>
-                <span class="arrow"></span>
-            </a>
+        @can('superOne')
+            <li class="nav-item {{ activeItem('role') }}">
+                <a href="{{ route('backend.admin.role.index') }}" class="nav-link nav-toggle">
+                    <i class="fa fa-fw fa-users"></i>
+                    <span class="title">{{ trans('general.roles') }}</span>
+                    <span class="arrow"></span>
+                </a>
+            </li>
+            <li class="nav-item {{ activeItem('privilege') }}">
+                <a href="{{ route('backend.admin.privilege.index') }}" class="nav-link nav-toggle">
+                    <i class="fa fa-fw fa-lock"></i>
+                    <span class="title">{{ trans('general.privileges') }}</span>
+                    <span class="arrow"></span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="nav-item ">
+                        <a href="{{ route('backend.admin.privilege.create') }}" class="nav-link nav-toggle">
+                            <i class="fa fa-fw fa-list-ul"></i>
+                            <span class="title">{{ trans('general.create_privilege') }} </span>
+                            <span class="arrow"></span>
+                        </a>
+                    </li>
 
-        </li>
+                </ul>
+            </li>
+        @endcan
         <li class="nav-item {{ activeItem('term') }}">
             <a href="{{ route('backend.admin.term.index') }}" class="nav-link nav-toggle">
                 <i class="fa fa-fw fa-info-circle"></i>
                 <span class="title">{{ trans('general.terms') }}</span>
                 <span class="arrow"></span>
             </a>
-
         </li>
-        <li class="nav-item {{ activeItem('privilege') }}">
-            <a href="{{ route('backend.admin.privilege.index') }}" class="nav-link nav-toggle">
-                <i class="fa fa-fw fa-lock"></i>
-                <span class="title">{{ trans('general.privileges') }}</span>
-                <span class="arrow"></span>
-            </a>
-            <ul class="sub-menu">
-                <li class="nav-item ">
-                    <a href="{{ route('backend.admin.privilege.create') }}" class="nav-link nav-toggle">
-                        <i class="fa fa-fw fa-list-ul"></i>
-                        <span class="title">{{ trans('general.create_privilege') }} </span>
-                        <span class="arrow"></span>
-                    </a>
-                </li>
-
-            </ul>
-        </li>
-
         <li class="nav-item {{ activeItem('tag') }}">
             <a href="{{ route('backend.tag.index') }}" class="nav-link nav-toggle">
                 <i class="fa fa-fw fa-tags"></i>
