@@ -1,7 +1,5 @@
 <?php $__env->startSection('body'); ?>
     <?php if(env('APP_CASE') === 'mallr'): ?>
-        <?php echo e(dd($productHotDeals->first()->shipment_package->countries->pluck('id')->toArray())); ?>
-
         <?php echo $__env->make('frontend.wokiee.four.partials.slider', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
         <?php echo $__env->make('frontend.wokiee.four.partials._all_brands', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
         <?php echo $__env->make('frontend.wokiee.four.partials._products_metro_collection',['element' => $homeCollection, 'title' => trans('general.our_selection_from_collections')], \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
