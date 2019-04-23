@@ -7,7 +7,7 @@
 <div class="portlet box blue">
     <?php echo $__env->make('backend.partials.forms.form_title', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
     <div class="portlet-body">
-        <?php echo $__env->make('backend.partials._admin_instructions',['title' => trans('general.policies') ,'message' => trans('message.admin_policy_message')], \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        <?php echo $__env->make('backend.partials._admin_instructions',['title' => trans('general.polices') ,'message' => trans('message.new_policy')], \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
         <div class="portlet-body form">
             <form class="horizontal-form" role="form" method="POST" action="<?php echo e(route('backend.admin.policy.store')); ?>" enctype="multipart/form-data">
                 <?php echo csrf_field(); ?>

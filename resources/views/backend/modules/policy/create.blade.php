@@ -7,7 +7,7 @@
 <div class="portlet box blue">
     @include('backend.partials.forms.form_title')
     <div class="portlet-body">
-        @include('backend.partials._admin_instructions',['title' => trans('general.policies') ,'message' => trans('message.admin_policy_message')])
+        @include('backend.partials._admin_instructions',['title' => trans('general.polices') ,'message' => trans('message.new_policy')])
         <div class="portlet-body form">
             <form class="horizontal-form" role="form" method="POST" action="{{ route('backend.admin.policy.store') }}" enctype="multipart/form-data">
                 @csrf
