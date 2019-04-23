@@ -1,6 +1,6 @@
 @extends('backend.layouts.app')
 @section('breadcrumbs')
-{{ Breadcrumbs::render('backend.page.create') }}
+{{ Breadcrumbs::render('backend.admin.page.create') }}
 @endsection
 
 @section('content')
@@ -12,7 +12,7 @@
             <form class="horizontal-form" role="form" method="POST" action="{{ route('backend.admin.page.store') }}" enctype="multipart/form-data">
                 @csrf
                 <div class="form-body">
-                    <h3 class="form-section">{{ trans('general.create_page') }}</h3>
+                    <h3 class="form-section">{{ trans('general.new_page') }}</h3>
                     <div class="portlet box blue ">
                         <div class="portlet-title">
                             <div class="caption">
@@ -93,7 +93,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group{{ $errors->has('order') ? ' has-error' : '' }}">
-                                            <label for="order" class="control-label">{{ trans('general.order') }}*</label>
+                                            <label for="order" class="control-label">{{ trans('general.sequence') }}*</label>
                                             <input id="order" type="number" class="form-control" name="order" value="{{ old('order') }}" placeholder="{{ trans('general.order') }}" required autofocus>
                                             @if ($errors->has('order'))
                                             <span class="help-block">

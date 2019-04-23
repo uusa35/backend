@@ -249,11 +249,6 @@ Breadcrumbs::for('backend.admin.commercial.create', function ($trail) {
     $trail->push(trans('general.new_commercial'), route('backend.admin.commercial.create'));
 });
 
-Breadcrumbs::for('backend.page.index', function ($trail) {
-    $trail->parent('backend.home');
-    $trail->push('page', route('backend.page.index'));
-});
-
 Breadcrumbs::for('backend.admin.term.index', function ($trail) {
     $trail->parent('backend.home');
     $trail->push(trans('general.index_term'), route('backend.admin.term.index'));

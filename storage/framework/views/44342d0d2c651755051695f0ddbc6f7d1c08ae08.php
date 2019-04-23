@@ -12,7 +12,7 @@
             <form class="horizontal-form" role="form" method="POST" action="<?php echo e(route('backend.admin.page.store')); ?>" enctype="multipart/form-data">
                 <?php echo csrf_field(); ?>
                 <div class="form-body">
-                    <h3 class="form-section"><?php echo e(trans('general.create_page')); ?></h3>
+                    <h3 class="form-section"><?php echo e(trans('general.new_page')); ?></h3>
                     <div class="portlet box blue ">
                         <div class="portlet-title">
                             <div class="caption">
@@ -99,7 +99,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group<?php echo e($errors->has('order') ? ' has-error' : ''); ?>">
-                                            <label for="order" class="control-label"><?php echo e(trans('general.order')); ?>*</label>
+                                            <label for="order" class="control-label"><?php echo e(trans('general.sequence')); ?>*</label>
                                             <input id="order" type="number" class="form-control" name="order" value="<?php echo e(old('order')); ?>" placeholder="<?php echo e(trans('general.order')); ?>" required autofocus>
                                             <?php if($errors->has('order')): ?>
                                             <span class="help-block">

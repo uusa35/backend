@@ -134,7 +134,7 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group<?php echo e($errors->has('order') ? ' has-error' : ''); ?>">
-                                                <label for="order" class="control-label"><?php echo e(trans('general.order')); ?>
+                                                <label for="order" class="control-label"><?php echo e(trans('general.sequence')); ?>
 
                                                     *</label>
                                                 <input id="order" type="number" class="form-control" name="order"

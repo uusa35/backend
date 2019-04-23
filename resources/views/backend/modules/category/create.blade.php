@@ -131,7 +131,7 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group{{ $errors->has('order') ? ' has-error' : '' }}">
-                                                <label for="order" class="control-label">{{ trans('general.order') }}
+                                                <label for="order" class="control-label">{{ trans('general.sequence') }}
                                                     *</label>
                                                 <input id="order" type="number" class="form-control" name="order"
                                                        value="{{ old('order') }}"
