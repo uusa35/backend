@@ -18,6 +18,7 @@ class CurrencyController extends Controller
      */
     public function index()
     {
+        $this->authorize('currency.' . __FUNCTION__);
         $elements = Currency::with('country')->get();
         return view('backend.modules.currency.index', compact('elements'));
     }
@@ -29,6 +30,7 @@ class CurrencyController extends Controller
      */
     public function create()
     {
+        $this->authorize('currency.' . __FUNCTION__);
         $allCountries = Country::active()->whereDoesntHave('currency')->get();
         return view('backend.modules.currency.create', compact('allCountries'));
     }
@@ -36,7 +38,7 @@ class CurrencyController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(CurrencyStore $request)
@@ -51,7 +53,7 @@ class CurrencyController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -62,7 +64,7 @@ class CurrencyController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -75,12 +77,13 @@ class CurrencyController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
+        $this->authorize('currency.' . __FUNCTION__);
         $validate = validator($request->all(), [
             'name_ar' => 'required|unique:currencies,name_ar,' . $id,
             'name_en' => 'required|unique:currencies,name_en,' . $id,
@@ -105,13 +108,14 @@ class CurrencyController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         $element = Currency::whereId($id)->first();
-        if($element->delete()) {
+        $this->authorize('currency.delete');
+        if ($element->delete()) {
             return redirect()->route('backend.currency.index')->with('success', 'currency deleted successfully');
         }
         return redirect()->route('backend.currency.index')->with('error', 'currency did not delete!!');

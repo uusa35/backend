@@ -2,25 +2,30 @@
 
 namespace App\Providers;
 
-use App\Http\Controllers\CountryPolicy;
 use App\Policies\AreaPolicy;
 use App\Policies\BrandPolicy;
 use App\Policies\CategoryPolicy;
 use App\Policies\CollectionPolicy;
 use App\Policies\ColorPolicy;
+use App\Policies\CountryPolicy;
 use App\Policies\CouponPolicy;
+use App\Policies\CurrencyPolicy;
 use App\Policies\DayPolicy;
 use App\Policies\ImagePolicy;
+use App\Policies\NotificationPolicy;
 use App\Policies\OrderPolicy;
 use App\Policies\PagePolicy;
+use App\Policies\PolicyPolicy;
 use App\Policies\PrivilegePolicy;
 use App\Policies\ProductPolicy;
 use App\Policies\RolePolicy;
 use App\Policies\ServicePolicy;
 use App\Policies\SettingPolicy;
+use App\Policies\ShipmentPackagePolicy;
 use App\Policies\SizePolicy;
 use App\Policies\SlidePolicy;
 use App\Policies\TagPolicy;
+use App\Policies\TermPolicy;
 use App\Policies\TimingPolicy;
 use App\Policies\UserPolicy;
 use Illuminate\Support\Facades\Gate;
@@ -34,8 +39,6 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-//        Country::class => CountryPolicy::class,
-//        Product::class => ProductPolicy::class
     ];
 
     /**
@@ -46,11 +49,11 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerPolicies();
-
         Gate::resource('user', UserPolicy::class);
         Gate::resource('product', ProductPolicy::class);
         Gate::resource('service', ServicePolicy::class);
         Gate::resource('country', CountryPolicy::class);
+        Gate::resource('currency', CurrencyPolicy::class);
         Gate::resource('area', AreaPolicy::class);
         Gate::resource('role', RolePolicy::class);
         Gate::resource('privilege', PrivilegePolicy::class);
@@ -67,6 +70,10 @@ class AuthServiceProvider extends ServiceProvider
         Gate::resource('brand', BrandPolicy::class);
         Gate::resource('coupon', CouponPolicy::class);
         Gate::resource('page', PagePolicy::class);
+        Gate::resource('term', TermPolicy::class);
+        Gate::resource('policy', PolicyPolicy::class);
+        Gate::resource('notification', NotificationPolicy::class);
+        Gate::resource('shipment', ShipmentPackagePolicy::class);
         Gate::resource('setting', SettingPolicy::class);
 
         Gate::define('superOne', function () {

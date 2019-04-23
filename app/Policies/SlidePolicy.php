@@ -20,7 +20,7 @@ class SlidePolicy
      */
     public function view(User $user, Slide $slide)
     {
-        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->view;
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**
@@ -31,7 +31,7 @@ class SlidePolicy
      */
     public function create(User $user)
     {
-        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->create;
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**
@@ -43,7 +43,7 @@ class SlidePolicy
      */
     public function update(User $user, Slide $slide)
     {
-        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->update;
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**
@@ -55,7 +55,7 @@ class SlidePolicy
      */
     public function delete(User $user, Slide $slide)
     {
-        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->delete;
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**

@@ -9,6 +9,7 @@ use Illuminate\Auth\Access\HandlesAuthorization;
 class ColorPolicy
 {
     use HandlesAuthorization;
+    const MODAL = 'color';
 
     /**
      * Determine whether the user can view the color.
@@ -19,7 +20,7 @@ class ColorPolicy
      */
     public function view(User $user, Color $color)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**
@@ -30,7 +31,7 @@ class ColorPolicy
      */
     public function create(User $user)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**
@@ -42,7 +43,7 @@ class ColorPolicy
      */
     public function update(User $user, Color $color)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**
@@ -54,7 +55,7 @@ class ColorPolicy
      */
     public function delete(User $user, Color $color)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**

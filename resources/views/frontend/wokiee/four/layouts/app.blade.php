@@ -26,12 +26,9 @@
     @yield('body')
 </div>
 @show
-
-<!--footer start-->
 @section('footer')
     @include('frontend.wokiee.four.partials.footer')
 @show
-<!--footer end-->
 @section('models')
     @include('frontend.wokiee.four.partials.modals')
 @show

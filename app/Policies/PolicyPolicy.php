@@ -3,28 +3,28 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Role;
+use App\Policy;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class RolePolicy
+class PolicyPolicy
 {
     use HandlesAuthorization;
-    const MODAL = 'role';
+    const MODAL = 'policy';
 
     /**
-     * Determine whether the user can view the role.
+     * Determine whether the user can view the policy.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Role  $role
+     * @param  \App\Policy  $policy
      * @return mixed
      */
-    public function view(User $user, Role $role)
+    public function view(User $user, Policy $policy)
     {
         return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**
-     * Determine whether the user can create roles.
+     * Determine whether the user can create policies.
      *
      * @param  \App\Models\User  $user
      * @return mixed
@@ -35,49 +35,49 @@ class RolePolicy
     }
 
     /**
-     * Determine whether the user can update the role.
+     * Determine whether the user can update the policy.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Role  $role
+     * @param  \App\Policy  $policy
      * @return mixed
      */
-    public function update(User $user, Role $role)
+    public function update(User $user, Policy $policy)
     {
         return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**
-     * Determine whether the user can delete the role.
+     * Determine whether the user can delete the policy.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Role  $role
+     * @param  \App\Policy  $policy
      * @return mixed
      */
-    public function delete(User $user, Role $role)
+    public function delete(User $user, Policy $policy)
     {
         return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**
-     * Determine whether the user can restore the role.
+     * Determine whether the user can restore the policy.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Role  $role
+     * @param  \App\Policy  $policy
      * @return mixed
      */
-    public function restore(User $user, Role $role)
+    public function restore(User $user, Policy $policy)
     {
         //
     }
 
     /**
-     * Determine whether the user can permanently delete the role.
+     * Determine whether the user can permanently delete the policy.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Role  $role
+     * @param  \App\Policy  $policy
      * @return mixed
      */
-    public function forceDelete(User $user, Role $role)
+    public function forceDelete(User $user, Policy $policy)
     {
         //
     }

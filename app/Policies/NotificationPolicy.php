@@ -3,28 +3,28 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Role;
+use App\Notification;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class RolePolicy
+class NotificationPolicy
 {
     use HandlesAuthorization;
-    const MODAL = 'role';
+    const MODAL = 'notification';
 
     /**
-     * Determine whether the user can view the role.
+     * Determine whether the user can view the notification.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Role  $role
+     * @param  \App\Notification  $notification
      * @return mixed
      */
-    public function view(User $user, Role $role)
+    public function view(User $user, Notification $notification)
     {
         return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**
-     * Determine whether the user can create roles.
+     * Determine whether the user can create notifications.
      *
      * @param  \App\Models\User  $user
      * @return mixed
@@ -35,49 +35,49 @@ class RolePolicy
     }
 
     /**
-     * Determine whether the user can update the role.
+     * Determine whether the user can update the notification.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Role  $role
+     * @param  \App\Notification  $notification
      * @return mixed
      */
-    public function update(User $user, Role $role)
+    public function update(User $user, Notification $notification)
     {
         return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**
-     * Determine whether the user can delete the role.
+     * Determine whether the user can delete the notification.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Role  $role
+     * @param  \App\Notification  $notification
      * @return mixed
      */
-    public function delete(User $user, Role $role)
+    public function delete(User $user, Notification $notification)
     {
         return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**
-     * Determine whether the user can restore the role.
+     * Determine whether the user can restore the notification.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Role  $role
+     * @param  \App\Notification  $notification
      * @return mixed
      */
-    public function restore(User $user, Role $role)
+    public function restore(User $user, Notification $notification)
     {
         //
     }
 
     /**
-     * Determine whether the user can permanently delete the role.
+     * Determine whether the user can permanently delete the notification.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Role  $role
+     * @param  \App\Notification  $notification
      * @return mixed
      */
-    public function forceDelete(User $user, Role $role)
+    public function forceDelete(User $user, Notification $notification)
     {
         //
     }

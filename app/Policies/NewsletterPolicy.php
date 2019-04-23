@@ -9,6 +9,7 @@ use Illuminate\Auth\Access\HandlesAuthorization;
 class NewsletterPolicy
 {
     use HandlesAuthorization;
+    const MODAL = 'newsletter';
 
     /**
      * Determine whether the user can view the newsletter.
@@ -19,7 +20,7 @@ class NewsletterPolicy
      */
     public function view(User $user, Newsletter $newsletter)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**
@@ -30,7 +31,7 @@ class NewsletterPolicy
      */
     public function create(User $user)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**
@@ -42,7 +43,7 @@ class NewsletterPolicy
      */
     public function update(User $user, Newsletter $newsletter)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**
@@ -54,7 +55,7 @@ class NewsletterPolicy
      */
     public function delete(User $user, Newsletter $newsletter)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**

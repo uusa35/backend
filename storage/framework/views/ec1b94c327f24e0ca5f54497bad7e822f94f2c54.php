@@ -40,9 +40,7 @@
                         <i class="fa fa-angle-down"></i>
                     </button>
                     <ul class="dropdown-menu" role="menu">
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('isSuper')): ?>
-                            <?php echo $__env->make('backend.partials._nav_add_new_btns_super', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-                        <?php endif; ?>
+                        <?php echo $__env->make('backend.partials._nav_add_new_btns_super', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
                     </ul>
                 </div>
             </div>

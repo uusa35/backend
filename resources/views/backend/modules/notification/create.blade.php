@@ -14,7 +14,7 @@
                 <input type="hidden" name="notifiable_id" value="1">
                 <input type="hidden" name="notifiable_type" value="Product">
                 <div class="form-body">
-                    <h3 class="form-section">{{ trans('general.create_notification') }}</h3>
+                    <h3 class="form-section">{{ trans('general.new_notification') }}</h3>
                     <div class="portlet box blue ">
                         <div class="portlet-title">
                             <div class="caption">

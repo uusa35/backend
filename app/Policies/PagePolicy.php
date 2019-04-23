@@ -9,6 +9,7 @@ use Illuminate\Auth\Access\HandlesAuthorization;
 class PagePolicy
 {
     use HandlesAuthorization;
+    const MODAL = 'page';
 
     /**
      * Determine whether the user can view the page.
@@ -19,7 +20,7 @@ class PagePolicy
      */
     public function view(User $user, Page $page)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**
@@ -30,7 +31,7 @@ class PagePolicy
      */
     public function create(User $user)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**
@@ -42,7 +43,7 @@ class PagePolicy
      */
     public function update(User $user, Page $page)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**
@@ -54,7 +55,7 @@ class PagePolicy
      */
     public function delete(User $user, Page $page)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**

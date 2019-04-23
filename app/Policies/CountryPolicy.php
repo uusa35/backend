@@ -9,7 +9,7 @@ use Illuminate\Auth\Access\HandlesAuthorization;
 class CountryPolicy
 {
     use HandlesAuthorization;
-
+    const MODAL = 'country';
     /**
      * Determine whether the user can view the country.
      *
@@ -19,7 +19,7 @@ class CountryPolicy
      */
     public function view(User $user, Country $country)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**
@@ -30,7 +30,7 @@ class CountryPolicy
      */
     public function create(User $user)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**
@@ -42,7 +42,7 @@ class CountryPolicy
      */
     public function update(User $user, Country $country)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**
@@ -54,7 +54,7 @@ class CountryPolicy
      */
     public function delete(User $user, Country $country)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**

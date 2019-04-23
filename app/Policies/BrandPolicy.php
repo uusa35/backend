@@ -9,6 +9,7 @@ use Illuminate\Auth\Access\HandlesAuthorization;
 class BrandPolicy
 {
     use HandlesAuthorization;
+    const MODAL = 'brand';
 
     /**
      * Determine whether the user can view the brand.
@@ -19,7 +20,7 @@ class BrandPolicy
      */
     public function view(User $user, Brand $brand)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**
@@ -30,7 +31,7 @@ class BrandPolicy
      */
     public function create(User $user)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**
@@ -42,7 +43,7 @@ class BrandPolicy
      */
     public function update(User $user, Brand $brand)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**
@@ -54,7 +55,7 @@ class BrandPolicy
      */
     public function delete(User $user, Brand $brand)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**

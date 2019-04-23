@@ -9,6 +9,7 @@ use Illuminate\Auth\Access\HandlesAuthorization;
 class CouponPolicy
 {
     use HandlesAuthorization;
+    const MODAL = 'coupon';
 
     /**
      * Determine whether the user can view the coupon.
@@ -19,7 +20,7 @@ class CouponPolicy
      */
     public function view(User $user, Coupon $coupon)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**
@@ -30,7 +31,7 @@ class CouponPolicy
      */
     public function create(User $user)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**
@@ -42,7 +43,7 @@ class CouponPolicy
      */
     public function update(User $user, Coupon $coupon)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**
@@ -54,7 +55,7 @@ class CouponPolicy
      */
     public function delete(User $user, Coupon $coupon)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**

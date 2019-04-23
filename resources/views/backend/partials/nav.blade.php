@@ -40,9 +40,7 @@
                         <i class="fa fa-angle-down"></i>
                     </button>
                     <ul class="dropdown-menu" role="menu">
-                        @can('isSuper')
-                            @include('backend.partials._nav_add_new_btns_super')
-                        @endcan
+                        @include('backend.partials._nav_add_new_btns_super')
                     </ul>
                 </div>
             </div>

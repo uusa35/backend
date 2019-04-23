@@ -23,16 +23,12 @@
 <?php echo $__env->yieldSection(); ?>
 <div id="tt-pageContent">
     <?php echo $__env->make('frontend.wokiee.four.partials.notifications', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-    <h1><?php echo e(getClientCountry()->name); ?></h1>
     <?php echo $__env->yieldContent('body'); ?>
 </div>
 <?php echo $__env->yieldSection(); ?>
-
-<!--footer start-->
 <?php $__env->startSection('footer'); ?>
     <?php echo $__env->make('frontend.wokiee.four.partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <?php echo $__env->yieldSection(); ?>
-<!--footer end-->
 <?php $__env->startSection('models'); ?>
     <?php echo $__env->make('frontend.wokiee.four.partials.modals', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <?php echo $__env->yieldSection(); ?>

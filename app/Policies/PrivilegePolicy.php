@@ -9,6 +9,7 @@ use Illuminate\Auth\Access\HandlesAuthorization;
 class PrivilegePolicy
 {
     use HandlesAuthorization;
+    const MODAL = 'privilege';
 
     /**
      * Determine whether the user can view the privilege.
@@ -19,7 +20,7 @@ class PrivilegePolicy
      */
     public function view(User $user, Privilege $privilege)
     {
-        return $user->role->privileges->where('name', 'privilege')->first()->pivot->{__FUNCTION__};
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**
@@ -30,7 +31,7 @@ class PrivilegePolicy
      */
     public function create(User $user)
     {
-        return $user->role->privileges->where('name', 'privilege')->first()->pivot->{__FUNCTION__};
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**
@@ -42,7 +43,7 @@ class PrivilegePolicy
      */
     public function update(User $user, Privilege $privilege)
     {
-        return $user->role->privileges->where('name', 'privilege')->first()->pivot->{__FUNCTION__};
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**
@@ -54,7 +55,7 @@ class PrivilegePolicy
      */
     public function delete(User $user, Privilege $privilege)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**

@@ -8,6 +8,7 @@ use Illuminate\Auth\Access\HandlesAuthorization;
 class UserPolicy
 {
     use HandlesAuthorization;
+    const MODAL = 'user';
 
     /**
      * Determine whether the user can view the model.
@@ -18,7 +19,7 @@ class UserPolicy
      */
     public function view(User $user, User $model)
     {
-        return $user->role->privileges->where('name','user')->first()->pivot->view;
+        return $user->isAdminOrAbove ? $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__} : $user->id === $model->id;
     }
 
     /**
@@ -29,7 +30,7 @@ class UserPolicy
      */
     public function create(User $user)
     {
-        return $user->role->privileges->where('name','user')->first()->pivot->create;
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**
@@ -41,7 +42,7 @@ class UserPolicy
      */
     public function update(User $user, User $model)
     {
-        return $user->role->privileges->where('name','user')->first()->pivot->update;
+        return $user->isAdminOrAbove ? $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__} : $user->id === $model->id;
     }
 
     /**
@@ -53,7 +54,7 @@ class UserPolicy
      */
     public function delete(User $user, User $model)
     {
-        return $user->role->privileges->where('name','user')->first()->pivot->delete;
+        return $user->isAdminOrAbove ? $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__} : $user->id === $model->id;
     }
 
     /**

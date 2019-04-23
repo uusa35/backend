@@ -9,6 +9,7 @@ use Illuminate\Auth\Access\HandlesAuthorization;
 class DayPolicy
 {
     use HandlesAuthorization;
+    const MODAL = 'day';
 
     /**
      * Determine whether the user can view the day.
@@ -19,7 +20,7 @@ class DayPolicy
      */
     public function view(User $user, Day $day)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**
@@ -30,7 +31,7 @@ class DayPolicy
      */
     public function create(User $user)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**
@@ -42,7 +43,7 @@ class DayPolicy
      */
     public function update(User $user, Day $day)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**
@@ -54,7 +55,7 @@ class DayPolicy
      */
     public function delete(User $user, Day $day)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**

@@ -9,6 +9,7 @@ use Illuminate\Auth\Access\HandlesAuthorization;
 class TagPolicy
 {
     use HandlesAuthorization;
+    const MODAL = 'tag';
 
     /**
      * Determine whether the user can view the tag.
@@ -19,7 +20,7 @@ class TagPolicy
      */
     public function view(User $user, Tag $tag)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**
@@ -30,7 +31,7 @@ class TagPolicy
      */
     public function create(User $user)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**
@@ -42,7 +43,7 @@ class TagPolicy
      */
     public function update(User $user, Tag $tag)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**
@@ -54,7 +55,7 @@ class TagPolicy
      */
     public function delete(User $user, Tag $tag)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**

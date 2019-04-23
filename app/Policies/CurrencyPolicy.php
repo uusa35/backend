@@ -9,6 +9,7 @@ use Illuminate\Auth\Access\HandlesAuthorization;
 class CurrencyPolicy
 {
     use HandlesAuthorization;
+    const MODAL = 'currency';
 
     /**
      * Determine whether the user can view the currency.
@@ -19,7 +20,7 @@ class CurrencyPolicy
      */
     public function view(User $user, Currency $currency)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**
@@ -30,7 +31,7 @@ class CurrencyPolicy
      */
     public function create(User $user)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**
@@ -42,7 +43,7 @@ class CurrencyPolicy
      */
     public function update(User $user, Currency $currency)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**
@@ -54,7 +55,7 @@ class CurrencyPolicy
      */
     public function delete(User $user, Currency $currency)
     {
-        //
+        return $user->role->privileges->where('name', self::MODAL)->first()->pivot->{__FUNCTION__};
     }
 
     /**

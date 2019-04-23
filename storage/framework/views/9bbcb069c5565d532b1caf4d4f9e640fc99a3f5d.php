@@ -106,42 +106,40 @@
                 <span class="title"><?php echo e(trans('general.polices')); ?></span>
                 <span class="arrow"></span>
             </a>
-
         </li>
-        <li class="nav-item <?php echo e(activeItem('role')); ?>">
-            <a href="<?php echo e(route('backend.admin.role.index')); ?>" class="nav-link nav-toggle">
-                <i class="fa fa-fw fa-users"></i>
-                <span class="title"><?php echo e(trans('general.roles')); ?></span>
-                <span class="arrow"></span>
-            </a>
+        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('superOne')): ?>
+            <li class="nav-item <?php echo e(activeItem('role')); ?>">
+                <a href="<?php echo e(route('backend.admin.role.index')); ?>" class="nav-link nav-toggle">
+                    <i class="fa fa-fw fa-users"></i>
+                    <span class="title"><?php echo e(trans('general.roles')); ?></span>
+                    <span class="arrow"></span>
+                </a>
+            </li>
+            <li class="nav-item <?php echo e(activeItem('privilege')); ?>">
+                <a href="<?php echo e(route('backend.admin.privilege.index')); ?>" class="nav-link nav-toggle">
+                    <i class="fa fa-fw fa-lock"></i>
+                    <span class="title"><?php echo e(trans('general.privileges')); ?></span>
+                    <span class="arrow"></span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="nav-item ">
+                        <a href="<?php echo e(route('backend.admin.privilege.create')); ?>" class="nav-link nav-toggle">
+                            <i class="fa fa-fw fa-list-ul"></i>
+                            <span class="title"><?php echo e(trans('general.create_privilege')); ?> </span>
+                            <span class="arrow"></span>
+                        </a>
+                    </li>
 
-        </li>
+                </ul>
+            </li>
+        <?php endif; ?>
         <li class="nav-item <?php echo e(activeItem('term')); ?>">
             <a href="<?php echo e(route('backend.admin.term.index')); ?>" class="nav-link nav-toggle">
                 <i class="fa fa-fw fa-info-circle"></i>
                 <span class="title"><?php echo e(trans('general.terms')); ?></span>
                 <span class="arrow"></span>
             </a>
-
         </li>
-        <li class="nav-item <?php echo e(activeItem('privilege')); ?>">
-            <a href="<?php echo e(route('backend.admin.privilege.index')); ?>" class="nav-link nav-toggle">
-                <i class="fa fa-fw fa-lock"></i>
-                <span class="title"><?php echo e(trans('general.privileges')); ?></span>
-                <span class="arrow"></span>
-            </a>
-            <ul class="sub-menu">
-                <li class="nav-item ">
-                    <a href="<?php echo e(route('backend.admin.privilege.create')); ?>" class="nav-link nav-toggle">
-                        <i class="fa fa-fw fa-list-ul"></i>
-                        <span class="title"><?php echo e(trans('general.create_privilege')); ?> </span>
-                        <span class="arrow"></span>
-                    </a>
-                </li>
-
-            </ul>
-        </li>
-
         <li class="nav-item <?php echo e(activeItem('tag')); ?>">
             <a href="<?php echo e(route('backend.tag.index')); ?>" class="nav-link nav-toggle">
                 <i class="fa fa-fw fa-tags"></i>
