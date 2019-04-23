@@ -36,7 +36,7 @@ class CheckCartItems implements ShouldQueue
         $cart->each(function ($item, $rowId) {
             if ($item->options->type === 'product') {
                 $product = Product::whereId($item->options->element_id)->with('product_attributes', 'shipment_package.countries')->first();
-                if (!checkShipmentAvailability(getClientCountry()->id, $product->shipment_package->countries->pluck('id')->toArray())) {
+                if (!checkShipmentAvailability(getCurrentCountrySessionId(), $product->shipment_package->countries->pluck('id')->toArray())) {
                     Cart::remove($rowId);
                 }
                 if (!$product->getCanOrderAttribute($item->qty, $item->options->product_attribute_id)) {

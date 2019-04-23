@@ -23,6 +23,7 @@
 @show
 <div id="tt-pageContent">
     @include('frontend.wokiee.four.partials.notifications')
+    <h1>{{ getClientCountry()->name }}</h1>
     @yield('body')
 </div>
 @show
