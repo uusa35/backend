@@ -35,14 +35,14 @@ class UserController extends Controller
     {
         $this->authorize('user.view', auth()->user());
         if (request()->has('role_id')) {
-            $elements = User::where('role_id', request('role_id'))->with('country', 'slides', 'role', 'categories')->orderBy('id', 'desc')->paginate(env('EVENTKM') ? Self::TAKE_ALL : SELF::TAKE);
+            $elements = User::where('role_id', request('role_id'))->with('country', 'slides', 'role', 'categories','addresses')->orderBy('id', 'desc')->paginate(env('EVENTKM') ? Self::TAKE_ALL : SELF::TAKE);
         } else {
             if (auth()->user()->isSuper) {
-                $elements = User::with('country', 'slides', 'role', 'categories')->orderBy('id', 'desc')->paginate(env('EVENTKM') ? Self::TAKE_ALL : SELF::TAKE);
+                $elements = User::with('country', 'slides', 'role', 'categories','addresses')->orderBy('id', 'desc')->paginate(env('EVENTKM') ? Self::TAKE_ALL : SELF::TAKE);
             } else {
                 $elements = User::whereHas('role', function ($q) {
                     return $q->where(['is_admin' => false, 'is_super' => false]);
-                })->with('country', 'slides', 'role', 'categories')->orderBy('id', 'desc')->paginate(env('EVENTKM') ? Self::TAKE_ALL : SELF::TAKE);
+                })->with('country', 'slides', 'role', 'categories','addresses')->orderBy('id', 'desc')->paginate(env('EVENTKM') ? Self::TAKE_ALL : SELF::TAKE);
             }
         }
         return view('backend.modules.user.index', compact('elements'));
@@ -54,7 +54,7 @@ class UserController extends Controller
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator->messages());
         }
-        $elements = User::with('country', 'slides', 'role', 'categories')->filters($filters)->orderBy('id', 'desc')->paginate(self::TAKE_LESS);
+        $elements = User::with('country', 'slides', 'role', 'categories','addresses')->filters($filters)->orderBy('id', 'desc')->paginate(self::TAKE_LESS);
         if (!$elements->isEmpty()) {
             return view('backend.modules.user.index', compact('elements'));
         } else {
