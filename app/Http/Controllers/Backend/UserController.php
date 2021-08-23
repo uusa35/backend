@@ -80,9 +80,9 @@ class UserController extends Controller
         $this->authorize('user.update', $element);
         $countries = Country::active()->get();
         $roles = Role::active()->get();
-        $categories = Category::active()->where(['is_user' => true , 'is_market' => true])->with(['children' => function ($q) {
-            return $q->where(['is_user' => true , 'is_market' => true])->with(['children' => function ($q) {
-                return $q->where(['is_user' => true , 'is_market' => true]);
+        $categories = Category::active()->where('is_user', true)->orWhere('is_market', true)->with(['children' => function ($q) {
+            return $q->active()->where('is_user', true)->orWhere('is_market', true)->with(['children' => function ($q) {
+                return $q->active()->where('is_user', true)->orWhere('is_market', true);
             }]);
         }])->get();
         $products = Product::active()->available()->hasImage()->serveCountries()->hasStock()->get();
