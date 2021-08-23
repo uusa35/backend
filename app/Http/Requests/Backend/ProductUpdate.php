@@ -65,7 +65,7 @@ class ProductUpdate extends FormRequest
             'size_chart_image' => 'nullable|image|dimensions:width=1080,height=1440',
 //            'start_sale' => 'date|nullable',
 //            'end_sale' => 'required',
-            'active' => 'required|boolean',
+            'active' => 'boolean',
             'tags' => 'array',
             'videos' => 'array',
             'video_url' => 'nullable|url',
