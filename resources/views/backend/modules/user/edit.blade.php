@@ -1273,31 +1273,31 @@
                                                     @endif
                                                 </div>
                                             </div>
-                                        @endcan
-                                        <div class="col-lg-4 col-md-6">
-                                            <div
-                                                class="form-group{{ $errors->has('merchant_id') ? ' has-error' : '' }}">
-                                                <label for="merchant_id"
-                                                       class="control-label">{{ trans('general.merchant_id') }}</label>
-                                                <input id="merchant_id" type="text"
-                                                       class="form-control tooltips"
-                                                       data-container="body" data-placement="top"
-                                                       data-original-title="{{ trans('message.merchant_id') }}"
-                                                       name="merchant_id"
-                                                       placeholder="{{ trans('general.merchant_id') }}"
-                                                       value="{{ $element->merchant_id }}"
-                                                       autofocus
-                                                       required="{{ !$element->role->is_client }}"
-                                                >
-                                                @if ($errors->has('merchant_id'))
-                                                    <span class="help-block">
+                                            <div class="col-lg-4 col-md-6">
+                                                <div
+                                                    class="form-group{{ $errors->has('merchant_id') ? ' has-error' : '' }}">
+                                                    <label for="merchant_id"
+                                                           class="control-label">{{ trans('general.merchant_id') }}</label>
+                                                    <input id="merchant_id" type="text"
+                                                           class="form-control tooltips"
+                                                           data-container="body" data-placement="top"
+                                                           data-original-title="{{ trans('message.merchant_id') }}"
+                                                           name="merchant_id"
+                                                           placeholder="{{ trans('general.merchant_id') }}"
+                                                           value="{{ $element->merchant_id }}"
+                                                           autofocus
+{{--                                                           required="{{ !$element->role->is_client }}"--}}
+                                                    >
+                                                    @if ($errors->has('merchant_id'))
+                                                        <span class="help-block">
                                                         <strong>
                                                             {{ $errors->first('merchant_id') }}
                                                         </strong>
                                                     </span>
-                                                @endif
+                                                    @endif
+                                                </div>
                                             </div>
-                                        </div>
+                                        @endcan
                                         <div class="col-lg-4 col-md-6">
                                             <div
                                                 class="form-group{{ $errors->has('video_url_one') ? ' has-error' : '' }}">
