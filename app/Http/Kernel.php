@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\ApiLocalization;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -42,6 +43,7 @@ class Kernel extends HttpKernel
 
         'api' => [
             'throttle:260,1',
+            ApiLocalization::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class
         ],
     ];
