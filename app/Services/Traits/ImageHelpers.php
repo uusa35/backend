@@ -86,6 +86,7 @@ trait ImageHelpers
                                         } else {
                                             $img->resize($dimensions[0], $dimensions[1]);
                                         }
+                                        dd(env('IMAGE_QUALITY'));
                                         $img->save(storage_path('app/public/uploads/images/' . $value . '/' . $imagePath), env('IMAGE_QUALITY'));
                                     } elseif ($value === 'medium') {
                                         if ($ratio) {
