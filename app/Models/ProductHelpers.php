@@ -98,6 +98,7 @@ trait ProductHelpers
 
     public function getUniqueIdAttribute($attributeId = null)
     {
-        return $this->has_attributes && !is_null($attributeId) ? (string) $this->id.''.$attributeId : (string) $this->id.''.$this->size->id.''.$this->color->id;
+//        return $this->has_attributes && !is_null($attributeId) ? (string) $this->id.''.$attributeId : (string) $this->id.''.$this->size->id.''.$this->color->id;
+        return $this->has_attributes && !is_null($attributeId) ? (string) $this->id.''.$attributeId : (string) $this->id;
     }
 }
