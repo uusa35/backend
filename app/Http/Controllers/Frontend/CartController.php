@@ -83,12 +83,12 @@ class CartController extends Controller
                     'shipment_package.countries', 'product_attributes.color',
                     'product_attributes.size'
                 ])->first();
-            dd($product);
             if ($this->addProductToCart($request, $product, $this->cart)) {
                 return redirect()->back()->with('success', trans('message.product_added_to_cart_successfully'));
             }
             return redirect()->back()->with('error', trans('message.product_is_not_added_to_cart_successfully'));
         } catch (\Exception $e) {
+            dd($e->getMessage());
             return redirect()->back()->with('error',$e->getMessage());
         }
     }
