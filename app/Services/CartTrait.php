@@ -107,8 +107,8 @@ trait CartTrait
                     'country_destination' => $country,
                     'product_attribute_id' => $request->product_attribute_id,
                     'size_id' => $request->size_id,
-                    'color_id' => $request->color_id,
-                    'color' => Color::whereId($request->color_id)->first(),
+                    'color' => $request->has('color_id') ? Color::whereId($request->color_id)->first() : Color::first()->id,
+                    'color_id' => $request->has('color_id') ? $request->color_id : Color::first()->id,
                     'size' => Size::whereId($request->size_id)->first(),
                     'company' => $product->user->slug,
                     'element' => $product
