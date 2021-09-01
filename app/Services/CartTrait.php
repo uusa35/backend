@@ -97,6 +97,7 @@ trait CartTrait
     {
         if ($this->checkProduct($request, $product, $this->cart)) {
             $country = getClientCountry();
+            dd($request->color_id);
             $this->cart->add($product->getUniqueIdAttribute($request->product_attribute_id), $product->name, $request->qty, (double)$product->finalPrice, $request->qty * $product->weight,
                 [
                     'type' => 'product',
