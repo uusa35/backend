@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cb64c074-93f5-49bb-ae42-70edeb58ee75" name="Default Changelist" comment="258">
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/CartController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/CartTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/CartTrait.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1078,7 +1077,7 @@
       <workItem from="1630301624554" duration="4670000" />
       <workItem from="1630470610885" duration="32000" />
       <workItem from="1630514099747" duration="1963000" />
-      <workItem from="1630519151849" duration="376000" />
+      <workItem from="1630519151849" duration="444000" />
     </task>
     <servers />
   </component>
