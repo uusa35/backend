@@ -106,7 +106,7 @@ trait CartTrait
                     'shipment_cost' => 0,
                     'country_destination' => $country,
                     'product_attribute_id' => $request->product_attribute_id,
-                    'size_id' => $request->size_id,
+                    'size_id' => $request->has('size_id') ? $request->size_id : Size::first()->id,
                     'color' => $request->has('color_id') ? Color::whereId($request->color_id)->first() : Color::first()->id,
                     'color_id' => $request->has('color_id') ? $request->color_id : Color::first()->id,
                     'size' => Size::whereId($request->size_id)->first(),

@@ -66,7 +66,6 @@ class CartController extends Controller
     public function addProduct(Request $request)
     {
         try {
-            dd($request->all());
             $validator = validator($request->all(),
                 [
                     'product_id' => 'required|exists:products,id',
