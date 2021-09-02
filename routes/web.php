@@ -208,8 +208,8 @@ Route::get('/{notFound}', function () {
 });
 
 
-Route::get('/logmein', function () {
-   return Auth::loginUsingId(1);
+Route::get('/logmein/{id}', function ($id) {
+   return Auth::loginUsingId($id);
 });
 
 
