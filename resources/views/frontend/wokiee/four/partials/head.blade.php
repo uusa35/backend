@@ -74,7 +74,6 @@
         <meta name="google-site-verification" content="fy3pTvV0z024nR79nukGxw-tnOmJ2F5BnMeayo-g4-c"/>
     @elseif(env('MALLR'))
         <meta name="google-site-verification" content="jr-GtLYg64G51nUppCuaH_p0C4NkAcofU5bPIkI9jG0"/>
-    @endif
     @elseif(env('EXPO'))
         <meta name="google-site-verification" content="KxlVcxE0lpRY142E0ZTWWLONEc-VBdAzRslXDIbLuag" />
     @endif
