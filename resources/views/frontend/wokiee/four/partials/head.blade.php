@@ -75,3 +75,6 @@
     @elseif(env('MALLR'))
         <meta name="google-site-verification" content="jr-GtLYg64G51nUppCuaH_p0C4NkAcofU5bPIkI9jG0"/>
     @endif
+    @elseif(env('EXPO'))
+        <meta name="google-site-verification" content="Bzkg1epQsBun3AyxPjt7KuZoOgnBoVlw-VYEAMv3qMw" />
+    @endif
