@@ -225,6 +225,7 @@
                                                                                     @foreach($child->children->unique() as $subChild)
                                                                                         <option
                                                                                             value="{{ $subChild->id }}"
+                                                                                            {{--                                                                                            {{ in_array($subChild->id,$child->children->pluck('id')->unique()->flatten()->toArray()) ? 'selected' : '' }}--}}
                                                                                             {{ in_array($subChild->id,$element->categories->pluck('id')->unique()->flatten()->toArray()) ? 'selected' : '' }}
                                                                                             style="padding-left: 35px"
                                                                                         >
@@ -255,7 +256,8 @@
                                                                 {{ trans('message.best_fit',['width' => '1080 px', 'height' => '1440']) }}
                                                             </div>
                                                             <div class="help-block text-left">
-                                                                <a href="{{ url('https://photopea.com') }}" target="_blank">
+                                                                <a href="{{ url('https://photopea.com') }}"
+                                                                   target="_blank">
                                                                     {{ trans('general.image_url') }}
                                                                 </a>
                                                             </div>
@@ -286,7 +288,8 @@
                                                                 {{ trans('message.best_fit',['width' => '1080 px', 'height' => '1440']) }}
                                                             </div>
                                                             <div class="help-block text-left">
-                                                                <a href="{{ url('https://photopea.com') }}" target="_blank">
+                                                                <a href="{{ url('https://photopea.com') }}"
+                                                                   target="_blank">
                                                                     {{ trans('general.image_url') }}
                                                                 </a>
                                                             </div>
@@ -853,11 +856,11 @@
                                                             @endif
                                                         </div>
                                                     </div>
-{{--                                                    @if($element->barcode)--}}
-{{--                                                        <div class="col-md-2">--}}
-{{--                                                            {!! DNS2D::getBarcodeHTML($element->barcode, 'PDF417',2,1); !!}--}}
-{{--                                                        </div>--}}
-{{--                                                    @endif--}}
+                                                    {{--                                                    @if($element->barcode)--}}
+                                                    {{--                                                        <div class="col-md-2">--}}
+                                                    {{--                                                            {!! DNS2D::getBarcodeHTML($element->barcode, 'PDF417',2,1); !!}--}}
+                                                    {{--                                                        </div>--}}
+                                                    {{--                                                    @endif--}}
                                                     <div class="col-lg-12">
                                                         @if(!$tags->isEmpty())
                                                             <div class="col-lg-4 col-md-6">
@@ -983,26 +986,26 @@
                                                             {{ trans('general.no') }}</label>
                                                     </div>
                                                 </div>
-                                                    <div class="col-lg-4 col-md-6">
-                                                        <div class="form-group">
-                                                            <label class="control-label sbold tooltips"
-                                                                   data-container="body" data-placement="top"
-                                                                   data-original-title="{{ trans('message.show_size_chart') }}">{{ trans('general.show_size_chart') }}</label></br>
-                                                            <label class="radio-inline">
-                                                                <input type="radio" name="show_size_chart"
-                                                                       id="optionsRadios3"
-                                                                       {{ $element->show_size_chart ? 'checked' : null  }}
-                                                                       value="1">
-                                                                {{ trans('general.yes') }}</label>
-                                                            <label class="radio-inline">
-                                                                <input type="radio" name="show_size_chart"
-                                                                       id="optionsRadios4"
-                                                                       {{ !$element->show_size_chart ? 'checked' : null  }}
-                                                                       value="0">
-                                                                {{ trans('general.no') }}
-                                                            </label>
-                                                        </div>
+                                                <div class="col-lg-4 col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label sbold tooltips"
+                                                               data-container="body" data-placement="top"
+                                                               data-original-title="{{ trans('message.show_size_chart') }}">{{ trans('general.show_size_chart') }}</label></br>
+                                                        <label class="radio-inline">
+                                                            <input type="radio" name="show_size_chart"
+                                                                   id="optionsRadios3"
+                                                                   {{ $element->show_size_chart ? 'checked' : null  }}
+                                                                   value="1">
+                                                            {{ trans('general.yes') }}</label>
+                                                        <label class="radio-inline">
+                                                            <input type="radio" name="show_size_chart"
+                                                                   id="optionsRadios4"
+                                                                   {{ !$element->show_size_chart ? 'checked' : null  }}
+                                                                   value="0">
+                                                            {{ trans('general.no') }}
+                                                        </label>
                                                     </div>
+                                                </div>
                                                 <div class="col-lg-4 col-md-6">
                                                     <div class="form-group">
                                                         <label class="control-label sbold tooltips"
