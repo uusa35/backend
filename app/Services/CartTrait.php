@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\Area;
 use App\Models\Color;
 use App\Models\Coupon;
 use App\Models\Product;
@@ -70,13 +71,13 @@ trait CartTrait
                 if (env('MIRSAL_ENABLED')) {
                     $pickups = [];
                     foreach ($cart->content() as $item) {
-                        $code = $item->options->element->user->localArea ? $item->options->element->user->localArea->code : null;
+                        $code = $item->options->element->user->localArea ? $item->options->element->user->localArea->code : Area::first()->code;
                         if (!is_null($code)) {
                             array_push($pickups, $code);
                         }
                     }
                     $authUser = User::whereId(auth()->id())->with('localArea')->first();
-                    $authCode = $authUser->localArea ? $authUser->localArea->code : null;
+                    $authCode = $authUser->localArea ? $authUser->localArea->code : Area::first()->code;
                     if (!is_null($authCode)) {
                         array_push($pickups, $authCode);
                     }
