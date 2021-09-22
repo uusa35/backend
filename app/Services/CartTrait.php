@@ -68,7 +68,7 @@ trait CartTrait
                     $cart->add($country->calling_code, trans('shipment_package_fee'), 1, (double)($country->is_local ? ($receiveFromBranch ? 0 : $country->fixed_shipment_charge) : $this->getTotalItemsOnly($cart) * (double)$country->fixed_shipment_charge), 1, ['type' => 'country', 'country_id' => $country->id]);
                 }
             } else {
-                if (env('MIRSAL_ENABLED')) {
+                if (env('MIRSAL_ENABLED') && auth()->check()) {
                     $pickups = [];
                     foreach ($cart->content() as $item) {
                         $code = $item->options->element->user->localArea ? $item->options->element->user->localArea->code : Area::first()->code;
