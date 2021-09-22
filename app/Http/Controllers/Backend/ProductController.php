@@ -163,6 +163,7 @@ class  ProductController extends Controller
             $end_sale ? $element->update(['end_sale' => $end_sale]) : null;
             $element->tags()->sync($request->tags);
             $element->videos()->sync($request->videos);
+            $element->categories()->detach();
             $element->categories()->sync($request->categories);
             $request->hasFile('image') ? $this->saveMimes($element, $request, ['image'], ['1080', '1440'], false) : null;
             $request->hasFile('qr') ? $this->saveMimes($element, $request, ['qr'], ['300', '300'], false) : null;
