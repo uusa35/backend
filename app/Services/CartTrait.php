@@ -75,7 +75,8 @@ trait CartTrait
                             array_push($pickups, $code);
                         }
                     }
-                    $authCode = auth()->user()->localArea ? auth()->user()->localArea->code : null;
+                    $authUser = User::whereId(auth()->id())->with('localArea')->first();
+                    $authCode = $authUser->localArea ? $authUser->localArea->code : null;
                     if (!is_null($authCode)) {
                         array_push($pickups, $authCode);
                     }
