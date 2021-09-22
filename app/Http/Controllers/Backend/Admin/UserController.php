@@ -162,7 +162,7 @@ class UserController extends Controller
      */
     public function update(UserUpdate $request, $id)
     {
-        $element = User::whereId($id)->with('categories')->first();
+        $element = User::whereId($id)->with('categories')->with('categories','images','productGroup')->first();
         $this->authorize('user.update', $element);
         $updated = $element->update($request->except('image', 'bg', 'banner', 'path', 'categories', 'images', 'products', 'surveys','start_subscription','end_subscription'));
         $country = request()->has('country_id') ? Country::whereId(request('country_id'))->first() : null;
@@ -178,6 +178,7 @@ class UserController extends Controller
             $request->hasFile('bg') ? $this->saveMimes($element, $request, ['bg'], ['1080', '1440'], true) : null;
             $request->hasFile('banner') ? $this->saveMimes($element, $request, ['banner'], ['1080', '410'], true) : null;
             $request->hasFile('path') ? $this->savePath($request, $element) : null;
+            $element->categories()->detach();
             $request->has('categories') ? $element->categories()->sync($request->categories) : null;
             $element->productGroup()->sync($request->products);
             $element->surveys()->sync($request->surveys);
