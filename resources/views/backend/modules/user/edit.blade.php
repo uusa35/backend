@@ -205,14 +205,14 @@
                                                             @if(!$category->children->isEmpty())
                                                                 @foreach($category->children as $child)
                                                                     <option value="{{ $child->id }}"
-                                                                            {{ in_array($child->id,$element->categories->pluck('id')->unique()->flatten()->toArray()) ? 'selected' : null }}
+                                                                            {{ in_array($child->id,$child->categories->pluck('id')->unique()->flatten()->toArray()) ? 'selected' : null }}
                                                                             style="padding-left: 15px">
                                                                         {{ $child->name }}</option>
                                                                     @if(!$child->children->isEmpty())
                                                                         @foreach($child->children as $subChild)
                                                                             <option
                                                                                 value="{{ $subChild->id }}"
-                                                                                {{ in_array($subChild->id,$element->categories->pluck('id')->unique()->flatten()->toArray()) ? 'selected' : null }}
+                                                                                {{ in_array($subChild->id,$subChild->categories->pluck('id')->unique()->flatten()->toArray()) ? 'selected' : null }}
                                                                                 style="padding-left: 35px">
                                                                                 {{ $subChild->name }}</option>
                                                                         @endforeach
