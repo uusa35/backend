@@ -103,7 +103,7 @@ class CartController extends Controller
     public function removeItem($id)
     {
         $this->cart->remove($id);
-        return redirect()->back()->with('success', 'message.cart_item_removed_successfully');
+        return redirect()->back()->with('success', trans('message.cart_item_removed_successfully'));
     }
 
     public function clearCart()
