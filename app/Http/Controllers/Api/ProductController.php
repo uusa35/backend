@@ -33,7 +33,7 @@ class ProductController extends Controller
             $query->onSaleOnHome();
         }
         if (request()->has('latest') && request()->latest) {
-            $query->orderBy('id','desc');
+            $query->onNew();
         }
         if (request()->has('best_sale') && request()->best_sale) {
 //            $query->bestSalesProducts();
