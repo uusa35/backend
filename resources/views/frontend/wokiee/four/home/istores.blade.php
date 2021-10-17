@@ -16,7 +16,8 @@
     @include('frontend.wokiee.four.partials._users_slider',['title' => trans('general.some_companies'), 'elements' => $companies])
     @include('frontend.wokiee.four.partials._users_slider',['title' => trans('general.small_business'), 'elements' => $designers, 'isGray' => true])
     @include('frontend.wokiee.four.partials.category._categories_slider', ['elements' => $homeCategoriesProduct, 'title' => trans('general.product_categories'), 'type' => 'product'])
-    @include('frontend.wokiee.four.partials._products_slider',['title' => trans('general.new_arrivals'), 'elements' => $newProducts,'isGray' => true])
+    @include('frontend.wokiee.four.partials._products_slider',['title' => trans('general.chosen_products'), 'elements' => $newProducts,'isGray' => true])
+    @include('frontend.wokiee.four.partials._products_slider',['title' => trans('general.new_arrivals'), 'elements' => $latestProducts,'isGray' => true])
     @include('frontend.wokiee.four.partials._products_slider',['title' => trans('general.on_sale_products'), 'elements' => $onSaleProducts])
 {{--    @if(isset($categoriesHome) && $categoriesHome->isNotEmpty())--}}
 {{--        @include('frontend.wokiee.four.partials._five_categories',['elements' => $categoriesHome])--}}
