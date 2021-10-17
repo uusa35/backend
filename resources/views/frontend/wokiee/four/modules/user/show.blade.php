@@ -25,7 +25,22 @@
                     @if(env('DESIGNERAAT') || env('EVENTKM') || env('ISTORES') || env('EXPO'))
                         <div class="col-lg-12 mt-5">
                             @if($products->isNotEmpty())
-                                @include('frontend.wokiee.four.partials._products_slider',['elements' => $products,'title' => trans('general.products')])
+                                <div class="tt-block-title">
+                                    <h1 class="tt-title">{{ trans('general.products') }}</h1>
+                                </div>
+                                <div class="tt-product-listing row">
+                                    @include('frontend.wokiee.four.partials._products_user_show',['products' => $products])
+                                </div>
+                                <div class="text-center tt_product_showmore">
+                                    <div class="col-lg-12">
+                                        @include('frontend.wokiee.four.partials._pagination',['elements' => $products])
+                                    </div>
+                                    {{--<a href="#" class="btn btn-border">LOAD MORE</a>--}}
+                                    {{--<div class="tt_item_all_js">--}}
+                                    {{--<a href="#" class="btn btn-border01">NO MORE ITEM TO SHOW</a>--}}
+                                    {{--</div>--}}
+                                </div>
+{{--                                @include('frontend.wokiee.four.partials._products_slider',['elements' => $products,'title' => trans('general.products')])--}}
                             @endif
                             @if($services->isNotEmpty())
                                 @include('frontend.wokiee.four.partials._services_slider',['elements' => $services,'title' => trans('general.services')])
