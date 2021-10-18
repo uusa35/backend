@@ -21,7 +21,6 @@ trait MyFatoorahTrait
             $info = curl_getinfo($curl);
             curl_close($curl);
             $json = json_decode($result, true);
-            dd($json);
             if (isset($json['access_token']) && !empty($json['access_token'])) {
                 $access_token = $json['access_token'];
             } else {
@@ -33,7 +32,8 @@ trait MyFatoorahTrait
                 $token_type = '';
             }
             if (isset($json['access_token']) && !empty($json['access_token'])) {
-                $elements = $this->createPaymentUrl($order, $user, $access_token);
+                $elements = $this->createPaymentUrl($order, $user, 'xHh2TvMW9RTgUyTJQFMjppr7FBbCJlBmHb5UFcbvgi6uIu5GpolPJiAmO_S7hoEpRBUnNvpY51k6yRxMX98exrXRJtdRTTMJ6XzQ7EDolbpBTYe-9RIe1iRoLAiNABe7ozwqo6saI1ZWy6X70qPVdYPwvjW0JpMYHfaNLytUqEVDkdDwCMI9TM12qmzRhERNMvce08pZT1HI7w2043WoVJUcl4HBXSiIpkHkACCWM6_9yAcnX5qJMOYnho4eAdmr7v0_WtfXwY_OJpD4_464d9bzTiUKklhydtXxWQP0wQZFau1A-9bGo5N1_HmGRdbFX3gMJ0via7RMvo63ZWEavC1uwVlHg05o783WKH5KNWqlVFMyqXhge5b_QrFFK2optaMwIfQS9iGCU2lJPY2JNfWiKdHVEaf7VyFo5lItzzj7-9GAszDyDbbpRm-EBeBa4vYJiLQxutudZODRVJwg7QsXUng-QTwebAGpK6Uxr8ncwirOT0KQdh-adEMicCc9UKAT2kePHls6KW3XiV4c7uyUcxmw1a2WiuEW8OMVI13b08wxhD9mI7RjrsMLkfiTBeT8O3GCmw-n0bLrbMhLOPCWZSKRHsLJflmLbKg2lAuzU7E-aHw2lmtP2e2FMW0A3bfkBEW-E-wtjJ_bCYp-x01PAxmFB703tpT6c0pe56hJDBkdPOP2fAXyqE7y1ZJW20ZX7AwRDV3BaVxHEQZxDxhHaq8
+                ');
                 $referenceId = $elements[0];
                 $paymentUrl = $elements[1];
                 if (!empty($referenceId) && strlen($referenceId) > 3) {
