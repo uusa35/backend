@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Mail;
  * Date: 7/15/17
  * Time: 6:04 PM
  */
-class MyFatoorahPaymentController extends Controller
+class MyFatoorahV2PaymentController extends Controller
 {
 
     use MyFatoorahV2Trait;

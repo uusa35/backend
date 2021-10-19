@@ -1,7 +1,7 @@
 <?php
 
 use Usama\Ibooky\IbookyServiceProvider;
-use Usama\MyFatoorah\MyFatoorahServiceProvider;
+use Usama\MyFatoorah\MyFatoorahV2ServiceProvider;
 use Usama\Tap\TapServiceProvider;
 use Usama\Upayment\UpaymentServiceProvider;
 
@@ -196,7 +196,7 @@ return [
         App\Providers\ComposerServiceProvider::class,
         TapServiceProvider::class,
         UpaymentServiceProvider::class,
-        MyFatoorahServiceProvider::class,
+        MyFatoorahV2ServiceProvider::class,
         IbookyServiceProvider::class,
         // missing shopping cart
 
