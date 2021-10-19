@@ -15,7 +15,7 @@ class MyFatoorahV2ServiceProvider extends ServiceProvider
         include __DIR__ . '/routes.php';
         $this->publishes([
             __DIR__ . '/config' => config_path(),
-        ],'myfatoorah');
+        ],'myfatoorahv2');
 //        $this->publishes([
 //            __DIR__ . '/Services' => app_path('Services'),
 //        ],'tap');
