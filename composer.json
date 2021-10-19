@@ -66,7 +66,6 @@
             "Database\\Seeders\\": "database/seeders/",
             "Usama\\Tap\\": "packages/usama/tap/src/",
             "Usama\\MyFatoorah\\": "packages/usama/myfatoorah/src/",
-            "Usama\\MyFatoorahV2\\": "packages/usama/myfatoorahv2/src/",
             "Usama\\Upayment\\": "packages/usama/upayment/src/",
             "Usama\\Ibooky\\": "packages/usama/ibooky/src/"
         },
