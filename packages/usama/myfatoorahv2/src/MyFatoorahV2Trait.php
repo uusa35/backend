@@ -1,6 +1,6 @@
 <?php
 
-namespace Usama\MyFatoorah\Controllers;
+namespace Usama\MyFatoorahV2\Controllers;
 
 use App\Services\Traits\OrderTrait;
 

@@ -1,5 +1,5 @@
 <?php
-namespace Usama\MyFatoorah;
+namespace Usama\MyFatoorahV2;
 
 use Illuminate\Support\ServiceProvider;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Usama\MyFatoorah\Controllers;
+namespace Usama\MyFatoorahV2\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Jobs\OrderSuccessProcessJob;
