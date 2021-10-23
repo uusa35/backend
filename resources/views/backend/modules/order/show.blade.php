@@ -20,7 +20,7 @@
             </div>
         @endif
         <hr>
-        <div class="card">
+        <div class="card" style="line-height: 25px;">
             <span class="card-header">
                 <h3>{{ trans('general.invoice_no') }} : {{ $element->id }}</h3>
                 <span
@@ -58,7 +58,7 @@
                     class="float-right"> <br><strong>{{ trans('general.net_price') }} : </strong>{{ $element->net_price }} {{ trans('general.kd') }}</span>
         </div>
         <hr>
-        <div class="card-body">
+        <div class="card-body" style="line-height: 25px;">
             @if(env('ISTORES'))
                 <div class="row mb-4">
                     <div class="col-sm-6">
