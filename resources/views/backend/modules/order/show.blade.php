@@ -86,7 +86,7 @@
                             @endif
                         </div>
                         <div>{{ trans('general.address') }}: {{ $element->address }}</div>
-                        <div>{{ trans('general.area') }}: {{ $element->area ? $element->area : $element->user->area }}
+                        <div>{{ trans('general.area') }}: {{ $element->area ? $element->area : '' }}
                             <br/></div>
                         <div>{{ trans('general.shipment_country') }}: {{ $element->country }}<br/></div>
                         @if($element->block)
