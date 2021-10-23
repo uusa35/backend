@@ -81,7 +81,9 @@
                     <div class="col-sm-6">
                         <h6 class="mb-3">{{ trans('general.to') }}:</h6>
                         <div>
-                            <strong>{{ trans('general.name') }}: {{ $element->user->name }}</strong>
+                            @if($element->user)
+                                <strong>{{ trans('general.name') }}: {{ $element->user->name }}</strong>
+                            @endif
                         </div>
                         <div>{{ trans('general.address') }}: {{ $element->address }}</div>
                         <div>{{ trans('general.area') }}: {{ $element->area ? $element->area : $element->user->area }}
@@ -96,9 +98,13 @@
                         @if($element->building)
                             <div>{{ trans('general.building') }}: {{ $element->building }}<br/></div>
                         @endif
-                        <div>{{ trans('general.email') }}: {{ $element->user->email }}</div>
+                        @if($element->user)
+                            <div>{{ trans('general.email') }}: {{ $element->user->email }}</div>
+                        @endif
                         <div>{{ trans('general.phone') }}: {{ $element->mobile }}</div>
-                        <div>{{ trans('general.calling_code') }}: {{ $element->user->country->calling_code }}</div>
+                        @if($element->user)
+                            <div>{{ trans('general.calling_code') }}: {{ $element->user->country->calling_code }}</div>
+                        @endif
                         @if($element->notes)
                             <div class="alert alert-info">{{ trans("general.notes") .': '. $element->notes }}</div>
                         @endif
