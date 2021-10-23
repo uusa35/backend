@@ -8,7 +8,7 @@
         <div class="col-lg-12">
             <button onClick="window.print()" class="btn btn-warning">Print</button>
         </div>
-        @if(env('ISTORES'))
+        @if(env('ISTORES') && $element->order_metas->first()->product->user)
             <div class="col-lg-12">
                 <img class="img-sm img-responsive center-block" src="{{ asset(env('THUMBNAIL').$element->order_metas->first()->product->user->imageThumbLink) }}"
                      alt="{{ $element->order_metas->first()->product->user->name }}">
@@ -59,7 +59,7 @@
         </div>
         <hr>
         <div class="card-body" style="line-height: 25px;">
-            @if(env('ISTORES'))
+            @if(env('ISTORES') && $element->order_metas->first()->product->user)
                 <div class="row mb-4">
                     <div class="col-sm-6">
                         <h6 class="mb-3">{{ trans('general.from') }}:</h6>
