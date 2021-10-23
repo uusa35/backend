@@ -65,7 +65,7 @@
                     <div class="col-sm-6">
                         <h6 class="mb-3">{{ trans('general.from') }}:</h6>
                         <div>
-                            <strong>{{ trans('general.name') }} {{ trans('general.company') }}
+                            <strong>{{ trans('general.company') }}
                                 : {{ $element->order_metas->first()->product->user->name }}</strong>
                         </div>
                         <div>{{ trans('general.address') }}
