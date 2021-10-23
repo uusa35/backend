@@ -10,7 +10,8 @@
         </div>
         @if(env('ISTORES') && $element->order_metas->first()->product->user)
             <div class="col-lg-12">
-                <img class="img-sm img-responsive center-block" src="{{ asset(env('THUMBNAIL').$element->order_metas->first()->product->user->imageThumbLink) }}"
+                <img class="img-sm img-responsive center-block"
+                     src="{{ asset(env('THUMBNAIL').$element->order_metas->first()->product->user->imageThumbLink) }}"
                      alt="{{ $element->order_metas->first()->product->user->name }}">
             </div>
         @else
@@ -64,12 +65,17 @@
                     <div class="col-sm-6">
                         <h6 class="mb-3">{{ trans('general.from') }}:</h6>
                         <div>
-                            <strong>{{ trans('general.name') }} {{ trans('general.company') }} : {{ $element->order_metas->first()->product->user->name }}</strong>
+                            <strong>{{ trans('general.name') }} {{ trans('general.company') }}
+                                : {{ $element->order_metas->first()->product->user->name }}</strong>
                         </div>
-                        <div>{{ trans('general.address') }}: {{ $element->order_metas->first()->product->user->address }}</div>
-                        <div>{{ trans('general.email') }}: {{ $element->order_metas->first()->product->user->email }}</div>
-                        <div>{{ trans('general.phone') }}: {{ $element->order_metas->first()->product->user->phone }}</div>
-                        <div>{{ trans('general.country') }}: {{ $element->order_metas->first()->product->user->country->name }}</div>
+                        <div>{{ trans('general.address') }}
+                            : {{ $element->order_metas->first()->product->user->address }}</div>
+                        <div>{{ trans('general.email') }}
+                            : {{ $element->order_metas->first()->product->user->email }}</div>
+                        <div>{{ trans('general.phone') }}
+                            : {{ $element->order_metas->first()->product->user->phone }}</div>
+                        <div>{{ trans('general.country') }}
+                            : {{ $element->order_metas->first()->product->user->country->name }}</div>
                     </div>
 
                     <div class="col-sm-6">
@@ -221,7 +227,9 @@
                                             href="{{ !env('ABATI') ? route('frontend.product.show',$item->product_id) : '#'}}">{{ $item->product->name }}</a>
                                     </td>
                                     <td class="right">
-                                        <a href="{{ route('frontend.user.show', $item->product->user_id) }}">{{ $item->product->user->slug }}</a>
+                                        @if($item->product->user)
+                                            <a href="{{ route('frontend.user.show', $item->product->user_id) }}">{{ $item->product->user->slug }}</a>
+                                        @endif
                                     </td>
                                     <td class="right">{{ $item->price }} {{ trans('general.kd') }}</td>
                                     <td class="right">{{ $item->qty }}</td>
@@ -264,7 +272,9 @@
                                         href="{{ !env('ABATI') ? route('frontend.service.show',$item->service_id)  : '#'}}">{{ $item->service->name }}</a>
                                 </td>
                                 <td>
-                                    <a href="#">{{ $item->service->user->slug }}</a>
+                                    @if($item->service->user)
+                                        <a href="#">{{ $item->service->user->slug }}</a>
+                                    @endif
                                 </td>
                                 <td class="right">{{ $item->price }} {{ trans('general.kd') }}</td>
                                 <td class="right">{{ $item->notes}}</td>
