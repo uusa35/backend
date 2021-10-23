@@ -4,7 +4,7 @@
 
 
 @section('content')
-    {{ dd($element->order_metas->first()->product) }}
+    {{ dd($element->order_metas->first()->product->user) }}
     <div class="container" style="border: 2px solid lightgrey; padding: 15px; background-color: white;">
         <div class="col-lg-12">
             <button onClick="window.print()" class="btn btn-warning">Print</button>
