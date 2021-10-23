@@ -8,10 +8,17 @@
         <div class="col-lg-12">
             <button onClick="window.print()" class="btn btn-warning">Print</button>
         </div>
-        <div class="col-lg-12">
-            <img class="img-sm img-responsive center-block" src="{{ asset(env('THUMBNAIL').$settings->logo) }}"
-                 alt="{{ $settings->company }}">
-        </div>
+        @if(env('ISTORES'))
+            <div class="col-lg-12">
+                <img class="img-sm img-responsive center-block" src="{{ asset(env('THUMBNAIL').$element->order_metas->first()->product->user->imageThumbLink) }}"
+                     alt="{{ $element->order_metas->first()->product->user->name }}">
+            </div>
+        @else
+            <div class="col-lg-12">
+                <img class="img-sm img-responsive center-block" src="{{ asset(env('THUMBNAIL').$settings->logo) }}"
+                     alt="{{ $settings->company }}">
+            </div>
+        @endif
         <hr>
         <div class="card">
             <span class="card-header">
@@ -52,45 +59,87 @@
         </div>
         <hr>
         <div class="card-body">
-            <div class="row mb-4">
-                <div class="col-sm-6">
-                    <h6 class="mb-3">{{ trans('general.from') }}:</h6>
-                    <div>
-                        <strong>{{ $settings->company }}</strong>
+            @if(env('ISTORES'))
+                <div class="row mb-4">
+                    <div class="col-sm-6">
+                        <h6 class="mb-3">{{ trans('general.from') }}:</h6>
+                        <div>
+                            <strong>{{ $element->order_metas->first()->product->user->name }}</strong>
+                        </div>
+                        <div>{{ trans('general.address') }}: {{ $element->order_metas->first()->product->user->address }}</div>
+                        <div>{{ trans('general.email') }}: {{ $element->order_metas->first()->product->user->email }}</div>
+                        <div>{{ trans('general.phone') }}: {{ $element->order_metas->first()->product->user->phone }}</div>
+                        <div>{{ trans('general.country') }}: {{ $element->order_metas->first()->product->user->country->name }}</div>
                     </div>
-                    <div>{{ trans('general.address') }}: {{ $settings->address }}</div>
-                    <div>{{ trans('general.email') }}: {{ $settings->email }}</div>
-                    <div>{{ trans('general.phone') }}: {{ $settings->phone }}</div>
-                    <div>{{ trans('general.country') }}: {{ $settings->country }}</div>
-                </div>
 
-                <div class="col-sm-6">
-                    <h6 class="mb-3">{{ trans('general.to') }}:</h6>
-                    <div>
-                        <strong>{{ trans('general.name') }}: {{ $element->user->name }}</strong>
+                    <div class="col-sm-6">
+                        <h6 class="mb-3">{{ trans('general.to') }}:</h6>
+                        <div>
+                            <strong>{{ trans('general.name') }}: {{ $element->user->name }}</strong>
+                        </div>
+                        <div>{{ trans('general.address') }}: {{ $element->address }}</div>
+                        <div>{{ trans('general.area') }}: {{ $element->area ? $element->area : $element->user->area }}
+                            <br/></div>
+                        <div>{{ trans('general.shipment_country') }}: {{ $element->country }}<br/></div>
+                        @if($element->block)
+                            <div>{{ trans('general.block') }}: {{ $element->block }}<br/></div>
+                        @endif
+                        @if($element->street)
+                            <div>{{ trans('general.street') }}: {{ $element->street }}<br/></div>
+                        @endif
+                        @if($element->building)
+                            <div>{{ trans('general.building') }}: {{ $element->building }}<br/></div>
+                        @endif
+                        <div>{{ trans('general.email') }}: {{ $element->user->email }}</div>
+                        <div>{{ trans('general.phone') }}: {{ $element->mobile }}</div>
+                        <div>{{ trans('general.calling_code') }}: {{ $element->user->country->calling_code }}</div>
+                        @if($element->notes)
+                            <div class="alert alert-info">{{ trans("general.notes") .': '. $element->notes }}</div>
+                        @endif
                     </div>
-                    <div>{{ trans('general.address') }}: {{ $element->address }}</div>
-                    <div>{{ trans('general.area') }}: {{ $element->area ? $element->area : $element->user->area }}
-                        <br/></div>
-                    <div>{{ trans('general.shipment_country') }}: {{ $element->country }}<br/></div>
-                    @if($element->block)
-                        <div>{{ trans('general.block') }}: {{ $element->block }}<br/></div>
-                    @endif
-                    @if($element->street)
-                        <div>{{ trans('general.street') }}: {{ $element->street }}<br/></div>
-                    @endif
-                    @if($element->building)
-                        <div>{{ trans('general.building') }}: {{ $element->building }}<br/></div>
-                    @endif
-                    <div>{{ trans('general.email') }}: {{ $element->user->email }}</div>
-                    <div>{{ trans('general.phone') }}: {{ $element->mobile }}</div>
-                    <div>{{ trans('general.calling_code') }}: {{ $element->user->country->calling_code }}</div>
-                    @if($element->notes)
-                        <div class="alert alert-info">{{ trans("general.notes") .': '. $element->notes }}</div>
-                    @endif
-                </div>
 
-            </div>
+                </div>
+            @else
+                <div class="row mb-4">
+                    <div class="col-sm-6">
+                        <h6 class="mb-3">{{ trans('general.from') }}:</h6>
+                        <div>
+                            <strong>{{ $settings->company }}</strong>
+                        </div>
+                        <div>{{ trans('general.address') }}: {{ $settings->address }}</div>
+                        <div>{{ trans('general.email') }}: {{ $settings->email }}</div>
+                        <div>{{ trans('general.phone') }}: {{ $settings->phone }}</div>
+                        <div>{{ trans('general.country') }}: {{ $settings->country }}</div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <h6 class="mb-3">{{ trans('general.to') }}:</h6>
+                        <div>
+                            <strong>{{ trans('general.name') }}: {{ $element->user->name }}</strong>
+                        </div>
+                        <div>{{ trans('general.address') }}: {{ $element->address }}</div>
+                        <div>{{ trans('general.area') }}: {{ $element->area ? $element->area : $element->user->area }}
+                            <br/></div>
+                        <div>{{ trans('general.shipment_country') }}: {{ $element->country }}<br/></div>
+                        @if($element->block)
+                            <div>{{ trans('general.block') }}: {{ $element->block }}<br/></div>
+                        @endif
+                        @if($element->street)
+                            <div>{{ trans('general.street') }}: {{ $element->street }}<br/></div>
+                        @endif
+                        @if($element->building)
+                            <div>{{ trans('general.building') }}: {{ $element->building }}<br/></div>
+                        @endif
+                        <div>{{ trans('general.email') }}: {{ $element->user->email }}</div>
+                        <div>{{ trans('general.phone') }}: {{ $element->mobile }}</div>
+                        <div>{{ trans('general.calling_code') }}: {{ $element->user->country->calling_code }}</div>
+                        @if($element->notes)
+                            <div class="alert alert-info">{{ trans("general.notes") .': '. $element->notes }}</div>
+                        @endif
+                    </div>
+
+                </div>
+            @endif
             <hr>
 
             <div class="table-responsive-sm">
