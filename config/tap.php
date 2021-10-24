@@ -17,6 +17,6 @@ return [
     "postUrl" => env('TAP_POST_URL', "https://yourdomain.post.com"),
     "returnUrl" => env('TAP_RETURN_URL', "https://yourdomain.return.com"),
     'gatewayDefault' => "ALL",
-    'paymentUrl' => env('TAP_PAYMENT_URL','https://wwww.gotapnow.com/TapWebConnect/Tap/WebPay/PaymentRequest'),
+    'paymentUrl' => env('TAP_PAYMENT_URL','https://www.gotapnow.com/tapwebconnect/tap/webpay/paymentrequest'),
     'order' => env('ORDER_MODEL_PATH') ? env('ORDER_MODEL_PATH') : 'App\Order'
 ];
