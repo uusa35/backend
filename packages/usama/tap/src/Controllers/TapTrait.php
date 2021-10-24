@@ -39,7 +39,7 @@ trait TapTrait
                 'MerMastDC' => $this->getMerchant($order->net_price),
             ];
             $curl = curl_init();
-            $test = curl_setopt_array($curl, array(
+            curl_setopt_array($curl, array(
                 CURLOPT_URL => config('tap.paymentUrl'),
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => "",
@@ -52,6 +52,7 @@ trait TapTrait
                     "content-type: application/json"
                 ),
             ));
+
             $response = curl_exec($curl);
             $err = curl_error($curl);
             curl_close($curl);
@@ -59,7 +60,6 @@ trait TapTrait
                 echo "cURL Error #:" . $err;
             } else {
                 $response = (\GuzzleHttp\json_decode($response));
-                dd($response);
                 if (!$response->ResponseCode) {
                     if (empty($order->reference_id) && $order->order_metas->count() > 0) {
                         $order->update(['reference_id' => $response->ReferenceID]);
