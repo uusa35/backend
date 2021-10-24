@@ -199,6 +199,7 @@ trait CartTrait
                 $response = curl_exec($ch);
                 curl_close($ch);
                 $res = json_decode($response);
+                dd($res);
                 return $res->shipping_cost;
             }
         } catch (\Exception $e) {
