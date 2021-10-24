@@ -185,6 +185,7 @@ trait CartTrait
     public function calculateDeliveryMultiPointsForMirsal($pickups)
     {
         try {
+            dd(env('MIRSAL_ENABLED'));
             if (env('MIRSAL_ENABLED')) {
                 $url = 'https://app.mirsal.co/rest/order/get-shipping-cost-multi-pickup';
                 $access_key = 'JPBCMU3H747S';
