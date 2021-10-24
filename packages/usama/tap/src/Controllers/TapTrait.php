@@ -39,7 +39,7 @@ trait TapTrait
                 'MerMastDC' => $this->getMerchant($order->net_price),
             ];
             $curl = curl_init();
-            curl_setopt_array($curl, array(
+            $test = curl_setopt_array($curl, array(
                 CURLOPT_URL => config('tap.paymentUrl'),
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => "",
@@ -52,7 +52,7 @@ trait TapTrait
                     "content-type: application/json"
                 ),
             ));
-
+            dd($test);
             $response = curl_exec($curl);
             dd($response);
             $err = curl_error($curl);
