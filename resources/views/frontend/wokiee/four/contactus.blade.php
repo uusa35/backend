@@ -51,43 +51,43 @@
     </div>
     <div class="container-indent">
         <div class="container container-fluid-custom-mobile-padding">
-            <form class="contact-form form-default" method="post" novalidate="novalidate"
-                  action="{{ route('frontend.contactus') }}">
-                @csrf
-                <input type="hidden" name="inquiry_type" value="contactus">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <input type="text" name="name" class="form-control" id="inputName"
-                                   placeholder="@lang('general.name')"
-                                   required
-                            >
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="email" class="form-control" id="inputEmail"
-                                   placeholder="@lang('general.email')"
-                                   required
-                            >
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="title" class="form-control" id="inputSubject"
-                                   placeholder="@lang('general.title')"
-                                   required
-                            >
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <textarea name="body" class="form-control" rows="7" placeholder="@lang('general.message')"
-                                      required
-                                      id="textareaMessage"></textarea>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <button type="submit" class="btn">@lang('general.send')</button>
-                </div>
-            </form>
+{{--            <form class="contact-form form-default" method="post" novalidate="novalidate"--}}
+{{--                  action="{{ route('frontend.contactus') }}">--}}
+{{--                @csrf--}}
+{{--                <input type="hidden" name="inquiry_type" value="contactus">--}}
+{{--                <div class="row">--}}
+{{--                    <div class="col-md-6">--}}
+{{--                        <div class="form-group">--}}
+{{--                            <input type="text" name="name" class="form-control" id="inputName"--}}
+{{--                                   placeholder="@lang('general.name')"--}}
+{{--                                   required--}}
+{{--                            >--}}
+{{--                        </div>--}}
+{{--                        <div class="form-group">--}}
+{{--                            <input type="text" name="email" class="form-control" id="inputEmail"--}}
+{{--                                   placeholder="@lang('general.email')"--}}
+{{--                                   required--}}
+{{--                            >--}}
+{{--                        </div>--}}
+{{--                        <div class="form-group">--}}
+{{--                            <input type="text" name="title" class="form-control" id="inputSubject"--}}
+{{--                                   placeholder="@lang('general.title')"--}}
+{{--                                   required--}}
+{{--                            >--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="col-md-6">--}}
+{{--                        <div class="form-group">--}}
+{{--                            <textarea name="body" class="form-control" rows="7" placeholder="@lang('general.message')"--}}
+{{--                                      required--}}
+{{--                                      id="textareaMessage"></textarea>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="text-center">--}}
+{{--                    <button type="submit" class="btn">@lang('general.send')</button>--}}
+{{--                </div>--}}
+{{--            </form>--}}
         </div>
     </div>
 @endsection
