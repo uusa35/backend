@@ -2,6 +2,7 @@
 
 use Usama\Ibooky\IbookyServiceProvider;
 //use Usama\MyFatoorah\MyFatoorahV2ServiceProvider;
+use Usama\MyFatoorahV2\MyFatoorahV2ServiceProvider;
 use Usama\Tap\TapServiceProvider;
 use Usama\Upayment\UpaymentServiceProvider;
 
@@ -198,6 +199,7 @@ return [
         UpaymentServiceProvider::class,
 //        MyFatoorahV2ServiceProvider::class,
         IbookyServiceProvider::class,
+        MyFatoorahV2ServiceProvider::class,
         // missing shopping cart
 
         Riverskies\Laravel\MobileDetect\MobileDetectServiceProvider::class,

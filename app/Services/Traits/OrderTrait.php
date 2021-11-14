@@ -2,7 +2,9 @@
 
 namespace App\Services\Traits;
 
+use App\Jobs\OrderSuccessProcessJob;
 use App\Jobs\sendSuccessOrderEmail;
+use App\Mail\OrderPaid;
 use App\Models\Country;
 use App\Models\Order;
 use App\Models\Product;
@@ -14,6 +16,7 @@ use App\Models\Timing;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Mail\Markdown;
 use Illuminate\Support\Facades\Mail;
 use function PHPUnit\Framework\isNull;
 
@@ -406,5 +409,33 @@ trait OrderTrait
         } catch (\Exception $e) {
             print_r($e->getMessage() . '- Mirsal Error');
         }
+    }
+
+    // for new apis
+    public function updateOrderRerferenceId($orderId, $referenceId, $paymentMethod)
+    {
+        Order::whereId($orderId)->first()->update([
+            'reference_id' => $referenceId,
+            'payment_method' => $paymentMethod
+        ]);
+    }
+
+
+    public function orderSuccessAction($reference_id) {
+        $order = Order::where(['reference_id' => $reference_id, 'paid' => false])->with('user', 'order_metas.product_attribute')->first();
+        if($order) {
+            $order->update([
+                'paid' => true,
+                'status' => 'paid'
+            ]);
+            $order->update(['status' => 'success', 'paid' => true]);
+            $this->decreaseQty($order);
+            $markdown = new Markdown(view(), config('mail.markdown'));
+        OrderSuccessProcessJob::dispatchNow($order, $order->user);
+//            OrderSuccessProcessJob::dispatch($order, $order->user)->delay(now()->addSeconds(15));
+            $this->clearCart();
+            return $markdown->render('emails.order-complete', ['order' => $order, 'user' => $order->user]);
+        }
+        return redirect()->route('frontend.home')->with('error', trans('general.process_failure'));
     }
 }

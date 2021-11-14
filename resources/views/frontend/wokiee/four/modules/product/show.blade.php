@@ -83,8 +83,8 @@
                         @endif
 
                         <div class="tt-wrapper">
-                            @if(!env('BITS'))
-                                @include('frontend.wokiee.four.partials._product_show_information_widget')
+                            @if(!env('BITS') && !env('NASHKW'))
+{{--                                 @include('frontend.wokiee.four.partials._product_show_information_widget')--}}
                             @endif
                             @desktop
                             <div class="sharethis-inline-share-buttons"></div>

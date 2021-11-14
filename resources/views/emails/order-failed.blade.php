@@ -8,10 +8,6 @@ Your order has been Failed!
 Please contact us on {{ $settings->mobile  }} or whatsapp on {{ $settings->whatsapp }}
 @endcomponent
 
-
-# full Ref : {{ request()->has('ref') ? request()->ref : request()->fullUrl()}}
-# full URL  : {{ request()->fullUrl()}}
-
 @if($message)
 # Message : {{ $message }}
 @endif

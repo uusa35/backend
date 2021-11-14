@@ -1130,6 +1130,10 @@
                                                                 value="ibooky" {{ $element->payment_method === 'ibooky' ? 'selected' : null }}>
                                                                 IBooky
                                                             </option>
+                                                            <option
+                                                                value="myfatoorahv2" {{ $element->payment_method === 'myfatoorahv2' ? 'selected' : null }}>
+                                                                My fatoorahV2
+                                                            </option>
                                                         </select>
                                                     </div>
                                                 </div>
