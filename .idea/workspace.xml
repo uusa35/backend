@@ -5,24 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb64c074-93f5-49bb-ae42-70edeb58ee75" name="Default Changelist" comment="258">
-      <change afterPath="$PROJECT_DIR$/config/myfatoorah.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/usama/myfatoorahv2/src/Controllers/MyFatoorahV2PaymentController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/usama/myfatoorahv2/src/config/myfatoorah.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/mallrupdate.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mallrupdate.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Traits/OrderTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Traits/OrderTrait.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/usama/myfatoorahv2/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/myfatoorahv2/src/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/usama/myfatoorahv2/src/MyFatoorahV2PaymentController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/usama/myfatoorahv2/src/MyFatoorahV2Trait.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/myfatoorahv2/src/Controllers/MyFatoorahV2Trait.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/usama/myfatoorahv2/src/MyfatoorahApiV2.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/myfatoorahv2/src/MyfatoorahApiV2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/usama/myfatoorahv2/src/PaymentMyfatoorahApiV2.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/myfatoorahv2/src/PaymentMyfatoorahApiV2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/setting/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/setting/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/emails/order-failed.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/emails/order-failed.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/product/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/product/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_cart_order_user_info_confirmation.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_cart_order_user_info_confirmation.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,15 +53,24 @@
     <setting file="file://$PROJECT_DIR$/database/migrations/2021_02_24_045844_create_addresses_table.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/Http/Controllers/Frontend/CartController.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/partials/styles.blade.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/faq/index.blade.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/styles.blade.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/cart/index.blade.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/.env" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/Services/Traits/OrderTrait.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/packages/usama/myfatoorahv2/src/routes.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/packages/usama/myfatoorahv2/src/Controllers/MyFatoorahV2PaymentController.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/packages/usama/myfatoorahv2/src/MyFatoorahV2ServiceProvider.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/Jobs/OrderSuccessProcessJob.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/database/migrations/2016_04_12_132811_create_orders_table.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/packages/usama/tap/src/Controllers/TapPaymentController.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/ProductAttributeController.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/resources/assets/css/frontend-custom-ar.css" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/views/emails/order-failed.blade.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/packages/usama/ibooky/src/Controllers/IbookyTrait.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/packages/usama/ibooky/src/Controllers/IbookyController.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/faq/index.blade.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/cart/index.blade.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/cart/show.blade.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/packages/usama/myfatoorah/src/routes.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/resources/assets/css/frontend-custom-ar.css" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_cart_order_user_info_confirmation.blade.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/resources/assets/css/frontend-custom.css" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/packages/usama/ibooky/src/Controllers/IbookyHelpers.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
@@ -1121,7 +1113,8 @@
       <workItem from="1636238714389" duration="604000" />
       <workItem from="1636356265431" duration="576000" />
       <workItem from="1636458803298" duration="1310000" />
-      <workItem from="1636888715308" duration="7301000" />
+      <workItem from="1636888715308" duration="8171000" />
+      <workItem from="1637086618428" duration="29000" />
     </task>
     <servers />
   </component>

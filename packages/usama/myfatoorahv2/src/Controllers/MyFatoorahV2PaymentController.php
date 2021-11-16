@@ -70,7 +70,10 @@ class MyFatoorahV2PaymentController extends Controller
         $invoiceId = $payment->InvoiceId;
         $paymentURL = $payment->InvoiceURL;
         $this->updateOrderRerferenceId($order->id, $payment->InvoiceId, $order->payment_methods);
-        return response()->json($paymentURL, 200);
+        if ($paymentUrl) {
+            return response()->json(['paymentUrl' => $paymentUrl], 200);
+        }
+        return response()->json(['message' => 'No Payment Url created'], 400);
     }
 
     public function makePayment(Request $request)
