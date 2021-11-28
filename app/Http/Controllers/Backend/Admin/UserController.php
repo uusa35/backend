@@ -100,7 +100,7 @@ class UserController extends Controller
                 'start_subscription' => $start_subscription ? $start_subscription : null,
                 'end_subscription' => $end_subscription ? $end_subscription : null,
             ]);
-            $request->hasFile('image') ? $this->saveMimes($element, $request, ['image'], ['1000', '1000'], true) : null;
+            $request->hasFile('image') ? $this->saveMimes($element, $request, ['image'], ['1000', '1000'], false) : null;
             $request->has('images') ? $this->saveGallery($element, $request, 'images', ['1080', '1440'], true) : null;
             $request->hasFile('bg') ? $this->saveMimes($element, $request, ['bg'], ['1080', '1440'], true) : null;
             $request->hasFile('banner') ? $this->saveMimes($element, $request, ['banner'], ['1080', '410'], true) : null;
@@ -173,7 +173,7 @@ class UserController extends Controller
                 'start_subscription' => $start_subscription ? $start_subscription : null,
                 'end_subscription' => $end_subscription ? $end_subscription : null,
             ]);
-            $request->hasFile('image') ? $this->saveMimes($element, $request, ['image'], ['1000', '1000'], true) : null;
+            $request->hasFile('image') ? $this->saveMimes($element, $request, ['image'], ['1000', '1000'], false) : null;
             $request->has('images') ? $this->saveGallery($element, $request, 'images', ['1080', '1440'], true) : null;
             $request->hasFile('bg') ? $this->saveMimes($element, $request, ['bg'], ['1080', '1440'], true) : null;
             $request->hasFile('banner') ? $this->saveMimes($element, $request, ['banner'], ['1080', '410'], true) : null;
