@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb64c074-93f5-49bb-ae42-70edeb58ee75" name="Default Changelist" comment="258">
-      <change beforePath="$PROJECT_DIR$/.idea/mallrupdate.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mallrupdate.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/home/expo.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/home/expo.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/Traits/HomePageTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Traits/HomePageTrait.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/ar/general.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ar/general.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1119,7 +1119,7 @@
       <workItem from="1637086618428" duration="575000" />
       <workItem from="1637095375107" duration="12000" />
       <workItem from="1638105957245" duration="463000" />
-      <workItem from="1638283614184" duration="792000" />
+      <workItem from="1638283614184" duration="1220000" />
     </task>
     <servers />
   </component>

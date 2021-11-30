@@ -79,6 +79,7 @@ class CreateUsersTable extends Migration
             $table->foreign('role_id')->references('id')->on('roles');
 
             $table->string('merchant_id')->nullable();
+            $table->string('merchant_id')->nullable();
             $table->string('api_token')->nullable();
             $table->integer('views')->unsigned()->default(1);
             $table->rememberToken();
