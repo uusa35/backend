@@ -81,6 +81,7 @@
                                             @endif
                                         @endforeach
                                     @else
+                                        <input type="hidden" name="country_id" value="1"/>
                                         <input type="hidden" name="area_id" value="1"/>
                                     @endif
                                     <div class="form-group">

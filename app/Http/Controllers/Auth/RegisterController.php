@@ -57,7 +57,7 @@ class RegisterController extends Controller
             'country_id' => ['required', 'integer', 'exists:countries,id'],
             'area_id' => ['required', 'integer', 'exists:areas,id'],
             'role_id' => ['required', 'integer', 'exists:roles,id'],
-            'captcha' => 'required|captcha'
+            'captcha' => 'required'
         ]);
     }
 
