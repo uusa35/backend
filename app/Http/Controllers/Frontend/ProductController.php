@@ -28,7 +28,7 @@ class ProductController extends Controller
 
     public function index(Filters $filters)
     {
-        $products = $this->product->filters($filters)->hasProductAttribute()->hasImages()->active()->activeUsers()->orderBy('order', 'desc')->paginate(self::TAKE_MIN);
+        $products = $this->product->filters($filters)->hasProductAttribute()->hasImages()->active()->activeUsers()->orderBy('order', 'asc')->paginate(self::TAKE_MIN);
         return view('frontend.modules.favorite.index', compact('products'));
     }
 
