@@ -66,9 +66,7 @@ class OrderController extends Controller
             $user = $this->createUser($request);
             if (isset($user->id) && $country) {
                 $order = $this->createWebOrder($request, $user, $this->cart);
-                dd($order);
                 $owner = $order->order_metas->first()->product->user ? $order->order_metas->first()->product->user : null;
-                dd($order);
                 if (is_subclass_of($order, 'Illuminate\Database\Eloquent\Model')) {
                     auth()->login($user);
                     $elements = $this->cart->content();

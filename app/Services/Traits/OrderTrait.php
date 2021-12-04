@@ -71,7 +71,7 @@ trait OrderTrait
             'notes' => $request->notes,
             'user_id' => $user->id,
             'cash_on_delivery' => $request->has('cash_on_delivery') ? $request->cash_on_delivery : false,
-            'discount' => (float) $coupon ? ($coupon->is_percentage ? ($this->cart->subTotal() * ($coupon->value / 100)) : $coupon->value) : 0,
+            'discount' =>  $coupon ? ($coupon->is_percentage ? ($this->cart->subTotal() * ($coupon->value / 100)) : $coupon->value) : 0,
             'coupon_id' => $coupon ? $coupon['id'] : null,
             'payment_method' => $request->payment_method,
             'shipment_fees' => (float) $this->cart->content()->where('options.type', 'country')->first()->total(),
