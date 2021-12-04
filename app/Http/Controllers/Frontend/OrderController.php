@@ -80,7 +80,7 @@ class OrderController extends Controller
             }
             return redirect()->route('frontend.cart.index')->with('error', trans('please_check_your_information_again'));
         } catch (\Exception $e) {
-            return redirect()->route('frontend.cart.index')->with('error', trans('please_check_your_information_again'));
+            return redirect()->route('frontend.cart.index')->with('error', $e->getMessage());
         }
 
     }
