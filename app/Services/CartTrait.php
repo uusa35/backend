@@ -83,9 +83,9 @@ trait CartTrait
                     }
                     $cost = $this->calculateDeliveryMultiPointsForMirsal($pickups);
                     $cost = $cost > 1 ? $cost : (double)$country->fixed_shipment_charge;
-                    $cart->add($country->calling_code, trans('shipment_package_fee'), 1, (double)($country->is_local ? ($receiveFromBranch ? 0 : $cost) : $this->getTotalItemsOnly() * (double)$country->fixed_shipment_charge), 1, ['type' => 'country', 'country_id' => $country->id]);
+                    $cart->add($country->calling_code, trans('shipment_package_fee'), 1, (double)($country->is_local ? ($receiveFromBranch ? 0 : $cost) : $this->getTotalItemsOnly($cart) * (double)$country->fixed_shipment_charge), 1, ['type' => 'country', 'country_id' => $country->id]);
                 } else {
-                    $cart->add($country->calling_code, trans('shipment_package_fee'), 1, (double)($country->is_local ? ($receiveFromBranch ? 0 : $country->fixed_shipment_charge) : $this->getTotalItemsOnly() * (double)$country->fixed_shipment_charge), 1, ['type' => 'country', 'country_id' => $country->id]);
+                    $cart->add($country->calling_code, trans('shipment_package_fee'), 1, (double)($country->is_local ? ($receiveFromBranch ? 0 : $country->fixed_shipment_charge) : $this->getTotalItemsOnly($cart) * (double)$country->fixed_shipment_charge), 1, ['type' => 'country', 'country_id' => $country->id]);
                 }
             }
         } else {
@@ -179,7 +179,6 @@ trait CartTrait
 
     public function getTotalItemsOnly($cart)
     {
-        dd($cart->content());
         return $cart->content()->where('options.type', 'product')->count();
     }
 
