@@ -179,6 +179,7 @@ trait CartTrait
 
     public function getTotalItemsOnly($cart)
     {
+        dd($cart->content());
         return $cart->content()->where('options.type', 'product')->count();
     }
 
