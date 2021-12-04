@@ -63,10 +63,10 @@ class OrderController extends Controller
             $country = Country::whereId($request->country_id)->first();
             CheckCartItems::dispatchNow($country);
             $this->addCountryToCart($country, $request->has('branch_id') && $request->receive_on_branch);
-            dd('there');
             $user = $this->createUser($request);
             if (isset($user->id) && $country) {
                 $order = $this->createWebOrder($request, $user, $this->cart);
+                dd($order);
                 $owner = $order->order_metas->first()->product->user ? $order->order_metas->first()->product->user : null;
                 dd($order);
                 if (is_subclass_of($order, 'Illuminate\Database\Eloquent\Model')) {
