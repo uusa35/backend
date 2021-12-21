@@ -560,7 +560,7 @@
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item ">
-                        <a href="{{ route('backend.admin.order.search',['cash_on_delivery' => true]) }}"
+                        <a href="{{ route('backend.admin.order.search',['cash_on_delivery' => true, 'paid' => true]) }}"
                            class="nav-link nav-toggle">
                             <i class="fa fa-fw fa-pie-chart"></i>
                             <span class="title">{{ trans('general.cash_on_delivery') }}</span>
@@ -568,7 +568,7 @@
                         </a>
                     </li>
                     <li class="nav-item ">
-                        <a href="{{ route('backend.admin.order.search',['paid' => true, 'payment_method' => true]) }}"
+                        <a href="{{ route('backend.admin.order.search',['paid' => true, 'cash_on_delivery' => false]) }}"
                            class="nav-link nav-toggle">
                             <i class="fa fa-fw fa-pie-chart"></i>
                             <span class="title">{{ trans('general.paid_online') }}</span>
