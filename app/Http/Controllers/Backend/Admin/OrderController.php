@@ -63,13 +63,17 @@ class OrderController extends Controller
         if ($validator->fails()) {
             return redirect()->route('frontend.home')->withErrors($validator->messages());
         }
-        $elements = Order::with('order_metas.product.product_attributes', 'order_metas.product_attribute.size', 'order_metas.product_attribute.color', 'order_metas.service')
-            ->where('id', 'like', "{$request->search}")
-            ->orWhere('email', 'like', "%{$request->search}%")
-            ->orWhere('notes', 'like', "%{$request->search}%")
-            ->orWhere('payment_method', 'like', "%{$request->search}%")
-//            ->orWhere('reference_id', 'like', "%{$request->search}%")
-            ->orderBy('created_at', 'desc')
+
+//        $elements = Order::with('order_metas.product.product_attributes', 'order_metas.product_attribute.size', 'order_metas.product_attribute.color', 'order_metas.service')
+//            ->where('id', 'like', "{$request->search}")
+//            ->orWhere('email', 'like', "%{$request->search}%")
+//            ->orWhere('notes', 'like', "%{$request->search}%")
+////            ->orWhere('payment_method', 'like', "%{$request->search}%")
+////            ->orWhere('reference_id', 'like', "%{$request->search}%")
+//            ->orderBy('created_at', 'desc')
+//            ->paginate(parent::TAKE);
+        $elements = Order::filters($request)
+            ->with('order_metas.product.product_attributes', 'order_metas.product_attribute.size', 'order_metas.product_attribute.color', 'order_metas.service')
             ->paginate(parent::TAKE);
         if (!$elements->isEmpty()) {
             return view('backend.modules.order.index', compact('elements'));

@@ -48,5 +48,25 @@ class OrderFilters extends QueryFilters
         return $this->builder->where(['paid' => true, 'cash_on_delivery' => false]);
     }
 
+    public function id()
+    {
+        return $this->builder->where('id', 'like', "{request()->search}");
+    }
+
+    public function email()
+    {
+        return $this->builder->orWhere('email', 'like', "%{request()->search}%");
+    }
+
+    public function notes()
+    {
+        return $this->builder->orWhere('notes', 'like', "%{request()->search}%");
+    }
+
+    public function reference_id()
+    {
+        return $this->builder->orWhere('reference_id', 'like', "%{request()->search}%");
+    }
+
 
 }
