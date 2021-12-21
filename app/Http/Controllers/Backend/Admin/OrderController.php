@@ -57,7 +57,7 @@ class OrderController extends Controller
         return view('backend.modules.order.index', compact('elements', 'companies'));
     }
 
-    public function search(Request $request)
+    public function search(OrderFilters $request)
     {
         $validator = validator(request()->all(), ['search' => 'nullable']);
         if ($validator->fails()) {
