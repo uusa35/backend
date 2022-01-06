@@ -22,7 +22,7 @@
 
     @include('frontend.wokiee.four.partials._products_slider',['title' => trans('general.new_arrivals'), 'elements' => $latestProducts,'isGray' => true])
     @include('frontend.wokiee.four.partials._products_slider',['title' => trans('general.on_sale_products'), 'elements' => $onSaleProducts])
-    
+
 {{--    @if(isset($categoriesHome) && $categoriesHome->isNotEmpty())--}}
 {{--        @include('frontend.wokiee.four.partials._five_categories',['elements' => $categoriesHome])--}}
 {{--    @endif--}}
