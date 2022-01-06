@@ -1,4 +1,4 @@
-<div class="tt-product thumbprod-center" style="padding: 10px; box-shadow: 0px 0px 5px lightgray;">
+<div class="tt-product thumbprod-center product_shadow" style="padding: 10px;">
     <div class="tt-image-box">
         @include('frontend.wokiee.four.partials._quick_view_product_btn')
         @if(auth()->check() && env('ENABLE_FAV'))

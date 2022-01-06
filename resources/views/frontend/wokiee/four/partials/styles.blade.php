@@ -38,6 +38,10 @@
         flex: 0 0 77.5%;
     }
 
+    .product_shadow {
+        box-shadow: 0px 0px 5px lightgray !important;
+    }
+
     @if(config('app.MALLR') || config('app.ABATI'))
 
     body, html, a, p, h1, h2, h3, h4, h5, h6, table, row, td, th, tr, td, thead, tfoot, span, .btn, ul, li,
