@@ -1,5 +1,5 @@
 <div class="tt-product thumbprod-center" style="padding: 10px;">
-    <div class="tt-image-box medium_text_shadow" style="box-shadow: 0px 10px 5px lightgray;">
+    <div class="tt-image-box medium_text_shadow" style="box-shadow: 0px 0px 5px lightgray;">
         @include('frontend.wokiee.four.partials._quick_view_product_btn')
         @if(auth()->check() && env('ENABLE_FAV'))
             <a href="{{ route('frontend.favorite.product.add', $element->id) }}"
