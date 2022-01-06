@@ -381,7 +381,8 @@
     .product_shadow {
         box-shadow: 0px 0px 5px lightgray !important;
         padding-bottom: 0px;
-        margin-bottom: 10px
+        margin-bottom: 10px;
+        border-radius: 5px;
     }
 
     @endif
