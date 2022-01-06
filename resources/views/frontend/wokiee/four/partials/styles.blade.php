@@ -38,10 +38,6 @@
         flex: 0 0 77.5%;
     }
 
-    .product_shadow {
-        box-shadow: 0px 0px 5px lightgray !important;
-    }
-
     .tt-product:not(.tt-view).thumbprod-center {
         padding-top: 0px !important;
     }
@@ -97,9 +93,12 @@
          font-family: 'Tajawal-Medium', 'sans-serif' !important;
         @else
          font-family: 'Tajawal-Medium', 'sans-serif' !important;
+
+    .product_shadow {
+        box-shadow: 0px 0px 5px lightgray !important;
+        padding-bottom: 0px; margin-bottom: 10px
+    }
     @endif
-
-
 
     }
 
