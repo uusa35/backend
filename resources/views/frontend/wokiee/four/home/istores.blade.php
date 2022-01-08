@@ -4,7 +4,7 @@
     @include('frontend.wokiee.four.partials.slider')
     @include('frontend.wokiee.four.partials._all_brands', ['elements' => $brands])
 
-    @include('frontend.wokiee.four.partials.category._categories_slider_full_width', ['title' => trans('general.categories'), 'elements' => $homeCategoriesProduct])
+{{--    @include('frontend.wokiee.four.partials.category._categories_slider_full_width', ['title' => trans('general.categories'), 'elements' => $homeCategoriesProduct])--}}
 {{--    @include('frontend.wokiee.four.partials.category._categories_slider_full_width', ['title' => trans('general.company_categories'), 'elements' => $categoriesHome])--}}
 {{--    @include('frontend.wokiee.four.partials._products_metro_collection',['element' => $bestSaleCollections->first(), 'title' => trans('general.our_selection_from_collections')])--}}
 {{--    @include('frontend.wokiee.four.partials._products_slider_collections',['groupOne' => $newProducts, 'groupTwo' => $onSaleProducts, 'groupThree' => $newProducts, 'title' => trans('general.offers'), 'items' => 3])--}}
