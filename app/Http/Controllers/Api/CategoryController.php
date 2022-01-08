@@ -60,7 +60,7 @@ class CategoryController extends Controller
         } elseif (request()->has('on_home') && request()->has('type')) {
             $elements = Category::active()->onHome()->where(request()->type, true)->get();
         } elseif (request()->has('is_market') && request()->is_market) {
-            $elements = Category::active()->onHome()->where('is_market', true)->get();
+            $elements = Category::active()->onHome()->where('is_market', 1)->get();
         }
         else {
             $elements = Category::active()->get();
