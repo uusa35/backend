@@ -287,7 +287,7 @@
                                                          data-original-title="{{ trans('message.active') }}">
                                                         <input type="radio" id="radio59" name="active" value="1"
                                                                class="md-radiobtn" {{ $element->active ? 'checked' : null }}>
-                                                        <label for="radio51">
+                                                        <label for="radio59">
                                                             <span></span>
                                                             <span class="check"></span>
                                                             <span class="box"></span> {{ trans('general.active') }}
@@ -296,7 +296,7 @@
                                                     <div class="md-radio">
                                                         <input type="radio" id="radio58" name="active" value="0"
                                                                class="md-radiobtn" {{ !$element->active ? 'checked' : null }}>
-                                                        <label for="radio52">
+                                                        <label for="radio58">
                                                             <span></span>
                                                             <span class="check"></span>
                                                             <span class="box"></span> {{ trans('general.no') }}</label>
