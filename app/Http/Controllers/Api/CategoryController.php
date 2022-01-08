@@ -19,10 +19,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        if(request()->is_market && request()->has('is_market')) {
-            $elements = [];
-        }
-        else if (request()->has('is_parent') && request()->is_parent) {
+        if (request()->has('is_parent') && request()->is_parent) {
             $elements = Category::active()->onlyParent()->with(['children' => function ($q) {
                 return $q->active()->with(['children' => function ($q) {
                     return $q->active()->categoryGroupsWithProperties();
