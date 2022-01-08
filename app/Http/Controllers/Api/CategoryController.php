@@ -19,7 +19,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        if(request()->is_marekt && request()->has('is_market')) {
+        if(request()->is_market && request()->has('is_market')) {
             $elements = [];
         }
         else if (request()->has('is_parent') && request()->is_parent) {
