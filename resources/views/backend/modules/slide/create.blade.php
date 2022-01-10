@@ -106,7 +106,7 @@
                                                        data-original-title="{{ trans('message.image') }}" name="image"
                                                        placeholder="{{ trans('general.image') }}" required>
                                                 <div class="help-block text-left">
-                                                    {{ trans('message.best_fit',['width' => '1600px', 'height' => '600px']) }}
+                                                    {{ trans('message.best_fit',['width' => '1900px', 'height' => '750px']) }}
                                                 </div>
                                             </div>
                                         </div>
