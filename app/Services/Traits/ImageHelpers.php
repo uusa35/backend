@@ -34,8 +34,8 @@ trait ImageHelpers
                                       $inputNames = ['pdf'],
                                       $dimensions = ['1052', '1320'],
                                       $ratio = true,
-                                      $sizes = ['large', 'medium', 'thumbnail'],
-                                      $enableBg = false
+                                      $enableBg = false,
+                                      $sizes = ['large', 'medium', 'thumbnail']
     )
     {
         try {
