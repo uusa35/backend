@@ -81,7 +81,7 @@ trait ImageHelpers
                                 if ($enableBg) {
                                     $this->saveImageVersionsWithBg($imagePath);
                                 } else {
-                                    $this->saveImageVersionsWithResize($imagePath, $ratio);
+                                    $this->saveImageVersionsWithResize($imagePath, $ratio, $dimensions);
                                 }
                                 $model->update([
                                     $inputName => $imagePath,
