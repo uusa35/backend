@@ -105,7 +105,7 @@
                                                        placeholder="{{ trans('general.image') }}">
 
                                                 <div class="help-block text-left">
-                                                    {{ trans('message.best_fit',['width' => 'Intro 900/ Home : 1900 px', 'height' => 'Height is 1900 px for Intro / 720 for Home Slide']) }}
+                                                    {{ trans('message.best_fit',['width' => '1600px', 'height' => '600px']) }}
                                                 </div>
                                             </div>
                                         </div>

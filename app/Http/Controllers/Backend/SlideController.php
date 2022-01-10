@@ -77,7 +77,7 @@ class SlideController extends Controller
         $validate = validator($request->all(), [
             'slidable_id' => 'required|numeric',
             'slidable_type' => 'required|alpha',
-            'image' => "image|dimensions:max_width=1900,max_height=1900,min_height=720|max:" . env('MAX_IMAGE_SIZE') . '"',
+            'image' => "image|dimensions:width=1600,height=900|max:" . env('MAX_IMAGE_SIZE') . '"',
 //            'image' => 'required|image|dimensions:width=1900,height=1000'
         ]);
         if ($validate->fails()) {
@@ -88,7 +88,7 @@ class SlideController extends Controller
         $item = $item->withoutGlobalScopes()->whereId($request->slidable_id)->first();
         $element = $item->slides()->create($request->request->all());
         if ($element) {
-            $request->hasFile('image') ? $this->saveMimes($element, $request, ['image'], [$request->is_intro ? '900' : '1900'], true) : null;
+            $request->hasFile('image') ? $this->saveMimes($element, $request, ['image'], ['900' , '1600'], true) : null;
             $request->hasFile('path') ? $this->savePath($request, $element) : null;
             return redirect()->route('backend.slide.index', ['slidable_id' => $element->slidable_id, 'slidable_type' => request('slidable_type')])->with('success', trans('message.store_success'));
         }
@@ -133,7 +133,7 @@ class SlideController extends Controller
     public function update(Request $request, $id)
     {
         $validate = validator($request->all(), [
-            'image' => "image|dimensions:max_width=1900,max_height=1900,min_height=720|max:" . env('MAX_IMAGE_SIZE') . '"',
+            'image' => "image|dimensions:width=1600,height=900|max:" . env('MAX_IMAGE_SIZE') . '"',
         ]);
         if ($validate->fails()) {
             return redirect()->back()->withErrors($validate->errors());
@@ -142,7 +142,7 @@ class SlideController extends Controller
 //        dd($request->request->all());
         $updated = $element->update($request->request->all());
         if ($updated) {
-            $request->hasFile('image') ? $this->saveMimes($element, $request, ['image'], [$request->is_intro ? '900' : '1900'], true) : null;
+            $request->hasFile('image') ? $this->saveMimes($element, $request, ['image'], ['1600','900'], true) : null;
             $request->hasFile('path') ? $this->savePath($request, $element) : null;
             return redirect()->route('backend.slide.index', ['slidable_id' => $element->slidable_id, 'slidable_type' => $element->type])->with('success', trans('message.update_success'));
         }
