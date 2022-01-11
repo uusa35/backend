@@ -2,7 +2,8 @@
     <div class="container-fluid">
         <div class="row">
             <div class="tt-promo-fullwidth-02" style="height : 500px;">
-                    <img src="{{ $element->banner ? $element->bannerLargeLink : $element->imageThumbLink }}" style="max-height : 500px; opacity: 0.5;"/>
+                <img src="{{ $element->banner ? $element->bannerLargeLink : $element->imageThumbLink }}"
+                     style="max-height : 500px; opacity: 0.5;"/>
                 <div class="tt-description">
                     <div class="tt-description-wrapper">
                         @if($element->slug)
@@ -16,9 +17,11 @@
                         @endif
                         @auth
                             <div class="tt-title-large">
-                                <a href="{{ route('frontend.fan.create', ['fan_id' => auth()->id(), 'id' => $element->id,'model' => 'user']) }}"
-                                   class="btn btn-info"><i
+                                @if(!env('ISTORES'))
+                                    <a href="{{ route('frontend.fan.create', ['fan_id' => auth()->id(), 'id' => $element->id,'model' => 'user']) }}"
+                                       class="btn btn-info"><i
                                             class="fa fa-fw fa-thumbs-o-up"></i>{{ trans('general.like') }}</a>
+                                @endif
                                 @if($element->fans->isNotEmpty())
                                     <a href="{{ route('frontend.fan.index',['element_id' => $element->id,'model' => 'user']) }}"
                                        style="font-size: 12px;">{{ trans('general.fans_no') }}

@@ -228,7 +228,7 @@
                     @endif
                 @endif
             @endif
-            @if(!env('EVENTKM'))
+            @if(!env('ISTORES'))
                 <tr>
                     <td class="td-fixed-element td-sm">
                 <span><i class="fa fa-fw fa-eye fa-lg"></i> {{ trans('general.views_no') }}
