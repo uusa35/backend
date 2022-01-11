@@ -117,15 +117,17 @@
                     </td>
                 </tr>
             @endif
-            <tr>
-                <td class="td-fixed-element td-sm">
+            @if(!env('ISTORES'))
+                <tr>
+                    <td class="td-fixed-element td-sm">
                 <span><i class="fa fa-fw fa-eye fa-lg"></i> <span class="ml-2"></span>{{ trans('general.views_no') }}
                         :</span>
-                </td>
-                <td>
-                    {{ $element->views }} {{ trans('general.viewers') }}
-                </td>
-            </tr>
+                    </td>
+                    <td>
+                        {{ $element->views }} {{ trans('general.viewers') }}
+                    </td>
+                </tr>
+            @endif
             @if(!env('ISTORES'))
                 <tr>
                     <td class="td-fixed-element td-sm">
