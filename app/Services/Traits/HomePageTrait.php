@@ -244,7 +244,7 @@ trait HomePageTrait
         $productHotDeals = $this->product->active()->available()->onSale()->hotDeals()->hasImage()->serveCountries()->hasAtLeastOneCategory()->with('brand', 'product_attributes.color', 'product_attributes.size', 'color', 'size', 'images', 'user.country', 'user', 'favorites')->orderby('end_sale', 'desc')->limit(self::TAKE_LESS)->get();
         $designers = User::active()->onHome()->designers()->with('role')->notAdmins()->hasProducts()->get();
         $companies = User::active()->onHome()->companies()->notAdmins()->hasProducts()->with('role')->get();
-        $homeCategoriesUser = Category::where(['is_user' => true])->active()->onlyParent()->onHome()->isFeatured()->with(['children' => function ($q) {
+        $homeCategoriesUser = Category::where(['is_user' => true])->active()->onlyParent()->onHome()->with(['children' => function ($q) {
             return $q->where(['is_user' => true])->active()->with(['children' => function ($q) {
                 return $q->where(['is_user' => true])->active();
             }]);
