@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cb64c074-93f5-49bb-ae42-70edeb58ee75" name="Default Changelist" comment="258">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/Traits/HomePageTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Traits/HomePageTrait.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1129,6 +1130,8 @@
       <workItem from="1641828655721" duration="193000" />
       <workItem from="1641876676300" duration="11000" />
       <workItem from="1641899866760" duration="3703000" />
+      <workItem from="1641993277620" duration="388000" />
+      <workItem from="1641999596925" duration="70000" />
     </task>
     <servers />
   </component>
@@ -1160,6 +1163,11 @@
           <url>file://$PROJECT_DIR$/app/Http/Resources/ProductLightResource.php</url>
           <line>32</line>
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Services/Traits/ImageHelpers.php</url>
+          <line>325</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php-line-method">
           <url>file://$PROJECT_DIR$/database/migrations/2019_03_12_052107_create_country_shipmentpackage_pivot_table.php</url>

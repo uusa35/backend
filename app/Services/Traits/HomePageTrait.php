@@ -288,7 +288,7 @@ trait HomePageTrait
         $bestSaleCollections = OrderMeta::bestSaleCollections();
         $designers = User::active()->onHome()->designers()->with('role')->notAdmins()->hasProducts()->orderBy('id','desc')->limit(SELF::TAKE_MIN)->get();
         $companies = User::active()->onHome()->companies()->notAdmins()->hasProducts()->with('role')->orderBy('id','desc')->limit(SELF::TAKE_MIN)->get();
-        $homeCategoriesUser = Category::where(['is_user' => true])->active()->onlyParent()->onHome()->isFeatured()->with(['children' => function ($q) {
+        $homeCategoriesUser = Category::where(['is_user' => true])->active()->onlyParent()->onHome()->with(['children' => function ($q) {
             return $q->where(['is_user' => true])->active()->with(['children' => function ($q) {
                 return $q->where(['is_user' => true])->active();
             }]);
@@ -298,7 +298,7 @@ trait HomePageTrait
                 return $q->where(['is_user' => true, 'is_product' => false])->active();
             }]);
         }])->orderBy('order', 'desc')->get();
-        $homeCategoriesProduct = Category::where(['is_product' => true])->active()->onlyParent()->onHome()->isFeatured()->with(['children' => function ($q) {
+        $homeCategoriesProduct = Category::where(['is_product' => true])->active()->onlyParent()->onHome()->with(['children' => function ($q) {
             return $q->active()->with(['children' => function ($q) {
                 return $q->where(['is_user' => true])->active();
             }]);
