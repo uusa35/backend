@@ -40,9 +40,7 @@ class CategoryController extends Controller
                     return $q->active()->orderBy('order', 'asc');
                 }])->orderBy('order', 'asc')->get();
         } elseif (request()->has('type') && request()->has('on_home')) {
-            $elements = Category::active()->where(request()->type, true)->whereHas('users', function ($q) {
-                return $q->active();
-            }, '>', 0)->onHome()->with(['children' => function ($q) {
+            $elements = Category::active()->where(request()->type, true)->onHome()->with(['children' => function ($q) {
                 return $q->active()->where(request()->type, true)->with(['children' => function ($q) {
                     return $q->active()->where(request()->type, true)->categoryGroupsWithProperties();
                 }])->categoryGroupsWithProperties();
