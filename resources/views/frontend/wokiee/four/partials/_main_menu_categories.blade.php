@@ -2,7 +2,7 @@
     <div class="tt-col-obj tt-obj-menu-categories tt-desctop-parent-menu-categories">
         <div class="tt-menu-categories">
             <button class="tt-dropdown-toggle">
-                {{ env('ISTORES') ? trans('stores') : trans('general.categories') }}
+                {{ env('ISTORES') ? trans('general.stores') : trans('general.categories') }}
             </button>
             <div class="tt-dropdown-menu">
                 <nav>
