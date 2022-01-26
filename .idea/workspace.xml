@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb64c074-93f5-49bb-ae42-70edeb58ee75" name="Default Changelist" comment="258">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/usama/myfatoorahv2/src/Controllers/MyFatoorahV2PaymentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/myfatoorahv2/src/Controllers/MyFatoorahV2PaymentController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/usama/tap2/src/Controllers/Tap2PaymentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/tap2/src/Controllers/Tap2PaymentController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -1138,7 +1136,7 @@
       <workItem from="1642519692203" duration="545000" />
       <workItem from="1642608800631" duration="787000" />
       <workItem from="1642687977865" duration="965000" />
-      <workItem from="1643194400883" duration="6032000" />
+      <workItem from="1643194400883" duration="6384000" />
     </task>
     <servers />
   </component>
