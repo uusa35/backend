@@ -423,7 +423,7 @@ trait OrderTrait
 
     public function orderSuccessAction($reference_id)
     {
-        $order = Order::where(['reference_id' => $reference_id, 'paid' => false])->with('user', 'order_metas.product_attribute')->first();
+        $order = Order::where(['reference_id' => $reference_id, 'paid' => true])->with('user', 'order_metas.product_attribute')->first();
         if ($order) {
             $order->update(['status' => 'success', 'paid' => true]);
             $this->decreaseQty($order);
@@ -433,6 +433,7 @@ trait OrderTrait
             $this->clearCart();
             return $markdown->render('emails.order-complete', ['order' => $order, 'user' => $order->user]);
         }
+        dd('stop here');
         return redirect()->route('frontend.home')->with('error', trans('general.process_failure'));
     }
 
