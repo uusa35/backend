@@ -57,17 +57,9 @@ class Tap2PaymentController extends Controller
             if (is_string($order)) {
                 return response()->json(['message' => $order], 400);
             }
-            $validator = validator($request->all(), [
-                'netTotal' => 'required|numeric',
-                'order_id' => 'required|exists:orders,id',
-                'paymentMethod' => 'required|string'
-            ]);
-            if ($validator->fails()) {
-                return response()->json(['message' => $validator->errors()->first()], 400);
-            }
             $payment = json_decode($this->processPayment($request->order_id));
             if ($payment) {
-                $this->updateOrderRerferenceId($request->order_id, $payment->id, $request->paymentMethod);
+                $this->updateOrderRerferenceId($request->order_id, $payment->id, $request->payment_method);
                 return response()->json($payment->transaction->url, 200);
             }
         } catch (\Exception $e) {
