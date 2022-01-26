@@ -25,7 +25,7 @@ trait TapTrait
             // 3- return the paymentURL
             $curl = curl_init();
             $info = [
-                'amount' => $order->net_price,
+                'amount' =>  $order->net_price,
                 'currency' => "KWD",
                 "customer" => [
                     "first_name" => $order->user->name_ar . $order->user->name,
