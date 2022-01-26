@@ -144,7 +144,7 @@ class Tap2PaymentController extends Controller
 
         if ($err || isset($res->errors[0])) {
             echo "cURL Error #:" . $err;
-            echo "cURL Error #:" . $res['errors'][0];
+            echo "cURL Error #:" . $res->errors[0];
 //            return redirect()->route('frontend.home')->with('error', trans('process_failure'));
 //            return redirect()->route('frontend.home')->with('error', trans('process_failure'));
         } else {
