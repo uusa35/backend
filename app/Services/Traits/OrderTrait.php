@@ -26,8 +26,8 @@ trait OrderTrait
     public function createQuestionnaireOrder(Questionnaire $questionnaire, User $user)
     {
         $order = Order::create([
-            'price' => (float) $questionnaire->net_price,
-            'net_price' => (float) $questionnaire->net_price,
+            'price' => (float)$questionnaire->net_price,
+            'net_price' => (float)$questionnaire->net_price,
             'mobile' => $questionnaire->mobile,
             'country' => $user->country->slug,
             'email' => $questionnaire->email,
@@ -36,7 +36,7 @@ trait OrderTrait
         ]);
         $orderMeta = $order->order_metas()->create([
             'qty' => 1,
-            'price' => (float) $questionnaire->net_price,
+            'price' => (float)$questionnaire->net_price,
             'notes' => $questionnaire->notes,
             'item_name' => strtoupper(class_basename($questionnaire)),
             'item_type' => strtoupper(class_basename($questionnaire)),
@@ -61,8 +61,8 @@ trait OrderTrait
         $coupon = session()->has('coupon') ? session('coupon') : false;
         $country = Country::whereId($request->country_id)->first();
         $order = Order::create([
-            'price' => (float) $this->getTotalPriceOfProductsOnly($this->cart),
-            'net_price' => (float) getCartNetTotal(),
+            'price' => (float)$this->getTotalPriceOfProductsOnly($this->cart),
+            'net_price' => (float)getCartNetTotal(),
             'mobile' => $request->mobile,
             'country' => $country->name,
             'area' => $request->area ? $request->area : null,
@@ -71,10 +71,10 @@ trait OrderTrait
             'notes' => $request->notes,
             'user_id' => $user->id,
             'cash_on_delivery' => $request->has('cash_on_delivery') ? $request->cash_on_delivery : false,
-            'discount' =>  $coupon ? ($coupon->is_percentage ? ($this->cart->subTotal() * ($coupon->value / 100)) : $coupon->value) : 0,
+            'discount' => $coupon ? ($coupon->is_percentage ? ($this->cart->subTotal() * ($coupon->value / 100)) : $coupon->value) : 0,
             'coupon_id' => $coupon ? $coupon['id'] : null,
             'payment_method' => $request->payment_method,
-            'shipment_fees' => (float) $this->cart->content()->where('options.type', 'country')->first()->total(),
+            'shipment_fees' => (float)$this->cart->content()->where('options.type', 'country')->first()->total(),
             'receive_on_branch' => $request->has('receive_on_branch') ? $request->receive_on_branch : 0
         ]);
         $request->has('branch_id') && !is_null($request->branch_id) ? $order->update(['branch_id' => $request->branch_id]) : null;
@@ -90,7 +90,7 @@ trait OrderTrait
                         'item_name' => $element->options->element->name,
                         'item_type' => $element->options->type,
                         'qty' => $element->qty,
-                        'price' => (float) $element->price,
+                        'price' => (float)$element->price,
                         'notes' => $element->options->notes ? $element->options->notes : null,
                         'product_size' => $element->options->size ? $element->options->size->name : null,
                         'product_color' => $element->options->color ? $element->options->color->name : null,
@@ -240,8 +240,8 @@ trait OrderTrait
                 }
             }
             $order = Order::create([
-                'price' => (float) $request->price,
-                'net_price' => (float) $request->net_price,
+                'price' => (float)$request->price,
+                'net_price' => (float)$request->net_price,
                 'mobile' => $request->mobile,
                 'country' => $user->country->slug,
                 'area' => $request->has('area') ? $request->area : 'N/A',
@@ -254,7 +254,7 @@ trait OrderTrait
                 'notes' => $request->notes,
                 'user_id' => $user->id,
                 'discount' => $request->discount,
-                'shipment_fees' => (float) $request->shipment_fees,
+                'shipment_fees' => (float)$request->shipment_fees,
                 'coupon_id' => $request->has('coupon_id') ? $request->coupon_id : null,
                 'payment_method' => $request->payment_method,
                 'cash_on_delivery' => $request->cash_on_delivery,
@@ -286,7 +286,7 @@ trait OrderTrait
                             'order_id' => $order->id,
                             'service_id' => $item['service_id'],
                             'qty' => $item['qty'],
-                            'price' => (float) $item['element']['finalPrice'],
+                            'price' => (float)$item['element']['finalPrice'],
                             'item_name' => $item['element']['name'],
                             'item_type' => $item['type'],
                             'notes' => $item['notes'] ? $item['notes'] : null,
@@ -360,7 +360,7 @@ trait OrderTrait
                 $prog_lang = 'other';
                 $data = [
                     'content' => 'Order Id : ' . $order->id,
-                    'cost' => (float) $order->net_price,
+                    'cost' => (float)$order->net_price,
                     'payment_method' => $order->payment_method,
                     'default_sender ' => env('APP_NAME'),
 //                    'sender_name' => $sender->name,
@@ -421,17 +421,14 @@ trait OrderTrait
     }
 
 
-    public function orderSuccessAction($reference_id) {
+    public function orderSuccessAction($reference_id)
+    {
         $order = Order::where(['reference_id' => $reference_id, 'paid' => false])->with('user', 'order_metas.product_attribute')->first();
-        if($order) {
-            $order->update([
-                'paid' => true,
-                'status' => 'paid'
-            ]);
+        if ($order) {
             $order->update(['status' => 'success', 'paid' => true]);
             $this->decreaseQty($order);
             $markdown = new Markdown(view(), config('mail.markdown'));
-        OrderSuccessProcessJob::dispatchNow($order, $order->user);
+            OrderSuccessProcessJob::dispatchNow($order, $order->user);
 //            OrderSuccessProcessJob::dispatch($order, $order->user)->delay(now()->addSeconds(15));
             $this->clearCart();
             return $markdown->render('emails.order-complete', ['order' => $order, 'user' => $order->user]);
