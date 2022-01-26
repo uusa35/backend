@@ -54,7 +54,7 @@ class Tap2PaymentController extends Controller
     {
         try {
             $order = $this->checkCart($request); // check cart then create order
-            return response()->json(['message' => 'here'], 200);
+            return response()->json(['message' => $order->net_price], 200);
             if (is_string($order)) {
                 return response()->json(['message' => $order], 400);
             }
