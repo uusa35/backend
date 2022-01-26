@@ -21,7 +21,6 @@ trait TapTrait
         try {
             // 1- prepare data
             $order = Order::whereId($orderId)->with('order_metas','user')->first();
-            return response()->json(['message' => $orderId]);
             // 2- update order with the reference_id
             // 3- return the paymentURL
             $curl = curl_init();
