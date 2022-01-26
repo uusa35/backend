@@ -58,7 +58,7 @@ trait TapTrait
                 CURLOPT_CUSTOMREQUEST => "POST",
                 CURLOPT_POSTFIELDS => json_encode($info),
                 CURLOPT_HTTPHEADER => array(
-                    "authorization: Bearer ".env('TAP2_TOKEN_LIVE'),
+                    "authorization: Bearer ".env('TAP2_TOKEN_TEST'),
                     "content-type: application/json"
                 ),
             ));

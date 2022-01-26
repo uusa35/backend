@@ -146,11 +146,5 @@ trait MyFatoorahV2Trait
         }
         return json_encode($productsList, JSON_UNESCAPED_SLASHES);
     }
-
-
-
-    public function clearCart()
-    {
-        session()->forget('cart');
-    }
+    
 }

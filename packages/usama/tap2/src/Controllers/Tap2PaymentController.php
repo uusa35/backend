@@ -112,7 +112,7 @@ class Tap2PaymentController extends Controller
             CURLOPT_CUSTOMREQUEST => "GET",
             CURLOPT_POSTFIELDS => "{}",
             CURLOPT_HTTPHEADER => array(
-                "authorization: Bearer ".env('TAP2_TOKEN_LIVE')
+                "authorization: Bearer " . env('TAP2_TOKEN_TEST')
             ),
         ));
 
@@ -121,14 +121,17 @@ class Tap2PaymentController extends Controller
 
         curl_close($curl);
 
-        if ($err) {
+        $res = json_decode($response);
+
+        if ($err || isset($res->errors[0])) {
 //            echo "cURL Error #:" . $err;
             return redirect()->route('frontend.home')->with('error', trans('process_failure'));
         } else {
-            $res = json_decode($response);
             // ABANDONED, CANCELLED, FAILED, DECLINED, RESTRICTED, CAPTURED, VOID,TIMEDOUT, UNKNOWN
             if ($res->status === 'CAPTURED') {
                 return $this->orderSuccessAction($res->id);
+            } else {
+                return redirect()->route('frontend.home')->with('error', trans('process_failure'));
             }
         }
     }
