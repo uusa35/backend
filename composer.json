@@ -65,6 +65,7 @@
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/",
             "Usama\\Tap\\": "packages/usama/tap/src/",
+            "Usama\\Tap2\\": "packages/usama/tap2/src/",
             "Usama\\MyFatoorah\\": "packages/usama/myfatoorah/src/",
             "Usama\\MyFatoorahV2\\": "packages/usama/myfatoorahv2/src/",
             "Usama\\Upayment\\": "packages/usama/upayment/src/",

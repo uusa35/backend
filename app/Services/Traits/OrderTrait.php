@@ -438,4 +438,9 @@ trait OrderTrait
         }
         return redirect()->route('frontend.home')->with('error', trans('general.process_failure'));
     }
+
+    public function clearCart()
+    {
+        session()->forget('cart');
+    }
 }

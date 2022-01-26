@@ -1134,6 +1134,10 @@
                                                                 value="myfatoorahv2" {{ $element->payment_method === 'myfatoorahv2' ? 'selected' : null }}>
                                                                 My fatoorahV2
                                                             </option>
+                                                            <option
+                                                                value="tap2" {{ $element->payment_method === 'tap2' ? 'selected' : null }}>
+                                                                TAP 2
+                                                            </option>
                                                         </select>
                                                     </div>
                                                 </div>

@@ -12,6 +12,7 @@
       <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/packages/usama/ibooky/src" isTestSource="false" packagePrefix="Usama\Ibooky\" />
       <sourceFolder url="file://$MODULE_DIR$/packages/usama/myfatoorahv2/src" isTestSource="false" packagePrefix="Usama\MyFatoorahV2\" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/usama/tap2/src" isTestSource="false" packagePrefix="Usama\Tap2\" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/alexpechkarev/geometry-library" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/alexpechkarev/google-maps" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/almasaeed2010/adminlte" />

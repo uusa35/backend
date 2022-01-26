@@ -25,6 +25,10 @@
                                         <form method="post"
                                           action="{{route('myfatoorahv2.web.payment.create') }}"
                                         >
+                                        @elseif($settings->payment_method === 'tap2')
+                                        <form method="post"
+                                              action="{{route('tap2.web.payment.create') }}"
+                                        >
                                         @endif
                                                                 <input type="hidden" name="order_id"
                                                                        value="{{ $order->id }}"/>
