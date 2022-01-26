@@ -3,7 +3,7 @@
 
 Route::group(['namespace' => 'Usama\Tap2\Controllers'], function () {
     Route::group(['middleware' => 'api'], function () {
-        Route::post('api/tap2/payment', 'Tap2PaymentController@makePayment')->name('tap2.api.payment.create');
+        Route::post('api/tap2/payment', 'Tap2PaymentController@makePaymentApi')->name('tap2.api.payment.create');
     });
 
     Route::group(['middleware' => ['web', 'auth']], function () {

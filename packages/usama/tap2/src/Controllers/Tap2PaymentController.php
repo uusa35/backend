@@ -50,6 +50,31 @@ class Tap2PaymentController extends Controller
         }
     }
 
+    public function makePaymentApi(Request $request)
+    {
+        try {
+            $order = $this->checkCart($request); // check cart then create order
+            if (is_string($order)) {
+                return response()->json(['message' => $order], 400);
+            }
+            $validator = validator($request->all(), [
+                'netTotal' => 'required|numeric',
+                'order_id' => 'required|exists:orders,id',
+                'paymentMethod' => 'required|string'
+            ]);
+            if ($validator->fails()) {
+                return response()-json(['message' => withErrors($validator->errors()->first())], 400);
+            }
+            $payment = json_decode($this->processPayment($request->order_id));
+            if ($payment) {
+                $this->updateOrderRerferenceId($request->order_id, $payment->id, $request->paymentMethod);
+                return response()->json($payment->transaction->url, 200);
+            }
+        } catch (\Exception $e) {
+            dd(404, $e->getMessage());
+        }
+    }
+
     public function result(Request $request)
     {
         // once the result is success .. get the deal from refrence then delete all other free deals related to such ad.

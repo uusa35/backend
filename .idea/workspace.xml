@@ -8,7 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/usama/myfatoorahv2/src/Controllers/MyFatoorahV2Trait.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/myfatoorahv2/src/Controllers/MyFatoorahV2Trait.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/usama/tap2/src/Controllers/Tap2PaymentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/tap2/src/Controllers/Tap2PaymentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/usama/tap2/src/Controllers/TapTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/tap2/src/Controllers/TapTrait.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/usama/tap2/src/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/tap2/src/routes.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1139,7 +1139,7 @@
       <workItem from="1642519692203" duration="545000" />
       <workItem from="1642608800631" duration="787000" />
       <workItem from="1642687977865" duration="965000" />
-      <workItem from="1643194400883" duration="3533000" />
+      <workItem from="1643194400883" duration="5158000" />
     </task>
     <servers />
   </component>
