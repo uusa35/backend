@@ -56,7 +56,7 @@ class Tap2PaymentController extends Controller
             $order = $this->checkCart($request); // check cart then create order
             if (is_string($order)) {
                 return response()->json(['message' => $order], 400);
-            } elseif (is_object($order)) {
+            } elseif ($order->id) {
                 $payment = json_decode($this->processPayment($order->order_id));
                 if ($payment && is_object($order)) {
                     $this->updateOrderRerferenceId($order->id, $payment->id, $order->payment_method);
