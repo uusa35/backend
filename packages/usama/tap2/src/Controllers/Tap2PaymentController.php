@@ -63,7 +63,7 @@ class Tap2PaymentController extends Controller
                 'paymentMethod' => 'required|string'
             ]);
             if ($validator->fails()) {
-                return response()->json(['message' => withErrors($validator->errors()->first())], 400);
+                return response()->json(['message' => $validator->errors()->first()], 400);
             }
             $payment = json_decode($this->processPayment($request->order_id));
             if ($payment) {
