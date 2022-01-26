@@ -57,10 +57,10 @@ class Tap2PaymentController extends Controller
             if (is_string($order)) {
                 return response()->json(['message' => $order], 400);
             }
-            $payment = json_decode($this->processPayment($request->order_id));
+            $payment = json_decode($this->processPayment($order->order_id));
             if ($payment && is_object($order)) {
                 $this->updateOrderRerferenceId($order->id, $payment->id, $order->payment_method);
-                return response()->json($payment->transaction->url, 200);
+                return response()->json(['paymentUrl' => $payment->transaction->url], 200);
             }
         } catch (\Exception $e) {
 //            dd(404, $e->getMessage());

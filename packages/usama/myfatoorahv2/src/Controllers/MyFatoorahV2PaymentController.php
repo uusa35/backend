@@ -69,7 +69,7 @@ class MyFatoorahV2PaymentController extends Controller
         $payment = $this->myFatoorahInstance->sendPayment(config('myfatoorah.apiUrl'), config('myfatoorah.apiKey'), $postFields);
         $invoiceId = $payment->InvoiceId;
         $paymentURL = $payment->InvoiceURL;
-        $this->updateOrderRerferenceId($order->id, $payment->InvoiceId, $order->payment_methods);
+        $this->updateOrderRerferenceId($order->id, $payment->InvoiceId, $order->payment_method);
         if ($paymentURL) {
             return response()->json(['paymentUrl' => $paymentURL], 200);
         }
