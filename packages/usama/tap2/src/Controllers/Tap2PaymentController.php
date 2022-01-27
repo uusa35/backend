@@ -146,15 +146,12 @@ class Tap2PaymentController extends Controller
 //            dd($res);
 //            echo "cURL Error #:" . $err;
 //            echo "cURL Error #:" . $res->errors[0];
-//            return redirect()->route('frontend.home')->with('error', trans('process_failure'));
-            dd('here');
             return redirect()->route('frontend.home')->with('error', trans('general.process_failure'));
         } else {
             // ABANDONED, CANCELLED, FAILED, DECLINED, RESTRICTED, CAPTURED, VOID,TIMEDOUT, UNKNOWN
             if ($res->status === 'CAPTURED') {
                 return $this->orderSuccessAction($res->id);
             } else {
-                dd($res->status);
                 return redirect()->route('frontend.home')->with('error', $res->status);
             }
         }

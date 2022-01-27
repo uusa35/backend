@@ -336,9 +336,10 @@ trait OrderTrait
     public function createOrderForMirsal(Order $order, User $user)
     {
         try {
+            var_dump('mirsal started');
 //            $sender = $order->order_metas->first()->product->user;
             $metas = $order->order_metas()->with('product.user')->get();
-            if (env('MIRSAL_ENABLED') && !$order->shipment_reference && $order->paid && $order->user->country->is_local) {
+//            if (env('MIRSAL_ENABLED') && !$order->shipment_reference && $order->paid && $order->user->country->is_local) {
                 $pickupPoints = [];
                 foreach ($metas as $meta) {
                     array_push($pickupPoints, [
@@ -400,13 +401,15 @@ trait OrderTrait
                 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
                 curl_setopt($ch, CURLOPT_POSTFIELDS, ['request_data' => json_encode($data), 'access_key' => $access_key, 'prog_lang' => $prog_lang]);
                 $response = curl_exec($ch);
+                dd(json_decode($response));
                 $res = collect(json_decode($response));
                 if ($res['status'] === "201") {
                     $order->update(['shipment_reference' => 'Mirsal - ' . $res['data']->transaction_id]);
                 }
                 curl_close($ch);
-            }
+//            }
         } catch (\Exception $e) {
+            dd($e->getMessage());
             print_r($e->getMessage() . '- Mirsal Error');
         }
     }
@@ -423,7 +426,7 @@ trait OrderTrait
 
     public function orderSuccessAction($reference_id)
     {
-        $order = Order::where(['reference_id' => $reference_id, 'paid' => true])->with('user', 'order_metas.product_attribute')->first();
+        $order = Order::where(['reference_id' => $reference_id, 'paid' => false])->with('user', 'order_metas.product_attribute')->first();
         if ($order) {
             $order->update(['status' => 'success', 'paid' => true]);
             $this->decreaseQty($order);
@@ -433,7 +436,6 @@ trait OrderTrait
             $this->clearCart();
             return $markdown->render('emails.order-complete', ['order' => $order, 'user' => $order->user]);
         }
-        dd('stop here');
         return redirect()->route('frontend.home')->with('error', trans('general.process_failure'));
     }
 
