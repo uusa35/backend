@@ -5,9 +5,15 @@
                 <div class="tt-box-info">
                     <ul>
                         @guest
-                            <li><a href="{{ route('register') }}">
-                                    <i class="fa fa-fw fa-user"></i>
-                                    {{ trans('general.register') }}</a></li>
+                            @if(env('ISTORES'))
+                                <li><a href="{{ route('register') }}">
+                                        <i class="fa fa-fw fa-user"></i>
+                                        {{ trans('general.joinus') }}</a></li>
+                            @else
+                                <li><a href="{{ route('register') }}">
+                                        <i class="fa fa-fw fa-user"></i>
+                                        {{ trans('general.register') }}</a></li>
+                            @endif
                             <li><a href="{{ route('login') }}">
                                     <i class="fa fa-fw fa-lock"></i>
                                     {{ trans('general.login') }}</a></li>
