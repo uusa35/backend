@@ -5,9 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb64c074-93f5-49bb-ae42-70edeb58ee75" name="Default Changelist" comment="258">
+      <change beforePath="$PROJECT_DIR$/.idea/mallrupdate.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mallrupdate.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Services/Traits/OrderTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Traits/OrderTrait.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/usama/tap2/src/Controllers/Tap2PaymentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/tap2/src/Controllers/Tap2PaymentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/usama/tap2/src/Controllers/TapTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/tap2/src/Controllers/TapTrait.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/home/istores.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/home/istores.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/category/_categories_slider.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/category/_categories_slider.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +121,6 @@
       <path value="$PROJECT_DIR$/vendor/davejamesmiller/laravel-breadcrumbs" />
       <path value="$PROJECT_DIR$/vendor/almasaeed2010/adminlte" />
       <path value="$PROJECT_DIR$/vendor/dragonmantank/cron-expression" />
-      <path value="$PROJECT_DIR$/vendor/justinrainbow/json-schema" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
       <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
       <path value="$PROJECT_DIR$/vendor/sebastian/code-unit" />
@@ -179,7 +184,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/http-foundation" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
       <path value="$PROJECT_DIR$/vendor/symfony/http-kernel" />
-      <path value="$PROJECT_DIR$/vendor/symfony/filesystem" />
       <path value="$PROJECT_DIR$/vendor/symfony/finder" />
       <path value="$PROJECT_DIR$/vendor/symfony/string" />
       <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
@@ -228,8 +232,6 @@
       <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
       <path value="$PROJECT_DIR$/vendor/phenx/php-svg-lib" />
       <path value="$PROJECT_DIR$/vendor/phenx/php-font-lib" />
-      <path value="$PROJECT_DIR$/vendor/react/promise" />
-      <path value="$PROJECT_DIR$/vendor/seld/jsonlint" />
       <path value="$PROJECT_DIR$/vendor/voku/portable-ascii" />
       <path value="$PROJECT_DIR$/vendor/asm89/stack-cors" />
       <path value="$PROJECT_DIR$/vendor/brick/math" />
@@ -249,7 +251,6 @@
       <path value="$PROJECT_DIR$/vendor/grpc/grpc" />
       <path value="$PROJECT_DIR$/vendor/opis/closure" />
       <path value="$PROJECT_DIR$/vendor/rize/uri-template" />
-      <path value="$PROJECT_DIR$/vendor/seld/phar-utils" />
       <path value="$PROJECT_DIR$/vendor/psr/log" />
       <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
       <path value="$PROJECT_DIR$/vendor/psy/psysh" />
@@ -1144,7 +1145,15 @@
       <workItem from="1642608800631" duration="787000" />
       <workItem from="1642687977865" duration="965000" />
       <workItem from="1643194400883" duration="10552000" />
-      <workItem from="1643258888364" duration="1932000" />
+      <workItem from="1643258888364" duration="2069000" />
+      <workItem from="1643261782690" duration="640000" />
+      <workItem from="1643709753212" duration="96000" />
+      <workItem from="1643865898606" duration="11000" />
+      <workItem from="1643884567634" duration="371000" />
+      <workItem from="1644210977702" duration="1021000" />
+      <workItem from="1644300327900" duration="1451000" />
+      <workItem from="1644309965287" duration="2563000" />
+      <workItem from="1644406268475" duration="499000" />
     </task>
     <servers />
   </component>

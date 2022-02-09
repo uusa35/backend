@@ -44,8 +44,9 @@
                                                         <a href="{{ route('frontend.service.search', ['service_category_id' => $element->id]) }}">
                                                             @endif
                                                             <span class="tt-img">
-                                        <img src="{{ $element->imageLargeLink }}" alt="{{ $element->description }}"/>
-                                    </span>
+                                                            <img src="{{ $element->imageLargeLink }}"
+                                                                 alt="{{ $element->description }}"/>
+                                                        </span>
                                                         </a>
                                 </div>
                                 <div class="tt-description">
@@ -65,7 +66,7 @@
                                     </div>
                                     <h2 class="tt-title">
                                         @if($type === 'user')
-                                            <a href="{{ route('frontend.user.search', ['user_category_id' => $element->id,'name' => $element->name]) }}">
+                                            <a href="{{ route('frontend.user.search', ['user_category_id' => $element->id]) }}">
                                                 @elseif($type === 'product')
                                                     <a href="{{ route('frontend.product.search', ['product_category_id' => $element->id,'name' => $element->name]) }}">
                                                         @else
@@ -76,7 +77,7 @@
                                     <div class="tt-product-inside-hover">
                                         <div class="tt-row-btn">
                                             @if($type === 'user')
-                                                <a href="{{ route('frontend.user.search', ['user_category_id' => $element->id,'name' => $element->name]) }}"
+                                                <a href="{{ route('frontend.user.search', ['user_category_id' => $element->id]) }}"
                                                    class="btn btn-small">
                                                     @elseif($type === 'product')
                                                         <a href="{{ route('frontend.product.search', ['product_category_id' => $element->id,'name' => $element->name]) }}"
@@ -160,7 +161,7 @@
                                             </div>
                                             <h2 class="tt-title">
                                                 @if($type === 'user')
-                                                    <a href="{{ route('frontend.user.search', ['user_category_id' => $child->id,'name' => $child->name]) }}">
+                                                    <a href="{{ route('frontend.user.search', ['user_category_id' => $child->id]) }}">
                                                         @elseif($type === 'product')
                                                             <a href="{{ route('frontend.product.search', ['product_category_id' => $child->id,'name' => $child->name]) }}">
                                                                 @else
@@ -171,7 +172,7 @@
                                             <div class="tt-product-inside-hover">
                                                 <div class="tt-row-btn">
                                                     @if($type === 'user')
-                                                        <a href="{{ route('frontend.user.search', ['user_category_id' => $child->id,'name' => $child->name]) }}"
+                                                        <a href="{{ route('frontend.user.search', ['user_category_id' => $child->id]) }}"
                                                            class="btn btn-small">
                                                             @elseif($type === 'product')
                                                                 <a href="{{ route('frontend.product.search', ['product_category_id' => $child->id,'name' => $child->name]) }}"

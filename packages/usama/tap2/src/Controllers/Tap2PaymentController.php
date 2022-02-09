@@ -131,7 +131,7 @@ class Tap2PaymentController extends Controller
             CURLOPT_CUSTOMREQUEST => "GET",
             CURLOPT_POSTFIELDS => "{}",
             CURLOPT_HTTPHEADER => array(
-                "authorization: Bearer " . env('TAP2_TOKEN_LIVE')
+                "authorization: Bearer " . env('TAP2_TOKEN_TEST')
             ),
         ));
 

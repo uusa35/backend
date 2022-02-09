@@ -12,16 +12,16 @@
 {{--    @include('frontend.wokiee.four.partials._users_slider',['title' => trans('general.our_personal_shoppers'), 'elements' => $designers])--}}
 {{--    @include('frontend.wokiee.four.partials.category._categories_slider_full_width', ['elements' => $homeCategoriesProduct, 'title' => trans('general.company_categories'), 'type' => 'user'])--}}
     @include('frontend.wokiee.four.partials.category._categories_slider', ['elements' => $homeCategoriesMarket, 'title' => trans('general.market_categories'), 'type' => 'user' ])
-    @include('frontend.wokiee.four.partials._users_slider',['title' => trans('general.small_business'), 'elements' => $designers])
+{{--    @include('frontend.wokiee.four.partials._users_slider',['title' => trans('general.small_business'), 'elements' => $designers])--}}
     @include('frontend.wokiee.four.partials.category._categories_slider', ['elements' => $homeCategoriesUser, 'title' => trans('general.company_categories'), 'type' => 'user' ])
 
-    @include('frontend.wokiee.four.partials._users_slider',['title' => trans('general.some_companies'), 'elements' => $companies])
+{{--    @include('frontend.wokiee.four.partials._users_slider',['title' => trans('general.some_companies'), 'elements' => $companies])--}}
 
-    @include('frontend.wokiee.four.partials.category._categories_slider', ['elements' => $homeCategoriesProduct, 'title' => trans('general.product_categories'), 'type' => 'product'])
-    @include('frontend.wokiee.four.partials._products_slider',['title' => trans('general.chosen_products'), 'elements' => $newProducts])
+{{--    @include('frontend.wokiee.four.partials.category._categories_slider', ['elements' => $homeCategoriesProduct, 'title' => trans('general.product_categories'), 'type' => 'product'])--}}
+{{--    @include('frontend.wokiee.four.partials._products_slider',['title' => trans('general.chosen_products'), 'elements' => $newProducts])--}}
 
-    @include('frontend.wokiee.four.partials._products_slider',['title' => trans('general.new_arrivals'), 'elements' => $latestProducts])
-    @include('frontend.wokiee.four.partials._products_slider',['title' => trans('general.on_sale_products'), 'elements' => $onSaleProducts])
+{{--    @include('frontend.wokiee.four.partials._products_slider',['title' => trans('general.new_arrivals'), 'elements' => $latestProducts])--}}
+{{--    @include('frontend.wokiee.four.partials._products_slider',['title' => trans('general.on_sale_products'), 'elements' => $onSaleProducts])--}}
 
 {{--    @if(isset($categoriesHome) && $categoriesHome->isNotEmpty())--}}
 {{--        @include('frontend.wokiee.four.partials._five_categories',['elements' => $categoriesHome])--}}
@@ -30,6 +30,6 @@
     {{--            @include('frontend.wokiee.four.partials._horizontal_three_categories',['elements' => $tripleCommercials])--}}
     {{--        @endif--}}
 {{--    @include('frontend.wokiee.four.partials._products_slider_hot_deal', ['elements' => $productHotDeals,'items' => 3])--}}
-    @include('frontend.wokiee.four.partials._btn_info', ['isGray' => true])
+{{--    @include('frontend.wokiee.four.partials._btn_info', ['isGray' => true])--}}
     @include('frontend.wokiee.four.partials._country_modal')
 @endsection
