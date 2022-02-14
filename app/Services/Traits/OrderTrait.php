@@ -338,78 +338,61 @@ trait OrderTrait
         try {
 //            $sender = $order->order_metas->first()->product->user;
             $metas = $order->order_metas()->with('product.user')->get();
-//            if (env('MIRSAL_ENABLED') && !$order->shipment_reference && $order->paid && $order->user->country->is_local) {
-                $pickupPoints = [];
-                foreach ($metas as $meta) {
-                    array_push($pickupPoints, [
-                        'name' => $meta->product->user->name,
-                        'phone' => $meta->product->user->fullMobile,
-                        'governorate_id' => $meta->product->user->area,
-                        'area_id' => $meta->product->user->localArea ? $meta->product->user->localArea->code : null,
-                        'block' => $meta->product->user->block,
-                        'street' => $meta->product->user->street,
-                        'apartment' => $meta->product->user->appartment,
-                        'unit' => 'Floor :' . $meta->product->user->floor,
-                        'location' => $meta->product->user->address,
-                        'note' => 'Product Name : ' . $meta->product->name . ' - Product SKU : ' . $meta->product->sku,
-                    ]);
-                }
-                $url = env('MIRSAL_API_URL');
-                $access_key = env('MIRSAL_ACCESS_KEY');
-                $access_secret = env('MIRSAL_SECRET_KEY');
-                $prog_lang = 'other';
-                $data = [
-                    'content' => 'Order Id : ' . $order->id,
-                    'cost' => (float)$order->net_price,
-                    'payment_method' => $order->payment_method,
-                    'default_sender ' => env('APP_NAME'),
-//                    'sender_name' => $sender->name,
-//                    'sender_phone' => $sender->mobile,
-//                    'sender_governorate' => 'A241',
-//                    'sender_area' => 'FH242',
-//                    'sender_block' => '00',
-//                    'sender_street' => '00000',
-//                    'sender_apartment' => $sender->apartment,
-//                    'sender_avenue' => $sender->address,
-//                    'sender_unit' => '0000',
-//                    'sender_floor' => $sender->floor,
-//                    'sender_note' => 'Sender Address :' . $sender->address . ' - ' . $sender->description,
-//                    'sender_location' => '',
-                    'receiver_name' => $user->name,
-                    'receiver_phone' => $order->mobile,
-                    'receiver_governorate' => 'A242',
-                    'receiver_area' => 'JL244',
-                    'receiver_block' => '0000',
-                    'receiver_street' => '0000',
-                    'receiver_apartment' => $order->address,
-                    'receiver_avenue' => '',
-                    'receiver_unit' => '',
-                    'receiver_floor' => $order->address,
-                    'receiver_note' => 'Receiver Address : ' . $order->address . ' - Notes :' . $order->notes,
-                    'receiver_location' => $order->user->country->slug,
-                    'pickup_date' => Carbon::now()->addHours(5)->format('d/m/Y'),
-                    'pickup_time' => Carbon::tomorrow()->addHours(10)->format('h:s a'),
-                    'image' => '',
-                    'pickup_points' => [
-                        $pickupPoints
-                    ],
-                ];
-//                dd(json_encode($data));
-                $ch = curl_init();
-                curl_setopt($ch, CURLOPT_URL, $url);
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-                curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-                curl_setopt($ch, CURLOPT_POSTFIELDS, ['request_data' => json_encode($data), 'access_key' => $access_key, 'prog_lang' => $prog_lang]);
-                $response = curl_exec($ch);
-                dd (json_decode($response));
-                dd('stop');
-                $res = collect(json_decode($response));
-                dd($res['status']);
-                if ($res['status'] === "201") {
-                    $order->update(['shipment_reference' => 'Mirsal - ' . $res['data']->transaction_id]);
-                }
-                curl_close($ch);
-//            }
+            if (env('MIRSAL_ENABLED') && !$order->shipment_reference && $order->paid && $order->user->country->is_local) {
+            $pickupPoints = [];
+            foreach ($metas as $meta) {
+                array_push($pickupPoints, [
+                    'name' => $meta->product->user->name,
+                    'phone' => $meta->product->user->fullMobile,
+                    'governorate_id' => $meta->product->user->area,
+                    'area_id' => $meta->product->user->localArea ? $meta->product->user->localArea->code : null,
+                    'block' => $meta->product->user->block,
+                    'street' => $meta->product->user->street,
+                    'apartment' => $meta->product->user->appartment,
+                    'unit' => 'Floor :' . $meta->product->user->floor,
+                    'location' => $meta->product->user->address,
+                    'note' => 'Product Name : ' . $meta->product->name . ' - Product SKU : ' . $meta->product->sku,
+                ]);
+            }
+            $url = env('MIRSAL_API_URL');
+            $access_key = env('MIRSAL_ACCESS_KEY');
+            $prog_lang = 'other';
+            $data = [
+                'content' => 'Order Id : ' . $order->id,
+                'cost' => $order->net_price,
+                'payment_method' => $order->payment_method,
+                'default_sender ' => env('APP_NAME'),
+                'receiver_name' => $user->name,
+                'receiver_phone' => $order->mobile,
+                'receiver_governorate' => $user->governate && $user->governate->code ?  $user->governate->code : 'A242',
+                'receiver_area' => $user->areas->first() && $user->areas->first()->code ? $user->areas->first()->code : 'JL244',
+                'receiver_block' => $user->block ? $user->block : '0000',
+                'receiver_street' => $user->street ? $user->street : '0000',
+                'receiver_apartment' => 'Full Address :: ' . $order->address,
+                'receiver_avenue' => '',
+                'receiver_unit' => '',
+                'receiver_floor' => $order->address,
+                'receiver_note' => 'Receiver Address : ' . $order->address . ' - Notes :' . $order->notes,
+                'receiver_location' => $order->user->country->slug,
+                'pickup_date' => Carbon::now()->addHours(5)->format('d/m/Y'),
+                'pickup_time' => Carbon::tomorrow()->addHours(10)->format('h:s a'),
+                'image' => '',
+                'pickup_points' => [
+                    $pickupPoints
+                ],
+            ];
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+            curl_setopt($ch, CURLOPT_POSTFIELDS, ['request_data' => json_encode($data), 'access_key' => $access_key, 'prog_lang' => $prog_lang]);
+            $response = curl_exec($ch);
+            $res = collect(json_decode($response));
+            if ($res['status'] === "201") {
+                $order->update(['shipment_reference' => 'Mirsal - ' . $res['data']->transaction_id]);
+            }
+            curl_close($ch);
+            }
         } catch (\Exception $e) {
             dd($e->getMessage());
             print_r($e->getMessage() . '- Mirsal Error');
@@ -428,7 +411,7 @@ trait OrderTrait
 
     public function orderSuccessAction($reference_id)
     {
-        $order = Order::where(['reference_id' => $reference_id, 'paid' => true])->with('user', 'order_metas.product_attribute')->first();
+        $order = Order::where(['reference_id' => $reference_id, 'paid' => false])->with('user', 'order_metas.product_attribute')->first();
         if ($order) {
             $order->update(['status' => 'success', 'paid' => true]);
             $this->decreaseQty($order);
