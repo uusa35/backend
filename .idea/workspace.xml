@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cb64c074-93f5-49bb-ae42-70edeb58ee75" name="Default Changelist" comment="258">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/usama/tap2/src/Controllers/Tap2PaymentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/tap2/src/Controllers/Tap2PaymentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/usama/tap2/src/Controllers/TapTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/packages/usama/tap2/src/Controllers/TapTrait.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/partials/_sidebar_company.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/partials/_sidebar_company.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1151,7 +1150,7 @@
       <workItem from="1644750679856" duration="1695000" />
       <workItem from="1644822670614" duration="3259000" />
       <workItem from="1644985568705" duration="561000" />
-      <workItem from="1645010254618" duration="31000" />
+      <workItem from="1645010254618" duration="355000" />
     </task>
     <servers />
   </component>
