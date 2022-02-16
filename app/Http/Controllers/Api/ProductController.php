@@ -113,7 +113,7 @@ class ProductController extends Controller
             ]);
             if ($element) {
                 $request->hasFile('image') ? $this->saveMimes($element, $request, ['image'], ['1080', '1440'], true, true) : null;
-                $request->has('images') ? $this->saveGallery($element, $request, 'images', ['1080', '1440'], true, true) : null;
+                $request->has('images') ? $this->saveGallery($element, $request, 'images', ['1080', '1440'], true) : null;
                 $element->categories()->sync($request->categories);
                 return response()->json(new ProductResource($element), 200);
             }
