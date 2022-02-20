@@ -187,7 +187,7 @@ trait UserHelpers
     }
 
     public function getStatisticsAttribute() {
-        $orders =  Order::where(['paid' => true])->whereDate('created_at' ,'<=', Carbon::now())
+        $orders =  Order::where(['paid' => true])->whereDate('created_at' ,'>=', Carbon::now()->firstOfMonth())
             ->with('order_metas.product.product_attributes', 'order_metas.product.user', 'order_metas.product_attribute.size', 'order_metas.product_attribute.color', 'order_metas.service')
             ->whereHas('order_metas.product', function ($q) {
                 return $q->where('user_id', $this->id);
