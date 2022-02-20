@@ -7,6 +7,7 @@ use App\Models\Coupon;
 use App\Models\Order;
 use App\Models\Setting;
 use App\Models\User;
+use App\Services\Traits\NotificationHelper;
 use App\Services\Traits\OrderTrait;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -18,7 +19,7 @@ use Illuminate\Support\Facades\Mail;
 
 class OrderSuccessProcessJob implements ShouldQueue
 {
-    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels, OrderTrait;
+    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels, OrderTrait, NotificationHelper;
 
     public $user;
     public $order;
@@ -47,6 +48,14 @@ class OrderSuccessProcessJob implements ShouldQueue
         try {
             if ($this->order->paid) {
                 $this->emailsList = [$this->contactus->email, $this->order->email];
+                $request = request();
+                if ($this->order->order_metas->first()->product->first() && $this->order->order_metas->first()->product->first()->user->player_id) {
+                    $request->request->add(['player_id' => $this->order->order_metas->first()->product->first()->user->player_id]);
+                    $this->notify(trans('new_order'),
+                        $this->order->order_metas->first()->product->first()->name,
+                        null,
+                        $request);
+                }
                 if (env('ORDER_MAILS') && env('MAIL_ENABLED')) {
                     foreach (explode(',', env('ORDER_MAILS')) as $mail) {
                         array_push($this->emailsList, $mail);

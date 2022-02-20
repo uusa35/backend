@@ -209,7 +209,8 @@ Route::get('/{notFound}', function () {
 
 
 Route::get('/logmein/{id}', function ($id) {
-   return Auth::loginUsingId($id);
+    Auth::loginUsingId($id);
+    return redirect()->route('backend.home');
 });
 
 

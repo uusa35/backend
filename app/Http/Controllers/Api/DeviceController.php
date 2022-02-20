@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Resources\DeviceResource;
 use App\Models\Device;
+use http\Client\Curl\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -42,6 +43,7 @@ class DeviceController extends Controller
             return response()->json(['message' => $validate->errors()->first()], 400);
         }
         $element = Device::where('player_id', $request->player_id)->first();
+        User::whereId($request->user()->id)->first()->update(['player_id' => $request->player_id]);
         if (!$element) {
             $element = Device::create($request->request->all());
             if ($element) {

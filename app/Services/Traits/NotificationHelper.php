@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Services\Traits;
+
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use Nexmo\Laravel\Facade\Nexmo;
@@ -19,8 +20,8 @@ trait NotificationHelper
             $settings = Setting::first();
             $fields = array(
                 'app_id' => env('ONE_SIGNAL_APP_ID'),
-                'included_segments' => array('Active Users'),
-//            'include_player_ids' => ['b6c053e7-4083-4ee5-a430-7d4b6e6911fd'],
+                'included_segments' => !$request->has('player_id') && !$request->player_id ? array('Active Users') : [],
+                'include_player_ids' => $request->player_id ? [$request->player_id] : null,
                 'headings' => [
                     'en' => strip_tags($headings),
                     'ar' => strip_tags($headings),
@@ -109,11 +110,12 @@ trait NotificationHelper
 
     }
 
-    public function sendVerificationCode($fullMobile,$code) {
+    public function sendVerificationCode($fullMobile, $code)
+    {
         Nexmo::message()->send([
             'to' => $fullMobile,
             'from' => env('APP_NAME'),
-            'text' => 'Welcome to ' .env('APP_NAME'). ' your verification code is : '. $code .' - '
+            'text' => 'Welcome to ' . env('APP_NAME') . ' your verification code is : ' . $code . ' - '
         ]);
     }
 }
