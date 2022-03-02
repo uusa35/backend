@@ -248,7 +248,7 @@ trait HomePageTrait
             return $q->where(['is_user' => true])->active()->onHome()->with(['children' => function ($q) {
                 return $q->where(['is_user' => true])->active()->onHome();
             }]);
-        }])->orderBy('order', 'desc')->get();
+        }])->orderBy('order', 'asc')->get();
         $homeCategoriesMarket = Category::where(['is_market' => true])->active()->onlyParent()->onHome()->with(['children' => function ($q) {
             return $q->where(['is_market' => true])->active()->onHome()->with(['children' => function ($q) {
                 return $q->where(['is_market' => true])->active()->onHome();
