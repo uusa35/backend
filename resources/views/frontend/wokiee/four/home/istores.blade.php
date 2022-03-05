@@ -2,7 +2,7 @@
 
 @section('body')
     @include('frontend.wokiee.four.partials.slider')
-{{--    @include('frontend.wokiee.four.partials._all_brands', ['elements' => $brands])--}}
+    {{--    @include('frontend.wokiee.four.partials._all_brands', ['elements' => $brands])--}}
 
     {{--    @include('frontend.wokiee.four.partials.category._categories_slider_full_width', ['title' => trans('general.categories'), 'elements' => $homeCategoriesProduct])--}}
     {{--    @include('frontend.wokiee.four.partials.category._categories_slider_full_width', ['title' => trans('general.company_categories'), 'elements' => $categoriesHome])--}}

@@ -25,7 +25,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $query = Product::query()->active()->hasStock()->available()->hasImage()->hasAtLeastOneCategory()->activeUsers()->serveCountries();
+        $query = Product::query()->active()->hasStock()->hasImage()->hasAtLeastOneCategory()->activeUsers()->serveCountries();
         if (request()->has('on_home') && request()->on_home) {
             $query->onHome();
         }
@@ -38,7 +38,7 @@ class ProductController extends Controller
         if (request()->has('best_sale') && request()->best_sale) {
 //            $query->bestSalesProducts();
 //            $elements = Product::whereIn('id', Product::active()->available()->hasImage()->serveCountries()->hasStock()->bestSalesProducts())->hasAtLeastOneCategory()->with('brand', 'product_attributes', 'colors', 'sizes', 'color', 'size', 'images', 'favorites', 'user.country')->limit(self::TAKE_LESS)->orderBy('id', 'desc')->get();
-            $query->whereIn('id', Product::active()->available()->hasImage()->serveCountries()->hasStock()->activeUsers()->bestSalesProducts())->hasAtLeastOneCategory()->with('brand', 'product_attributes', 'colors', 'sizes', 'color', 'size', 'images', 'favorites', 'user.country')->limit(self::TAKE_LESS)->orderBy('id', 'desc');
+            $query->whereIn('id', Product::active()->hasImage()->serveCountries()->hasStock()->activeUsers()->bestSalesProducts())->hasAtLeastOneCategory()->with('brand', 'product_attributes', 'colors', 'sizes', 'color', 'size', 'images', 'favorites', 'user.country')->limit(self::TAKE_LESS)->orderBy('id', 'desc');
         }
         if (request()->has('hot_deals') && request()->hot_deals) {
             $query->onSale()->hotDeals();
@@ -55,7 +55,7 @@ class ProductController extends Controller
         if ($validator->fails()) {
             return response()->json(['message' => $validator->errors()->first()], 400);
         }
-        $elements = Product::active()->hasImage()->available()->hasStock()->hasAtLeastOneCategory()->activeUsers()->filters($filters)->orderBy('id', 'desc')->paginate(Self::TAKE_MIN);
+        $elements = Product::active()->hasImage()->hasStock()->hasAtLeastOneCategory()->activeUsers()->filters($filters)->orderBy('id', 'desc')->paginate(Self::TAKE_MIN);
         if (!$elements->isEmpty()) {
             return response()->json(ProductExtraLightResource::collection($elements), 200);
         } else {
