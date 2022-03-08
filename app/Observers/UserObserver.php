@@ -62,9 +62,9 @@ class UserObserver
      */
     public function updated(User $element)
     {
-        activity()->performedOn($element)
-            ->causedBy(auth()->user())
-            ->log(strtoupper(class_basename($element)) . ' ' . __FUNCTION__);
+//        activity()->performedOn($element)
+//            ->causedBy(auth()->user())
+//            ->log(strtoupper(class_basename($element)) . ' ' . __FUNCTION__);
         $address = Address::where(['user_id' => $element->id, 'name' => 'address_one'])->first();
         if ($address) {
             $address->update([

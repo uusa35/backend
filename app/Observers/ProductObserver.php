@@ -29,10 +29,10 @@ class ProductObserver
      */
     public function updated(Product $product)
     {
-        activity()
-            ->performedOn($product)
-            ->causedBy(auth()->user())
-            ->log(strtoupper(class_basename($product)) . ' ' . __FUNCTION__);
+//        activity()
+//            ->performedOn($product)
+//            ->causedBy(auth()->user())
+//            ->log(strtoupper(class_basename($product)) . ' ' . __FUNCTION__);
     }
 
     /**
