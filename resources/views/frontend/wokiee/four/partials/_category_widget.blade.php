@@ -16,6 +16,10 @@
                 <a href="{{ route('frontend.service.search', ['service_category_id' => $element->id]) }}">
                     @include('frontend.wokiee.four.partials._widget_tags_and_images')
                 </a>
+            @elseif($type === 'user')
+                <a href="{{ route('frontend.user.search', ['user_category_id' => $element->id]) }}">
+                    @include('frontend.wokiee.four.partials._widget_tags_and_images')
+                </a>
             @else
                 <a href="{{ route('frontend.product.search', ['product_category_id' => $element->id]) }}">
                     @include('frontend.wokiee.four.partials._widget_tags_and_images')
