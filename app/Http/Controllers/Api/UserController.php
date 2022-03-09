@@ -114,11 +114,11 @@ class UserController extends Controller
                 }, '>', 0);
             }])
             ->with(['products' => function ($q) {
-                return $q->active()->hasImage()->hasStock()->hasAtLeastOneCategory()->with(['categories' => function ($q) {
+                return $q->active()->hasImage()->hasStock()->with(['categories' => function ($q) {
                     return $q->active();
                 }]);
             }])->with(['productGroup' => function ($q) {
-                return $q->active()->hasImage()->hasStock()->hasAtLeastOneCategory()->with(['categories' => function ($q) {
+                return $q->active()->hasImage()->hasStock()->with(['categories' => function ($q) {
                     return $q->active();
                 }]);
             }])
