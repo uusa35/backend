@@ -24,7 +24,7 @@
                                             <div class="row">
                                                 <div class="col-12">
                                                     <div class="row tt-col-list">
-                                                        @foreach($cat->children as $sub)
+                                                        @foreach($cat->children->where('on_home', true) as $sub)
                                                             <div class="col-sm-4">
                                                                 <a class="tt-title-submenu"
                                                                    href="{{ route('frontend.product.search',['product_category_id' => $sub->id]) }}">
@@ -32,7 +32,7 @@
                                                                 </a>
                                                                 @if($sub->children->isNotEmpty())
                                                                     <ul class="tt-megamenu-submenu">
-                                                                        @foreach($sub->children as $child)
+                                                                        @foreach($sub->children->where('on_home', true) as $child)
                                                                             <li>
                                                                                 <a href="{{ route('frontend.product.search',['product_category_id' => $child->id]) }}">
                                                                                     {{ $child->name }}
