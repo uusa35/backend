@@ -21,8 +21,12 @@
                                                     allowfullscreen></iframe>
                                         @else
                                             <img src="{{ $s->imageLargeLink }}" alt="{{ $s->title }}"
-                                                 data-bgposition="top center" data-bgfit="cover"
-                                                 data-bgrepeat="no-repeat">
+                                                 data-bgposition="top center" data-bgfit="contain"
+                                                 data-bgrepeat="no-repeat"
+                                                 @mobile
+                                                 style="max-height: 233px"
+                                                 @endmobile
+                                            >
                                         @endif
                                         <div class="tp-caption tp-caption1 lft stb"
                                              data-x="center"
