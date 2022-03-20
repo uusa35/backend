@@ -2,7 +2,11 @@
     <div class="container-indent nomargin">
         <div class="container-fluid">
             <div class="row">
-                <div class="slider-revolution revolution-default">
+                <div class="slider-revolution revolution-default"
+                     @mobile
+                     style="max-height: 233px"
+                     @endmobile
+                >
                     <div class="tp-banner-container">
                         <div class="tp-banner revolution">
                             <ul>
@@ -23,9 +27,6 @@
                                             <img src="{{ $s->imageLargeLink }}" alt="{{ $s->title }}"
                                                  data-bgposition="top center" data-bgfit="contain"
                                                  data-bgrepeat="no-repeat"
-                                                 @mobile
-                                                 style="max-height: 233px"
-                                                 @endmobile
                                             >
                                         @endif
                                         <div class="tp-caption tp-caption1 lft stb"
