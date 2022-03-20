@@ -296,7 +296,7 @@
                                             <div class="col-lg-4 col-md-6">
                                                 <div class="form-group">
                                                     <label for="single"
-                                                           class="control-label">{{ trans('general.color') }}
+                                                           class="control-label">{{ trans('general.color') }}*
                                                     </label>
                                                     <select id="color_id" name="color_id"
                                                             class="form-control tooltips" data-container="body"
@@ -318,7 +318,7 @@
                                             <div class="col-lg-4 col-md-6">
                                                 <div class="form-group">
                                                     <label for="size_id"
-                                                           class="control-label">{{ trans('general.size_or_weight') }}
+                                                           class="control-label">{{ trans('general.size_or_weight') }}*
                                                     </label>
                                                     <select id="size_id" name="size_id"
                                                             class="form-control tooltips" data-container="body"
@@ -337,7 +337,7 @@
                                                 <div
                                                     class="form-group{{ $errors->has('quantity') ? ' has-error' : '' }}">
                                                     <label for="quantity"
-                                                           class="control-label">{{ trans('general.quantity') }}
+                                                           class="control-label">{{ trans('general.quantity') }}*
                                                     </label>
                                                     <input id="quantity" type="text"
                                                            class="form-control tooltips"
