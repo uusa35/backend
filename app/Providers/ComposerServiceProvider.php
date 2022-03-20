@@ -145,10 +145,6 @@ class ComposerServiceProvider extends ServiceProvider
             'auth.register',
         ], 'App\Services\ViewComposers@getActiveVisibleRoles');
 
-        view()->composer([
-            'frontend.wokiee.four.partials.footer'], 'App\Services\ViewComposers@getFaqs');
-
-
     }
 
     /**

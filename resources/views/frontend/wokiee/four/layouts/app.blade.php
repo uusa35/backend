@@ -34,7 +34,11 @@
 
 @section('footer')
     @if(!env('MOBILE_LAYOUT'))
-        @include('frontend.wokiee.four.partials.footer')
+        @if(env("ISTORES"))
+            @include('frontend.wokiee.four.partials.footer-istores')
+        @else
+            @include('frontend.wokiee.four.partials.footer')
+        @endif
     @endif
 @show
 @if(!env('MOBILE_LAYOUT'))

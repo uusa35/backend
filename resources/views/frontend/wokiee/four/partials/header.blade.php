@@ -1,5 +1,11 @@
 <header>
-@include('frontend.wokiee.four.partials._top_bar')
+    @if(env('ISTORES'))
+        @desktop
+        @include('frontend.wokiee.four.partials._top_bar')
+        @enddesktop
+@else
+    @include('frontend.wokiee.four.partials._top_bar')
+@endif
 
 {{--    @include('frontend.wokiee.four.partials._mobile_categories_menu')--}}
 

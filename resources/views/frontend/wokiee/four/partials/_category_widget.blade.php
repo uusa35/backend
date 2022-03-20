@@ -27,5 +27,7 @@
             @endif
         @endif
     </div>
-    @include('frontend.wokiee.four.partials._category_widget_description')
+    @if(!env('ISTORES'))
+        @include('frontend.wokiee.four.partials._category_widget_description')
+    @endif
 </div>

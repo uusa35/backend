@@ -1,6 +1,19 @@
 <!-- tt-mobile-header -->
 <div class="tt-mobile-header">
     <div class="container-fluid">
+        @if(env('ISTORES'))
+            <div class="container-fluid tt-top-line pt-5">
+                <div class="row">
+                    <div class="tt-logo-container">
+                        <!-- mobile logo -->
+                        <a class="tt-logo tt-logo-alignment" href="{{ route('frontend.home') }}">
+                            <img class="text-center" src="{{ $settings->logoThumb }}" alt="{{ $settings->description }}">
+                        </a>
+                        <!-- /mobile logo -->
+                    </div>
+                </div>
+            </div>
+        @endif
         <div class="header-tel-info">
             {{--<i class="icon-f-93"></i> 777 2345 7885; +777 2345 7886--}}
             @mobile
@@ -15,14 +28,14 @@
                     <i class="icon-03"></i>
                 </div>
             </div>
-            {{--<div class="tt-mobile-parent-menu-categories tt-parent-box">--}}
-                {{--<button class="tt-categories-toggle">--}}
-                    {{--<i class="icon-categories"></i>--}}
-                {{--</button>--}}
-            {{--</div>--}}
-            <!-- search -->
-            {{--<div class="tt-mobile-parent-search tt-parent-box"></div>--}}
-            <!-- /search -->
+        {{--<div class="tt-mobile-parent-menu-categories tt-parent-box">--}}
+        {{--<button class="tt-categories-toggle">--}}
+        {{--<i class="icon-categories"></i>--}}
+        {{--</button>--}}
+        {{--</div>--}}
+        <!-- search -->
+        {{--<div class="tt-mobile-parent-search tt-parent-box"></div>--}}
+        <!-- /search -->
             <!-- cart -->
             <div class="tt-mobile-parent-cart tt-parent-box"></div>
             <!-- /cart -->
@@ -34,16 +47,18 @@
             <!-- /currency -->
         </div>
     </div>
-    <div class="container-fluid tt-top-line">
-        <div class="row">
-            <div class="tt-logo-container">
-                <!-- mobile logo -->
-                <a class="tt-logo tt-logo-alignment" href="{{ route('frontend.home') }}">
-                    <img class="text-center" src="{{ $settings->logoThumb }}" alt="{{ $settings->description }}">
-                </a>
-                <!-- /mobile logo -->
+    @if(!env('ISTORES'))
+        <div class="container-fluid tt-top-line">
+            <div class="row">
+                <div class="tt-logo-container">
+                    <!-- mobile logo -->
+                    <a class="tt-logo tt-logo-alignment" href="{{ route('frontend.home') }}">
+                        <img class="text-center" src="{{ $settings->logoThumb }}" alt="{{ $settings->description }}">
+                    </a>
+                    <!-- /mobile logo -->
+                </div>
             </div>
         </div>
-    </div>
+    @endif
 </div>
 <!-- tt-desktop-header -->
