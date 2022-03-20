@@ -144,7 +144,7 @@
             @foreach($categories->where('is_product',true)->where('is_parent', true)->where('on_home', true)->take(env('ENABLE_NAV_CATEGORY') ? 4 : 6) as $cat)
                 <li class="dropdown megamenu">
                     <a href="{{ route('frontend.product.search',['product_category_id' => $cat->id]) }}">{{ str_limit($cat->name,15,'') }}</a>
-                    @if($cat->children->isNotEmpty())
+                    @if($cat->children->where('on_home',true)->isNotEmpty())
                         <div class="dropdown-menu">
                             <div class="row">
                                 <div class="col-sm-9">
@@ -161,7 +161,7 @@
                                                              alt="{{ $sub->name }}">
                                                     @endif
                                                 </a>
-                                                @if($sub->children->isNotEmpty())
+                                                @if($sub->children->where('on_home',true)->isNotEmpty())
                                                     <ul class="tt-megamenu-submenu">
                                                         @foreach($sub->children->where('on_home', true) as $child)
                                                             <li>

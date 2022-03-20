@@ -18,7 +18,7 @@
                                     @endif
                                     <span>{{ str_limit($cat->name,15,'') }}</span>
                                 </a>
-                                @if($cat->children->isNotEmpty())
+                                @if($cat->children->where('on_home', true)->isNotEmpty())
                                     <div class="dropdown-menu size-md">
                                         <div class="dropdown-menu-wrapper">
                                             <div class="row">
@@ -30,7 +30,7 @@
                                                                    href="{{ route('frontend.product.search',['product_category_id' => $sub->id]) }}">
                                                                     {{ $sub->name }}
                                                                 </a>
-                                                                @if($sub->children->isNotEmpty())
+                                                                @if($sub->children->where('on_home', true)->isNotEmpty())
                                                                     <ul class="tt-megamenu-submenu">
                                                                         @foreach($sub->children->where('on_home', true) as $child)
                                                                             <li>
