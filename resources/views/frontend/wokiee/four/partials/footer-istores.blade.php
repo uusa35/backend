@@ -37,6 +37,104 @@
     <div class="tt-footer-col ">
         <div class="container">
             <div class="row">
+{{--                 store icons --}}
+                @if($settings->apple || $settings->android)
+                    <div class="col-md-6 col-lg-2 col-xl-3">
+                        <div class="tt-mobile-collapse">
+                            <h4 class="tt-collapse-title">
+                                {{ trans('general.find_us_on_stores') }}
+                            </h4>
+                            <div class="tt-collapse-content text-center">
+                                <ul class="tt-list">
+                                    @if($settings->apple)
+                                        <li>
+                                            <a href="{{ url($settings->apple) }}">
+                                                <img src="{{ asset('images/apple.png') }}"
+                                                     alt="{{ $settings->company }}"
+                                                     class="img-responsive" style="max-width: 150px;">
+                                            </a>
+                                        </li>
+                                    @endif
+                                    @if($settings->android)
+                                        <li>
+                                            <a href="{{ url($settings->android) }}">
+                                                <img src="{{ asset('images/android.png') }}"
+                                                     alt="{{ $settings->company }}"
+                                                     class="img-responsive" style="max-width: 150px;">
+                                            </a>
+                                        </li>
+                                    @endif
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                @endif
+                {{--                 pages --}}
+                <div class="col-md-6 col-lg-2 col-xl-3">
+                    <div class="tt-mobile-collapse">
+                        <h4 class="tt-collapse-title">
+                            {{ trans('general.pages') }}
+                        </h4>
+                        <div class="tt-collapse-content">
+                            <ul class="tt-list">
+                                @foreach($pages->where('on_footer', true) as $page)
+                                    <li>
+                                        <a href="{{ $page->url ? $page->url : route('frontend.page.show.name',['id' => $page->id ,'name' => $page->title]) }} }}">{{ $page->slug }}</a>
+                                    </li>
+                                @endforeach
+                                <li><a href="{{ route('frontend.faq.index') }}">{{ trans('general.faqs') }}</a></li>
+                                @if($settings->terms && strlen($settings->terms) > 100)
+                                    <li>
+                                        <a href="{{ route('frontend.terms') }}">{{ trans('general.terms_and_conditions') }}</a>
+                                    </li>
+                                @endif
+                                @if($settings->policy && strlen($settings->policy) > 100)
+                                    <li>
+                                        <a href="{{ route('frontend.policy') }}">{{ trans('general.company_policy') }}</a>
+                                    </li>
+                                @endif
+                                @guest
+                                    @if(!env("ISTORES"))
+                                        <li><a href="{{ route('register') }}">{{ trans('general.register') }}</a>
+                                        </li>
+                                    @endif
+                                @endguest
+                                @auth
+                                    @if(!auth()->user()->isClient)
+                                        <li><a href="{{ route('backend.home') }}">
+                                                {{ trans('general.control_panel') }}
+                                            </a>
+                                        </li>
+                                    @endif
+                                    <li><a href="{{ route('frontend.order.index') }}">
+                                            {{ trans('general.history_orders') }}
+                                        </a>
+                                    </li>
+                                    @if(env('ENABLE_FAV'))
+                                        <li><a href="{{ route('frontend.favorite.index') }}">
+                                                {{ trans('general.wish_list') }}
+                                            </a>
+                                        </li>
+                                    @endif
+                                    <li>
+                                        <a href="{{ url('/logout') }}" class="dropdown-toggle"
+                                           onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                            {{ trans('general.sign_out') }}
+                                        </a>
+                                    </li>
+                                @endauth
+                            </ul>
+                            <h4 class="tt-collapse-title pt-3">
+                                {{ trans("general.about_us") }}
+                            </h4>
+                            <div class="tt-collapse-content">
+                                <p>
+                                    {!! trans('message.footer_about_us')  !!}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 {{--                     contact us--}}
                 <div class="col-md-6 col-lg-2 col-xl-3">
                     <div class="tt-newsletter">
@@ -82,110 +180,10 @@
                                             @endif
                                         </p>
                                 </address>
-                                @if($settings->apple || $settings->android)
-                                    <ul class="tt-list pt-2">
-                                        <h4 class="tt-collapse-title">
-                                            {{ trans('general.find_us_on_stores') }}
-                                        </h4>
-                                        @if($settings->apple)
-                                            <li>
-                                                <a href="{{ url($settings->apple) }}">
-                                                    <img src="{{ asset('images/apple.png') }}"
-                                                         alt="{{ $settings->company }}"
-                                                         class="img-responsive" style="max-width: 150px;">
-                                                </a>
-                                            </li>
-                                        @endif
-                                        @if($settings->android)
-                                            <li>
-                                                <a href="{{ url($settings->android) }}">
-                                                    <img src="{{ asset('images/android.png') }}"
-                                                         alt="{{ $settings->company }}"
-                                                         class="img-responsive" style="max-width: 150px;">
-                                                </a>
-                                            </li>
-                                        @endif
-                                    </ul>
-                                @endif
                             </div>
                         </div>
                     </div>
 
-                </div>
-                {{--                 aboutus --}}
-                @if(trans()->has('message.footer_about_us'))
-                    <div class="col-md-6 col-lg-2 col-xl-3">
-                        <div class="tt-mobile-collapse">
-                            <h4 class="tt-collapse-title">
-                                {{ trans("general.about_us") }}
-                            </h4>
-                            <div class="tt-collapse-content">
-                                <p>
-                                    {!! trans('message.footer_about_us')  !!}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                @endif
-                {{--                 pages --}}
-                <div class="col-md-6 col-lg-2 col-xl-3">
-                    <div class="tt-mobile-collapse">
-                        <h4 class="tt-collapse-title">
-                            {{ trans('general.pages') }}
-                        </h4>
-                        <div class="tt-collapse-content">
-                            <ul class="tt-list">
-                                @foreach($pages->where('on_footer', true) as $page)
-                                    <li>
-                                        <a href="{{ $page->url ? $page->url : route('frontend.page.show.name',['id' => $page->id ,'name' => $page->title]) }} }}">{{ $page->slug }}</a>
-                                    </li>
-                                @endforeach
-                                <li><a href="{{ route('frontend.faq.index') }}">{{ trans('general.faqs') }}</a></li>
-                                @if($settings->terms && strlen($settings->terms) > 100)
-                                    <li>
-                                        <a href="{{ route('frontend.terms') }}">{{ trans('general.terms_and_conditions') }}</a>
-                                    </li>
-                                @endif
-                                @if($settings->policy && strlen($settings->policy) > 100)
-                                    <li>
-                                        <a href="{{ route('frontend.policy') }}">{{ trans('general.company_policy') }}</a>
-                                    </li>
-                                @endif
-                                @guest
-                                    @if(env("ISTORES"))
-                                        <li><a href="{{ route('register') }}">{{ trans('general.joinus') }}</a></li>
-                                    @else
-                                        <li><a href="{{ route('register') }}">{{ trans('general.register') }}</a>
-                                        </li>
-                                    @endif
-                                @endguest
-                                @auth
-                                    @if(!auth()->user()->isClient)
-                                        <li><a href="{{ route('backend.home') }}">
-                                                {{ trans('general.control_panel') }}
-                                            </a>
-                                        </li>
-                                    @endif
-                                    <li><a href="{{ route('frontend.order.index') }}">
-                                            {{ trans('general.history_orders') }}
-                                        </a>
-                                    </li>
-                                    @if(env('ENABLE_FAV'))
-                                        <li><a href="{{ route('frontend.favorite.index') }}">
-                                                {{ trans('general.wish_list') }}
-                                            </a>
-                                        </li>
-                                    @endif
-                                    <li>
-                                        <a href="{{ url('/logout') }}" class="dropdown-toggle"
-                                           onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                                            {{ trans('general.sign_out') }}
-                                        </a>
-                                    </li>
-                                @endauth
-                            </ul>
-                        </div>
-                    </div>
                 </div>
                 {{--                 join us --}}
                 <div class="col-md-6 col-lg-2 col-xl-3">
@@ -198,6 +196,7 @@
                                 @guest
                                     @if(env("ISTORES"))
                                         <li><a href="{{ route('register') }}">{{ trans('general.joinus') }}</a></li>
+                                        <li><a href="{{ route('login') }}">{{ trans('general.login') }}</a></li>
                                     @else
                                         <li><a href="{{ route('register') }}">{{ trans('general.register') }}</a>
                                         </li>

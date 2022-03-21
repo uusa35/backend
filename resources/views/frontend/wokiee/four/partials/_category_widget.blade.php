@@ -19,6 +19,9 @@
             @elseif($type === 'user')
                 <a href="{{ route('frontend.user.search', ['user_category_id' => $element->id]) }}">
                     @include('frontend.wokiee.four.partials._widget_tags_and_images')
+                    <div class="title pt-2">
+                        <h5>{{ $element->name }}</h5>
+                    </div>
                 </a>
             @else
                 <a href="{{ route('frontend.product.search', ['product_category_id' => $element->id]) }}">
@@ -28,6 +31,6 @@
         @endif
     </div>
     @if(!env('ISTORES'))
-        @include('frontend.wokiee.four.partials._category_widget_description')
+        @include('frontend.wokiee.four.partials._category_widget_description', ['type' => $type])
     @endif
 </div>

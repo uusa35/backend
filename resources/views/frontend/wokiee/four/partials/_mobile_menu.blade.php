@@ -17,7 +17,8 @@
                                                     <li>
                                                         <a href="{{ route('frontend.service.search',['service_category_id' => $sub->id]) }}">{{ $sub->name }}
                                                             @if($sub->on_new)
-                                                                <span class="tt-badge tt-fatured">{{ trans('general.new') }}</span>
+                                                                <span
+                                                                    class="tt-badge tt-fatured">{{ trans('general.new') }}</span>
                                                             @endif
                                                         </a>
                                                     </li>
@@ -45,7 +46,8 @@
                                                     <li>
                                                         <a href="{{ route('frontend.product.search',['product_category_id' => $child->id]) }}">{{ $child->name }}
                                                             @if($child->on_new)
-                                                                <span class="tt-badge tt-fatured">{{ trans('general.new') }}</span>
+                                                                <span
+                                                                    class="tt-badge tt-fatured">{{ trans('general.new') }}</span>
                                                             @endif
                                                         </a>
                                                     </li>
@@ -73,7 +75,8 @@
                                                     <li>
                                                         <a href="{{ route('frontend.product.search',['product_category_id' => $child->id]) }}">{{ $child->name }}
                                                             @if($child->on_new)
-                                                                <span class="tt-badge tt-fatured">{{ trans('general.new') }}</span>
+                                                                <span
+                                                                    class="tt-badge tt-fatured">{{ trans('general.new') }}</span>
                                                             @endif
                                                         </a>
                                                     </li>
@@ -105,6 +108,11 @@
                 @endforeach
             </li>
         @endif
+        @guest
+            <li>
+                <a href="{{ route('login') }}">{{ trans('general.login') }}</a>
+            </li>
+        @endguest
         @if(env('ENABLE_LANG_SWITCH'))
             <li><a href="{{ route('frontend.language.change',['locale' => 'ar']) }}">{{ trans('general.arabic') }}</a>
             </li>
