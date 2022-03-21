@@ -59,12 +59,6 @@
                         <a href="{{ route('frontend.user.show.name', ['id' => $element->id, 'name' => $element->name]) }}"
                            class="btn btn-small">{{ trans('general.view_details') }}</a>
                     </div>
-                    @if($element->surveys->isNotEmpty() && auth()->check())
-                        <div class="tt-row-btn">
-                            <a href="{{ route('frontend.survey.show',[$element->surveys->first()->id,'user_id' => $element->id]) }}"
-                               class="btn btn-small">{{ trans('general.make_collection_order') }}</a>
-                        </div>
-                    @endif
                 @else
                     <div class="tt-row-btn">
                         <a href="{{ route('frontend.user.show.name', ['id' => $element->id, 'name' => $element->name]) }}"
