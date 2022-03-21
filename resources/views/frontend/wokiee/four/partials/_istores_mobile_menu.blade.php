@@ -33,7 +33,7 @@
                 @endforeach
             @else
                 @foreach($categories->where('is_user',true)->where('is_parent', true)->where('on_home', true) as $cat)
-                    @if($cat->children->isNotEmpty())
+                    @if($cat->children->where('on_home', true)->isNotEmpty())
                         <li>
                             <a href="{{ route('frontend.user.search',['user_category_id' => $cat->id]) }}">{{ $cat->name }}</a>
                             <ul>
