@@ -42,7 +42,7 @@
                                         <a href="{{ route('frontend.user.search',['user_category_id' => $sub->id]) }}">{{ $sub->name }}</a>
                                         @if($sub->children->isNotEmpty())
                                             <ul>
-                                                @foreach($sub->children as $child)
+                                                @foreach($sub->children->where('on_home', true) as $child)
                                                     <li>
                                                         <a href="{{ route('frontend.user.search',['user_category_id' => $child->id]) }}">{{ $child->name }}
                                                             @if($child->on_new)
