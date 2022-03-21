@@ -8,8 +8,11 @@
 @endif
 
 {{--    @include('frontend.wokiee.four.partials._mobile_categories_menu')--}}
-
-@include('frontend.wokiee.four.partials._mobile_menu')
+@if(env("ISTORES"))
+    @include('frontend.wokiee.four.partials._istores_mobile_menu')
+@else
+    @include('frontend.wokiee.four.partials._mobile_menu')
+@endif
 
 @include('frontend.wokiee.four.partials._mobile_header')
 

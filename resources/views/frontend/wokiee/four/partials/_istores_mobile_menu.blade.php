@@ -32,19 +32,19 @@
                     </li>
                 @endforeach
             @else
-                @foreach($categories->where('is_product',true)->where('is_parent', true)->where('on_home', true) as $cat)
+                @foreach($categories->where('is_user',true)->where('is_parent', true)->where('on_home', true) as $cat)
                     @if($cat->children->isNotEmpty())
                         <li>
-                            <a href="{{ route('frontend.product.search',['product_category_id' => $cat->id]) }}">{{ $cat->name }}</a>
+                            <a href="{{ route('frontend.user.search',['user_category_id' => $cat->id]) }}">{{ $cat->name }}</a>
                             <ul>
                                 @foreach($cat->children as $sub)
                                     <li>
-                                        <a href="{{ route('frontend.product.search',['product_category_id' => $sub->id]) }}">{{ $sub->name }}</a>
+                                        <a href="{{ route('frontend.user.search',['user_category_id' => $sub->id]) }}">{{ $sub->name }}</a>
                                         @if($sub->children->isNotEmpty())
                                             <ul>
                                                 @foreach($sub->children as $child)
                                                     <li>
-                                                        <a href="{{ route('frontend.product.search',['product_category_id' => $child->id]) }}">{{ $child->name }}
+                                                        <a href="{{ route('frontend.user.search',['user_category_id' => $child->id]) }}">{{ $child->name }}
                                                             @if($child->on_new)
                                                                 <span
                                                                     class="tt-badge tt-fatured">{{ trans('general.new') }}</span>
@@ -60,7 +60,7 @@
                         </li>
                     @else
                         <li>
-                            <a href="{{ route('frontend.product.search',['product_category_id' => $cat->id]) }}">{{ $cat->name }}</a>
+                            <a href="{{ route('frontend.user.search',['user_category_id' => $cat->id]) }}">{{ $cat->name }}</a>
                         </li>
                     @endif
                 @endforeach

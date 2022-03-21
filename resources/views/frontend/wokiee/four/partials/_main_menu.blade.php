@@ -10,7 +10,11 @@
 
     <div class="container small-header">
         <div class="tt-header-holder">
-            @include('frontend.wokiee.four.partials._main_menu_categories')
+            @if(env("ISTORES"))
+                @include('frontend.wokiee.four.partials._main_menu_user_categories')
+            @else
+                @include('frontend.wokiee.four.partials._main_menu_product_categories')
+            @endif
             <div class="tt-col-obj tt-obj-menu">
                 <!-- tt-menu -->
                 <div class="tt-desctop-parent-menu tt-parent-box">
@@ -20,7 +24,11 @@
                                 <li class="dropdown tt-megamenu-col-02 selected">
                                     <a href="{{ route('frontend.home') }}">{{ trans('general.home_page') }}</a>
                                 </li>
-                                @include('frontend.wokiee.four.partials._categories_main_menu_element_with_images')
+                                @if(env("ISTORES"))
+                                    @include('frontend.wokiee.four.partials._user_categories_main_menu_element_with_images')
+                                @else
+                                    @include('frontend.wokiee.four.partials._product_categories_main_menu_element_with_images')
+                                @endif
                                 @include('frontend.wokiee.four.partials._pages_main_menu')
                                 @if(env('ENABLE_BLOG'))
                                     <li class="dropdown tt-megamenu-col-02 selected">
