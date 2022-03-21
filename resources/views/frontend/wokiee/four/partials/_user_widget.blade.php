@@ -40,7 +40,7 @@
                 {{--@include('frontend.wokiee.four.partials._rating')--}}
             </div>
             <h2 class="tt-title">
-                <a href="{{ route('frontend.user.show.name', ['id' => $element->id,'name' => $element->name]) }}">{{ str_limit($element->description,40,'...') }}</a>
+                <a href="{{ route('frontend.user.show.name', ['id' => $element->id,'name' => $element->name]) }}">{{ str_limit($element->description,30,'...') }}</a>
                 {{--                @if($element->isDesigner)--}}
                 {{--                    <a href="{{ route('frontend.product.search', ['designer_id' => $element->id]) }}">{{ str_limit($element->description,100,'...') }}</a>--}}
                 {{--                @else--}}
