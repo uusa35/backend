@@ -93,36 +93,6 @@
                                         <a href="{{ route('frontend.policy') }}">{{ trans('general.company_policy') }}</a>
                                     </li>
                                 @endif
-                                @guest
-                                    @if(!env("ISTORES"))
-                                        <li><a href="{{ route('register') }}">{{ trans('general.register') }}</a>
-                                        </li>
-                                    @endif
-                                @endguest
-                                @auth
-                                    @if(!auth()->user()->isClient)
-                                        <li><a href="{{ route('backend.home') }}">
-                                                {{ trans('general.control_panel') }}
-                                            </a>
-                                        </li>
-                                    @endif
-                                    <li><a href="{{ route('frontend.order.index') }}">
-                                            {{ trans('general.history_orders') }}
-                                        </a>
-                                    </li>
-                                    @if(env('ENABLE_FAV'))
-                                        <li><a href="{{ route('frontend.favorite.index') }}">
-                                                {{ trans('general.wish_list') }}
-                                            </a>
-                                        </li>
-                                    @endif
-                                    <li>
-                                        <a href="{{ url('/logout') }}" class="dropdown-toggle"
-                                           onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                                            {{ trans('general.sign_out') }}
-                                        </a>
-                                    </li>
-                                @endauth
                             </ul>
                             <h4 class="tt-collapse-title pt-3">
                                 {{ trans("general.about_us") }}
