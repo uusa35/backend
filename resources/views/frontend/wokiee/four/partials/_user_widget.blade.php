@@ -1,5 +1,5 @@
 @if($element)
-    <div class="tt-product thumbprod-center" style="padding: 10px;">
+    <div class="tt-product thumbprod-center p-3">
         <div class="tt-image-box">
             {{--<a href="#" class="tt-btn-quickview" data-toggle="modal"--}}
             {{--data-target="#ModalquickView"--}}

@@ -19,11 +19,13 @@
                         <div class="content-indent">
                             </br>
                             {{--                            @include('frontend.wokiee.four.partials._search_sort_by')--}}
-                            <div class="tt-product-listing row">
+                            <div class="tt-product-listing">
                                 @if(isset($elements) && $elements->isNotEmpty())
                                     <div class="row">
+
+
                                         @foreach($elements as $user)
-                                            <div class="col-lg-4 col-md-6 col-xs-6 col-sm-6 tt-col-item">
+                                            <div class="col-lg-4 col-md-6 col-sm-6 col-6">
                                                 @include('frontend.wokiee.four.partials._user_widget',['element' => $user])
                                             </div>
                                         @endforeach

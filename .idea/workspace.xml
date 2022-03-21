@@ -7,6 +7,7 @@
     <list default="true" id="cb64c074-93f5-49bb-ae42-70edeb58ee75" name="Default Changelist" comment="258">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/user/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/modules/user/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_products_user_show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_products_user_show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_user_widget.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_user_widget.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -1169,7 +1170,7 @@
       <workItem from="1647876414111" duration="1131000" />
       <workItem from="1647877654398" duration="333000" />
       <workItem from="1647878535131" duration="215000" />
-      <workItem from="1647883713621" duration="361000" />
+      <workItem from="1647883713621" duration="1087000" />
     </task>
     <servers />
   </component>
