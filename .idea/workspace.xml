@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb64c074-93f5-49bb-ae42-70edeb58ee75" name="Default Changelist" comment="258">
+      <change afterPath="$PROJECT_DIR$/app/exports/CategoriesExport.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/exports/ProductsExport.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/exports/UsersExport.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_user_widget.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials/_user_widget.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/ExcelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/ExcelController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/OrderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/modules/excel/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/modules/excel/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -308,7 +314,7 @@
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="js.eslint.nodeInterpreter" value="/usr/local/bin/node" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/exports" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -328,11 +334,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/exports" />
       <recent name="$PROJECT_DIR$/resources/views/frontend/wokiee/four/partials" />
       <recent name="$PROJECT_DIR$/packages/usama" />
       <recent name="$PROJECT_DIR$/packages/usama/myfatoorahv2/src/config" />
       <recent name="$PROJECT_DIR$/packages/usama/myfatoorahv2/src" />
-      <recent name="$PROJECT_DIR$/packages/usama/myfatoorahv2" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/packages/usama/myfatoorahv2/src" />
@@ -1168,7 +1174,9 @@
       <workItem from="1647876414111" duration="1131000" />
       <workItem from="1647877654398" duration="333000" />
       <workItem from="1647878535131" duration="215000" />
-      <workItem from="1647883713621" duration="1173000" />
+      <workItem from="1647883713621" duration="1396000" />
+      <workItem from="1647942758731" duration="2420000" />
+      <workItem from="1648015900472" duration="1765000" />
     </task>
     <servers />
   </component>

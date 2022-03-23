@@ -10,6 +10,7 @@
 |
 */
 
+use App\Http\Controllers\Backend\ExcelController;
 use App\Models\Order;
 use App\Models\User;
 use App\Notifications\OrderPaid;
@@ -117,6 +118,9 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'as' => 'backend.
     Route::resource('collection', 'CollectionController');
     Route::resource('post', 'PostController');
     Route::resource('excel', 'ExcelController');
+    Route::get('export/product', [ExcelController::class, 'exportProducts'])->name('export.product');
+    Route::get('export/user', [ExcelController::class, 'exportUsers'])->name('export.user');
+    Route::get('export/category', [ExcelController::class, 'exportCategories'])->name('export.category');
 
 });
 

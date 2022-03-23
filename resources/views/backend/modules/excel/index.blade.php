@@ -37,6 +37,45 @@
                                 </div>
                             </div>
                         </a>
+
+                        <a href="{{ route('backend.export.product')}}">
+                            <div class="tile bg-red  tooltips"
+                                 data-container="body" data-placement="bottom"
+                            >
+                                <div class="tile-body">
+                                    <i class="fa fa-file-excel-o"></i>
+                                </div>
+                                <div class="tile-object text-center">
+                                    {{ trans('general.all') }} {{ trans('general.products') }}
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="{{ route('backend.export.user')}}">
+                            <div class="tile bg-red  tooltips"
+                                 data-container="body" data-placement="bottom"
+                            >
+                                <div class="tile-body">
+                                    <i class="fa fa-file-excel-o"></i>
+                                </div>
+                                <div class="tile-object text-center">
+                                    {{ trans('general.all') }} {{ trans('general.users') }}
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="{{ route('backend.export.category')}}">
+                            <div class="tile bg-red  tooltips"
+                                 data-container="body" data-placement="bottom"
+                            >
+                                <div class="tile-body">
+                                    <i class="fa fa-file-excel-o"></i>
+                                </div>
+                                <div class="tile-object text-center">
+                                    {{ trans('general.all') }} {{ trans('general.categories') }}
+                                </div>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>

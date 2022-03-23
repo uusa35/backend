@@ -2,10 +2,15 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Exports\CategoriesExport;
 use App\Exports\OrderExport;
+use App\Exports\ProductsExport;
+use App\Exports\UsersExport;
 use App\Http\Controllers\Controller;
-use App\Models\Order;
-use App\Models\Role;
+use App\Models\Category;
+use App\Models\Product;
+use App\Models\User;
+use App\Services\Search\Filters;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -105,5 +110,31 @@ class ExcelController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function exportProducts(Filters $filters)
+    {
+
+        $elements = Product::filters($filters)->with('product_attributes', 'color', 'size')
+            ->whereHas('user', function ($q) {
+                return auth()->user()->isAdminOrAbove ? $q : $q->where('id', auth()->id());
+            })
+            ->with(['user' => function ($q) {
+                return $q->select('slug_ar', 'slug_en', 'id');
+            }])
+            ->orderBy('id', 'desc');
+        return Excel::download(new ProductsExport($elements), 'elements.xlsx');
+    }
+
+    public function exportUsers(Filters $filters)
+    {
+        $elements = User::filters($filters)->with('role')->orderBy('id', 'desc');
+        return Excel::download(new UsersExport($elements), 'elements.xlsx');
+    }
+
+    public function exportCategories(Filters $filters)
+    {
+        $elements = Category::filters($filters)->orderBy('id', 'desc');
+        return Excel::download(new CategoriesExport($elements), 'elements.xlsx');
     }
 }
