@@ -332,6 +332,12 @@
         color: {{ $settings->header_tow_theme_color }}                   !important;
     }
 
+    @if(env("ISTORES"))
+    .tt-product:not(.tt-view) .tt-description {
+        background-color: transparent !important;
+    }
+    @endif
+
     @media (max-width: 1024px) {
         .tt-mobile-header {
             background-color: {{ $settings->header_theme_bg }}                         !important;

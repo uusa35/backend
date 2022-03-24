@@ -41,7 +41,7 @@
                 @if($settings->apple || $settings->android)
                     <div class="col-md-6 col-lg-2 col-xl-3">
                         <div class="tt-mobile-collapse">
-                            <h4 class="tt-collapse-title">
+                            <h4 class="tt-collapse-title tt-open">
                                 {{ trans('general.find_us_on_stores') }}
                             </h4>
                             <div class="tt-collapse-content text-center">
@@ -210,7 +210,7 @@
                     <div class="tt-col-item tt-logo-col">
                         <!-- logo -->
                         <a class="tt-logo tt-logo-alignment" href="{{ route('frontend.home') }}">
-                            <img src="{{ $settings->logoLarge }}" alt="">
+                            <img src="{{ url('images/istores_logo.png') }}" alt="">
                         </a>
                         <!-- /logo -->
                     </div>

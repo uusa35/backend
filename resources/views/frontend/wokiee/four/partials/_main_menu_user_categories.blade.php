@@ -7,7 +7,7 @@
             <div class="tt-dropdown-menu">
                 <nav>
                     <ul>
-                        @foreach($categories->where('is_user',true)->where('is_parent', true) as $cat)
+                        @foreach($categories->where('is_user',true)->where('is_parent', true)->where('on_home', true) as $cat)
                             <li>
                                 <a href="{{ route('frontend.user.search',['user_category_id' => $cat->id]) }}">
                                     @if(!str_contains($cat->image,'http'))
@@ -18,13 +18,13 @@
                                     @endif
                                     <span>{{ str_limit($cat->name,15,'') }}</span>
                                 </a>
-                                @if($cat->children->where('on_home', true)->isNotEmpty())
+                                @if($cat->children->where('on_home', true)->where('is_user', true)->isNotEmpty())
                                     <div class="dropdown-menu size-md">
                                         <div class="dropdown-menu-wrapper">
                                             <div class="row">
                                                 <div class="col-12">
                                                     <div class="row tt-col-list">
-                                                        @foreach($cat->children->where('on_home', true) as $sub)
+                                                        @foreach($cat->children->where('on_home', true)->where('is_user', true) as $sub)
                                                             <div class="col-sm-4">
                                                                 <a class="tt-title-submenu"
                                                                    href="{{ route('frontend.user.search',['user_category_id' => $sub->id]) }}">

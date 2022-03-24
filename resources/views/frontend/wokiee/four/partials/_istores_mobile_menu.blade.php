@@ -33,16 +33,16 @@
                 @endforeach
             @else
                 @foreach($categories->where('is_user',true)->where('is_parent', true)->where('on_home', true) as $cat)
-                    @if($cat->children->where('on_home', true)->isNotEmpty())
+                    @if($cat->children->where('on_home', true)->where('is_user', true)->isNotEmpty())
                         <li>
                             <a href="{{ route('frontend.user.search',['user_category_id' => $cat->id]) }}">{{ $cat->name }}</a>
                             <ul>
-                                @foreach($cat->children->where('on_home', true) as $sub)
+                                @foreach($cat->children->where('on_home', true)->where('is_user', true) as $sub)
                                     <li>
                                         <a href="{{ route('frontend.user.search',['user_category_id' => $sub->id]) }}">{{ $sub->name }}</a>
                                         @if($sub->children->isNotEmpty())
                                             <ul>
-                                                @foreach($sub->children->where('on_home', true) as $child)
+                                                @foreach($sub->children->where('on_home', true)->where('is_user', true) as $child)
                                                     <li>
                                                         <a href="{{ route('frontend.user.search',['user_category_id' => $child->id]) }}">{{ $child->name }}
                                                             @if($child->on_new)
@@ -69,6 +69,11 @@
         <li>
             <a href="{{ route('frontend.cart.index') }}">{{ trans('general.cart') }}</a>
         </li>
+        @guest
+            <li>
+                <a href="{{ route('login') }}">{{ trans('general.login') }}</a>
+            </li>
+        @endguest
         <li>
             <a href="{{ route('frontend.contactus') }}">{{ trans('general.contactus') }}</a>
         </li>
@@ -79,11 +84,6 @@
                 @endforeach
             </li>
         @endif
-        @guest
-            <li>
-                <a href="{{ route('login') }}">{{ trans('general.login') }}</a>
-            </li>
-        @endguest
         @if(env('ENABLE_LANG_SWITCH'))
             <li><a href="{{ route('frontend.language.change',['locale' => 'ar']) }}">{{ trans('general.arabic') }}</a>
             </li>
