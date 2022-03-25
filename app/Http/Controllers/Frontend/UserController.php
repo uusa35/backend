@@ -41,7 +41,7 @@ class UserController extends Controller
         if ($validator->fails()) {
             return redirect()->route('frontend.home')->withErrors($validator->messages());
         }
-        $elements = User::filters($filters)->active()->notAdmins()->hasProducts()->orderBy('id', 'desc')->paginate(Self::TAKE_MIN);
+        $elements = User::filters($filters)->active()->notAdmins()->orderBy('id', 'desc')->paginate(Self::TAKE_MIN);
         if ($elements->isNotEmpty()) {
             return view('frontend.wokiee.four.modules.user.index', compact(
                 'elements'
