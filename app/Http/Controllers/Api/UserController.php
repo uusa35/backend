@@ -20,7 +20,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 
-class UserController extends Controller
+class  UserController extends Controller
 {
     use NotificationHelper;
 
@@ -63,11 +63,7 @@ class UserController extends Controller
         if ($validator->fails()) {
             return response()->json(['message' => $validator->errors()->first()], 400);
         }
-        if (request()->has('is_celebrity')) {
-            $elements = $this->element->filters($filters)->active()->notAdmins()->orderBy('id', 'desc')->paginate(self::TAKE_MID);
-        } else {
-            $elements = $this->element->filters($filters)->active()->notAdmins()->has('products','>',0)->orderBy('id', 'desc')->paginate(self::TAKE_MID);
-        }
+        $elements = $this->element->filters($filters)->active()->notAdmins()->orderBy('id', 'desc')->paginate(self::TAKE_MID);
         if (!$elements->isEmpty()) {
             return response()->json(UserExtraLightResource::collection($elements), 200);
         } else {
