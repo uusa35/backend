@@ -11,7 +11,7 @@
         @if(env('ISTORES') && $element->order_metas->first()->product->user)
             <div class="col-lg-12">
                 <img class="img-sm img-responsive center-block"
-                     src="{{ asset(env('THUMBNAIL').$element->order_metas->first()->product->user->imageThumbLink) }}"
+                     src="{{ $element->order_metas->first()->product->user->imageThumbLink }}"
                      alt="{{ $element->order_metas->first()->product->user->name }}">
             </div>
         @else
