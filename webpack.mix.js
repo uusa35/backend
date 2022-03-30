@@ -221,7 +221,7 @@ mix.scripts([
 ], 'public/js/datepicker.js').version();
 mix.scripts('./node_modules/tinymce/tinymce.min.js', 'public/js/tinymce.min.js').version();
 mix.scripts('resources/assets/js/backend-custom.js', 'public/js/backend-custom.js');
-mix.copyDirectory('./../porto_ecommerce_html/demo-2/assets/images', 'public/images');
+// mix.copyDirectory('./../porto_ecommerce_html/demo-2/assets/images', 'public/images');
 // wokiee
 mix.copyDirectory('../wokiee-ecommerce-html/html/font/fonts', 'public/font/fonts');
 mix.copyDirectory('../wokiee-ecommerce-html/html/font/fonts', 'public/css/fonts');

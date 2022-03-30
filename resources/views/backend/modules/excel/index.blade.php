@@ -24,58 +24,60 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="{{ route('backend.excel.index', ['type' => 'cash_on_deliver_orders'])}}">
-                            <div class="tile bg-red  tooltips"
-                                 data-container="body" data-placement="bottom"
-                                 data-original-title="{{ trans('message.cash_on_delivery') }}"
-                            >
-                                <div class="tile-body">
-                                    <i class="fa fa-file-excel-o"></i>
-                                </div>
-                                <div class="tile-object text-center">
-                                    {{ trans('general.all') }} {{ trans('general.orders') }} {{ trans('general.cash_on_delivery') }}
-                                </div>
-                            </div>
-                        </a>
 
-                        <a href="{{ route('backend.export.product')}}">
-                            <div class="tile bg-red  tooltips"
-                                 data-container="body" data-placement="bottom"
-                            >
-                                <div class="tile-body">
-                                    <i class="fa fa-file-excel-o"></i>
-                                </div>
-                                <div class="tile-object text-center">
-                                    {{ trans('general.all') }} {{ trans('general.products') }}
-                                </div>
-                            </div>
-                        </a>
 
-                        <a href="{{ route('backend.export.user')}}">
-                            <div class="tile bg-red  tooltips"
-                                 data-container="body" data-placement="bottom"
-                            >
-                                <div class="tile-body">
-                                    <i class="fa fa-file-excel-o"></i>
+                        @can('isAdminOrAbove')
+                            <a href="{{ route('backend.excel.index', ['type' => 'cash_on_deliver_orders'])}}">
+                                <div class="tile bg-red  tooltips"
+                                     data-container="body" data-placement="bottom"
+                                     data-original-title="{{ trans('message.cash_on_delivery') }}"
+                                >
+                                    <div class="tile-body">
+                                        <i class="fa fa-file-excel-o"></i>
+                                    </div>
+                                    <div class="tile-object text-center">
+                                        {{ trans('general.all') }} {{ trans('general.orders') }} {{ trans('general.cash_on_delivery') }}
+                                    </div>
                                 </div>
-                                <div class="tile-object text-center">
-                                    {{ trans('general.all') }} {{ trans('general.users') }}
+                            </a>
+                            <a href="{{ route('backend.export.product')}}">
+                                <div class="tile bg-red  tooltips"
+                                     data-container="body" data-placement="bottom"
+                                >
+                                    <div class="tile-body">
+                                        <i class="fa fa-file-excel-o"></i>
+                                    </div>
+                                    <div class="tile-object text-center">
+                                        {{ trans('general.all') }} {{ trans('general.products') }}
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
+                            </a>
+                            <a href="{{ route('backend.export.user')}}">
+                                <div class="tile bg-red  tooltips"
+                                     data-container="body" data-placement="bottom"
+                                >
+                                    <div class="tile-body">
+                                        <i class="fa fa-file-excel-o"></i>
+                                    </div>
+                                    <div class="tile-object text-center">
+                                        {{ trans('general.all') }} {{ trans('general.users') }}
+                                    </div>
+                                </div>
+                            </a>
 
-                        <a href="{{ route('backend.export.category')}}">
-                            <div class="tile bg-red  tooltips"
-                                 data-container="body" data-placement="bottom"
-                            >
-                                <div class="tile-body">
-                                    <i class="fa fa-file-excel-o"></i>
+                            <a href="{{ route('backend.export.category')}}">
+                                <div class="tile bg-red  tooltips"
+                                     data-container="body" data-placement="bottom"
+                                >
+                                    <div class="tile-body">
+                                        <i class="fa fa-file-excel-o"></i>
+                                    </div>
+                                    <div class="tile-object text-center">
+                                        {{ trans('general.all') }} {{ trans('general.categories') }}
+                                    </div>
                                 </div>
-                                <div class="tile-object text-center">
-                                    {{ trans('general.all') }} {{ trans('general.categories') }}
-                                </div>
-                            </div>
-                        </a>
+                            </a>
+                        @endif
                     </div>
                 </div>
             </div>

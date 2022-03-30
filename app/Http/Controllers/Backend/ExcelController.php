@@ -8,6 +8,7 @@ use App\Exports\ProductsExport;
 use App\Exports\UsersExport;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Order;
 use App\Models\Product;
 use App\Models\User;
 use App\Services\Search\Filters;
@@ -23,14 +24,18 @@ class ExcelController extends Controller
      */
     public function index(Request $request)
     {
+        $orders = Order::where(['paid' => true])->whereHas('order_metas', function ($q) {
+            return $q->whereHas('product', function ($q) {
+                return $q->where('user_id', auth()->id());
+            });
+        })->get();
         if ($request->has('type')) {
             switch ($request->type) {
                 case 'paid_orders':
-                    return Excel::download(new OrderExport(['paid' => true]), 'orders.xlsx');
-//                    Excel::store(new OrderExport(['paid' => true]), storage_path('uploads/files/orders.xlsx'));
+                    return auth()->user()->isAdminOrAbove ? Excel::download(new OrderExport(['paid' => true]), 'orders.xlsx') : Excel::download(new OrderExport([],$orders), 'orders.xlsx');
                     break;
                 case 'cash_on_deliver_orders':
-                    return Excel::download(new OrderExport(['cash_on_delivery' => true]), 'orders.xlsx');
+                    return auth()->user()->isAdminOrAbove ? Excel::download(new OrderExport(['cash_on_delivery' => true]), 'orders.xlsx') : Excel::download(new OrderExport([],$orders), 'orders.xlsx');
                     break;
                 case 2:
                     echo "i equals 2";

@@ -18,6 +18,7 @@ use PhpOffice\PhpSpreadsheet\Cell\DefaultValueBinder;
 use PhpOffice\PhpSpreadsheet\Shared\Date;
 use Maatwebsite\Excel\Concerns\WithMapping;
 use Maatwebsite\Excel\Concerns\FromCollection;
+use function PHPUnit\Framework\isEmpty;
 
 
 class OrderExport implements FromCollection, WithHeadings, WithMapping
@@ -25,15 +26,21 @@ class OrderExport implements FromCollection, WithHeadings, WithMapping
     use Exportable;
 
     public $constrains;
+    public $orders;
 
-    function __construct($constrains)
+    function __construct($constrains = [], $orders = null)
     {
         $this->constrains = $constrains;
+        $this->orders = $orders;
     }
 
     public function collection()
     {
-        return OrderResource::make(Order::where($this->constrains)->get());
+        if(count($this->constrains) > 0) {
+            return OrderResource::make(Order::where($this->constrains)->get());
+        }
+        return OrderResource::make($this->orders);
+
     }
 
     public function headings(): array
