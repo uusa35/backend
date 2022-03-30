@@ -32,7 +32,7 @@ class OrderController extends Controller
             $elements = $elements->where('paid', true)
                 ->with('order_metas.product.product_attributes', 'order_metas.product_attribute.size', 'order_metas.product_attribute.color', 'order_metas.service')
                 ->whereHas('order_metas.product', function ($q) {
-                    return $q->where('user_id', auth()->id());z
+                    return $q->where('user_id', auth()->id());
                 })
                 ->orderBy('id', 'desc')->paginate(parent::TAKE);
         } else {
