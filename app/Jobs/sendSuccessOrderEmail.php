@@ -45,7 +45,7 @@ class sendSuccessOrderEmail implements ShouldQueue
     {
 
         try {
-            $emails = [$this->contactus->email, $this->order->email];
+            $emails = [trim($this->contactus->email), trim($this->order->email)];
             $request = request();
             if ($this->order->order_metas->first()->product->first() && $this->order->order_metas->first()->product->first()->user->player_id) {
                 $request->request->add(['player_id' => $this->order->order_metas->first()->product->first()->user->player_id]);
@@ -62,9 +62,9 @@ class sendSuccessOrderEmail implements ShouldQueue
             if (env('INVOICE_DISTRIBUTION')) {
                 $this->order->order_metas->each(function ($orderMeta) use ($emails) {
                     if ($orderMeta->isProductType) {
-                        array_push($emails, $orderMeta->product->user->email);
+                        array_push($emails, trim($orderMeta->product->user->email));
                     } else {
-                        array_push($emails, $orderMeta->service->user->email);
+                        array_push($emails, trim($orderMeta->service->user->email));
                     }
                 });
             }
