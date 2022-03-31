@@ -155,6 +155,22 @@ class OrderController extends Controller
         $order = Order::whereId($request->id)->with('order_metas.product.product_attributes.size', 'order_metas.product.product_attributes.color', 'order_metas.service', 'user')->first();
         if ($order->cash_on_delivery) {
             $contactus = Setting::first();
+            $emailsList = [];
+            if (env('ORDER_MAILS') && env('MAIL_ENABLED')) {
+                foreach (explode(',', env('ORDER_MAILS')) as $mail) {
+                    array_push($emailsList, $mail);
+                }
+            }
+            if (env('INVOICE_DISTRIBUTION')) {
+                $this->order->order_metas->each(function ($orderMeta) use($emailsList) {
+                    if ($orderMeta->isProductType) {
+                        array_push($emailsList, $orderMeta->product->user->email);
+                    } else {
+                        array_push($emailsList, $orderMeta->service->user->email);
+                    }
+                });
+            }
+            dd($emailsList);
                 sendSuccessOrderEmail::dispatch($order, $order->user, $contactus);
                 session()->forget('cart');
                 if ($request->has('whatsapp_url') && $request->whatsapp_url) {
