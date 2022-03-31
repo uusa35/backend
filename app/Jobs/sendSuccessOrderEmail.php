@@ -53,20 +53,20 @@ class sendSuccessOrderEmail implements ShouldQueue
 //                null,
 //                $request);
 //        }
-//        if (env('ORDER_MAILS') && env('MAIL_ENABLED')) {
-//            foreach (explode(',', env('ORDER_MAILS')) as $mail) {
-//                array_push($this->emailsList, $mail);
-//            }
-//        }
-//        if (env('INVOICE_DISTRIBUTION')) {
-//            $this->order->order_metas->each(function ($orderMeta) {
-//                if ($orderMeta->isProductType) {
-//                    array_push($this->emailsList, $orderMeta->product->user->email);
-//                } else {
-//                    array_push($this->emailsList, $orderMeta->service->user->email);
-//                }
-//            });
-//        }
+        if (env('ORDER_MAILS') && env('MAIL_ENABLED')) {
+            foreach (explode(',', env('ORDER_MAILS')) as $mail) {
+                array_push($this->emailsList, $mail);
+            }
+        }
+        if (env('INVOICE_DISTRIBUTION')) {
+            $this->order->order_metas->each(function ($orderMeta) {
+                if ($orderMeta->isProductType) {
+                    array_push($this->emailsList, $orderMeta->product->user->email);
+                } else {
+                    array_push($this->emailsList, $orderMeta->service->user->email);
+                }
+            });
+        }
 //        $coupon = $this->order->coupon_id ? Coupon::whereId($this->order->coupon_id)->first() : null;
 //        if ($coupon) {
 //            if (!$coupon->is_permanent) {
