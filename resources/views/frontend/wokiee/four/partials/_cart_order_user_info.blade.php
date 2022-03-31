@@ -203,7 +203,7 @@
                                                             <div class="col-md-4 col-sm-12">
                                                                 <div class="form-group">
                                                                     <label
-                                                                        for="cash_on_delivery">{{ trans('general.online_payment') }}
+                                                                        for="payment_method">{{ trans('general.online_payment') }}
                                                                         <sup>*</sup></label>
                                                                     <div class="form-check">
                                                                         <input type="radio"
@@ -229,7 +229,7 @@
                                                             <div class="col-md-4 col-sm-12">
                                                                 <div class="form-group">
                                                                     <label
-                                                                        for="cash_on_delivery">{{ trans('general.online_payment') }}
+                                                                        for="payment_method">{{ trans('general.online_payment') }}
                                                                         <sup>*</sup></label>
                                                                     <div class="form-check">
                                                                         <input type="radio"
@@ -251,7 +251,7 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <input type="hidden" name="cash_on_delivery" value="0"/>
+{{--                                                            <input type="hidden" name="cash_on_delivery" value="0"/>--}}
                                                         @else
                                                             <div class="col-md-4 col-sm-12">
                                                                 <div class="form-group">
@@ -391,29 +391,29 @@
                                                                     </div>
                                                                     </br>
                                                                 </div>
-                                                                <div class="col-md-4 col-sm-12">
-                                                                    <div class="form-group">
-                                                                        <label
-                                                                            for="cash_on_delivery">
-                                                                            <i class="fa fa-fw fa-whatsapp fa-lg"
-                                                                               style="color: #25D366 "></i>
-                                                                            {{ trans('general.order_by_whatsapp') }}
-                                                                        </label>
-                                                                        <div class="form-check">
-                                                                            <input type="radio"
-                                                                                   value="1"
-                                                                                   class="form-check-input form-check-input form-control-lg"
-                                                                                   style="width : 20px; height: 20px;"
-                                                                                   name="cash_on_delivery">
-                                                                            <label class="form-check-label"
-                                                                                   for="exampleCheck1"
-                                                                                   style="padding-right: 25px; margin-left: 25px; padding-top: 5px;">
-                                                                                <small>{{ trans('general.confirm') }}</small>
-                                                                            </label>
-                                                                        </div>
-                                                                    </div>
-                                                                    </br>
-                                                                </div>
+{{--                                                                <div class="col-md-4 col-sm-12">--}}
+{{--                                                                    <div class="form-group">--}}
+{{--                                                                        <label--}}
+{{--                                                                            for="cash_on_delivery">--}}
+{{--                                                                            <i class="fa fa-fw fa-whatsapp fa-lg"--}}
+{{--                                                                               style="color: #25D366 "></i>--}}
+{{--                                                                            {{ trans('general.order_by_whatsapp') }}--}}
+{{--                                                                        </label>--}}
+{{--                                                                        <div class="form-check">--}}
+{{--                                                                            <input type="radio"--}}
+{{--                                                                                   value="1"--}}
+{{--                                                                                   class="form-check-input form-check-input form-control-lg"--}}
+{{--                                                                                   style="width : 20px; height: 20px;"--}}
+{{--                                                                                   name="cash_on_delivery">--}}
+{{--                                                                            <label class="form-check-label"--}}
+{{--                                                                                   for="exampleCheck1"--}}
+{{--                                                                                   style="padding-right: 25px; margin-left: 25px; padding-top: 5px;">--}}
+{{--                                                                                <small>{{ trans('general.confirm') }}</small>--}}
+{{--                                                                            </label>--}}
+{{--                                                                        </div>--}}
+{{--                                                                    </div>--}}
+{{--                                                                    </br>--}}
+{{--                                                                </div>--}}
                                                             @endif
                                                             <div class="col-md-4 col-sm-12">
                                                                 <div class="form-group">

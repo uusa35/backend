@@ -56,7 +56,7 @@ class sendSuccessOrderEmail implements ShouldQueue
             }
             if (env('ORDER_MAILS') && env('MAIL_ENABLED')) {
                 foreach (explode(',', env('ORDER_MAILS')) as $mail) {
-                    array_push($emails, $mail);
+                    array_push($emails, trim($mail));
                 }
             }
             if (env('INVOICE_DISTRIBUTION')) {
