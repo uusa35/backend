@@ -74,6 +74,7 @@ class sendSuccessOrderEmail implements ShouldQueue
             }
             session()->forget('coupon');
         }
+        dd($emails);
         return Mail::to($emails)->send(new OrderComplete($this->order, $this->user));
     }
 }
