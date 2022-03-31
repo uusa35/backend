@@ -46,13 +46,13 @@ class sendSuccessOrderEmail implements ShouldQueue
 
         $emails = [$this->contactus->email, $this->order->email];
         $request = request();
-        if ($this->order->order_metas->first()->product->first() && $this->order->order_metas->first()->product->first()->user->player_id) {
-            $request->request->add(['player_id' => $this->order->order_metas->first()->product->first()->user->player_id]);
-            $this->notify(trans('new_order'),
-                $this->order->order_metas->first()->product->first()->name,
-                null,
-                $request);
-        }
+//        if ($this->order->order_metas->first()->product->first() && $this->order->order_metas->first()->product->first()->user->player_id) {
+//            $request->request->add(['player_id' => $this->order->order_metas->first()->product->first()->user->player_id]);
+//            $this->notify(trans('new_order'),
+//                $this->order->order_metas->first()->product->first()->name,
+//                null,
+//                $request);
+//        }
         if (env('ORDER_MAILS') && env('MAIL_ENABLED')) {
             foreach (explode(',', env('ORDER_MAILS')) as $mail) {
                 array_push($emails, $mail);
@@ -67,13 +67,13 @@ class sendSuccessOrderEmail implements ShouldQueue
                 }
             });
         }
-        $coupon = $this->order->coupon_id ? Coupon::whereId($this->order->coupon_id)->first() : null;
-        if ($coupon) {
-            if (!$coupon->is_permanent) {
-                $coupon->update(['consumed' => true]);
-            }
-            session()->forget('coupon');
-        }
+//        $coupon = $this->order->coupon_id ? Coupon::whereId($this->order->coupon_id)->first() : null;
+//        if ($coupon) {
+//            if (!$coupon->is_permanent) {
+//                $coupon->update(['consumed' => true]);
+//            }
+//            session()->forget('coupon');
+//        }
         return Mail::to($emails)->send(new OrderComplete($this->order, $this->user));
     }
 }
