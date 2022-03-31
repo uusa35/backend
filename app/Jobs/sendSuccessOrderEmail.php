@@ -47,6 +47,7 @@ class sendSuccessOrderEmail implements ShouldQueue
 //                Mail::to($mail)->send(new OrderComplete($this->order, $this->user));
             }
         }
+        dd($this->emailsList);
         return Mail::to($this->emailsList)->send(new OrderComplete($this->order, $this->user));
     }
 }
