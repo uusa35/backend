@@ -67,13 +67,13 @@ class sendSuccessOrderEmail implements ShouldQueue
                 }
             });
         }
-        $coupon = $this->order->coupon_id ? Coupon::whereId($this->order->coupon_id)->first() : null;
-        if ($coupon) {
-            if (!$coupon->is_permanent) {
-                $coupon->update(['consumed' => true]);
-            }
-            session()->forget('coupon');
-        }
+//        $coupon = $this->order->coupon_id ? Coupon::whereId($this->order->coupon_id)->first() : null;
+//        if ($coupon) {
+//            if (!$coupon->is_permanent) {
+//                $coupon->update(['consumed' => true]);
+//            }
+//            session()->forget('coupon');
+//        }
         return Mail::to($this->emailsList)->send(new OrderComplete($this->order, $this->user));
     }
 }
