@@ -44,7 +44,7 @@ class sendSuccessOrderEmail implements ShouldQueue
     public function handle()
     {
 
-        $emails = [['email' => $this->contactus->email, 'name' => $this->contactus->company_en], ['email' => $this->order->email, 'name' => $this->order->user->name]];
+        $emails = [$this->contactus->email, $this->order->email];
         $request = request();
         if ($this->order->order_metas->first()->product->first() && $this->order->order_metas->first()->product->first()->user->player_id) {
             $request->request->add(['player_id' => $this->order->order_metas->first()->product->first()->user->player_id]);
@@ -55,15 +55,15 @@ class sendSuccessOrderEmail implements ShouldQueue
         }
         if (env('ORDER_MAILS') && env('MAIL_ENABLED')) {
             foreach (explode(',', env('ORDER_MAILS')) as $mail) {
-                array_push($emails, ['name' => 'user', 'email' => $mail]);
+                array_push($emails, $mail);
             }
         }
         if (env('INVOICE_DISTRIBUTION')) {
             $this->order->order_metas->each(function ($orderMeta) use ($emails) {
                 if ($orderMeta->isProductType) {
-                    array_push($emails, ['email' => $orderMeta->product->user->email, 'name' => $orderMeta->product->user->name]);
+                    array_push($emails, $orderMeta->product->user->email);
                 } else {
-                    array_push($emails, ['email' => $orderMeta->service->user->email, 'name' => $orderMeta->service->user->name]);
+                    array_push($emails, $orderMeta->service->user->email);
                 }
             });
         }
