@@ -7,10 +7,12 @@ use App\Jobs\CheckCartItems;
 use App\Jobs\OrderSuccessProcessJob;
 use App\Jobs\sendSuccessOrderEmail;
 use App\Models\Country;
+use App\Models\Coupon;
 use App\Models\Order;
 use App\Models\Setting;
 use App\Models\User;
 use App\Services\CartTrait;
+use App\Services\Traits\NotificationHelper;
 use App\Services\Traits\OrderTrait;
 use Barryvdh\DomPDF\Facade as PDF;
 use Gloudemans\Shoppingcart\Cart;
@@ -19,7 +21,7 @@ use Illuminate\Mail\Markdown;
 
 class OrderController extends Controller
 {
-    use OrderTrait, CartTrait;
+    use OrderTrait, CartTrait, NotificationHelper;
 
     public function __construct(Cart $cart)
     {
@@ -164,7 +166,7 @@ class OrderController extends Controller
                 }
                 throw new \Exception('Order is not complete');
             } else {
-                dispatch(new sendSuccessOrderEmail($order, $order->user, $contactus))->delay(now()->addSeconds(10));
+                sendSuccessOrderEmail::dispatch($order, $order->user, $contactus);
                 session()->forget('cart');
                 if ($request->has('whatsapp_url') && $request->whatsapp_url) {
                     return redirect()->to($request->whatsapp_url);

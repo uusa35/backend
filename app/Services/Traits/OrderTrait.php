@@ -136,7 +136,7 @@ trait OrderTrait
             ]);
         } else {
             $user = User::where('email', $request->email)->orWhere(['mobile' => $request->mobile])->first();
-            if ($user) {
+            if (!is_null($user)) {
                 $user->update([
                     'name' => $request->name,
                     'password' => bcrypt($request->mobile),
