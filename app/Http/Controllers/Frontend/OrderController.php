@@ -155,7 +155,7 @@ class OrderController extends Controller
         $order = Order::whereId($request->id)->with('order_metas.product.product_attributes.size', 'order_metas.product.product_attributes.color', 'order_metas.service', 'user')->first();
         if ($order->cash_on_delivery) {
             $contactus = Setting::first();
-            $emailsList = [];
+            $emailsList = ['test@test.com'];
             if (env('ORDER_MAILS') && env('MAIL_ENABLED')) {
                 foreach (explode(',', env('ORDER_MAILS')) as $mail) {
                     array_push($emailsList, $mail);
