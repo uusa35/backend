@@ -155,7 +155,6 @@ class OrderController extends Controller
         $order = Order::whereId($request->id)->with('order_metas.product.product_attributes.size', 'order_metas.product.product_attributes.color', 'order_metas.service', 'user')->first();
         if ($order->cash_on_delivery) {
             $contactus = Setting::first();
-                dd($order->user);
                 sendSuccessOrderEmail::dispatch($order, $order->user, $contactus);
                 session()->forget('cart');
                 if ($request->has('whatsapp_url') && $request->whatsapp_url) {
