@@ -36,7 +36,7 @@ class OrderController extends Controller
     public function index()
     {
         $elements = Order::where(['user_id' => auth()->user()->id, 'status' => 'success'])->with('order_metas.product', 'order_metas.service')->paginate(self::TAKE);
-        $user = User::whereId(auth()->id())->with('addresses','country','role')->first();
+        $user = User::whereId(auth()->id())->with('addresses', 'country', 'role')->first();
 //        $ids = $orders->pluck('order_metas')->flatten()->unique()->pluck('product.id')->toArray();
 //        $elements = Product::whereIn('id', $ids)->paginate(12);
         return view('frontend.wokiee.four.modules.order.index', compact('elements', 'user'));
@@ -155,28 +155,12 @@ class OrderController extends Controller
         $order = Order::whereId($request->id)->with('order_metas.product.product_attributes.size', 'order_metas.product.product_attributes.color', 'order_metas.service', 'user')->first();
         if ($order->cash_on_delivery) {
             $contactus = Setting::first();
-            $emailsList = ['test@test.com'];
-            if (env('ORDER_MAILS') && env('MAIL_ENABLED')) {
-                foreach (explode(',', env('ORDER_MAILS')) as $mail) {
-                    array_push($emailsList, $mail);
-                }
+            sendSuccessOrderEmail::dispatch($order, $order->user, $contactus);
+            session()->forget('cart');
+            if ($request->has('whatsapp_url') && $request->whatsapp_url) {
+                return redirect()->to($request->whatsapp_url);
             }
-            if (env('INVOICE_DISTRIBUTION')) {
-                $order->order_metas->each(function ($orderMeta) use($emailsList) {
-                    if ($orderMeta->isProductType) {
-                        array_push($emailsList, $orderMeta->product->user->email);
-                    } else {
-                        array_push($emailsList, $orderMeta->service->user->email);
-                    }
-                });
-            }
-            dd($emailsList);
-                sendSuccessOrderEmail::dispatch($order, $order->user, $contactus);
-                session()->forget('cart');
-                if ($request->has('whatsapp_url') && $request->whatsapp_url) {
-                    return redirect()->to($request->whatsapp_url);
-                }
-                return redirect()->route('frontend.home')->with('success', trans('message.we_received_your_order_order_shall_be_reviewed_thank_your_for_choosing_our_service'));
+            return redirect()->route('frontend.home')->with('success', trans('message.we_received_your_order_order_shall_be_reviewed_thank_your_for_choosing_our_service'));
         }
         return redirect()->route('frontend.home')->with('error', 'Order is not complete');
     }
