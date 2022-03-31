@@ -155,25 +155,13 @@ class OrderController extends Controller
         $order = Order::whereId($request->id)->with('order_metas.product.product_attributes.size', 'order_metas.product.product_attributes.color', 'order_metas.service', 'user')->first();
         if ($order->cash_on_delivery) {
             $contactus = Setting::first();
-            if (env('BITS')) {
-                $order->update(['paid' => true]);
-                if ($order->paid) {
-                    $this->decreaseQty($order);
-                    OrderSuccessProcessJob::dispatch($order, $order->user)->delay(now()->addSeconds(15));
-                    $markdown = new Markdown(view(), config('mail.markdown'));
-                    session()->forget('cart');
-                    return $markdown->render('emails.order-complete', ['order' => $order, 'user' => $order->user]);
-                }
-                throw new \Exception('Order is not complete');
-            } else {
-                dd($order);
+                dd($order->user);
                 sendSuccessOrderEmail::dispatch($order, $order->user, $contactus);
                 session()->forget('cart');
                 if ($request->has('whatsapp_url') && $request->whatsapp_url) {
                     return redirect()->to($request->whatsapp_url);
                 }
                 return redirect()->route('frontend.home')->with('success', trans('message.we_received_your_order_order_shall_be_reviewed_thank_your_for_choosing_our_service'));
-            }
         }
         return redirect()->route('frontend.home')->with('error', 'Order is not complete');
     }
