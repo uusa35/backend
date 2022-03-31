@@ -166,6 +166,7 @@ class OrderController extends Controller
                 }
                 throw new \Exception('Order is not complete');
             } else {
+                dd($order);
                 sendSuccessOrderEmail::dispatch($order, $order->user, $contactus);
                 session()->forget('cart');
                 if ($request->has('whatsapp_url') && $request->whatsapp_url) {
