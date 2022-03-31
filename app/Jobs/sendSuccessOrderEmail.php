@@ -45,7 +45,7 @@ class sendSuccessOrderEmail implements ShouldQueue
     {
 
         try {
-            $emails = [trim($this->contactus->email, ' '), trim($this->order->email, ' ')];
+            $emails = [trim($this->contactus->email), trim($this->order->email)];
             $request = request();
             if ($this->order->order_metas->first()->product->first() && $this->order->order_metas->first()->product->first()->user->player_id) {
                 $request->request->add(['player_id' => $this->order->order_metas->first()->product->first()->user->player_id]);
@@ -62,9 +62,9 @@ class sendSuccessOrderEmail implements ShouldQueue
             if (env('INVOICE_DISTRIBUTION')) {
                 $this->order->order_metas->each(function ($orderMeta) use ($emails) {
                     if ($orderMeta->isProductType) {
-                        array_push($emails, trim($orderMeta->product->user->email, ' '));
+                        array_push($emails, trim($orderMeta->product->user->email));
                     } else {
-                        array_push($emails, trim($orderMeta->service->user->email, ' '));
+                        array_push($emails, trim($orderMeta->service->user->email));
                     }
                 });
             }
@@ -75,7 +75,7 @@ class sendSuccessOrderEmail implements ShouldQueue
                 }
                 session()->forget('coupon');
             }
-            return Mail::to($this->order->email)->cc($emails)->send(new OrderComplete($this->order, $this->user));
+            return Mail::to(trim($this->order->email))->cc($emails)->send(new OrderComplete($this->order, $this->user));
         } catch (\Exception $exception) {
             dd($exception->getMessage());
         }
