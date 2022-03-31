@@ -44,37 +44,36 @@ class sendSuccessOrderEmail implements ShouldQueue
     public function handle()
     {
 
-        $emails = [$this->contactus->email, $this->order->email];
+        $emails = [['email' => $this->contactus->email, 'name' => $this->contactus->company_en], ['email' => $this->order->email, 'name' => $this->order->user->name]];
         $request = request();
-//        if ($this->order->order_metas->first()->product->first() && $this->order->order_metas->first()->product->first()->user->player_id) {
-//            $request->request->add(['player_id' => $this->order->order_metas->first()->product->first()->user->player_id]);
-//            $this->notify(trans('new_order'),
-//                $this->order->order_metas->first()->product->first()->name,
-//                null,
-//                $request);
-//        }
+        if ($this->order->order_metas->first()->product->first() && $this->order->order_metas->first()->product->first()->user->player_id) {
+            $request->request->add(['player_id' => $this->order->order_metas->first()->product->first()->user->player_id]);
+            $this->notify(trans('new_order'),
+                $this->order->order_metas->first()->product->first()->name,
+                null,
+                $request);
+        }
         if (env('ORDER_MAILS') && env('MAIL_ENABLED')) {
             foreach (explode(',', env('ORDER_MAILS')) as $mail) {
-                array_push($emails, $mail);
+                array_push($emails, ['name' => 'user', 'email' => $mail]);
             }
         }
         if (env('INVOICE_DISTRIBUTION')) {
-            $this->order->order_metas->each(function ($orderMeta) use($emails) {
+            $this->order->order_metas->each(function ($orderMeta) use ($emails) {
                 if ($orderMeta->isProductType) {
-                    array_push($emails, $orderMeta->product->user->email);
+                    array_push($emails, ['email' => $orderMeta->product->user->email, 'name' => $orderMeta->product->user->name]);
                 } else {
-                    array_push($emails, $orderMeta->service->user->email);
+                    array_push($emails, ['email' => $orderMeta->service->user->email, 'name' => $orderMeta->service->user->name]);
                 }
             });
         }
-//        $coupon = $this->order->coupon_id ? Coupon::whereId($this->order->coupon_id)->first() : null;
-//        if ($coupon) {
-//            if (!$coupon->is_permanent) {
-//                $coupon->update(['consumed' => true]);
-//            }
-//            session()->forget('coupon');
-//        }
-        dd($emails);
+        $coupon = $this->order->coupon_id ? Coupon::whereId($this->order->coupon_id)->first() : null;
+        if ($coupon) {
+            if (!$coupon->is_permanent) {
+                $coupon->update(['consumed' => true]);
+            }
+            session()->forget('coupon');
+        }
         return Mail::to($emails)->send(new OrderComplete($this->order, $this->user));
     }
 }
