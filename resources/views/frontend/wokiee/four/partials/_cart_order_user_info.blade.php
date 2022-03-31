@@ -41,7 +41,6 @@
                                                 @endif
                                             </button>
                                         </li>
-
                                     </ul>
                                     <div class="skltbs-panel-group">
                                         <div class="skltbs-panel skltbs-active skltbs-enter-done mb-5"
@@ -176,29 +175,29 @@
                                                                 </div>
                                                                 </br>
                                                             </div>
-                                                            <div class="col-md-4 col-sm-12">
-                                                                <div class="form-group">
-                                                                    <label
-                                                                        for="cash_on_delivery">
-                                                                        <i class="fa fa-fw fa-whatsapp fa-lg"
-                                                                           style="color: #25D366 "></i>
-                                                                        {{ trans('general.order_by_whatsapp') }}
-                                                                    </label>
-                                                                    <div class="form-check">
-                                                                        <input type="radio"
-                                                                               value="1"
-                                                                               class="form-check-input form-check-input form-control-lg"
-                                                                               style="width : 20px; height: 20px;"
-                                                                               name="cash_on_delivery">
-                                                                        <label class="form-check-label"
-                                                                               for="exampleCheck1"
-                                                                               style="padding-right: 25px; padding-left: 25px; padding-top: 5px;">
-                                                                            <small>{{ trans('general.confirm') }}</small>
-                                                                        </label>
-                                                                    </div>
-                                                                </div>
-                                                                </br>
-                                                            </div>
+{{--                                                            <div class="col-md-4 col-sm-12">--}}
+{{--                                                                <div class="form-group">--}}
+{{--                                                                    <label--}}
+{{--                                                                        for="cash_on_delivery">--}}
+{{--                                                                        <i class="fa fa-fw fa-whatsapp fa-lg"--}}
+{{--                                                                           style="color: #25D366 "></i>--}}
+{{--                                                                        {{ trans('general.order_by_whatsapp') }}--}}
+{{--                                                                    </label>--}}
+{{--                                                                    <div class="form-check">--}}
+{{--                                                                        <input type="radio"--}}
+{{--                                                                               value="1"--}}
+{{--                                                                               class="form-check-input form-check-input form-control-lg"--}}
+{{--                                                                               style="width : 20px; height: 20px;"--}}
+{{--                                                                               name="cash_on_delivery">--}}
+{{--                                                                        <label class="form-check-label"--}}
+{{--                                                                               for="exampleCheck1"--}}
+{{--                                                                               style="padding-right: 25px; padding-left: 25px; padding-top: 5px;">--}}
+{{--                                                                            <small>{{ trans('general.confirm') }}</small>--}}
+{{--                                                                        </label>--}}
+{{--                                                                    </div>--}}
+{{--                                                                </div>--}}
+{{--                                                                </br>--}}
+{{--                                                            </div>--}}
                                                         @endif
                                                         @if($settings->payment_method === 'ibooky')
                                                             <div class="col-md-4 col-sm-12">
@@ -287,6 +286,10 @@
                                                                         <li>
                                                                             <i class="fa fa-fw fa-info-circle fa-lg"></i>
                                                                             {{ trans('message.order_cash_on_delivery') }}
+                                                                        </li>
+                                                                        <li class="pt-2">
+                                                                            <i class="fa fa-fw fa-info-circle fa-lg"></i>
+                                                                            In case of Pickup from stores. Delivery Fees will be cancelled.
                                                                         </li>
                                                                     </ul>
                                                                 </div>
@@ -473,6 +476,7 @@
 
                                                                 <div class="col-md-6 col-sm-12 branchElements"
                                                                      style="display: inline;">
+
                                                                     <div class="form-group">
                                                                         <label
                                                                             for="address_country">{{ trans('general.choose_branch') }}
@@ -482,7 +486,7 @@
                                                                             <option
                                                                                 value="null"
                                                                             >{{ trans('general.choose_branch') }}</option>
-                                                                            @foreach($countries->where('is_local')->first()->branches as $b)
+                                                                            @foreach($countries->where('is_local')->first()->branches->where('user_id', Cart::instance('shopping')->content()->where('options.type', 'product')->first()->options->element->user_id) as $b)
                                                                                 <option
                                                                                     value="{{ $b->id }}"
                                                                                 >{{ $b->name }}</option>
@@ -616,7 +620,11 @@
             //     $('.selectBranch').prop("checked", false);
             // }
             $("#branchId")[0].selectedIndex = 0;
+            $("input[name=payment_method]").prop('checked', false);
         });
+        $("input[name=payment_method]").on('click', function(e) {
+            $("input[name=cash_on_delivery]").prop('checked', false);
+        })
         $('.selectBranch').on('change', function(e) {
             if ($(".selectBranch").is(':checked')) {
                 $('.branchElements').css({display: 'inline'})

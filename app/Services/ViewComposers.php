@@ -66,7 +66,7 @@ class ViewComposers
             return $q->active()->with(['children' => function ($q) {
                 return $q->active();
             }]);
-        }])->get();
+        }])->orderBy('order','asc')->get();
         return $view->with(compact('categories'));
     }
 

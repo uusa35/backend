@@ -1,4 +1,4 @@
-<div class="tt-wrapper" style="background-color: #FBFBFB; padding: 30px; border-radius: 10px;">
+<div class="tt-wrapper" style=" padding: 30px; border-radius: 10px;">
     <div class="tt-title text-center">
         {{ $element->name }}
     </div>

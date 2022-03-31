@@ -21,7 +21,7 @@
             </div>
         @endif
         <hr>
-        <div class="card" style="line-height: 25px;">
+        <div class="card" style="line-height: 15px;">
             <span class="card-header">
                 <h3>{{ trans('general.invoice_no') }} : {{ $element->id }}</h3>
                 <span
@@ -42,7 +42,7 @@
                     <span class="float-right"> <br><strong>{{ trans('general.shipment_reference') }}: </strong> {{ strtoupper($element->shipment_reference) }}</span>
                 @endif
 
-                <span class="float-right"> <br><strong>{{ trans('general.weight') }} : </strong>{{ $element->order_metas->pluck('product.weight')->sum() }} KG</span>
+{{--                <span class="float-right"> <br><strong>{{ trans('general.weight') }} : </strong>{{ $element->order_metas->pluck('product.weight')->sum() }} KG</span>--}}
                 @if($element->shipment_fees > 0)
                     <span
                         class="float-right"> <br><strong>{{ trans('general.shipment') }} : </strong>{{ $element->shipment_fees }} {{ trans('general.kd') }}</span>
@@ -168,7 +168,7 @@
 
                         <th class="right">{{ trans('general.net_price') }}</th>
                         <th class="center">{{ trans('general.qty') }}</th>
-                        <th class="center">{{ trans('general.weight') }}
+{{--                        <th class="center">{{ trans('general.weight') }}--}}
                             / {{ trans('general.service_destination') }}</th>
                         <th class="right">{{ trans('general.total_price') }}</th>
                     </tr>
@@ -193,7 +193,7 @@
                                     </td>
                                     <td class="right">{{ $item->price }} {{ trans('general.kd') }}</td>
                                     <td class="right">{{ $item->qty }}</td>
-                                    <td class="right">{{ $item->product->weight }} KG</td>
+{{--                                    <td class="right">{{ $item->product->weight }} KG</td>--}}
                                     <td class="right">{{ number_format($item->price * $item->qty,'2','.',',') }}
                                         {{ trans('general.kd') }}
                                     </td>
@@ -215,7 +215,7 @@
                                     </td>
                                     <td class="right">{{ $item->price }} {{ trans('general.kd') }}</td>
                                     <td class="right">{{ $item->qty }}</td>
-                                    <td class="right">{{ $item->product->weight }} KG</td>
+{{--                                    <td class="right">{{ $item->product->weight }} KG</td>--}}
                                     <td class="right">{{ number_format($item->price * $item->qty,'2','.',',') }}
                                         {{ trans('general.kd') }}
                                     </td>
@@ -239,7 +239,7 @@
                                     </td>
                                     <td class="right">{{ $item->price }} {{ trans('general.kd') }}</td>
                                     <td class="right">{{ $item->qty }}</td>
-                                    <td class="right">{{ $item->product->weight }} KG</td>
+{{--                                    <td class="right">{{ $item->product->weight }} KG</td>--}}
                                     <td class="right">{{ number_format($item->price * $item->qty,'2','.',',') }}
                                         {{ trans('general.kd') }}
                                     </td>

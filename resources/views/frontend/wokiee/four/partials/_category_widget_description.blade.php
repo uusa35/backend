@@ -1,5 +1,5 @@
 <div class="tt-description text-center">
-    @if(!env('ISTORES'))
+{{--    @if(!env('ISTORES'))--}}
         <div class="tt-row">
             <ul class="tt-add-info">
                 <li>
@@ -9,12 +9,12 @@
             </ul>
             {{--@include('frontend.wokiee.four.partials._rating')--}}
         </div>
-        @if($element->caption && !env('EVENTKM'))
-            <h2 class="tt-title">
-                <a href="{{ route('frontend.category.show',$element->id) }}">{{ str_limit($element->caption,35,'..') }}</a>
-            </h2>
-        @endif
-    @endif
+{{--        @if($element->caption && !env('EVENTKM'))--}}
+{{--            <h2 class="tt-title">--}}
+{{--                <a href="{{ route('frontend.category.show',$element->id) }}">{{ str_limit($element->caption,35,'..') }}</a>--}}
+{{--            </h2>--}}
+{{--        @endif--}}
+{{--    @endif--}}
     {{--    @include('frontend.wokiee.four.partials._widget_price_and_color')--}}
     <div class="tt-product-inside-hover text-center">
 

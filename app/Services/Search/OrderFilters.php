@@ -27,8 +27,9 @@ class OrderFilters extends QueryFilters
     public function search($search)
     {
         return $this->builder
-            ->where('name_ar', 'like', "%{$search}%")
-            ->orWhere('name_en', 'like', "%{$search}%")
+//            ->where('name_ar', 'like', "%{$search}%")
+//            ->orWhere('name_en', 'like', "%{$search}%")
+            ->id('id', 'like', "%{$search}%")
             ->orWhere('description_ar', 'like', "%{$search}%")
             ->orWhere('description_en', 'like', "%{$search}%");
     }

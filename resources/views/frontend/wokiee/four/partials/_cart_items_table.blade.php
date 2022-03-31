@@ -33,10 +33,10 @@
                                 @if($element->options->color)
                                     <li>{{ trans('general.color') }}: {{ $element->options->color->name }}</li>
                                 @endif
-                                @if($element->options->element->weight)
-                                    <li>{{ trans('general.weight') }}
-                                        : {{ $element->options->element->weight}} {{ trans('general.kg') }}</li>
-                                @endif
+{{--                                @if($element->options->element->weight)--}}
+{{--                                    <li>{{ trans('general.weight') }}--}}
+{{--                                        : {{ $element->options->element->weight}} {{ trans('general.kg') }}</li>--}}
+{{--                                @endif--}}
                                 @if($element->options->country_destination && app()->environment('local'))
                                     <li>{{ getCurrentCountry()->slug }}
 {{--                                        --- PackageCharge : {{ $element->options->element->shipment_package->charge }} ------}}
