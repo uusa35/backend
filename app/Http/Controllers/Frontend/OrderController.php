@@ -162,7 +162,7 @@ class OrderController extends Controller
                 }
             }
             if (env('INVOICE_DISTRIBUTION')) {
-                $this->order->order_metas->each(function ($orderMeta) use($emailsList) {
+                $order->order_metas->each(function ($orderMeta) use($emailsList) {
                     if ($orderMeta->isProductType) {
                         array_push($emailsList, $orderMeta->product->user->email);
                     } else {
