@@ -21,7 +21,7 @@ trait NotificationHelper
             $fields = array(
                 'app_id' => env('ONE_SIGNAL_APP_ID'),
                 'included_segments' => !$request->has('player_id') && !$request->player_id ? array('Active Users') : [],
-                'include_player_ids' => $request->player_id ? [$request->player_id] : null,
+//                'include_player_ids' => $request->player_id ? [$request->player_id] : null,
                 'headings' => [
                     'en' => strip_tags($headings),
                     'ar' => strip_tags($headings),
