@@ -93,10 +93,16 @@
         }
     });
     // $('.areas').select2();
-    $(document).ready(function () {
+    $(document).ready(function() {
 
     })
-    $('.skltbs-init').skeletabs({ panelHeight: 'adapt', keyboard : false , history : false , autoplay : false  , breakpoint: 0 });
+    $('.skltbs-init').skeletabs({
+        panelHeight: 'adapt',
+        keyboard: false,
+        history: false,
+        autoplay: false,
+        breakpoint: 0
+    });
 
     var acc = document.getElementsByClassName("accordionCustome");
     var i;
@@ -117,5 +123,16 @@
         });
     }
 </script>
+@if(env("ISTORES"))
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+    <script>
+        window.OneSignal = window.OneSignal || [];
+        OneSignal.push(function() {
+            OneSignal.init({
+                appId: "e085b83f-8c49-4265-b75d-73d5dc2672e2",
+            });
+        });
+    </script>
+@endif
 
 
