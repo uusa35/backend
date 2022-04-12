@@ -193,6 +193,7 @@ trait OrderTrait
                 }
             }
             $user = User::where(['email' => $request->email])->first();
+            dd($user);
             if ($user) {
                 $user->update([
                     'name' => $request->name,
