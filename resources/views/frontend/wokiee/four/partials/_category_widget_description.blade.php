@@ -29,7 +29,7 @@
                 <a href="{{ route('frontend.user.search', ['user_category_id' => $element->id]) }}"
                    class="btn btn-small"
                    @if(env('ISTORES'))
-                   style="background-color: transparent !important; color : black !important;"
+                   style="background-color: transparent !important; color : black !important; display : none"
                     @endif
                 >
                     {{ $element->name }}
@@ -51,12 +51,12 @@
                 {{--                   class="btn btn-small">{{ trans('general.view_companies') }}</a>--}}
             @endif
         </div>
-        <div class="tt-row-btn">
+{{--        <div class="tt-row-btn">--}}
             {{--            @include('frontend.wokiee.four.partials._quick_view_product_btn')--}}
             {{--            @auth--}}
             {{--                <a href="#" class="tt-btn-wishlist"></a>--}}
             {{--            @endauth--}}
             {{--<a href="#" class="tt-btn-compare"></a>--}}
-        </div>
+{{--        </div>--}}
     </div>
 </div>
