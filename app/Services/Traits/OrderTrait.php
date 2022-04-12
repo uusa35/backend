@@ -192,7 +192,7 @@ trait OrderTrait
                     return $order;
                 }
             }
-            $user = User::where(['email' => $request->email])->orWhere(['mobile' => $request->mobile])->first();
+            $user = User::where(['email' => $request->email])->first();
             if ($user) {
                 $user->update([
                     'name' => $request->name,
