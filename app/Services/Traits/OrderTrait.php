@@ -135,7 +135,7 @@ trait OrderTrait
                 'role_id' => $user->role_id ? $user->role_id : Role::where('is_client', true)->first()->id
             ]);
         } else {
-            $user = User::where('email', $request->email)->orWhere(['mobile' => $request->mobile])->first();
+            $user = User::where('email', $request->email)->first();
             if (!is_null($user)) {
                 $user->update([
                     'name' => $request->name,
@@ -193,7 +193,6 @@ trait OrderTrait
                 }
             }
             $user = User::where(['email' => $request->email])->first();
-            dd($user);
             if ($user) {
                 $user->update([
                     'name' => $request->name,
